@@ -41,30 +41,19 @@ taurient-lite/
 
 ## 定时运行
 
-**本地。** launchd 任务 `com.eddie.taurient-lite`，每周一到周五 5:45 PT
-调用 `run_daily.sh`。脚本先检查当天的 JSON 是否已存在，存在就跳过，
-所以合盖休眠后唤醒补跑不会重复生成。生成成功后立刻 commit 并 push 到 GitHub，
-这一步是云端去重的前提。日志在 `logs/`。
+云端 routine `trig_01TCdAaPJVRePAdQvQRffedk`，周一到周五自动执行：克隆仓库、
+扫描新闻、渲染、发布到固定的 Artifact 链接、再把当天的 JSON 和 Markdown 提交回来。
+本地想同步归档就 `git pull`。管理页面在
+https://claude.ai/code/routines/trig_01TCdAaPJVRePAdQvQRffedk
 
-```bash
-launchctl print gui/$(id -u)/com.eddie.taurient-lite   # 看状态
-launchctl kickstart -k gui/$(id -u)/com.eddie.taurient-lite   # 立刻跑一次
-launchctl bootout gui/$(id -u)/com.eddie.taurient-lite        # 停掉
-```
+**夏令时不用管。** cron 只认 UTC，单点触发会在时区切换时漂一小时。所以排成
+每天两次 `0 13,14 * * 1-5`，由运行提示里的时间闸门决定哪一次真正执行：
+只有加州本地时间已过 6:00、且当天简报尚未生成时才动手。夏令时命中 13:00 UTC 那次，
+冬令时命中 14:00 UTC 那次，另一次空跑退出。
 
-**云端。** routine `trig_01TCdAaPJVRePAdQvQRffedk`，笔记本关机时兜底。
-两边发布到同一个 Artifact 链接。
-
-**为什么本地早 15 分钟。** 两边同时启动的话谁也看不到谁的成果，会重复生成一遍，
-白白消耗一倍用量。所以本地排在 5:45，跑完把当天的 JSON 推到 GitHub；
-云端 6:00 克隆下来时看到文件已存在，直接退出。机器关着的那天本地不跑，
-云端拿不到文件，正常执行。
-
-**夏令时。** 本地 launchd 认系统本地时间，夏令时切换时自动跟随，不用管。
-云端 cron 只认 UTC，所以排成每天两次 `0 13,14 * * 1-5`，再由运行提示里的
-时间闸门决定哪一次真正执行：只有加州本地时间已过 6:00、且当天简报尚未生成时才动手。
-夏令时是 13:00 UTC 那次命中，冬令时是 14:00 UTC 那次，另一次空跑退出。
-这样两年一次的时区切换不需要任何人工调整。
+**本地定时已停用。** `com.eddie.taurient-lite.plist.disabled` 和 `run_daily.sh`
+留在仓库里备查。云端已经覆盖了所有情况，再跑一份本地的只会重复消耗额度。
+真要恢复就把 plist 拷回 `~/Library/LaunchAgents/` 再 `launchctl bootstrap`。
 
 ## 手动跑一次
 
