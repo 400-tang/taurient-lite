@@ -1,0 +1,645 @@
+<title>Morning Tape</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root {
+  --paper:        #EDEFF0;
+  --paper-sunk:   #E3E6E8;
+  --rule:         #C6CCD0;
+  --rule-soft:    #D8DDE0;
+  --ink:          #131A21;
+  --ink-mid:      #4A555E;
+  --ink-faint:    #79848C;
+  --accent:       #1F3FCB;
+  --accent-soft:  #DDE2F7;
+  --up:           #0B6E4F;
+  --down:         #A82C24;
+  --tier-1:       #A82C24;
+  --tier-2:       #1F3FCB;
+  --tier-3:       #79848C;
+
+  --display: "Newsreader", Georgia, "Songti SC", serif;
+  --body: "IBM Plex Sans", "PingFang SC", "Hiragino Sans GB", system-ui, sans-serif;
+  --data: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper:       #0E1317;
+    --paper-sunk:  #161C21;
+    --rule:        #2C353C;
+    --rule-soft:   #212930;
+    --ink:         #DDE3E7;
+    --ink-mid:     #9AA6AE;
+    --ink-faint:   #6C7982;
+    --accent:      #8AA0FF;
+    --accent-soft: #1B2340;
+    --up:          #3FBF8F;
+    --down:        #E8756A;
+    --tier-1:      #E8756A;
+    --tier-2:      #8AA0FF;
+    --tier-3:      #6C7982;
+  }
+}
+
+:root[data-theme="dark"] {
+  --paper:       #0E1317;
+  --paper-sunk:  #161C21;
+  --rule:        #2C353C;
+  --rule-soft:   #212930;
+  --ink:         #DDE3E7;
+  --ink-mid:     #9AA6AE;
+  --ink-faint:   #6C7982;
+  --accent:      #8AA0FF;
+  --accent-soft: #1B2340;
+  --up:          #3FBF8F;
+  --down:        #E8756A;
+  --tier-1:      #E8756A;
+  --tier-2:      #8AA0FF;
+  --tier-3:      #6C7982;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.sheet {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 5rem;
+}
+
+/* ---------------------------------------------------------------- masthead */
+
+.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 0.75rem; }
+
+.masthead h1 {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: clamp(2rem, 6vw, 2.9rem);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  margin: 0;
+  text-wrap: balance;
+}
+
+.masthead h1 em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.stamp {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.1rem;
+  margin-top: 0.9rem;
+  font-family: var(--data);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.stamp b { color: var(--ink-mid); font-weight: 500; }
+
+/* -------------------------------------------------------------------- lede */
+
+.lede {
+  font-family: var(--display);
+  font-size: 1.3rem;
+  line-height: 1.5;
+  margin: 1.6rem 0 0;
+  padding-left: 1rem;
+  border-left: 3px solid var(--accent);
+  text-wrap: pretty;
+}
+
+/* -------------------------------------------------------------------- tape */
+
+.tape { margin-top: 2rem; }
+
+.tape-head {
+  font-family: var(--data);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.tape-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
+  gap: 0;
+}
+
+.tape-cell {
+  padding: 0.7rem 0.9rem 0.7rem 0;
+  border-bottom: 1px solid var(--rule-soft);
+}
+
+.tape-cell .k {
+  font-size: 0.72rem;
+  color: var(--ink-faint);
+  letter-spacing: 0.02em;
+}
+
+.tape-cell .v {
+  font-family: var(--data);
+  font-size: 1.05rem;
+  font-variant-numeric: tabular-nums;
+  margin-top: 0.15rem;
+}
+
+.tape-cell .d {
+  font-family: var(--data);
+  font-size: 0.72rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.d.up { color: var(--up); }
+.d.down { color: var(--down); }
+
+/* ------------------------------------------------------------------- tiers */
+
+.tier-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  margin: 2.8rem 0 0.2rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.tier-head h2 {
+  font-family: var(--body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.tier-head .n {
+  font-family: var(--data);
+  font-size: 0.72rem;
+  color: var(--ink-faint);
+}
+
+.t1 h2 { color: var(--tier-1); }
+.t2 h2 { color: var(--tier-2); }
+.t3 h2 { color: var(--tier-3); }
+
+/* ------------------------------------------------------------------- items */
+
+.item {
+  display: grid;
+  grid-template-columns: 2.4rem 1fr;
+  gap: 0 0.9rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--rule-soft);
+}
+
+.item .rank {
+  font-family: var(--data);
+  font-size: 0.95rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-faint);
+  padding-top: 0.28rem;
+  border-top: 2px solid currentColor;
+  align-self: start;
+}
+
+.item.t1 .rank { color: var(--tier-1); }
+.item.t2 .rank { color: var(--tier-2); }
+.item.t3 .rank { color: var(--tier-3); }
+
+.item h3 {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.42rem;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  margin: 0;
+  text-wrap: balance;
+}
+
+.item.t3 h3 { font-size: 1.1rem; font-weight: 500; }
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.55rem;
+}
+
+.tag {
+  font-family: var(--data);
+  font-size: 0.65rem;
+  letter-spacing: 0.05em;
+  color: var(--ink-mid);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  padding: 0.08rem 0.4rem;
+}
+
+.item p { margin: 0.7rem 0 0; text-wrap: pretty; }
+
+.why {
+  margin-top: 0.85rem;
+  padding: 0.7rem 0.9rem;
+  background: var(--paper-sunk);
+  border-left: 2px solid var(--accent);
+}
+
+.why .lbl {
+  font-family: var(--data);
+  font-size: 0.63rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.why p { margin: 0; font-size: 0.94rem; }
+
+.impact {
+  margin-top: 0.65rem;
+  font-family: var(--data);
+  font-size: 0.73rem;
+  color: var(--ink-mid);
+}
+
+.impact::before { content: "\2192\00a0"; color: var(--ink-faint); }
+
+.srcs { margin-top: 0.7rem; }
+
+.srcs summary {
+  font-family: var(--data);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  color: var(--ink-faint);
+  cursor: pointer;
+  list-style: none;
+}
+
+.srcs summary::-webkit-details-marker { display: none; }
+.srcs summary::before { content: "+ "; }
+.srcs[open] summary::before { content: "\2212 "; }
+.srcs summary:hover { color: var(--accent); }
+
+.srcs ul {
+  margin: 0.4rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 0.9rem;
+}
+
+.srcs a {
+  font-family: var(--data);
+  font-size: 0.72rem;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent-soft);
+}
+
+.srcs a:hover { border-bottom-color: var(--accent); }
+
+/* ---------------------------------------------------------------- calendar */
+
+.cal { margin-top: 3rem; }
+
+.cal h2 {
+  font-family: var(--body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin: 0 0 0.35rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.cal-scroll { overflow-x: auto; }
+
+table { border-collapse: collapse; width: 100%; font-size: 0.9rem; }
+
+td {
+  padding: 0.6rem 0.7rem 0.6rem 0;
+  border-bottom: 1px solid var(--rule-soft);
+  vertical-align: top;
+}
+
+td.when {
+  font-family: var(--data);
+  font-size: 0.8rem;
+  white-space: nowrap;
+  color: var(--ink-mid);
+}
+
+td.time {
+  font-family: var(--data);
+  font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  color: var(--ink-faint);
+}
+
+td.w { text-align: right; white-space: nowrap; }
+
+.w span {
+  font-family: var(--data);
+  font-size: 0.63rem;
+  letter-spacing: 0.08em;
+  padding: 0.1rem 0.4rem;
+  border-radius: 2px;
+}
+
+.w-high { background: var(--accent-soft); color: var(--accent); }
+.w-mid { color: var(--ink-mid); }
+.w-low { color: var(--ink-faint); }
+
+/* ---------------------------------------------------------------- colophon */
+
+.colophon {
+  margin-top: 3.5rem;
+  padding-top: 1rem;
+  border-top: 2px solid var(--ink);
+  font-family: var(--data);
+  font-size: 0.68rem;
+  line-height: 1.7;
+  color: var(--ink-faint);
+  letter-spacing: 0.02em;
+}
+
+a:focus-visible, summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@media (max-width: 480px) {
+  .item { grid-template-columns: 1.8rem 1fr; gap: 0 0.7rem; }
+  .item h3 { font-size: 1.22rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+</style>
+<div class="sheet">
+<header class="masthead">
+<h1>Morning <em>Tape</em></h1>
+<div class="stamp">
+<span><b>2026-09-06</b> Sunday</span>
+<span>Week-ahead edition</span>
+<span>扫描 <b>41</b> 篇 · 保留 <b>10</b> 条</span>
+<span>生成于 2026-09-06 14:20 PT</span>
+</div></header>
+<p class="lede">就业数据过热把市场从「降息」叙事直接翻转成「加息」定价，油价破 $92 又给通胀添了一把火。本周只有四个交易日，周五的 8 月 CPI 是唯一的解锁点。</p>
+<section class="tape">
+<div class="tape-head">Last close · Fri Sep 4, 2026</div>
+<div class="tape-grid">
+<div class="tape-cell">
+<div class="k">S&amp;P 500</div>
+<div class="v">7,718.60</div>
+<div class="d down">-0.38%</div>
+</div>
+<div class="tape-cell">
+<div class="k">Nasdaq Composite</div>
+<div class="v">26,506.99</div>
+<div class="d down">-0.29%</div>
+</div>
+<div class="tape-cell">
+<div class="k">Dow Jones</div>
+<div class="v">53,414.25</div>
+<div class="d down">-0.51%</div>
+</div>
+<div class="tape-cell">
+<div class="k">US 10Y yield</div>
+<div class="v">4.79%</div>
+<div class="d up">18-mo high</div>
+</div>
+<div class="tape-cell">
+<div class="k">US 2Y yield</div>
+<div class="v">4.35%</div>
+<div class="d up">since Jan &#x27;25 high</div>
+</div>
+<div class="tape-cell">
+<div class="k">Brent crude</div>
+<div class="v">$92.61</div>
+<div class="d up">as of Sep 1</div>
+</div>
+</div></section>
+<div class="tier-head t1">
+<h2>必读</h2>
+<span class="n">3</span>
+</div>
+<article class="item t1">
+<div class="rank">01</div>
+<div>
+<h3>8 月非农 162k，三倍于预期，联储叙事翻转到加息</h3>
+<div class="tags">
+<span class="tag">宏观</span>
+<span class="tag">利率</span>
+</div>
+<p>美国 8 月新增非农就业 162,000 人，而经济学家预期仅 53,000 人。数据公布后 CME FedWatch 显示，市场对本月 FOMC 加息的定价升到 68%。这是今年市场情绪最剧烈的一次转向：几周前的主流预期还是降息。</p>
+<div class="why"><span class="lbl">为什么重要</span>
+<p>整条收益率曲线要重新定价。所有久期敏感的资产、以及靠低利率支撑估值的成长股，都要按新的贴现率重算。</p></div>
+<div class="impact">全市场 · 长久期成长股首当其冲</div>
+<details class="srcs"><summary>3 个来源</summary><ul>
+<li><a href="https://www.cnbc.com/2026/09/03/stock-market-today-live-updates.html" target="_blank" rel="noopener">CNBC</a></li>
+<li><a href="https://finance.yahoo.com/markets/stocks/articles/markets-news-sept-4-2026-105243532.html" target="_blank" rel="noopener">Yahoo Finance</a></li>
+<li><a href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-sept-04-2026" target="_blank" rel="noopener">TheStreet</a></li>
+</ul></details>
+</div></article>
+<article class="item t1">
+<div class="rank">02</div>
+<div>
+<h3>布伦特原油破 $92，霍尔木兹海峡关闭把通胀风险重新点着</h3>
+<div class="tags">
+<span class="tag">能源</span>
+<span class="tag">宏观</span>
+<span class="tag">地缘</span>
+</div>
+<p>布伦特原油涨到 $92.61，WTI 到 $87.67。驱动因素是美国与伊朗的冲突导致霍尔木兹海峡实质性关闭。能源价格上行叠加对政府债务的担忧，把 10 年期美债收益率推到 4.79%，是 2025 年 1 月以来最高。</p>
+<div class="why"><span class="lbl">为什么重要</span>
+<p>这是通胀的供给侧来源，联储的加息无法解决它，却会因为它而被迫收紧。油价和利率现在是同一笔交易。</p></div>
+<div class="impact">能源股受益 · 债券、消费、航空受损</div>
+<details class="srcs"><summary>3 个来源</summary><ul>
+<li><a href="https://fortune.com/2026/09/01/oil-prices-bond-yields-inflation-fe/" target="_blank" rel="noopener">Fortune</a></li>
+<li><a href="https://www.washingtontimes.com/news/2026/sep/1/us-bonds-sell-tuesday-rising-oil-prices-create-inflation-anxiety/" target="_blank" rel="noopener">Washington Times</a></li>
+<li><a href="https://www.pbs.org/newshour/economy/stocks-slip-on-wall-street-under-pressure-from-rising-oil-prices-bond-sell-off" target="_blank" rel="noopener">PBS News</a></li>
+</ul></details>
+</div></article>
+<article class="item t1">
+<div class="rank">03</div>
+<div>
+<h3>英伟达 129.3 亿美元收购 Hugging Face，史上最大一笔并购</h3>
+<div class="tags">
+<span class="tag">半导体</span>
+<span class="tag">AI</span>
+<span class="tag">并购</span>
+</div>
+<p>英伟达以 $12.93B 收购 Hugging Face，是公司历史上最大的收购。同期还向联发科投了 $3.5B 可转债，并与 AWS 宣布扩大 AI 基础设施合作。公司 7 月 26 日结束的第二财季营收 $96.2B，环比 +18%，同比 +106%。</p>
+<div class="why"><span class="lbl">为什么重要</span>
+<p>英伟达在往上游的开发者生态和模型分发层走，不再只卖芯片。同比翻倍的营收说明 AI 资本开支还没看到拐点。</p></div>
+<div class="impact">半导体 · AI 基础设施 · 开源模型平台</div>
+<details class="srcs"><summary>2 个来源</summary><ul>
+<li><a href="https://nvidianews.nvidia.com/news/latest" target="_blank" rel="noopener">NVIDIA Newsroom</a></li>
+<li><a href="https://techstartups.com/2026/09/03/top-tech-news-today-september-3-2026-google-hugging-face-meta-moonshot-ai-nvidia-more/" target="_blank" rel="noopener">Tech Startups</a></li>
+</ul></details>
+</div></article>
+<div class="tier-head t2">
+<h2>值得知道</h2>
+<span class="n">4</span>
+</div>
+<article class="item t2">
+<div class="rank">04</div>
+<div>
+<h3>联储理事 Waller：若通胀数据没有意外，倾向于 9 月按兵不动</h3>
+<div class="tags">
+<span class="tag">宏观</span>
+<span class="tag">利率</span>
+</div>
+<p>Waller 周四表示，只要接下来的通胀数据没有超预期，他倾向于在 9 月会议上维持利率不变。这番话曾让周四股市反弹、收益率回落，但周五的就业数据把它盖过去了。</p>
+<div class="why"><span class="lbl">为什么重要</span>
+<p>加息不是既成事实。联储内部有分歧，这意味着周五的 CPI 数据有能力把定价推向任何一边。</p></div>
+<div class="impact">利率预期的波动率</div>
+<details class="srcs"><summary>1 个来源</summary><ul>
+<li><a href="https://finance.yahoo.com/markets/stocks/articles/markets-news-sept-4-2026-105243532.html" target="_blank" rel="noopener">Yahoo Finance</a></li>
+</ul></details>
+</div></article>
+<article class="item t2">
+<div class="rank">05</div>
+<div>
+<h3>周五 8 月 CPI 是本周唯一的解锁点，nowcast 指向 3.38%</h3>
+<div class="tags">
+<span class="tag">宏观</span>
+<span class="tag">数据</span>
+</div>
+<p>8 月 CPI 于 9 月 11 日周五美东 8:30 发布。截至 9 月 4 日的 nowcast 显示，整体 CPI 同比 +3.38%、环比 +0.36%。7 月读数是同比 +3.4%、环比 +0.1%。环比从 0.1% 跳到 0.36% 是关键变化，主要来自能源。</p>
+<div class="why"><span class="lbl">为什么重要</span>
+<p>Waller 说的「没有意外」就是指这个数字。它直接决定 68% 的加息定价往哪边收敛。</p></div>
+<div class="impact">全市场 · 事件驱动</div>
+<details class="srcs"><summary>2 个来源</summary><ul>
+<li><a href="https://www.bls.gov/news.release/cpi.htm" target="_blank" rel="noopener">BLS</a></li>
+<li><a href="https://www.kiplinger.com/investing/economy/this-weeks-economic-calendar" target="_blank" rel="noopener">Kiplinger</a></li>
+</ul></details>
+</div></article>
+<article class="item t2">
+<div class="rank">06</div>
+<div>
+<h3>AI 软件股空头极度拥挤，UiPath 与 C3.ai 本周财报</h3>
+<div class="tags">
+<span class="tag">AI 软件</span>
+<span class="tag">仓位</span>
+</div>
+<p>两家公司本周公布财报，做空仓位都异常极端：UiPath 被做空 1.16 亿股，约占流通盘 29%；C3.ai 被做空 4,800 万股，超过流通盘 34%。</p>
+<div class="why"><span class="lbl">为什么重要</span>
+<p>这个量级的空头拥挤度意味着，任何不算差的财报都可能触发轧空。这是仓位结构的信息，不是基本面的信息。</p></div>
+<div class="impact">AI 软件板块 · 高波动个股</div>
+<details class="srcs"><summary>1 个来源</summary><ul>
+<li><a href="https://seekingalpha.com/article/4725259-wall-street-breakfast-week-ahead" target="_blank" rel="noopener">Seeking Alpha</a></li>
+</ul></details>
+</div></article>
+<article class="item t2">
+<div class="rank">07</div>
+<div>
+<h3>周一劳工节休市，本周只有四个交易日</h3>
+<div class="tags">
+<span class="tag">市场机制</span>
+</div>
+<p>9 月 7 日周一美股与债市因劳工节休市，交易周为 9 月 8 日至 11 日。</p>
+<div class="why"><span class="lbl">为什么重要</span>
+<p>同样的信息量压缩进四天，加上周五的 CPI，单日波动率大概率高于平常。</p></div>
+<div class="impact">流动性 · 波动率</div>
+<details class="srcs"><summary>1 个来源</summary><ul>
+<li><a href="https://www.kiplinger.com/investing/stocks/17494/next-week-earnings-calendar-stocks" target="_blank" rel="noopener">Kiplinger</a></li>
+</ul></details>
+</div></article>
+<div class="tier-head t3">
+<h2>背景噪音</h2>
+<span class="n">3</span>
+</div>
+<article class="item t3">
+<div class="rank">08</div>
+<div>
+<h3>季节性与中期选举：8-9 月历来是全年最弱的两个月</h3>
+<div class="tags">
+<span class="tag">季节性</span>
+</div>
+<p>分析普遍提到近期可能进入盘整期，理由是八九月的季节性弱势，加上中期选举临近带来的不确定性。</p>
+<details class="srcs"><summary>1 个来源</summary><ul>
+<li><a href="https://www.edwardjones.com/us-en/market-news-insights/stock-market-news/stock-market-weekly-update" target="_blank" rel="noopener">Edward Jones</a></li>
+</ul></details>
+</div></article>
+<article class="item t3">
+<div class="rank">09</div>
+<div>
+<h3>IFA 2026：英伟达与微软推本地推理，Agent 部署门槛下降</h3>
+<div class="tags">
+<span class="tag">AI</span>
+<span class="tag">终端</span>
+</div>
+<p>英伟达、微软及合作伙伴在 IFA 2026 展示更快的本地推理和一套让 agent 更容易在本地硬件上部署的工具。</p>
+<details class="srcs"><summary>1 个来源</summary><ul>
+<li><a href="https://nvidianews.nvidia.com/" target="_blank" rel="noopener">NVIDIA Newsroom</a></li>
+</ul></details>
+</div></article>
+<article class="item t3">
+<div class="rank">10</div>
+<div>
+<h3>回撤发生在创纪录涨势之后：9 月 3 日标普还涨了 1.06%</h3>
+<div class="tags">
+<span class="tag">市场结构</span>
+</div>
+<p>周四标普 500 涨 1.06% 收于 7,747.71，纳指涨 1.4%，道指涨 624 点。周五的下跌只是打断了一段刚刚创下纪录的涨势，不是趋势反转的确认。</p>
+<details class="srcs"><summary>1 个来源</summary><ul>
+<li><a href="https://www.cnbc.com/2026/09/02/stock-market-today-live-updates.html" target="_blank" rel="noopener">CNBC</a></li>
+</ul></details>
+</div></article>
+<section class="cal"><h2>接下来要盯的时间点</h2>
+<div class="cal-scroll"><table><tbody>
+<tr>
+<td class="when">Mon 9/7</td>
+<td class="time">全天</td>
+<td>劳工节，美股与债市休市</td>
+<td class="w"><span class="w-high">关键</span></td>
+</tr>
+<tr>
+<td class="when">Tue 9/8</td>
+<td class="time">—</td>
+<td>四天交易周开始</td>
+<td class="w"><span class="w-low">常规</span></td>
+</tr>
+<tr>
+<td class="when">本周内</td>
+<td class="time">—</td>
+<td>UiPath、C3.ai 财报（空头拥挤）</td>
+<td class="w"><span class="w-mid">留意</span></td>
+</tr>
+<tr>
+<td class="when">Fri 9/11</td>
+<td class="time">08:30 ET</td>
+<td>8 月 CPI，nowcast +3.38% YoY</td>
+<td class="w"><span class="w-high">关键</span></td>
+</tr>
+<tr>
+<td class="when">本月晚些</td>
+<td class="time">—</td>
+<td>9 月 FOMC 决议，当前定价 68% 加息</td>
+<td class="w"><span class="w-high">关键</span></td>
+</tr>
+</tbody></table></div></section>
+<footer class="colophon">Taurient Lite · 由 Claude Code 每个交易日早晨自动生成<br>覆盖范围：美股与宏观、科技与 AI 行业<br>这是新闻摘要，不是投资建议。数字以原始来源为准。</footer>
+</div>

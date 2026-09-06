@@ -1,0 +1,16 @@
+{
+  "artifact_url": "https://claude.ai/code/artifact/65328183-42d9-4ead-93c5-d2d3dc41b97a",
+  "timezone": "America/Los_Angeles",
+  "run_time": "06:00",
+  "run_days": "Mon-Fri",
+  "scope": [
+    "美股与宏观：联储、利率、通胀与就业数据、财报与公司公告、板块轮动",
+    "科技与 AI 行业：半导体、云、AI 公司动态与融资，不限于上市公司"
+  ],
+  "target_counts": {
+    "must-read": [2, 4],
+    "worth-knowing": [3, 5],
+    "noise": [2, 3]
+  },
+  "min_articles_scanned": 30
+}

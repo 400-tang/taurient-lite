@@ -1,0 +1,149 @@
+{
+  "date": "2026-09-06",
+  "weekday": "Sunday",
+  "edition": "Week-ahead edition",
+  "generated_at": "2026-09-06 14:20 PT",
+  "scanned": 41,
+  "kept": 10,
+  "thesis": "就业数据过热把市场从「降息」叙事直接翻转成「加息」定价，油价破 $92 又给通胀添了一把火。本周只有四个交易日，周五的 8 月 CPI 是唯一的解锁点。",
+  "tape": {
+    "asof": "Last close · Fri Sep 4, 2026",
+    "rows": [
+      { "name": "S&P 500", "value": "7,718.60", "change": "-0.38%", "dir": "down" },
+      { "name": "Nasdaq Composite", "value": "26,506.99", "change": "-0.29%", "dir": "down" },
+      { "name": "Dow Jones", "value": "53,414.25", "change": "-0.51%", "dir": "down" },
+      { "name": "US 10Y yield", "value": "4.79%", "change": "18-mo high", "dir": "up" },
+      { "name": "US 2Y yield", "value": "4.35%", "change": "since Jan '25 high", "dir": "up" },
+      { "name": "Brent crude", "value": "$92.61", "change": "as of Sep 1", "dir": "up" }
+    ]
+  },
+  "items": [
+    {
+      "rank": 1,
+      "tier": "must-read",
+      "headline": "8 月非农 162k，三倍于预期，联储叙事翻转到加息",
+      "sectors": ["宏观", "利率"],
+      "body": "美国 8 月新增非农就业 162,000 人，而经济学家预期仅 53,000 人。数据公布后 CME FedWatch 显示，市场对本月 FOMC 加息的定价升到 68%。这是今年市场情绪最剧烈的一次转向：几周前的主流预期还是降息。",
+      "why": "整条收益率曲线要重新定价。所有久期敏感的资产、以及靠低利率支撑估值的成长股，都要按新的贴现率重算。",
+      "impact": "全市场 · 长久期成长股首当其冲",
+      "sources": [
+        { "name": "CNBC", "url": "https://www.cnbc.com/2026/09/03/stock-market-today-live-updates.html" },
+        { "name": "Yahoo Finance", "url": "https://finance.yahoo.com/markets/stocks/articles/markets-news-sept-4-2026-105243532.html" },
+        { "name": "TheStreet", "url": "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-sept-04-2026" }
+      ]
+    },
+    {
+      "rank": 2,
+      "tier": "must-read",
+      "headline": "布伦特原油破 $92，霍尔木兹海峡关闭把通胀风险重新点着",
+      "sectors": ["能源", "宏观", "地缘"],
+      "body": "布伦特原油涨到 $92.61，WTI 到 $87.67。驱动因素是美国与伊朗的冲突导致霍尔木兹海峡实质性关闭。能源价格上行叠加对政府债务的担忧，把 10 年期美债收益率推到 4.79%，是 2025 年 1 月以来最高。",
+      "why": "这是通胀的供给侧来源，联储的加息无法解决它，却会因为它而被迫收紧。油价和利率现在是同一笔交易。",
+      "impact": "能源股受益 · 债券、消费、航空受损",
+      "sources": [
+        { "name": "Fortune", "url": "https://fortune.com/2026/09/01/oil-prices-bond-yields-inflation-fe/" },
+        { "name": "Washington Times", "url": "https://www.washingtontimes.com/news/2026/sep/1/us-bonds-sell-tuesday-rising-oil-prices-create-inflation-anxiety/" },
+        { "name": "PBS News", "url": "https://www.pbs.org/newshour/economy/stocks-slip-on-wall-street-under-pressure-from-rising-oil-prices-bond-sell-off" }
+      ]
+    },
+    {
+      "rank": 3,
+      "tier": "must-read",
+      "headline": "英伟达 129.3 亿美元收购 Hugging Face，史上最大一笔并购",
+      "sectors": ["半导体", "AI", "并购"],
+      "body": "英伟达以 $12.93B 收购 Hugging Face，是公司历史上最大的收购。同期还向联发科投了 $3.5B 可转债，并与 AWS 宣布扩大 AI 基础设施合作。公司 7 月 26 日结束的第二财季营收 $96.2B，环比 +18%，同比 +106%。",
+      "why": "英伟达在往上游的开发者生态和模型分发层走，不再只卖芯片。同比翻倍的营收说明 AI 资本开支还没看到拐点。",
+      "impact": "半导体 · AI 基础设施 · 开源模型平台",
+      "sources": [
+        { "name": "NVIDIA Newsroom", "url": "https://nvidianews.nvidia.com/news/latest" },
+        { "name": "Tech Startups", "url": "https://techstartups.com/2026/09/03/top-tech-news-today-september-3-2026-google-hugging-face-meta-moonshot-ai-nvidia-more/" }
+      ]
+    },
+    {
+      "rank": 4,
+      "tier": "worth-knowing",
+      "headline": "联储理事 Waller：若通胀数据没有意外，倾向于 9 月按兵不动",
+      "sectors": ["宏观", "利率"],
+      "body": "Waller 周四表示，只要接下来的通胀数据没有超预期，他倾向于在 9 月会议上维持利率不变。这番话曾让周四股市反弹、收益率回落，但周五的就业数据把它盖过去了。",
+      "why": "加息不是既成事实。联储内部有分歧，这意味着周五的 CPI 数据有能力把定价推向任何一边。",
+      "impact": "利率预期的波动率",
+      "sources": [
+        { "name": "Yahoo Finance", "url": "https://finance.yahoo.com/markets/stocks/articles/markets-news-sept-4-2026-105243532.html" }
+      ]
+    },
+    {
+      "rank": 5,
+      "tier": "worth-knowing",
+      "headline": "周五 8 月 CPI 是本周唯一的解锁点，nowcast 指向 3.38%",
+      "sectors": ["宏观", "数据"],
+      "body": "8 月 CPI 于 9 月 11 日周五美东 8:30 发布。截至 9 月 4 日的 nowcast 显示，整体 CPI 同比 +3.38%、环比 +0.36%。7 月读数是同比 +3.4%、环比 +0.1%。环比从 0.1% 跳到 0.36% 是关键变化，主要来自能源。",
+      "why": "Waller 说的「没有意外」就是指这个数字。它直接决定 68% 的加息定价往哪边收敛。",
+      "impact": "全市场 · 事件驱动",
+      "sources": [
+        { "name": "BLS", "url": "https://www.bls.gov/news.release/cpi.htm" },
+        { "name": "Kiplinger", "url": "https://www.kiplinger.com/investing/economy/this-weeks-economic-calendar" }
+      ]
+    },
+    {
+      "rank": 6,
+      "tier": "worth-knowing",
+      "headline": "AI 软件股空头极度拥挤，UiPath 与 C3.ai 本周财报",
+      "sectors": ["AI 软件", "仓位"],
+      "body": "两家公司本周公布财报，做空仓位都异常极端：UiPath 被做空 1.16 亿股，约占流通盘 29%；C3.ai 被做空 4,800 万股，超过流通盘 34%。",
+      "why": "这个量级的空头拥挤度意味着，任何不算差的财报都可能触发轧空。这是仓位结构的信息，不是基本面的信息。",
+      "impact": "AI 软件板块 · 高波动个股",
+      "sources": [
+        { "name": "Seeking Alpha", "url": "https://seekingalpha.com/article/4725259-wall-street-breakfast-week-ahead" }
+      ]
+    },
+    {
+      "rank": 7,
+      "tier": "worth-knowing",
+      "headline": "周一劳工节休市，本周只有四个交易日",
+      "sectors": ["市场机制"],
+      "body": "9 月 7 日周一美股与债市因劳工节休市，交易周为 9 月 8 日至 11 日。",
+      "why": "同样的信息量压缩进四天，加上周五的 CPI，单日波动率大概率高于平常。",
+      "impact": "流动性 · 波动率",
+      "sources": [
+        { "name": "Kiplinger", "url": "https://www.kiplinger.com/investing/stocks/17494/next-week-earnings-calendar-stocks" }
+      ]
+    },
+    {
+      "rank": 8,
+      "tier": "noise",
+      "headline": "季节性与中期选举：8-9 月历来是全年最弱的两个月",
+      "sectors": ["季节性"],
+      "body": "分析普遍提到近期可能进入盘整期，理由是八九月的季节性弱势，加上中期选举临近带来的不确定性。",
+      "sources": [
+        { "name": "Edward Jones", "url": "https://www.edwardjones.com/us-en/market-news-insights/stock-market-news/stock-market-weekly-update" }
+      ]
+    },
+    {
+      "rank": 9,
+      "tier": "noise",
+      "headline": "IFA 2026：英伟达与微软推本地推理，Agent 部署门槛下降",
+      "sectors": ["AI", "终端"],
+      "body": "英伟达、微软及合作伙伴在 IFA 2026 展示更快的本地推理和一套让 agent 更容易在本地硬件上部署的工具。",
+      "sources": [
+        { "name": "NVIDIA Newsroom", "url": "https://nvidianews.nvidia.com/" }
+      ]
+    },
+    {
+      "rank": 10,
+      "tier": "noise",
+      "headline": "回撤发生在创纪录涨势之后：9 月 3 日标普还涨了 1.06%",
+      "sectors": ["市场结构"],
+      "body": "周四标普 500 涨 1.06% 收于 7,747.71，纳指涨 1.4%，道指涨 624 点。周五的下跌只是打断了一段刚刚创下纪录的涨势，不是趋势反转的确认。",
+      "sources": [
+        { "name": "CNBC", "url": "https://www.cnbc.com/2026/09/02/stock-market-today-live-updates.html" }
+      ]
+    }
+  ],
+  "calendar": [
+    { "when": "Mon 9/7", "time": "全天", "event": "劳工节，美股与债市休市", "weight": "high" },
+    { "when": "Tue 9/8", "time": "—", "event": "四天交易周开始", "weight": "low" },
+    { "when": "本周内", "time": "—", "event": "UiPath、C3.ai 财报（空头拥挤）", "weight": "mid" },
+    { "when": "Fri 9/11", "time": "08:30 ET", "event": "8 月 CPI，nowcast +3.38% YoY", "weight": "high" },
+    { "when": "本月晚些", "time": "—", "event": "9 月 FOMC 决议，当前定价 68% 加息", "weight": "high" }
+  ]
+}
