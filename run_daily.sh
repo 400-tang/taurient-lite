@@ -25,5 +25,16 @@ echo "[$(date)] 开始生成 $TODAY 的简报" >> "$LOGDIR/run.log"
   >> "$LOGDIR/$TODAY.log" 2>&1
 
 STATUS=$?
+
+# 生成成功就立刻推回 GitHub。云端任务靠远程仓库里有没有当天的 JSON
+# 来判断是否已经跑过，不推上去它就会重复生成一遍。
+if [ $STATUS -eq 0 ] && [ -f "$DIR/briefs/$TODAY.json" ]; then
+  git add -A >> "$LOGDIR/run.log" 2>&1
+  git commit -q -m "简报 $TODAY" >> "$LOGDIR/run.log" 2>&1
+  git pull --rebase -q >> "$LOGDIR/run.log" 2>&1
+  git push -q origin main >> "$LOGDIR/run.log" 2>&1
+  echo "[$(date)] 已推送到 GitHub" >> "$LOGDIR/run.log"
+fi
+
 echo "[$(date)] 结束，退出码 $STATUS" >> "$LOGDIR/run.log"
 exit $STATUS
