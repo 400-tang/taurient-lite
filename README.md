@@ -39,6 +39,21 @@ taurient-lite/
 3. 排序：影响的资产范围 > 意外程度 > 时效性 > 报道密度
 4. 渲染：`python3 render.py`，然后发布到同一个 Artifact 链接
 
+## 定时运行
+
+**本地（已装好）。** launchd 任务 `com.eddie.taurient-lite`，每周一到周五 6:00 PT
+调用 `run_daily.sh`。脚本会先检查当天的 JSON 是否已存在，存在就跳过，
+所以合盖休眠后唤醒补跑不会重复生成。日志在 `logs/`。
+
+```bash
+launchctl print gui/$(id -u)/com.eddie.taurient-lite   # 看状态
+launchctl kickstart -k gui/$(id -u)/com.eddie.taurient-lite   # 立刻跑一次
+launchctl bootout gui/$(id -u)/com.eddie.taurient-lite        # 停掉
+```
+
+**云端（待接）。** 见 `CLOUD_SETUP.md`。笔记本关机时由云端兜底，
+两边发布到同一个 Artifact 链接。
+
 ## 手动跑一次
 
 ```bash
