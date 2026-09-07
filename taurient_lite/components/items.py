@@ -66,10 +66,17 @@ def sources_block(item: Item) -> str:
 
 
 def render_item(item: Item, today: dt.date) -> str:
-    """一条完整的新闻条目。"""
+    """一条完整的新闻条目。
+
+    ``data-tickers`` 是给客户端脚本用的——后端的个人自选股面板要知道
+    「这条新闻涉及哪些代码」，不想每次都重新解析可见文字，直接从这个
+    属性读一份空格分隔的代码列表。这个属性在 Artifact 发布的版本里
+    什么也不干，是完全无害的静态标记，只有 backend/ 那边的 JS 会用它。
+    """
     tier_class = TIER_CLASS[item.tier]
+    tickers_attr = f' data-tickers="{esc(" ".join(item.tickers))}"' if item.tickers else ""
     parts = [
-        f'<article class="item {tier_class}" id="item-{item.rank}">',
+        f'<article class="item {tier_class}" id="item-{item.rank}"{tickers_attr}>',
         f'<div class="rank">{item.rank:02d}</div>',
         "<div>",
         f"<h3>{esc(item.headline)}</h3>",

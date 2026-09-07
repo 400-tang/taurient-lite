@@ -223,6 +223,15 @@ class TestItems(unittest.TestCase):
         item = Item.from_dict(F.make_item(rank=7), "i")
         self.assertIn('id="item-7"', items.render_item(item, TODAY))
 
+    def test_data_tickers_attribute_present_when_tickers_exist(self):
+        item = Item.from_dict(F.make_item(tickers=["NVDA", "TSLA"]), "i")
+        html = items.render_item(item, TODAY)
+        self.assertIn('data-tickers="NVDA TSLA"', html)
+
+    def test_data_tickers_attribute_omitted_when_no_tickers(self):
+        item = Item.from_dict(F.make_item(tickers=[]), "i")
+        self.assertNotIn("data-tickers", items.render_item(item, TODAY))
+
     def test_rank_zero_padded(self):
         item = Item.from_dict(F.make_item(rank=3), "i")
         self.assertIn(">03<", items.render_item(item, TODAY))

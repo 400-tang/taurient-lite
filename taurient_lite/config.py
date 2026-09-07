@@ -48,6 +48,33 @@ class Freshness:
 
 
 @dataclass(frozen=True, slots=True)
+class Supabase:
+    """账号与个人自选股用的 Supabase 项目凭据。
+
+    ``anon_key`` 是设计成可以公开的那把钥匙——真正挡住别人读写他人数据的
+    是 Supabase 那边的行级安全策略，不是这把钥匙保不保密。两个字段留空
+    时（默认值）表示没配置账号功能，backend 那边看到空值就不渲染登录面板。
+    """
+
+    url: str = ""
+    anon_key: str = ""
+
+    @property
+    def configured(self) -> bool:
+        return bool(self.url and self.anon_key)
+
+    @classmethod
+    def from_dict(cls, data: Any) -> Supabase:
+        data = data or {}
+        if not isinstance(data, dict):
+            raise ConfigError("supabase 应该是一个对象")
+        return cls(
+            url=str(data.get("url", "") or ""),
+            anon_key=str(data.get("anon_key", "") or ""),
+        )
+
+
+@dataclass(frozen=True, slots=True)
 class Config:
     """整个工具的配置。"""
 
@@ -58,6 +85,7 @@ class Config:
     watchlist: tuple[str, ...] = ()
     min_items: int = 15
     scope: tuple[str, ...] = ()
+    supabase: Supabase = field(default_factory=Supabase)
 
     @classmethod
     def from_dict(cls, data: Any) -> Config:
@@ -99,6 +127,7 @@ class Config:
             watchlist=symbols(watchlist_raw.get("symbols"), "watchlist.symbols"),
             min_items=min_items,
             scope=tuple(str(s) for s in scope_raw),
+            supabase=Supabase.from_dict(data.get("supabase")),
         )
 
     @classmethod

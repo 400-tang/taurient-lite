@@ -42,7 +42,7 @@
   ],
   "watchlist": {
     "source": "manual",
-    "note": "TradingView 导出的 TXT 用 import_watchlist.py 导进来。Robinhood 没有公开的股票 API，只能手工维护。",
+    "note": "这是给每日新闻扫描用的默认名单，决定 RUNBOOK 第 1 步额外查哪些代码。跟登录后每个人在 Supabase 里存的个人自选股是两回事——那个只做前端个性化筛选，不影响扫描范围。TradingView 导出的 TXT 用 import_watchlist.py 导进来。Robinhood 没有公开的股票 API，只能手工维护。",
     "symbols": [
       "NVDA",
       "TSLA",
@@ -53,5 +53,10 @@
       "PLTR",
       "COIN"
     ]
+  },
+  "supabase": {
+    "url": "https://lnfltkmhdnjzfooszmuh.supabase.co",
+    "anon_key": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxuZmx0a21oZG5qemZvb3N6bXVoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODg3NDAwMzYsImV4cCI6MjEwNDMxNjAzNn0.SRnLKSEE0D9u3hvWq79CFnAl-qyhctHtLV5UP2m8XFo",
+    "note": "anon key 设计成可以公开，真正的权限控制靠 Supabase 那边 watchlists 表的行级安全策略，不是这把钥匙保密。只有 backend/ 那个 Web 服务会用它渲染登录面板，云端每日扫描任务完全用不到。"
   }
 }

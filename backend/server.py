@@ -39,6 +39,8 @@ from taurient_lite.quotes import Quote, QuoteError, fetch_quote
 from taurient_lite.schema import Brief
 from taurient_lite.short_interest import ShortInterestError, fetch_latest
 
+from . import auth_panel
+
 ROOT = Path(__file__).resolve().parent.parent
 PATHS = Paths(ROOT)
 
@@ -72,6 +74,7 @@ def _wrap_page(brief: Brief, config: Config) -> str:
     """
     head = render_head()
     body = render_body(brief, config)
+    panel = auth_panel.render(config.supabase)  # 没配 Supabase 时是空串
     return (
         "<!doctype html>\n"
         '<html lang="zh">\n'
@@ -80,7 +83,7 @@ def _wrap_page(brief: Brief, config: Config) -> str:
         '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
         f"{head}\n"
         "</head>\n"
-        f"<body>\n{body}\n</body>\n"
+        f"<body>\n{panel}\n{body}\n</body>\n"
         "</html>\n"
     )
 

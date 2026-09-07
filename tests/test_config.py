@@ -11,7 +11,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from taurient_lite.config import Config, ConfigError, Freshness
+from taurient_lite.config import Config, ConfigError, Freshness, Supabase
 
 from . import fixtures as F
 
@@ -45,6 +45,26 @@ class TestFreshness(unittest.TestCase):
             Freshness.from_dict(["nope"])
 
 
+class TestSupabase(unittest.TestCase):
+    def test_defaults_to_unconfigured(self):
+        cfg = Supabase.from_dict(None)
+        self.assertEqual(cfg.url, "")
+        self.assertFalse(cfg.configured)
+
+    def test_configured_when_both_present(self):
+        cfg = Supabase.from_dict({"url": "https://x.supabase.co", "anon_key": "eyJ..."})
+        self.assertTrue(cfg.configured)
+
+    def test_not_configured_when_only_one_present(self):
+        """半配置状态视为未配置，不该渲染一个必然报错的登录框。"""
+        cfg = Supabase.from_dict({"url": "https://x.supabase.co"})
+        self.assertFalse(cfg.configured)
+
+    def test_non_object_rejected(self):
+        with self.assertRaises(ConfigError):
+            Supabase.from_dict(["nope"])
+
+
 class TestConfig(unittest.TestCase):
     def test_parses_full_config(self):
         cfg = Config.from_dict(F.make_config())
@@ -61,6 +81,14 @@ class TestConfig(unittest.TestCase):
         self.assertEqual(cfg.watchlist, ())
         self.assertEqual(cfg.min_items, 15)
         self.assertEqual(cfg.freshness.max_age_days, 3)
+        self.assertFalse(cfg.supabase.configured)
+
+    def test_supabase_block_wired_through(self):
+        cfg = Config.from_dict(
+            F.make_config(supabase={"url": "https://x.supabase.co", "anon_key": "eyJ..."})
+        )
+        self.assertTrue(cfg.supabase.configured)
+        self.assertEqual(cfg.supabase.url, "https://x.supabase.co")
 
     def test_blank_symbol_rejected(self):
         with self.assertRaises(ConfigError) as ctx:

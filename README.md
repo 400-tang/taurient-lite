@@ -49,6 +49,7 @@ taurient-lite/
 │   └── short_interest.py   FINRA 空头持仓抓取，研究/核实工具
 ├── backend/                Web 后端，部署在 Render，唯一需要装依赖的地方
 │   ├── server.py           FastAPI，复用 taurient_lite，不重新实现逻辑
+│   ├── auth_panel.py       登录与个人自选股面板（Supabase），backend 独有
 │   ├── requirements.txt    fastapi / uvicorn / httpx
 │   └── test_server.py      路由测试，独立于主测试套件
 ├── tests/                  243 个用例，零依赖
@@ -103,6 +104,62 @@ taurient-lite/
 新闻扫描、分层、深度元数据这些需要模型判断力的活，还是云端的 Claude Code
 定时任务在做——这个后端不碰那部分，只在已生成的数据上加一层「现场再问
 一次」的能力。
+
+### 账号与个人自选股
+
+`backend/auth_panel.py` 加了一个登录面板，用 Supabase 做账号系统：邮箱
+魔法链接登录（不设密码），每个人自己的自选股存在 Supabase 的一张表里，
+用行级安全策略锁死——谁都只能读写自己那一行。登录后，当天已经扫描好的
+新闻里凡是涉及自己关心的股票的条目会高亮，还有个开关可以直接把不相关的
+条目全部隐藏，只看跟自己有关的。
+
+这一层**只存在于 backend 渲染的页面里，不影响 Artifact 发布的那份**——
+`taurient_lite/` 核心包对 Supabase 一无所知，保持零依赖，账号系统需要的
+东西全在 `backend/` 目录下自成一体。每条新闻在渲染时会带一个
+`data-tickers` 属性标出涉及哪些代码（`taurient_lite/components/items.py`
+里加的），这个属性本身对 Artifact 版本完全无害，只有登录面板的 JS 会用它。
+
+配置在 `config.json` 的 `supabase` 块：
+
+```json
+"supabase": {
+  "url": "https://你的项目.supabase.co",
+  "anon_key": "eyJ..."
+}
+```
+
+`anon_key` 设计成可以公开——它本来就要被嵌进浏览器代码里，真正挡住越权
+读写的是 Supabase 那边的行级安全策略。两个字段留空就是没开这个功能，
+`/` 页面上不会出现登录面板。
+
+**要接自己的 Supabase 项目：**
+
+1. supabase.com 建一个免费项目
+2. 项目的 SQL Editor 里建表并开行级安全：
+
+   ```sql
+   create table watchlists (
+     user_id uuid references auth.users(id) primary key,
+     symbols text[] not null default '{}',
+     updated_at timestamptz not null default now()
+   );
+
+   alter table watchlists enable row level security;
+
+   create policy "read own watchlist"
+     on watchlists for select using (auth.uid() = user_id);
+   create policy "write own watchlist"
+     on watchlists for insert with check (auth.uid() = user_id);
+   create policy "update own watchlist"
+     on watchlists for update using (auth.uid() = user_id);
+   ```
+
+3. Authentication → Providers 确认 Email 是开着的（默认开）
+4. Project Settings → API 里的 Project URL 和 anon/publishable key 填进
+   `config.json` 的 `supabase` 块
+
+免费额度：每月 5 万活跃用户、500MB 数据库，几个人用完全够，唯一要注意的
+是项目连续一周没人访问会自动暂停，需要去后台手动点一下唤醒。
 
 **部署到 Render：** 后台选 New → Blueprint，连上这个仓库，读
 `render.yaml` 自动建好服务，不需要手动填 build/start 命令。

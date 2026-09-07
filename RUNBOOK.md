@@ -269,6 +269,10 @@ python3 import_watchlist.py ~/Downloads/watchlist.txt --replace   # 整个覆盖
 Robinhood 接不了。到 2026 年它仍然没有公开的股票 API，唯一开放的是加密货币
 交易 API，股票端点从未文档化且服务条款禁止自动化访问。
 
+这个自选股只决定第 1 步扫描时额外查哪些代码，跟 backend 那边每个人
+登录后在 Supabase 里存的个人自选股是两回事，改这个不影响任何人已经
+存好的个人列表。
+
 ## 改覆盖范围
 
 编辑 `config.json` 的 `scope`，第 1 步的查询会跟着变。改条数目标就动
