@@ -1,0 +1,18 @@
+# Render 的 Blueprint 配置：https://render.com/docs/blueprint-spec
+#
+# 在 Render 后台选「New +」→「Blueprint」，连上这个仓库，它会读这个文件
+# 自动建好服务，不需要在网页上手动填 build/start command。
+#
+# 根目录保持在仓库根（默认），这样 backend/server.py 里
+# `from taurient_lite import ...` 才能正常找到包——taurient_lite/
+# 就在仓库根目录下，跟 backend/ 是平级目录。
+
+services:
+  - type: web
+    name: taurient-lite-backend
+    runtime: python
+    plan: free
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: uvicorn backend.server:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    autoDeploy: true

@@ -36,7 +36,8 @@ taurient-lite/
 ├── fetch_quotes.py         命令行入口：取行情
 ├── fetch_short_interest.py 命令行入口：查 FINRA 官方空头持仓
 ├── import_watchlist.py     导入 TradingView 的自选股导出
-├── taurient_lite/          渲染流水线
+├── render.yaml             Render 部署配置（Blueprint）
+├── taurient_lite/          渲染流水线，零第三方依赖
 │   ├── schema.py           数据定义与校验
 │   ├── config.py           配置读取
 │   ├── theme.py            设计 token 与样式表
@@ -46,6 +47,10 @@ taurient-lite/
 │   ├── pipeline.py         编排
 │   ├── quotes.py           行情抓取
 │   └── short_interest.py   FINRA 空头持仓抓取，研究/核实工具
+├── backend/                Web 后端，部署在 Render，唯一需要装依赖的地方
+│   ├── server.py           FastAPI，复用 taurient_lite，不重新实现逻辑
+│   ├── requirements.txt    fastapi / uvicorn / httpx
+│   └── test_server.py      路由测试，独立于主测试套件
 ├── tests/                  243 个用例，零依赖
 ├── briefs/                 每日 JSON（真相来源）与 Markdown 存档
 └── site/index.html         渲染产物，发布成 Artifact
@@ -81,6 +86,44 @@ taurient-lite/
 
 **本地定时已停用。** `com.eddie.taurient-lite.plist.disabled` 和 `run_daily.sh`
 留在仓库里备查。云端已经覆盖所有情况，再跑一份本地的只会重复消耗额度。
+
+## 后端服务
+
+`backend/` 是一个独立的 FastAPI 服务，部署在 Render，直接复用 `taurient_lite`
+包，不重新实现任何抓取或渲染逻辑。它解决 Artifact 静态页面做不到的两件事：
+
+- **现场刷新**：`/api/quotes/live` 和 `/api/quote/{ticker}` 现场去查 Yahoo，
+  拿到的是此刻的价格，不用等第二天的定时任务
+- **任意股票查询**：`/api/short-interest/{ticker}` 能查任何一只股票在 FINRA
+  的最新空头持仓，不限于 `config.json` 里固定的名单
+
+`/` 现场读 `briefs/` 目录里最新的 JSON 并渲染成页面，跟 Artifact 上那份的
+区别是它永远反映仓库里最新的数据，不需要手动发布。
+
+新闻扫描、分层、深度元数据这些需要模型判断力的活，还是云端的 Claude Code
+定时任务在做——这个后端不碰那部分，只在已生成的数据上加一层「现场再问
+一次」的能力。
+
+**部署到 Render：** 后台选 New → Blueprint，连上这个仓库，读
+`render.yaml` 自动建好服务，不需要手动填 build/start 命令。
+
+**本地跑：**
+
+```bash
+pip install -r backend/requirements.txt
+uvicorn backend.server:app --reload
+```
+
+要在仓库根目录下跑，`taurient_lite` 包才能被正常导入。
+
+**测试：**
+
+```bash
+python3 -m unittest backend.test_server -v
+```
+
+这套测试独立于主测试套件（`tests/`），因为主套件必须保持零依赖，
+不能因为后端需要 FastAPI 就连带装进每日生成流水线的运行环境。
 
 ## 手动跑一次
 

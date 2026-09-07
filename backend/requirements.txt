@@ -1,0 +1,8 @@
+# backend/ 专用依赖，跟每日生成流水线（taurient_lite/ 主包）完全无关，
+# 那边保持零第三方依赖不变。这里的版本锁死小版本号，跟 render.yaml
+# 里的部署配置一起，保证本地开发和 Render 上跑的是同一个版本。
+fastapi==0.115.14
+uvicorn[standard]==0.32.1
+
+# 只有跑 backend/test_server.py 时才需要，FastAPI 的 TestClient 依赖它。
+httpx==0.27.2
