@@ -9,6 +9,7 @@
     *_renderer  组装层，只依赖 components
     pipeline    编排层，读文件、调渲染、写文件
     quotes      行情抓取，独立于渲染，跑在渲染之前
+    short_interest  FINRA 空头持仓抓取，研究/核实工具，不进渲染流程
 
 这样任何一层都能单独测试：schema 不需要文件，components 不需要磁盘，
 pipeline 换个临时目录就能端到端跑一遍。

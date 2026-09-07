@@ -534,13 +534,17 @@
         "PATH",
         "AI"
       ],
-      "body": "两家公司本周公布财报，做空仓位都异常极端：UiPath 被做空 1.16 亿股，约占流通盘 29%；C3.ai 被做空 4,800 万股，超过流通盘 34%。",
-      "why": "这个量级的空头拥挤度意味着，任何不算差的财报都可能触发轧空。这是仓位结构的信息，不是基本面的信息。",
+      "body": "两家公司本周公布财报。做空仓位方面，FINRA 官方数据显示 C3.ai 截至 8 月 14 日结算空头持仓 4,814 万股，较上期增加 3.97%，回补天数 11.46 天；UiPath 已于 9 月 3 日公布财报。C3.ai 的仓位拥挤度足以让财报后的反应被放大。",
+      "why": "回补天数超过 11 天意味着空头平仓需要十多个交易日的量能，任何不算差的财报都可能触发多日的挤压式反弹，这是仓位结构的信息，不是基本面的信息。",
       "impact": "AI 软件板块 · 高波动个股",
       "sources": [
         {
-          "name": "Seeking Alpha",
-          "url": "https://seekingalpha.com/article/4725259-wall-street-breakfast-week-ahead"
+          "name": "FINRA 官方空头持仓数据",
+          "url": "https://www.finra.org/finra-data/browse-catalog/equity-short-interest/data"
+        },
+        {
+          "name": "TipRanks",
+          "url": "https://www.tipranks.com/stocks/ai/earnings"
         }
       ]
     },
@@ -704,7 +708,7 @@
     {
       "when": "Wed 9/9",
       "time": "盘后",
-      "event": "C3.ai 财报，做空仓位报告口径不一，介于流通盘 28%-34%",
+      "event": "C3.ai 财报，空头持仓 4,814 万股（8/14 结算，较上期 +3.97%，回补天数 11.5 天）",
       "weight": "mid",
       "date": "2026-09-09",
       "sources": [
@@ -713,12 +717,8 @@
           "url": "https://www.tipranks.com/stocks/ai/earnings"
         },
         {
-          "name": "Seeking Alpha",
-          "url": "https://seekingalpha.com/article/4725259-wall-street-breakfast-week-ahead"
-        },
-        {
-          "name": "Quiver Quantitative",
-          "url": "https://www.quiverquant.com/news/C3.ai+Stock+Short+Interest+Rises+to+33.12%25"
+          "name": "FINRA 官方空头持仓数据",
+          "url": "https://www.finra.org/finra-data/browse-catalog/equity-short-interest/data"
         }
       ]
     },

@@ -34,6 +34,7 @@ taurient-lite/
 ├── config.json             覆盖范围、条数目标、时效上限、自选股
 ├── render.py               命令行入口：渲染
 ├── fetch_quotes.py         命令行入口：取行情
+├── fetch_short_interest.py 命令行入口：查 FINRA 官方空头持仓
 ├── import_watchlist.py     导入 TradingView 的自选股导出
 ├── taurient_lite/          渲染流水线
 │   ├── schema.py           数据定义与校验
@@ -43,8 +44,9 @@ taurient-lite/
 │   ├── html_renderer.py    组装整页
 │   ├── markdown_renderer.py 组装存档
 │   ├── pipeline.py         编排
-│   └── quotes.py           行情抓取
-├── tests/                  229 个用例，零依赖
+│   ├── quotes.py           行情抓取
+│   └── short_interest.py   FINRA 空头持仓抓取，研究/核实工具
+├── tests/                  243 个用例，零依赖
 ├── briefs/                 每日 JSON（真相来源）与 Markdown 存档
 └── site/index.html         渲染产物，发布成 Artifact
 ```
@@ -58,7 +60,10 @@ taurient-lite/
 
 ## 每天发生什么
 
-1. 扫描：至少 12 组查询加逐个自选股，重要条目用原文核对数字
+1. 扫描：至少 12 组查询加逐个自选股，重要条目用原文核对数字。三类
+   硬数字优先查一手源头而不是二手汇总站：联储会议日期查
+   federalreserve.gov，财报日期与公司公告查 SEC EDGAR 备案，
+   空头持仓用 `fetch_short_interest.py` 查 FINRA 官方数据
 2. 筛选：同一事件跨媒体合并，来源数量当重要性信号，分成三层
 3. 写 JSON：必读层补齐资产矩阵、交叉信源、历史脉络
 4. 取行情并渲染：`fetch_quotes.py` 然后 `render.py`
@@ -96,7 +101,7 @@ python3 render.py 2026-09-06
 python3 -m unittest discover -s tests -t .
 ```
 
-229 个用例，只用标准库。改完 `taurient_lite/` 下的任何文件都要跑一遍。
+243 个用例，只用标准库。改完 `taurient_lite/` 下的任何文件都要跑一遍。
 覆盖反序列化的每条校验规则、组件的空数据分支、主题三个块的完整性、
 HTML 转义、行情解析与重试路径、以及临时目录里的端到端渲染。
 
