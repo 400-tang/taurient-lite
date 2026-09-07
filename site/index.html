@@ -1,113 +1,167 @@
 <title>Morning Tape</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<style>
-:root {
-  --paper:        #EDEFF0;
-  --paper-sunk:   #E3E6E8;
-  --rule:         #C6CCD0;
-  --rule-soft:    #D8DDE0;
-  --ink:          #131A21;
-  --ink-mid:      #4A555E;
-  --ink-faint:    #79848C;
-  --accent:       #1F3FCB;
-  --accent-soft:  #DDE2F7;
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&amp;family=IBM+Plex+Sans:wght@400;450;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap">
+<style>:root {
+  --paper: #EDEFF0;
+  --paper-raised: #F6F7F8;
+  --paper-sunk: #E3E6E8;
+  --rule: #C6CCD0;
+  --rule-soft: #D8DDE0;
+  --rule-hair: #E5E8EA;
+  --ink: #131A21;
+  --ink-mid: #4A555E;
+  --ink-faint: #79848C;
+  --accent: #1F3FCB;
+  --accent-soft: #DDE2F7;
+  --accent-strong: #16309E;
+  --up: #12916A;
+  --down: #C4342B;
+  --flat: #79848C;
+  --up-wash: #D6EDE4;
+  --down-wash: #F7DEDB;
+  --flat-wash: #E3E6E8;
+  --tier-1: #C4342B;
+  --tier-2: #1F3FCB;
+  --tier-3: #79848C;
 
-  /* 涨跌是语义色，与品牌色分开，且经过色盲可辨度校验（deutan ΔE 8.1）。 */
-  --up:           #12916A;
-  --down:         #C4342B;
-  --up-wash:      #D6EDE4;
-  --down-wash:    #F7DEDB;
+  --font-display: "Newsreader", Georgia, "Songti SC", "Noto Serif CJK SC", serif;
+  --font-body: "IBM Plex Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
+  --font-data: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
 
-  --tier-1:       #C4342B;
-  --tier-2:       #1F3FCB;
-  --tier-3:       #79848C;
+  --t-2xs: 0.625rem;
+  --t-xs: 0.6875rem;
+  --t-sm: 0.8125rem;
+  --t-base: 0.9375rem;
+  --t-md: 1.0625rem;
+  --t-lg: 1.3125rem;
+  --t-xl: 1.5rem;
+  --t-2xl: clamp(2rem, 5.5vw, 2.75rem);
 
-  --display: "Newsreader", Georgia, "Songti SC", serif;
-  --body: "IBM Plex Sans", "PingFang SC", "Hiragino Sans GB", system-ui, sans-serif;
-  --data: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --track-label: 0.14em;
+  --track-mono: 0.04em;
+  --track-display: -0.015em;
+
+  --measure: 34rem;          /* 正文单行约 65 个西文字符 */
+  --gutter: 1.5rem;
+  --rail: 2.6rem;            /* 左侧序号轨的宽度 */
 }
 
+/* 读者没有显式选主题时跟随系统；显式选了亮色则这里不生效。 */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --paper:       #0E1317;
-    --paper-sunk:  #161C21;
-    --rule:        #2C353C;
-    --rule-soft:   #212930;
-    --ink:         #DDE3E7;
-    --ink-mid:     #9AA6AE;
-    --ink-faint:   #6C7982;
-    --accent:      #8AA0FF;
+    --paper: #0E1317;
+    --paper-raised: #151C22;
+    --paper-sunk: #161C21;
+    --rule: #2C353C;
+    --rule-soft: #212930;
+    --rule-hair: #1B2228;
+    --ink: #DDE3E7;
+    --ink-mid: #9AA6AE;
+    --ink-faint: #6C7982;
+    --accent: #8AA0FF;
     --accent-soft: #1B2340;
-    --up:          #1FAD82;
-    --down:        #E4634F;
-    --up-wash:     #14312A;
-    --down-wash:   #34201D;
-    --tier-1:      #E4634F;
-    --tier-2:      #8AA0FF;
-    --tier-3:      #6C7982;
+    --accent-strong: #AEBEFF;
+    --up: #1FAD82;
+    --down: #E4634F;
+    --flat: #6C7982;
+    --up-wash: #14312A;
+    --down-wash: #34201D;
+    --flat-wash: #1B2228;
+    --tier-1: #E4634F;
+    --tier-2: #8AA0FF;
+    --tier-3: #6C7982;
   }
 }
 
+/* 读者显式选了暗色，压过系统设置。 */
 :root[data-theme="dark"] {
-  --paper:       #0E1317;
-  --paper-sunk:  #161C21;
-  --rule:        #2C353C;
-  --rule-soft:   #212930;
-  --ink:         #DDE3E7;
-  --ink-mid:     #9AA6AE;
-  --ink-faint:   #6C7982;
-  --accent:      #8AA0FF;
+  --paper: #0E1317;
+  --paper-raised: #151C22;
+  --paper-sunk: #161C21;
+  --rule: #2C353C;
+  --rule-soft: #212930;
+  --rule-hair: #1B2228;
+  --ink: #DDE3E7;
+  --ink-mid: #9AA6AE;
+  --ink-faint: #6C7982;
+  --accent: #8AA0FF;
   --accent-soft: #1B2340;
-  --up:          #1FAD82;
-  --down:        #E4634F;
-  --up-wash:     #14312A;
-  --down-wash:   #34201D;
-  --tier-1:      #E4634F;
-  --tier-2:      #8AA0FF;
-  --tier-3:      #6C7982;
+  --accent-strong: #AEBEFF;
+  --up: #1FAD82;
+  --down: #E4634F;
+  --flat: #6C7982;
+  --up-wash: #14312A;
+  --down-wash: #34201D;
+  --flat-wash: #1B2228;
+  --tier-1: #E4634F;
+  --tier-2: #8AA0FF;
+  --tier-3: #6C7982;
 }
 
-* { box-sizing: border-box; }
+*, *::before, *::after { box-sizing: border-box; }
 
 body {
   background: var(--paper);
   color: var(--ink);
-  font-family: var(--body);
-  font-size: 16px;
-  line-height: 1.6;
+  font-family: var(--font-body);
+  font-size: var(--t-base);
+  font-weight: 400;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 .sheet {
-  max-width: 46rem;
+  max-width: 48rem;
   margin: 0 auto;
-  padding: 2.5rem 1.5rem 5rem;
+  padding: 2.75rem var(--gutter) 5rem;
+}
+
+/* 全大写小标签的通用形态。整页所有 eyebrow 都走这一个类。 */
+.label {
+  font-family: var(--font-body);
+  font-size: var(--t-xs);
+  font-weight: 600;
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+}
+
+.mono {
+  font-family: var(--font-data);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: var(--track-mono);
 }
 
 /* ---------------------------------------------------------------- masthead */
 
-.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 0.75rem; }
+.masthead {
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 0.8rem;
+}
 
 .masthead h1 {
-  font-family: var(--display);
+  font-family: var(--font-display);
   font-weight: 500;
-  font-size: clamp(2rem, 6vw, 2.9rem);
-  line-height: 1.05;
-  letter-spacing: -0.015em;
+  font-size: var(--t-2xl);
+  line-height: 1.02;
+  letter-spacing: var(--track-display);
   margin: 0;
   text-wrap: balance;
 }
 
-.masthead h1 em { font-style: italic; color: var(--accent); }
+.masthead h1 em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--accent);
+}
 
 .stamp {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.35rem 1.1rem;
-  margin-top: 0.9rem;
-  font-family: var(--data);
-  font-size: 0.7rem;
-  letter-spacing: 0.06em;
+  gap: 0.3rem 1.15rem;
+  margin-top: 0.95rem;
+  font-family: var(--font-data);
+  font-size: var(--t-2xs);
+  letter-spacing: 0.07em;
   text-transform: uppercase;
   color: var(--ink-faint);
 }
@@ -115,13 +169,15 @@ body {
 .stamp b { color: var(--ink-mid); font-weight: 500; }
 
 .lede {
-  font-family: var(--display);
-  font-size: 1.3rem;
+  font-family: var(--font-display);
+  font-size: var(--t-lg);
+  font-weight: 400;
   line-height: 1.5;
-  margin: 1.6rem 0 0;
-  padding-left: 1rem;
+  margin: 1.7rem 0 0;
+  padding-left: 1.05rem;
   border-left: 3px solid var(--accent);
   text-wrap: pretty;
+  max-width: var(--measure);
 }
 
 /* ----------------------------------------------------------- section heads */
@@ -130,95 +186,73 @@ body {
   display: flex;
   align-items: baseline;
   gap: 0.6rem;
-  margin: 2.8rem 0 0.2rem;
-  padding-bottom: 0.35rem;
+  margin: 3rem 0 0.2rem;
+  padding-bottom: 0.4rem;
   border-bottom: 1px solid var(--rule);
 }
 
-.sec-head h2 {
-  font-family: var(--body);
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  margin: 0;
-}
+.sec-head h2 { margin: 0; }
+.sec-head .n { font-family: var(--font-data); font-size: var(--t-xs); color: var(--ink-faint); }
 
-.sec-head .n { font-family: var(--data); font-size: 0.72rem; color: var(--ink-faint); }
 .sec-head .asof {
   margin-left: auto;
-  font-family: var(--data);
-  font-size: 0.65rem;
+  font-family: var(--font-data);
+  font-size: var(--t-2xs);
   color: var(--ink-faint);
-  text-transform: none;
-  letter-spacing: 0.02em;
+  letter-spacing: var(--track-mono);
 }
 
 .t1 h2 { color: var(--tier-1); }
 .t2 h2 { color: var(--tier-2); }
 .t3 h2 { color: var(--tier-3); }
 
-/* ------------------------------------------------------------ mag7 diverging bars */
 
-.mag7 { margin-top: 0.9rem; }
+.mag7 { margin-top: 1rem; }
 
 .mag7-row {
   display: grid;
-  grid-template-columns: 3.6rem 1fr 4.2rem;
+  grid-template-columns: 3.7rem 1fr 4.4rem;
   align-items: center;
   gap: 0 0.7rem;
-  padding: 0.22rem 0;
+  padding: 0.24rem 0;
   position: relative;
 }
 
 .mag7-row:hover .mag7-track { background: var(--paper-sunk); }
+.mag7-row:hover .mag7-price { opacity: 1; }
 
 .mag7-tick {
-  font-family: var(--data);
-  font-size: 0.8rem;
+  font-family: var(--font-data);
+  font-size: var(--t-sm);
   font-weight: 500;
-  letter-spacing: 0.02em;
+  letter-spacing: var(--track-mono);
 }
 
 .mag7-track {
   position: relative;
-  height: 1.35rem;
+  height: 1.4rem;
   border-radius: 2px;
-  transition: background 120ms ease;
+  transition: background 140ms ease;
 }
 
-/* 零轴。所有条形都从这条线出发，方向本身就是第二重编码。 */
+/* 零轴。条形从这里出发，方向本身就是颜色之外的第二重编码。 */
 .mag7-track::before {
   content: "";
   position: absolute;
   left: 50%;
-  top: -0.1rem;
-  bottom: -0.1rem;
+  top: -0.12rem;
+  bottom: -0.12rem;
   width: 1px;
   background: var(--rule);
 }
 
-.mag7-bar {
-  position: absolute;
-  top: 0.3rem;
-  height: 0.75rem;
-}
-
-.mag7-bar.up {
-  left: 50%;
-  background: var(--up);
-  border-radius: 0 3px 3px 0;
-}
-
-.mag7-bar.down {
-  right: 50%;
-  background: var(--down);
-  border-radius: 3px 0 0 3px;
-}
+.mag7-bar { position: absolute; top: 0.32rem; height: 0.76rem; }
+.mag7-bar.up { left: 50%; background: var(--up); border-radius: 0 3px 3px 0; }
+.mag7-bar.down { right: 50%; background: var(--down); border-radius: 3px 0 0 3px; }
 
 .mag7-val {
-  font-family: var(--data);
-  font-size: 0.8rem;
+  font-family: var(--font-data);
+  font-size: var(--t-sm);
   font-variant-numeric: tabular-nums;
   text-align: right;
 }
@@ -228,61 +262,60 @@ body {
 
 .mag7-price {
   position: absolute;
-  right: 4.9rem;
-  font-family: var(--data);
-  font-size: 0.7rem;
+  right: 5.1rem;
+  font-family: var(--font-data);
+  font-size: var(--t-2xs);
   color: var(--ink-faint);
   font-variant-numeric: tabular-nums;
   opacity: 0;
-  transition: opacity 120ms ease;
+  transition: opacity 140ms ease;
   pointer-events: none;
   background: var(--paper);
   padding: 0 0.3rem;
 }
 
-.mag7-row:hover .mag7-price { opacity: 1; }
-
 .mag7-axis {
   display: grid;
-  grid-template-columns: 3.6rem 1fr 4.2rem;
+  grid-template-columns: 3.7rem 1fr 4.4rem;
   gap: 0 0.7rem;
-  margin-top: 0.3rem;
+  margin-top: 0.35rem;
 }
 
 .mag7-axis .lbl {
   grid-column: 2;
   display: flex;
   justify-content: space-between;
-  font-family: var(--data);
-  font-size: 0.62rem;
+  font-family: var(--font-data);
+  font-size: var(--t-2xs);
   color: var(--ink-faint);
   font-variant-numeric: tabular-nums;
 }
 
 .mag7-foot {
-  margin-top: 0.55rem;
-  font-size: 0.78rem;
+  margin-top: 0.7rem;
+  font-size: var(--t-sm);
   color: var(--ink-mid);
+  max-width: var(--measure);
   text-wrap: pretty;
 }
 
-/* -------------------------------------------------------------- watchlist */
 
-.wl { margin-top: 0.9rem; }
-
+.wl { margin-top: 1rem; }
 .wl-grid { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 
 .wl-chip {
-  font-family: var(--data);
-  font-size: 0.76rem;
-  padding: 0.2rem 0.55rem;
+  font-family: var(--font-data);
+  font-size: var(--t-sm);
+  letter-spacing: var(--track-mono);
+  padding: 0.22rem 0.55rem;
   border: 1px solid var(--rule);
   border-radius: 2px;
   color: var(--ink-faint);
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
+  gap: 0.4rem;
+  transition: border-color 140ms ease, color 140ms ease;
 }
 
 .wl-chip.hit {
@@ -292,62 +325,71 @@ body {
   font-weight: 500;
 }
 
+.wl-chip.hit:hover { border-color: var(--accent-strong); color: var(--accent-strong); }
+
 .wl-chip .cnt {
-  font-size: 0.62rem;
+  font-size: var(--t-2xs);
   background: var(--accent);
   color: var(--paper);
   border-radius: 999px;
-  min-width: 1rem;
-  height: 1rem;
+  min-width: 1.05rem;
+  height: 1.05rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 
-.wl-foot { margin-top: 0.6rem; font-size: 0.78rem; color: var(--ink-mid); }
-
-/* -------------------------------------------------------------------- tape */
+.wl-foot, .tape-foot {
+  margin-top: 0.7rem;
+  font-size: var(--t-sm);
+  color: var(--ink-mid);
+}
 
 .tape-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
-  gap: 0;
-  margin-top: 0.5rem;
+  margin-top: 0.55rem;
 }
 
-.tape-cell { padding: 0.7rem 0.9rem 0.7rem 0; border-bottom: 1px solid var(--rule-soft); }
-.tape-cell .k { font-size: 0.72rem; color: var(--ink-faint); }
+.tape-cell { padding: 0.72rem 0.9rem 0.72rem 0; border-bottom: 1px solid var(--rule-soft); }
+.tape-cell .k { font-size: var(--t-sm); color: var(--ink-faint); }
+
 .tape-cell .v {
-  font-family: var(--data);
-  font-size: 1.05rem;
+  font-family: var(--font-data);
+  font-size: var(--t-md);
   font-variant-numeric: tabular-nums;
   margin-top: 0.15rem;
 }
-.tape-cell .d { font-family: var(--data); font-size: 0.72rem; font-variant-numeric: tabular-nums; }
+
+.tape-cell .d {
+  font-family: var(--font-data);
+  font-size: var(--t-2xs);
+  font-variant-numeric: tabular-nums;
+}
 
 .d.up { color: var(--up); }
 .d.down { color: var(--down); }
 .d.flat { color: var(--ink-faint); }
 
-/* ------------------------------------------------------------------- items */
 
 .item {
   display: grid;
-  grid-template-columns: 2.4rem 1fr;
-  gap: 0 0.9rem;
-  padding: 1.5rem 0;
+  grid-template-columns: var(--rail) 1fr;
+  gap: 0 0.95rem;
+  padding: 1.7rem 0;
   border-bottom: 1px solid var(--rule-soft);
   scroll-margin-top: 1rem;
 }
 
 .item .rank {
-  font-family: var(--data);
-  font-size: 0.95rem;
+  font-family: var(--font-data);
+  font-size: var(--t-base);
   font-variant-numeric: tabular-nums;
   color: var(--ink-faint);
-  padding-top: 0.28rem;
+  padding-top: 0.3rem;
   border-top: 2px solid currentColor;
   align-self: start;
+  transition: color 140ms ease;
 }
 
 .item.t1 .rank { color: var(--tier-1); }
@@ -355,42 +397,45 @@ body {
 .item.t3 .rank { color: var(--tier-3); }
 
 .item h3 {
-  font-family: var(--display);
+  font-family: var(--font-display);
   font-weight: 600;
-  font-size: 1.42rem;
-  line-height: 1.25;
-  letter-spacing: -0.01em;
+  font-size: var(--t-xl);
+  line-height: 1.22;
+  letter-spacing: var(--track-display);
   margin: 0;
   text-wrap: balance;
+  max-width: var(--measure);
+  transition: color 140ms ease;
 }
 
-.item.t3 h3 { font-size: 1.1rem; font-weight: 500; }
+.item.t3 h3 { font-size: var(--t-md); font-weight: 500; }
+.item:hover h3 { color: var(--accent-strong); }
 
 .meta {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.4rem;
-  margin-top: 0.55rem;
+  gap: 0.38rem;
+  margin-top: 0.6rem;
 }
 
 .tag {
-  font-family: var(--data);
-  font-size: 0.65rem;
-  letter-spacing: 0.05em;
+  font-family: var(--font-data);
+  font-size: var(--t-2xs);
+  letter-spacing: var(--track-mono);
   color: var(--ink-mid);
   border: 1px solid var(--rule);
   border-radius: 2px;
-  padding: 0.08rem 0.4rem;
+  padding: 0.1rem 0.42rem;
 }
 
 .tag.tk { color: var(--accent); border-color: var(--accent); font-weight: 500; }
 
 .age {
-  font-family: var(--data);
-  font-size: 0.65rem;
-  letter-spacing: 0.05em;
-  padding: 0.08rem 0.4rem;
+  font-family: var(--font-data);
+  font-size: var(--t-2xs);
+  letter-spacing: var(--track-mono);
+  padding: 0.1rem 0.42rem;
   border-radius: 2px;
 }
 
@@ -398,39 +443,47 @@ body {
 .age.aging { color: var(--ink-mid); background: var(--paper-sunk); }
 .age.stale { color: var(--ink-faint); border: 1px dashed var(--rule); }
 
-.item p { margin: 0.7rem 0 0; text-wrap: pretty; }
+.item p { margin: 0.75rem 0 0; max-width: var(--measure); text-wrap: pretty; }
 
 .why {
-  margin-top: 0.85rem;
-  padding: 0.7rem 0.9rem;
+  margin-top: 0.9rem;
+  padding: 0.75rem 0.95rem;
   background: var(--paper-sunk);
   border-left: 2px solid var(--accent);
+  max-width: var(--measure);
 }
 
 .why .lbl {
-  font-family: var(--data);
-  font-size: 0.63rem;
-  letter-spacing: 0.12em;
+  font-family: var(--font-data);
+  font-size: var(--t-2xs);
+  letter-spacing: var(--track-label);
   text-transform: uppercase;
   color: var(--accent);
   display: block;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.22rem;
 }
 
-.why p { margin: 0; font-size: 0.94rem; }
+.why p { margin: 0; font-size: var(--t-base); max-width: none; }
 
-.impact { margin-top: 0.65rem; font-family: var(--data); font-size: 0.73rem; color: var(--ink-mid); }
+.impact {
+  margin-top: 0.7rem;
+  font-family: var(--font-data);
+  font-size: var(--t-sm);
+  color: var(--ink-mid);
+}
+
 .impact::before { content: "\2192\00a0"; color: var(--ink-faint); }
 
-.srcs { margin-top: 0.7rem; }
+.srcs { margin-top: 0.75rem; }
 
 .srcs summary {
-  font-family: var(--data);
-  font-size: 0.68rem;
+  font-family: var(--font-data);
+  font-size: var(--t-2xs);
   letter-spacing: 0.06em;
   color: var(--ink-faint);
   cursor: pointer;
   list-style: none;
+  display: inline-block;
 }
 
 .srcs summary::-webkit-details-marker { display: none; }
@@ -438,61 +491,237 @@ body {
 .srcs[open] summary::before { content: "\2212 "; }
 .srcs summary:hover { color: var(--accent); }
 
-.srcs ul {
-  margin: 0.4rem 0 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.3rem 0.9rem;
-}
+.srcs ul { margin: 0.45rem 0 0; padding: 0; list-style: none; }
+.srcs li { margin-top: 0.3rem; font-size: var(--t-sm); color: var(--ink-mid); }
 
 .srcs a {
-  font-family: var(--data);
-  font-size: 0.72rem;
+  font-family: var(--font-data);
+  font-size: var(--t-sm);
   color: var(--accent);
   text-decoration: none;
   border-bottom: 1px solid var(--accent-soft);
+  transition: border-color 140ms ease;
 }
 
 .srcs a:hover { border-bottom-color: var(--accent); }
 
-/* ---------------------------------------------------------------- calendar */
 
-.cal-scroll { overflow-x: auto; margin-top: 0.4rem; }
+/* 三块深度元数据：资产波及矩阵占满宽度，交叉信源与历史脉络并排成微卡片。 */
 
-table { border-collapse: collapse; width: 100%; font-size: 0.9rem; }
+.depth { margin-top: 1.1rem; }
+
+.depth-head {
+  font-family: var(--font-data);
+  font-size: var(--t-2xs);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--rule-hair);
+  margin-bottom: 0.55rem;
+}
+
+/* --- 资产波及矩阵 --- */
+
+.assets {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(8.5rem, 1fr));
+  gap: 0.4rem;
+}
+
+.asset {
+  border: 1px solid var(--rule-hair);
+  border-radius: 3px;
+  padding: 0.5rem 0.6rem;
+  background: var(--paper-raised);
+  transition: border-color 140ms ease;
+}
+
+.asset:hover { border-color: var(--rule); }
+
+.asset-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.4rem;
+}
+
+.asset-name {
+  font-size: var(--t-sm);
+  font-weight: 500;
+  color: var(--ink);
+}
+
+/* 方向：箭头字形 + 文字 + 颜色，三重编码，色觉障碍读者不依赖颜色。 */
+.asset-dir {
+  font-family: var(--font-data);
+  font-size: var(--t-2xs);
+  letter-spacing: var(--track-mono);
+  white-space: nowrap;
+}
+
+.asset-dir.up { color: var(--up); }
+.asset-dir.down { color: var(--down); }
+.asset-dir.mixed, .asset-dir.none { color: var(--flat); }
+
+/* 判断强度：三格，填几格就是几档。同样是颜色之外的编码。 */
+.conv { display: flex; gap: 2px; margin-top: 0.4rem; }
+
+.conv i {
+  display: block;
+  width: 0.85rem;
+  height: 3px;
+  border-radius: 1px;
+  background: var(--rule);
+}
+
+.conv.up i.on { background: var(--up); }
+.conv.down i.on { background: var(--down); }
+.conv.mixed i.on, .conv.none i.on { background: var(--flat); }
+
+.asset-note {
+  margin-top: 0.42rem;
+  font-size: var(--t-2xs);
+  line-height: 1.5;
+  color: var(--ink-mid);
+  text-wrap: pretty;
+}
+
+/* --- 交叉信源与历史脉络 --- */
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.6rem;
+  margin-top: 0.9rem;
+}
+
+@media (min-width: 46rem) {
+  .cards.two { grid-template-columns: 1fr 1fr; }
+}
+
+.card {
+  border: 1px solid var(--rule-hair);
+  border-radius: 3px;
+  padding: 0.7rem 0.8rem;
+  background: var(--paper-raised);
+}
+
+.card-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.45rem;
+}
+
+.card-head .t {
+  font-family: var(--font-data);
+  font-size: var(--t-2xs);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.agree {
+  font-family: var(--font-data);
+  font-size: var(--t-2xs);
+  letter-spacing: var(--track-mono);
+  padding: 0.08rem 0.4rem;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+
+.agree.aligned { color: var(--up); background: var(--up-wash); }
+.agree.split { color: var(--down); background: var(--down-wash); }
+.agree.single { color: var(--ink-faint); background: var(--flat-wash); }
+
+.card p { margin: 0; font-size: var(--t-sm); line-height: 1.6; max-width: none; }
+
+/* 时间轴。是真正的时间序列，所以竖轴加节点这个结构是有信息含量的。 */
+.tl { margin: 0; padding: 0 0 0 0.85rem; list-style: none; position: relative; }
+
+.tl::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 0.42rem;
+  bottom: 0.42rem;
+  width: 1px;
+  background: var(--rule);
+}
+
+.tl li { position: relative; padding: 0.22rem 0; font-size: var(--t-sm); line-height: 1.55; }
+
+.tl li::before {
+  content: "";
+  position: absolute;
+  left: -0.85rem;
+  top: 0.62rem;
+  width: 5px;
+  height: 5px;
+  border-radius: 999px;
+  background: var(--ink-faint);
+}
+
+/* 最后一个节点是「当下」，用品牌色点亮，读者一眼看到脉络走到哪了。 */
+.tl li:last-child::before { background: var(--accent); }
+
+.tl .w {
+  font-family: var(--font-data);
+  font-size: var(--t-2xs);
+  letter-spacing: var(--track-mono);
+  color: var(--ink-faint);
+  margin-right: 0.4rem;
+}
+
+
+.cal-scroll { overflow-x: auto; margin-top: 0.5rem; }
+
+table { border-collapse: collapse; width: 100%; font-size: var(--t-base); }
 
 td {
-  padding: 0.6rem 0.7rem 0.6rem 0;
+  padding: 0.62rem 0.7rem 0.62rem 0;
   border-bottom: 1px solid var(--rule-soft);
   vertical-align: top;
 }
 
-td.when { font-family: var(--data); font-size: 0.8rem; white-space: nowrap; color: var(--ink-mid); }
+td.when {
+  font-family: var(--font-data);
+  font-size: var(--t-sm);
+  white-space: nowrap;
+  color: var(--ink-mid);
+}
+
 td.time {
-  font-family: var(--data);
-  font-size: 0.8rem;
+  font-family: var(--font-data);
+  font-size: var(--t-sm);
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
   color: var(--ink-faint);
 }
+
 td.w { text-align: right; white-space: nowrap; }
 
-.w span { font-family: var(--data); font-size: 0.63rem; letter-spacing: 0.08em; padding: 0.1rem 0.4rem; border-radius: 2px; }
+.w span {
+  font-family: var(--font-data);
+  font-size: var(--t-2xs);
+  letter-spacing: 0.08em;
+  padding: 0.1rem 0.42rem;
+  border-radius: 2px;
+}
+
 .w-high { background: var(--accent-soft); color: var(--accent); }
 .w-mid { color: var(--ink-mid); }
 .w-low { color: var(--ink-faint); }
 
-/* ---------------------------------------------------------------- colophon */
-
 .colophon {
   margin-top: 3.5rem;
-  padding-top: 1rem;
+  padding-top: 1.05rem;
   border-top: 2px solid var(--ink);
-  font-family: var(--data);
-  font-size: 0.68rem;
-  line-height: 1.7;
+  font-family: var(--font-data);
+  font-size: var(--t-2xs);
+  line-height: 1.8;
   color: var(--ink-faint);
   letter-spacing: 0.02em;
 }
@@ -500,17 +729,21 @@ td.w { text-align: right; white-space: nowrap; }
 a:focus-visible, summary:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
+  border-radius: 2px;
 }
 
-@media (max-width: 520px) {
-  .item { grid-template-columns: 1.8rem 1fr; gap: 0 0.7rem; }
-  .item h3 { font-size: 1.22rem; }
-  .mag7-row, .mag7-axis { grid-template-columns: 3.1rem 1fr 3.7rem; }
+@media (max-width: 34rem) {
+  .item { grid-template-columns: 1.9rem 1fr; gap: 0 0.7rem; }
+  .item h3 { font-size: var(--t-lg); }
+  .mag7-row, .mag7-axis { grid-template-columns: 3.1rem 1fr 3.8rem; }
   .mag7-price { display: none; }
+  .assets { grid-template-columns: 1fr 1fr; }
 }
 
+/* 页面在静止状态下就是完整可读的，动效只发生在悬停与聚焦上，
+   所以这里整个关掉不会藏起任何内容。 */
 @media (prefers-reduced-motion: reduce) {
-  * { animation: none !important; transition: none !important; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
 }
 </style>
 <div class="sheet">
@@ -521,10 +754,10 @@ a:focus-visible, summary:focus-visible {
 <span>Week-ahead edition</span>
 <span>扫描 <b>78</b> 篇 · 保留 <b>18</b> 条</span>
 <span>生成于 2026-09-06 15:10 PT</span>
-</div></header>
+</div>
+</header>
 <p class="lede">就业数据过热把市场从「降息」叙事直接翻转成「加息」定价，霍尔木兹的油轮互袭又在周末继续升级。七巨头周五普跌，特斯拉单日 -5.92% 是主要拖累。本周只有四个交易日，周五的 8 月 CPI 是唯一的解锁点。</p>
-<div class="sec-head t2"><h2>七巨头单日涨跌</h2>
-<span class="asof">收盘 · Fri 9/4 16:00 ET</span></div>
+<div class="sec-head t2"><h2 class="label">七巨头单日涨跌</h2><span class="asof">收盘 · Fri 9/4 16:00 ET</span></div>
 <section class="mag7">
 <div class="mag7-row">
 <div class="mag7-tick">META</div>
@@ -587,22 +820,13 @@ a:focus-visible, summary:focus-visible {
 </div></div>
 <p class="mag7-foot">七只里五跌两涨，跌幅集中在有自身催化剂的两只：特斯拉的 Cybercab 和苹果的折叠屏产能。指数层面的下跌主要来自利率，个股层面则是各自的故事。</p>
 </section>
-<div class="sec-head t2"><h2>自选股</h2>
-<span class="n">8</span></div>
+<div class="sec-head t2"><h2 class="label">自选股</h2><span class="n">8</span></div>
 <section class="wl"><div class="wl-grid">
-<a class="wl-chip hit" href="#item-16">NVDA<span class="cnt">1</span></a>
-<a class="wl-chip hit" href="#item-3">TSLA<span class="cnt">1</span></a>
-<a class="wl-chip hit" href="#item-5">AAPL<span class="cnt">1</span></a>
-<a class="wl-chip hit" href="#item-6">MSFT<span class="cnt">1</span></a>
-<a class="wl-chip hit" href="#item-4">AVGO<span class="cnt">1</span></a>
-<span class="wl-chip">AMD</span>
-<span class="wl-chip">PLTR</span>
-<span class="wl-chip">COIN</span>
+<a class="wl-chip hit" href="#item-16">NVDA<span class="cnt">1</span></a><a class="wl-chip hit" href="#item-3">TSLA<span class="cnt">1</span></a><a class="wl-chip hit" href="#item-5">AAPL<span class="cnt">1</span></a><a class="wl-chip hit" href="#item-6">MSFT<span class="cnt">1</span></a><a class="wl-chip hit" href="#item-4">AVGO<span class="cnt">1</span></a><span class="wl-chip">AMD</span><span class="wl-chip">PLTR</span><span class="wl-chip">COIN</span>
 </div>
-<p class="wl-foot">你的 8 只自选股里，今天有 9 只出现在新闻中，点代码跳到对应条目。</p>
+<p class="wl-foot">你的 8 只自选股里，今天有 5 只出现在新闻中，点代码跳到对应条目。</p>
 </section>
-<div class="sec-head t2"><h2>指数与利率</h2>
-<span class="asof">上一收盘 · 周五 9/4</span></div>
+<div class="sec-head t2"><h2 class="label">指数与利率</h2><span class="asof">上一收盘 · 周五 9/4</span></div>
 <section><div class="tape-grid">
 <div class="tape-cell">
 <div class="k">S&amp;P 500</div>
@@ -635,329 +859,236 @@ a:focus-visible, summary:focus-visible {
 <div class="d up">9/1 报价</div>
 </div>
 </div></section>
-<div class="sec-head t1"><h2>必读</h2>
-<span class="n">4</span></div>
+<div class="sec-head t1"><h2 class="label">必读</h2><span class="n">4</span></div>
 <article class="item t1" id="item-1">
 <div class="rank">01</div>
 <div>
 <h3>8 月非农 162k，三倍于预期，联储叙事翻转到加息</h3>
-<div class="meta">
-<span class="age aging">2 天前</span>
-<span class="tag">宏观</span>
-<span class="tag">利率</span>
-</div>
+<div class="meta"><span class="age aging">2 天前</span><span class="tag">宏观</span><span class="tag">利率</span></div>
 <p>美国 8 月新增非农就业 162,000 人，而经济学家预期仅 53,000 人。数据公布后 CME FedWatch 显示，市场对本月 FOMC 加息的定价升到 68%。两年期美债收益率跳到 4.35%，是 2025 年 1 月以来最高，年初这个数字还是 3.50% 左右。</p>
-<div class="why"><span class="lbl">为什么重要</span>
-<p>整条收益率曲线要重新定价。几周前的主流预期还是降息，现在方向完全掉头，所有靠低利率支撑估值的资产都要按新的贴现率重算。</p></div>
+<div class="why"><span class="lbl">为什么重要</span><p>整条收益率曲线要重新定价。几周前的主流预期还是降息，现在方向完全掉头，所有靠低利率支撑估值的资产都要按新的贴现率重算。</p></div>
 <div class="impact">全市场 · 长久期成长股首当其冲</div>
-<details class="srcs"><summary>3 个来源</summary><ul>
-<li><a href="https://www.cnbc.com/2026/09/03/stock-market-today-live-updates.html" target="_blank" rel="noopener">CNBC</a></li>
-<li><a href="https://finance.yahoo.com/markets/stocks/articles/markets-news-sept-4-2026-105243532.html" target="_blank" rel="noopener">Yahoo Finance</a></li>
-<li><a href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-sept-04-2026" target="_blank" rel="noopener">TheStreet</a></li>
-</ul></details>
+<div class="depth">
+<div class="depth-head">资产波及矩阵</div>
+<div class="assets"><div class="asset"><div class="asset-top"><span class="asset-name">美股</span><span class="asset-dir down">&#8595; 利空</span></div><div class="conv down"><i class="on"></i><i class="on"></i><i class="on"></i></div><p class="asset-note">贴现率上行直接压缩长久期成长股估值，周五三大指数同步收跌。</p></div><div class="asset"><div class="asset-top"><span class="asset-name">美债</span><span class="asset-dir down">&#8595; 利空</span></div><div class="conv down"><i class="on"></i><i class="on"></i><i class="on"></i></div><p class="asset-note">两年期收益率跳到 4.35%，为 2025 年 1 月以来最高，价格反向下跌。</p></div><div class="asset"><div class="asset-top"><span class="asset-name">美元</span><span class="asset-dir up">&#8593; 利好</span></div><div class="conv up"><i class="on"></i><i class="on"></i><i class=""></i></div><p class="asset-note">加息预期抬升利差，对非美货币构成支撑性买盘。</p></div><div class="asset"><div class="asset-top"><span class="asset-name">加密资产</span><span class="asset-dir down">&#8595; 利空</span></div><div class="conv down"><i class="on"></i><i class=""></i><i class=""></i></div><p class="asset-note">流动性收紧的传导路径存在，但当日未见明确同步反应。</p></div></div>
+<div class="cards two"><div class="card"><div class="card-head"><span class="t">多方信源交叉对比</span><span class="agree aligned">口径一致</span></div><p>三家都把周五的下跌归因于就业数据，对 68% 这个加息定价也没有分歧。差别只在措辞强度。</p><ul class="tl" style="margin-top:0.55rem"><li><span class="w">CNBC</span>强调收益率跳升与两年期创新高</li><li><span class="w">Yahoo Finance</span>突出 FedWatch 的 68% 加息概率</li><li><span class="w">TheStreet</span>把焦点放在两日连涨被打断</li></ul></div><div class="card"><div class="card-head"><span class="t">历史背景与演进</span></div><p>从年中的降息共识到本周的加息定价，方向在八周内完全掉头，驱动力从通胀回落转成就业韧性叠加能源涨价。</p><ul class="tl" style="margin-top:0.55rem"><li><span class="w">2026 上半年</span>两年期收益率约 3.50%，市场定价年内降息</li><li><span class="w">8 月</span>油价走高开始渗入通胀预期，收益率转升</li><li><span class="w">9/3</span>Waller 表态倾向按兵不动，股市反弹、收益率回落</li><li><span class="w">9/4</span>非农 162k 三倍于预期，加息定价升到 68%</li></ul></div></div>
+</div>
+<details class="srcs"><summary>3 个来源</summary>
+<ul><li><a href="https://www.cnbc.com/2026/09/03/stock-market-today-live-updates.html" target="_blank" rel="noopener">CNBC</a>　强调收益率跳升与两年期创新高</li><li><a href="https://finance.yahoo.com/markets/stocks/articles/markets-news-sept-4-2026-105243532.html" target="_blank" rel="noopener">Yahoo Finance</a>　突出 FedWatch 的 68% 加息概率</li><li><a href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-sept-04-2026" target="_blank" rel="noopener">TheStreet</a>　把焦点放在两日连涨被打断</li></ul>
+</details>
 </div></article>
 <article class="item t1" id="item-2">
 <div class="rank">02</div>
 <div>
 <h3>霍尔木兹周末继续升级：美军击毁三艘伊朗油轮，伊朗向美舰发射弹道导弹</h3>
-<div class="meta">
-<span class="age fresh">今天</span>
-<span class="tag">地缘</span>
-<span class="tag">能源</span>
-<span class="tag">宏观</span>
-</div>
+<div class="meta"><span class="age fresh">今天</span><span class="tag">地缘</span><span class="tag">能源</span><span class="tag">宏观</span></div>
 <p>过去 24 小时内美伊互袭加码。美军打击三艘伊朗原油油轮，一艘击毁两艘永久瘫痪；伊朗革命卫队称袭击了三艘走非授权航道的油轮及三艘美方船只，并向海峡附近的美国军舰发射弹道导弹。PortWatch 记录 8 月 30 日该海峡通行 6 艘次，而危机前的基准是每天 85 艘次。</p>
-<div class="why"><span class="lbl">为什么重要</span>
-<p>这是周末发生的事，周一开盘前市场还没定价。通行量只剩基准的 7%，油价的供给端风险溢价不会消退，而这正是逼着联储收紧的那种通胀。</p></div>
+<div class="why"><span class="lbl">为什么重要</span><p>这是周末发生的事，周一开盘前市场还没定价。通行量只剩基准的 7%，油价的供给端风险溢价不会消退，而这正是逼着联储收紧的那种通胀。</p></div>
 <div class="impact">能源、航运受益 · 债券、消费、航空受损</div>
-<details class="srcs"><summary>3 个来源</summary><ul>
-<li><a href="https://www.aljazeera.com/news/2026/9/6/us-iran-engaged-in-tanker-war-where-is-the-months-long-conflict-headed" target="_blank" rel="noopener">Al Jazeera</a></li>
-<li><a href="https://www.timesofisrael.com/liveblog-september-05-2026/" target="_blank" rel="noopener">Times of Israel</a></li>
-<li><a href="https://straits.live/briefs/2026-09-05" target="_blank" rel="noopener">Straits Daily Brief</a></li>
-</ul></details>
+<div class="depth">
+<div class="depth-head">资产波及矩阵</div>
+<div class="assets"><div class="asset"><div class="asset-top"><span class="asset-name">大宗商品</span><span class="asset-dir up">&#8593; 利好</span></div><div class="conv up"><i class="on"></i><i class="on"></i><i class="on"></i></div><p class="asset-note">通行量降至危机前基准的约 7%，供给端风险溢价难以消退。</p></div><div class="asset"><div class="asset-top"><span class="asset-name">美债</span><span class="asset-dir down">&#8595; 利空</span></div><div class="conv down"><i class="on"></i><i class="on"></i><i class="on"></i></div><p class="asset-note">能源驱动的通胀封住收益率下行空间，10 年期已到 4.79%。</p></div><div class="asset"><div class="asset-top"><span class="asset-name">美股</span><span class="asset-dir mixed">&#8644; 分化</span></div><div class="conv mixed"><i class="on"></i><i class="on"></i><i class=""></i></div><p class="asset-note">能源与航运受益，航空、消费与久期敏感板块承压，指数层面方向不明。</p></div><div class="asset"><div class="asset-top"><span class="asset-name">海外股市</span><span class="asset-dir down">&#8595; 利空</span></div><div class="conv down"><i class="on"></i><i class="on"></i><i class=""></i></div><p class="asset-note">能源净进口的亚欧市场对海峡中断的敞口高于美国。</p></div></div>
+<div class="cards two"><div class="card"><div class="card-head"><span class="t">多方信源交叉对比</span><span class="agree split">存在分歧</span></div><p>对升级性质的判断存在分歧。半岛电视台把双方互袭读作海上控制权的常态化消耗，以色列时报侧重伊朗的威胁升级表态，海峡通行数据则显示实际中断程度远超双方的口径。</p><ul class="tl" style="margin-top:0.55rem"><li><span class="w">Al Jazeera</span>把冲突框定为海上控制权的长期消耗战</li><li><span class="w">Times of Israel</span>侧重伊朗宣称的更严厉打击表态</li><li><span class="w">Straits Daily Brief</span>提供海峡实际通行量的量化数据</li></ul></div><div class="card"><div class="card-head"><span class="t">历史背景与演进</span></div><p>这场冲突已持续约 190 天。伊朗三月喊出的 200 美元油价没有实现，五月以来油价一直在 100 美元以下，但海峡通行量的塌陷是结构性的。</p><ul class="tl" style="margin-top:0.55rem"><li><span class="w">3 月</span>冲突升级，伊朗以 200 美元油价为目标施压</li><li><span class="w">5 月起</span>油价回落并持续处于 100 美元以下</li><li><span class="w">8/30</span>海峡单日通行 6 艘次，危机前基准为每天 85 艘次</li><li><span class="w">9/5-9/6</span>美军击毁三艘伊朗油轮，伊朗向美舰发射弹道导弹</li></ul></div></div>
+</div>
+<details class="srcs"><summary>3 个来源</summary>
+<ul><li><a href="https://www.aljazeera.com/news/2026/9/6/us-iran-engaged-in-tanker-war-where-is-the-months-long-conflict-headed" target="_blank" rel="noopener">Al Jazeera</a>　把冲突框定为海上控制权的长期消耗战</li><li><a href="https://www.timesofisrael.com/liveblog-september-05-2026/" target="_blank" rel="noopener">Times of Israel</a>　侧重伊朗宣称的更严厉打击表态</li><li><a href="https://straits.live/briefs/2026-09-05" target="_blank" rel="noopener">Straits Daily Brief</a>　提供海峡实际通行量的量化数据</li></ul>
+</details>
 </div></article>
 <article class="item t1" id="item-3">
 <div class="rank">03</div>
 <div>
 <h3>特斯拉单日 -5.92%：Cybercab 发布会令人失望，NHTSA 同日开查</h3>
-<div class="meta">
-<span class="age aging">2 天前</span>
-<span class="tag tk">TSLA</span>
-<span class="tag">汽车</span>
-<span class="tag">自动驾驶</span>
-<span class="tag">监管</span>
-</div>
+<div class="meta"><span class="age aging">2 天前</span><span class="tag tk">TSLA</span><span class="tag">汽车</span><span class="tag">自动驾驶</span><span class="tag">监管</span></div>
 <p>周四的 Cybercab 活动只对受邀者开放，马斯克本人没有出席。RBC 称这次更新把核心问题都留在了原地，包括定价、量产时间表和监管状态。同日 NHTSA 开启审计问询，调查特斯拉如何自我认证 Cybercab，以及凭什么认定方向盘、踏板、后视镜这些常规安全标准不适用。富国银行另外指出奥斯汀的 robotaxi 服务存在早期执行问题，用户反馈路线错误、错过目的地、等待和行驶时间过长。</p>
-<div class="why"><span class="lbl">为什么重要</span>
-<p>监管问询针对的是自我认证这个动作本身，不是某个零件。如果自我认证被推翻，整个无方向盘车型的上市路径都要重来。</p></div>
+<div class="why"><span class="lbl">为什么重要</span><p>监管问询针对的是自我认证这个动作本身，不是某个零件。如果自我认证被推翻，整个无方向盘车型的上市路径都要重来。</p></div>
 <div class="impact">TSLA · 自动驾驶产业链 · 监管预期</div>
-<details class="srcs"><summary>3 个来源</summary><ul>
-<li><a href="https://www.cnbc.com/2026/09/04/teslas-stock-drops-as-cybercab-update-underwhelms-nhtsa-probe.html" target="_blank" rel="noopener">CNBC</a></li>
-<li><a href="https://finance.yahoo.com/markets/stocks/articles/tesla-stock-drops-6-cybercab-180104491.html" target="_blank" rel="noopener">Yahoo Finance</a></li>
-<li><a href="https://www.fool.com/investing/2026/09/04/why-did-tesla-stock-fall-today/" target="_blank" rel="noopener">Motley Fool</a></li>
-</ul></details>
+<div class="depth">
+<div class="depth-head">资产波及矩阵</div>
+<div class="assets"><div class="asset"><div class="asset-top"><span class="asset-name">美股</span><span class="asset-dir down">&#8595; 利空</span></div><div class="conv down"><i class="on"></i><i class="on"></i><i class="on"></i></div><p class="asset-note">TSLA 单日 -5.92%，是七巨头当日的主要拖累项。</p></div></div>
+<div class="cards two"><div class="card"><div class="card-head"><span class="t">多方信源交叉对比</span><span class="agree aligned">口径一致</span></div><p>三家都把跌幅归到发布会与监管问询的叠加，但对哪一个是主因没有一致结论。RBC 侧重未回答的商业问题，NHTSA 的介入则是新增的监管变量。</p><ul class="tl" style="margin-top:0.55rem"><li><span class="w">CNBC</span>并列发布会失望与监管调查两个催化剂</li><li><span class="w">Yahoo Finance</span>引用富国银行对奥斯汀运营问题的观察</li><li><span class="w">Motley Fool</span>转述 RBC 对定价与量产时间表的质疑</li></ul></div><div class="card"><div class="card-head"><span class="t">历史背景与演进</span></div><p>无方向盘车型的上市路径一直建立在自我认证之上。监管方这次质疑的是这个前提本身，而不是某个具体零件。</p><ul class="tl" style="margin-top:0.55rem"><li><span class="w">此前</span>奥斯汀 robotaxi 试运营，用户反馈路线与等待时间问题</li><li><span class="w">9/3</span>Cybercab 发布会仅对受邀者开放，马斯克未出席</li><li><span class="w">9/4</span>NHTSA 开启审计问询，同日股价跌 5.92%</li></ul></div></div>
+</div>
+<details class="srcs"><summary>3 个来源</summary>
+<ul><li><a href="https://www.cnbc.com/2026/09/04/teslas-stock-drops-as-cybercab-update-underwhelms-nhtsa-probe.html" target="_blank" rel="noopener">CNBC</a>　并列发布会失望与监管调查两个催化剂</li><li><a href="https://finance.yahoo.com/markets/stocks/articles/tesla-stock-drops-6-cybercab-180104491.html" target="_blank" rel="noopener">Yahoo Finance</a>　引用富国银行对奥斯汀运营问题的观察</li><li><a href="https://www.fool.com/investing/2026/09/04/why-did-tesla-stock-fall-today/" target="_blank" rel="noopener">Motley Fool</a>　转述 RBC 对定价与量产时间表的质疑</li></ul>
+</details>
 </div></article>
 <article class="item t1" id="item-4">
 <div class="rank">04</div>
 <div>
 <h3>博通 Q3：AI 半导体收入 165 亿美元，同比增 221%</h3>
-<div class="meta">
-<span class="age stale">4 天前</span>
-<span class="tag tk">AVGO</span>
-<span class="tag">半导体</span>
-<span class="tag">AI</span>
-</div>
+<div class="meta"><span class="age stale">4 天前</span><span class="tag tk">AVGO</span><span class="tag">半导体</span><span class="tag">AI</span></div>
 <p>博通公布截至 8 月 2 日的 2026 财年第三季度业绩，半导体收入翻了三倍多至 167 亿美元，高于 152 亿的平均预期。其中 AI 半导体收入 167 亿，同比增 221%，环比增 54%。公司为谷歌、Meta 和 OpenAI 设计定制芯片，股价自 2022 年底以来涨了六倍多，市值约 1.8 万亿美元。</p>
-<div class="why"><span class="lbl">为什么重要</span>
-<p>定制芯片的增速远超通用 GPU，说明大客户在把推理负载往自研硅上迁。这是英伟达长期份额叙事里最实在的一个变量。</p></div>
+<div class="why"><span class="lbl">为什么重要</span><p>定制芯片的增速远超通用 GPU，说明大客户在把推理负载往自研硅上迁。这是英伟达长期份额叙事里最实在的一个变量。</p></div>
 <div class="impact">半导体 · AI 资本开支链条</div>
-<details class="srcs"><summary>2 个来源</summary><ul>
-<li><a href="https://www.cnbc.com/2026/09/02/broadcom-avgo-q3-earnings-report-2026.html" target="_blank" rel="noopener">CNBC</a></li>
-<li><a href="https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial" target="_blank" rel="noopener">Broadcom IR</a></li>
-</ul></details>
+<div class="depth">
+<div class="depth-head">资产波及矩阵</div>
+<div class="assets"><div class="asset"><div class="asset-top"><span class="asset-name">美股</span><span class="asset-dir up">&#8593; 利好</span></div><div class="conv up"><i class="on"></i><i class="on"></i><i class="on"></i></div><p class="asset-note">AI 半导体收入同比 221%，验证资本开支尚未见顶。</p></div><div class="asset"><div class="asset-top"><span class="asset-name">海外股市</span><span class="asset-dir up">&#8593; 利好</span></div><div class="conv up"><i class="on"></i><i class="on"></i><i class=""></i></div><p class="asset-note">定制芯片放量利好亚洲的代工与封测环节。</p></div></div>
+<div class="cards two"><div class="card"><div class="card-head"><span class="t">多方信源交叉对比</span><span class="agree aligned">口径一致</span></div><p>公司公告与媒体报道的数字一致。需要注意的是半导体总收入与 AI 半导体收入都被报成 167 亿，两者口径在原始报道中并未拆清。</p></div><div class="card"><div class="card-head"><span class="t">历史背景与演进</span></div><p>博通靠给谷歌、Meta 和 OpenAI 做定制芯片，从 2022 年底至今股价涨了六倍多，市值约 1.8 万亿美元。</p><ul class="tl" style="margin-top:0.55rem"><li><span class="w">2022 年底至今</span>股价涨超六倍，市值达约 1.8 万亿美元</li><li><span class="w">9/2</span>Q3 AI 半导体收入 167 亿，同比 221%，环比 54%</li></ul></div></div>
+</div>
+<details class="srcs"><summary>2 个来源</summary>
+<ul><li><a href="https://www.cnbc.com/2026/09/02/broadcom-avgo-q3-earnings-report-2026.html" target="_blank" rel="noopener">CNBC</a></li><li><a href="https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial" target="_blank" rel="noopener">Broadcom IR</a></li></ul>
+</details>
 </div></article>
-<div class="sec-head t2"><h2>值得知道</h2>
-<span class="n">9</span></div>
+<div class="sec-head t2"><h2 class="label">值得知道</h2><span class="n">9</span></div>
 <article class="item t2" id="item-5">
 <div class="rank">05</div>
 <div>
 <h3>苹果 -2.51%：折叠屏 iPhone 初期日产仅数百台</h3>
-<div class="meta">
-<span class="age aging">2 天前</span>
-<span class="tag tk">AAPL</span>
-<span class="tag">消费电子</span>
-<span class="tag">供应链</span>
-</div>
+<div class="meta"><span class="age aging">2 天前</span><span class="tag tk">AAPL</span><span class="tag">消费电子</span><span class="tag">供应链</span></div>
 <p>日经亚洲报道折叠屏 iPhone 的首批量产每天只有几百台。市场同时在消化 John Ternus 接任 CEO、库克转任董事长，以及 9 月 9 日的发布会。周五盘中一度跌 3.2%。</p>
-<div class="why"><span class="lbl">为什么重要</span>
-<p>日产数百台意味着首发基本是象征性供货。发布会就在下周三，产能这个数字会直接决定当天的反应是兴奋还是失望。</p></div>
+<div class="why"><span class="lbl">为什么重要</span><p>日产数百台意味着首发基本是象征性供货。发布会就在下周三，产能这个数字会直接决定当天的反应是兴奋还是失望。</p></div>
 <div class="impact">AAPL · 面板与铰链供应链</div>
-<details class="srcs"><summary>2 个来源</summary><ul>
-<li><a href="https://www.fool.com/investing/2026/09/04/why-apple-stock-sank-on-friday/" target="_blank" rel="noopener">Motley Fool</a></li>
-<li><a href="https://www.optionstradingreport.com/2026/09/apple-drops-2-5-before-its-sept-9-event/" target="_blank" rel="noopener">Options Trading Report</a></li>
-</ul></details>
+<details class="srcs"><summary>2 个来源</summary>
+<ul><li><a href="https://www.fool.com/investing/2026/09/04/why-apple-stock-sank-on-friday/" target="_blank" rel="noopener">Motley Fool</a></li><li><a href="https://www.optionstradingreport.com/2026/09/apple-drops-2-5-before-its-sept-9-event/" target="_blank" rel="noopener">Options Trading Report</a></li></ul>
+</details>
 </div></article>
 <article class="item t2" id="item-6">
 <div class="rank">06</div>
 <div>
 <h3>微软首次单独披露 Azure 收入：季度 294 亿，财年 1019 亿</h3>
-<div class="meta">
-<span class="age stale">4 天前</span>
-<span class="tag tk">MSFT</span>
-<span class="tag">云</span>
-<span class="tag">财报口径</span>
-</div>
+<div class="meta"><span class="age stale">4 天前</span><span class="tag tk">MSFT</span><span class="tag">云</span><span class="tag">财报口径</span></div>
 <p>微软宣布从 2027 财年起单独披露 Azure 收入，并一次性给出了数字：季度 294 亿美元，2026 财年 1019 亿美元，第四财季同比增速 43%。同时放弃原有的三分部结构，新设 Agents and Infra 分部，把 Azure、Microsoft 365 云产品、服务器与行业方案、合作伙伴服务并到一起。</p>
-<div class="why"><span class="lbl">为什么重要</span>
-<p>十多年来投资者只能看到增速百分比，拿不到绝对值。有了分母，Azure 与 AWS、GCP 的对比第一次能算得准。</p></div>
+<div class="why"><span class="lbl">为什么重要</span><p>十多年来投资者只能看到增速百分比，拿不到绝对值。有了分母，Azure 与 AWS、GCP 的对比第一次能算得准。</p></div>
 <div class="impact">MSFT · 云板块估值锚</div>
-<details class="srcs"><summary>2 个来源</summary><ul>
-<li><a href="https://northeasttimes.com/2026/09/03/microsoft-overhauls-financial-reporting-will-disclose-azure-revenue-each-quarter/" target="_blank" rel="noopener">Northeast Times</a></li>
-<li><a href="https://www.vantagemarkets.com/market-news/microsoft-azure-sales-disclosure-september-3-2026/" target="_blank" rel="noopener">Vantage Markets</a></li>
-</ul></details>
+<details class="srcs"><summary>2 个来源</summary>
+<ul><li><a href="https://northeasttimes.com/2026/09/03/microsoft-overhauls-financial-reporting-will-disclose-azure-revenue-each-quarter/" target="_blank" rel="noopener">Northeast Times</a></li><li><a href="https://www.vantagemarkets.com/market-news/microsoft-azure-sales-disclosure-september-3-2026/" target="_blank" rel="noopener">Vantage Markets</a></li></ul>
+</details>
 </div></article>
 <article class="item t2" id="item-7">
 <div class="rank">07</div>
 <div>
 <h3>Uber 裁员 3,300 人，占全球员工 10%</h3>
-<div class="meta">
-<span class="age stale">4 天前</span>
-<span class="tag tk">UBER</span>
-<span class="tag">科技</span>
-<span class="tag">就业</span>
-</div>
+<div class="meta"><span class="age stale">4 天前</span><span class="tag tk">UBER</span><span class="tag">科技</span><span class="tag">就业</span></div>
 <p>CEO Khosrowshahi 的内部信显示裁员约 3,300 人，管理岗减少 20%，只有一到两人的小团队砍掉一半，裁撤对象是「距 CEO 七层以下」的人员。远程办公资格压缩到全员约 1%，其余人必须搬到通勤距离内。省下的钱投向司机、骑手和「自动驾驶的未来」。</p>
-<div class="why"><span class="lbl">为什么重要</span>
-<p>这是疫情以来最大的一次。管理层级而非一线是主要目标，说明砍的是协调成本，指向科技公司普遍在做的组织扁平化。</p></div>
+<div class="why"><span class="lbl">为什么重要</span><p>这是疫情以来最大的一次。管理层级而非一线是主要目标，说明砍的是协调成本，指向科技公司普遍在做的组织扁平化。</p></div>
 <div class="impact">UBER · 科技业就业情绪</div>
-<details class="srcs"><summary>3 个来源</summary><ul>
-<li><a href="https://techcrunch.com/2026/09/02/uber-is-laying-off-10-of-staff-or-3300-people/" target="_blank" rel="noopener">TechCrunch</a></li>
-<li><a href="https://www.cnbc.com/2026/09/02/uber-to-cut-10percent-of-workforce-in-bid-to-move-simpler-and-faster.html" target="_blank" rel="noopener">CNBC</a></li>
-<li><a href="https://www.forbes.com/sites/zacharyfolk/2026/09/02/uber-cuts-10-of-staff-in-companys-largest-layoffs-since-pandemic/" target="_blank" rel="noopener">Forbes</a></li>
-</ul></details>
+<details class="srcs"><summary>3 个来源</summary>
+<ul><li><a href="https://techcrunch.com/2026/09/02/uber-is-laying-off-10-of-staff-or-3300-people/" target="_blank" rel="noopener">TechCrunch</a></li><li><a href="https://www.cnbc.com/2026/09/02/uber-to-cut-10percent-of-workforce-in-bid-to-move-simpler-and-faster.html" target="_blank" rel="noopener">CNBC</a></li><li><a href="https://www.forbes.com/sites/zacharyfolk/2026/09/02/uber-cuts-10-of-staff-in-companys-largest-layoffs-since-pandemic/" target="_blank" rel="noopener">Forbes</a></li></ul>
+</details>
 </div></article>
 <article class="item t2" id="item-8">
 <div class="rank">08</div>
 <div>
 <h3>联储理事 Waller：若通胀数据没有意外，倾向于 9 月按兵不动</h3>
-<div class="meta">
-<span class="age stale">3 天前</span>
-<span class="tag">宏观</span>
-<span class="tag">利率</span>
-</div>
+<div class="meta"><span class="age stale">3 天前</span><span class="tag">宏观</span><span class="tag">利率</span></div>
 <p>Waller 周四表示，只要接下来的通胀数据没有超预期，他倾向于在 9 月会议上维持利率不变。这番话曾让周四股市反弹、收益率回落，但周五的就业数据把它盖了过去。</p>
-<div class="why"><span class="lbl">为什么重要</span>
-<p>加息不是既成事实，联储内部有分歧。这意味着周五的 CPI 有能力把 68% 的定价推向任何一边。</p></div>
+<div class="why"><span class="lbl">为什么重要</span><p>加息不是既成事实，联储内部有分歧。这意味着周五的 CPI 有能力把 68% 的定价推向任何一边。</p></div>
 <div class="impact">利率预期的波动率</div>
-<details class="srcs"><summary>1 个来源</summary><ul>
-<li><a href="https://finance.yahoo.com/markets/stocks/articles/markets-news-sept-4-2026-105243532.html" target="_blank" rel="noopener">Yahoo Finance</a></li>
-</ul></details>
+<details class="srcs"><summary>1 个来源</summary>
+<ul><li><a href="https://finance.yahoo.com/markets/stocks/articles/markets-news-sept-4-2026-105243532.html" target="_blank" rel="noopener">Yahoo Finance</a></li></ul>
+</details>
 </div></article>
 <article class="item t2" id="item-9">
 <div class="rank">09</div>
 <div>
 <h3>周五 8 月 CPI 是本周唯一的解锁点，nowcast 指向 3.38%</h3>
-<div class="meta">
-<span class="age aging">2 天前</span>
-<span class="tag">宏观</span>
-<span class="tag">数据</span>
-</div>
+<div class="meta"><span class="age aging">2 天前</span><span class="tag">宏观</span><span class="tag">数据</span></div>
 <p>8 月 CPI 于 9 月 11 日周五美东 8:30 发布。截至 9 月 4 日的 nowcast 显示整体 CPI 同比 +3.38%、环比 +0.36%。7 月读数是同比 +3.4%、环比 +0.1%。环比从 0.1% 跳到 0.36% 是关键变化，主要来自能源。</p>
-<div class="why"><span class="lbl">为什么重要</span>
-<p>Waller 说的「没有意外」就是指这个数字。能源涨价正在从供给侧渗进核心读数，这也是联储最难处理的那种通胀。</p></div>
+<div class="why"><span class="lbl">为什么重要</span><p>Waller 说的「没有意外」就是指这个数字。能源涨价正在从供给侧渗进核心读数，这也是联储最难处理的那种通胀。</p></div>
 <div class="impact">全市场 · 事件驱动</div>
-<details class="srcs"><summary>2 个来源</summary><ul>
-<li><a href="https://www.bls.gov/news.release/cpi.htm" target="_blank" rel="noopener">BLS</a></li>
-<li><a href="https://www.kiplinger.com/investing/economy/this-weeks-economic-calendar" target="_blank" rel="noopener">Kiplinger</a></li>
-</ul></details>
+<details class="srcs"><summary>2 个来源</summary>
+<ul><li><a href="https://www.bls.gov/news.release/cpi.htm" target="_blank" rel="noopener">BLS</a></li><li><a href="https://www.kiplinger.com/investing/economy/this-weeks-economic-calendar" target="_blank" rel="noopener">Kiplinger</a></li></ul>
+</details>
 </div></article>
 <article class="item t2" id="item-10">
 <div class="rank">10</div>
 <div>
 <h3>布伦特原油 $92.61，10 年期美债收益率 4.79%</h3>
-<div class="meta">
-<span class="age stale">5 天前</span>
-<span class="tag">能源</span>
-<span class="tag">债券</span>
-</div>
+<div class="meta"><span class="age stale">5 天前</span><span class="tag">能源</span><span class="tag">债券</span></div>
 <p>布伦特涨到 $92.61，WTI 到 $87.67。10 年期美债收益率升至 4.79%，为 2025 年 1 月以来最高。债券抛售的驱动因素是通胀顽固、政府债务上升，以及冲突带来的能源成本。伊朗年初喊的 $200 油价并未实现，5 月以来价格一直在 $100 以下。</p>
-<div class="why"><span class="lbl">为什么重要</span>
-<p>油价和利率现在是同一笔交易。只要海峡不恢复通行，收益率的下行空间就被封住。</p></div>
+<div class="why"><span class="lbl">为什么重要</span><p>油价和利率现在是同一笔交易。只要海峡不恢复通行，收益率的下行空间就被封住。</p></div>
 <div class="impact">债券 · 能源 · 所有久期敏感资产</div>
-<details class="srcs"><summary>2 个来源</summary><ul>
-<li><a href="https://fortune.com/2026/09/01/oil-prices-bond-yields-inflation-fe/" target="_blank" rel="noopener">Fortune</a></li>
-<li><a href="https://www.washingtontimes.com/news/2026/sep/1/us-bonds-sell-tuesday-rising-oil-prices-create-inflation-anxiety/" target="_blank" rel="noopener">Washington Times</a></li>
-</ul></details>
+<details class="srcs"><summary>2 个来源</summary>
+<ul><li><a href="https://fortune.com/2026/09/01/oil-prices-bond-yields-inflation-fe/" target="_blank" rel="noopener">Fortune</a></li><li><a href="https://www.washingtontimes.com/news/2026/sep/1/us-bonds-sell-tuesday-rising-oil-prices-create-inflation-anxiety/" target="_blank" rel="noopener">Washington Times</a></li></ul>
+</details>
 </div></article>
 <article class="item t2" id="item-11">
 <div class="rank">11</div>
 <div>
 <h3>AI 软件股空头极度拥挤，UiPath 与 C3.ai 本周财报</h3>
-<div class="meta">
-<span class="age aging">2 天前</span>
-<span class="tag tk">PATH</span>
-<span class="tag tk">AI</span>
-<span class="tag">AI 软件</span>
-<span class="tag">仓位</span>
-</div>
+<div class="meta"><span class="age aging">2 天前</span><span class="tag tk">PATH</span><span class="tag tk">AI</span><span class="tag">AI 软件</span><span class="tag">仓位</span></div>
 <p>两家公司本周公布财报，做空仓位都异常极端：UiPath 被做空 1.16 亿股，约占流通盘 29%；C3.ai 被做空 4,800 万股，超过流通盘 34%。</p>
-<div class="why"><span class="lbl">为什么重要</span>
-<p>这个量级的空头拥挤度意味着，任何不算差的财报都可能触发轧空。这是仓位结构的信息，不是基本面的信息。</p></div>
+<div class="why"><span class="lbl">为什么重要</span><p>这个量级的空头拥挤度意味着，任何不算差的财报都可能触发轧空。这是仓位结构的信息，不是基本面的信息。</p></div>
 <div class="impact">AI 软件板块 · 高波动个股</div>
-<details class="srcs"><summary>1 个来源</summary><ul>
-<li><a href="https://seekingalpha.com/article/4725259-wall-street-breakfast-week-ahead" target="_blank" rel="noopener">Seeking Alpha</a></li>
-</ul></details>
+<details class="srcs"><summary>1 个来源</summary>
+<ul><li><a href="https://seekingalpha.com/article/4725259-wall-street-breakfast-week-ahead" target="_blank" rel="noopener">Seeking Alpha</a></li></ul>
+</details>
 </div></article>
 <article class="item t2" id="item-12">
 <div class="rank">12</div>
 <div>
 <h3>周一劳工节休市，本周只有四个交易日</h3>
-<div class="meta">
-<span class="age aging">2 天前</span>
-<span class="tag">市场机制</span>
-</div>
+<div class="meta"><span class="age aging">2 天前</span><span class="tag">市场机制</span></div>
 <p>9 月 7 日周一美股与债市因劳工节休市，交易周为 9 月 8 日至 11 日。</p>
-<div class="why"><span class="lbl">为什么重要</span>
-<p>同样的信息量压缩进四天，加上周五的 CPI 和周末未定价的地缘升级，单日波动率大概率高于平常。</p></div>
+<div class="why"><span class="lbl">为什么重要</span><p>同样的信息量压缩进四天，加上周五的 CPI 和周末未定价的地缘升级，单日波动率大概率高于平常。</p></div>
 <div class="impact">流动性 · 波动率</div>
-<details class="srcs"><summary>1 个来源</summary><ul>
-<li><a href="https://www.kiplinger.com/investing/stocks/17494/next-week-earnings-calendar-stocks" target="_blank" rel="noopener">Kiplinger</a></li>
-</ul></details>
+<details class="srcs"><summary>1 个来源</summary>
+<ul><li><a href="https://www.kiplinger.com/investing/stocks/17494/next-week-earnings-calendar-stocks" target="_blank" rel="noopener">Kiplinger</a></li></ul>
+</details>
 </div></article>
 <article class="item t2" id="item-13">
 <div class="rank">13</div>
 <div>
 <h3>AI 一级市场：Anthropic 估值 9,650 亿，10 月上市；OpenAI IPO 推迟到 2027</h3>
-<div class="meta">
-<span class="age stale">3 天前</span>
-<span class="tag">AI</span>
-<span class="tag">一级市场</span>
-</div>
+<div class="meta"><span class="age stale">3 天前</span><span class="tag">AI</span><span class="tag">一级市场</span></div>
 <p>Anthropic 完成 650 亿美元 H 轮，估值 9,650 亿美元，由 Altimeter、Dragoneer、Greenoaks 和红杉领投，较 2 月的 3,800 亿接近三倍。公司 6 月 1 日秘密递表，正在为 10 月以代码 ANTH 上市路演。OpenAI 3 月底完成 1,220 亿融资，估值 8,520 亿，其 IPO 预期已从 2026 年 9 月推迟到 2027 年。</p>
-<div class="why"><span class="lbl">为什么重要</span>
-<p>如果 ANTH 十月挂牌，二级市场第一次有了纯 AI 模型公司的可比标的，现在所有 AI 相关估值的锚都会被重新校准。</p></div>
+<div class="why"><span class="lbl">为什么重要</span><p>如果 ANTH 十月挂牌，二级市场第一次有了纯 AI 模型公司的可比标的，现在所有 AI 相关估值的锚都会被重新校准。</p></div>
 <div class="impact">AI 板块估值锚 · 新股市场</div>
-<details class="srcs"><summary>3 个来源</summary><ul>
-<li><a href="https://www.cnbc.com/2026/05/28/anthropic-open-ai-startup-value.html" target="_blank" rel="noopener">CNBC</a></li>
-<li><a href="https://thehill.com/policy/technology/5900111-anthropic-valuation-openai-race/" target="_blank" rel="noopener">The Hill</a></li>
-<li><a href="https://www.marketscreener.com/news/anthropic-plans-an-ipo-as-early-as-2026-ft-reports-ce7d51d9d08cf326" target="_blank" rel="noopener">MarketScreener</a></li>
-</ul></details>
+<details class="srcs"><summary>3 个来源</summary>
+<ul><li><a href="https://www.cnbc.com/2026/05/28/anthropic-open-ai-startup-value.html" target="_blank" rel="noopener">CNBC</a></li><li><a href="https://thehill.com/policy/technology/5900111-anthropic-valuation-openai-race/" target="_blank" rel="noopener">The Hill</a></li><li><a href="https://www.marketscreener.com/news/anthropic-plans-an-ipo-as-early-as-2026-ft-reports-ce7d51d9d08cf326" target="_blank" rel="noopener">MarketScreener</a></li></ul>
+</details>
 </div></article>
-<div class="sec-head t3"><h2>背景噪音</h2>
-<span class="n">5</span></div>
+<div class="sec-head t3"><h2 class="label">背景噪音</h2><span class="n">5</span></div>
 <article class="item t3" id="item-14">
 <div class="rank">14</div>
 <div>
 <h3>Snowflake 财报后涨 22%，AI 编码需求带动</h3>
-<div class="meta">
-<span class="age stale">4 天前</span>
-<span class="tag tk">SNOW</span>
-<span class="tag">软件</span>
-<span class="tag">AI</span>
-</div>
+<div class="meta"><span class="age stale">4 天前</span><span class="tag tk">SNOW</span><span class="tag">软件</span><span class="tag">AI</span></div>
 <p>Snowflake 业绩健康加上 AI 编码方面的动能，股价单日跳涨 22%。</p>
-<details class="srcs"><summary>1 个来源</summary><ul>
-<li><a href="https://www.cnbc.com/technology/" target="_blank" rel="noopener">CNBC Technology</a></li>
-</ul></details>
+<details class="srcs"><summary>1 个来源</summary>
+<ul><li><a href="https://www.cnbc.com/technology/" target="_blank" rel="noopener">CNBC Technology</a></li></ul>
+</details>
 </div></article>
 <article class="item t3" id="item-15">
 <div class="rank">15</div>
 <div>
 <h3>AI 基础设施相关个股走弱：Lumentum -5%，Teradyne -5%，Coherent -2%</h3>
-<div class="meta">
-<span class="age stale">4 天前</span>
-<span class="tag">AI 基建</span>
-<span class="tag">光模块</span>
-</div>
+<div class="meta"><span class="age stale">4 天前</span><span class="tag">AI 基建</span><span class="tag">光模块</span></div>
 <p>周二 AI 基础设施标的普遍下跌，iShares A.I. Innovation and Tech Active ETF 跌超 1%，光子学的 Lumentum 跌超 5%，Teradyne 跌 5%，Coherent 跌 2%。</p>
-<details class="srcs"><summary>1 个来源</summary><ul>
-<li><a href="https://www.cnbc.com/technology/" target="_blank" rel="noopener">CNBC Technology</a></li>
-</ul></details>
+<details class="srcs"><summary>1 个来源</summary>
+<ul><li><a href="https://www.cnbc.com/technology/" target="_blank" rel="noopener">CNBC Technology</a></li></ul>
+</details>
 </div></article>
 <article class="item t3" id="item-16">
 <div class="rank">16</div>
 <div>
 <h3>英伟达 129.3 亿美元收购 Hugging Face（已发酵三天）</h3>
-<div class="meta">
-<span class="age stale">3 天前</span>
-<span class="tag tk">NVDA</span>
-<span class="tag">半导体</span>
-<span class="tag">并购</span>
-</div>
+<div class="meta"><span class="age stale">3 天前</span><span class="tag tk">NVDA</span><span class="tag">半导体</span><span class="tag">并购</span></div>
 <p>这条是 9 月 3 日的消息，市场已经消化，列在这里只为补齐背景。英伟达以 $12.93B 收购 Hugging Face，为公司史上最大收购；同期向联发科投 $3.5B 可转债，并与 AWS 扩大 AI 基础设施合作。7 月 26 日结束的第二财季营收 $96.2B，同比 +106%。周五 NVDA 逆势收涨 0.84%。</p>
-<details class="srcs"><summary>2 个来源</summary><ul>
-<li><a href="https://nvidianews.nvidia.com/news/latest" target="_blank" rel="noopener">NVIDIA Newsroom</a></li>
-<li><a href="https://techstartups.com/2026/09/03/top-tech-news-today-september-3-2026-google-hugging-face-meta-moonshot-ai-nvidia-more/" target="_blank" rel="noopener">Tech Startups</a></li>
-</ul></details>
+<details class="srcs"><summary>2 个来源</summary>
+<ul><li><a href="https://nvidianews.nvidia.com/news/latest" target="_blank" rel="noopener">NVIDIA Newsroom</a></li><li><a href="https://techstartups.com/2026/09/03/top-tech-news-today-september-3-2026-google-hugging-face-meta-moonshot-ai-nvidia-more/" target="_blank" rel="noopener">Tech Startups</a></li></ul>
+</details>
 </div></article>
 <article class="item t3" id="item-17">
 <div class="rank">17</div>
 <div>
 <h3>七巨头年内分化极大：苹果 +20.4%，特斯拉 -18.8%</h3>
-<div class="meta">
-<span class="age stale">4 天前</span>
-<span class="tag">市场结构</span>
-</div>
+<div class="meta"><span class="age stale">4 天前</span><span class="tag">市场结构</span></div>
 <p>截至 9 月 2 日，七巨头整体年内回报 4.11%，但内部差距悬殊：AAPL +20.4%、NVDA +15.2%、AMZN +12.2%、MSFT +6.6%、GOOGL +6.1%、META -10.7%、TSLA -18.8%。</p>
-<details class="srcs"><summary>2 个来源</summary><ul>
-<li><a href="https://chartrow.com/lists/magnificent-7" target="_blank" rel="noopener">ChartRow</a></li>
-<li><a href="https://fortune.com/2026/01/11/magnificent-7-stock-market-dominance-cracking-nvidia-microsoft-apple-meta-alphabet-amazon-tesla/" target="_blank" rel="noopener">Fortune</a></li>
-</ul></details>
+<details class="srcs"><summary>2 个来源</summary>
+<ul><li><a href="https://chartrow.com/lists/magnificent-7" target="_blank" rel="noopener">ChartRow</a></li><li><a href="https://fortune.com/2026/01/11/magnificent-7-stock-market-dominance-cracking-nvidia-microsoft-apple-meta-alphabet-amazon-tesla/" target="_blank" rel="noopener">Fortune</a></li></ul>
+</details>
 </div></article>
 <article class="item t3" id="item-18">
 <div class="rank">18</div>
 <div>
 <h3>季节性与中期选举：8-9 月历来是全年最弱的两个月</h3>
-<div class="meta">
-<span class="age aging">2 天前</span>
-<span class="tag">季节性</span>
-</div>
+<div class="meta"><span class="age aging">2 天前</span><span class="tag">季节性</span></div>
 <p>分析普遍提到近期可能进入盘整期，理由是八九月的季节性弱势，加上中期选举临近带来的不确定性。</p>
-<details class="srcs"><summary>1 个来源</summary><ul>
-<li><a href="https://www.edwardjones.com/us-en/market-news-insights/stock-market-news/stock-market-weekly-update" target="_blank" rel="noopener">Edward Jones</a></li>
-</ul></details>
+<details class="srcs"><summary>1 个来源</summary>
+<ul><li><a href="https://www.edwardjones.com/us-en/market-news-insights/stock-market-news/stock-market-weekly-update" target="_blank" rel="noopener">Edward Jones</a></li></ul>
+</details>
 </div></article>
-<div class="sec-head t2"><h2>接下来要盯的时间点</h2></div>
+<div class="sec-head t2"><h2 class="label">接下来要盯的时间点</h2><span class="n">7</span></div>
 <section class="cal-scroll"><table><tbody>
 <tr>
 <td class="when">Mon 9/7</td>
@@ -1002,5 +1133,5 @@ a:focus-visible, summary:focus-visible {
 <td class="w"><span class="w-low">常规</span></td>
 </tr>
 </tbody></table></section>
-<footer class="colophon">Taurient Lite · 由 Claude Code 每个交易日早晨自动生成<br>覆盖范围：美股与宏观、科技与 AI 行业、影响能源与通胀的地缘事件<br>涨跌色经过色觉障碍可辨度校验，方向与带符号数值是颜色之外的第二重编码<br>这是新闻摘要，不是投资建议。数字以原始来源为准。</footer>
+<footer class="colophon">Taurient Lite · 由 Claude Code 每个交易日早晨自动生成<br>覆盖范围：美股与宏观、科技与 AI 行业、影响能源与通胀的地缘事件<br>涨跌色经过色觉障碍可辨度校验，方向箭头与带符号数值是颜色之外的编码<br>这是新闻摘要，不是投资建议。数字以原始来源为准。</footer>
 </div>

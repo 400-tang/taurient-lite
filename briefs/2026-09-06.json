@@ -105,17 +105,71 @@
       "sources": [
         {
           "name": "CNBC",
-          "url": "https://www.cnbc.com/2026/09/03/stock-market-today-live-updates.html"
+          "url": "https://www.cnbc.com/2026/09/03/stock-market-today-live-updates.html",
+          "angle": "强调收益率跳升与两年期创新高"
         },
         {
           "name": "Yahoo Finance",
-          "url": "https://finance.yahoo.com/markets/stocks/articles/markets-news-sept-4-2026-105243532.html"
+          "url": "https://finance.yahoo.com/markets/stocks/articles/markets-news-sept-4-2026-105243532.html",
+          "angle": "突出 FedWatch 的 68% 加息概率"
         },
         {
           "name": "TheStreet",
-          "url": "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-sept-04-2026"
+          "url": "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-sept-04-2026",
+          "angle": "把焦点放在两日连涨被打断"
         }
-      ]
+      ],
+      "assets": [
+        {
+          "asset_class": "美股",
+          "direction": "down",
+          "conviction": "high",
+          "note": "贴现率上行直接压缩长久期成长股估值，周五三大指数同步收跌。"
+        },
+        {
+          "asset_class": "美债",
+          "direction": "down",
+          "conviction": "high",
+          "note": "两年期收益率跳到 4.35%，为 2025 年 1 月以来最高，价格反向下跌。"
+        },
+        {
+          "asset_class": "美元",
+          "direction": "up",
+          "conviction": "medium",
+          "note": "加息预期抬升利差，对非美货币构成支撑性买盘。"
+        },
+        {
+          "asset_class": "加密资产",
+          "direction": "down",
+          "conviction": "low",
+          "note": "流动性收紧的传导路径存在，但当日未见明确同步反应。"
+        }
+      ],
+      "cross_source": {
+        "agreement": "aligned",
+        "summary": "三家都把周五的下跌归因于就业数据，对 68% 这个加息定价也没有分歧。差别只在措辞强度。"
+      },
+      "history": {
+        "summary": "从年中的降息共识到本周的加息定价，方向在八周内完全掉头，驱动力从通胀回落转成就业韧性叠加能源涨价。",
+        "timeline": [
+          {
+            "when": "2026 上半年",
+            "event": "两年期收益率约 3.50%，市场定价年内降息"
+          },
+          {
+            "when": "8 月",
+            "event": "油价走高开始渗入通胀预期，收益率转升"
+          },
+          {
+            "when": "9/3",
+            "event": "Waller 表态倾向按兵不动，股市反弹、收益率回落"
+          },
+          {
+            "when": "9/4",
+            "event": "非农 162k 三倍于预期，加息定价升到 68%"
+          }
+        ]
+      }
     },
     {
       "rank": 2,
@@ -134,17 +188,71 @@
       "sources": [
         {
           "name": "Al Jazeera",
-          "url": "https://www.aljazeera.com/news/2026/9/6/us-iran-engaged-in-tanker-war-where-is-the-months-long-conflict-headed"
+          "url": "https://www.aljazeera.com/news/2026/9/6/us-iran-engaged-in-tanker-war-where-is-the-months-long-conflict-headed",
+          "angle": "把冲突框定为海上控制权的长期消耗战"
         },
         {
           "name": "Times of Israel",
-          "url": "https://www.timesofisrael.com/liveblog-september-05-2026/"
+          "url": "https://www.timesofisrael.com/liveblog-september-05-2026/",
+          "angle": "侧重伊朗宣称的更严厉打击表态"
         },
         {
           "name": "Straits Daily Brief",
-          "url": "https://straits.live/briefs/2026-09-05"
+          "url": "https://straits.live/briefs/2026-09-05",
+          "angle": "提供海峡实际通行量的量化数据"
         }
-      ]
+      ],
+      "assets": [
+        {
+          "asset_class": "大宗商品",
+          "direction": "up",
+          "conviction": "high",
+          "note": "通行量降至危机前基准的约 7%，供给端风险溢价难以消退。"
+        },
+        {
+          "asset_class": "美债",
+          "direction": "down",
+          "conviction": "high",
+          "note": "能源驱动的通胀封住收益率下行空间，10 年期已到 4.79%。"
+        },
+        {
+          "asset_class": "美股",
+          "direction": "mixed",
+          "conviction": "medium",
+          "note": "能源与航运受益，航空、消费与久期敏感板块承压，指数层面方向不明。"
+        },
+        {
+          "asset_class": "海外股市",
+          "direction": "down",
+          "conviction": "medium",
+          "note": "能源净进口的亚欧市场对海峡中断的敞口高于美国。"
+        }
+      ],
+      "cross_source": {
+        "agreement": "split",
+        "summary": "对升级性质的判断存在分歧。半岛电视台把双方互袭读作海上控制权的常态化消耗，以色列时报侧重伊朗的威胁升级表态，海峡通行数据则显示实际中断程度远超双方的口径。"
+      },
+      "history": {
+        "summary": "这场冲突已持续约 190 天。伊朗三月喊出的 200 美元油价没有实现，五月以来油价一直在 100 美元以下，但海峡通行量的塌陷是结构性的。",
+        "timeline": [
+          {
+            "when": "3 月",
+            "event": "冲突升级，伊朗以 200 美元油价为目标施压"
+          },
+          {
+            "when": "5 月起",
+            "event": "油价回落并持续处于 100 美元以下"
+          },
+          {
+            "when": "8/30",
+            "event": "海峡单日通行 6 艘次，危机前基准为每天 85 艘次"
+          },
+          {
+            "when": "9/5-9/6",
+            "event": "美军击毁三艘伊朗油轮，伊朗向美舰发射弹道导弹"
+          }
+        ]
+      }
     },
     {
       "rank": 3,
@@ -165,17 +273,49 @@
       "sources": [
         {
           "name": "CNBC",
-          "url": "https://www.cnbc.com/2026/09/04/teslas-stock-drops-as-cybercab-update-underwhelms-nhtsa-probe.html"
+          "url": "https://www.cnbc.com/2026/09/04/teslas-stock-drops-as-cybercab-update-underwhelms-nhtsa-probe.html",
+          "angle": "并列发布会失望与监管调查两个催化剂"
         },
         {
           "name": "Yahoo Finance",
-          "url": "https://finance.yahoo.com/markets/stocks/articles/tesla-stock-drops-6-cybercab-180104491.html"
+          "url": "https://finance.yahoo.com/markets/stocks/articles/tesla-stock-drops-6-cybercab-180104491.html",
+          "angle": "引用富国银行对奥斯汀运营问题的观察"
         },
         {
           "name": "Motley Fool",
-          "url": "https://www.fool.com/investing/2026/09/04/why-did-tesla-stock-fall-today/"
+          "url": "https://www.fool.com/investing/2026/09/04/why-did-tesla-stock-fall-today/",
+          "angle": "转述 RBC 对定价与量产时间表的质疑"
         }
-      ]
+      ],
+      "assets": [
+        {
+          "asset_class": "美股",
+          "direction": "down",
+          "conviction": "high",
+          "note": "TSLA 单日 -5.92%，是七巨头当日的主要拖累项。"
+        }
+      ],
+      "cross_source": {
+        "agreement": "aligned",
+        "summary": "三家都把跌幅归到发布会与监管问询的叠加，但对哪一个是主因没有一致结论。RBC 侧重未回答的商业问题，NHTSA 的介入则是新增的监管变量。"
+      },
+      "history": {
+        "summary": "无方向盘车型的上市路径一直建立在自我认证之上。监管方这次质疑的是这个前提本身，而不是某个具体零件。",
+        "timeline": [
+          {
+            "when": "此前",
+            "event": "奥斯汀 robotaxi 试运营，用户反馈路线与等待时间问题"
+          },
+          {
+            "when": "9/3",
+            "event": "Cybercab 发布会仅对受邀者开放，马斯克未出席"
+          },
+          {
+            "when": "9/4",
+            "event": "NHTSA 开启审计问询，同日股价跌 5.92%"
+          }
+        ]
+      }
     },
     {
       "rank": 4,
@@ -201,7 +341,38 @@
           "name": "Broadcom IR",
           "url": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial"
         }
-      ]
+      ],
+      "assets": [
+        {
+          "asset_class": "美股",
+          "direction": "up",
+          "conviction": "high",
+          "note": "AI 半导体收入同比 221%，验证资本开支尚未见顶。"
+        },
+        {
+          "asset_class": "海外股市",
+          "direction": "up",
+          "conviction": "medium",
+          "note": "定制芯片放量利好亚洲的代工与封测环节。"
+        }
+      ],
+      "cross_source": {
+        "agreement": "aligned",
+        "summary": "公司公告与媒体报道的数字一致。需要注意的是半导体总收入与 AI 半导体收入都被报成 167 亿，两者口径在原始报道中并未拆清。"
+      },
+      "history": {
+        "summary": "博通靠给谷歌、Meta 和 OpenAI 做定制芯片，从 2022 年底至今股价涨了六倍多，市值约 1.8 万亿美元。",
+        "timeline": [
+          {
+            "when": "2022 年底至今",
+            "event": "股价涨超六倍，市值达约 1.8 万亿美元"
+          },
+          {
+            "when": "9/2",
+            "event": "Q3 AI 半导体收入 167 亿，同比 221%，环比 54%"
+          }
+        ]
+      }
     },
     {
       "rank": 5,
