@@ -138,9 +138,17 @@ def _item_block(item: Item, brief: Brief) -> list[str]:
 def _calendar_section(brief: Brief) -> list[str]:
     if not brief.calendar:
         return []
-    lines = ["## 接下来要盯的时间点", "", "| 时间 | 时刻 | 事件 | 权重 |", "|---|---|---|---|"]
+    lines = [
+        "## 接下来要盯的时间点",
+        "",
+        "| 时间 | 时刻 | 事件 | 来源 | 权重 |",
+        "|---|---|---|---|---|",
+    ]
     for entry in brief.calendar:
-        lines.append(f"| {entry.when} | {entry.time} | {entry.event} | {entry.label} |")
+        sources = " · ".join(f"[{s.name}]({s.url})" for s in entry.sources) or "—"
+        lines.append(
+            f"| {entry.when} | {entry.time} | {entry.event} | {sources} | {entry.label} |"
+        )
     lines.append("")
     return lines
 

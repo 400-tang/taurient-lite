@@ -791,6 +791,18 @@ body {
   opacity: 0.85;
 }
 
+/* 网格格子空间紧张，来源只留一个小箭头：一个排定的日期本身就是一条
+   需要出处的事实，这个入口比完全不留任何验证途径要好，完整来源名
+   展开在下方的表格里。 */
+.cal-src {
+  margin-left: 0.3rem;
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.85em;
+}
+
+.cal-src:hover { color: var(--accent-strong); }
+
 .cal-later-head {
   margin-top: 1.6rem;
   font-family: var(--font-data);
@@ -801,6 +813,19 @@ body {
   padding-bottom: 0.35rem;
   border-bottom: 1px solid var(--rule);
 }
+
+.cal-later-src { font-size: var(--t-sm); }
+
+.cal-later-src a {
+  font-family: var(--font-data);
+  font-size: var(--t-sm);
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent-soft);
+  transition: border-color 140ms ease;
+}
+
+.cal-later-src a:hover { border-bottom-color: var(--accent); }
 
 @media (max-width: 34rem) {
   .cal-grid { grid-template-columns: repeat(7, minmax(2.4rem, 1fr)); }
@@ -1225,13 +1250,14 @@ a:focus-visible, summary:focus-visible {
 </details>
 </div></article></div>
 <div class="tab-panel" data-tab="calendar"><div class="sec-head t2"><h2 class="label">接下来的日历</h2><span class="asof">4 周窗口</span></div>
-<div class="cal-grid"><div class="cal-wd">一</div><div class="cal-wd">二</div><div class="cal-wd">三</div><div class="cal-wd">四</div><div class="cal-wd">五</div><div class="cal-wd">六</div><div class="cal-wd">日</div><div class="cal-day empty"><div class="cal-daynum">31</div></div><div class="cal-day empty"><div class="cal-daynum">9/1</div></div><div class="cal-day empty"><div class="cal-daynum">2</div></div><div class="cal-day empty"><div class="cal-daynum">3</div></div><div class="cal-day empty"><div class="cal-daynum">4</div></div><div class="cal-day weekend empty"><div class="cal-daynum">5</div></div><div class="cal-day today weekend empty"><div class="cal-daynum">6</div></div><div class="cal-day"><div class="cal-daynum">7</div><div class="cal-chip w-high"><span class="cal-chip-time">全天</span><span>劳工节，美股与债市休市</span></div></div><div class="cal-day empty"><div class="cal-daynum">8</div></div><div class="cal-day"><div class="cal-daynum">9</div><div class="cal-chip w-mid"><span class="cal-chip-time">盘后</span><span>C3.ai 财报，空头占流通盘超三成</span></div><div class="cal-chip w-mid"><span class="cal-chip-time">10:00 PT</span><span>苹果秋季发布会，折叠屏 iPhone 产能是焦点</span></div></div><div class="cal-day empty"><div class="cal-daynum">10</div></div><div class="cal-day"><div class="cal-daynum">11</div><div class="cal-chip w-high"><span class="cal-chip-time">08:30 ET</span><span>8 月 CPI，nowcast +3.38% YoY</span></div></div><div class="cal-day weekend empty"><div class="cal-daynum">12</div></div><div class="cal-day weekend empty"><div class="cal-daynum">13</div></div><div class="cal-day empty"><div class="cal-daynum">14</div></div><div class="cal-day empty"><div class="cal-daynum">15</div></div><div class="cal-day"><div class="cal-daynum">16</div><div class="cal-chip w-high"><span class="cal-chip-time">14:00 ET</span><span>9 月 FOMC 利率决议，当前定价 68% 加息</span></div></div><div class="cal-day empty"><div class="cal-daynum">17</div></div><div class="cal-day empty"><div class="cal-daynum">18</div></div><div class="cal-day weekend empty"><div class="cal-daynum">19</div></div><div class="cal-day weekend empty"><div class="cal-daynum">20</div></div><div class="cal-day empty"><div class="cal-daynum">21</div></div><div class="cal-day empty"><div class="cal-daynum">22</div></div><div class="cal-day empty"><div class="cal-daynum">23</div></div><div class="cal-day empty"><div class="cal-daynum">24</div></div><div class="cal-day empty"><div class="cal-daynum">25</div></div><div class="cal-day weekend empty"><div class="cal-daynum">26</div></div><div class="cal-day weekend empty"><div class="cal-daynum">27</div></div></div>
+<div class="cal-grid"><div class="cal-wd">一</div><div class="cal-wd">二</div><div class="cal-wd">三</div><div class="cal-wd">四</div><div class="cal-wd">五</div><div class="cal-wd">六</div><div class="cal-wd">日</div><div class="cal-day empty"><div class="cal-daynum">31</div></div><div class="cal-day empty"><div class="cal-daynum">9/1</div></div><div class="cal-day empty"><div class="cal-daynum">2</div></div><div class="cal-day empty"><div class="cal-daynum">3</div></div><div class="cal-day empty"><div class="cal-daynum">4</div></div><div class="cal-day weekend empty"><div class="cal-daynum">5</div></div><div class="cal-day today weekend empty"><div class="cal-daynum">6</div></div><div class="cal-day"><div class="cal-daynum">7</div><div class="cal-chip w-high"><span class="cal-chip-time">全天</span><span>劳工节，美股与债市休市</span><a class="cal-src" href="https://www.kiplinger.com/investing/economy/this-weeks-economic-calendar" target="_blank" rel="noopener" aria-label="来源：Kiplinger">&#8599;</a></div></div><div class="cal-day empty"><div class="cal-daynum">8</div></div><div class="cal-day"><div class="cal-daynum">9</div><div class="cal-chip w-mid"><span class="cal-chip-time">盘后</span><span>C3.ai 财报，做空仓位报告口径不一，介于流通盘 28%-34%</span><a class="cal-src" href="https://www.tipranks.com/stocks/ai/earnings" target="_blank" rel="noopener" aria-label="来源：TipRanks、Seeking Alpha、Quiver Quantitative">&#8599;</a></div><div class="cal-chip w-mid"><span class="cal-chip-time">10:00 PT</span><span>苹果秋季发布会「Surprise and Shine」，折叠屏 iPhone 产能是焦点</span><a class="cal-src" href="https://www.macrumors.com/2026/08/26/apple-iphone-event-2026/" target="_blank" rel="noopener" aria-label="来源：MacRumors、AppleInsider">&#8599;</a></div></div><div class="cal-day empty"><div class="cal-daynum">10</div></div><div class="cal-day"><div class="cal-daynum">11</div><div class="cal-chip w-high"><span class="cal-chip-time">08:30 ET</span><span>8 月 CPI，nowcast +3.38% YoY</span><a class="cal-src" href="https://www.bls.gov/news.release/cpi.htm" target="_blank" rel="noopener" aria-label="来源：BLS、Kiplinger">&#8599;</a></div></div><div class="cal-day weekend empty"><div class="cal-daynum">12</div></div><div class="cal-day weekend empty"><div class="cal-daynum">13</div></div><div class="cal-day empty"><div class="cal-daynum">14</div></div><div class="cal-day empty"><div class="cal-daynum">15</div></div><div class="cal-day"><div class="cal-daynum">16</div><div class="cal-chip w-high"><span class="cal-chip-time">14:00 ET</span><span>9 月 FOMC 利率决议，当前定价 68% 加息</span><a class="cal-src" href="https://fedratecalc.com/fomc-meeting-schedule/september-2026/" target="_blank" rel="noopener" aria-label="来源：FedRateCalc、Finance Calendar">&#8599;</a></div></div><div class="cal-day empty"><div class="cal-daynum">17</div></div><div class="cal-day empty"><div class="cal-daynum">18</div></div><div class="cal-day weekend empty"><div class="cal-daynum">19</div></div><div class="cal-day weekend empty"><div class="cal-daynum">20</div></div><div class="cal-day empty"><div class="cal-daynum">21</div></div><div class="cal-day empty"><div class="cal-daynum">22</div></div><div class="cal-day empty"><div class="cal-daynum">23</div></div><div class="cal-day empty"><div class="cal-daynum">24</div></div><div class="cal-day empty"><div class="cal-daynum">25</div></div><div class="cal-day weekend empty"><div class="cal-daynum">26</div></div><div class="cal-day weekend empty"><div class="cal-daynum">27</div></div></div>
 <div class="cal-later-head">日期待定 · 更远的事件</div>
 <div class="cal-scroll"><table><tbody>
 <tr>
 <td class="when">10 月</td>
 <td class="time">—</td>
 <td>Anthropic 拟以 ANTH 上市</td>
+<td class="cal-later-src"><a href="https://thehill.com/policy/technology/5900111-anthropic-valuation-openai-race/" target="_blank" rel="noopener">The Hill</a> · <a href="https://www.marketscreener.com/news/anthropic-plans-an-ipo-as-early-as-2026-ft-reports-ce7d51d9d08cf326" target="_blank" rel="noopener">MarketScreener</a></td>
 <td class="w"><span class="w-low">常规</span></td>
 </tr>
 </tbody></table></div></div>

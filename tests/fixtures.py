@@ -110,6 +110,7 @@ def make_brief(**over: Any) -> dict:
                 "event": "8 月 CPI",
                 "weight": "high",
                 "date": "2026-09-11",
+                "sources": [make_source(name="BLS")],
             },
             {
                 "when": "本月晚些",

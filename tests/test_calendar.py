@@ -25,7 +25,7 @@ from . import fixtures as F
 TODAY = dt.date(2026, 9, 6)  # Sunday
 
 
-def entry(when="x", time="", event="e", weight="low", date=None) -> CalendarEntry:
+def entry(when="x", time="", event="e", weight="low", date=None, sources=None) -> CalendarEntry:
     return CalendarEntry.from_dict(
         {
             "when": when,
@@ -33,6 +33,7 @@ def entry(when="x", time="", event="e", weight="low", date=None) -> CalendarEntr
             "event": event,
             "weight": weight,
             **({"date": date} if date else {}),
+            **({"sources": sources} if sources else {}),
         },
         "c",
     )
@@ -146,6 +147,49 @@ class TestCalendarGrid(unittest.TestCase):
         html = calendar_grid(window, TODAY)
         self.assertNotIn("<script>evil", html)
 
+    def test_source_glyph_links_to_first_source(self):
+        """网格格子里放不下完整来源列表，只留一个指向首个来源的小箭头。"""
+        html = calendar_grid(
+            build_window(
+                TODAY,
+                (entry(event="CPI", date="2026-09-11", sources=[F.make_source(url="https://bls.gov/x")]),),
+            ),
+            TODAY,
+        )
+        self.assertIn('href="https://bls.gov/x"', html)
+        self.assertIn('class="cal-src"', html)
+
+    def test_source_glyph_absent_without_sources(self):
+        html = calendar_grid(build_window(TODAY, (entry(date="2026-09-09"),)), TODAY)
+        self.assertNotIn("cal-src", html)
+
+    def test_source_aria_label_lists_all_names(self):
+        """箭头本身只链到第一个来源，但 aria-label 要带出全部来源的名字。"""
+        html = calendar_grid(
+            build_window(
+                TODAY,
+                (
+                    entry(
+                        event="发布会",
+                        date="2026-09-09",
+                        sources=[F.make_source(name="MacRumors"), F.make_source(name="AppleInsider")],
+                    ),
+                ),
+            ),
+            TODAY,
+        )
+        self.assertIn("来源：MacRumors、AppleInsider", html)
+
+    def test_source_url_is_escaped(self):
+        html = calendar_grid(
+            build_window(
+                TODAY,
+                (entry(date="2026-09-09", sources=[F.make_source(url='https://x/"onmouseover="evil()')]),),
+            ),
+            TODAY,
+        )
+        self.assertNotIn('"onmouseover="', html)
+
 
 class TestLaterList(unittest.TestCase):
     def test_empty_when_nothing_left_over(self):
@@ -177,6 +221,27 @@ class TestLaterList(unittest.TestCase):
         html = later_list(window)
         self.assertIn("远期事件", html)
         self.assertIn("日期不明", html)
+
+    def test_sources_listed_by_full_name(self):
+        """这张表空间宽裕，每个来源的名字都要展开，不像网格里那样只留箭头。"""
+        window = build_window(
+            TODAY,
+            (
+                entry(
+                    event="FOMC",
+                    when="本月晚些",
+                    sources=[F.make_source(name="联储官网", url="https://fed.gov")],
+                ),
+            ),
+        )
+        html = later_list(window)
+        self.assertIn('href="https://fed.gov"', html)
+        self.assertIn("联储官网", html)
+
+    def test_empty_cell_when_entry_has_no_sources(self):
+        window = build_window(TODAY, (entry(event="FOMC", when="本月晚些"),))
+        html = later_list(window)
+        self.assertIn("<td></td>", html)
 
 
 class TestCalendarTab(unittest.TestCase):

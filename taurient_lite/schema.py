@@ -458,6 +458,11 @@ class CalendarEntry:
     ``date`` 是可选的精确日期，供日历网格定位这个事件落在哪一格。
     没有 ``date`` 的条目（日期还没定的会议、粗略的月份预告）落进
     「日期待定」列表，而不会强行摆到网格的某一天上瞎猜。
+
+    ``sources`` 复用新闻条目的同一个 :class:`Source` 结构，理由很直接：
+    一个排定的日期（联储会议、财报、发布会）本身就是一条需要出处的事实，
+    跟新闻条目里任何一个数字没有本质区别，不该因为它出现在日历里就
+    免于「每个数字都能追到来源」这条规则。
     """
 
     when: str
@@ -465,6 +470,7 @@ class CalendarEntry:
     event: str
     weight: str = "low"
     date: dt.date | None = None
+    sources: tuple[Source, ...] = ()
 
     @property
     def label(self) -> str:
@@ -473,12 +479,17 @@ class CalendarEntry:
     @classmethod
     def from_dict(cls, data: Any, path: str) -> CalendarEntry:
         date_raw = data.get("date")
+        sources = tuple(
+            Source.from_dict(v, f"{_join(path, 'sources')}[{i}]")
+            for i, v in enumerate(_as_list(data.get("sources") or [], _join(path, "sources")))
+        )
         return cls(
             when=_as_str(_require(data, "when", path), _join(path, "when")),
             time=_as_str(_require(data, "time", path), _join(path, "time"), allow_empty=True),
             event=_as_str(_require(data, "event", path), _join(path, "event")),
             weight=_as_enum(data.get("weight", "low"), WEIGHTS, _join(path, "weight")),
             date=_as_date(date_raw, _join(path, "date")) if date_raw is not None else None,
+            sources=sources,
         )
 
 

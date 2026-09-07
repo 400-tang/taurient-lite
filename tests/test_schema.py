@@ -223,6 +223,30 @@ class TestCalendarEntry(unittest.TestCase):
         self.assertEqual(entry.weight, "low")
         self.assertEqual(entry.label, "常规")
 
+    def test_sources_default_to_empty(self):
+        entry = CalendarEntry.from_dict({"when": "x", "time": "", "event": "e"}, "c")
+        self.assertEqual(entry.sources, ())
+
+    def test_sources_parsed(self):
+        entry = CalendarEntry.from_dict(
+            {
+                "when": "Wed 9/9",
+                "time": "10:00 PT",
+                "event": "苹果发布会",
+                "sources": [F.make_source(name="MacRumors"), F.make_source(name="AppleInsider")],
+            },
+            "c",
+        )
+        self.assertEqual([s.name for s in entry.sources], ["MacRumors", "AppleInsider"])
+
+    def test_bad_source_reports_path(self):
+        with self.assertRaises(SchemaError) as ctx:
+            CalendarEntry.from_dict(
+                {"when": "x", "time": "", "event": "e", "sources": [{"name": "只有名字"}]},
+                "calendar[2]",
+            )
+        self.assertIn("calendar[2].sources[0].url", str(ctx.exception))
+
 
 class TestBrief(unittest.TestCase):
     def test_parses_full_brief(self):

@@ -44,7 +44,7 @@ taurient-lite/
 │   ├── markdown_renderer.py 组装存档
 │   ├── pipeline.py         编排
 │   └── quotes.py           行情抓取
-├── tests/                  220 个用例，零依赖
+├── tests/                  229 个用例，零依赖
 ├── briefs/                 每日 JSON（真相来源）与 Markdown 存档
 └── site/index.html         渲染产物，发布成 Artifact
 ```
@@ -96,7 +96,7 @@ python3 render.py 2026-09-06
 python3 -m unittest discover -s tests -t .
 ```
 
-220 个用例，只用标准库。改完 `taurient_lite/` 下的任何文件都要跑一遍。
+229 个用例，只用标准库。改完 `taurient_lite/` 下的任何文件都要跑一遍。
 覆盖反序列化的每条校验规则、组件的空数据分支、主题三个块的完整性、
 HTML 转义、行情解析与重试路径、以及临时目录里的端到端渲染。
 

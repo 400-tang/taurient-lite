@@ -854,6 +854,18 @@ CALENDAR_CSS = """
   opacity: 0.85;
 }
 
+/* 网格格子空间紧张，来源只留一个小箭头：一个排定的日期本身就是一条
+   需要出处的事实，这个入口比完全不留任何验证途径要好，完整来源名
+   展开在下方的表格里。 */
+.cal-src {
+  margin-left: 0.3rem;
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.85em;
+}
+
+.cal-src:hover { color: var(--accent-strong); }
+
 .cal-later-head {
   margin-top: 1.6rem;
   font-family: var(--font-data);
@@ -864,6 +876,19 @@ CALENDAR_CSS = """
   padding-bottom: 0.35rem;
   border-bottom: 1px solid var(--rule);
 }
+
+.cal-later-src { font-size: var(--t-sm); }
+
+.cal-later-src a {
+  font-family: var(--font-data);
+  font-size: var(--t-sm);
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent-soft);
+  transition: border-color 140ms ease;
+}
+
+.cal-later-src a:hover { border-bottom-color: var(--accent); }
 
 @media (max-width: 34rem) {
   .cal-grid { grid-template-columns: repeat(7, minmax(2.4rem, 1fr)); }

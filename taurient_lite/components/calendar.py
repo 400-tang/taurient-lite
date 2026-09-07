@@ -19,7 +19,7 @@ from __future__ import annotations
 import datetime as dt
 from dataclasses import dataclass
 
-from ..schema import Brief, CalendarEntry
+from ..schema import Brief, CalendarEntry, Source
 from .base import esc, join, section_head
 
 #: 网格最少撑 4 周，即使所有事件都在本周内，也给读者看到未来的空档。
@@ -88,6 +88,23 @@ def build_window(today: dt.date, entries: tuple[CalendarEntry, ...]) -> Calendar
     )
 
 
+def _source_glyph(sources: tuple[Source, ...]) -> str:
+    """网格里空间紧张，只放一个指向首个来源的小箭头，用 aria-label 带出全部来源名。
+
+    一个排定的日期本身是一条需要出处的事实，跟新闻条目里任何一个数字
+    没有本质区别——所以哪怕格子再小，也要留一个可点的出处，而不是
+    让读者只能凭信任接受这个日期。完整的来源列表在下方「日期待定」
+    表格和更远事件里以文字链接展开；这里只是格子里的一个入口。
+    """
+    if not sources:
+        return ""
+    names = "、".join(s.name for s in sources)
+    return (
+        f'<a class="cal-src" href="{esc(sources[0].url)}" target="_blank" '
+        f'rel="noopener" aria-label="来源：{esc(names)}">&#8599;</a>'
+    )
+
+
 def _day_cell(day: dt.date, today: dt.date, entries: tuple[CalendarEntry, ...]) -> str:
     is_today = day == today
     is_weekend = day.weekday() >= 5
@@ -107,7 +124,9 @@ def _day_cell(day: dt.date, today: dt.date, entries: tuple[CalendarEntry, ...]) 
     chips = "".join(
         f'<div class="cal-chip w-{e.weight}">'
         + (f'<span class="cal-chip-time">{esc(e.time)}</span>' if e.time else "")
-        + f"<span>{esc(e.event)}</span></div>"
+        + f"<span>{esc(e.event)}</span>"
+        + _source_glyph(e.sources)
+        + "</div>"
         for e in entries
     )
 
@@ -133,6 +152,17 @@ def _later_label(entry: CalendarEntry) -> str:
     return f"{entry.date.month}/{entry.date.day}" if entry.date else entry.when
 
 
+def _sources_cell(sources: tuple[Source, ...]) -> str:
+    """这张表格空间宽裕，把每个来源的名字都列出来，不用像网格里那样只留一个箭头。"""
+    if not sources:
+        return "<td></td>"
+    links = " · ".join(
+        f'<a href="{esc(s.url)}" target="_blank" rel="noopener">{esc(s.name)}</a>'
+        for s in sources
+    )
+    return f'<td class="cal-later-src">{links}</td>'
+
+
 def later_list(window: CalendarWindow) -> str:
     """网格容不下的和日期不明的事件，合并成一张表。"""
     entries = tuple(window.later) + tuple(window.undated)
@@ -145,6 +175,7 @@ def later_list(window: CalendarWindow) -> str:
             f'<td class="when">{esc(_later_label(entry))}</td>',
             f'<td class="time">{esc(entry.time)}</td>',
             f"<td>{esc(entry.event)}</td>",
+            _sources_cell(entry.sources),
             f'<td class="w"><span class="w-{entry.weight}">{esc(entry.label)}</span></td>',
             "</tr>",
         ]

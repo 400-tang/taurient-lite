@@ -693,41 +693,101 @@
       "time": "全天",
       "event": "劳工节，美股与债市休市",
       "weight": "high",
-      "date": "2026-09-07"
+      "date": "2026-09-07",
+      "sources": [
+        {
+          "name": "Kiplinger",
+          "url": "https://www.kiplinger.com/investing/economy/this-weeks-economic-calendar"
+        }
+      ]
     },
     {
       "when": "Wed 9/9",
       "time": "盘后",
-      "event": "C3.ai 财报，空头占流通盘超三成",
+      "event": "C3.ai 财报，做空仓位报告口径不一，介于流通盘 28%-34%",
       "weight": "mid",
-      "date": "2026-09-09"
+      "date": "2026-09-09",
+      "sources": [
+        {
+          "name": "TipRanks",
+          "url": "https://www.tipranks.com/stocks/ai/earnings"
+        },
+        {
+          "name": "Seeking Alpha",
+          "url": "https://seekingalpha.com/article/4725259-wall-street-breakfast-week-ahead"
+        },
+        {
+          "name": "Quiver Quantitative",
+          "url": "https://www.quiverquant.com/news/C3.ai+Stock+Short+Interest+Rises+to+33.12%25"
+        }
+      ]
     },
     {
       "when": "Wed 9/9",
       "time": "10:00 PT",
-      "event": "苹果秋季发布会，折叠屏 iPhone 产能是焦点",
+      "event": "苹果秋季发布会「Surprise and Shine」，折叠屏 iPhone 产能是焦点",
       "weight": "mid",
-      "date": "2026-09-09"
+      "date": "2026-09-09",
+      "sources": [
+        {
+          "name": "MacRumors",
+          "url": "https://www.macrumors.com/2026/08/26/apple-iphone-event-2026/"
+        },
+        {
+          "name": "AppleInsider",
+          "url": "https://appleinsider.com/articles/26/08/26/what-to-expect-from-apples-surprise-and-shine-iphone-18-pro-event-on-september-9"
+        }
+      ]
     },
     {
       "when": "Fri 9/11",
       "time": "08:30 ET",
       "event": "8 月 CPI，nowcast +3.38% YoY",
       "weight": "high",
-      "date": "2026-09-11"
+      "date": "2026-09-11",
+      "sources": [
+        {
+          "name": "BLS",
+          "url": "https://www.bls.gov/news.release/cpi.htm"
+        },
+        {
+          "name": "Kiplinger",
+          "url": "https://www.kiplinger.com/investing/economy/this-weeks-economic-calendar"
+        }
+      ]
     },
     {
       "when": "Wed 9/16",
       "time": "14:00 ET",
       "event": "9 月 FOMC 利率决议，当前定价 68% 加息",
       "weight": "high",
-      "date": "2026-09-16"
+      "date": "2026-09-16",
+      "sources": [
+        {
+          "name": "FedRateCalc",
+          "url": "https://fedratecalc.com/fomc-meeting-schedule/september-2026/"
+        },
+        {
+          "name": "Finance Calendar",
+          "url": "https://www.financecalendar.com/fomc-meetings/"
+        }
+      ]
     },
     {
       "when": "10 月",
       "time": "—",
       "event": "Anthropic 拟以 ANTH 上市",
-      "weight": "low"
+      "weight": "low",
+      "sources": [
+        {
+          "name": "The Hill",
+          "url": "https://thehill.com/policy/technology/5900111-anthropic-valuation-openai-race/"
+        },
+        {
+          "name": "MarketScreener",
+          "url": "https://www.marketscreener.com/news/anthropic-plans-an-ipo-as-early-as-2026-ft-reports-ce7d51d9d08cf326"
+        }
+      ]
     }
   ],
   "max_age_days": 5
