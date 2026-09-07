@@ -86,11 +86,17 @@ class TestFullStylesheet(unittest.TestCase):
     def test_reduced_motion_honoured(self):
         self.assertIn("prefers-reduced-motion: reduce", self.css)
 
-    def test_no_element_parked_at_zero_opacity_on_load(self):
-        """静止状态下就该是完整可读的；唯一的 opacity:0 是悬停才出现的价格提示。"""
-        zero_opacity_rules = re.findall(r"\{[^}]*opacity:\s*0;[^}]*\}", self.css)
-        self.assertEqual(len(zero_opacity_rules), 1)
-        self.assertIn("mag7-price", self.css.split("opacity: 0;")[0][-400:])
+    def test_no_content_parked_at_zero_opacity_on_load(self):
+        """静止状态下内容就该完整可读；opacity:0 只能用于两类站得住脚的情况：
+
+        悬停才出现的价格提示（.mag7-price），以及一个视觉隐藏但仍可聚焦、
+        仍可被 label 点击的原生表单控件（.tab-input，标签页切换用）。
+        后者不是「内容等 JS 唤醒」，是可访问性上标准的隐藏控件手法。
+        任何第三处 opacity:0 大概率是内容被误藏了，应该失败。
+        """
+        blocks = re.findall(r"([.\w-]+(?:,\s*[.\w-]+)*)\s*\{[^}]*opacity:\s*0;[^}]*\}", self.css)
+        selectors = {s.strip() for block in blocks for s in block.split(",")}
+        self.assertEqual(selectors, {".mag7-price", ".tab-input"})
 
     def test_type_scale_tokens_all_used_or_declared(self):
         for name in TYPE_SCALE:

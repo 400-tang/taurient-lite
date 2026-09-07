@@ -692,37 +692,36 @@
       "when": "Mon 9/7",
       "time": "全天",
       "event": "劳工节，美股与债市休市",
-      "weight": "high"
-    },
-    {
-      "when": "Tue 9/8",
-      "time": "开盘",
-      "event": "四天交易周开始，周末地缘升级首次定价",
-      "weight": "mid"
+      "weight": "high",
+      "date": "2026-09-07"
     },
     {
       "when": "Wed 9/9",
-      "time": "—",
-      "event": "苹果发布会，折叠屏 iPhone 产能是关键",
-      "weight": "mid"
+      "time": "盘后",
+      "event": "C3.ai 财报，空头占流通盘超三成",
+      "weight": "mid",
+      "date": "2026-09-09"
     },
     {
-      "when": "本周内",
-      "time": "—",
-      "event": "UiPath、C3.ai 财报（空头拥挤）",
-      "weight": "mid"
+      "when": "Wed 9/9",
+      "time": "10:00 PT",
+      "event": "苹果秋季发布会，折叠屏 iPhone 产能是焦点",
+      "weight": "mid",
+      "date": "2026-09-09"
     },
     {
       "when": "Fri 9/11",
       "time": "08:30 ET",
       "event": "8 月 CPI，nowcast +3.38% YoY",
-      "weight": "high"
+      "weight": "high",
+      "date": "2026-09-11"
     },
     {
-      "when": "本月晚些",
-      "time": "—",
-      "event": "9 月 FOMC 决议，当前定价 68% 加息",
-      "weight": "high"
+      "when": "Wed 9/16",
+      "time": "14:00 ET",
+      "event": "9 月 FOMC 利率决议，当前定价 68% 加息",
+      "weight": "high",
+      "date": "2026-09-16"
     },
     {
       "when": "10 月",

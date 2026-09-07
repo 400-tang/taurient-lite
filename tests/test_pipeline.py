@@ -66,7 +66,8 @@ class TestHappyPath(ProjectCase):
             "指数与利率",
             "必读",
             "资产波及矩阵",
-            "接下来要盯的时间点",
+            "接下来的日历",
+            "cal-grid",
         ):
             self.assertIn(marker, html)
 

@@ -104,7 +104,21 @@ def make_brief(**over: Any) -> dict:
             make_item(rank=2, tier="noise", headline="次要新闻", tickers=[]),
         ],
         "calendar": [
-            {"when": "Fri 9/11", "time": "08:30 ET", "event": "8 月 CPI", "weight": "high"}
+            {
+                "when": "Fri 9/11",
+                "time": "08:30 ET",
+                "event": "8 月 CPI",
+                "weight": "high",
+                "date": "2026-09-11",
+            },
+            {
+                "when": "本月晚些",
+                "time": "",
+                "event": "9 月 FOMC 决议",
+                "weight": "high",
+                # 故意不给 date：日期未定的事件应该落进「日期待定」列表，
+                # 而不是被伪造一个日期摆上网格。
+            },
         ],
         **over,
     }

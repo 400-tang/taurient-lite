@@ -40,6 +40,9 @@ class TestHtmlHead(unittest.TestCase):
 
 class TestHtmlBody(unittest.TestCase):
     def test_section_order(self):
+        """两个标签页的内容都在 DOM 里（非选中的一个靠 CSS 隐藏），
+        所以顺序断言看的是文档流：报头 → 简报板块 → 日历板块 → 页脚。
+        """
         brief, config = build()
         html = render_body(brief, config)
         order = [
@@ -48,10 +51,16 @@ class TestHtmlBody(unittest.TestCase):
             html.index("自选股"),
             html.index("指数与利率"),
             html.index("必读"),
-            html.index("接下来要盯的时间点"),
+            html.index("接下来的日历"),
             html.index("colophon"),
         ]
         self.assertEqual(order, sorted(order))
+
+    def test_tab_labels_present_when_calendar_has_data(self):
+        brief, config = build()
+        html = render_body(brief, config)
+        self.assertIn('for="tab-brief"', html)
+        self.assertIn('for="tab-calendar"', html)
 
     def test_mag7_section_absent_when_quotes_missing(self):
         data = F.make_brief()
@@ -68,9 +77,15 @@ class TestHtmlBody(unittest.TestCase):
         config = Config.from_dict(F.make_config(watchlist={"symbols": []}))
         self.assertNotIn("wl-chip", render_body(brief, config))
 
-    def test_calendar_absent_when_empty(self):
+    def test_calendar_tab_absent_when_empty(self):
+        """没有日历数据时，标签栏本身也不该出现——单标签页没有意义。"""
         brief, config = build(brief_over={"calendar": []})
-        self.assertNotIn("接下来要盯的时间点", render_body(brief, config))
+        html = render_body(brief, config)
+        self.assertNotIn("cal-grid", html)
+        self.assertNotIn('for="tab-calendar"', html)
+        self.assertNotIn("tab-nav", html)
+        # 但简报内容本身必须完好无损
+        self.assertIn("必读", html)
 
     def test_depth_metadata_reaches_the_page(self):
         brief, config = build()

@@ -15,7 +15,6 @@ from taurient_lite.components.panels import _axis_domain
 from taurient_lite.schema import (
     AssetImpact,
     Brief,
-    CalendarEntry,
     CrossSource,
     HistoricalContext,
     Item,
@@ -261,17 +260,6 @@ class TestItems(unittest.TestCase):
 
 
 class TestTail(unittest.TestCase):
-    def test_calendar_omitted_when_empty(self):
-        self.assertEqual(tail.calendar_panel(()), "")
-
-    def test_weight_badge_class(self):
-        entry = CalendarEntry.from_dict(
-            {"when": "Fri", "time": "08:30", "event": "CPI", "weight": "high"}, "c"
-        )
-        html = tail.calendar_panel((entry,))
-        self.assertIn('class="w-high"', html)
-        self.assertIn("关键", html)
-
     def test_colophon_states_the_boundary(self):
         """页脚必须写明这不是投资建议，这是工具的实际边界。"""
         self.assertIn("不是投资建议", tail.colophon())

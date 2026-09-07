@@ -452,10 +452,19 @@ class Tape:
 
 @dataclass(frozen=True, slots=True)
 class CalendarEntry:
+    """一个日历事件。
+
+    ``when`` 是给人看的自由文本（"Fri 9/11"、"本月晚些"、"10月"），
+    ``date`` 是可选的精确日期，供日历网格定位这个事件落在哪一格。
+    没有 ``date`` 的条目（日期还没定的会议、粗略的月份预告）落进
+    「日期待定」列表，而不会强行摆到网格的某一天上瞎猜。
+    """
+
     when: str
     time: str
     event: str
     weight: str = "low"
+    date: dt.date | None = None
 
     @property
     def label(self) -> str:
@@ -463,11 +472,13 @@ class CalendarEntry:
 
     @classmethod
     def from_dict(cls, data: Any, path: str) -> CalendarEntry:
+        date_raw = data.get("date")
         return cls(
             when=_as_str(_require(data, "when", path), _join(path, "when")),
             time=_as_str(_require(data, "time", path), _join(path, "time"), allow_empty=True),
             event=_as_str(_require(data, "event", path), _join(path, "event")),
             weight=_as_enum(data.get("weight", "low"), WEIGHTS, _join(path, "weight")),
+            date=_as_date(date_raw, _join(path, "date")) if date_raw is not None else None,
         )
 
 

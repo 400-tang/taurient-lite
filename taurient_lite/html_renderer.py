@@ -28,21 +28,39 @@ def render_head() -> str:
     )
 
 
-def render_body(brief: Brief, config: Config) -> str:
-    """页面主体。板块顺序即阅读顺序：先盘面，再新闻，最后日历。
+def _brief_tab(brief: Brief, config: Config) -> str:
+    """「简报」标签页：盘面加分层新闻。板块顺序即阅读顺序。
 
-    每个板块在没有数据时自己返回空串，所以这里不需要写任何条件分支，
-    也不会产出空标题挂着空内容的骨架。
+    每个板块在没有数据时自己返回空串，这里不需要写任何条件分支。
     """
     return C.join(
         [
-            '<div class="sheet">',
-            C.masthead(brief),
             C.mag7_panel(brief.mag7),
             C.watchlist_panel(config.watchlist, brief),
             C.tape_panel(brief.tape),
             C.all_tiers(brief),
-            C.calendar_panel(brief.calendar),
+        ]
+    )
+
+
+def render_body(brief: Brief, config: Config) -> str:
+    """页面主体：报头，标签页（简报 / 日历），页脚。
+
+    日历数据为空时 :func:`~taurient_lite.components.tabs.tabs` 会退化成
+    只出「简报」内容、不显示标签栏——一个空的日历标签页毫无意义。
+    """
+    brief_html = _brief_tab(brief, config)
+    calendar_html = C.calendar_tab(brief)
+
+    panels = [("brief", "简报", brief_html)]
+    if calendar_html:
+        panels.append(("calendar", "日历", calendar_html))
+
+    return C.join(
+        [
+            '<div class="sheet">',
+            C.masthead(brief),
+            C.tabs(panels),
             C.colophon(),
             "</div>",
         ]

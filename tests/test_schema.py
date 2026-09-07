@@ -12,6 +12,7 @@ import unittest
 from taurient_lite.schema import (
     AssetImpact,
     Brief,
+    CalendarEntry,
     CrossSource,
     HistoricalContext,
     Item,
@@ -194,6 +195,33 @@ class TestTape(unittest.TestCase):
             F.make_tape(rows=[{"name": "X", "value": "1", "change": "", "dir": "flat"}]), "tape"
         )
         self.assertEqual(tape.rows[0].change, "")
+
+
+class TestCalendarEntry(unittest.TestCase):
+    def test_date_is_optional(self):
+        entry = CalendarEntry.from_dict(
+            {"when": "本月晚些", "time": "", "event": "FOMC", "weight": "high"}, "c"
+        )
+        self.assertIsNone(entry.date)
+
+    def test_date_parsed_when_present(self):
+        entry = CalendarEntry.from_dict(
+            {"when": "Fri 9/11", "time": "08:30 ET", "event": "CPI", "date": "2026-09-11"}, "c"
+        )
+        self.assertEqual(entry.date, dt.date(2026, 9, 11))
+
+    def test_bad_date_format_reports_path(self):
+        with self.assertRaises(SchemaError) as ctx:
+            CalendarEntry.from_dict(
+                {"when": "9月", "time": "", "event": "IPO", "date": "Sept 2026"},
+                "calendar[3]",
+            )
+        self.assertIn("calendar[3].date", str(ctx.exception))
+
+    def test_weight_defaults_to_low(self):
+        entry = CalendarEntry.from_dict({"when": "x", "time": "", "event": "e"}, "c")
+        self.assertEqual(entry.weight, "low")
+        self.assertEqual(entry.label, "常规")
 
 
 class TestBrief(unittest.TestCase):

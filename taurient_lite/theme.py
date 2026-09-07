@@ -729,6 +729,150 @@ DEPTH_CSS = """
 }
 """
 
+# -------------------------------------------------------------------------- 标签页
+#
+# 隐藏的 radio + label 实现切换，零 JavaScript。选择器耦合具体的两个 slug
+# （brief / calendar）——这个组件在代码层面是通用的，但这个页面只用到这
+# 两个标签页，per-slug 选择器比引入 JS 或数据属性联动划算得多。
+
+TABS_CSS = """
+.tab-input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.tab-nav {
+  display: flex;
+  gap: 0.3rem;
+  margin: 2.6rem 0 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.tab-label {
+  font-family: var(--font-body);
+  font-size: var(--t-sm);
+  font-weight: 500;
+  color: var(--ink-faint);
+  padding: 0.55rem 0.15rem;
+  margin-bottom: -1px;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: color 140ms ease, border-color 140ms ease;
+}
+
+.tab-label + .tab-label { margin-left: 1.3rem; }
+
+.tab-label:hover { color: var(--ink); }
+
+#tab-brief:focus-visible ~ .tab-nav label[for="tab-brief"],
+#tab-calendar:focus-visible ~ .tab-nav label[for="tab-calendar"] {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.tab-panel { display: none; }
+
+#tab-brief:checked ~ .tab-panel[data-tab="brief"],
+#tab-calendar:checked ~ .tab-panel[data-tab="calendar"] {
+  display: block;
+}
+
+#tab-brief:checked ~ .tab-nav label[for="tab-brief"],
+#tab-calendar:checked ~ .tab-nav label[for="tab-calendar"] {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+"""
+
+# -------------------------------------------------------------------------- 日历网格
+
+CALENDAR_CSS = """
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1px;
+  margin-top: 0.9rem;
+  background: var(--rule-soft);
+  border: 1px solid var(--rule-soft);
+}
+
+.cal-wd {
+  background: var(--paper);
+  padding: 0.4rem 0;
+  text-align: center;
+  font-family: var(--font-data);
+  font-size: var(--t-2xs);
+  letter-spacing: var(--track-mono);
+  color: var(--ink-faint);
+}
+
+.cal-day {
+  background: var(--paper);
+  min-height: 3.4rem;
+  padding: 0.35rem 0.4rem 0.45rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.28rem;
+}
+
+.cal-day.weekend .cal-daynum { color: var(--ink-faint); }
+.cal-day.empty { background: var(--paper-raised); }
+
+.cal-day.today {
+  background: var(--accent-soft);
+  box-shadow: inset 0 0 0 1.5px var(--accent);
+}
+
+.cal-daynum {
+  font-family: var(--font-data);
+  font-size: var(--t-xs);
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-mid);
+}
+
+.cal-day.today .cal-daynum { color: var(--accent-strong); font-weight: 600; }
+
+.cal-chip {
+  font-size: var(--t-2xs);
+  line-height: 1.35;
+  padding: 0.16rem 0.32rem;
+  border-radius: 2px;
+  text-wrap: pretty;
+}
+
+.cal-chip.w-high { background: var(--accent-soft); color: var(--accent-strong); }
+.cal-chip.w-mid { background: var(--paper-sunk); color: var(--ink-mid); }
+.cal-chip.w-low { color: var(--ink-faint); border: 1px dashed var(--rule); }
+
+.cal-chip-time {
+  font-family: var(--font-data);
+  font-variant-numeric: tabular-nums;
+  margin-right: 0.3rem;
+  opacity: 0.85;
+}
+
+.cal-later-head {
+  margin-top: 1.6rem;
+  font-family: var(--font-data);
+  font-size: var(--t-2xs);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+@media (max-width: 34rem) {
+  .cal-grid { grid-template-columns: repeat(7, minmax(2.4rem, 1fr)); }
+  .cal-day { min-height: 2.6rem; padding: 0.25rem 0.25rem 0.35rem; }
+  .cal-chip { font-size: 0.55rem; padding: 0.1rem 0.22rem; }
+  .cal-wd { font-size: 0.55rem; }
+}
+"""
+
 # -------------------------------------------------------------------- 日历与页脚
 
 TAIL_CSS = """
@@ -814,6 +958,8 @@ def build_css() -> str:
             PANELS_CSS,
             ITEMS_CSS,
             DEPTH_CSS,
+            TABS_CSS,
+            CALENDAR_CSS,
             TAIL_CSS,
         ]
     )

@@ -676,6 +676,140 @@ body {
 }
 
 
+.tab-input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.tab-nav {
+  display: flex;
+  gap: 0.3rem;
+  margin: 2.6rem 0 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.tab-label {
+  font-family: var(--font-body);
+  font-size: var(--t-sm);
+  font-weight: 500;
+  color: var(--ink-faint);
+  padding: 0.55rem 0.15rem;
+  margin-bottom: -1px;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: color 140ms ease, border-color 140ms ease;
+}
+
+.tab-label + .tab-label { margin-left: 1.3rem; }
+
+.tab-label:hover { color: var(--ink); }
+
+#tab-brief:focus-visible ~ .tab-nav label[for="tab-brief"],
+#tab-calendar:focus-visible ~ .tab-nav label[for="tab-calendar"] {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.tab-panel { display: none; }
+
+#tab-brief:checked ~ .tab-panel[data-tab="brief"],
+#tab-calendar:checked ~ .tab-panel[data-tab="calendar"] {
+  display: block;
+}
+
+#tab-brief:checked ~ .tab-nav label[for="tab-brief"],
+#tab-calendar:checked ~ .tab-nav label[for="tab-calendar"] {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1px;
+  margin-top: 0.9rem;
+  background: var(--rule-soft);
+  border: 1px solid var(--rule-soft);
+}
+
+.cal-wd {
+  background: var(--paper);
+  padding: 0.4rem 0;
+  text-align: center;
+  font-family: var(--font-data);
+  font-size: var(--t-2xs);
+  letter-spacing: var(--track-mono);
+  color: var(--ink-faint);
+}
+
+.cal-day {
+  background: var(--paper);
+  min-height: 3.4rem;
+  padding: 0.35rem 0.4rem 0.45rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.28rem;
+}
+
+.cal-day.weekend .cal-daynum { color: var(--ink-faint); }
+.cal-day.empty { background: var(--paper-raised); }
+
+.cal-day.today {
+  background: var(--accent-soft);
+  box-shadow: inset 0 0 0 1.5px var(--accent);
+}
+
+.cal-daynum {
+  font-family: var(--font-data);
+  font-size: var(--t-xs);
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-mid);
+}
+
+.cal-day.today .cal-daynum { color: var(--accent-strong); font-weight: 600; }
+
+.cal-chip {
+  font-size: var(--t-2xs);
+  line-height: 1.35;
+  padding: 0.16rem 0.32rem;
+  border-radius: 2px;
+  text-wrap: pretty;
+}
+
+.cal-chip.w-high { background: var(--accent-soft); color: var(--accent-strong); }
+.cal-chip.w-mid { background: var(--paper-sunk); color: var(--ink-mid); }
+.cal-chip.w-low { color: var(--ink-faint); border: 1px dashed var(--rule); }
+
+.cal-chip-time {
+  font-family: var(--font-data);
+  font-variant-numeric: tabular-nums;
+  margin-right: 0.3rem;
+  opacity: 0.85;
+}
+
+.cal-later-head {
+  margin-top: 1.6rem;
+  font-family: var(--font-data);
+  font-size: var(--t-2xs);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+@media (max-width: 34rem) {
+  .cal-grid { grid-template-columns: repeat(7, minmax(2.4rem, 1fr)); }
+  .cal-day { min-height: 2.6rem; padding: 0.25rem 0.25rem 0.35rem; }
+  .cal-chip { font-size: 0.55rem; padding: 0.1rem 0.22rem; }
+  .cal-wd { font-size: 0.55rem; }
+}
+
+
 .cal-scroll { overflow-x: auto; margin-top: 0.5rem; }
 
 table { border-collapse: collapse; width: 100%; font-size: var(--t-base); }
@@ -757,7 +891,9 @@ a:focus-visible, summary:focus-visible {
 </div>
 </header>
 <p class="lede">就业数据过热把市场从「降息」叙事直接翻转成「加息」定价，霍尔木兹的油轮互袭又在周末继续升级。七巨头周五普跌，特斯拉单日 -5.92% 是主要拖累。本周只有四个交易日，周五的 8 月 CPI 是唯一的解锁点。</p>
-<div class="sec-head t2"><h2 class="label">七巨头单日涨跌</h2><span class="asof">收盘 · Fri 9/4 16:00 ET</span></div>
+<input type="radio" name="tab" id="tab-brief" class="tab-input" checked><input type="radio" name="tab" id="tab-calendar" class="tab-input">
+<div class="tab-nav" role="tablist"><label class="tab-label" for="tab-brief">简报</label><label class="tab-label" for="tab-calendar">日历</label></div>
+<div class="tab-panel" data-tab="brief"><div class="sec-head t2"><h2 class="label">七巨头单日涨跌</h2><span class="asof">收盘 · Fri 9/4 16:00 ET</span></div>
 <section class="mag7">
 <div class="mag7-row">
 <div class="mag7-tick">META</div>
@@ -1087,51 +1223,17 @@ a:focus-visible, summary:focus-visible {
 <details class="srcs"><summary>1 个来源</summary>
 <ul><li><a href="https://www.edwardjones.com/us-en/market-news-insights/stock-market-news/stock-market-weekly-update" target="_blank" rel="noopener">Edward Jones</a></li></ul>
 </details>
-</div></article>
-<div class="sec-head t2"><h2 class="label">接下来要盯的时间点</h2><span class="n">7</span></div>
-<section class="cal-scroll"><table><tbody>
-<tr>
-<td class="when">Mon 9/7</td>
-<td class="time">全天</td>
-<td>劳工节，美股与债市休市</td>
-<td class="w"><span class="w-high">关键</span></td>
-</tr>
-<tr>
-<td class="when">Tue 9/8</td>
-<td class="time">开盘</td>
-<td>四天交易周开始，周末地缘升级首次定价</td>
-<td class="w"><span class="w-mid">留意</span></td>
-</tr>
-<tr>
-<td class="when">Wed 9/9</td>
-<td class="time">—</td>
-<td>苹果发布会，折叠屏 iPhone 产能是关键</td>
-<td class="w"><span class="w-mid">留意</span></td>
-</tr>
-<tr>
-<td class="when">本周内</td>
-<td class="time">—</td>
-<td>UiPath、C3.ai 财报（空头拥挤）</td>
-<td class="w"><span class="w-mid">留意</span></td>
-</tr>
-<tr>
-<td class="when">Fri 9/11</td>
-<td class="time">08:30 ET</td>
-<td>8 月 CPI，nowcast +3.38% YoY</td>
-<td class="w"><span class="w-high">关键</span></td>
-</tr>
-<tr>
-<td class="when">本月晚些</td>
-<td class="time">—</td>
-<td>9 月 FOMC 决议，当前定价 68% 加息</td>
-<td class="w"><span class="w-high">关键</span></td>
-</tr>
+</div></article></div>
+<div class="tab-panel" data-tab="calendar"><div class="sec-head t2"><h2 class="label">接下来的日历</h2><span class="asof">4 周窗口</span></div>
+<div class="cal-grid"><div class="cal-wd">一</div><div class="cal-wd">二</div><div class="cal-wd">三</div><div class="cal-wd">四</div><div class="cal-wd">五</div><div class="cal-wd">六</div><div class="cal-wd">日</div><div class="cal-day empty"><div class="cal-daynum">31</div></div><div class="cal-day empty"><div class="cal-daynum">9/1</div></div><div class="cal-day empty"><div class="cal-daynum">2</div></div><div class="cal-day empty"><div class="cal-daynum">3</div></div><div class="cal-day empty"><div class="cal-daynum">4</div></div><div class="cal-day weekend empty"><div class="cal-daynum">5</div></div><div class="cal-day today weekend empty"><div class="cal-daynum">6</div></div><div class="cal-day"><div class="cal-daynum">7</div><div class="cal-chip w-high"><span class="cal-chip-time">全天</span><span>劳工节，美股与债市休市</span></div></div><div class="cal-day empty"><div class="cal-daynum">8</div></div><div class="cal-day"><div class="cal-daynum">9</div><div class="cal-chip w-mid"><span class="cal-chip-time">盘后</span><span>C3.ai 财报，空头占流通盘超三成</span></div><div class="cal-chip w-mid"><span class="cal-chip-time">10:00 PT</span><span>苹果秋季发布会，折叠屏 iPhone 产能是焦点</span></div></div><div class="cal-day empty"><div class="cal-daynum">10</div></div><div class="cal-day"><div class="cal-daynum">11</div><div class="cal-chip w-high"><span class="cal-chip-time">08:30 ET</span><span>8 月 CPI，nowcast +3.38% YoY</span></div></div><div class="cal-day weekend empty"><div class="cal-daynum">12</div></div><div class="cal-day weekend empty"><div class="cal-daynum">13</div></div><div class="cal-day empty"><div class="cal-daynum">14</div></div><div class="cal-day empty"><div class="cal-daynum">15</div></div><div class="cal-day"><div class="cal-daynum">16</div><div class="cal-chip w-high"><span class="cal-chip-time">14:00 ET</span><span>9 月 FOMC 利率决议，当前定价 68% 加息</span></div></div><div class="cal-day empty"><div class="cal-daynum">17</div></div><div class="cal-day empty"><div class="cal-daynum">18</div></div><div class="cal-day weekend empty"><div class="cal-daynum">19</div></div><div class="cal-day weekend empty"><div class="cal-daynum">20</div></div><div class="cal-day empty"><div class="cal-daynum">21</div></div><div class="cal-day empty"><div class="cal-daynum">22</div></div><div class="cal-day empty"><div class="cal-daynum">23</div></div><div class="cal-day empty"><div class="cal-daynum">24</div></div><div class="cal-day empty"><div class="cal-daynum">25</div></div><div class="cal-day weekend empty"><div class="cal-daynum">26</div></div><div class="cal-day weekend empty"><div class="cal-daynum">27</div></div></div>
+<div class="cal-later-head">日期待定 · 更远的事件</div>
+<div class="cal-scroll"><table><tbody>
 <tr>
 <td class="when">10 月</td>
 <td class="time">—</td>
 <td>Anthropic 拟以 ANTH 上市</td>
 <td class="w"><span class="w-low">常规</span></td>
 </tr>
-</tbody></table></section>
+</tbody></table></div></div>
 <footer class="colophon">Taurient Lite · 由 Claude Code 每个交易日早晨自动生成<br>覆盖范围：美股与宏观、科技与 AI 行业、影响能源与通胀的地缘事件<br>涨跌色经过色觉障碍可辨度校验，方向箭头与带符号数值是颜色之外的编码<br>这是新闻摘要，不是投资建议。数字以原始来源为准。</footer>
 </div>
