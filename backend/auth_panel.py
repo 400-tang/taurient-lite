@@ -7,8 +7,12 @@
 Artifact 那份完全不受影响，`taurient_lite/` 包继续保持零依赖、
 跟账号系统这种「有第三方服务、有真实用户数据」的东西彻底解耦。
 
-**登录方式是邮箱魔法链接，不是密码。** 不存密码就不用操心密码哈希、
-撞库、强度校验这些安全课题，Supabase 的邮件发送和链接校验全包了。
+**登录方式是 Google 一键登录，不是密码，也不是邮箱魔法链接。** 最早用的是
+魔法链接，但 Supabase 免费版自带的邮件服务每小时只能发 2 封认证邮件，
+调试阶段随手点两次就把额度用光，对日常使用也是多一道「去邮箱翻邮件」的
+麻烦。改成 Google 登录之后这两个问题都不存在：跳转到 Google 自己的
+登录页，用谁的 Google 账号登、密码对不对，全部由 Google 处理，
+没有邮件发送这个环节，也不用存密码。
 
 **权限边界完全在 Supabase 那边用行级安全策略定义，不靠这段 JS。**
 这里传给浏览器的 anon key 本来就设计成可以公开——谁都能拿着它发请求，
@@ -52,20 +56,26 @@ CSS = """
 
 .tl-auth-lede { margin: 0 0 0.7rem; font-size: var(--t-sm); color: var(--ink-mid); }
 
-#tl-login-form { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-
-#tl-login-form input[type="email"] {
-  flex: 1 1 14rem;
-  padding: 0.45rem 0.6rem;
+#tl-google-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.5rem 1rem 0.5rem 0.7rem;
   border: 1px solid var(--rule);
-  border-radius: 3px;
+  border-radius: 4px;
   background: var(--paper);
   color: var(--ink);
   font-size: var(--t-sm);
+  font-weight: 500;
   font-family: var(--font-body);
+  cursor: pointer;
+  transition: border-color 140ms ease, background 140ms ease;
 }
 
-#tl-login-form button, #tl-add-form button {
+#tl-google-btn:hover { border-color: var(--ink-mid); background: var(--paper-sunk); }
+#tl-google-btn svg { flex: none; }
+
+#tl-add-form button {
   padding: 0.45rem 0.9rem;
   border: 1px solid var(--accent);
   border-radius: 3px;
@@ -78,7 +88,7 @@ CSS = """
   transition: background 140ms ease, color 140ms ease;
 }
 
-#tl-login-form button:hover, #tl-add-form button:hover {
+#tl-add-form button:hover {
   background: var(--accent);
   color: var(--paper);
 }
@@ -179,10 +189,15 @@ HTML = """
 <div class="tl-auth">
   <div id="tl-auth-logged-out" hidden>
     <p class="tl-auth-lede">登录后可以保存自己的自选股，跟你相关的新闻会自动高亮。</p>
-    <form id="tl-login-form">
-      <input type="email" id="tl-email" placeholder="你的邮箱" required>
-      <button type="submit">发送登录链接</button>
-    </form>
+    <button id="tl-google-btn" type="button">
+      <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">
+        <path fill="#4285F4" d="M17.64 9.2c0-.64-.06-1.25-.16-1.84H9v3.48h4.84a4.14 4.14 0 0 1-1.8 2.72v2.26h2.9c1.7-1.57 2.7-3.88 2.7-6.62z"/>
+        <path fill="#34A853" d="M9 18c2.43 0 4.47-.8 5.96-2.18l-2.9-2.26c-.8.54-1.84.86-3.06.86-2.35 0-4.34-1.59-5.05-3.72H.96v2.33A9 9 0 0 0 9 18z"/>
+        <path fill="#FBBC05" d="M3.95 10.7A5.4 5.4 0 0 1 3.67 9c0-.59.1-1.17.28-1.7V4.97H.96A9 9 0 0 0 0 9c0 1.45.35 2.83.96 4.03l2.99-2.33z"/>
+        <path fill="#EA4335" d="M9 3.58c1.32 0 2.51.46 3.44 1.35l2.58-2.58C13.46.89 11.43 0 9 0A9 9 0 0 0 .96 4.97l2.99 2.33C4.66 5.17 6.65 3.58 9 3.58z"/>
+      </svg>
+      用 Google 登录
+    </button>
     <p id="tl-login-status" class="tl-auth-status" hidden></p>
   </div>
   <div id="tl-auth-logged-in" hidden>
@@ -205,15 +220,23 @@ HTML = """
 """
 
 
-def _script(supabase: Supabase) -> str:
-    """登录、读写自选股、按 ``data-tickers`` 做个性化的全部客户端逻辑。
+def _js_string(value: str) -> str:
+    """把一个 Python 字符串变成安全嵌进 ``<script>`` 标签的 JS 字符串字面量。
 
-    用 ``json.dumps`` 而不是直接拼字符串把 URL/key 塞进 JS，纯粹是
-    习惯性的防御——这两个值现在是干净的 ASCII，但没道理让「往 JS 里
-    嵌一个 Python 字符串」这个动作依赖「这个字符串碰巧不含引号」。
+    ``json.dumps`` 保证了引号不会提前把字符串截断，但它不管 ``</script``
+    这种子串——HTML 解析器认标签是在 JS 语法之前，字符串里字面出现
+    ``</script`` 照样会把外层的 `<script>` 标签在这里截断，JS 语法
+    正不正确都救不了。这两个值目前只来自 `config.json`，是网站主自己
+    维护的，不是任何人能远程注入的东西，但没必要让这段代码的安全性
+    依赖「配置文件里凑巧没人写这几个字符」这个假设。
     """
-    url_literal = json.dumps(supabase.url)
-    key_literal = json.dumps(supabase.anon_key)
+    return json.dumps(value).replace("</script", "<\\/script")
+
+
+def _script(supabase: Supabase) -> str:
+    """登录、读写自选股、按 ``data-tickers`` 做个性化的全部客户端逻辑。"""
+    url_literal = _js_string(supabase.url)
+    key_literal = _js_string(supabase.anon_key)
 
     return f"""
 <script src="{SUPABASE_JS_CDN}"></script>
@@ -223,8 +246,7 @@ def _script(supabase: Supabase) -> str:
 
   var loggedOutEl = document.getElementById('tl-auth-logged-out');
   var loggedInEl = document.getElementById('tl-auth-logged-in');
-  var loginForm = document.getElementById('tl-login-form');
-  var emailInput = document.getElementById('tl-email');
+  var googleBtn = document.getElementById('tl-google-btn');
   var loginStatus = document.getElementById('tl-login-status');
   var userEmailEl = document.getElementById('tl-user-email');
   var logoutBtn = document.getElementById('tl-logout');
@@ -326,17 +348,20 @@ def _script(supabase: Supabase) -> str:
       }});
   }}
 
-  loginForm.addEventListener('submit', function (event) {{
-    event.preventDefault();
+  googleBtn.addEventListener('click', function () {{
     loginStatus.hidden = false;
-    loginStatus.textContent = '\\u53d1\\u9001\\u4e2d\\u2026';
-    client.auth.signInWithOtp({{
-      email: emailInput.value,
-      options: {{ emailRedirectTo: window.location.href }}
+    loginStatus.textContent = '\\u8df3\\u8f6c\\u4e2d\\u2026';
+    client.auth.signInWithOAuth({{
+      provider: 'google',
+      options: {{ redirectTo: window.location.href }}
     }}).then(function (result) {{
-      loginStatus.textContent = result.error
-        ? ('\\u51fa\\u9519\\u4e86\\uff1a' + result.error.message)
-        : '\\u767b\\u5f55\\u94fe\\u63a5\\u5df2\\u53d1\\u5230\\u4f60\\u7684\\u90ae\\u7bb1\\uff0c\\u70b9\\u5f00\\u5b83\\u5c31\\u80fd\\u56de\\u6765\\u767b\\u5f55\\u3002';
+      // 成功的话浏览器此刻已经在跳去 Google 的登录页了，这里只处理
+      // 「跳转请求本身」失败的情况（比如 Google 登录方式还没在
+      // Supabase 后台启用），不是「用户在 Google 那边输错密码」
+      // 那种——那种错误发生在 Google 自己的页面上，回不到这里。
+      if (result.error) {{
+        loginStatus.textContent = '\\u51fa\\u9519\\u4e86\\uff1a' + result.error.message;
+      }}
     }});
   }});
 
