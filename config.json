@@ -5,12 +5,53 @@
   "run_days": "Mon-Fri",
   "scope": [
     "美股与宏观：联储、利率、通胀与就业数据、财报与公司公告、板块轮动",
-    "科技与 AI 行业：半导体、云、AI 公司动态与融资，不限于上市公司"
+    "科技与 AI 行业：半导体、云、AI 公司动态与融资，不限于上市公司",
+    "地缘与大宗：直接影响能源价格与通胀路径的冲突和供给事件"
   ],
-  "target_counts": {
-    "must-read": [2, 4],
-    "worth-knowing": [3, 5],
-    "noise": [2, 3]
+  "freshness": {
+    "max_age_days": 3,
+    "must_read_max_age_days": 2,
+    "note": "平日版超过 max_age_days 的新闻一律不收，除非当天有实质进展。已经发酵过几天的事件只能进 noise 层，并且必须在正文里写清楚它是旧闻的什么新进展。周一或周日的前瞻版在简报 JSON 里写 max_age_days 覆写成 week_ahead_max_age_days。",
+    "week_ahead_max_age_days": 5
   },
-  "min_articles_scanned": 30
+  "target_counts": {
+    "must-read": [
+      3,
+      5
+    ],
+    "worth-knowing": [
+      7,
+      10
+    ],
+    "noise": [
+      4,
+      6
+    ],
+    "total_min": 15
+  },
+  "min_queries": 12,
+  "min_articles_scanned": 60,
+  "mag7": [
+    "NVDA",
+    "AAPL",
+    "MSFT",
+    "GOOGL",
+    "AMZN",
+    "META",
+    "TSLA"
+  ],
+  "watchlist": {
+    "source": "manual",
+    "note": "TradingView 导出的 TXT 用 import_watchlist.py 导进来。Robinhood 没有公开的股票 API，只能手工维护。",
+    "symbols": [
+      "NVDA",
+      "TSLA",
+      "AAPL",
+      "MSFT",
+      "AVGO",
+      "AMD",
+      "PLTR",
+      "COIN"
+    ]
+  }
 }
