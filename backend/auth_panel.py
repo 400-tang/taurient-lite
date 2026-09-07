@@ -180,8 +180,12 @@ CSS = """
   box-shadow: inset 3px 0 0 var(--accent);
 }
 
-/* 打开筛选开关时，不相关的条目整个隐藏。 */
-body.tl-filtering .item:not(.tl-mine) { display: none; }
+/* 打开筛选开关时，只隐藏「带了股票代码、但都不在你自选股里」的条目。
+   完全没有 data-tickers 的条目是宏观新闻（联储、地缘、油价这类），
+   它们不属于任何个股，却往往是当天最重要的几条——第一版把它们也
+   一并隐藏了，结果 18 条里有 10 条属于这一类，一开筛选整页就空了，
+   还没有任何提示，看起来像页面坏了。 */
+body.tl-filtering .item[data-tickers]:not(.tl-mine) { display: none; }
 """
 
 HTML = """
@@ -212,8 +216,9 @@ HTML = """
     </form>
     <label class="tl-toggle">
       <input type="checkbox" id="tl-filter-toggle">
-      只看跟我相关的新闻
+      只看跟我相关的新闻（宏观新闻始终保留）
     </label>
+    <p id="tl-match-status" class="tl-auth-status" hidden></p>
   </div>
 </div>
 </div>
@@ -254,9 +259,38 @@ def _script(supabase: Supabase) -> str:
   var addForm = document.getElementById('tl-add-form');
   var addInput = document.getElementById('tl-add-input');
   var filterToggle = document.getElementById('tl-filter-toggle');
+  var matchStatus = document.getElementById('tl-match-status');
 
   var TICKER_RE = /^[A-Z][A-Z0-9.\\-]{{0,9}}$/;
   var currentSymbols = [];
+
+  // 当天这份简报总共涉及哪些代码。用来在「一条都没匹配上」时告诉用户
+  // 今天可选的范围是什么，而不是让他对着空页面猜是不是坏了。
+  function availableTickers() {{
+    var seen = {{}};
+    document.querySelectorAll('.item[data-tickers]').forEach(function (el) {{
+      (el.getAttribute('data-tickers') || '').split(' ').filter(Boolean)
+        .forEach(function (t) {{ seen[t] = true; }});
+    }});
+    return Object.keys(seen).sort();
+  }}
+
+  function setMatchStatus(matched) {{
+    if (!currentSymbols.length) {{
+      matchStatus.hidden = true;
+      return;
+    }}
+    matchStatus.hidden = false;
+    if (matched > 0) {{
+      matchStatus.textContent =
+        '\\u4eca\\u5929\\u6709 ' + matched + ' \\u6761\\u8ddf\\u4f60\\u7684\\u81ea\\u9009\\u80a1\\u76f8\\u5173\\uff0c\\u5df2\\u9ad8\\u4eae\\u3002';
+      return;
+    }}
+    var available = availableTickers();
+    matchStatus.textContent = available.length
+      ? '\\u4eca\\u5929\\u6ca1\\u6709\\u8ddf\\u4f60\\u81ea\\u9009\\u80a1\\u76f8\\u5173\\u7684\\u65b0\\u95fb\\u3002\\u4eca\\u65e5\\u7b80\\u62a5\\u6d89\\u53ca\\uff1a' + available.join('\\u3001')
+      : '\\u4eca\\u5929\\u7684\\u7b80\\u62a5\\u91cc\\u6ca1\\u6709\\u4efb\\u4f55\\u4e2a\\u80a1\\u65b0\\u95fb\\u3002';
+  }}
 
   function showLoggedOut() {{
     loggedOutEl.hidden = false;
@@ -290,13 +324,16 @@ def _script(supabase: Supabase) -> str:
   function applyFilter() {{
     var mine = {{}};
     currentSymbols.forEach(function (s) {{ mine[s] = true; }});
+    var matched = 0;
     document.querySelectorAll('.item').forEach(function (el) {{
       var raw = el.getAttribute('data-tickers') || '';
       var tickers = raw.split(' ').filter(Boolean);
       var isMine = tickers.some(function (t) {{ return mine[t]; }});
+      if (isMine) matched++;
       el.classList.toggle('tl-mine', isMine);
     }});
     document.body.classList.toggle('tl-filtering', filterToggle.checked);
+    setMatchStatus(matched);
   }}
 
   function persist(userId) {{
@@ -327,7 +364,18 @@ def _script(supabase: Supabase) -> str:
 
   function addSymbol(raw) {{
     var symbol = (raw || '').trim().toUpperCase();
-    if (!TICKER_RE.test(symbol) || currentSymbols.indexOf(symbol) !== -1) return;
+    // 原来这两种情况都是静默 return，用户输完一按回车什么都没发生，
+    // 分不清是「代码不合法」「已经加过了」还是「功能坏了」。
+    if (!TICKER_RE.test(symbol)) {{
+      matchStatus.hidden = false;
+      matchStatus.textContent = '\\u8fd9\\u4e0d\\u50cf\\u662f\\u4e00\\u4e2a\\u80a1\\u7968\\u4ee3\\u7801\\uff1a' + symbol;
+      return;
+    }}
+    if (currentSymbols.indexOf(symbol) !== -1) {{
+      matchStatus.hidden = false;
+      matchStatus.textContent = symbol + ' \\u5df2\\u7ecf\\u5728\\u5217\\u8868\\u91cc\\u4e86';
+      return;
+    }}
     currentSymbols.push(symbol);
     renderChips();
     applyFilter();
