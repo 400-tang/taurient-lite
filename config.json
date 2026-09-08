@@ -1,5 +1,7 @@
 {
   "artifact_url": "https://claude.ai/code/artifact/65328183-42d9-4ead-93c5-d2d3dc41b97a",
+  "backend_url": "https://taurient-lite-backend.onrender.com",
+  "backend_note": "Render 上的后端地址。云端定时任务所在沙箱的网络出口是「仅包管理器」模式，直连 Yahoo、FINRA 会在 CONNECT 阶段被网关 403 拒绝；Render 是普通云主机外网不受限。fetch_quotes.py 直连全部失败时会改从这里的 /api/quotes/live 取数。",
   "timezone": "America/Los_Angeles",
   "run_time": "06:00",
   "run_days": "Mon-Fri",

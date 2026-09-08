@@ -78,6 +78,66 @@ def fetch_json(url: str, timeout: float = 15.0) -> object:
         return json.load(response)
 
 
+# ----------------------------------------------------------------- 后端回退
+#
+# 云端定时任务跑在一个网络出口受限的沙箱里：出站流量被强制走一个策略
+# 代理，除了包管理器、GitHub 和 Anthropic 自己的 API，其余目的地在
+# CONNECT 阶段就被 403 拒绝。直连 Yahoo 在那个环境里必然失败。
+#
+# 而 Render 上的后端是普通云主机，外网不受限，它已经把同一份取数逻辑
+# 暴露成了 /api/quotes/live。所以直连失败时改问后端要，是让「有网的
+# 那一端负责取数」——这本来就是当初做这个后端的意义。
+
+
+def parse_backend_quotes(payload: object) -> tuple[list[Quote], list[str]]:
+    """解析后端 ``/api/quotes/live`` 的响应。
+
+    后端对单只失败的处理是返回 ``{"ticker": X, "error": ...}`` 而不是
+    整个请求失败，所以这里同样允许部分成功，返回 ``(报价, 失败原因)``，
+    跟 :func:`fetch_many` 的形状保持一致，调用方不必区分数据来自哪一边。
+    """
+    if not isinstance(payload, list):
+        raise QuoteError(f"后端返回的不是数组，实际是 {type(payload).__name__}")
+
+    quotes: list[Quote] = []
+    failures: list[str] = []
+    for row in payload:
+        if not isinstance(row, dict):
+            failures.append(f"后端返回了一个非对象条目：{row!r}")
+            continue
+        ticker = str(row.get("ticker", "?"))
+        if row.get("error"):
+            failures.append(f"{ticker}：{row['error']}")
+            continue
+        try:
+            quotes.append(
+                Quote(
+                    ticker=ticker,
+                    price=float(row["price"]),
+                    change_pct=float(row["change_pct"]),
+                    market_time=int(row["market_time"]),
+                )
+            )
+        except (KeyError, TypeError, ValueError) as exc:
+            failures.append(f"{ticker}：后端返回的字段缺失或不是数字（{exc}）")
+    return quotes, failures
+
+
+def fetch_from_backend(
+    backend_url: str,
+    *,
+    fetcher: Callable[..., object] = fetch_json,
+    timeout: float = 90.0,
+) -> tuple[list[Quote], list[str]]:
+    """从后端取全部七巨头报价。
+
+    默认超时给到 90 秒：Render 免费版闲置 15 分钟会休眠，被唤醒要花
+    半分钟到一分钟，用默认的 15 秒会稳定超时在冷启动上。
+    """
+    url = backend_url.rstrip("/") + "/api/quotes/live"
+    return parse_backend_quotes(fetcher(url, timeout=timeout))
+
+
 def fetch_quote(
     ticker: str,
     *,

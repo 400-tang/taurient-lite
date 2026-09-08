@@ -79,6 +79,11 @@ class Config:
     """整个工具的配置。"""
 
     artifact_url: str = ""
+    #: 部署在 Render 上的后端地址。云端定时任务所在的沙箱网络出口是
+    #: 「仅包管理器」模式，直连 Yahoo、FINRA 这些第三方接口会被网关
+    #: 403 拒绝；而 Render 是普通云主机，外网不受限。所以后端在这里
+    #: 承担取数代理的角色：直连失败时改从它拿。留空则不启用这个回退。
+    backend_url: str = ""
     timezone: str = "America/Los_Angeles"
     freshness: Freshness = field(default_factory=Freshness)
     mag7: tuple[str, ...] = ()
@@ -121,6 +126,7 @@ class Config:
 
         return cls(
             artifact_url=str(data.get("artifact_url", "") or ""),
+            backend_url=str(data.get("backend_url", "") or ""),
             timezone=str(data.get("timezone", "America/Los_Angeles") or "America/Los_Angeles"),
             freshness=Freshness.from_dict(data.get("freshness")),
             mag7=symbols(data.get("mag7"), "mag7"),

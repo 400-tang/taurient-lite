@@ -26,6 +26,7 @@ from taurient_lite.quotes import (  # noqa: E402
     QuoteError,
     asof_label,
     build_mag7_block,
+    fetch_from_backend,
     fetch_many,
     fetch_quote,
 )
@@ -78,6 +79,20 @@ def main(argv: list[str]) -> int:
         return 1
 
     quotes, failures = fetch_many(config.mag7)
+    source = "直连 Yahoo"
+
+    # 直连全军覆没时改问 Render 后端要。云端定时任务的沙箱把出站流量
+    # 限制成「仅包管理器」，直连 Yahoo 必然 403；后端跑在普通云主机上，
+    # 外网不受限，同一份取数逻辑它那边能跑通。
+    if not quotes and config.backend_url:
+        print("直连全部失败，改从后端取数……", file=sys.stderr)
+        for reason in failures:
+            print(f"  {reason}", file=sys.stderr)
+        try:
+            quotes, failures = fetch_from_backend(config.backend_url)
+            source = f"后端 {config.backend_url}"
+        except (QuoteError, OSError, ValueError) as exc:
+            print(f"后端取数也失败：{exc}", file=sys.stderr)
 
     if not quotes:
         print("一只都没取到，检查网络或者端点是否还可用。", file=sys.stderr)
@@ -92,7 +107,7 @@ def main(argv: list[str]) -> int:
     )
 
     up = sum(1 for q in quotes if q.change_pct >= 0)
-    print(f"写入 {target}")
+    print(f"写入 {target}（数据来自{source}）")
     print(f"  {len(quotes)} 只，{up} 涨 {len(quotes) - up} 跌，{brief['mag7']['asof']}")
     for quote in sorted(quotes, key=lambda q: q.change_pct, reverse=True):
         print(f"    {quote.ticker:6} ${quote.price:>10,.2f}  {quote.change_pct:+.2f}%")
