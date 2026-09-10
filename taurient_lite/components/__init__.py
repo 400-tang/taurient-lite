@@ -4,6 +4,7 @@ from .base import attr, classes, esc, join, section_head
 from .calendar import calendar_tab
 from .depth import asset_matrix, cross_source_card, depth_block, history_card
 from .items import age_badge, all_tiers, render_item, tier_section
+from .momentum import candidate_card, momentum_tab, stage_group
 from .panels import masthead, mag7_chart, mag7_panel, tape_panel, watchlist_panel
 from .tabs import tabs
 from .tail import colophon
@@ -15,6 +16,9 @@ __all__ = [
     "join",
     "section_head",
     "calendar_tab",
+    "candidate_card",
+    "momentum_tab",
+    "stage_group",
     "asset_matrix",
     "cross_source_card",
     "depth_block",

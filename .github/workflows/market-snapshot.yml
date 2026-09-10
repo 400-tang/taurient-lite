@@ -1,0 +1,51 @@
+# 抓行情快照并提交进仓库，供云端定时任务读取。
+#
+# 为什么需要这个：云端任务跑在一个出站白名单制的沙箱里，除了 Anthropic
+# 的 API、包管理器源和 GitHub，其余目的地在 CONNECT 阶段就被网关 403
+# 拒绝。实测 Yahoo 和自建的 Render 后端待遇完全一样。GitHub Actions 的
+# runner 外网不受限，而 GitHub 又恰好是沙箱唯一能连通的外部服务，所以
+# 把取数的方向反过来：runner 抓好数据提交进仓库，任务 clone 时带下来。
+
+name: 行情快照
+
+on:
+  schedule:
+    # 12:30 UTC = 美东早上 8:30，开盘前一小时，拿到的是前一交易日收盘价，
+    # 正是盘前简报要展示的东西。比云端任务的 13:00 早半小时，留足缓冲：
+    # GitHub 的定时任务在高峰期会延迟几分钟到十几分钟，这是官方已知行为。
+    - cron: "30 12 * * 1-5"
+  # 允许在 Actions 页面手动点一次，用来验证或补跑。
+  workflow_dispatch:
+
+# 只给写内容的权限，不多给。
+permissions:
+  contents: write
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # 整个流水线零第三方依赖，标准库足够，所以没有 pip install 这一步。
+      - name: 抓取行情与空头持仓
+        run: python3 snapshot_market.py
+
+      - name: 提交快照
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/market_snapshot.json
+          # 数据没变化时不产生空提交（比如周末或假日重复跑）。
+          if git diff --staged --quiet; then
+            echo "快照没有变化，跳过提交"
+          else
+            git commit -m "行情快照 $(date -u +%F)"
+            # 云端任务也往 main 推简报，两边可能撞上；先 rebase 再推。
+            git pull --rebase origin main
+            git push
+          fi

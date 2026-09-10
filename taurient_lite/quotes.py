@@ -123,6 +123,60 @@ def parse_backend_quotes(payload: object) -> tuple[list[Quote], list[str]]:
     return quotes, failures
 
 
+# ------------------------------------------------------------- 仓库内快照回退
+#
+# 最后一层，也是云端唯一真正能走通的一层。GitHub Actions 的 runner 外网
+# 不受限，在云端任务开始前把行情抓好提交进仓库；任务 clone 仓库时数据
+# 就跟着下来了，读文件即可，一次外网都不用发。
+#
+# 关键是**过期保护**：快照是文件，会一直躺在仓库里，哪天 Actions 挂了
+# 没人发现，读到的就是几周前的价格。所以按数据源自报的 market_time 判龄，
+# 超期直接当没有——宁可让页面少一个板块，也不能把陈数据当成当天的。
+
+
+class SnapshotTooOld(QuoteError):
+    """仓库里的快照太旧，不能当作当天数据使用。"""
+
+
+#: 允许的最大天数。5 天能扛过三天连休加一个假日；再长就说明抓取环节
+#: 已经坏了一阵子，那更该让板块消失以引起注意，而不是继续糊弄。
+DEFAULT_MAX_SNAPSHOT_AGE_DAYS = 5
+
+
+def load_snapshot_quotes(
+    payload: object,
+    *,
+    now: dt.datetime | None = None,
+    max_age_days: int = DEFAULT_MAX_SNAPSHOT_AGE_DAYS,
+) -> dict:
+    """从快照里取出 ``mag7`` 块，顺带做过期校验。纯函数，不碰磁盘。
+
+    直接返回可以塞进简报 JSON 的 ``mag7`` 结构，而不是 :class:`Quote`
+    列表——快照里存的本来就是 :func:`build_mag7_block` 的产物，再拆回
+    对象又拼一遍是多余的往返。
+    """
+    if not isinstance(payload, dict):
+        raise QuoteError(f"快照不是一个对象，实际是 {type(payload).__name__}")
+
+    block = payload.get("mag7")
+    if not isinstance(block, dict) or not block.get("rows"):
+        raise QuoteError("快照里没有可用的 mag7 数据")
+
+    market_time = payload.get("market_time")
+    if not isinstance(market_time, int):
+        raise QuoteError("快照缺少 market_time，无法判断新鲜度")
+
+    moment = dt.datetime.fromtimestamp(market_time, dt.timezone.utc)
+    reference = now or dt.datetime.now(dt.timezone.utc)
+    age_days = (reference - moment).days
+    if age_days > max_age_days:
+        raise SnapshotTooOld(
+            f"快照里的行情是 {moment.date()} 的，已经 {age_days} 天没更新，"
+            f"超过 {max_age_days} 天上限；抓取环节可能已经坏了，先不用它。"
+        )
+    return block
+
+
 def fetch_from_backend(
     backend_url: str,
     *,

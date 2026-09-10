@@ -13,6 +13,11 @@
 用 `WebSearch` 跑至少 12 组查询，覆盖 `config.json` 里的 scope。查询里带上当天日期，
 让搜索引擎优先返回新内容。目标是扫过 60 篇以上，最终留下 15 条以上。
 
+**开始搜之前先读一遍 `data/momentum_scan.json` 里 `stage` 为 `ignition` 的几只。**
+它们是今天价量上刚起变化、但可能还没进入新闻视野的代码。读一眼就好，
+不必为每只专门搜一轮——第 3 步要填的 `coverage` 字段问的正是「它有没有
+自然出现在你今天读的新闻里」，专门去搜会把这个判断污染掉。
+
 固定要跑的：
 
 1. `stock market today <日期> recap S&P 500 Nasdaq`
@@ -86,6 +91,7 @@
 | `tape` | 指数、收益率、油价。`dir` 只能是 `up`/`down`/`flat` |
 | `items` | 新闻条目，见下 |
 | `calendar` | 未来的已知事件，见下 |
+| `momentum` | 价量异动候选，见下。数字来自 `data/momentum_scan.json`，不要自己算 |
 
 ### 日历字段
 
@@ -116,6 +122,45 @@
 时（比如空头持仓比例这类会随时间波动的数据），如实写出区间或分别标注，
 不要挑一个看起来更整齐的数字了事。
 
+
+### 异动字段
+
+`data/momentum_scan.json` 是 GitHub Actions 在开盘前扫完全市场（约 2500 只
+流动性达标的美股）写下的，**里面的数字直接抄，一个都不要自己算**——
+判定逻辑在 `taurient_lite/momentum.py` 里，是跑过测试的纯函数。
+
+你要做的只有一件机器做不到的事：**把价量异动和你今天扫到的新闻交叉**。
+
+从扫描结果的 `candidates` 里挑 5 到 10 只写进 `momentum.candidates`，
+优先挑 `stage` 是 `ignition` 的（这一档通常只有几只，全都写上），
+再从 `continuation` 里补几只，最后可以放一两只 `extended` ——
+后者的作用是让读者认出「这个我已经错过了」，不是推荐。
+
+每只必须补两个字段：
+
+| 字段 | 说明 |
+|---|---|
+| `coverage` | `none`/`light`/`heavy`。**今天扫的新闻里，这个代码出现过几次** |
+| `note` | 一句话：价量上发生了什么，以及新闻面知道些什么 |
+
+**`coverage` 是反着读的，这是整个板块唯一不能被通用选股器复制的信息。**
+`none` 表示今天扫了几十上百篇新闻、这只票一次都没出现——市场还没注意到，
+线索最早；`heavy` 表示消息面已经跑在前面，价量只是确认，读者已经晚了。
+判断依据就是第 1 步的扫描结果，不要为此专门再去搜一轮：如果它没出现在
+你今天读过的新闻里，那本身就是结论。
+
+其余字段（`stage`、`close`、`change_pct`、`rvol`、`breakout_age`、
+`ext_ma20`、`run_from_base`）从扫描结果里原样复制。
+
+**不要写任何买卖倾向。** `note` 只陈述「发生了什么」和「已知什么」，
+不写「值得关注」「可以考虑」这类措辞。页面上已经印了免责说明：全量回测
+（2515 只、两年、5090 次信号）初动档 20 日胜率 51.4%、期望 +1.1%，仅略好过
+抛硬币，且收益集中在极少数尾部标的。**同一批数据还证伪了「越早越好」**——
+按早期度排序，最早的一批前向收益反而更差。所以名单顺序只表示「有多新」。
+措辞越像建议，这个模块越危险。
+
+扫描文件缺失或当天没有值得写的候选时，**整个 `momentum` 字段省略**，
+页面会自动不显示这个标签页。不要写一个空壳。
 
 ### 条目字段
 
@@ -181,8 +226,19 @@
 ```bash
 cd /Users/eddie/Desktop/DSO429/taurient-lite
 python3 fetch_quotes.py <日期>     # 抓七巨头收盘价，写进 mag7.rows
+python3 apply_momentum.py <日期>   # 把价量扫描结果写进 momentum.candidates
 python3 render.py                  # 不带参数就渲染最新的那份
 ```
+
+**`apply_momentum.py` 只填数字，判断仍然要你写。** 它从
+`data/momentum_scan.json` 里按档位配额挑候选（初动档全要，延续档 4 只，
+已延伸 2 只做参照），把七个数字原样搬进简报 JSON，然后打印一份
+「还需要你补 coverage 与 note」的清单。补完可以再跑一次——**已经写好的
+`coverage`、`note`、`sources` 会被原样保留，只有数字被刷新**，跟
+`fetch_quotes.py` 保留 `mag7.note` 是同一个约定。
+
+顺序上它要放在第 3 步写完 JSON 之后：脚本是往已有的简报里写字段，
+简报文件还不存在时它会直接报错退出。
 
 `fetch_quotes.py` 走 Yahoo Finance 的 chart 端点，不需要 API key，返回里带
 `regularMarketTime`，所以 `asof` 是数据自己报的时点，不是推断的。这个端点未受
@@ -222,12 +278,14 @@ taurient_lite/
 │   ├── depth.py         资产矩阵、交叉信源、历史脉络
 │   ├── items.py         新闻条目与分层
 │   ├── calendar.py      日历标签页：周网格 + 日期待定列表
+│   ├── momentum.py      异动标签页：按阶段分档的候选卡片
 │   ├── tabs.py          标签页切换的通用脚手架（radio-hack，零 JS）
 │   └── tail.py          页脚
 ├── html_renderer.py     组装整页
 ├── markdown_renderer.py 组装存档
 ├── pipeline.py          编排：读文件、调渲染、写文件
 ├── quotes.py            行情抓取，独立于渲染
+├── momentum.py          价量异动判定，纯函数，不碰网络
 └── short_interest.py    FINRA 空头持仓抓取，研究/核实工具，不进渲染流程
 ```
 

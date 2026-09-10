@@ -17,6 +17,8 @@
 
 from __future__ import annotations
 
+from typing import Sequence
+
 # --------------------------------------------------------------------------- 颜色
 #
 # 每个条目是 (亮色, 暗色)。暗色不是亮色的机械反转：中性色带一点冷调偏向
@@ -767,25 +769,43 @@ TABS_CSS = """
 
 .tab-label:hover { color: var(--ink); }
 
-#tab-brief:focus-visible ~ .tab-nav label[for="tab-brief"],
-#tab-calendar:focus-visible ~ .tab-nav label[for="tab-calendar"] {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
-}
-
 .tab-panel { display: none; }
-
-#tab-brief:checked ~ .tab-panel[data-tab="brief"],
-#tab-calendar:checked ~ .tab-panel[data-tab="calendar"] {
-  display: block;
-}
-
-#tab-brief:checked ~ .tab-nav label[for="tab-brief"],
-#tab-calendar:checked ~ .tab-nav label[for="tab-calendar"] {
-  color: var(--accent);
-  border-bottom-color: var(--accent);
-}
 """
+
+#: 页面上所有标签页的 slug。**必须和 :mod:`taurient_lite.html_renderer`
+#: 里传给 tabs() 的 slug 一致。**
+#:
+#: 这份名单存在的原因是一次真实的故障：标签页的选择器原先是手写的两条，
+#: 加第三个标签页时只改了渲染层，CSS 没跟上——结果标签栏里有「异动」
+#: 这个标签，点开却是一片空白。这种失败不报错、不告警，只是内容消失。
+#: 现在选择器由这份名单生成，:mod:`tests.test_theme` 再断言渲染层用到的
+#: 每个 slug 都在名单里，同样的漏改会在测试阶段就炸出来。
+TAB_SLUGS: tuple[str, ...] = ("brief", "calendar", "momentum")
+
+
+def build_tabs_css(slugs: Sequence[str] = TAB_SLUGS) -> str:
+    """按 slug 生成标签页的选中态选择器。"""
+
+    def group(selector: str, body: str) -> str:
+        joined = ",\n".join(selector.format(s=s) for s in slugs)
+        return f"{joined} {{\n{body}\n}}"
+
+    return "\n\n".join(
+        [
+            group(
+                '#tab-{s}:focus-visible ~ .tab-nav label[for="tab-{s}"]',
+                "  outline: 2px solid var(--accent);\n  outline-offset: 2px;",
+            ),
+            group(
+                '#tab-{s}:checked ~ .tab-panel[data-tab="{s}"]',
+                "  display: block;",
+            ),
+            group(
+                '#tab-{s}:checked ~ .tab-nav label[for="tab-{s}"]',
+                "  color: var(--accent);\n  border-bottom-color: var(--accent);",
+            ),
+        ]
+    )
 
 # -------------------------------------------------------------------------- 日历网格
 
@@ -801,21 +821,21 @@ CALENDAR_CSS = """
 
 .cal-wd {
   background: var(--paper);
-  padding: 0.4rem 0;
+  padding: 0.55rem 0;
   text-align: center;
   font-family: var(--font-data);
-  font-size: var(--t-2xs);
+  font-size: var(--t-xs);
   letter-spacing: var(--track-mono);
   color: var(--ink-faint);
 }
 
 .cal-day {
   background: var(--paper);
-  min-height: 3.4rem;
-  padding: 0.35rem 0.4rem 0.45rem;
+  min-height: 5rem;
+  padding: 0.5rem 0.55rem 0.6rem;
   display: flex;
   flex-direction: column;
-  gap: 0.28rem;
+  gap: 0.36rem;
 }
 
 .cal-day.weekend .cal-daynum { color: var(--ink-faint); }
@@ -828,7 +848,7 @@ CALENDAR_CSS = """
 
 .cal-daynum {
   font-family: var(--font-data);
-  font-size: var(--t-xs);
+  font-size: var(--t-sm);
   font-variant-numeric: tabular-nums;
   color: var(--ink-mid);
 }
@@ -836,16 +856,21 @@ CALENDAR_CSS = """
 .cal-day.today .cal-daynum { color: var(--accent-strong); font-weight: 600; }
 
 .cal-chip {
-  font-size: var(--t-2xs);
-  line-height: 1.35;
-  padding: 0.16rem 0.32rem;
-  border-radius: 2px;
+  font-size: var(--t-xs);
+  line-height: 1.4;
+  padding: 0.22rem 0.4rem;
+  border-radius: 3px;
   text-wrap: pretty;
 }
 
 .cal-chip.w-high { background: var(--accent-soft); color: var(--accent-strong); }
 .cal-chip.w-mid { background: var(--paper-sunk); color: var(--ink-mid); }
-.cal-chip.w-low { color: var(--ink-faint); border: 1px dashed var(--rule); }
+.cal-chip.w-low {
+  background: var(--paper-raised);
+  color: var(--ink-faint);
+  border-left: 2px solid var(--rule);
+  padding-left: 0.34rem;
+}
 
 .cal-chip-time {
   font-family: var(--font-data);
@@ -891,14 +916,178 @@ CALENDAR_CSS = """
 .cal-later-src a:hover { border-bottom-color: var(--accent); }
 
 @media (max-width: 34rem) {
-  .cal-grid { grid-template-columns: repeat(7, minmax(2.4rem, 1fr)); }
-  .cal-day { min-height: 2.6rem; padding: 0.25rem 0.25rem 0.35rem; }
-  .cal-chip { font-size: 0.55rem; padding: 0.1rem 0.22rem; }
-  .cal-wd { font-size: 0.55rem; }
+  .cal-grid { grid-template-columns: repeat(7, minmax(2.6rem, 1fr)); }
+  .cal-day { min-height: 3.6rem; padding: 0.35rem 0.32rem 0.42rem; gap: 0.26rem; }
+  .cal-chip { font-size: 0.62rem; padding: 0.16rem 0.3rem; }
+  .cal-wd { font-size: 0.62rem; padding: 0.45rem 0; }
 }
 """
 
 # -------------------------------------------------------------------- 日历与页脚
+
+# -------------------------------------------------------------------------- 价量异动
+
+MOMENTUM_CSS = """
+.mo-lede {
+  margin: 0.9rem 0 0;
+  max-width: var(--measure);
+  font-size: var(--t-base);
+  line-height: 1.7;
+  text-wrap: pretty;
+}
+
+/* 免责声明用边框而不是底色：它必须一眼看见，但不该抢走候选名单的注意力。 */
+.mo-disclaimer {
+  margin-top: 0.9rem;
+  padding: 0.6rem 0.75rem;
+  border-left: 2px solid var(--rule);
+  font-size: var(--t-sm);
+  line-height: 1.6;
+  color: var(--ink-mid);
+  max-width: var(--measure);
+  text-wrap: pretty;
+}
+
+.mo-groups { margin-top: 1.5rem; }
+.mo-group + .mo-group { margin-top: 1.75rem; }
+
+.mo-group-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.mo-group-name {
+  font-family: var(--font-data);
+  font-size: var(--t-xs);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+}
+
+.mo-group-n {
+  font-family: var(--font-data);
+  font-size: var(--t-2xs);
+  color: var(--ink-faint);
+}
+
+.mo-group-blurb {
+  font-size: var(--t-sm);
+  color: var(--ink-faint);
+  text-wrap: pretty;
+}
+
+/* 初动是整个板块存在的理由，用品牌色标出来；已延伸整组压暗，
+   读者不必逐张卡片去读指标就知道这一组已经错过了。 */
+.g-ignition .mo-group-name { color: var(--accent-strong); }
+.g-ignition .mo-group-head { border-bottom-color: var(--accent); }
+.g-extended { opacity: 0.62; }
+
+.mo-card {
+  padding: 0.7rem 0 0.75rem;
+  border-bottom: 1px solid var(--rule-hair);
+}
+
+.mo-card:last-child { border-bottom: 0; }
+
+.mo-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+}
+
+.mo-tk {
+  font-family: var(--font-data);
+  font-size: var(--t-md);
+  font-weight: 500;
+  letter-spacing: var(--track-mono);
+}
+
+.s-ignition .mo-tk { color: var(--accent-strong); }
+
+.mo-px {
+  font-family: var(--font-data);
+  font-size: var(--t-sm);
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-mid);
+}
+
+.mo-chg {
+  font-family: var(--font-data);
+  font-size: var(--t-sm);
+  font-variant-numeric: tabular-nums;
+}
+
+.mo-chg.up { color: var(--up); }
+.mo-chg.down { color: var(--down); }
+
+/* 覆盖度是反着读的：无报道 = 最早 = 用品牌色点亮，已发酵 = 已经晚了 = 压暗。
+   这个反直觉的编码是本板块的核心信息，所以给它独立的视觉语言。 */
+.mo-cov {
+  margin-left: auto;
+  padding: 0.1rem 0.4rem;
+  border-radius: 2px;
+  font-size: var(--t-2xs);
+  letter-spacing: var(--track-mono);
+  white-space: nowrap;
+}
+
+.mo-cov.c-none { background: var(--accent-soft); color: var(--accent-strong); }
+.mo-cov.c-light { background: var(--paper-sunk); color: var(--ink-mid); }
+.mo-cov.c-heavy { color: var(--ink-faint); border: 1px solid var(--rule-soft); }
+
+.mo-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.1rem;
+  margin-top: 0.5rem;
+}
+
+.mo-metric { display: flex; align-items: baseline; gap: 0.3rem; }
+
+.mo-metric-k {
+  font-size: var(--t-2xs);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.mo-metric-v {
+  font-family: var(--font-data);
+  font-size: var(--t-sm);
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+}
+
+.mo-note {
+  margin: 0.5rem 0 0;
+  font-size: var(--t-sm);
+  line-height: 1.65;
+  color: var(--ink-mid);
+  max-width: var(--measure);
+  text-wrap: pretty;
+}
+
+.mo-src { margin-top: 0.4rem; }
+
+.mo-src a {
+  font-family: var(--font-data);
+  font-size: var(--t-2xs);
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent-soft);
+}
+
+.mo-src a:hover { border-bottom-color: var(--accent); }
+
+@media (max-width: 34rem) {
+  .mo-group-blurb { flex-basis: 100%; }
+  .mo-cov { margin-left: 0; }
+  .mo-metrics { gap: 0.3rem 0.8rem; }
+}
+"""
 
 TAIL_CSS = """
 .cal-scroll { overflow-x: auto; margin-top: 0.5rem; }
@@ -984,7 +1173,9 @@ def build_css() -> str:
             ITEMS_CSS,
             DEPTH_CSS,
             TABS_CSS,
+            build_tabs_css(),
             CALENDAR_CSS,
+            MOMENTUM_CSS,
             TAIL_CSS,
         ]
     )

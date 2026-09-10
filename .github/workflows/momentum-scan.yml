@@ -1,0 +1,66 @@
+# 扫描全市场价量异动并提交进仓库，供云端定时任务读取。
+#
+# 和「行情快照」同一个理由跑在 Actions 上：云端任务的沙箱出站白名单里
+# 没有 Yahoo，直连必然失败；runner 不受限，而 GitHub 又是沙箱唯一能连通
+# 的外部服务。所以让 runner 抓好、提交进仓库，任务 clone 时带下来。
+#
+# 为什么和行情快照分成两个工作流：两者的节奏不同。行情快照每天都要，
+# 几秒钟就跑完；异动扫描要发两千多次请求，跑一两分钟，而且每周还要
+# 额外做一次几千次请求的名单重建。混在一个工作流里，慢的那个会拖累
+# 快的那个，任何一步失败也会连坐。
+
+name: 价量异动扫描
+
+on:
+  schedule:
+    # 12:10 UTC = 美东 8:10，比行情快照（12:30）再早二十分钟，
+    # 保证云端任务 13:00 开工时两份数据都已经在仓库里了。
+    - cron: "10 12 * * 1-5"
+    # 周日 09:00 UTC 重建流动性名单：要发几千次请求，挑周末没人跑的时段。
+    - cron: "0 9 * * 0"
+  workflow_dispatch:
+    inputs:
+      refresh_universe:
+        description: "顺便重建流动性名单（几千次请求，慢）"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    # 名单重建那次可能要跑十几分钟，给足余量，但不给到无限——
+    # 卡住的任务应该被杀掉，而不是一直占着 runner。
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # 整条流水线零第三方依赖，标准库足够，所以没有 pip install 这一步。
+      - name: 扫描
+        run: |
+          if [ "${{ github.event.schedule }}" = "0 9 * * 0" ] \
+             || [ "${{ inputs.refresh_universe }}" = "true" ]; then
+            python3 scan_momentum.py --refresh-universe
+          else
+            python3 scan_momentum.py
+          fi
+
+      - name: 提交结果
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/momentum_scan.json data/universe.txt
+          if git diff --staged --quiet; then
+            echo "扫描结果没有变化，跳过提交"
+          else
+            git commit -m "价量异动扫描 $(date -u +%F)"
+            # 云端任务也往 main 推简报，两边可能撞上；先 rebase 再推。
+            git pull --rebase origin main
+            git push
+          fi

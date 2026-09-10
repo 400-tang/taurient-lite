@@ -153,6 +153,42 @@ def _calendar_section(brief: Brief) -> list[str]:
     return lines
 
 
+def _momentum_section(brief: Brief) -> list[str]:
+    """异动板块。存档里也要有——JSON 是真相来源，两份产物都从它生成，
+    漏掉一块就等于承认存档只是网页的降级版。"""
+    momentum = brief.momentum
+    if momentum is None or not momentum.candidates:
+        return []
+
+    head = f"## 价量异动 — {momentum.asof}"
+    if momentum.scanned:
+        head += f"（扫描 {momentum.scanned} 只）"
+    lines = [head, ""]
+    if momentum.note:
+        lines += [momentum.note, ""]
+    lines += [
+        "*价量筛选，不是买卖信号：全量回测 5090 次初动信号，20 日胜率 51.4%、"
+        "期望 +1.1%，收益集中在少数尾部标的；排序只表示「有多新」，不表示「有多值得买」。*",
+        "",
+        "| 代码 | 阶段 | 价格 | 涨跌 | 突破 | 相对量 | 乖离 | 自基底 | 新闻 |",
+        "|---|---|---|---|---|---|---|---|---|",
+    ]
+    for c in momentum.candidates:
+        lines.append(
+            f"| {c.ticker} | {c.stage_label} | `${c.close:,.2f}` | "
+            f"`{c.change_pct:+.2f}%` | {c.age_label} | `{c.rvol:.1f}x` | "
+            f"`{c.ext_ma20:+.0%}` | `{c.run_from_base:+.0%}` | {c.coverage_label} |"
+        )
+    lines.append("")
+    for c in momentum.candidates:
+        if not c.note:
+            continue
+        sources = " · ".join(f"[{s.name}]({s.url})" for s in c.sources)
+        lines.append(f"- **{c.ticker}** — {c.note}" + (f" {sources}" if sources else ""))
+    lines.append("")
+    return lines
+
+
 def render_markdown(brief: Brief, config: Config) -> str:
     """完整的 Markdown 存档。"""
     lines: list[str] = [
@@ -178,5 +214,6 @@ def render_markdown(brief: Brief, config: Config) -> str:
             lines += _item_block(item, brief)
 
     lines += _calendar_section(brief)
+    lines += _momentum_section(brief)
     lines += ["---", "*Taurient Lite。新闻摘要，不是投资建议。*"]
     return "\n".join(lines) + "\n"

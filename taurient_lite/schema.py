@@ -75,6 +75,30 @@ AGREEMENT_LABEL: dict[str, str] = {
     "single": "单一来源",
 }
 
+#: 异动阶段。与 :mod:`taurient_lite.momentum` 里的 ``STAGES`` 一一对应，
+#: 在这里重新声明是为了让 schema 保持零内部依赖——它是整条流水线的
+#: 根，不该反过来依赖某个具体的计算模块。
+STAGES: tuple[str, ...] = ("base", "ignition", "continuation", "extended")
+
+STAGE_LABEL: dict[str, str] = {
+    "base": "基底",
+    "ignition": "初动",
+    "continuation": "延续",
+    "extended": "已延伸",
+}
+
+#: 一只异动标的当天的新闻覆盖度。**这个字段是反着读的**：覆盖度越低
+#: 说明市场越没注意到，这条线索越早；满屏报道则意味着已经晚了。
+#: 价量异动由脚本算出，新闻覆盖度只有每天在扫新闻的这条流水线知道，
+#: 两者相交才是这个模块相对于任何通用选股器的独有价值。
+NEWS_COVERAGE: tuple[str, ...] = ("none", "light", "heavy")
+
+COVERAGE_LABEL: dict[str, str] = {
+    "none": "无报道",
+    "light": "零星",
+    "heavy": "已发酵",
+}
+
 
 class SchemaError(ValueError):
     """简报 JSON 结构非法。
@@ -494,6 +518,110 @@ class CalendarEntry:
 
 
 @dataclass(frozen=True, slots=True)
+class MomentumCandidate:
+    """一只被价量筛出来的异动标的。
+
+    数字部分由 ``scan_momentum.py`` 算好写进 ``data/momentum_scan.json``，
+    每日流水线把它和当天扫到的新闻交叉之后，挑一部分写进简报 JSON。
+    所以这里的字段分两类：``stage`` 往下的是机器算的事实，
+    ``coverage`` 和 ``note`` 是流水线交叉新闻之后补的判断。
+    """
+
+    ticker: str
+    stage: str
+    close: float
+    change_pct: float
+    rvol: float
+    breakout_age: int | None = None
+    ext_ma20: float = 0.0
+    run_from_base: float = 0.0
+    coverage: str = "none"
+    note: str = ""
+    sources: tuple[Source, ...] = ()
+
+    @property
+    def stage_label(self) -> str:
+        return STAGE_LABEL[self.stage]
+
+    @property
+    def coverage_label(self) -> str:
+        return COVERAGE_LABEL[self.coverage]
+
+    @property
+    def age_label(self) -> str:
+        """突破后的天数，给人看的写法。未突破时用破折号而不是 0——
+        「还没突破」和「今天刚突破」是两件完全不同的事。"""
+        if self.breakout_age is None:
+            return "—"
+        return "当天" if self.breakout_age == 0 else f"{self.breakout_age} 日"
+
+    @classmethod
+    def from_dict(cls, data: Any, path: str) -> MomentumCandidate:
+        age_raw = data.get("breakout_age")
+        sources = tuple(
+            Source.from_dict(v, f"{_join(path, 'sources')}[{i}]")
+            for i, v in enumerate(_as_list(data.get("sources") or [], _join(path, "sources")))
+        )
+        return cls(
+            ticker=_as_str(_require(data, "ticker", path), _join(path, "ticker")).upper(),
+            stage=_as_enum(_require(data, "stage", path), STAGES, _join(path, "stage")),
+            close=_as_float(_require(data, "close", path), _join(path, "close")),
+            change_pct=_as_float(
+                _require(data, "change_pct", path), _join(path, "change_pct")
+            ),
+            rvol=_as_float(_require(data, "rvol", path), _join(path, "rvol")),
+            breakout_age=(
+                _as_int(age_raw, _join(path, "breakout_age")) if age_raw is not None else None
+            ),
+            ext_ma20=_as_float(data.get("ext_ma20", 0.0), _join(path, "ext_ma20")),
+            run_from_base=_as_float(
+                data.get("run_from_base", 0.0), _join(path, "run_from_base")
+            ),
+            coverage=_as_enum(
+                data.get("coverage", "none"), NEWS_COVERAGE, _join(path, "coverage")
+            ),
+            note=_as_str(data.get("note", ""), _join(path, "note"), allow_empty=True),
+            sources=sources,
+        )
+
+
+@dataclass(frozen=True, slots=True)
+class Momentum:
+    """异动板块。空的 ``candidates`` 表示当天没有值得看的标的——
+    这是完全正常的结果，不是数据缺失：多数交易日里没有新的突破。"""
+
+    asof: str
+    scanned: int = 0
+    note: str = ""
+    candidates: tuple[MomentumCandidate, ...] = ()
+
+    def by_stage(self, stage: str) -> tuple[MomentumCandidate, ...]:
+        return tuple(c for c in self.candidates if c.stage == stage)
+
+    @property
+    def early(self) -> tuple[MomentumCandidate, ...]:
+        """初动档。整个模块存在的理由就是这一档，展示时排在最前。"""
+        return self.by_stage("ignition")
+
+    @classmethod
+    def from_dict(cls, data: Any, path: str) -> Momentum:
+        if not isinstance(data, dict):
+            raise SchemaError(f"{path} 应该是一个对象，实际是 {type(data).__name__}")
+        candidates = tuple(
+            MomentumCandidate.from_dict(v, f"{path}.candidates[{i}]")
+            for i, v in enumerate(
+                _as_list(data.get("candidates") or [], _join(path, "candidates"))
+            )
+        )
+        return cls(
+            asof=_as_str(_require(data, "asof", path), _join(path, "asof")),
+            scanned=_as_int(data.get("scanned", 0), _join(path, "scanned")),
+            note=_as_str(data.get("note", ""), _join(path, "note"), allow_empty=True),
+            candidates=candidates,
+        )
+
+
+@dataclass(frozen=True, slots=True)
 class Brief:
     """一天的完整简报。"""
 
@@ -508,6 +636,7 @@ class Brief:
     items: tuple[Item, ...]
     calendar: tuple[CalendarEntry, ...] = ()
     mag7: Mag7 | None = None
+    momentum: Momentum | None = None
     #: 覆写时效上限。周日与周一的前瞻版覆盖整个周末，用得上。
     max_age_days: int | None = None
 
@@ -585,6 +714,7 @@ class Brief:
         )
 
         mag7_raw = data.get("mag7")
+        momentum_raw = data.get("momentum")
         max_age = data.get("max_age_days")
 
         return cls(
@@ -599,6 +729,7 @@ class Brief:
             items=items,
             calendar=calendar,
             mag7=Mag7.from_dict(mag7_raw, "mag7") if mag7_raw else None,
+            momentum=Momentum.from_dict(momentum_raw, "momentum") if momentum_raw else None,
             max_age_days=(
                 _as_int(max_age, "max_age_days") if max_age is not None else None
             ),

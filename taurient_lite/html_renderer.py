@@ -44,17 +44,23 @@ def _brief_tab(brief: Brief, config: Config) -> str:
 
 
 def render_body(brief: Brief, config: Config) -> str:
-    """页面主体：报头，标签页（简报 / 日历），页脚。
+    """页面主体：报头，标签页（简报 / 日历 / 异动），页脚。
 
-    日历数据为空时 :func:`~taurient_lite.components.tabs.tabs` 会退化成
-    只出「简报」内容、不显示标签栏——一个空的日历标签页毫无意义。
+    某一块数据为空时 :func:`~taurient_lite.components.tabs.tabs` 会退化成
+    只出剩下的标签页；三块全空就连标签栏都不显示——空标签页毫无意义。
+
+    异动排在日历之后，是因为它的时效性最弱：日历讲的是「今天之后会
+    发生什么」，异动讲的是「昨天收盘时发生了什么」，而简报永远第一。
     """
     brief_html = _brief_tab(brief, config)
     calendar_html = C.calendar_tab(brief)
+    momentum_html = C.momentum_tab(brief.momentum)
 
     panels = [("brief", "简报", brief_html)]
     if calendar_html:
         panels.append(("calendar", "日历", calendar_html))
+    if momentum_html:
+        panels.append(("momentum", "异动", momentum_html))
 
     return C.join(
         [

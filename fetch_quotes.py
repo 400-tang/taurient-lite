@@ -29,9 +29,11 @@ from taurient_lite.quotes import (  # noqa: E402
     fetch_from_backend,
     fetch_many,
     fetch_quote,
+    load_snapshot_quotes,
 )
 
 ROOT = Path(__file__).resolve().parent
+SNAPSHOT = ROOT / "data" / "market_snapshot.json"
 
 
 def print_only(tickers: list[str]) -> int:
@@ -94,23 +96,45 @@ def main(argv: list[str]) -> int:
         except (QuoteError, OSError, ValueError) as exc:
             print(f"后端取数也失败：{exc}", file=sys.stderr)
 
-    if not quotes:
+    # 最后一层：读仓库里由 GitHub Actions 提交的快照。云端沙箱连不了
+    # 任何第三方接口，但 GitHub 是通的，所以 clone 下来的仓库里就带着
+    # 数据。load_snapshot_quotes 会按数据源自报的时点判龄，过期直接拒用。
+    snapshot_block = None
+    if not quotes and SNAPSHOT.exists():
+        print("改读仓库里的行情快照……", file=sys.stderr)
+        try:
+            snapshot_block = load_snapshot_quotes(
+                json.loads(SNAPSHOT.read_text(encoding="utf-8"))
+            )
+            source = f"仓库快照 {SNAPSHOT.name}"
+        except (QuoteError, ValueError) as exc:
+            print(f"快照不可用：{exc}", file=sys.stderr)
+
+    if not quotes and snapshot_block is None:
         print("一只都没取到，检查网络或者端点是否还可用。", file=sys.stderr)
         for reason in failures:
             print(f"  {reason}", file=sys.stderr)
         return 1
 
     brief = json.loads(target.read_text(encoding="utf-8"))
-    brief["mag7"] = build_mag7_block(quotes, brief.get("mag7"))
+    if snapshot_block is not None:
+        # 人写的那句 note 属于当天的解读，不该被快照里的旧 note 覆盖。
+        existing_note = (brief.get("mag7") or {}).get("note")
+        brief["mag7"] = dict(snapshot_block)
+        if existing_note:
+            brief["mag7"]["note"] = existing_note
+    else:
+        brief["mag7"] = build_mag7_block(quotes, brief.get("mag7"))
     target.write_text(
         json.dumps(brief, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
 
-    up = sum(1 for q in quotes if q.change_pct >= 0)
+    rows = brief["mag7"]["rows"]
+    up = sum(1 for r in rows if r["change_pct"] >= 0)
     print(f"写入 {target}（数据来自{source}）")
-    print(f"  {len(quotes)} 只，{up} 涨 {len(quotes) - up} 跌，{brief['mag7']['asof']}")
-    for quote in sorted(quotes, key=lambda q: q.change_pct, reverse=True):
-        print(f"    {quote.ticker:6} ${quote.price:>10,.2f}  {quote.change_pct:+.2f}%")
+    print(f"  {len(rows)} 只，{up} 涨 {len(rows) - up} 跌，{brief['mag7']['asof']}")
+    for row in sorted(rows, key=lambda r: r["change_pct"], reverse=True):
+        print(f"    {row['ticker']:6} ${row['price']:>10}  {row['change_pct']:+.2f}%")
     for reason in failures:
         print(f"  取价失败：{reason}")
 
