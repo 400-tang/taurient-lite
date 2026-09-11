@@ -1,0 +1,922 @@
+{
+  "date": "2026-09-11",
+  "weekday": "Friday",
+  "edition": "常规版",
+  "generated_at": "2026-09-11 06:14 PT",
+  "scanned": 118,
+  "kept": 17,
+  "thesis": "8月CPI同比3.4%超预期，叠加前一天PPI同比5.4%创年内新高，把联储9/16议息会议的加息概率推到约70%；霍尔木兹冲突同步升级，油价站上100美元、10年期美债收益率逼近5%，通胀预期和融资成本两条线同时收紧。科技股内部则在打一场“AI资本开支能不能兑现”的信任战：甲骨文云收入暴涨却大跌5.4%，英伟达史上最大收购还要闯反垄断关。",
+  "tape": {
+    "asof": "上一收盘 · 周四 9/10",
+    "rows": [
+      {
+        "name": "S&P 500",
+        "value": "7,591.70",
+        "change": "-0.58%",
+        "dir": "down"
+      },
+      {
+        "name": "Nasdaq Composite",
+        "value": "26,081.72",
+        "change": "-0.65%",
+        "dir": "down"
+      },
+      {
+        "name": "Dow Jones",
+        "value": "52,064.10",
+        "change": "-0.60%",
+        "dir": "down"
+      },
+      {
+        "name": "US 10Y yield",
+        "value": "4.97%",
+        "change": "周五触及，2023/10 以来最高",
+        "dir": "up"
+      },
+      {
+        "name": "US 2Y yield",
+        "value": "4.43%",
+        "change": "9/9 数据",
+        "dir": "up"
+      },
+      {
+        "name": "Brent crude",
+        "value": "$105.94",
+        "change": "7 月以来最高",
+        "dir": "up"
+      }
+    ]
+  },
+  "items": [
+    {
+      "rank": 1,
+      "tier": "must-read",
+      "published": "2026-09-11",
+      "headline": "8月CPI同比3.4%超预期，联储9/16加息概率升至约70%",
+      "sectors": [
+        "宏观",
+        "利率"
+      ],
+      "body": "美国劳工统计局公布的8月CPI环比上涨0.4%、同比升至3.4%，核心CPI环比0.3%（比预期高0.1个百分点）、同比2.4%，均高于经济学家预期。这是新任联储主席沃什上任以来最关键的一次读数：市场对9月16日FOMC决议加息25个基点、把联邦基金利率从3.5%-3.75%上调到3.75%-4%的定价概率升至约70%，将是2023年以来联储首次加息而非降息。",
+      "why": "几个月前主流预期还是年内降息，现在利率路径彻底翻转成加息，几乎所有资产的贴现率假设都要重新校准。",
+      "impact": "全市场 · 长久期成长股与债券首当其冲",
+      "sources": [
+        {
+          "name": "CNBC",
+          "url": "https://www.cnbc.com/2026/09/11/cpi-inflation-report-august-2026.html",
+          "angle": "定性为通胀持续，可能'锁定'联储加息"
+        },
+        {
+          "name": "CBS News",
+          "url": "https://www.cbsnews.com/news/august-cpi-report-inflation-fed-rates/",
+          "angle": "突出核心数据环比比预期高0.1个百分点，标题直接用'热'"
+        },
+        {
+          "name": "Fox Business",
+          "url": "https://www.foxbusiness.com/economy/cpi-inflation-august-2026",
+          "angle": "聚焦消费者价格持续高企对家庭负担的影响"
+        }
+      ],
+      "assets": [
+        {
+          "asset_class": "美股",
+          "direction": "down",
+          "conviction": "high",
+          "note": "长久期成长股估值面临贴现率上调压力，指数已连跌四日。"
+        },
+        {
+          "asset_class": "美债",
+          "direction": "down",
+          "conviction": "high",
+          "note": "10年期收益率已冲到4.97%，为2023年10月以来最高，加息定价进一步压低价格。"
+        },
+        {
+          "asset_class": "美元",
+          "direction": "up",
+          "conviction": "medium",
+          "note": "加息预期抬升利差，对非美货币构成支撑。"
+        },
+        {
+          "asset_class": "大宗商品",
+          "direction": "mixed",
+          "conviction": "low",
+          "note": "加息本应压制商品需求，但地缘驱动的油价上行力量更强，两股力量互相对冲。"
+        }
+      ],
+      "cross_source": {
+        "agreement": "aligned",
+        "summary": "CNBC、CBS、Fox三家口径一致：都把这次读数定性为'偏热'，都提到9/16加息概率因此上升，分歧只在语气强弱。"
+      },
+      "history": {
+        "summary": "从年中的降息共识到本周的加息定价，方向在两个月内彻底反转，导火索是就业数据超预期叠加油价推升的通胀预期。",
+        "timeline": [
+          {
+            "when": "2026上半年",
+            "event": "两年期收益率约3.50%，市场定价年内降息"
+          },
+          {
+            "when": "9/4",
+            "event": "8月非农16.2万人，三倍于预期，联储叙事翻转"
+          },
+          {
+            "when": "9/10",
+            "event": "8月PPI同比5.4%，创年内新高，为CPI定调"
+          },
+          {
+            "when": "9/11",
+            "event": "8月CPI同比3.4%，核心环比高于预期，加息概率升至约70%"
+          }
+        ]
+      }
+    },
+    {
+      "rank": 2,
+      "tier": "must-read",
+      "published": "2026-09-10",
+      "headline": "霍尔木兹冲突继续升级，油价站上100美元，10年期美债收益率触及2023年来新高",
+      "sectors": [
+        "地缘",
+        "能源",
+        "利率"
+      ],
+      "body": "过去一周美伊在霍尔木兹海峡的袭击持续加码：9/8美军打击五艘伊朗革命卫队关联油轮，回应此前针对美国军舰的导弹袭击；9/9伊朗袭击一艘停靠伊拉克水域的巴拿马籍油轮，并向约旦一处美军基地发射20枚弹道导弹（18枚被拦截，2枚落入无人区）。布伦特原油已升至每桶105.94美元、WTI约101美元，为7月以来最高。受能源驱动的通胀预期推动，10年期美债收益率周五触及4.97%，为2023年10月以来最高；财政部本周首次扩大规模的国债回购操作认购疲软，实际购买52亿美元，仅为100亿美元上限的一半，进一步印证市场对久期的抵触。",
+      "why": "这是同时冲击通胀预期和融资成本的双重压力——油价推高CPI/PPI路径，收益率飙升又直接抬高所有资产的贴现率，两条线共同把联储往加息的方向推。",
+      "impact": "能源、油轮航运受益 · 长久期资产、消费板块承压",
+      "sources": [
+        {
+          "name": "Al Jazeera",
+          "url": "https://www.aljazeera.com/news/2026/9/6/us-iran-engaged-in-tanker-war-where-is-the-months-long-conflict-headed",
+          "angle": "把冲突框定为争夺海峡控制权的长期消耗战"
+        },
+        {
+          "name": "CNBC",
+          "url": "https://www.cnbc.com/2026/09/09/treasury-yields-oil-inflation.html",
+          "angle": "聚焦10年期收益率与财政部回购遇冷的联动"
+        },
+        {
+          "name": "CNBC",
+          "url": "https://www.cnbc.com/2026/09/10/us-treasurys-bonds-yield.html",
+          "angle": "强调'2023年以来最高'这一收益率里程碑"
+        }
+      ],
+      "assets": [
+        {
+          "asset_class": "大宗商品",
+          "direction": "up",
+          "conviction": "high",
+          "note": "布伦特原油升至105.94美元、WTI约101美元，为7月以来最高。"
+        },
+        {
+          "asset_class": "美债",
+          "direction": "down",
+          "conviction": "high",
+          "note": "10年期收益率触及4.97%，为2023年10月以来最高，国债回购认购疲软加剧抛压。"
+        },
+        {
+          "asset_class": "美股",
+          "direction": "down",
+          "conviction": "medium",
+          "note": "指数连跌四日，能源股受益但整体被收益率上行压制。"
+        },
+        {
+          "asset_class": "海外股市",
+          "direction": "mixed",
+          "conviction": "low",
+          "note": "油轮运价与战争险保费大涨利好挪威/希腊航运股，但拖累欧洲能源进口国股市。"
+        }
+      ],
+      "cross_source": {
+        "agreement": "split",
+        "summary": "Al Jazeera强调这是旷日持久的海上控制权消耗战，CNBC的报道更聚焦10年期收益率与财政部回购的联动，两家关注的传导路径不同。"
+      },
+      "history": {
+        "summary": "海峡通行量已跌到危机前基准的个位数百分比，冲突自8月底以来持续升级。",
+        "timeline": [
+          {
+            "when": "8/30",
+            "event": "PortWatch记录海峡单日通行量仅6艘次，危机前基准为85艘次"
+          },
+          {
+            "when": "9/8",
+            "event": "美军打击五艘伊朗革命卫队关联油轮"
+          },
+          {
+            "when": "9/9",
+            "event": "伊朗袭击巴拿马籍油轮，并向约旦美军基地发射20枚弹道导弹"
+          },
+          {
+            "when": "9/10",
+            "event": "布伦特原油升破105美元，10年期收益率逼近5%"
+          }
+        ]
+      }
+    },
+    {
+      "rank": 3,
+      "tier": "must-read",
+      "published": "2026-09-10",
+      "headline": "司法部立案调查英伟达与Groq的200亿美元授权协议，122.93亿美元收购Hugging Face仍待反垄断审查",
+      "sectors": [
+        "科技",
+        "AI",
+        "监管"
+      ],
+      "tickers": [
+        "NVDA"
+      ],
+      "body": "美国司法部已正式对英伟达与AI芯片初创公司Groq约200亿美元的授权协议展开反垄断调查，向英伟达发出正式信息索取函，焦点是这笔交易是否被刻意设计成'技术授权+人才转移'的结构以规避《哈特-斯科特-罗迪诺法》强制申报的并购审查——英伟达与Groq、Enfabrica、Poolside的三笔交易都采用了这种结构。与此同时，英伟达今年最大的一笔直接收购——以122.93亿美元收购开源AI平台Hugging Face（9/3宣布）——因为是不折不扣的并购交易，无法规避强制申报，需要走完整的反垄断审查程序。",
+      "why": "监管口子一旦收紧，英伟达过去靠'类收购'结构快速拿下初创公司技术和团队的打法会被卡住，这直接影响它维持AI生态护城河的方式。",
+      "impact": "英伟达及其收购标的 · AI并购交易结构面临重新设计",
+      "sources": [
+        {
+          "name": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-09-10/doj-probes-nvidia-s-license-deal-with-groq-on-antitrust-concerns",
+          "angle": "聚焦DOJ调查的法律路径与HSR规避问题"
+        },
+        {
+          "name": "TechTimes",
+          "url": "https://www.techtimes.com/articles/327154/20260910/doj-opens-formal-probe-nvidia-groq-deal-reverse-acquihire-playbook-faces-first-legal-test.htm",
+          "angle": "称这是'逆向收购'模式的首次监管实测"
+        },
+        {
+          "name": "Yahoo Finance",
+          "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-12-93b-hugging-face-075456869.html",
+          "angle": "聚焦Hugging Face交易本身的条款与审查阶段"
+        }
+      ],
+      "assets": [
+        {
+          "asset_class": "美股",
+          "direction": "mixed",
+          "conviction": "medium",
+          "note": "消息公布后英伟达一度跌2.4%，但AI板块内部反应分化，部分资金转向监管风险更低的标的。"
+        }
+      ],
+      "cross_source": {
+        "agreement": "split",
+        "summary": "彭博与TechTimes把调查定性为监管首次正面挑战'类收购'结构的标志性事件，Yahoo Finance的报道则更聚焦Hugging Face交易本身的审查进度，两者关注点不同。"
+      },
+      "history": {
+        "summary": "英伟达今年密集用'技术授权+人才转移'的结构拿下多家AI初创公司，如今这套打法第一次撞上正式的反垄断调查。",
+        "timeline": [
+          {
+            "when": "过去数月",
+            "event": "英伟达以类似结构完成与Groq、Enfabrica、Poolside的交易，均未触发强制并购申报"
+          },
+          {
+            "when": "9/3",
+            "event": "英伟达宣布以122.93亿美元直接收购Hugging Face"
+          },
+          {
+            "when": "9/10",
+            "event": "司法部正式立案调查Groq授权协议是否刻意规避并购审查"
+          }
+        ]
+      }
+    },
+    {
+      "rank": 4,
+      "tier": "must-read",
+      "published": "2026-09-10",
+      "headline": "甲骨文云收入暴涨仍难挡股价重挫5.4%：AI资本开支的耐心测试",
+      "sectors": [
+        "科技",
+        "AI",
+        "企业财报"
+      ],
+      "tickers": [
+        "ORCL"
+      ],
+      "body": "甲骨文9/10公布的财报显示，云基础设施收入达74亿美元、同比增长121%，超出71.9亿美元的预期，待履约合同金额（RPO）同比暴增436%至6380亿美元，其中已签约积压订单达380亿美元，相当于年化云基础设施收入的9.5倍。但公司整体营收160.6亿美元，比预期低1.5亿美元；自由现金流为负100亿美元；资本开支指引进一步上调43%至500亿美元。财报公布后甲骨文股价当日下跌5.38%（成交量放大至日均2.3倍），延续了此前两个季度中出现过的'业绩超预期却股价大跌'的模式，包括上一季度32.43%的超预期增长后单日反而跌10.83%。",
+      "why": "云与AI订单数字再亮眼，市场现在更在意这些投入什么时候能转化成现金——现金流转负、资本开支还在加码，说明'AI基建军备竞赛'的耐心已经被消耗得差不多了。",
+      "impact": "甲骨文及云基础设施同业 · AI资本开支估值逻辑重新定价",
+      "sources": [
+        {
+          "name": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-09-10/oracle-posts-cloud-sales-that-top-estimates-on-surging-ai-demand",
+          "angle": "聚焦云收入与AI需求的正面数据"
+        },
+        {
+          "name": "24/7 Wall St",
+          "url": "https://247wallst.com/investing/2026/09/10/oracle-jumped-36-in-a-day-after-last-septembers-earnings-but-traders-are-betting-against-it-tonight/",
+          "angle": "回顾去年同期财报单日暴涨36%，与本次形成对比"
+        },
+        {
+          "name": "Yahoo Finance",
+          "url": "https://finance.yahoo.com/markets/stocks/articles/oracle-fallen-nearly-20-2026-112546569.html",
+          "angle": "聚焦负自由现金流与资本开支上调背后的估值担忧"
+        }
+      ],
+      "assets": [
+        {
+          "asset_class": "美股",
+          "direction": "down",
+          "conviction": "medium",
+          "note": "甲骨文单日跌5.38%，同为重资本开支的云/AI基建同业跟随承压。"
+        }
+      ],
+      "cross_source": {
+        "agreement": "split",
+        "summary": "看多一方（彭博等）强调RPO暴增436%证明企业AI需求真实存在；看空一方（Yahoo Finance/Forbes等）聚焦负自由现金流和资本开支再上调，认为投入产出比仍是问号——同一份财报，两派读出完全相反的结论。"
+      },
+      "history": {
+        "summary": "甲骨文近几个季度反复出现'业绩超预期，股价却跌'的模式，市场对AI资本开支的容忍度正在收紧。",
+        "timeline": [
+          {
+            "when": "去年9月",
+            "event": "甲骨文财报后单日暴涨36%"
+          },
+          {
+            "when": "上一季度",
+            "event": "业绩超预期32.43%，股价当日反而跌10.83%"
+          },
+          {
+            "when": "9/10",
+            "event": "云收入超预期、RPO暴增436%，但现金流转负、资本开支上调43%，股价跌5.38%"
+          }
+        ]
+      }
+    },
+    {
+      "rank": 5,
+      "tier": "worth-knowing",
+      "published": "2026-09-08",
+      "headline": "AMD在花旗科技峰会给出乐观AI展望，股价连日上涨、年内涨幅跑赢英伟达",
+      "sectors": [
+        "科技",
+        "半导体",
+        "AI"
+      ],
+      "tickers": [
+        "AMD"
+      ],
+      "body": "AMD管理层在花旗2026全球TMT峰会上给出偏乐观的AI芯片展望，带动股价连续多个交易日上涨，9/4与9/8均收涨约4.7%-4.9%，收报477.57美元。公司预计9月季度营收约130亿美元，同比增长41%，高于市场预期的125亿美元；上一季度营收115亿美元、同比增长50%，也超出此前指引。年初至今AMD股价已上涨113.71%，跑赢同期只涨21.98%的英伟达。",
+      "why": "AMD正在把'追赶英伟达'的叙事坐实成数字——增速跑赢巨头本身就是对AI芯片竞争格局的一次重新定价。",
+      "impact": "半导体板块 · AI芯片竞争格局",
+      "sources": [
+        {
+          "name": "The Motley Fool",
+          "url": "https://www.fool.com/investing/2026/09/08/massive-update-for-amd-stock-investors/",
+          "angle": "聚焦花旗峰会上管理层的展望表态"
+        },
+        {
+          "name": "ad-hoc-news",
+          "url": "https://www.ad-hoc-news.de/boerse/news/corporate-news/amd-stock-heads-into-the-open-after-a-4-7-percent-jump/70066783",
+          "angle": "记录连续几个交易日4.7%的涨幅"
+        }
+      ]
+    },
+    {
+      "rank": 6,
+      "tier": "worth-knowing",
+      "published": "2026-09-09",
+      "headline": "苹果发布首款折叠屏iPhone Duo，股价+3.56%",
+      "sectors": [
+        "消费电子",
+        "AI"
+      ],
+      "tickers": [
+        "AAPL"
+      ],
+      "body": "苹果9/9秋季发布会推出首款折叠屏手机iPhone Duo、iPhone 18 Pro（起售价1,199美元，比上代贵100美元）、Apple Watch Series 12/Ultra 4与AirPods 5。AAPL当日收报326.57美元，涨3.56%。大摩估算折叠屏iPhone可为12月季度贡献约140亿美元营收；乐观分析认为Siri AI升级叠加超过25亿的活跃设备存量，牛市情景对应约20%的潜在上行空间。",
+      "why": "折叠屏是苹果近几年最大的形态创新，市场关心的不是发布本身而是产能能否在假期季前爬坡到位。",
+      "impact": "AAPL · 面板与铰链供应链",
+      "sources": [
+        {
+          "name": "Yahoo Finance",
+          "url": "https://finance.yahoo.com/markets/stocks/articles/prediction-apple-stock-could-headed-123003066.html",
+          "angle": "聚焦发布会后分析师价格目标上修"
+        },
+        {
+          "name": "Yahoo Finance",
+          "url": "https://finance.yahoo.com/markets/stocks/articles/apple-stock-september-surprise-could-130002154.html",
+          "angle": "聚焦Siri AI升级对牛市情景的支撑"
+        }
+      ]
+    },
+    {
+      "rank": 7,
+      "tier": "worth-knowing",
+      "published": "2026-09-10",
+      "headline": "Qorvo财报大超预期、与Skyworks合并获中国监管最后阶段进展，股价创52周新高",
+      "sectors": [
+        "半导体",
+        "并购"
+      ],
+      "tickers": [
+        "QRVO"
+      ],
+      "body": "Qorvo公布每股收益1.64美元，大幅超出分析师预期的1.11美元，季度营收7.848亿美元，超出预期的7.433亿美元。CEO Phil Brace同日确认，与Skyworks合并交易的中国国家市场监管总局(SAMR)审查已进入最后阶段，目标年底完成交割——交易结构为每股Qorvo换0.960股Skyworks加32.50美元现金，合并后企业价值约220亿美元。消息叠加下QRVO股价9/10大涨6.8%至112.36美元，盘中一度触及52周新高114.28美元。",
+      "why": "财报和并购进展在同一天同时兑现，是这只票今天量价异动的直接原因。",
+      "impact": "QRVO · 射频芯片并购整合",
+      "sources": [
+        {
+          "name": "ad-hoc-news",
+          "url": "https://www.ad-hoc-news.de/boerse/news/corporate-news/qorvo-inc-stock-jumps-to-52-week-high-as-skyworks-merger-momentum-builds/70083267",
+          "angle": "聚焦SAMR审查进展与合并条款"
+        },
+        {
+          "name": "MoneyCheck",
+          "url": "https://moneycheck.com/qorvo-qrvo-surges-past-114-should-investors-chase-this-rally/",
+          "angle": "聚焦财报数字与52周新高"
+        }
+      ]
+    },
+    {
+      "rank": 8,
+      "tier": "worth-knowing",
+      "published": "2026-09-10",
+      "headline": "Signet Jewelers财报大超预期上调全年指引，两日内先涨24%后回落",
+      "sectors": [
+        "消费零售"
+      ],
+      "tickers": [
+        "SIG"
+      ],
+      "body": "Signet Jewelers 9/9公布财报：调整后营业利润跳升26%至1.07亿美元，调整后每股收益2.19美元，大幅超出华尔街预期的1.74美元，公司将全年调整后每股收益指引从此前的9.20-11美元上调到10.45-12.15美元，带动股价当日大涨24%。Raymond James将目标价从100美元上调到120美元，UBS从122美元上调到136美元。9/10该股回落6.5%，投资者获利了结。",
+      "why": "利润端超预期但销售指引持平，说明增长主要来自成本与效率而非需求扩张，这是投资者次日获利了结的关键原因。",
+      "impact": "SIG · 珠宝零售板块",
+      "sources": [
+        {
+          "name": "24/7 Wall St",
+          "url": "https://247wallst.com/investing/2026/09/09/signet-jewelers-surges-14-as-raised-profit-outlook-overrides-flat-sales-guidance-tapestry-holds-steady/",
+          "angle": "指出销售指引持平、利润指引上调的结构"
+        },
+        {
+          "name": "MarketBeat",
+          "url": "https://www.marketbeat.com/instant-alerts/price-signet-jewelers-nyse-sig-stock-price-down-65-heres-what-happened-2026-09-10/",
+          "angle": "记录次日回落6.5%的获利了结"
+        }
+      ]
+    },
+    {
+      "rank": 9,
+      "tier": "worth-knowing",
+      "published": "2026-09-10",
+      "headline": "科技业裁员今年已超12.8万人，9月前十天再砍6000个岗位",
+      "sectors": [
+        "科技",
+        "就业"
+      ],
+      "tickers": [
+        "UBER"
+      ],
+      "body": "追踪平台Layoffs.fyi的最新统计显示，截至9/10全球科技业今年已有299家公司裁员128,536人，已超过2025年全年278家公司122,606人的总量。9月前十天又有超过6,000个技术岗位被裁，涉及Uber、PayPal、苹果、Zomato、甲骨文等公司；其中Uber 9/2宣布裁减约3,300个企业岗位（约占全球员工10%），是疫情以来最大规模，PayPal今年已累计裁员4,760人。",
+      "why": "裁员集中在管理层级而非一线，同时资本开支却在加速流向AI基础设施——省下的薪资在直接转化成GPU采购，这是这一轮周期最鲜明的特征。",
+      "impact": "科技业 · 劳动力市场与AI资本开支的此消彼长",
+      "sources": [
+        {
+          "name": "Business Standard",
+          "url": "https://www.business-standard.com/industry/news/global-tech-layoffs-2026-oracle-amazon-dell-uber-paypal-it-sector-job-cuts-126091100188_1.html",
+          "angle": "给出299家公司12.85万人的最新汇总数字"
+        },
+        {
+          "name": "Al Jazeera",
+          "url": "https://www.aljazeera.com/economy/2026/9/2/uber-lays-off-3300-employees-in-largest-cuts-since-the-pandemic",
+          "angle": "详述Uber裁员的具体规模与表态"
+        }
+      ]
+    },
+    {
+      "rank": 10,
+      "tier": "worth-knowing",
+      "published": "2026-09-09",
+      "headline": "微软与两大教师工会达成'全国AI安全与隐私标准'",
+      "sectors": [
+        "科技",
+        "AI",
+        "监管"
+      ],
+      "tickers": [
+        "MSFT"
+      ],
+      "body": "美国联邦教师联合会(AFT)、纽约市教师联合会(UFT)与微软9/9联合宣布'全国AI安全与隐私标准'，具有法律约束力，将于11月1日起面向全美学区开放。协议规定科技公司不得用学生数据训练AI、学生不得被追踪、AI不得在无人工监督下做出决策，公司须以通俗语言向教育者和家长说明产品的工作方式。",
+      "why": "这是科技公司与劳工组织就AI治理达成的少数有法律约束力的协议之一，可能成为其他州或其他行业AI监管谈判的模板。",
+      "impact": "MSFT · 教育科技与AI治理",
+      "sources": [
+        {
+          "name": "Microsoft Source",
+          "url": "https://news.microsoft.com/source/2026/09/09/aft-uft-and-microsoft-announce-national-ai-safety-privacy-standard-for-schools-to-protect-students-families-and-educators/",
+          "angle": "官方通稿，列出协议的具体条款"
+        },
+        {
+          "name": "American Federation of Teachers",
+          "url": "https://www.aft.org/press-release/aft-uft-and-microsoft-announce-national-ai-safety-privacy-standard-schools-protect",
+          "angle": "工会视角的联合声明"
+        }
+      ]
+    },
+    {
+      "rank": 11,
+      "tier": "worth-knowing",
+      "published": "2026-09-10",
+      "headline": "Coinbase与Moov合作，为逾1000家社区银行接入稳定币基础设施",
+      "sectors": [
+        "加密",
+        "金融科技"
+      ],
+      "tickers": [
+        "COIN"
+      ],
+      "body": "Coinbase 9/10宣布与支付平台Moov合作，为超过1,000家美国社区银行与信用合作社提供稳定币收付、结算与实时资金到账能力，直接嵌入银行现有系统。此前Coinbase已于9月初向SEC提交股票永续合约（equity perpetuals）的注册文件，产品还需通过CFTC审批，尚未公布上线时间、杠杆上限或首批标的。COIN二季度营收12亿美元不及预期的13.5亿美元，每股亏损1.36美元大幅逊于预期的亏损0.01美元，财报当日股价跌6.53%，目前股价在172美元附近。",
+      "why": "稳定币分销渠道从加密原生用户扩展到传统社区银行，是Coinbase把稳定币业务做成基础设施而不只是交易产品的关键一步。",
+      "impact": "COIN · 稳定币分销与合规产品线",
+      "sources": [
+        {
+          "name": "PYMNTS",
+          "url": "https://www.pymnts.com/cryptocurrency/2026/coinbase-and-moov-team-to-help-community-banks-embrace-stablecoins/",
+          "angle": "详述合作的技术接入方式"
+        },
+        {
+          "name": "Cointelegraph",
+          "url": "https://cointelegraph.com/news/coinbase-moov-stablecoin-infrastructure-banks",
+          "angle": "聚焦1000家银行/信用社的覆盖规模"
+        }
+      ]
+    },
+    {
+      "rank": 12,
+      "tier": "worth-knowing",
+      "published": "2026-09-10",
+      "headline": "Wealthfront财报超预期，股价单日+7.9%",
+      "sectors": [
+        "金融科技",
+        "财富管理"
+      ],
+      "tickers": [
+        "WLTH"
+      ],
+      "body": "机器人投顾Wealthfront(WLTH)公布好于预期的财报后，股价单日上涨7.9%，盘中一度涨超15%，成交量放大至日均6.3倍。截至6月底公司平台总资产达991亿美元。分析师给予买入评级，目标价12.42美元。",
+      "why": "平台资产规模突破千亿美元关口附近，是自动化投顾赛道竞争格局的一个观察窗口。",
+      "impact": "WLTH · 机器人投顾板块",
+      "sources": [
+        {
+          "name": "MarketBeat",
+          "url": "https://www.marketbeat.com/instant-alerts/price-wealthfront-nasdaq-wlth-stock-price-up-79-after-better-than-expected-earnings-2026-09-10/",
+          "angle": "记录财报后+7.9%的单日涨幅"
+        }
+      ]
+    },
+    {
+      "rank": 13,
+      "tier": "noise",
+      "published": "2026-09-04",
+      "headline": "特斯拉Cybercab在奥斯汀试运营，消防员对无方向盘设计提出操作顾虑（旧闻后续）",
+      "sectors": [
+        "汽车",
+        "自动驾驶"
+      ],
+      "tickers": [
+        "TSLA"
+      ],
+      "body": "NHTSA已于9/4就Cybercab是否符合联邦机动车安全标准立案调查，这是几天前的消息；新进展是奥斯汀消防部门近期公开的具体操作顾虑——Cybercab没有方向盘、踏板、后视镜，车辆抛锚时救援人员无法像普通车辆那样直接进车挪车，只能通过隐藏式触屏操作，而该触屏在戴手套、出汗或屏幕破损时可能失灵。",
+      "sources": [
+        {
+          "name": "NBC News",
+          "url": "https://www.nbcnews.com/tech/tech-news/tesla-cybercab-no-steering-wheel-worries-austin-firefighters-rcna596658",
+          "angle": "详述消防部门的具体操作顾虑"
+        }
+      ]
+    },
+    {
+      "rank": 14,
+      "tier": "noise",
+      "published": "2026-09-04",
+      "headline": "博通Q3财报回顾：AI半导体收入167亿美元+221%（一周前旧闻，股价已进入盘整）",
+      "sectors": [
+        "半导体",
+        "AI"
+      ],
+      "tickers": [
+        "AVGO"
+      ],
+      "body": "这是9/4的财报消息，市场已基本消化，列在这里补齐背景：博通第三财季营收296亿美元、每股收益2.68美元，其中AI半导体营收167亿美元，同比增长221%；公司指引第四财季营收约348.8亿美元。财报后股价盘后一度跌约3%，此后在353.70-360.16美元区间盘整；9/21为0.65美元股息除息日。",
+      "sources": [
+        {
+          "name": "moomoo",
+          "url": "https://www.moomoo.com/ca/articles/broadcom-stock-earnings",
+          "angle": "汇总财报数字与指引"
+        }
+      ]
+    },
+    {
+      "rank": 15,
+      "tier": "noise",
+      "published": "2026-09-03",
+      "headline": "Palantir扩大普华永道AI联盟（一周前旧闻，当前股价169美元附近整理）",
+      "sectors": [
+        "软件",
+        "AI"
+      ],
+      "tickers": [
+        "PLTR"
+      ],
+      "body": "这是9/3的消息，市场已基本消化：Palantir宣布扩大与普华永道(PwC)的AI联盟，覆盖企业AI、并购转型与ERP现代化，消息公布当日股价上涨约9%，被视为对Michael Burry做空论调的正面回应。截至9/10，PLTR在168.61-171.86美元区间波动。",
+      "sources": [
+        {
+          "name": "Yahoo Finance",
+          "url": "https://finance.yahoo.com/markets/stocks/articles/palantir-rallies-7-pwc-alliance-151100126.html",
+          "angle": "详述PwC联盟的具体合作范围"
+        }
+      ]
+    },
+    {
+      "rank": 16,
+      "tier": "noise",
+      "published": "2026-09-10",
+      "headline": "阿根廷国家石油公司YPF上调全年EBITDA目标，股价随油价走高",
+      "sectors": [
+        "能源",
+        "拉美"
+      ],
+      "tickers": [
+        "YPF"
+      ],
+      "body": "YPF 9/10上涨2.6%，是当天阿根廷股市成交最活跃的个股，公司同期上调了2026年EBITDA与现金流目标。阿根廷Merval指数当日上涨1.53%，能源股是主要贡献。",
+      "sources": [
+        {
+          "name": "Rio Times",
+          "url": "https://www.riotimesonline.com/argentina-markets-merval-peso-friday-september-11-2026/",
+          "angle": "记录YPF成交量与Merval指数表现"
+        }
+      ]
+    },
+    {
+      "rank": 17,
+      "tier": "noise",
+      "published": "2026-09-11",
+      "headline": "Tenaris今日盘前公布财报，年初至今股价已涨约13%",
+      "sectors": [
+        "能源",
+        "工业"
+      ],
+      "tickers": [
+        "TEN"
+      ],
+      "body": "油气管材制造商Tenaris(TEN)原定9/11盘前公布财报，市场预期本季营收同比增长18.4%；此前一季度营收2.53亿美元、同比+28.4%，每股收益与EBITDA均超预期。股价年内已上涨约13.4%，分析师平均目标价46美元。",
+      "sources": [
+        {
+          "name": "Yahoo Finance",
+          "url": "https://ca.finance.yahoo.com/news/tenaris-ten-reports-q2-everything-041518692.html",
+          "angle": "财报前瞻与此前一季度数据"
+        }
+      ]
+    }
+  ],
+  "calendar": [
+    {
+      "when": "Tue-Wed 9/15-16",
+      "time": "14:00 ET（9/16公布决议）",
+      "event": "联储9月FOMC两天会议：8月CPI同比3.4%、PPI同比5.4%均超预期后，市场对9/16加息25个基点的定价升至约70%，联邦基金利率或从3.5%-3.75%升至3.75%-4%",
+      "weight": "high",
+      "date": "2026-09-16",
+      "sources": [
+        {
+          "name": "CBS News",
+          "url": "https://www.cbsnews.com/news/august-cpi-report-inflation-fed-rates/"
+        },
+        {
+          "name": "CNBC",
+          "url": "https://www.cnbc.com/2026/09/11/cpi-inflation-report-august-2026.html"
+        }
+      ]
+    },
+    {
+      "when": "Mon 9/21",
+      "time": "—",
+      "event": "博通(AVGO)股息除息日，每股派发0.65美元",
+      "weight": "low",
+      "date": "2026-09-21",
+      "sources": [
+        {
+          "name": "CNBC",
+          "url": "https://www.cnbc.com/quotes/AVGO"
+        }
+      ]
+    },
+    {
+      "when": "年底前",
+      "time": "—",
+      "event": "Qorvo与Skyworks合并交易：中国SAMR审查已进入最后阶段，目标年底完成交割",
+      "weight": "mid",
+      "sources": [
+        {
+          "name": "ad-hoc-news",
+          "url": "https://www.ad-hoc-news.de/boerse/news/corporate-news/qorvo-inc-stock-jumps-to-52-week-high-as-skyworks-merger-momentum-builds/70083267"
+        }
+      ]
+    },
+    {
+      "when": "Thu 10/1",
+      "time": "—",
+      "event": "9月ISM制造业PMI公布",
+      "weight": "mid",
+      "date": "2026-10-01",
+      "sources": [
+        {
+          "name": "FedRateCalc",
+          "url": "https://fedratecalc.com/us-economic-calendar/september-2026/"
+        }
+      ]
+    },
+    {
+      "when": "Fri 10/2",
+      "time": "08:30 ET",
+      "event": "9月非农就业报告公布",
+      "weight": "high",
+      "date": "2026-10-02",
+      "sources": [
+        {
+          "name": "FedRateCalc",
+          "url": "https://fedratecalc.com/us-economic-calendar/september-2026/"
+        }
+      ]
+    }
+  ],
+  "mag7": {
+    "rows": [
+      {
+        "ticker": "NVDA",
+        "price": "226.71",
+        "change_pct": -1.58
+      },
+      {
+        "ticker": "AAPL",
+        "price": "316.37",
+        "change_pct": -1.12
+      },
+      {
+        "ticker": "MSFT",
+        "price": "492.86",
+        "change_pct": -1.37
+      },
+      {
+        "ticker": "GOOGL",
+        "price": "338.46",
+        "change_pct": 0.0
+      },
+      {
+        "ticker": "AMZN",
+        "price": "257.10",
+        "change_pct": -0.55
+      },
+      {
+        "ticker": "META",
+        "price": "616.60",
+        "change_pct": -0.03
+      },
+      {
+        "ticker": "TSLA",
+        "price": "366.21",
+        "change_pct": 3.43
+      }
+    ],
+    "asof": "收盘 · Tue 9/8 11:41 ET",
+    "source": "Yahoo Finance chart endpoint"
+  },
+  "momentum": {
+    "asof": "2026-09-10",
+    "scanned": 2532,
+    "note": "初动档5只里YPF/SIG/WLTH/QRVO今天都已在新闻扫描中出现，覆盖度不低，线索已经不算早；延续档的DVN/PAGS/SUZ/DAC完全没有进入今天的新闻扫描，是当中最早的信号。",
+    "candidates": [
+      {
+        "ticker": "YPF",
+        "stage": "ignition",
+        "close": 56.06,
+        "change_pct": 2.66,
+        "rvol": 3.31,
+        "breakout_age": 0,
+        "ext_ma20": 0.0843,
+        "run_from_base": 0.2735,
+        "coverage": "heavy",
+        "note": "上涨2.66%，成交量放大至均量3.3倍；新闻面已知：油价走高提振阿根廷能源股，公司同期上调了全年EBITDA与现金流目标。",
+        "sources": [
+          {
+            "name": "Rio Times",
+            "url": "https://www.riotimesonline.com/argentina-markets-merval-peso-friday-september-11-2026/"
+          }
+        ]
+      },
+      {
+        "ticker": "SIG",
+        "stage": "ignition",
+        "close": 97.71,
+        "change_pct": -4.65,
+        "rvol": 2.8,
+        "breakout_age": 1,
+        "ext_ma20": 0.1405,
+        "run_from_base": 0.2367,
+        "coverage": "heavy",
+        "note": "9/9财报后曾暴涨24%，9/10单日转跌4.65%、放量2.8倍，为获利了结；新闻面已知：调整后每股收益超预期，管理层上调全年利润指引但零售销售指引持平。",
+        "sources": [
+          {
+            "name": "24/7 Wall St",
+            "url": "https://247wallst.com/investing/2026/09/09/signet-jewelers-surges-14-as-raised-profit-outlook-overrides-flat-sales-guidance-tapestry-holds-steady/"
+          }
+        ]
+      },
+      {
+        "ticker": "TEN",
+        "stage": "ignition",
+        "close": 44.71,
+        "change_pct": 0.88,
+        "rvol": 2.76,
+        "breakout_age": 1,
+        "ext_ma20": 0.0497,
+        "run_from_base": 0.2815,
+        "coverage": "light",
+        "note": "上涨0.88%，放量2.76倍，突破后第1日；新闻面已知：公司原定9/11盘前公布财报，市场预期营收同比增长18.4%，股价年内已涨约13%。",
+        "sources": [
+          {
+            "name": "Yahoo Finance",
+            "url": "https://ca.finance.yahoo.com/news/tenaris-ten-reports-q2-everything-041518692.html"
+          }
+        ]
+      },
+      {
+        "ticker": "WLTH",
+        "stage": "ignition",
+        "close": 10.88,
+        "change_pct": 15.01,
+        "rvol": 6.27,
+        "breakout_age": 0,
+        "ext_ma20": 0.1643,
+        "run_from_base": 0.3967,
+        "coverage": "heavy",
+        "note": "单日暴涨15.01%，成交量放大至均量6.27倍，当日突破；新闻面已知：财报好于预期，平台总资产达991亿美元。",
+        "sources": [
+          {
+            "name": "MarketBeat",
+            "url": "https://www.marketbeat.com/instant-alerts/price-wealthfront-nasdaq-wlth-stock-price-up-79-after-better-than-expected-earnings-2026-09-10/"
+          }
+        ]
+      },
+      {
+        "ticker": "QRVO",
+        "stage": "ignition",
+        "close": 112.36,
+        "change_pct": 6.77,
+        "rvol": 2.72,
+        "breakout_age": 3,
+        "ext_ma20": 0.1403,
+        "run_from_base": 0.3805,
+        "coverage": "heavy",
+        "note": "上涨6.77%，放量2.72倍，突破后第3日；新闻面已知：财报大超预期，且与Skyworks合并交易的中国监管审查已进入最后阶段。",
+        "sources": [
+          {
+            "name": "ad-hoc-news",
+            "url": "https://www.ad-hoc-news.de/boerse/news/corporate-news/qorvo-inc-stock-jumps-to-52-week-high-as-skyworks-merger-momentum-builds/70083267"
+          }
+        ]
+      },
+      {
+        "ticker": "DVN",
+        "stage": "continuation",
+        "close": 50.02,
+        "change_pct": 2.12,
+        "rvol": 1.75,
+        "breakout_age": 0,
+        "ext_ma20": 0.0426,
+        "run_from_base": 0.2505,
+        "coverage": "none",
+        "note": "上涨2.12%，放量1.75倍，当日突破；今天扫描的新闻里没有专门提到这只票，只有油价上涨的宏观背景。"
+      },
+      {
+        "ticker": "PAGS",
+        "stage": "continuation",
+        "close": 10.13,
+        "change_pct": 5.41,
+        "rvol": 1.22,
+        "breakout_age": 0,
+        "ext_ma20": 0.1128,
+        "run_from_base": 0.2031,
+        "coverage": "none",
+        "note": "上涨5.41%，放量1.22倍，当日突破；今天扫描的新闻里完全没有出现这只票。"
+      },
+      {
+        "ticker": "SUZ",
+        "stage": "continuation",
+        "close": 9.43,
+        "change_pct": 1.73,
+        "rvol": 1.17,
+        "breakout_age": 0,
+        "ext_ma20": 0.0754,
+        "run_from_base": 0.2482,
+        "coverage": "none",
+        "note": "上涨1.73%，放量1.17倍，当日突破；今天扫描的新闻里完全没有出现这只票。"
+      },
+      {
+        "ticker": "DAC",
+        "stage": "continuation",
+        "close": 156.89,
+        "change_pct": 1.42,
+        "rvol": 1.27,
+        "breakout_age": 0,
+        "ext_ma20": 0.045,
+        "run_from_base": 0.3074,
+        "coverage": "none",
+        "note": "上涨1.42%，放量1.27倍，当日突破；今天扫描的新闻里完全没有出现这只票。"
+      }
+    ]
+  }
+}
