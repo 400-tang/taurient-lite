@@ -1,0 +1,833 @@
+{
+  "date": "2026-09-16",
+  "weekday": "Wednesday",
+  "edition": "Daily edition",
+  "generated_at": "2026-09-16 06:30 PT",
+  "scanned": 132,
+  "kept": 15,
+  "thesis": "联储今天下午 2 点公布利率决议，市场给 25 个基点加息定价到 92%-93%——如果落地会是沃什就任主席以来的第一次投票，也是 2023 年以来美联储首次加息，驱动力是伊朗战争把油价钉在 100 美元上方、10 年期收益率周二冲到 5.04%（2007 年以来最高）。同时，Amodei 上周末发起的 AI 减速倡议仍在发酵，半导体股周一遭遇费城半导体指数六年来最差单日之一，资金转向网络安全股避险。三条线在决议前汇合，今天波动率会明显放大。",
+  "mag7": {
+    "rows": [
+      {
+        "ticker": "NVDA",
+        "price": "211.58",
+        "change_pct": 0.29
+      },
+      {
+        "ticker": "AAPL",
+        "price": "329.91",
+        "change_pct": -0.95
+      },
+      {
+        "ticker": "MSFT",
+        "price": "500.41",
+        "change_pct": -0.99
+      },
+      {
+        "ticker": "GOOGL",
+        "price": "343.84",
+        "change_pct": -1.59
+      },
+      {
+        "ticker": "AMZN",
+        "price": "249.24",
+        "change_pct": -1.7
+      },
+      {
+        "ticker": "META",
+        "price": "666.47",
+        "change_pct": 0.13
+      },
+      {
+        "ticker": "TSLA",
+        "price": "359.50",
+        "change_pct": 0.15
+      }
+    ],
+    "asof": "收盘 · Tue 9/15 13:11 ET",
+    "source": "Yahoo Finance chart endpoint",
+    "note": "半导体板块仍在消化周一 AI 减速表态引发的抛售，英伟达、AMD 尚未收复失地；苹果、微软的价格更多由联储决议前的整体风险情绪驱动，个股层面没有新催化剂。"
+  },
+  "tape": {
+    "asof": "上一收盘 · 周二 9/15",
+    "rows": [
+      {
+        "name": "S&P 500",
+        "value": "7,585.73",
+        "change": "-0.45%",
+        "dir": "down"
+      },
+      {
+        "name": "Nasdaq Composite",
+        "value": "25,981.57",
+        "change": "-0.78%",
+        "dir": "down"
+      },
+      {
+        "name": "Dow Jones",
+        "value": "52,093.11",
+        "change": "-0.63%",
+        "dir": "down"
+      },
+      {
+        "name": "US 10Y yield",
+        "value": "5.04%",
+        "change": "2007 年以来最高",
+        "dir": "up"
+      },
+      {
+        "name": "US 2Y yield",
+        "value": "4.39%",
+        "change": "年初约 3.50%",
+        "dir": "up"
+      },
+      {
+        "name": "WTI crude",
+        "value": "$104.68",
+        "change": "较一个月前 +23.9%",
+        "dir": "up"
+      }
+    ]
+  },
+  "items": [
+    {
+      "rank": 1,
+      "tier": "must-read",
+      "published": "2026-09-16",
+      "headline": "联储今日 2 点公布利率决议，93% 概率加息 25 个基点，沃什上任后首投",
+      "sectors": [
+        "宏观",
+        "利率"
+      ],
+      "body": "为期两天的 9 月 FOMC 会议今天收官，利率决议将于美东下午 2 点公布，沃什主席的记者会随后在 2:30 举行。CME FedWatch 显示市场给 25 个基点加息（目标区间升至 3.75%-4.00%）定价 92%-93%，如果落地将是 2023 年以来美联储首次加息，也是今年 5 月就任的沃什主席第一次带队投票。驱动因素是伊朗战争持续推高能源成本：8 月核心 CPI 同比 2.4%，整体 3.4%，联储理事沃勒此前设的「没有意外就按兵不动」的条件被能源通胀击穿。市场同时在盯 9 月点阵图对 2027 年利率路径的预测——目前债市定价到 12 月升至约 4.2%、明年 9 月约 4.6%，暗示这可能不是单次加息。",
+      "why": "这是 2023 年以来第一次方向反转成加息，且发生在沃什的第一次会议上，市场对他的鹰鸽倾向和沟通风格都还没有先验。点阵图如果暗示不止一次加息，整条收益率曲线的贴现率都要重算。",
+      "impact": "全市场 · 长久期资产首当其冲",
+      "tickers": [],
+      "sources": [
+        {
+          "name": "Yahoo Finance",
+          "url": "https://finance.yahoo.com/economy/policy/live/federal-reserve-meeting-live-updates-chairman-kevin-warsh-143452661.html",
+          "angle": "会议时间线与沃什记者会安排"
+        },
+        {
+          "name": "Fox Business",
+          "url": "https://www.foxbusiness.com/economy/stubborn-inflation-sets-stage-federal-reserve-hike-interest-rates",
+          "angle": "把加息归因于顽固通胀"
+        },
+        {
+          "name": "Federal Reserve",
+          "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+          "angle": "官方会议日程，确认 9/15-16 为本次会期"
+        },
+        {
+          "name": "Yahoo Finance (Odds)",
+          "url": "https://finance.yahoo.com/economy/policy/articles/fomc-september-2026-odds-rate-201618784.html",
+          "angle": "CME FedWatch 概率与点阵图前瞻数字"
+        }
+      ],
+      "assets": [
+        {
+          "asset_class": "美债",
+          "direction": "down",
+          "conviction": "high",
+          "note": "10 年期收益率周二已冲到 5.04%（2007 年以来最高），加息本身多半已被计入，真正的变量是点阵图对 2027 年路径的暗示。"
+        },
+        {
+          "asset_class": "美元",
+          "direction": "up",
+          "conviction": "medium",
+          "note": "加息落地会扩大对非美货币的利差优势，构成支撑性买盘。"
+        },
+        {
+          "asset_class": "美股",
+          "direction": "mixed",
+          "conviction": "medium",
+          "note": "加息本身已price in，指数层面的方向更多取决于点阵图是否释放进一步收紧信号。"
+        },
+        {
+          "asset_class": "加密资产",
+          "direction": "down",
+          "conviction": "low",
+          "note": "流动性收紧预期叠加昨天 Clarity 法案受挫，比特币已跌破 7.6 万美元，加息落地可能延续弱势。"
+        }
+      ],
+      "cross_source": {
+        "agreement": "aligned",
+        "summary": "Yahoo、Fox Business、Kiplinger 等对 92%-93% 的加息概率和 3.75%-4.00% 的目标区间口径一致，分歧只在对沃什沟通风格与点阵图措辞的猜测上。"
+      },
+      "history": {
+        "summary": "从 7 月按兵不动到今天几乎板上钉钉的加息，转折点是伊朗战争持续推升能源成本，这也是沃什 5 月就任以来面对的第一次真正考验。",
+        "timeline": [
+          {
+            "when": "2026/5/22",
+            "event": "沃什宣誓就任联储主席，FOMC 一致推举其为主席"
+          },
+          {
+            "when": "7 月会议",
+            "event": "联储按兵不动，沃勒表态「没有意外就维持利率」"
+          },
+          {
+            "when": "8/28",
+            "event": "沃什在 Jackson Hole 表态对通胀「印象深刻」但担忧「潜在趋势」未改善"
+          },
+          {
+            "when": "9/11",
+            "event": "8 月 CPI 数据公布，核心 2.4%、整体 3.4%，加息概率过半"
+          },
+          {
+            "when": "9/16",
+            "event": "FOMC 决议 2:00 PM ET 公布，沃什 2:30 记者会"
+          }
+        ]
+      }
+    },
+    {
+      "rank": 2,
+      "tier": "must-read",
+      "published": "2026-09-16",
+      "headline": "油价站稳 100 美元上方、10 年期收益率破 5.04%创 2007 年以来新高，霍尔木兹通行量仍只剩基准的一成",
+      "sectors": [
+        "地缘",
+        "能源",
+        "宏观"
+      ],
+      "body": "伊朗战争进入第七个月，霍尔木兹海峡通行量仍只有危机前基准（每天约 100 艘次）的 5%-12%。WTI 原油周二报 104.68 美元，一个月内涨约 24%，同比涨 64%；布伦特 9 月初一度突破 108 美元，为 5 月以来首次。油价与 10 年期美债收益率的相关性达到 2019 年以来最强——收益率周二盘中触及 5.045%，超过 2023 年高点，创 2007 年以来新高。CBS 报道，自 2 月 28 日战争开始以来，美国消费者已多付约 1000 亿美元的燃油支出，柴油价格创下每加仑 6 美元的纪录。",
+      "why": "油价和利率现在被同一笔交易驱动，只要海峡通行量不恢复，收益率的下行空间就被封死，这正是联储今天要在加息决议里权衡的核心变量。",
+      "impact": "债券 · 能源 · 所有久期敏感资产 · 消费者燃油支出",
+      "tickers": [],
+      "sources": [
+        {
+          "name": "NBC News",
+          "url": "https://www.nbcnews.com/business/energy/us-crude-oil-iran-trump-hormuz-rcna596997",
+          "angle": "布伦特突破 108 美元，五月以来首次"
+        },
+        {
+          "name": "CNBC",
+          "url": "https://www.cnbc.com/2026/09/15/oil-us-treasurys-stocks-pressure.html",
+          "angle": "油价与十年期收益率相关性达 2019 年以来最强"
+        },
+        {
+          "name": "CBS News",
+          "url": "https://www.cbsnews.com/news/iran-war-economic-impact-gas-prices-inflation-2026/",
+          "angle": "量化战争八周以来对美国消费者的燃油成本冲击"
+        },
+        {
+          "name": "Yahoo Finance",
+          "url": "https://finance.yahoo.com/markets/article/10-year-treasury-at-highest-level-since-2023-as-oil-prices-jump-to-105-chart-of-the-day-134740387.html",
+          "angle": "十年期收益率突破 2023 高点的图表解读"
+        }
+      ],
+      "assets": [
+        {
+          "asset_class": "大宗商品",
+          "direction": "up",
+          "conviction": "high",
+          "note": "WTI 一个月涨约 24%，霍尔木兹通行量塌陷是结构性供给冲击，短期难以逆转。"
+        },
+        {
+          "asset_class": "美债",
+          "direction": "down",
+          "conviction": "high",
+          "note": "10 年期收益率周二触及 5.045%，2007 年以来最高，价格对应下跌。"
+        },
+        {
+          "asset_class": "美股",
+          "direction": "mixed",
+          "conviction": "medium",
+          "note": "能源股受益，久期敏感的成长股和消费股承压，指数层面涨跌互现。"
+        },
+        {
+          "asset_class": "海外股市",
+          "direction": "down",
+          "conviction": "medium",
+          "note": "能源净进口的亚欧市场对油价冲击的敞口高于美国。"
+        }
+      ],
+      "cross_source": {
+        "agreement": "aligned",
+        "summary": "NBC、CNBC、CBS 对油价水平和通行量塌陷的判断一致，差别在切入角度：NBC 聚焦价格本身，CNBC 强调油价与利率的联动结构，CBS 侧重换算到消费者钱包的具体冲击。"
+      },
+      "history": {
+        "summary": "冲突已持续约 7 个月，2 月 28 日美以对伊朗展开「重大作战行动」后，伊朗随即封锁霍尔木兹海峡作为反制，此后油价与通行量的博弈就没有停过。",
+        "timeline": [
+          {
+            "when": "2/28",
+            "event": "美以联合打击伊朗军事与基础设施目标，伊朗随即封锁霍尔木兹海峡"
+          },
+          {
+            "when": "8/30",
+            "event": "海峡通行量降至危机前基准的个位数百分比"
+          },
+          {
+            "when": "9/8",
+            "event": "美军打击 5 艘伊朗油轮，伊朗反击约旦 al-Azraq 空军基地"
+          },
+          {
+            "when": "9/11",
+            "event": "8 月 CPI 数据显示能源通胀持续渗透"
+          },
+          {
+            "when": "9/15-16",
+            "event": "10 年期收益率破 5.04%，创 2007 年以来新高"
+          }
+        ]
+      }
+    },
+    {
+      "rank": 3,
+      "tier": "must-read",
+      "published": "2026-09-14",
+      "headline": "Amodei 发起 AI「控速」倡议，周一半导体股遭遇年内最惨单日之一，效应仍在延续",
+      "sectors": [
+        "AI",
+        "半导体"
+      ],
+      "body": "这条消息两天前就发生了，但影响还没走完：Anthropic CEO Dario Amodei 上周末发文《We Must Pace the Frontier》，提出为前沿 AI 能力跃升「控速」的三点框架，核心担忧是递归自我改进——AI 系统在人类介入前就能自主设计下一代 AI。OpenAI 的 Altman、xAI 的 Musk、Google DeepMind 的 Hassabis 数日内相继背书。周一（9/14）半导体股应声重挫：费城半导体指数跌近 6%，为 7 月以来最差单日；英伟达跌 3.4%（市值蒸发约 1,767 亿美元），美光、超微电脑跌约 6%，AMD、英特尔跌超 4%。特朗普 9/13 在爱尔兰公开反对减速，称「谁赢得 AI 谁就赢」。周二（9/15）市场焦点转向联储决议前的收益率飙升，芯片股尚未收复失地。",
+      "why": "这不是监管强加的减速，而是行业头部自己喊出来的，说明供给端可能主动踩刹车，这对靠资本开支叙事支撑的芯片股估值是直接冲击，而且分歧本身（特朗普 vs 四位 AI 高管）意味着这场辩论短期内不会有定论。",
+      "impact": "半导体 · AI 资本开支链条 · 网络安全股受益",
+      "tickers": [
+        "NVDA",
+        "AMD"
+      ],
+      "sources": [
+        {
+          "name": "Axios",
+          "url": "https://www.axios.com/2026/09/12/anthropic-ai-amodei-pacing",
+          "angle": "详述 Amodei 三点控速框架与递归自我改进担忧"
+        },
+        {
+          "name": "CNN Business",
+          "url": "https://www.cnn.com/2026/09/14/business/ai-stocks-slide-slowdown-development-amodei-altman-intl",
+          "angle": "将抛售定性为行业领袖主动发出的安全警示"
+        },
+        {
+          "name": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-09-13/us-stock-futures-fall-on-ai-warning-oil-gains-markets-wrap",
+          "angle": "把特朗普的公开反对作为市场分歧的一部分"
+        },
+        {
+          "name": "Daily Caller",
+          "url": "https://dailycaller.com/2026/09/14/ai-leaders-hit-the-brakes-tech-stocks-tumble/",
+          "angle": "更强调这场辩论的政治化色彩"
+        }
+      ],
+      "assets": [
+        {
+          "asset_class": "美股",
+          "direction": "down",
+          "conviction": "high",
+          "note": "费城半导体指数周一跌近 6%，英伟达单日蒸发约 1,767 亿美元市值，是本轮 AI 资本开支叙事最大的一次单日冲击。"
+        },
+        {
+          "asset_class": "加密资产",
+          "direction": "mixed",
+          "conviction": "low",
+          "note": "风险偏好收缩的传导路径存在，但周一当天未见明确同步反应。"
+        }
+      ],
+      "cross_source": {
+        "agreement": "split",
+        "summary": "CNN 把这次抛售框定为行业自发的安全警示，Daily Caller 则突出特朗普的公开反对，把它写成一场政治化辩论；两家对「这是不是真问题」的判断明显分裂，这也是市场本身分歧的镜像。"
+      },
+      "history": {
+        "summary": "从 9/12 Amodei 发文到 9/14 芯片股重挫，只用了两天；网络安全股趁势走出反向行情，CrowdStrike CEO 公开回应称前沿实验室不会因一家公司的表态而停下脚步。",
+        "timeline": [
+          {
+            "when": "9/12",
+            "event": "Amodei 发文倡议控速，Altman、Musk、Hassabis 相继背书"
+          },
+          {
+            "when": "9/13",
+            "event": "特朗普在爱尔兰公开反对减速AI发展"
+          },
+          {
+            "when": "9/14",
+            "event": "费城半导体指数跌近 6%，网络安全股同步上涨 11%-15%"
+          }
+        ]
+      }
+    },
+    {
+      "rank": 4,
+      "tier": "worth-knowing",
+      "published": "2026-09-15",
+      "headline": "Clarity 法案参院程序性投票未过，加密板块应声下跌",
+      "sectors": [
+        "加密监管",
+        "政策"
+      ],
+      "body": "参议院周二未能推进 Clarity 法案的排除阻挠议事投票，该法案原本要在 SEC 与 CFTC 之间划清数字资产监管权责。争议焦点是稳定币发行方能否向用户支付利息——银行业游说反对，认为这会让加密公司变相吸储却不受同等监管。投票失败后比特币跌约 1.3% 至 7.6 万美元下方，Coinbase 跌超 8%，Robinhood 跌超 3%。",
+      "why": "这是加密行业争取了近一年的监管框架，失败意味着 SEC/CFTC 权责真空还要继续，交易所和上市加密股在没有明确规则的情况下运营的时间被拉长。",
+      "impact": "COIN · HOOD · 加密监管预期",
+      "tickers": [
+        "COIN"
+      ],
+      "sources": [
+        {
+          "name": "CNBC",
+          "url": "https://www.cnbc.com/2026/09/15/senate-cloture-vote-on-clarity-act-fails-dealing-regulatory-setback-to-crypto-industry.html",
+          "angle": "详述稳定币付息条款是主要分歧点"
+        },
+        {
+          "name": "NPR",
+          "url": "https://www.npr.org/2026/09/15/nx-s1-5968711/clarity-act-crypto-senate-vote",
+          "angle": "定性为加密行业的重大挫败"
+        },
+        {
+          "name": "CoinDesk",
+          "url": "https://www.coindesk.com/business/2026/09/15/live-updates-bitcoin-slides-from-nearly-usd80-000-as-senate-votes-on-clarity-act",
+          "angle": "实时跟踪比特币价格反应"
+        }
+      ]
+    },
+    {
+      "rank": 5,
+      "tier": "worth-knowing",
+      "published": "2026-09-16",
+      "headline": "Lennar 今晚盘后发 Q3 财报，市场预期 EPS 同比下滑约 35%",
+      "sectors": [
+        "地产",
+        "利率"
+      ],
+      "body": "Lennar 将于今天美股盘后公布 2026 财年三季度业绩，9/17 上午 11 点（ET）召开电话会。分析师预期 EPS 约 1.30 美元、营收约 83 亿美元，同比降幅分别约 35% 和中个位数百分比。公司自己预告本季度房屋销售毛利率约 16%，低于去年同期的 17.5%。30 年期固定房贷利率已升到约 6.89%-7%，是本轮周期的高位。",
+      "why": "住房是对利率最敏感的实体经济部门之一，这份财报会先于联储决议几个小时给出高利率环境下需求端的真实读数。",
+      "impact": "LEN · 房地产板块 · 利率敏感型消费",
+      "tickers": [
+        "LEN"
+      ],
+      "sources": [
+        {
+          "name": "Lennar Newsroom",
+          "url": "https://newsroom.lennar.com/2026-09-02-Lennar-Corporation-to-Broadcast-Its-Third-Quarter-2026-Earnings-Call-on-September-17,-2026",
+          "angle": "公司公告确认电话会时间"
+        },
+        {
+          "name": "Trefis",
+          "url": "https://www.trefis.com/stock/len/articles/615341/how-will-lennar-stock-react-to-its-upcoming-earnings-5/2026-09-15",
+          "angle": "给出 EPS 与营收的分析师预期区间"
+        },
+        {
+          "name": "Money.com",
+          "url": "https://money.com/current-mortgage-rates/",
+          "angle": "当前 30 年期房贷利率水平"
+        }
+      ]
+    },
+    {
+      "rank": 6,
+      "tier": "worth-knowing",
+      "published": "2026-09-14",
+      "headline": "网络安全股借 AI 安全辩论走出独立行情，CrowdStrike、Palo Alto 周一涨超 11%",
+      "sectors": [
+        "网络安全",
+        "AI"
+      ],
+      "body": "Amodei 的控速倡议在打压半导体股的同时，把资金推向了网络安全板块：CrowdStrike、Zscaler 周一涨约 12%-15%，Palo Alto Networks 涨约 11%-13%，Okta 涨约 5%。逻辑是如果前沿 AI 能力继续跃升，企业对基础设施防护的投入只会增加，而不取决于哪家实验室的表态。CrowdStrike CEO George Kurtz 公开回应称，前沿实验室不会因为一家公司的呼吁就停下，网络安全行业的职责是让这个进程更安全。",
+      "why": "这条交易的逻辑跟半导体股的抛售互为镜像——同一份新闻，一部分投资者读成资本开支放缓的利空，另一部分读成防护需求扩容的利好，说明市场对 AI 减速这件事本身的定价还没有共识。",
+      "impact": "网络安全板块 · AI 基建支出结构",
+      "tickers": [],
+      "sources": [
+        {
+          "name": "24/7 Wall St.",
+          "url": "https://247wallst.com/investing/2026/09/14/cybersecurity-stocks-surge-as-ai-safety-warnings-spark-security-bid-crowdstrike-and-zscaler-jump-12-palo-alto-rallies-11/",
+          "angle": "给出各家网络安全股具体涨幅"
+        },
+        {
+          "name": "GuruFocus",
+          "url": "https://www.gurufocus.com/news/9079208/cybersecurity-stocks-surge-amid-ai-safety-concerns-okta-crwd-panw",
+          "angle": "引用 CrowdStrike CEO 的公开回应"
+        }
+      ]
+    },
+    {
+      "rank": 7,
+      "tier": "worth-knowing",
+      "published": "2026-09-15",
+      "headline": "NHTSA 勒令特斯拉 9/30 前书面宣誓回答 Cybercab 21 项认证问题，最高罚 1.39 亿美元",
+      "sectors": [
+        "汽车",
+        "监管"
+      ],
+      "body": "NHTSA 向特斯拉发出正式「特别令」，要求在 9 月 30 日前以宣誓书形式回答 21 个问题，核心是一辆没有方向盘、踏板、后视镜的车如何满足按「有人驾驶」假设写成的联邦机动车安全标准（比如 FMVSS 135 明确要求「行车制动由脚踏控制」，Cybercab 没有脚踏板却自我认证合规）。若回答虚假或不完整，最高可处 1.39 亿美元罚款，签字负责人还可能面临最高 15 年刑责。",
+      "why": "这次问询针对的是自我认证这个动作本身的合法性，不是某个具体零件缺陷。如果自我认证被认定不成立，整个无方向盘车型的上市路径都要重新走一遍监管流程。",
+      "impact": "TSLA · 自动驾驶产业链 · 监管预期",
+      "tickers": [
+        "TSLA"
+      ],
+      "sources": [
+        {
+          "name": "Electrek",
+          "url": "https://electrek.co/2026/09/15/nhtsa-tesla-cybercab-special-order-fmvss-certification/",
+          "angle": "逐条解读 21 项问题的技术焦点"
+        },
+        {
+          "name": "Motor1",
+          "url": "https://www.motor1.com/news/808502/tesla-cybercab-nhtsa-special-order/",
+          "angle": "点出最高 1.39 亿美元罚款与刑责风险"
+        },
+        {
+          "name": "NHTSA",
+          "url": "https://www.nhtsa.gov/press-releases/investigation-tesla-cybercab-self-certification",
+          "angle": "监管机构官方通稿"
+        }
+      ]
+    },
+    {
+      "rank": 8,
+      "tier": "worth-knowing",
+      "published": "2026-09-15",
+      "headline": "UBS 把 Palantir 目标价上调至 250 美元，CTO 公开反对「AI 安全政治化」",
+      "sectors": [
+        "AI 软件",
+        "分析师评级"
+      ],
+      "body": "UBS 分析师 Keirstead 将 Palantir 目标价从 220 美元上调至 250 美元（今年内第三次上调，6 月还是 200 美元），理由是 AI 主权需求、二季度 34 亿美元订单和 157% 的净留存率。33 位覆盖分析师中 23 位给出买入或强烈买入，但平均目标价 199.68 美元仍比 UBS 的新数字低约 20%。同一时间，Palantir CTO Shyam Sankar 公开表态，担忧 AI 安全议题被「政治化」——与本周 Amodei 控速倡议形成正面立场分歧。",
+      "why": "Palantir 站在了控速辩论的对立面，这条信息补充了「谁在反对减速」这条线索的具体人物和理由，跟本周 must-read 里的芯片股抛售是同一场辩论的另一面。",
+      "impact": "PLTR · AI 软件板块估值锚",
+      "tickers": [
+        "PLTR"
+      ],
+      "sources": [
+        {
+          "name": "GuruFocus",
+          "url": "https://www.gurufocus.com/news/9081907/pltr-maintained-by-ubs-price-target-raised-to-250",
+          "angle": "UBS 上调目标价的具体依据"
+        },
+        {
+          "name": "Finbold",
+          "url": "https://finbold.com/banking-giant-sets-date-when-palantir-stock-will-trade-at-250/",
+          "angle": "分析师历次目标价调整的时间线"
+        }
+      ]
+    },
+    {
+      "rank": 9,
+      "tier": "worth-knowing",
+      "published": "2026-09-14",
+      "headline": "2026 年科技业裁员已超 21 万人，AI 资本开支与组织瘦身同步推进",
+      "sectors": [
+        "科技",
+        "就业"
+      ],
+      "body": "截至 9 月 14 日，2026 年科技行业已发生 383 起裁员事件，累计影响约 210,741 名员工；9 月前十天新增裁员超 6,000 人，涉及 Uber、PayPal、苹果、Oracle 等公司。同一批公司里有不少正在大举投入 AI 基础设施——比如 Meta 的 2026 年资本开支指引为 1,150 亿至 1,450 亿美元，绝大部分投向 AI 基建。",
+      "why": "裁员和资本开支同步扩张不是矛盾，而是同一个逻辑：把预算从人力协调成本挪向计算基础设施，这是这一轮科技业组织重构的共同模式。",
+      "impact": "科技业就业情绪 · AI 资本开支结构",
+      "tickers": [],
+      "sources": [
+        {
+          "name": "Business Standard",
+          "url": "https://www.business-standard.com/industry/news/global-tech-layoffs-2026-oracle-amazon-dell-uber-paypal-it-sector-job-cuts-126091100188_1.html",
+          "angle": "点名九月前十天的具体裁员公司"
+        },
+        {
+          "name": "Yahoo Tech",
+          "url": "https://tech.yahoo.com/general/article/tech-layoffs-tracker-2026-all-the-job-losses-across-uber-apple-tiktok-meta-microsoft-oracle-and-others-144545528.html",
+          "angle": "全年裁员事件与人数的累计追踪"
+        }
+      ]
+    },
+    {
+      "rank": 10,
+      "tier": "worth-knowing",
+      "published": "2026-09-16",
+      "headline": "特斯拉 Roadster 十月一日发布会，预约车主须今晚午夜前回复",
+      "sectors": [
+        "汽车",
+        "产品发布"
+      ],
+      "body": "特斯拉确认将于 10 月 1 日晚 8:30（当地时间）在得州 Waco 举行新一代 Roadster 发布会，邀请函仅限已预订车主且不可转让，回复截止时间是今晚（9/16）午夜。标准版预计起售价约 20 万美元，Founders 版约 25 万美元，官方宣称零百加速两秒以内、最高时速超 250 英里，量产目标是 2027 或 2028 年在得州超级工厂落地。",
+      "why": "这是马斯克 2017 年首次亮相 Roadster 概念车之后又一次跳票多年的产品，量产时间点被推到 2027-2028 年，说明这仍然是形象产品而非近期财务贡献项。",
+      "impact": "TSLA · 品牌叙事",
+      "tickers": [
+        "TSLA"
+      ],
+      "sources": [
+        {
+          "name": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-09-12/tesla-teases-oct-1-event-to-showcase-next-generation-roadster",
+          "angle": "确认发布会日期与邀请范围"
+        },
+        {
+          "name": "Motor1",
+          "url": "https://www.motor1.com/news/808103/tesla-roadster-reveal-date-confirmed/",
+          "angle": "给出预计售价与性能参数"
+        }
+      ]
+    },
+    {
+      "rank": 11,
+      "tier": "noise",
+      "published": "2026-09-16",
+      "headline": "机构对油价后续走势分歧很大：85 美元到 200 美元的预测都有",
+      "sectors": [
+        "能源",
+        "分析师预测"
+      ],
+      "body": "高盛测算若冲突持续，美国消费者今年在燃油上的额外支出可能达千亿美元级别；另有分析称若战事拖到明年 6 月，油价存在冲高至 200 美元的尾部情形，也有机构认为价格会回落到 85 美元附近。区间之宽说明这更多是情景假设而非共识预测。",
+      "sources": [
+        {
+          "name": "CBS News",
+          "url": "https://www.cbsnews.com/news/oil-prices-forecast-goldman-sachs-iran-war/"
+        },
+        {
+          "name": "Seeking Alpha",
+          "url": "https://seekingalpha.com/news/4569686"
+        }
+      ]
+    },
+    {
+      "rank": 12,
+      "tier": "noise",
+      "published": "2026-09-16",
+      "headline": "Anthropic IPO 估值口径不一，从 9,650 亿到 2 万亿美元的说法都有",
+      "sectors": [
+        "AI",
+        "一级市场"
+      ],
+      "body": "关于 Anthropic 上市窗口和估值，不同报道给出的数字差异很大——有说法称目标 9 月或 10 月初上市、估值约 9,650 亿美元，也有报道称目标 2 万亿美元估值、10 月在纳斯达克挂牌。公司尚未公布具体股价、股数或确切上市日期。",
+      "sources": [
+        {
+          "name": "KuCoin",
+          "url": "https://www.kucoin.com/blog/anthropic-ipo-2026-plans-september-or-early-otcober-listing-amid-965-billion-valuation-talks"
+        },
+        {
+          "name": "Forge",
+          "url": "https://forgeglobal.com/anthropic_ipo/"
+        }
+      ]
+    },
+    {
+      "rank": 13,
+      "tier": "noise",
+      "published": "2026-09-16",
+      "headline": "盘前小盘股 Tempest Therapeutics 涨近 50%，因授权协议消息",
+      "sectors": [
+        "生物科技"
+      ],
+      "body": "Tempest Therapeutics 盘前一度涨约 49.6% 至 1.13 美元，消息是与河北森朗生物达成独家期权协议，获得后者 CD7 靶向慢病毒载体平台及体内 CAR-T 管线的独家授权选项。",
+      "sources": [
+        {
+          "name": "Benzinga",
+          "url": "https://www.benzinga.com/trading-ideas/movers/26/09/61809066/why-tempest-therapeutics-shares-are-trading-higher-by-around-50-here-are-20-stocks-moving-premarket"
+        }
+      ]
+    },
+    {
+      "rank": 14,
+      "tier": "noise",
+      "published": "2026-09-16",
+      "headline": "联储决议前，AXT 与 Rogers 两只半导体小盘股逆势走高",
+      "sectors": [
+        "半导体",
+        "小盘股"
+      ],
+      "body": "AXT（磷化铟衬底供应商）在此前因中国出口许可延迟而重挫后出现技术性反弹；Rogers Corporation 因公布 9 月 30 日投资者日、聚焦 AI 数据中心与车用电子增长机会而走高。两者都是小市值个股，对大盘影响有限。",
+      "sources": [
+        {
+          "name": "Yahoo Finance",
+          "url": "https://finance.yahoo.com/markets/live/stock-market-today-wednesday-september-16-dow-sp-500-nasdaq-fed-meeting-decision-080356525.html"
+        }
+      ]
+    },
+    {
+      "rank": 15,
+      "tier": "noise",
+      "published": "2026-09-14",
+      "headline": "美国 30 年期房贷利率逼近 7%，但部分地区已转向买方市场",
+      "sectors": [
+        "地产"
+      ],
+      "body": "30 年期固定房贷利率最新报价约 6.89%，比 9/10 的 6.76% 又高了一截，逼近本轮周期的 7% 关口。同时不少地区新房库存上升，部分购房者反而获得了更多议价空间和开发商让利，跟 Lennar 今晚财报里预告的毛利率下滑是同一个利率环境的两面。",
+      "sources": [
+        {
+          "name": "LendingTree",
+          "url": "https://www.lendingtree.com/home/mortgage/rates/mortgage-interest-rates-forecast/"
+        },
+        {
+          "name": "Money.com",
+          "url": "https://money.com/current-mortgage-rates/"
+        }
+      ]
+    }
+  ],
+  "calendar": [
+    {
+      "when": "Wed 9/16",
+      "time": "14:00 ET",
+      "event": "9 月 FOMC 利率决议，93% 概率加息 25 个基点至 3.75%-4.00%",
+      "weight": "high",
+      "date": "2026-09-16",
+      "sources": [
+        {
+          "name": "Federal Reserve",
+          "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        },
+        {
+          "name": "Kiplinger",
+          "url": "https://www.kiplinger.com/investing/live/fed-meeting-updates-and-commentary-september-2026"
+        }
+      ]
+    },
+    {
+      "when": "Wed 9/16",
+      "time": "14:30 ET",
+      "event": "沃什主席就任以来第一次 FOMC 记者会",
+      "weight": "high",
+      "date": "2026-09-16",
+      "sources": [
+        {
+          "name": "Yahoo Finance",
+          "url": "https://finance.yahoo.com/economy/policy/live/federal-reserve-meeting-live-updates-chairman-kevin-warsh-143452661.html"
+        }
+      ]
+    },
+    {
+      "when": "Wed 9/16",
+      "time": "盘后",
+      "event": "Lennar (LEN) Q3 财报，预期 EPS 约 $1.30；电话会 9/17 11:00 ET",
+      "weight": "mid",
+      "date": "2026-09-16",
+      "sources": [
+        {
+          "name": "Lennar Newsroom",
+          "url": "https://newsroom.lennar.com/2026-09-02-Lennar-Corporation-to-Broadcast-Its-Third-Quarter-2026-Earnings-Call-on-September-17,-2026"
+        },
+        {
+          "name": "Trefis",
+          "url": "https://www.trefis.com/stock/len/articles/615341/how-will-lennar-stock-react-to-its-upcoming-earnings-5/2026-09-15"
+        }
+      ]
+    },
+    {
+      "when": "Wed 9/30",
+      "time": "—",
+      "event": "特斯拉须就 Cybercab 21 项认证问题向 NHTSA 提交宣誓书面回答",
+      "weight": "mid",
+      "date": "2026-09-30",
+      "sources": [
+        {
+          "name": "Electrek",
+          "url": "https://electrek.co/2026/09/15/nhtsa-tesla-cybercab-special-order-fmvss-certification/"
+        },
+        {
+          "name": "NHTSA",
+          "url": "https://www.nhtsa.gov/press-releases/investigation-tesla-cybercab-self-certification"
+        }
+      ]
+    },
+    {
+      "when": "Wed 9/30",
+      "time": "—",
+      "event": "Rogers Corporation 投资者日，聚焦 AI 数据中心与车用电子",
+      "weight": "low",
+      "date": "2026-09-30",
+      "sources": [
+        {
+          "name": "Yahoo Finance",
+          "url": "https://finance.yahoo.com/markets/live/stock-market-today-wednesday-september-16-dow-sp-500-nasdaq-fed-meeting-decision-080356525.html"
+        }
+      ]
+    },
+    {
+      "when": "Thu 10/1",
+      "time": "20:30 当地时间",
+      "event": "特斯拉新一代 Roadster 发布会（得州 Waco）",
+      "weight": "low",
+      "date": "2026-10-01",
+      "sources": [
+        {
+          "name": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-09-12/tesla-teases-oct-1-event-to-showcase-next-generation-roadster"
+        },
+        {
+          "name": "Motor1",
+          "url": "https://www.motor1.com/news/808103/tesla-roadster-reveal-date-confirmed/"
+        }
+      ]
+    },
+    {
+      "when": "10 月",
+      "time": "—",
+      "event": "Anthropic 拟以 ANTH 上市，估值口径不一（9,650 亿至 2 万亿美元），日期未定",
+      "weight": "low",
+      "sources": [
+        {
+          "name": "KuCoin",
+          "url": "https://www.kucoin.com/blog/anthropic-ipo-2026-plans-september-or-early-otcober-listing-amid-965-billion-valuation-talks"
+        },
+        {
+          "name": "Forge",
+          "url": "https://forgeglobal.com/anthropic_ipo/"
+        }
+      ]
+    },
+    {
+      "when": "10/27-28",
+      "time": "—",
+      "event": "10 月 FOMC 会议",
+      "weight": "mid",
+      "date": "2026-10-27",
+      "sources": [
+        {
+          "name": "Federal Reserve",
+          "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      ]
+    }
+  ],
+  "momentum": {
+    "asof": "2026-09-15",
+    "scanned": 2533,
+    "note": "今天的候选清一色是延续档，没有初动档。四只里三只是石油天然气生产商（EC、MGY、MUR），跟今天油价站稳 100 美元上方的宏观叙事方向一致，但没有一只出现在今天扫到的新闻里——消息面还没跟上价量。Kroger 是个例外，跟油价/联储主线看不出关联。",
+    "candidates": [
+      {
+        "ticker": "EC",
+        "stage": "continuation",
+        "close": 18.25,
+        "change_pct": 2.87,
+        "rvol": 0.52,
+        "breakout_age": 0,
+        "ext_ma20": 0.049,
+        "run_from_base": 0.2989,
+        "coverage": "none",
+        "note": "哥伦比亚国家石油公司，延续档第 0 天，涨 2.87%。今天扫的油价/伊朗相关新闻全是宏观层面，没有一篇点名这只票，公司层面无独立催化剂。"
+      },
+      {
+        "ticker": "KR",
+        "stage": "continuation",
+        "close": 61.81,
+        "change_pct": 1.48,
+        "rvol": 0.64,
+        "breakout_age": 0,
+        "ext_ma20": 0.0656,
+        "run_from_base": 0.1415,
+        "coverage": "none",
+        "note": "Kroger，延续档第 0 天，涨 1.48%。跟今天的油价、联储、AI 三条主线都对不上，今天的新闻扫描里没有出现这只票的报道。"
+      },
+      {
+        "ticker": "MGY",
+        "stage": "continuation",
+        "close": 28.64,
+        "change_pct": 3.69,
+        "rvol": 0.5,
+        "breakout_age": 0,
+        "ext_ma20": 0.048,
+        "run_from_base": 0.2239,
+        "coverage": "none",
+        "note": "Magnolia Oil & Gas，延续档第 0 天，涨 3.69%。方向与油价上涨的宏观叙事一致，但今天的新闻扫描里没有单独提到这家公司。"
+      },
+      {
+        "ticker": "MUR",
+        "stage": "continuation",
+        "close": 40.29,
+        "change_pct": 5.47,
+        "rvol": 0.38,
+        "breakout_age": 0,
+        "ext_ma20": 0.086,
+        "run_from_base": 0.2803,
+        "coverage": "none",
+        "note": "Murphy Oil，延续档第 0 天，涨 5.47%，四只里涨幅最大、离基底也最远。同样吻合油价上涨的方向，但今天的新闻扫描里没有出现这只票。"
+      }
+    ]
+  }
+}
