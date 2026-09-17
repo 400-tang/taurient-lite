@@ -1,48 +1,48 @@
 {
-  "fetched_at": "2026-09-16T17:12:28Z",
+  "fetched_at": "2026-09-17T17:11:57Z",
   "note": "由 GitHub Actions 抓取并提交，供云端定时任务读取——那个沙箱连不了 Yahoo 和 FINRA。asof 与 settlement_date 都是数据源自己报的时点，不是抓取时刻。",
   "mag7": {
     "rows": [
       {
         "ticker": "NVDA",
-        "price": "215.52",
-        "change_pct": 1.58
+        "price": "218.99",
+        "change_pct": 2.38
       },
       {
         "ticker": "AAPL",
-        "price": "332.75",
-        "change_pct": 0.43
+        "price": "335.70",
+        "change_pct": 0.99
       },
       {
         "ticker": "MSFT",
-        "price": "493.55",
-        "change_pct": -0.72
+        "price": "495.63",
+        "change_pct": 1.09
       },
       {
         "ticker": "GOOGL",
-        "price": "345.07",
-        "change_pct": 0.03
+        "price": "345.70",
+        "change_pct": 0.82
       },
       {
         "ticker": "AMZN",
-        "price": "247.47",
-        "change_pct": -0.38
+        "price": "251.56",
+        "change_pct": 2.28
       },
       {
         "ticker": "META",
-        "price": "676.76",
-        "change_pct": 0.97
+        "price": "678.47",
+        "change_pct": 0.77
       },
       {
         "ticker": "TSLA",
-        "price": "361.54",
-        "change_pct": 1.39
+        "price": "367.89",
+        "change_pct": 2.74
       }
     ],
-    "asof": "收盘 · Wed 9/16 13:12 ET",
+    "asof": "收盘 · Thu 9/17 13:11 ET",
     "source": "Yahoo Finance chart endpoint"
   },
-  "market_time": 1789578734,
+  "market_time": 1789665103,
   "short_interest": [
     {
       "symbol": "NVDA",
