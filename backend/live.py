@@ -28,6 +28,7 @@ from taurient_lite.quotes import (
     build_mag7_block,
     fetch_quote,
 )
+from .company import CompanyError, fetch_company
 from taurient_lite.sectors import (
     EASTERN,
     SectorError,
@@ -66,7 +67,7 @@ class _Cached:
         # 代价是缓存过期的瞬间可能有两个请求同时去取，重复一次远比串行阻塞便宜。
         try:
             value = produce()
-        except (QuoteError, SectorError, OSError):
+        except (QuoteError, SectorError, CompanyError, OSError):
             value = None
         with self._lock:
             self._value = value
@@ -74,8 +75,17 @@ class _Cached:
         return value
 
 
+#: 公司资料的缓存时长。简介、行业、评级、财报都是按天甚至按季变的，
+#: 放半小时都嫌短；这里取 10 分钟只是为了让偶发的上游故障能自己恢复。
+COMPANY_TTL = 600.0
+
 _quotes_cache = _Cached(QUOTES_TTL)
 _sectors_cache = _Cached(SECTORS_TTL)
+
+#: 每只票一个缓存槽。个股页是按代码访问的，共用一个槽会让两个人同时
+#: 看不同股票时互相把对方的数据挤掉，等于缓存完全失效。
+_company_caches: dict[str, _Cached] = {}
+_company_lock = threading.Lock()
 
 
 def quote_asof(epoch: int) -> str:
@@ -124,6 +134,17 @@ def live_mag7(
     if not symbols:
         return None
     return _quotes_cache.get(lambda: _fetch_mag7(symbols, previous))
+
+
+def live_company(symbol: str):
+    """一只票的公司资料，取不到返回 None。"""
+    symbol = symbol.upper()
+    with _company_lock:
+        cache = _company_caches.get(symbol)
+        if cache is None:
+            cache = _Cached(COMPANY_TTL)
+            _company_caches[symbol] = cache
+    return cache.get(lambda: fetch_company(symbol))
 
 
 def live_market(now: dt.datetime | None = None) -> dict | None:

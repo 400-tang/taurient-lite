@@ -417,7 +417,9 @@ class TestStockPage(unittest.TestCase):
     def test_renders_a_chart_container_and_the_library(self):
         with patch("backend.server.fetch_history",
                    return_value=TestApiHistory.BARS), \
-             patch("backend.server.resolve", return_value=None):
+             patch("backend.server.resolve", return_value=None), \
+             patch("backend.server.live.live_company", return_value=None), \
+             patch("backend.server.mentions_for", return_value=()):
             html = client.get("/stock/AAPL").text
         self.assertIn('id="chart"', html)
         self.assertIn("lightweight-charts", html)
@@ -426,14 +428,18 @@ class TestStockPage(unittest.TestCase):
     def test_data_is_inlined_so_the_chart_does_not_wait_for_a_round_trip(self):
         with patch("backend.server.fetch_history",
                    return_value=TestApiHistory.BARS), \
-             patch("backend.server.resolve", return_value=None):
+             patch("backend.server.resolve", return_value=None), \
+             patch("backend.server.live.live_company", return_value=None), \
+             patch("backend.server.mentions_for", return_value=()):
             html = client.get("/stock/AAPL").text
         self.assertIn('"time": "2026-09-18"', html)
 
     def test_selected_range_is_marked(self):
         with patch("backend.server.fetch_history",
                    return_value=TestApiHistory.BARS), \
-             patch("backend.server.resolve", return_value=None):
+             patch("backend.server.resolve", return_value=None), \
+             patch("backend.server.live.live_company", return_value=None), \
+             patch("backend.server.mentions_for", return_value=()):
             html = client.get("/stock/AAPL?range=1y").text
         self.assertIn('class="range-btn on" href="?range=1y"', html)
 
@@ -442,7 +448,9 @@ class TestStockPage(unittest.TestCase):
         from backend.search import SearchError as SE
         with patch("backend.server.fetch_history",
                    return_value=TestApiHistory.BARS), \
-             patch("backend.server.resolve", side_effect=SE("搜索挂了")):
+             patch("backend.server.resolve", side_effect=SE("搜索挂了")), \
+             patch("backend.server.live.live_company", return_value=None), \
+             patch("backend.server.mentions_for", return_value=()):
             response = client.get("/stock/AAPL")
         self.assertEqual(response.status_code, 200)
 
@@ -465,9 +473,13 @@ class TestPriceLines(unittest.TestCase):
     """
 
     def _html(self, symbol="AAPL"):
+        # 公司资料要打 Nasdaq，测试一律挡掉：测试不该依赖外网，
+        # 也不该因为对方限流而变慢或变红。
         with patch("backend.server.fetch_history",
                    return_value=TestApiHistory.BARS), \
-             patch("backend.server.resolve", return_value=None):
+             patch("backend.server.resolve", return_value=None), \
+             patch("backend.server.live.live_company", return_value=None), \
+             patch("backend.server.mentions_for", return_value=()):
             return client.get(f"/stock/{symbol}").text
 
     def test_toolbar_and_list_are_present(self):
@@ -506,9 +518,13 @@ class TestTrendLines(unittest.TestCase):
     """
 
     def _html(self, symbol="TSM"):
+        # 公司资料要打 Nasdaq，测试一律挡掉：测试不该依赖外网，
+        # 也不该因为对方限流而变慢或变红。
         with patch("backend.server.fetch_history",
                    return_value=TestApiHistory.BARS), \
-             patch("backend.server.resolve", return_value=None):
+             patch("backend.server.resolve", return_value=None), \
+             patch("backend.server.live.live_company", return_value=None), \
+             patch("backend.server.mentions_for", return_value=()):
             return client.get(f"/stock/{symbol}").text
 
     def test_anchors_use_logical_index_not_time(self):
@@ -540,3 +556,81 @@ class TestTrendLines(unittest.TestCase):
     def test_storage_key_is_scoped_per_ticker(self):
         self.assertIn("tl:trends:TSM", self._html("TSM"))
         self.assertIn("tl:trends:NVDA", self._html("NVDA"))
+
+
+class TestStockPageBlocks(unittest.TestCase):
+    """个股页上的公司资料各块。
+
+    **主体是 K 线，资料是补充。** 这组测试守的就是这条：资料取不到、
+    某一块缺数据、简报里查不到这只票，页面都要照常出。
+    """
+
+    def _get(self, company=None, mentions=(), symbol="NVDA"):
+        with patch("backend.server.fetch_history",
+                   return_value=TestApiHistory.BARS), \
+             patch("backend.server.resolve", return_value=None), \
+             patch("backend.server.live.live_company", return_value=company), \
+             patch("backend.server.mentions_for", return_value=mentions):
+            return client.get(f"/stock/{symbol}")
+
+    def test_page_renders_without_any_company_data(self):
+        """资料拿不到不该让 K 线一起陪葬。"""
+        response = self._get(company=None, mentions=())
+        self.assertEqual(response.status_code, 200)
+        self.assertIn('id="chart"', response.text)
+        for absent in ("简介", "关键统计", "分析师评级"):
+            self.assertNotIn(f"<h2>{absent}</h2>", response.text)
+
+    def test_blocks_appear_when_data_is_there(self):
+        from backend.company import Company, Profile, Quarter, Ratings
+        company = Company(
+            symbol="NVDA",
+            profile=Profile(name="NVIDIA", description="做 GPU 的",
+                            sector="Technology"),
+            stats=(("市值", "5.36 万亿"),),
+            ratings=Ratings(mean="Buy", count=39, brokers=("A",) * 39),
+            quarters=(Quarter("Jul 2026", "8/26/2026", 2.22, 2.09, 6.22),),
+        )
+        html = self._get(company=company).text
+        self.assertIn("<h2>简介</h2>", html)
+        self.assertIn("做 GPU 的", html)
+        self.assertIn("5.36 万亿", html)
+        self.assertIn("Buy", html)
+        self.assertIn("Jul 2026", html)
+
+    def test_a_missing_block_is_omitted_not_stubbed(self):
+        """缺数据就不出标题——写着「暂无」的空标题信息量是零。"""
+        from backend.company import Company, Profile
+        company = Company(symbol="NVDA", profile=Profile(description="只有简介"))
+        html = self._get(company=company).text
+        self.assertIn("<h2>简介</h2>", html)
+        self.assertNotIn("<h2>关键统计</h2>", html)
+        self.assertNotIn("<h2>财报</h2>", html)
+
+    def test_ratings_page_admits_what_it_cannot_show(self):
+        """数据源给不了买/持有/卖出分布，页面必须说出来而不是编一个。"""
+        from backend.company import Company, Ratings
+        html = self._get(company=Company(symbol="NVDA",
+                                         ratings=Ratings(mean="Buy", count=3))).text
+        self.assertIn("不含买/持有/卖出的具体分布", html)
+
+    def test_mentions_render_with_tier_and_date(self):
+        from backend.stock_news import Mention
+        html = self._get(mentions=(
+            Mention("2026-09-18", 1, "must-read", "标题在这", "为什么重要", ("NVDA",)),
+        )).text
+        self.assertIn("<h2>相关新闻</h2>", html)
+        self.assertIn("标题在这", html)
+        self.assertIn("必读", html)
+        self.assertIn("2026-09-18", html)
+
+    def test_no_mentions_means_no_news_block(self):
+        """冷门票查不到就整块不显示，不放「暂无新闻」的占位。"""
+        self.assertNotIn("<h2>相关新闻</h2>", self._get(mentions=()).text)
+
+    def test_hostile_company_text_is_escaped(self):
+        from backend.company import Company, Profile
+        evil = Company(symbol="X",
+                       profile=Profile(description='<img src=x onerror=alert(1)>'))
+        html = self._get(company=evil).text
+        self.assertNotIn("<img src=x", html)

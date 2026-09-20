@@ -176,6 +176,174 @@ CSS = """
   margin-top: 0.1rem;
 }
 
+/* ------------------------------------------------------- 公司信息各块 */
+
+/* 图表撑满首屏，这些块在下面。**它们不参与抢高度**——K 线是这一页的
+   主体，往下滚才是查资料。 */
+.co { flex: none; margin-top: 2.2rem; }
+
+.co-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  margin-bottom: 0.6rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.co-head h2 {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--t-xs);
+  font-weight: 600;
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--ink-mid);
+}
+
+.co-head .co-sub { font-size: var(--t-2xs); color: var(--ink-faint); }
+
+.co-desc {
+  margin: 0;
+  font-size: var(--t-base);
+  line-height: 1.7;
+  max-width: var(--measure);
+  text-wrap: pretty;
+}
+
+.co-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.7rem; }
+
+.co-tag {
+  font-family: var(--font-data);
+  font-size: var(--t-2xs);
+  letter-spacing: var(--track-mono);
+  padding: 0.12rem 0.45rem;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  color: var(--ink-mid);
+  text-decoration: none;
+}
+
+.co-tag[href]:hover { border-color: var(--accent); color: var(--accent); }
+
+/* 关键统计：和「指数与利率」同一种格子，整页只有一种数据格。 */
+.co-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+}
+
+.co-stat { padding: 0.6rem 0.9rem 0.6rem 0; border-bottom: 1px solid var(--rule-soft); }
+.co-stat .k { font-size: var(--t-sm); color: var(--ink-faint); }
+
+.co-stat .v {
+  font-family: var(--font-data);
+  font-size: var(--t-md);
+  font-variant-numeric: tabular-nums;
+  margin-top: 0.15rem;
+  /* 长数字宁可换行也不许顶到隔壁格子去。 */
+  overflow-wrap: anywhere;
+}
+
+/* 评级 */
+.rating-line { display: flex; align-items: baseline; gap: 0.6rem; flex-wrap: wrap; }
+
+.rating-badge {
+  font-family: var(--font-data);
+  font-size: var(--t-lg);
+  font-weight: 500;
+}
+
+.rating-badge.buy { color: var(--up); }
+.rating-badge.sell { color: var(--down); }
+.rating-badge.hold { color: var(--ink-mid); }
+
+.rating-note {
+  margin: 0.55rem 0 0;
+  font-size: var(--t-sm);
+  color: var(--ink-mid);
+  max-width: var(--measure);
+  text-wrap: pretty;
+}
+
+.broker-list {
+  margin: 0.6rem 0 0;
+  font-family: var(--font-data);
+  font-size: var(--t-2xs);
+  line-height: 1.8;
+  color: var(--ink-faint);
+  max-width: var(--measure);
+}
+
+/* 财报：每季一行，实际与预期并排，超预期用条形表示幅度。 */
+.eps-row {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr 4.2rem;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--rule-hair);
+}
+
+.eps-q { font-family: var(--font-data); font-size: var(--t-sm); color: var(--ink-mid); }
+
+.eps-pair {
+  font-family: var(--font-data);
+  font-size: var(--t-sm);
+  font-variant-numeric: tabular-nums;
+}
+
+.eps-pair .est { color: var(--ink-faint); }
+
+.eps-sur {
+  font-family: var(--font-data);
+  font-size: var(--t-sm);
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.eps-sur.up { color: var(--up); }
+.eps-sur.down { color: var(--down); }
+
+/* 相关新闻：复用简报里条目的分层配色，读者一眼认得出是同一套语言。 */
+.mention {
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--rule-hair);
+}
+
+.mention-top {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  font-family: var(--font-data);
+  font-size: var(--t-2xs);
+  color: var(--ink-faint);
+}
+
+.mention-tier { padding: 0.05rem 0.35rem; border-radius: 2px; }
+.mention-tier.t1 { color: var(--tier-1); background: var(--down-wash); }
+.mention-tier.t2 { color: var(--tier-2); background: var(--accent-soft); }
+.mention-tier.t3 { color: var(--tier-3); background: var(--flat-wash); }
+
+.mention h3 {
+  margin: 0.3rem 0 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--t-md);
+  line-height: 1.35;
+  max-width: var(--measure);
+  text-wrap: balance;
+}
+
+.mention p {
+  margin: 0.35rem 0 0;
+  font-size: var(--t-sm);
+  line-height: 1.6;
+  color: var(--ink-mid);
+  max-width: var(--measure);
+  text-wrap: pretty;
+}
+
 .stock-note {
   margin-top: 1.4rem;
   font-size: var(--t-sm);
@@ -731,6 +899,131 @@ def _script(symbol: str, span: str, candles: list, volumes: list) -> str:
 """
 
 
+
+
+def _block(title: str, body: str, sub: str = "") -> str:
+    """一个信息块。``body`` 为空时整块返回空串——缺数据就不出标题，
+    版面上一个写着「暂无」的空标题传达的信息量是零。"""
+    if not body:
+        return ""
+    head = f'<h2>{esc(title)}</h2>'
+    if sub:
+        head += f'<span class="co-sub">{esc(sub)}</span>'
+    return f'<section class="co"><div class="co-head">{head}</div>{body}</section>'
+
+
+def render_profile(profile) -> str:
+    """公司简介。"""
+    if profile.empty:
+        return ""
+    bits = []
+    if profile.description:
+        bits.append(f'<p class="co-desc">{esc(profile.description)}</p>')
+    tags = []
+    for value in (profile.sector, profile.industry, profile.region):
+        if value:
+            tags.append(f'<span class="co-tag">{esc(value)}</span>')
+    if profile.url:
+        tags.append(
+            f'<a class="co-tag" href="{esc(profile.url)}" target="_blank" '
+            f'rel="noopener">官网 &#8599;</a>'
+        )
+    if tags:
+        bits.append(f'<div class="co-tags">{"".join(tags)}</div>')
+    return _block("简介", "".join(bits), profile.name)
+
+
+def render_stats(stats) -> str:
+    """关键统计。"""
+    if not stats:
+        return ""
+    cells = "".join(
+        f'<div class="co-stat"><div class="k">{esc(k)}</div>'
+        f'<div class="v">{esc(v)}</div></div>'
+        for k, v in stats
+    )
+    return _block("关键统计", f'<div class="co-stats">{cells}</div>')
+
+
+def render_ratings(ratings) -> str:
+    """分析师评级。
+
+    **只摆能拿到的。** 数据源给的是一个平均评级和参与券商名单，给不了
+    买/持有/卖出的百分比分布；按券商数量编一个比例出来会显得更像那么
+    回事，但那是编的。
+    """
+    if ratings.empty:
+        return ""
+    tone = {"buy": "buy", "sell": "sell"}.get(ratings.mean.strip().lower(), "hold")
+    line = (
+        f'<div class="rating-line">'
+        f'<span class="rating-badge {tone}">{esc(ratings.mean or "—")}</span>'
+        f'<span class="co-sub">{ratings.count} 家券商的平均评级</span>'
+        f"</div>"
+    )
+    note = (
+        '<p class="rating-note">这是参与评级的券商给出的平均意见，'
+        "不含买/持有/卖出的具体分布——数据源只给到这一层。"
+        "评级是别人的判断，不是事实。</p>"
+    )
+    brokers = ""
+    if ratings.brokers:
+        brokers = (
+            f'<p class="broker-list">{esc(" · ".join(ratings.brokers))}</p>'
+        )
+    return _block("分析师评级", line + note + brokers)
+
+
+def render_earnings(quarters) -> str:
+    """财报超预期。"""
+    if not quarters:
+        return ""
+    rows = []
+    for q in quarters[:6]:
+        if q.eps is None:
+            continue
+        pair = f'{q.eps:.2f}'
+        if q.consensus is not None:
+            pair += f' <span class="est">预期 {q.consensus:.2f}</span>'
+        sur = ""
+        if q.surprise_pct is not None:
+            tone = "up" if q.surprise_pct >= 0 else "down"
+            sur = f'<span class="eps-sur {tone}">{q.surprise_pct:+.1f}%</span>'
+        rows.append(
+            f'<div class="eps-row">'
+            f'<span class="eps-q">{esc(q.fiscal_end)}</span>'
+            f'<span class="eps-pair">{pair}</span>'
+            f"{sur or '<span></span>'}"
+            f"</div>"
+        )
+    if not rows:
+        return ""
+    return _block("财报", "".join(rows), "每股收益：实际 vs 预期")
+
+
+def render_mentions(mentions) -> str:
+    """这只票在历史简报里出现过的条目。"""
+    if not mentions:
+        return ""
+    tier_cls = {"must-read": "t1", "worth-knowing": "t2"}
+    rows = []
+    for m in mentions:
+        others = [t for t in m.tickers if t]
+        rows.append(
+            f'<article class="mention">'
+            f'<div class="mention-top">'
+            f'<span>{esc(m.date)}</span>'
+            f'<span class="mention-tier {tier_cls.get(m.tier, "t3")}">'
+            f"{esc(m.tier_label)}</span>"
+            f'<span>{esc(" · ".join(others))}</span>'
+            f"</div>"
+            f"<h3>{esc(m.title)}</h3>"
+            + (f"<p>{esc(m.why)}</p>" if m.why else "")
+            + "</article>"
+        )
+    return _block("相关新闻", "".join(rows), "来自历史简报")
+
+
 def render(
     symbol: str,
     *,
@@ -741,8 +1034,14 @@ def render(
     backend_url: str = "",
     up_color: str = "#12916A",
     down_color: str = "#C4342B",
+    company=None,
+    mentions=(),
 ) -> str:
-    """整页个股视图的 body 部分。"""
+    """整页个股视图的 body 部分。
+
+    ``company`` 与 ``mentions`` 都可以缺席：取不到就少几块，页面照常出。
+    个股页的主体是 K 线，公司资料是补充——补充拿不到不该让主体一起陪葬。
+    """
     candles = [b.as_candle() for b in bars]
     volumes = [b.as_volume(up_color=up_color, down_color=down_color) for b in bars]
 
@@ -766,6 +1065,16 @@ def render(
 
     back = f'<a class="stock-back" href="{esc(backend_url)}/">&larr; 回简报</a>'
 
+    # 顺序即阅读顺序：先知道这家公司是干什么的，再看数字，再看别人的判断，
+    # 再看它兑现得怎么样，最后是最近发生了什么。
+    blocks = ""
+    if company is not None and not company.empty:
+        blocks += render_profile(company.profile)
+        blocks += render_stats(company.stats)
+        blocks += render_ratings(company.ratings)
+        blocks += render_earnings(company.quarters)
+    blocks += render_mentions(mentions)
+
     return f"""<div class="stock">
 {back}
 <div class="stock-head">
@@ -788,6 +1097,7 @@ def render(
 <svg id="draw" aria-hidden="true"></svg>
 </div>
 <div class="stock-stats">{stats_html}</div>
+{blocks}
 <p class="stock-note">日线来自 Yahoo Finance，{esc(stats.get("from", ""))} 至
 {esc(stats.get("to", ""))}。区间涨跌按首尾收盘价算，不含分红与拆股调整之外的任何处理。
 图表可以滚轮缩放、拖动平移，移到哪根看哪根。</p>

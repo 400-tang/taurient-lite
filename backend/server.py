@@ -47,6 +47,7 @@ from taurient_lite.short_interest import ShortInterestError, fetch_latest
 from taurient_lite.theme import GOOGLE_FONTS, LAYOUT_CSS, TOKENS, build_palette_css
 
 from . import auth_panel, live, stock_page
+from .stock_news import mentions_for
 from .search import MAX_RESULTS, SearchError, resolve, search
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -351,6 +352,10 @@ def stock(
         backend_url=config.backend_url,
         up_color=TOKENS["up"][0],
         down_color=TOKENS["down"][0],
+        # 公司资料取不到就少几块，不影响 K 线——个股页的主体是图，
+        # 资料是补充，补充拿不到不该让主体一起陪葬。
+        company=live.live_company(symbol),
+        mentions=mentions_for(PATHS.briefs, symbol),
     )
     return HTMLResponse(
         "<!doctype html>\n"
