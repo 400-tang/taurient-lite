@@ -30,6 +30,7 @@ import json
 import os
 import platform
 import re
+from contextlib import asynccontextmanager
 from dataclasses import replace
 from pathlib import Path
 
@@ -46,7 +47,7 @@ from taurient_lite.short_interest import ShortInterestError, fetch_latest
 from taurient_lite.theme import GOOGLE_FONTS, TOKENS, build_palette_css, load_style
 
 
-from . import assets, auth_bar, auth_panel, live, stock_page
+from . import assets, auth_bar, auth_panel, keepalive, live, stock_page
 from .stock_news import mentions_for
 from .search import MAX_RESULTS, SearchError, resolve, search
 
@@ -58,9 +59,23 @@ PATHS = Paths(ROOT)
 #: 避免带着奇怪字符去敲 Yahoo/FINRA 的接口。
 TICKER_PATTERN = re.compile(r"^[A-Za-z][A-Za-z0-9.\-]{0,9}$")
 
+
+@asynccontextmanager
+async def _lifespan(_: FastAPI):
+    """进程起来时挂上保活线程，见 :mod:`backend.keepalive`。
+
+    **在本地和测试里它什么也不做**，判据是 Render 注入的环境变量在不在，
+    所以这里不需要任何 if。返回值也不用留着：那是个守护线程，进程退出
+    时自己就没了。
+    """
+    keepalive.start()
+    yield
+
+
 app = FastAPI(
     title="Taurient Lite Backend",
     description="盘前简报的现场刷新与任意股票查询接口。",
+    lifespan=_lifespan,
 )
 
 
