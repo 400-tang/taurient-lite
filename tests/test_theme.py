@@ -55,7 +55,11 @@ class TestPalette(unittest.TestCase):
                 self.assertRegex(value, r"^#[0-9A-Fa-f]{6}$", f"--{name} 的 {value} 不是合法色值")
 
     def test_light_and_dark_differ_for_every_token(self):
-        """两套主题完全相同的 token 说明漏改了。"""
+        """两套主题完全相同的 token 说明漏改了。
+
+        热力色阶一度是这条规则的例外（当时它是一块不跟随主题的深色行情板），
+        现在它也跟着主题走，例外随之取消——整份 TOKENS 重新没有一个豁免。
+        """
         for name, (light, dark) in TOKENS.items():
             self.assertNotEqual(light.lower(), dark.lower(), f"--{name} 两套主题取值相同")
 

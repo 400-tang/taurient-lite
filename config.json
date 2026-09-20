@@ -56,6 +56,19 @@
       "COIN"
     ]
   },
+  "fundamentals": {
+    "note": "基本面标签页扫哪些代码，由 scan_fundamentals.py 在 GitHub Actions 上每周扫一次。留空或删掉这一项就退回用 watchlist。和 watchlist 分开设，是因为这里要的是想放在一起比较的一组（含同业），不是每天要额外查新闻的名单。软件/订阅公司会自动识别并换用 saas 口径。",
+    "symbols": [
+      "NVDA",
+      "TSM",
+      "AVGO",
+      "AMD",
+      "MSFT",
+      "NOW",
+      "CRM",
+      "ADBE"
+    ]
+  },
   "supabase": {
     "url": "https://lnfltkmhdnjzfooszmuh.supabase.co",
     "anon_key": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxuZmx0a21oZG5qemZvb3N6bXVoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODg3NDAwMzYsImV4cCI6MjEwNDMxNjAzNn0.SRnLKSEE0D9u3hvWq79CFnAl-qyhctHtLV5UP2m8XFo",

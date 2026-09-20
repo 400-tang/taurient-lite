@@ -171,6 +171,31 @@ class Signal:
 # --------------------------------------------------------------------------- 解析
 
 
+def session_cutoff(meta: dict) -> int | None:
+    """当天这根还没走完时，返回它的起始时间戳；已收盘或判断不了则返回 ``None``。
+
+    **这个函数存在的理由是一次真实的事故。** 扫描本来排在开盘前跑，那时
+    最后一根日线必然是上一个完整交易日。但 GitHub Actions 的定时任务会
+    严重延迟——实测过 4 到 6 小时——于是扫描落在了盘中，而 Yahoo 这时
+    已经为当天开出一根**还在变动**的 K 线。脚本照单全收，把半天的成交量
+    当成一整天，算出来的相对成交量、突破、收盘位置全是错的，而且收盘前
+    还会继续变。这种错误不报警、不抛异常，产出的文件看上去完全正常。
+
+    判断依据用 Yahoo 自己给的时段信息，不自己推算时区：
+    ``currentTradingPeriod.regular`` 给出当天时段的起止，``regularMarketTime``
+    是数据自身的时点。后者早于时段结束，就说明这一场还没打完。
+
+    这样处理之后，扫描在什么时候跑都只吃完整交易日的数据——定时任务
+    延迟多久都不影响结果的正确性，只影响它新不新。
+    """
+    period = (meta.get("currentTradingPeriod") or {}).get("regular") or {}
+    start, end = period.get("start"), period.get("end")
+    market_time = meta.get("regularMarketTime")
+    if not isinstance(start, int) or not isinstance(end, int) or not isinstance(market_time, int):
+        return None
+    return start if market_time < end else None
+
+
 def parse_chart_bars(ticker: str, payload: object) -> Bars:
     """从 Yahoo chart 端点的响应里取出日线序列。
 
@@ -187,6 +212,8 @@ def parse_chart_bars(ticker: str, payload: object) -> Bars:
         quote = result["indicators"]["quote"][0]
     except (KeyError, IndexError, TypeError) as exc:
         raise MomentumError(f"{ticker}：响应结构不对，取不到日线（{exc}）") from exc
+
+    cutoff = session_cutoff(result.get("meta") or {})
 
     dates: list[dt.date] = []
     opens: list[float] = []
@@ -205,6 +232,8 @@ def parse_chart_bars(ticker: str, payload: object) -> Bars:
         )
         if any(not cell or cell[0] is None for cell in row) or stamp is None:
             continue
+        if cutoff is not None and int(stamp) >= cutoff:
+            continue  # 今天这场还没打完，这根不能算
         opens.append(float(row[0][0]))
         highs.append(float(row[1][0]))
         lows.append(float(row[2][0]))

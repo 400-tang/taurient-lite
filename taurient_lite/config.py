@@ -88,6 +88,10 @@ class Config:
     freshness: Freshness = field(default_factory=Freshness)
     mag7: tuple[str, ...] = ()
     watchlist: tuple[str, ...] = ()
+    #: 基本面标签页扫哪些代码。留空就用自选股——但两者分开设是有理由的：
+    #: 自选股决定每天**新闻**额外查谁，基本面要的是你想**比较**的一组，
+    #: 常常包括不在自选股里的同业（看 NVDA 就想顺带看 TSM、AMD）。
+    fundamentals: tuple[str, ...] = ()
     min_items: int = 15
     scope: tuple[str, ...] = ()
     supabase: Supabase = field(default_factory=Supabase)
@@ -124,6 +128,10 @@ class Config:
         if not isinstance(scope_raw, list):
             raise ConfigError("scope 应该是数组")
 
+        fundamentals_raw = data.get("fundamentals") or {}
+        if not isinstance(fundamentals_raw, dict):
+            raise ConfigError("fundamentals 应该是一个对象")
+
         return cls(
             artifact_url=str(data.get("artifact_url", "") or ""),
             backend_url=str(data.get("backend_url", "") or ""),
@@ -131,10 +139,16 @@ class Config:
             freshness=Freshness.from_dict(data.get("freshness")),
             mag7=symbols(data.get("mag7"), "mag7"),
             watchlist=symbols(watchlist_raw.get("symbols"), "watchlist.symbols"),
+            fundamentals=symbols(fundamentals_raw.get("symbols"), "fundamentals.symbols"),
             min_items=min_items,
             scope=tuple(str(s) for s in scope_raw),
             supabase=Supabase.from_dict(data.get("supabase")),
         )
+
+    @property
+    def fundamentals_symbols(self) -> tuple[str, ...]:
+        """基本面扫描名单：显式配置优先，没配就退回自选股。"""
+        return self.fundamentals or self.watchlist
 
     @classmethod
     def load(cls, path: Path) -> Config:

@@ -305,8 +305,8 @@ class ApplyMomentumTest(unittest.TestCase):
     """扫描结果写回简报 JSON 的挑选与合并逻辑。
 
     这两个是纯函数，所以不碰文件系统直接断言。它们值得测的原因很具体：
-    ``merge`` 一旦写错，人已经写好的 ``coverage`` 和 ``note`` 会被下一次
-    重跑静默冲掉——不报错、不告警，只是判断消失了。
+    ``merge`` 一旦写错，人已经写好的 ``note`` 会被下一次重跑静默冲掉——
+    不报错、不告警，只是判断消失了。
     """
 
     def setUp(self):
@@ -349,7 +349,6 @@ class ApplyMomentumTest(unittest.TestCase):
     def test_merge_copies_mechanical_fields(self):
         merged = self.mod.merge([self.row("X", close=42.5)], [])
         self.assertEqual(merged[0]["close"], 42.5)
-        self.assertEqual(merged[0]["coverage"], "none")
         self.assertEqual(merged[0]["note"], "")
 
     def test_merge_drops_non_mechanical_scan_fields(self):
@@ -358,10 +357,9 @@ class ApplyMomentumTest(unittest.TestCase):
 
     def test_merge_preserves_human_judgement(self):
         """重跑不能冲掉人写的判断，否则「补完再跑一次」这条路就断了。"""
-        prior = [{"ticker": "X", "coverage": "heavy", "note": "已经满屏报道"}]
+        prior = [{"ticker": "X", "note": "早盘有大单成交"}]
         merged = self.mod.merge([self.row("X", close=99.0)], prior)
-        self.assertEqual(merged[0]["coverage"], "heavy")
-        self.assertEqual(merged[0]["note"], "已经满屏报道")
+        self.assertEqual(merged[0]["note"], "早盘有大单成交")
         self.assertEqual(merged[0]["close"], 99.0)  # 数字仍然被刷新
 
     def test_merge_preserves_sources(self):
@@ -370,7 +368,7 @@ class ApplyMomentumTest(unittest.TestCase):
 
     def test_merge_ignores_stale_tickers(self):
         """昨天写过、今天没再入选的标的不该被带进来。"""
-        prior = [{"ticker": "GONE", "coverage": "heavy", "note": "旧的"}]
+        prior = [{"ticker": "GONE", "note": "旧的"}]
         merged = self.mod.merge([self.row("NEW")], prior)
         self.assertEqual([m["ticker"] for m in merged], ["NEW"])
 
@@ -384,3 +382,169 @@ class ApplyMomentumTest(unittest.TestCase):
         )
         self.assertEqual(len(block.candidates), 2)
         self.assertEqual(len(block.early), 1)
+
+
+class MomentumStripTest(unittest.TestCase):
+    """首页摘要条。它的存在本身是个产品判断：标签页要点一下才看得见，
+    而一个每天不会被点开的早期信号等于没有。"""
+
+    def block(self, stages=("ignition",)):
+        from taurient_lite.schema import Momentum
+
+        return Momentum.from_dict(
+            {
+                "asof": "2026-09-10",
+                "scanned": 2500,
+                "candidates": [
+                    {
+                        "ticker": f"T{i}",
+                        "stage": s,
+                        "close": 10.0,
+                        "change_pct": 1.0,
+                        "rvol": 3.5,
+                    }
+                    for i, s in enumerate(stages)
+                ],
+            },
+            "momentum",
+        )
+
+    def test_empty_without_data(self):
+        from taurient_lite.components.momentum import momentum_strip
+
+        self.assertEqual(momentum_strip(None), "")
+
+    def test_empty_without_ignition(self):
+        """只有延续和已延伸时首页不出现——那两档不紧急，占首页版面不值得。"""
+        from taurient_lite.components.momentum import momentum_strip
+
+        self.assertEqual(momentum_strip(self.block(("continuation", "extended"))), "")
+
+    def test_shows_only_ignition(self):
+        from taurient_lite.components.momentum import momentum_strip
+
+        html = momentum_strip(self.block(("ignition", "continuation", "extended")))
+        self.assertIn("T0", html)
+        self.assertNotIn("T1", html)
+        self.assertNotIn("T2", html)
+
+    def test_links_into_tab(self):
+        from taurient_lite.components.momentum import momentum_strip
+
+        self.assertIn('href="#tab-momentum"', momentum_strip(self.block()))
+
+    def test_states_count_only(self):
+        """只陈述数量。曾经这里还写「其中 N 只没有新闻报道」，
+        那句话的依据只是当天扫到的几十篇，属于过度声称，已删。"""
+        from taurient_lite.components.momentum import momentum_strip
+
+        html = momentum_strip(self.block(("ignition", "ignition")))
+        self.assertIn("2 只刚进入初动档", html)
+        self.assertNotIn("报道", html)
+
+    def test_escapes_ticker(self):
+        from taurient_lite.components.momentum import momentum_strip
+        from taurient_lite.schema import Momentum
+
+        block = Momentum.from_dict(
+            {
+                "asof": "x",
+                "candidates": [
+                    {
+                        "ticker": "<script>",
+                        "stage": "ignition",
+                        "close": 1.0,
+                        "change_pct": 0.0,
+                        "rvol": 3.0,
+                    }
+                ],
+            },
+            "m",
+        )
+        self.assertNotIn("<script>", momentum_strip(block))
+
+
+class SessionCutoffTest(unittest.TestCase):
+    """未完成交易时段的过滤。
+
+    这是一次真实事故的补丁：定时任务延迟到盘中运行，Yahoo 为当天开出一根
+    **还在变动**的 K 线，脚本把半天的成交量当成一整天，产出的文件看上去
+    完全正常——不报警、不抛异常，只是数字全错。
+    """
+
+    OPEN, CLOSE = 1789738200, 1789761600  # 某个交易日的 13:30 与 20:00 UTC
+
+    def meta(self, market_time, **over):
+        base = {
+            "regularMarketTime": market_time,
+            "currentTradingPeriod": {"regular": {"start": self.OPEN, "end": self.CLOSE}},
+        }
+        base.update(over)
+        return base
+
+    def test_mid_session_returns_start(self):
+        from taurient_lite.momentum import session_cutoff
+
+        self.assertEqual(session_cutoff(self.meta(self.OPEN + 3600)), self.OPEN)
+
+    def test_after_close_returns_none(self):
+        from taurient_lite.momentum import session_cutoff
+
+        self.assertIsNone(session_cutoff(self.meta(self.CLOSE + 60)))
+
+    def test_missing_metadata_returns_none(self):
+        """判断不了就不过滤——宁可用上完整数据，也不要因为缺字段丢掉一天。"""
+        from taurient_lite.momentum import session_cutoff
+
+        self.assertIsNone(session_cutoff({}))
+        self.assertIsNone(session_cutoff({"regularMarketTime": self.OPEN}))
+
+    def test_partial_bar_is_dropped(self):
+        payload = {
+            "chart": {
+                "result": [
+                    {
+                        "meta": self.meta(self.OPEN + 3600),
+                        "timestamp": [self.OPEN - 86400, self.OPEN],
+                        "indicators": {
+                            "quote": [
+                                {
+                                    "open": [10.0, 11.0],
+                                    "high": [10.5, 11.5],
+                                    "low": [9.5, 10.5],
+                                    "close": [10.2, 11.2],
+                                    "volume": [1000, 50],
+                                }
+                            ]
+                        },
+                    }
+                ]
+            }
+        }
+        bars = parse_chart_bars("X", payload)
+        self.assertEqual(len(bars), 1)
+        self.assertEqual(bars.closes, (10.2,))
+
+    def test_completed_bar_is_kept(self):
+        payload = {
+            "chart": {
+                "result": [
+                    {
+                        "meta": self.meta(self.CLOSE + 600),
+                        "timestamp": [self.OPEN - 86400, self.OPEN],
+                        "indicators": {
+                            "quote": [
+                                {
+                                    "open": [10.0, 11.0],
+                                    "high": [10.5, 11.5],
+                                    "low": [9.5, 10.5],
+                                    "close": [10.2, 11.2],
+                                    "volume": [1000, 2000],
+                                }
+                            ]
+                        },
+                    }
+                ]
+            }
+        }
+        self.assertEqual(len(parse_chart_bars("X", payload)), 2)

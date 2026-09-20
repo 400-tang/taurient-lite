@@ -1,0 +1,908 @@
+{
+  "asof": "2026-09-17",
+  "generated_at": "2026-09-18T02:30:41+00:00",
+  "source": "yfinance 0.2.66",
+  "scanned": 8,
+  "rows": [
+    {
+      "ticker": "ADBE",
+      "name": "Adobe Inc.",
+      "profile": "saas",
+      "profile_label": "软件/订阅",
+      "fiscal_end": "2025-11-30",
+      "currency": "USD",
+      "score": 83.8,
+      "raw_score": 83.8,
+      "grade": "B",
+      "verdict": "整体过关，但有个别步骤需要回查原始年报",
+      "coverage": 1.0,
+      "gate_warnings": [],
+      "flags": [],
+      "stages": [
+        {
+          "step": 1,
+          "key": "cash",
+          "title": "把利润和现金分开",
+          "score": 96.7,
+          "coverage": 1.0,
+          "findings": [
+            "自由现金流利润率 41.4%（经营现金流扣掉资本开支后的真实剩余）",
+            "经营现金流/净利润 1.41x —— 利润基本落袋",
+            "折旧摊销贡献了经营现金流的 8.2%，这部分是账面加回而非经营改善"
+          ]
+        },
+        {
+          "step": 2,
+          "key": "sbc",
+          "title": "还原 GAAP 与 Non-GAAP",
+          "score": 76.6,
+          "coverage": 1.0,
+          "findings": [
+            "股权激励占营收 8.2%，规模重大，Non-GAAP 利润率要打折看",
+            "扣掉 SBC 后自由现金流缩水 20%，扣除后的 FCF 利润率为 33.3%",
+            "SBC 相当于净利润的 27%"
+          ]
+        },
+        {
+          "step": 3,
+          "key": "margin",
+          "title": "拆解毛利率变动",
+          "score": 62.9,
+          "coverage": 1.0,
+          "findings": [
+            "毛利率同比变动 +0.2pp（改善）",
+            "毛利增量拆解：规模效应 +2.0十亿，价格/产品结构效应 +55.2百万，后者占 3%",
+            "（财报只能拆到这两层；把价格与产品组合再分开需要出货量数据）"
+          ]
+        },
+        {
+          "step": 4,
+          "key": "working_capital",
+          "title": "营运资本 = 占用谁的钱",
+          "score": 76.4,
+          "coverage": 1.0,
+          "findings": [
+            "营运资本（含递延收入）/营收 -20.9% —— 为负，客户预付在给公司垫资，这门生意不占用自有资金",
+            "（不计递延收入时为 8.1%，硬件口径会把符号算反）",
+            "该比率同比 -0.4pp，客户垫资的比重在上升"
+          ]
+        },
+        {
+          "step": 5,
+          "key": "ar_inventory",
+          "title": "用应收/递延收入增速当造假探测器",
+          "score": 83.1,
+          "coverage": 1.0,
+          "findings": [
+            "应收增速比收入增速快 2.6pp，节奏一致",
+            "递延收入增速比收入快 2.1pp，收入池与当期收入同步扩张",
+            "应计比例 -9.8%（为负，现金流强于账面利润）"
+          ]
+        },
+        {
+          "step": 6,
+          "key": "capex_timing",
+          "title": "压力测试资本开支与折旧的时间差",
+          "score": 95.6,
+          "coverage": 1.0,
+          "findings": [
+            "资本开支 / 当期折旧 = 0.22x，接近稳态",
+            "隐含折旧年限约 4.8 年"
+          ]
+        },
+        {
+          "step": 7,
+          "key": "valuation",
+          "title": "估值反证",
+          "score": 94.0,
+          "coverage": 1.0,
+          "findings": [
+            "SBC 重大，估值以扣除 SBC 的口径为准：FCF 收益率 7.9%（未扣除时为 9.8%）",
+            "动态市盈率 9.1x vs 静态 14.1x，市场已经把未来的增长提前计入",
+            "预收款同比 +12.6%，客户提前付钱，需求强度有支撑"
+          ]
+        }
+      ],
+      "valuation": {
+        "anchor": "P/FCF",
+        "current": 9.91,
+        "median": 23.77,
+        "percentile": 0.049,
+        "multiple_upside": 1.4,
+        "regime_change": false,
+        "verdict": "错配候选：七步质量过关且估值处于历史低位 —— 这是要找的形态",
+        "span_days": 1326
+      }
+    },
+    {
+      "ticker": "CRM",
+      "name": "Salesforce, Inc.",
+      "profile": "saas",
+      "profile_label": "软件/订阅",
+      "fiscal_end": "2026-01-31",
+      "currency": "USD",
+      "score": 74.6,
+      "raw_score": 79.6,
+      "grade": "B",
+      "verdict": "整体过关，但有个别步骤需要回查原始年报",
+      "coverage": 1.0,
+      "gate_warnings": [],
+      "flags": [
+        "营运资本占用超过营收 25%，大量现金被锁在生意里"
+      ],
+      "stages": [
+        {
+          "step": 1,
+          "key": "cash",
+          "title": "把利润和现金分开",
+          "score": 95.6,
+          "coverage": 1.0,
+          "findings": [
+            "自由现金流利润率 34.7%（经营现金流扣掉资本开支后的真实剩余）",
+            "经营现金流/净利润 2.01x —— 利润基本落袋",
+            "折旧摊销贡献了经营现金流的 24.2%，这部分是账面加回而非经营改善"
+          ]
+        },
+        {
+          "step": 2,
+          "key": "sbc",
+          "title": "还原 GAAP 与 Non-GAAP",
+          "score": 72.6,
+          "coverage": 1.0,
+          "findings": [
+            "股权激励占营收 8.5%，规模重大，Non-GAAP 利润率要打折看",
+            "扣掉 SBC 后自由现金流缩水 24%，扣除后的 FCF 利润率为 26.2%",
+            "SBC 相当于净利润的 47%"
+          ]
+        },
+        {
+          "step": 3,
+          "key": "margin",
+          "title": "拆解毛利率变动",
+          "score": 76.5,
+          "coverage": 1.0,
+          "findings": [
+            "毛利率同比变动 +0.5pp（改善）",
+            "毛利增量拆解：规模效应 +2.8十亿，价格/产品结构效应 +200.9百万，后者占 7%",
+            "（财报只能拆到这两层；把价格与产品组合再分开需要出货量数据）"
+          ]
+        },
+        {
+          "step": 4,
+          "key": "working_capital",
+          "title": "营运资本 = 占用谁的钱",
+          "score": 65.1,
+          "coverage": 1.0,
+          "findings": [
+            "营运资本（含递延收入）/营收 -24.0% —— 为负，客户预付在给公司垫资，这门生意不占用自有资金",
+            "（不计递延收入时为 34.5%，硬件口径会把符号算反）",
+            "该比率同比 -0.8pp，客户垫资的比重在上升"
+          ]
+        },
+        {
+          "step": 5,
+          "key": "ar_inventory",
+          "title": "用应收/递延收入增速当造假探测器",
+          "score": 67.4,
+          "coverage": 1.0,
+          "findings": [
+            "应收增速比收入增速快 10.5pp，警惕收入确认激进或多年合同前置",
+            "递延收入增速比收入快 7.7pp，收入池与当期收入同步扩张",
+            "应计比例 -6.7%（为负，现金流强于账面利润）"
+          ]
+        },
+        {
+          "step": 6,
+          "key": "capex_timing",
+          "title": "压力测试资本开支与折旧的时间差",
+          "score": 100.0,
+          "coverage": 1.0,
+          "findings": [
+            "资本开支 / 当期折旧 = 0.16x，接近稳态",
+            "隐含折旧年限约 2.4 年"
+          ]
+        },
+        {
+          "step": 7,
+          "key": "valuation",
+          "title": "估值反证",
+          "score": 89.3,
+          "coverage": 1.0,
+          "findings": [
+            "SBC 重大，估值以扣除 SBC 的口径为准：FCF 收益率 5.5%（未扣除时为 7.2%）",
+            "动态市盈率 15.2x vs 静态 26.8x，市场已经把未来的增长提前计入",
+            "预收款同比 +17.2%，客户提前付钱，需求强度有支撑"
+          ]
+        }
+      ],
+      "valuation": {
+        "anchor": "P/FCF",
+        "current": 13.19,
+        "median": 26.57,
+        "percentile": 0.116,
+        "multiple_upside": 1.015,
+        "regime_change": false,
+        "verdict": "错配候选：七步质量过关且估值处于历史低位 —— 这是要找的形态",
+        "span_days": 1263
+      }
+    },
+    {
+      "ticker": "TSM",
+      "name": "Taiwan Semiconductor Manufacturing Company Limited",
+      "profile": "hardware",
+      "profile_label": "硬件/半导体",
+      "fiscal_end": "2025-12-31",
+      "currency": "TWD",
+      "score": 73.7,
+      "raw_score": 73.7,
+      "grade": "B",
+      "verdict": "整体过关，但有个别步骤需要回查原始年报",
+      "coverage": 0.958,
+      "gate_warnings": [],
+      "flags": [],
+      "stages": [
+        {
+          "step": 1,
+          "key": "cash",
+          "title": "把利润和现金分开",
+          "score": 59.4,
+          "coverage": 1.0,
+          "findings": [
+            "自由现金流利润率 26.1%（经营现金流扣掉资本开支后的真实剩余）",
+            "经营现金流/净利润 1.34x —— 利润基本落袋",
+            "折旧摊销贡献了经营现金流的 30.2%，这部分是账面加回而非经营改善"
+          ]
+        },
+        {
+          "step": 2,
+          "key": "sbc",
+          "title": "还原 GAAP 与 Non-GAAP",
+          "score": 95.4,
+          "coverage": 1.0,
+          "findings": [
+            "股权激励占营收 0.0%，规模可控",
+            "扣掉 SBC 后自由现金流缩水 0%，扣除后的 FCF 利润率为 26.0%",
+            "SBC 相当于净利润的 0%"
+          ]
+        },
+        {
+          "step": 3,
+          "key": "margin",
+          "title": "拆解毛利率变动",
+          "score": 89.5,
+          "coverage": 1.0,
+          "findings": [
+            "毛利率同比变动 +3.8pp（改善）",
+            "毛利增量拆解：规模效应 +513.4十亿，价格/产品结构效应 +143.6十亿，后者占 22%",
+            "（财报只能拆到这两层；把价格与产品组合再分开需要出货量数据）"
+          ]
+        },
+        {
+          "step": 4,
+          "key": "working_capital",
+          "title": "营运资本 = 锁在生意里的现金",
+          "score": 94.2,
+          "coverage": 1.0,
+          "findings": [
+            "净营运资本/营收 8.1%（每 1 元收入需要占用的资金），低于 20% 的健康线",
+            "该比率同比 -2.1pp，效率在改善",
+            "应收账款周转 26 天，客户付款快，议价能力强"
+          ]
+        },
+        {
+          "step": 5,
+          "key": "ar_inventory",
+          "title": "用应收/存货增速当造假探测器",
+          "score": 100.0,
+          "coverage": 1.0,
+          "findings": [
+            "应收增速比收入增速慢 28.5pp，节奏一致",
+            "存货增速比收入增速慢 31.5pp，节奏一致"
+          ]
+        },
+        {
+          "step": 6,
+          "key": "capex_timing",
+          "title": "压力测试资本开支与折旧的时间差",
+          "score": 35.1,
+          "coverage": 0.75,
+          "findings": [
+            "资本开支 / 当期折旧 = 1.89x，接近稳态",
+            "两者差额相当于营收的 15.8%，这是未来折旧开始计提后对营业利润率的潜在压制幅度",
+            "（当前营业利润率 50.8%，需要问的是：折旧兑现后还守得住吗）"
+          ]
+        },
+        {
+          "step": 7,
+          "key": "valuation",
+          "title": "估值反证",
+          "score": 34.0,
+          "coverage": 0.875,
+          "findings": [
+            "自由现金流收益率 1.4%",
+            "动态市盈率 19.6x vs 静态 41.8x，市场已经把未来的增长提前计入"
+          ]
+        }
+      ],
+      "valuation": {
+        "anchor": "P/FCF",
+        "current": 63.04,
+        "median": 56.39,
+        "percentile": 0.598,
+        "multiple_upside": -0.105,
+        "regime_change": false,
+        "verdict": "估值居中，质量过关",
+        "span_days": 1296
+      }
+    },
+    {
+      "ticker": "NOW",
+      "name": "ServiceNow, Inc.",
+      "profile": "saas",
+      "profile_label": "软件/订阅",
+      "fiscal_end": "2025-12-31",
+      "currency": "USD",
+      "score": 63.4,
+      "raw_score": 71.4,
+      "grade": "C",
+      "verdict": "报表质量与价格之间存在明显取舍，逐步核对弱项",
+      "coverage": 0.988,
+      "gate_warnings": [
+        "第 2 步「还原 GAAP 与 Non-GAAP」得分 43/100 —— SBC 重大时，第 7 步的估值改用扣除 SBC 的口径"
+      ],
+      "flags": [
+        "股权激励超过营收 10%，Non-GAAP 利润率严重失真"
+      ],
+      "stages": [
+        {
+          "step": 1,
+          "key": "cash",
+          "title": "把利润和现金分开",
+          "score": 86.2,
+          "coverage": 1.0,
+          "findings": [
+            "自由现金流利润率 34.1%（经营现金流扣掉资本开支后的真实剩余）",
+            "经营现金流/净利润 3.11x —— 利润基本落袋",
+            "折旧摊销贡献了经营现金流的 13.6%，这部分是账面加回而非经营改善"
+          ]
+        },
+        {
+          "step": 2,
+          "key": "sbc",
+          "title": "还原 GAAP 与 Non-GAAP",
+          "score": 42.6,
+          "coverage": 1.0,
+          "findings": [
+            "股权激励占营收 14.7%，规模重大，Non-GAAP 利润率要打折看",
+            "扣掉 SBC 后自由现金流缩水 43%，扣除后的 FCF 利润率为 19.4%",
+            "SBC 相当于净利润的 112%"
+          ]
+        },
+        {
+          "step": 3,
+          "key": "margin",
+          "title": "拆解毛利率变动",
+          "score": 65.1,
+          "coverage": 1.0,
+          "findings": [
+            "毛利率同比变动 -1.6pp（恶化）",
+            "毛利增量拆解：规模效应 +1.8十亿，价格/产品结构效应 -218.4百万，后者占 -14%",
+            "（财报只能拆到这两层；把价格与产品组合再分开需要出货量数据）"
+          ]
+        },
+        {
+          "step": 4,
+          "key": "working_capital",
+          "title": "营运资本 = 占用谁的钱",
+          "score": 94.8,
+          "coverage": 1.0,
+          "findings": [
+            "营运资本（含递延收入）/营收 -44.4% —— 为负，客户预付在给公司垫资，这门生意不占用自有资金",
+            "（不计递延收入时为 18.2%，硬件口径会把符号算反）",
+            "该比率同比 -2.1pp，客户垫资的比重在上升"
+          ]
+        },
+        {
+          "step": 5,
+          "key": "ar_inventory",
+          "title": "用应收/递延收入增速当造假探测器",
+          "score": 93.4,
+          "coverage": 1.0,
+          "findings": [
+            "应收增速比收入增速慢 3.6pp，节奏一致",
+            "递延收入增速比收入快 1.0pp，收入池与当期收入同步扩张",
+            "应计比例 -14.2%（为负，现金流强于账面利润）"
+          ]
+        },
+        {
+          "step": 6,
+          "key": "capex_timing",
+          "title": "压力测试资本开支与折旧的时间差",
+          "score": 94.9,
+          "coverage": 0.75,
+          "findings": [
+            "资本开支 / 当期折旧 = 1.23x，接近稳态",
+            "两者差额相当于营收的 1.3%，这是未来折旧开始计提后对营业利润率的潜在压制幅度",
+            "（当前营业利润率 13.7%，需要问的是：折旧兑现后还守得住吗）"
+          ]
+        },
+        {
+          "step": 7,
+          "key": "valuation",
+          "title": "估值反证",
+          "score": 41.1,
+          "coverage": 1.0,
+          "findings": [
+            "SBC 重大，估值以扣除 SBC 的口径为准：FCF 收益率 1.8%（未扣除时为 3.2%）",
+            "动态市盈率 27.7x vs 静态 81.9x，市场已经把未来的增长提前计入",
+            "预收款同比 +21.9%，客户提前付钱，需求强度有支撑"
+          ]
+        }
+      ],
+      "valuation": {
+        "anchor": "P/FCF",
+        "current": 31.32,
+        "median": 54.73,
+        "percentile": 0.149,
+        "multiple_upside": 0.747,
+        "regime_change": false,
+        "verdict": "错配候选：七步质量过关且估值处于历史低位 —— 这是要找的形态",
+        "span_days": 1296
+      }
+    },
+    {
+      "ticker": "AMD",
+      "name": "Advanced Micro Devices, Inc.",
+      "profile": "hardware",
+      "profile_label": "硬件/半导体",
+      "fiscal_end": "2025-12-31",
+      "currency": "USD",
+      "score": 60.0,
+      "raw_score": 65.0,
+      "grade": "C",
+      "verdict": "报表质量与价格之间存在明显取舍，逐步核对弱项",
+      "coverage": 0.958,
+      "gate_warnings": [],
+      "flags": [
+        "营运资本占用超过营收 25%，大量现金被锁在生意里"
+      ],
+      "stages": [
+        {
+          "step": 1,
+          "key": "cash",
+          "title": "把利润和现金分开",
+          "score": 87.5,
+          "coverage": 1.0,
+          "findings": [
+            "自由现金流利润率 19.4%（经营现金流扣掉资本开支后的真实剩余）",
+            "经营现金流/净利润 1.78x —— 利润基本落袋",
+            "折旧摊销贡献了经营现金流的 39.0%，这部分是账面加回而非经营改善"
+          ]
+        },
+        {
+          "step": 2,
+          "key": "sbc",
+          "title": "还原 GAAP 与 Non-GAAP",
+          "score": 76.7,
+          "coverage": 1.0,
+          "findings": [
+            "股权激励占营收 4.7%，规模可控",
+            "扣掉 SBC 后自由现金流缩水 24%，扣除后的 FCF 利润率为 14.7%",
+            "SBC 相当于净利润的 38%"
+          ]
+        },
+        {
+          "step": 3,
+          "key": "margin",
+          "title": "拆解毛利率变动",
+          "score": 72.4,
+          "coverage": 1.0,
+          "findings": [
+            "毛利率同比变动 +0.2pp（改善）",
+            "毛利增量拆解：规模效应 +4.4十亿，价格/产品结构效应 +57.5百万，后者占 1%",
+            "（财报只能拆到这两层；把价格与产品组合再分开需要出货量数据）"
+          ]
+        },
+        {
+          "step": 4,
+          "key": "working_capital",
+          "title": "营运资本 = 锁在生意里的现金",
+          "score": 23.5,
+          "coverage": 1.0,
+          "findings": [
+            "净营运资本/营收 32.6%（每 1 元收入需要占用的资金），高于 20% 的健康线",
+            "该比率同比 -4.0pp，效率在改善",
+            "应收账款周转 66 天，回款偏慢"
+          ]
+        },
+        {
+          "step": 5,
+          "key": "ar_inventory",
+          "title": "用应收/存货增速当造假探测器",
+          "score": 93.7,
+          "coverage": 1.0,
+          "findings": [
+            "应收增速比收入增速慢 32.4pp，节奏一致",
+            "存货增速比收入增速快 3.8pp，节奏一致"
+          ]
+        },
+        {
+          "step": 6,
+          "key": "capex_timing",
+          "title": "压力测试资本开支与折旧的时间差",
+          "score": 95.7,
+          "coverage": 0.75,
+          "findings": [
+            "资本开支 / 当期折旧 = 1.30x，接近稳态",
+            "两者差额相当于营收的 0.6%，这是未来折旧开始计提后对营业利润率的潜在压制幅度",
+            "（当前营业利润率 10.7%，需要问的是：折旧兑现后还守得住吗）"
+          ]
+        },
+        {
+          "step": 7,
+          "key": "valuation",
+          "title": "估值反证",
+          "score": 7.9,
+          "coverage": 0.875,
+          "findings": [
+            "自由现金流收益率 0.8%",
+            "动态市盈率 35.0x vs 静态 205.3x，市场已经把未来的增长提前计入",
+            "→ 毛利增长几乎全靠走量，一旦价格见顶（商品化/天花板），估值溢价缺乏支撑"
+          ]
+        }
+      ],
+      "valuation": {
+        "anchor": "P/FCF",
+        "current": 105.9,
+        "median": 98.66,
+        "percentile": 0.539,
+        "multiple_upside": -0.068,
+        "regime_change": false,
+        "verdict": "估值居中，质量存疑",
+        "span_days": 1296
+      }
+    },
+    {
+      "ticker": "MSFT",
+      "name": "Microsoft Corporation",
+      "profile": "saas",
+      "profile_label": "软件/订阅",
+      "fiscal_end": "2026-06-30",
+      "currency": "USD",
+      "score": 55.8,
+      "raw_score": 63.8,
+      "grade": "C",
+      "verdict": "报表质量与价格之间存在明显取舍，逐步核对弱项",
+      "coverage": 0.988,
+      "gate_warnings": [],
+      "flags": [
+        "资本开支是折旧的 3 倍以上，未来折旧将集中兑现"
+      ],
+      "stages": [
+        {
+          "step": 1,
+          "key": "cash",
+          "title": "把利润和现金分开",
+          "score": 61.7,
+          "coverage": 1.0,
+          "findings": [
+            "自由现金流利润率 20.2%（经营现金流扣掉资本开支后的真实剩余）",
+            "经营现金流/净利润 1.37x —— 利润基本落袋",
+            "折旧摊销贡献了经营现金流的 21.1%，这部分是账面加回而非经营改善"
+          ]
+        },
+        {
+          "step": 2,
+          "key": "sbc",
+          "title": "还原 GAAP 与 Non-GAAP",
+          "score": 84.9,
+          "coverage": 1.0,
+          "findings": [
+            "股权激励占营收 3.7%，规模可控",
+            "扣掉 SBC 后自由现金流缩水 19%，扣除后的 FCF 利润率为 16.4%",
+            "SBC 相当于净利润的 9%"
+          ]
+        },
+        {
+          "step": 3,
+          "key": "margin",
+          "title": "拆解毛利率变动",
+          "score": 57.1,
+          "coverage": 1.0,
+          "findings": [
+            "毛利率同比变动 -0.9pp（恶化）",
+            "毛利增量拆解：规模效应 +34.5十亿，价格/产品结构效应 -2.9十亿，后者占 -9%",
+            "（财报只能拆到这两层；把价格与产品组合再分开需要出货量数据）"
+          ]
+        },
+        {
+          "step": 4,
+          "key": "working_capital",
+          "title": "营运资本 = 占用谁的钱",
+          "score": 50.9,
+          "coverage": 1.0,
+          "findings": [
+            "营运资本（含递延收入）/营收 -10.0% —— 为负，客户预付在给公司垫资，这门生意不占用自有资金",
+            "（不计递延收入时为 12.0%，硬件口径会把符号算反）",
+            "该比率同比 -2.4pp，客户垫资的比重在上升"
+          ]
+        },
+        {
+          "step": 5,
+          "key": "ar_inventory",
+          "title": "用应收/递延收入增速当造假探测器",
+          "score": 83.7,
+          "coverage": 1.0,
+          "findings": [
+            "应收增速比收入增速慢 2.1pp，节奏一致",
+            "递延收入增速比收入慢 4.8pp，收入池与当期收入同步扩张",
+            "应计比例 -6.5%（为负，现金流强于账面利润）"
+          ]
+        },
+        {
+          "step": 6,
+          "key": "capex_timing",
+          "title": "压力测试资本开支与折旧的时间差",
+          "score": 10.7,
+          "coverage": 0.75,
+          "findings": [
+            "资本开支 / 当期折旧 = 3.01x，今天花的钱远超今天摊的折旧",
+            "两者差额相当于营收的 23.3%，这是未来折旧开始计提后对营业利润率的潜在压制幅度",
+            "（当前营业利润率 46.8%，需要问的是：折旧兑现后还守得住吗）"
+          ]
+        },
+        {
+          "step": 7,
+          "key": "valuation",
+          "title": "估值反证",
+          "score": 53.8,
+          "coverage": 1.0,
+          "findings": [
+            "自由现金流收益率 1.8%",
+            "动态市盈率 21.1x vs 静态 27.6x，市场已经把未来的增长提前计入",
+            "预收款同比 +13.0%，客户提前付钱，需求强度有支撑"
+          ]
+        }
+      ],
+      "valuation": {
+        "anchor": "P/FCF",
+        "current": 55.18,
+        "median": 46.41,
+        "percentile": 0.956,
+        "multiple_upside": -0.159,
+        "regime_change": false,
+        "verdict": "双高风险：质量存疑且估值处于历史高位",
+        "span_days": 1115
+      }
+    },
+    {
+      "ticker": "NVDA",
+      "name": "NVIDIA Corporation",
+      "profile": "hardware",
+      "profile_label": "硬件/半导体",
+      "fiscal_end": "2026-01-31",
+      "currency": "USD",
+      "score": 46.3,
+      "raw_score": 56.3,
+      "grade": "D",
+      "verdict": "多个步骤亮灯，利润质量或估值存在实质问题",
+      "coverage": 0.976,
+      "gate_warnings": [],
+      "flags": [
+        "存货增速比收入快 30pp 以上：真实需求可能弱于报表"
+      ],
+      "stages": [
+        {
+          "step": 1,
+          "key": "cash",
+          "title": "把利润和现金分开",
+          "score": 76.5,
+          "coverage": 1.0,
+          "findings": [
+            "自由现金流利润率 44.8%（经营现金流扣掉资本开支后的真实剩余）",
+            "经营现金流/净利润 0.86x —— 利润没有完全转化成现金",
+            "折旧摊销贡献了经营现金流的 2.8%，这部分是账面加回而非经营改善"
+          ]
+        },
+        {
+          "step": 2,
+          "key": "sbc",
+          "title": "还原 GAAP 与 Non-GAAP",
+          "score": 94.2,
+          "coverage": 1.0,
+          "findings": [
+            "股权激励占营收 3.0%，规模可控",
+            "扣掉 SBC 后自由现金流缩水 7%，扣除后的 FCF 利润率为 41.8%",
+            "SBC 相当于净利润的 5%"
+          ]
+        },
+        {
+          "step": 3,
+          "key": "margin",
+          "title": "拆解毛利率变动",
+          "score": 23.1,
+          "coverage": 1.0,
+          "findings": [
+            "毛利率同比变动 -3.9pp（恶化）",
+            "毛利增量拆解：规模效应 +64.1十亿，价格/产品结构效应 -8.5十亿，后者占 -15%",
+            "（财报只能拆到这两层；把价格与产品组合再分开需要出货量数据）"
+          ]
+        },
+        {
+          "step": 4,
+          "key": "working_capital",
+          "title": "营运资本 = 锁在生意里的现金",
+          "score": 37.2,
+          "coverage": 1.0,
+          "findings": [
+            "净营运资本/营收 23.2%（每 1 元收入需要占用的资金），高于 20% 的健康线",
+            "该比率同比 +2.6pp，占用在上升",
+            "应收账款周转 52 天，回款偏慢"
+          ]
+        },
+        {
+          "step": 5,
+          "key": "ar_inventory",
+          "title": "用应收/存货增速当造假探测器",
+          "score": 39.4,
+          "coverage": 1.0,
+          "findings": [
+            "应收增速比收入增速快 1.3pp，节奏一致",
+            "存货增速比收入增速快 46.9pp，可能是真实需求弱于报表或过度生产"
+          ]
+        },
+        {
+          "step": 6,
+          "key": "capex_timing",
+          "title": "压力测试资本开支与折旧的时间差",
+          "score": 74.9,
+          "coverage": 0.75,
+          "findings": [
+            "资本开支 / 当期折旧 = 2.13x，今天花的钱远超今天摊的折旧",
+            "两者差额相当于营收的 1.5%，这是未来折旧开始计提后对营业利润率的潜在压制幅度",
+            "（当前营业利润率 60.4%，需要问的是：折旧兑现后还守得住吗）"
+          ]
+        },
+        {
+          "step": 7,
+          "key": "valuation",
+          "title": "估值反证",
+          "score": 48.4,
+          "coverage": 1.0,
+          "findings": [
+            "自由现金流收益率 1.8%",
+            "动态市盈率 14.0x vs 静态 44.1x，市场已经把未来的增长提前计入",
+            "预收款同比 +64.8%，客户提前付钱，需求强度有支撑"
+          ]
+        }
+      ],
+      "valuation": {
+        "anchor": "P/FCF",
+        "current": 41.7,
+        "median": 102.93,
+        "percentile": 0.037,
+        "multiple_upside": 1.468,
+        "regime_change": true,
+        "verdict": "回归锚失效：基本面已发生量级变化，历史分位只反映“公司变了”，不构成低估或高估的证据",
+        "span_days": 1263
+      }
+    },
+    {
+      "ticker": "AVGO",
+      "name": "Broadcom Inc.",
+      "profile": "hardware",
+      "profile_label": "硬件/半导体",
+      "fiscal_end": "2025-10-31",
+      "currency": "USD",
+      "score": 37.5,
+      "raw_score": 65.5,
+      "grade": "E",
+      "verdict": "现金、口径或营运资本层面已出问题，不宜只看利润表",
+      "coverage": 1.0,
+      "gate_warnings": [
+        "第 2 步「还原 GAAP 与 Non-GAAP」得分 44/100 —— SBC 重大时，第 7 步的估值改用扣除 SBC 的口径"
+      ],
+      "flags": [
+        "股权激励超过营收 10%，Non-GAAP 利润率严重失真",
+        "应收增速比收入快 20pp 以上：警惕渠道压货或收入确认激进",
+        "折旧年限被拉长超过 1 年且资产基数未大幅扩张，当期利润含会计美化成分"
+      ],
+      "stages": [
+        {
+          "step": 1,
+          "key": "cash",
+          "title": "把利润和现金分开",
+          "score": 89.8,
+          "coverage": 1.0,
+          "findings": [
+            "自由现金流利润率 42.1%（经营现金流扣掉资本开支后的真实剩余）",
+            "经营现金流/净利润 1.19x —— 利润基本落袋",
+            "折旧摊销贡献了经营现金流的 31.9%，这部分是账面加回而非经营改善"
+          ]
+        },
+        {
+          "step": 2,
+          "key": "sbc",
+          "title": "还原 GAAP 与 Non-GAAP",
+          "score": 44.0,
+          "coverage": 1.0,
+          "findings": [
+            "股权激励占营收 11.8%，规模重大，Non-GAAP 利润率要打折看",
+            "扣掉 SBC 后自由现金流缩水 28%，扣除后的 FCF 利润率为 30.3%",
+            "SBC 相当于净利润的 33%"
+          ]
+        },
+        {
+          "step": 3,
+          "key": "margin",
+          "title": "拆解毛利率变动",
+          "score": 93.8,
+          "coverage": 1.0,
+          "findings": [
+            "毛利率同比变动 +4.7pp（改善）",
+            "毛利增量拆解：规模效应 +7.8十亿，价格/产品结构效应 +3.0十亿，后者占 28%",
+            "（财报只能拆到这两层；把价格与产品组合再分开需要出货量数据）"
+          ]
+        },
+        {
+          "step": 4,
+          "key": "working_capital",
+          "title": "营运资本 = 锁在生意里的现金",
+          "score": 77.1,
+          "coverage": 1.0,
+          "findings": [
+            "净营运资本/营收 12.3%（每 1 元收入需要占用的资金），低于 20% 的健康线",
+            "该比率同比 +3.5pp，占用在上升",
+            "应收账款周转 33 天，客户付款快，议价能力强"
+          ]
+        },
+        {
+          "step": 5,
+          "key": "ar_inventory",
+          "title": "用应收/存货增速当造假探测器",
+          "score": 47.1,
+          "coverage": 1.0,
+          "findings": [
+            "应收增速比收入增速快 37.9pp，警惕渠道压货或收入确认激进",
+            "存货增速比收入增速快 5.1pp，节奏一致"
+          ]
+        },
+        {
+          "step": 6,
+          "key": "capex_timing",
+          "title": "压力测试资本开支与折旧的时间差",
+          "score": 81.6,
+          "coverage": 1.0,
+          "findings": [
+            "资本开支 / 当期折旧 = 1.09x，接近稳态",
+            "两者差额相当于营收的 0.1%，这是未来折旧开始计提后对营业利润率的潜在压制幅度",
+            "（当前营业利润率 40.8%，需要问的是：折旧兑现后还守得住吗）"
+          ]
+        },
+        {
+          "step": 7,
+          "key": "valuation",
+          "title": "估值反证",
+          "score": 22.1,
+          "coverage": 1.0,
+          "findings": [
+            "SBC 重大，估值以扣除 SBC 的口径为准：FCF 收益率 1.2%（未扣除时为 1.6%）",
+            "动态市盈率 17.9x vs 静态 71.7x，市场已经把未来的增长提前计入",
+            "预收款同比 +0.8%，客户提前付钱，需求强度有支撑"
+          ]
+        }
+      ],
+      "valuation": {
+        "anchor": "P/FCF",
+        "current": 42.08,
+        "median": 40.75,
+        "percentile": 0.525,
+        "multiple_upside": -0.031,
+        "regime_change": false,
+        "verdict": "估值居中，质量存疑",
+        "span_days": 1357
+      }
+    }
+  ],
+  "failed": []
+}
