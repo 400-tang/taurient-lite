@@ -13,6 +13,7 @@
 
 from __future__ import annotations
 
+import datetime as dt
 import unittest
 
 from taurient_lite.components.heatmap import (
@@ -365,6 +366,38 @@ class TestSectorCard(unittest.TestCase):
                                        tiles=(evil,)))
         self.assertNotIn("<img", html)
         self.assertNotIn('"onload=', html)
+
+
+class TestLastTradingDay(unittest.TestCase):
+    """``asof`` 标的是数据所属的交易日，不是抓取日期。
+
+    踩过的坑：直接用 ``date.today()``，周六抓一次，页面上就印出
+    「截至 2026-09-19 收盘」——那天是周六，根本没有这个收盘。
+    """
+
+    def setUp(self):
+        import fetch_sectors
+        self.fn = fetch_sectors.last_trading_day
+
+    def test_weekday_points_at_yesterday(self):
+        # 周五抓 → 周四收盘
+        self.assertEqual(self.fn(dt.datetime(2026, 9, 18, 8, 30)), dt.date(2026, 9, 17))
+
+    def test_saturday_points_at_friday(self):
+        self.assertEqual(self.fn(dt.datetime(2026, 9, 19, 8, 30)), dt.date(2026, 9, 18))
+
+    def test_sunday_points_at_friday(self):
+        self.assertEqual(self.fn(dt.datetime(2026, 9, 20, 8, 30)), dt.date(2026, 9, 18))
+
+    def test_monday_skips_back_over_the_weekend(self):
+        """周一盘前抓到的是上周五的收盘，不是周日。"""
+        self.assertEqual(self.fn(dt.datetime(2026, 9, 21, 8, 30)), dt.date(2026, 9, 18))
+
+    def test_never_returns_a_weekend(self):
+        day = dt.datetime(2026, 1, 1)
+        for _ in range(400):
+            self.assertLess(self.fn(day).weekday(), 5)
+            day += dt.timedelta(days=1)
 
 
 class TestMarketTab(unittest.TestCase):

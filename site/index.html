@@ -22,6 +22,33 @@
   --tier-1: #C4342B;
   --tier-2: #1F3FCB;
   --tier-3: #79848C;
+  --heat-board: #E9ECEE;
+  --heat-card: #F6F7F8;
+  --heat-flat: #DCE0E3;
+  --heat-edge: #D7DCDF;
+  --heat-u1: #DDEFE6;
+  --heat-u2: #B4E0CD;
+  --heat-u3: #78C5A6;
+  --heat-u4: #2E9C74;
+  --heat-u5: #0B6F4E;
+  --heat-d1: #FAE0DB;
+  --heat-d2: #F4C3B9;
+  --heat-d3: #E79683;
+  --heat-d4: #C24E36;
+  --heat-d5: #A32E20;
+  --heat-ink: #10231C;
+  --heat-ink-dim: #6B757D;
+  --heat-on-u1: #10231C;
+  --heat-on-u2: #10231C;
+  --heat-on-u3: #10231C;
+  --heat-on-u4: #10231C;
+  --heat-on-u5: #FFFFFF;
+  --heat-on-d1: #10231C;
+  --heat-on-d2: #10231C;
+  --heat-on-d3: #10231C;
+  --heat-on-d4: #FFFFFF;
+  --heat-on-d5: #FFFFFF;
+  --heat-on-flat: #10231C;
 
   --font-display: "Newsreader", Georgia, "Songti SC", "Noto Serif CJK SC", serif;
   --font-body: "IBM Plex Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
@@ -69,6 +96,33 @@
     --tier-1: #E4634F;
     --tier-2: #8AA0FF;
     --tier-3: #6C7982;
+    --heat-board: #0B0F13;
+    --heat-card: #141A20;
+    --heat-flat: #1F262D;
+    --heat-edge: #141A20;
+    --heat-u1: #0F3325;
+    --heat-u2: #165639;
+    --heat-u3: #1C7A4D;
+    --heat-u4: #24A162;
+    --heat-u5: #3AC776;
+    --heat-d1: #3A201C;
+    --heat-d2: #5C2723;
+    --heat-d3: #87332A;
+    --heat-d4: #B24232;
+    --heat-d5: #D95833;
+    --heat-ink: #F2F6F8;
+    --heat-ink-dim: #8C9AA5;
+    --heat-on-u1: #F2F6F8;
+    --heat-on-u2: #F2F6F8;
+    --heat-on-u3: #F2F6F8;
+    --heat-on-u4: #06110B;
+    --heat-on-u5: #06110B;
+    --heat-on-d1: #F2F6F8;
+    --heat-on-d2: #F2F6F8;
+    --heat-on-d3: #F2F6F8;
+    --heat-on-d4: #F2F6F8;
+    --heat-on-d5: #06110B;
+    --heat-on-flat: #F2F6F8;
   }
 }
 
@@ -95,6 +149,33 @@
   --tier-1: #E4634F;
   --tier-2: #8AA0FF;
   --tier-3: #6C7982;
+  --heat-board: #0B0F13;
+  --heat-card: #141A20;
+  --heat-flat: #1F262D;
+  --heat-edge: #141A20;
+  --heat-u1: #0F3325;
+  --heat-u2: #165639;
+  --heat-u3: #1C7A4D;
+  --heat-u4: #24A162;
+  --heat-u5: #3AC776;
+  --heat-d1: #3A201C;
+  --heat-d2: #5C2723;
+  --heat-d3: #87332A;
+  --heat-d4: #B24232;
+  --heat-d5: #D95833;
+  --heat-ink: #F2F6F8;
+  --heat-ink-dim: #8C9AA5;
+  --heat-on-u1: #F2F6F8;
+  --heat-on-u2: #F2F6F8;
+  --heat-on-u3: #F2F6F8;
+  --heat-on-u4: #06110B;
+  --heat-on-u5: #06110B;
+  --heat-on-d1: #F2F6F8;
+  --heat-on-d2: #F2F6F8;
+  --heat-on-d3: #F2F6F8;
+  --heat-on-d4: #F2F6F8;
+  --heat-on-d5: #06110B;
+  --heat-on-flat: #F2F6F8;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -711,20 +792,26 @@ body {
 
 #tab-brief:focus-visible ~ .tab-nav label[for="tab-brief"],
 #tab-calendar:focus-visible ~ .tab-nav label[for="tab-calendar"],
-#tab-momentum:focus-visible ~ .tab-nav label[for="tab-momentum"] {
+#tab-momentum:focus-visible ~ .tab-nav label[for="tab-momentum"],
+#tab-fundamentals:focus-visible ~ .tab-nav label[for="tab-fundamentals"],
+#tab-market:focus-visible ~ .tab-nav label[for="tab-market"] {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
 
 #tab-brief:checked ~ .tab-panel[data-tab="brief"],
 #tab-calendar:checked ~ .tab-panel[data-tab="calendar"],
-#tab-momentum:checked ~ .tab-panel[data-tab="momentum"] {
+#tab-momentum:checked ~ .tab-panel[data-tab="momentum"],
+#tab-fundamentals:checked ~ .tab-panel[data-tab="fundamentals"],
+#tab-market:checked ~ .tab-panel[data-tab="market"] {
   display: block;
 }
 
 #tab-brief:checked ~ .tab-nav label[for="tab-brief"],
 #tab-calendar:checked ~ .tab-nav label[for="tab-calendar"],
-#tab-momentum:checked ~ .tab-nav label[for="tab-momentum"] {
+#tab-momentum:checked ~ .tab-nav label[for="tab-momentum"],
+#tab-fundamentals:checked ~ .tab-nav label[for="tab-fundamentals"],
+#tab-market:checked ~ .tab-nav label[for="tab-market"] {
   color: var(--accent);
   border-bottom-color: var(--accent);
 }
@@ -842,6 +929,43 @@ body {
 }
 
 
+/* 首页上的初动摘要条。视觉上刻意贴近自选股面板——两者回答的是同一类
+   问题（哪些代码今天值得多看一眼），长得像才不会让读者以为是新东西。 */
+.mo-strip { margin-top: 1rem; }
+
+.mo-strip-grid { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+
+.mo-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.26rem 0.5rem;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  font-family: var(--font-data);
+  font-size: var(--t-sm);
+  letter-spacing: var(--track-mono);
+  color: var(--ink-mid);
+  text-decoration: none;
+  transition: border-color 140ms ease, color 140ms ease;
+}
+
+.mo-chip:hover { border-color: var(--accent-strong); color: var(--accent-strong); }
+
+.mo-chip-n {
+  font-size: var(--t-2xs);
+  font-variant-numeric: tabular-nums;
+  opacity: 0.75;
+}
+
+.mo-strip-foot {
+  margin: 0.55rem 0 0;
+  font-size: var(--t-sm);
+  color: var(--ink-faint);
+  max-width: var(--measure);
+  text-wrap: pretty;
+}
+
 .mo-lede {
   margin: 0.9rem 0 0;
   max-width: var(--measure);
@@ -934,23 +1058,14 @@ body {
   font-variant-numeric: tabular-nums;
 }
 
-.mo-chg.up { color: var(--up); }
-.mo-chg.down { color: var(--down); }
-
-/* 覆盖度是反着读的：无报道 = 最早 = 用品牌色点亮，已发酵 = 已经晚了 = 压暗。
-   这个反直觉的编码是本板块的核心信息，所以给它独立的视觉语言。 */
-.mo-cov {
-  margin-left: auto;
-  padding: 0.1rem 0.4rem;
-  border-radius: 2px;
+.mo-chg-day {
   font-size: var(--t-2xs);
-  letter-spacing: var(--track-mono);
-  white-space: nowrap;
+  color: var(--ink-faint);
+  margin-right: 0.15rem;
 }
 
-.mo-cov.c-none { background: var(--accent-soft); color: var(--accent-strong); }
-.mo-cov.c-light { background: var(--paper-sunk); color: var(--ink-mid); }
-.mo-cov.c-heavy { color: var(--ink-faint); border: 1px solid var(--rule-soft); }
+.mo-chg.up { color: var(--up); }
+.mo-chg.down { color: var(--down); }
 
 .mo-metrics {
   display: flex;
@@ -998,10 +1113,464 @@ body {
 
 @media (max-width: 34rem) {
   .mo-group-blurb { flex-basis: 100%; }
-  .mo-cov { margin-left: 0; }
   .mo-metrics { gap: 0.3rem 0.8rem; }
 }
 
+
+.fu-lede {
+  margin: 0.9rem 0 0;
+  max-width: var(--measure);
+  font-size: var(--t-base);
+  line-height: 1.7;
+  text-wrap: pretty;
+}
+
+.fu-disclaimer {
+  margin-top: 0.9rem;
+  padding: 0.6rem 0.75rem;
+  border-left: 2px solid var(--rule);
+  font-size: var(--t-sm);
+  line-height: 1.6;
+  color: var(--ink-mid);
+  max-width: var(--measure);
+  text-wrap: pretty;
+}
+
+/* 矩阵在窄屏上自己横向滚动，整页不出现横向滚动条。 */
+.fu-matrix-wrap { overflow-x: auto; margin-top: 1.4rem; }
+
+.fu-matrix {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-data);
+  font-size: var(--t-sm);
+  font-variant-numeric: tabular-nums;
+}
+
+.fu-matrix th, .fu-matrix td {
+  padding: 0.42rem 0.45rem;
+  border-bottom: 1px solid var(--rule-hair);
+  text-align: right;
+  white-space: nowrap;
+}
+
+.fu-matrix thead th {
+  font-family: var(--font-body);
+  font-size: var(--t-2xs);
+  font-weight: 500;
+  letter-spacing: var(--track-label);
+  color: var(--ink-faint);
+  border-bottom: 1px solid var(--rule);
+}
+
+.fu-matrix thead th:first-child,
+.fu-matrix tbody th { text-align: left; }
+
+.fu-matrix tbody th { font-weight: 400; }
+
+.fu-tk {
+  color: var(--ink);
+  font-weight: 500;
+  letter-spacing: var(--track-mono);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+}
+
+.fu-tk:hover { color: var(--accent-strong); border-bottom-color: var(--accent); }
+
+.fu-prof {
+  margin-left: 0.45rem;
+  font-family: var(--font-body);
+  font-size: var(--t-2xs);
+  color: var(--ink-faint);
+}
+
+.fu-total { color: var(--ink); font-weight: 500; }
+
+.fu-grade {
+  margin-left: 0.3rem;
+  font-size: var(--t-2xs);
+  color: var(--ink-faint);
+}
+
+.fu-cell {
+  min-width: 2.6rem;
+  color: var(--ink-mid);
+  background: linear-gradient(
+    to right, var(--accent-soft) var(--fill, 0%), transparent var(--fill, 0%)
+  );
+}
+
+.fu-cell.fu-weak { color: var(--tier-1); font-weight: 500; }
+.fu-cell.fu-nodata { color: var(--ink-faint); background: none; }
+
+.fu-flags { color: var(--tier-1); }
+
+.fu-flagn::before { content: "\25B2 "; font-size: 0.7em; }
+
+.fu-legend {
+  margin: 0.55rem 0 0;
+  font-size: var(--t-xs);
+  color: var(--ink-faint);
+  max-width: var(--measure);
+  text-wrap: pretty;
+}
+
+.fu-cards { margin-top: 1.8rem; }
+
+.fu-card {
+  padding: 1rem 0 1.05rem;
+  border-top: 1px solid var(--rule);
+  scroll-margin-top: 1rem;
+}
+
+.fu-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.fu-card-tk {
+  font-family: var(--font-data);
+  font-size: var(--t-md);
+  font-weight: 500;
+  letter-spacing: var(--track-mono);
+}
+
+.fu-name { font-size: var(--t-sm); color: var(--ink-mid); }
+
+.fu-score {
+  margin-left: auto;
+  font-family: var(--font-data);
+  font-size: var(--t-md);
+  font-variant-numeric: tabular-nums;
+}
+
+.fu-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 0.9rem;
+  margin-top: 0.3rem;
+  font-size: var(--t-xs);
+  color: var(--ink-faint);
+}
+
+.fu-meta .fu-prof { margin-left: 0; }
+.fu-pen { color: var(--tier-1); }
+
+.fu-verdict, .fu-note {
+  margin: 0.55rem 0 0;
+  max-width: var(--measure);
+  font-size: var(--t-sm);
+  line-height: 1.65;
+  text-wrap: pretty;
+}
+
+.fu-note { color: var(--ink-mid); font-style: italic; }
+
+.fu-gate, .fu-redflags {
+  margin: 0.55rem 0 0;
+  padding: 0;
+  list-style: none;
+  max-width: var(--measure);
+  font-size: var(--t-sm);
+  line-height: 1.55;
+}
+
+.fu-gate li {
+  padding-left: 0.6rem;
+  border-left: 2px solid var(--tier-1);
+  color: var(--ink);
+}
+
+.fu-redflags li { position: relative; padding-left: 1rem; color: var(--ink-mid); }
+
+.fu-redflags li::before {
+  content: "\25B2";
+  position: absolute;
+  left: 0;
+  top: 0.18em;
+  font-size: 0.65em;
+  color: var(--tier-1);
+}
+
+.fu-gate li + li, .fu-redflags li + li { margin-top: 0.25rem; }
+
+.fu-val {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.15rem 0.6rem;
+  align-items: baseline;
+  margin-top: 0.7rem;
+  padding: 0.45rem 0.6rem;
+  background: var(--paper-sunk);
+  border-radius: 3px;
+  font-size: var(--t-sm);
+  max-width: var(--measure);
+}
+
+.fu-val-k {
+  font-size: var(--t-2xs);
+  letter-spacing: var(--track-label);
+  color: var(--ink-faint);
+}
+
+.fu-val-v { font-family: var(--font-data); font-variant-numeric: tabular-nums; }
+.fu-val-t { color: var(--ink-mid); }
+.fu-val-void .fu-val-v { text-decoration: line-through; color: var(--ink-faint); }
+
+.fu-more { margin-top: 0.7rem; }
+
+.fu-more summary {
+  cursor: pointer;
+  list-style: none;
+  font-size: var(--t-xs);
+  color: var(--accent);
+}
+
+.fu-more summary::-webkit-details-marker { display: none; }
+.fu-more summary::before { content: "+ "; }
+.fu-more[open] summary::before { content: "\2212 "; }
+
+.fu-stages { margin-top: 0.4rem; }
+
+.fu-stage { padding: 0.55rem 0; border-bottom: 1px solid var(--rule-hair); }
+.fu-stage:last-child { border-bottom: 0; }
+
+.fu-stage-head { display: flex; align-items: baseline; gap: 0.5rem; }
+
+.fu-step {
+  font-family: var(--font-data);
+  font-size: var(--t-2xs);
+  color: var(--ink-faint);
+  min-width: 0.9rem;
+}
+
+.fu-stage-t { font-size: var(--t-sm); font-weight: 500; }
+
+.fu-stage-s {
+  margin-left: auto;
+  font-family: var(--font-data);
+  font-size: var(--t-sm);
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-mid);
+}
+
+.fu-stage-s.fu-weak { color: var(--tier-1); font-weight: 500; }
+
+.fu-find {
+  margin: 0.3rem 0 0 1.4rem;
+  padding: 0;
+  font-size: var(--t-sm);
+  line-height: 1.6;
+  color: var(--ink-mid);
+  max-width: var(--measure);
+}
+
+.fu-find li + li { margin-top: 0.15rem; }
+
+.fu-source {
+  margin: 1.4rem 0 0;
+  font-family: var(--font-data);
+  font-size: var(--t-2xs);
+  color: var(--ink-faint);
+}
+
+@media (max-width: 34rem) {
+  .fu-score { margin-left: 0; }
+  .fu-find { margin-left: 0.9rem; }
+}
+
+
+/* 行情板。跟随亮暗主题——理由见 TOKENS 里的注释。 */
+.board {
+  margin: 0.4rem 0 1.6rem;
+  padding: 1rem 0.9rem 1.1rem;
+  background: var(--heat-board);
+  border: 1px solid var(--rule-soft);
+  border-radius: 10px;
+  color: var(--heat-ink);
+}
+
+.board-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  padding: 0 0.15rem;
+  margin-bottom: 0.7rem;
+}
+
+.board-title {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--t-md);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--heat-ink);
+}
+
+.board-asof {
+  font-size: var(--t-xs);
+  color: var(--heat-ink-dim);
+}
+
+.board-note {
+  margin: 0.8rem 0.15rem 0;
+  font-size: var(--t-xs);
+  line-height: 1.5;
+  color: var(--heat-ink-dim);
+  max-width: var(--measure);
+  text-wrap: pretty;
+}
+
+/* 横向轨道。手机上一屏放不下 12 个行业，竖着堆会把下面的内容推到
+   三屏之外；横向滑动配 scroll-snap 是这种场景的原生解法。 */
+.sec-rail {
+  display: flex;
+  gap: 0.7rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 0.4rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--heat-flat) transparent;
+}
+
+.sec-card {
+  flex: 0 0 min(82%, 20rem);
+  scroll-snap-align: start;
+  padding: 0.7rem 0.7rem 0.75rem;
+  background: var(--heat-card);
+  border: 1px solid var(--rule-hair);
+  border-radius: 8px;
+}
+
+.sec-card-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  margin-bottom: 0.55rem;
+}
+
+.sec-name {
+  font-size: var(--t-base);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--heat-ink);
+}
+
+.sec-n {
+  font-size: var(--t-2xs);
+  color: var(--heat-ink-dim);
+}
+
+/* 行业涨跌幅。**刻意不按色阶上色。**
+   色阶是给「色块背景」设计的：低档 #3A201C 这种暗棕压在同样暗的卡片上，
+   一个 -0.07% 会直接消失。文字只取方向，用色阶最亮的一档保证读得出来，
+   幅度由数字本身表达——数字已经写在那里了，不需要颜色再说一遍。 */
+.sec-chg {
+  margin-left: auto;
+  font-family: var(--font-data);
+  font-size: var(--t-sm);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  color: var(--heat-ink-dim);
+}
+
+.sec-chg.up { color: var(--heat-u5); }
+.sec-chg.down { color: var(--heat-d5); }
+
+/* 树图画布。aspect-ratio 必须和 treemap.squarify 的 box_w/box_h 一致，
+   否则算出来的「正方形」会被容器拉成长条。两边都引用 HEAT_BOX。 */
+.heat {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 100 / 62;
+}
+
+.tile {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.05rem;
+  border: 1px solid var(--heat-edge);
+  border-radius: 3px;
+  overflow: hidden;
+  font-family: var(--font-data);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.15;
+  text-align: center;
+}
+
+.tile-tk {
+  font-size: var(--t-2xs);
+  font-weight: 500;
+  letter-spacing: var(--track-mono);
+}
+
+.tile-ch { font-size: var(--t-2xs); opacity: 0.85; }
+
+/* 小块降级：放不下两行就只留代码，再小就只剩色块。
+   不降级的话文字会溢出成一团糊，比没有文字更糟。 */
+.tile.compact .tile-ch { display: none; }
+.tile.bare .tile-tk,
+.tile.bare .tile-ch { display: none; }
+
+/* 大块放大字号：块的大小已经在说「这块更重要」，字号跟上才不矛盾。 */
+.tile.lg { gap: 0.15rem; }
+.tile.lg .tile-tk { font-size: var(--t-sm); font-weight: 600; }
+.tile.lg .tile-ch { font-size: var(--t-xs); opacity: 0.92; }
+
+.heat-legend {
+  display: flex;
+  align-items: center;
+  gap: 0.22rem;
+  margin: 0.8rem 0.15rem 0;
+  font-size: var(--t-2xs);
+  font-family: var(--font-data);
+  color: var(--heat-ink-dim);
+}
+
+.swatch {
+  width: 1.15rem;
+  height: 0.45rem;
+  border: 1px solid var(--heat-edge);
+  border-radius: 2px;
+  display: inline-block;
+  flex: none;
+}
+
+.heat-legend .lg-label { margin: 0 0.2rem; }
+
+@media (max-width: 34rem) {
+  .board { padding: 0.85rem 0.7rem 0.9rem; border-radius: 14px; }
+  .sec-card { flex-basis: 88%; }
+}
+
+.tile.u1 { background: var(--heat-u1); color: var(--heat-on-u1); }
+.tile.u2 { background: var(--heat-u2); color: var(--heat-on-u2); }
+.tile.u3 { background: var(--heat-u3); color: var(--heat-on-u3); }
+.tile.u4 { background: var(--heat-u4); color: var(--heat-on-u4); }
+.tile.u5 { background: var(--heat-u5); color: var(--heat-on-u5); }
+.tile.d1 { background: var(--heat-d1); color: var(--heat-on-d1); }
+.tile.d2 { background: var(--heat-d2); color: var(--heat-on-d2); }
+.tile.d3 { background: var(--heat-d3); color: var(--heat-on-d3); }
+.tile.d4 { background: var(--heat-d4); color: var(--heat-on-d4); }
+.tile.d5 { background: var(--heat-d5); color: var(--heat-on-d5); }
+.tile.flat { background: var(--heat-flat); color: var(--heat-on-flat); }
+.swatch.sw-u1 { background: var(--heat-u1); }
+.swatch.sw-u2 { background: var(--heat-u2); }
+.swatch.sw-u3 { background: var(--heat-u3); }
+.swatch.sw-u4 { background: var(--heat-u4); }
+.swatch.sw-u5 { background: var(--heat-u5); }
+.swatch.sw-d1 { background: var(--heat-d1); }
+.swatch.sw-d2 { background: var(--heat-d2); }
+.swatch.sw-d3 { background: var(--heat-d3); }
+.swatch.sw-d4 { background: var(--heat-d4); }
+.swatch.sw-d5 { background: var(--heat-d5); }
+.swatch.sw-flat { background: var(--heat-flat); }
 
 .cal-scroll { overflow-x: auto; margin-top: 0.5rem; }
 
@@ -1084,8 +1653,8 @@ a:focus-visible, summary:focus-visible {
 </div>
 </header>
 <p class="lede">周三加息引发的抛售在周四迅速逆转：标普纳指录得8月以来最佳单日，10年期收益率从5.02%回落到4.98%，油价同步走软，市场把加息读作一次性冲击而非持续紧缩的开端。但地缘供给风险没有消退——伊朗革命卫队今天又击中一艘尝试穿越霍尔木兹的油轮，沙特管道修复时间表官方与独立分析师仍相差数周。监管上，SEC绕开国会流产的Clarity法案，直接给代币化美股交易开了五年豁免；消费电子这边，iPhone 18 Pro今天正式开售，同一组预订数据被两派分析师读出完全相反的结论。</p>
-<input type="radio" name="tab" id="tab-brief" class="tab-input" checked><input type="radio" name="tab" id="tab-calendar" class="tab-input"><input type="radio" name="tab" id="tab-momentum" class="tab-input">
-<div class="tab-nav" role="tablist"><label class="tab-label" for="tab-brief">简报</label><label class="tab-label" for="tab-calendar">日历</label><label class="tab-label" for="tab-momentum">异动</label></div>
+<input type="radio" name="tab" id="tab-brief" class="tab-input" checked><input type="radio" name="tab" id="tab-calendar" class="tab-input"><input type="radio" name="tab" id="tab-market" class="tab-input"><input type="radio" name="tab" id="tab-momentum" class="tab-input">
+<div class="tab-nav" role="tablist"><label class="tab-label" for="tab-brief">简报</label><label class="tab-label" for="tab-calendar">日历</label><label class="tab-label" for="tab-market">市场</label><label class="tab-label" for="tab-momentum">异动</label></div>
 <div class="tab-panel" data-tab="brief"><div class="sec-head t2"><h2 class="label">七巨头单日涨跌</h2><span class="asof">收盘 · Thu 9/17 13:11 ET</span></div>
 <section class="mag7">
 <div class="mag7-row">
@@ -1155,6 +1724,11 @@ a:focus-visible, summary:focus-visible {
 </div>
 <p class="wl-foot">你的 8 只自选股里，今天有 7 只出现在新闻中，点代码跳到对应条目。</p>
 </section>
+<div class="sec-head t2"><h2 class="label">价量异动</h2><span class="n">2</span><span class="asof">截至 2026-09-17 收盘</span></div>
+<div class="mo-strip">
+<div class="mo-strip-grid"><a class="mo-chip" href="#tab-momentum">PSIX<span class="mo-chip-n">2.5x</span></a><a class="mo-chip" href="#tab-momentum">ACVA<span class="mo-chip-n">4.6x</span></a></div>
+<p class="mo-strip-foot">2 只刚进入初动档。数字是相对成交量，完整指标见「异动」标签页。</p>
+</div>
 <div class="sec-head t2"><h2 class="label">指数与利率</h2><span class="asof">上一收盘 · 周四 9/17</span></div>
 <section><div class="tape-grid">
 <div class="tape-cell">
@@ -1440,7 +2014,127 @@ a:focus-visible, summary:focus-visible {
 <td class="w"><span class="w-mid">留意</span></td>
 </tr>
 </tbody></table></div></div>
-<div class="tab-panel" data-tab="momentum"><div class="sec-head t2"><h2 class="label">价量异动</h2><span class="asof">2026-09-17 · 扫描 2586 只</span></div>
+<div class="tab-panel" data-tab="market"><section class="board">
+<div class="board-head">
+<h2 class="board-title">板块热力</h2>
+<span class="board-asof">截至 2026-09-18 收盘</span>
+</div>
+<div class="sec-rail">
+<article class="sec-card">
+<div class="sec-card-head">
+<span class="sec-name">科技</span>
+<span class="sec-n">14</span>
+<span class="sec-chg up">+0.60%</span>
+</div>
+<div class="heat">
+<div class="tile u3 lg" style="left:0.0000%;top:0.0000%;width:28.7689%;height:51.4982%" title="NVDA · NVIDIA Corporation +1.34%"><span class="tile-tk">NVDA</span><span class="tile-ch">+1.34%</span></div><div class="tile d1 lg" style="left:0.0000%;top:52.1982%;width:28.7689%;height:47.1018%" title="AAPL · Apple Inc. -0.26%"><span class="tile-tk">AAPL</span><span class="tile-ch">-0.26%</span></div><div class="tile u2" style="left:29.4689%;top:0.0000%;width:23.6712%;height:49.6696%" title="GOOGL · Alphabet Inc. Class A +0.64%"><span class="tile-tk">GOOGL</span><span class="tile-ch">+0.64%</span></div><div class="tile u1" style="left:29.4689%;top:50.3696%;width:23.6712%;height:48.9304%" title="GOOG · Alphabet Inc. Class C Capital Stock +0.21%"><span class="tile-tk">GOOG</span><span class="tile-ch">+0.21%</span></div><div class="tile d2 lg" style="left:53.8401%;top:0.0000%;width:27.8846%;height:36.1342%" title="MSFT · Microsoft Corporation -0.80%"><span class="tile-tk">MSFT</span><span class="tile-ch">-0.80%</span></div><div class="tile u3" style="left:82.4246%;top:0.0000%;width:16.8754%;height:36.1342%" title="TSM · Taiwan Semiconductor Manufacturing Company Ltd. +1.02%"><span class="tile-tk">TSM</span><span class="tile-ch">+1.02%</span></div><div class="tile d3" style="left:53.8401%;top:36.8342%;width:16.4834%;height:33.9378%" title="SPCX · Space Exploration Technologies Corp. Class A -1.36%"><span class="tile-tk">SPCX</span><span class="tile-ch">-1.36%</span></div><div class="tile u5" style="left:53.8401%;top:71.4720%;width:16.4834%;height:27.8280%" title="AVGO · Broadcom Inc. +2.97%"><span class="tile-tk">AVGO</span><span class="tile-ch">+2.97%</span></div><div class="tile d5" style="left:71.0235%;top:36.8342%;width:15.3465%;height:29.6507%" title="META · Meta Platforms Inc. Class A -2.43%"><span class="tile-tk">META</span><span class="tile-ch">-2.43%</span></div><div class="tile u5 compact" style="left:87.0699%;top:36.8342%;width:12.2301%;height:29.6507%" title="SKHY · SK hynix Inc. American Depositary Shares +2.46%"><span class="tile-tk">SKHY</span><span class="tile-ch">+2.46%</span></div><div class="tile u5" style="left:71.0235%;top:67.1850%;width:17.3366%;height:17.5651%" title="MU · Micron Technology Inc. +3.92%"><span class="tile-tk">MU</span><span class="tile-ch">+3.92%</span></div><div class="tile u5 compact" style="left:71.0235%;top:85.4500%;width:17.3366%;height:13.8500%" title="AMD · Advanced Micro Devices Inc. +2.70%"><span class="tile-tk">AMD</span><span class="tile-ch">+2.70%</span></div><div class="tile u5 bare" style="left:89.0600%;top:67.1850%;width:10.2400%;height:16.2952%" title="ASML · ASML Holding N.V. New York Registry Shares +3.08%"><span class="tile-tk">ASML</span><span class="tile-ch">+3.08%</span></div><div class="tile u2 bare" style="left:89.0600%;top:84.1801%;width:10.2400%;height:15.1199%" title="GOOGM · Alphabet Inc. Depositary Shares representing a 1/20th Interest in a Share of Series A Mandatory Convertible Preferred Stock +0.47%"><span class="tile-tk">GOOGM</span><span class="tile-ch">+0.47%</span></div>
+</div>
+</article>
+<article class="sec-card">
+<div class="sec-card-head">
+<span class="sec-name">金融</span>
+<span class="sec-n">14</span>
+<span class="sec-chg down">-0.07%</span>
+</div>
+<div class="heat">
+<div class="tile u1 lg" style="left:0.0000%;top:0.0000%;width:30.4614%;height:69.0197%" title="JPM · JP Morgan Chase &amp; Co. +0.10%"><span class="tile-tk">JPM</span><span class="tile-ch">+0.10%</span></div><div class="tile d2 lg" style="left:0.0000%;top:69.7197%;width:30.4614%;height:29.5803%" title="BAC · Bank of America Corporation -0.77%"><span class="tile-tk">BAC</span><span class="tile-ch">-0.77%</span></div><div class="tile d3" style="left:31.1614%;top:0.0000%;width:21.4872%;height:36.1314%" title="HSBC · HSBC Holdings plc. -0.98%"><span class="tile-tk">HSBC</span><span class="tile-ch">-0.98%</span></div><div class="tile d2" style="left:31.1614%;top:36.8314%;width:21.4872%;height:32.8180%" title="MS · Morgan Stanley -0.46%"><span class="tile-tk">MS</span><span class="tile-ch">-0.46%</span></div><div class="tile d1" style="left:31.1614%;top:70.3494%;width:21.4872%;height:28.9506%" title="RY · Royal Bank Of Canada -0.13%"><span class="tile-tk">RY</span><span class="tile-ch">-0.13%</span></div><div class="tile d4" style="left:53.3486%;top:0.0000%;width:22.6349%;height:26.7956%" title="MUFG · Mitsubishi UFJ Financial Group Inc. -1.57%"><span class="tile-tk">MUFG</span><span class="tile-ch">-1.57%</span></div><div class="tile d3" style="left:76.6835%;top:0.0000%;width:22.6165%;height:26.7956%" title="GS · Goldman Sachs Group Inc. (The) -0.99%"><span class="tile-tk">GS</span><span class="tile-ch">-0.99%</span></div><div class="tile d3" style="left:53.3486%;top:27.4956%;width:14.8212%;height:38.5182%" title="WFC · Wells Fargo &amp; Company -0.89%"><span class="tile-tk">WFC</span><span class="tile-ch">-0.89%</span></div><div class="tile d2" style="left:53.3486%;top:66.7138%;width:14.8212%;height:32.5862%" title="C · Citigroup Inc. -0.70%"><span class="tile-tk">C</span><span class="tile-ch">-0.70%</span></div><div class="tile u1" style="left:68.8698%;top:27.4956%;width:14.9869%;height:30.6499%" title="AXP · American Express Company +0.12%"><span class="tile-tk">AXP</span><span class="tile-ch">+0.12%</span></div><div class="tile d5" style="left:84.5567%;top:27.4956%;width:14.7433%;height:30.6499%" title="SAN · Banco Santander S.A. Sponsored ADR (Spain) -3.44%"><span class="tile-tk">SAN</span><span class="tile-ch">-3.44%</span></div><div class="tile u2" style="left:68.8698%;top:58.8456%;width:21.0206%;height:20.8679%" title="TD · Toronto Dominion Bank (The) +0.43%"><span class="tile-tk">TD</span><span class="tile-ch">+0.43%</span></div><div class="tile u2" style="left:68.8698%;top:80.4135%;width:21.0206%;height:18.8865%" title="SCHW · Charles Schwab Corporation (The) +0.59%"><span class="tile-tk">SCHW</span><span class="tile-ch">+0.59%</span></div><div class="tile u3 bare" style="left:90.5904%;top:58.8456%;width:8.7096%;height:40.4544%" title="BLK · BlackRock Inc. +1.50%"><span class="tile-tk">BLK</span><span class="tile-ch">+1.50%</span></div>
+</div>
+</article>
+<article class="sec-card">
+<div class="sec-card-head">
+<span class="sec-name">电信</span>
+<span class="sec-n">14</span>
+<span class="sec-chg down">-0.24%</span>
+</div>
+<div class="heat">
+<div class="tile d2 lg" style="left:0.0000%;top:0.0000%;width:33.3485%;height:62.4930%" title="CSCO · Cisco Systems Inc. Common Stock (DE) -0.66%"><span class="tile-tk">CSCO</span><span class="tile-ch">-0.66%</span></div><div class="tile d1 lg" style="left:0.0000%;top:63.1930%;width:33.3485%;height:36.1070%" title="ANET · Arista Networks Inc. -0.07%"><span class="tile-tk">ANET</span><span class="tile-ch">-0.07%</span></div><div class="tile flat" style="left:34.0485%;top:0.0000%;width:20.6937%;height:52.7577%" title="CCZ · Comcast Holdings ZONES +0.00%"><span class="tile-tk">CCZ</span><span class="tile-ch">+0.00%</span></div><div class="tile d2" style="left:34.0485%;top:53.4577%;width:20.6937%;height:45.8423%" title="VZ · Verizon Communications Inc. -0.50%"><span class="tile-tk">VZ</span><span class="tile-ch">-0.50%</span></div><div class="tile u3" style="left:55.4421%;top:0.0000%;width:21.9781%;height:38.9429%" title="TMUS · T-Mobile US Inc. +1.04%"><span class="tile-tk">TMUS</span><span class="tile-ch">+1.04%</span></div><div class="tile flat" style="left:78.1203%;top:0.0000%;width:21.1797%;height:38.9429%" title="T · AT&amp;T Inc. +0.04%"><span class="tile-tk">T</span><span class="tile-ch">+0.04%</span></div><div class="tile d1" style="left:55.4421%;top:39.6429%;width:17.6595%;height:36.9913%" title="TBB · AT&amp;T Inc. 5.350% Global Notes due 2066 -0.10%"><span class="tile-tk">TBB</span><span class="tile-ch">-0.10%</span></div><div class="tile u5" style="left:55.4421%;top:77.3342%;width:17.6595%;height:21.9658%" title="LITE · Lumentum Holdings Inc. +4.17%"><span class="tile-tk">LITE</span><span class="tile-ch">+4.17%</span></div><div class="tile d2 compact" style="left:73.8016%;top:39.6429%;width:13.3478%;height:27.9269%" title="CMCSA · Comcast Corporation Class A -0.74%"><span class="tile-tk">CMCSA</span><span class="tile-ch">-0.74%</span></div><div class="tile d4 compact" style="left:87.8494%;top:39.6429%;width:11.4506%;height:27.9269%" title="WBD · Warner Bros. Discovery Inc. Series A -1.56%"><span class="tile-tk">WBD</span><span class="tile-ch">-1.56%</span></div><div class="tile d5 bare" style="left:73.8016%;top:68.2698%;width:9.9028%;height:31.0302%" title="AMX · America Movil S.A.B. de C.V. American Depositary Shares (each representing the right to receive twenty (20) Series B Shares -2.60%"><span class="tile-tk">AMX</span><span class="tile-ch">-2.60%</span></div><div class="tile d5 bare" style="left:84.4044%;top:68.2698%;width:7.4751%;height:23.2127%" title="VOD · Vodafone Group Plc American Depositary Shares -3.25%"><span class="tile-tk">VOD</span><span class="tile-ch">-3.25%</span></div><div class="tile u2 bare" style="left:92.5795%;top:68.2698%;width:6.7205%;height:23.2127%" title="CHT · Chunghwa Telecom Co. Ltd. +0.39%"><span class="tile-tk">CHT</span><span class="tile-ch">+0.39%</span></div><div class="tile d2 bare" style="left:84.4044%;top:92.1825%;width:14.8956%;height:7.1175%" title="FFIV · F5 Inc. -0.60%"><span class="tile-tk">FFIV</span><span class="tile-ch">-0.60%</span></div>
+</div>
+</article>
+<article class="sec-card">
+<div class="sec-card-head">
+<span class="sec-name">可选消费</span>
+<span class="sec-n">14</span>
+<span class="sec-chg down">-0.27%</span>
+</div>
+<div class="heat">
+<div class="tile u3 lg" style="left:0.0000%;top:0.0000%;width:37.7542%;height:99.3000%" title="AMZN · Amazon.com Inc. +1.00%"><span class="tile-tk">AMZN</span><span class="tile-ch">+1.00%</span></div><div class="tile d1 lg" style="left:38.4542%;top:0.0000%;width:33.9323%;height:33.6571%" title="WMT · Walmart Inc. -0.06%"><span class="tile-tk">WMT</span><span class="tile-ch">-0.06%</span></div><div class="tile d2 lg" style="left:73.0864%;top:0.0000%;width:26.2136%;height:33.6571%" title="V · Visa Inc. -0.44%"><span class="tile-tk">V</span><span class="tile-ch">-0.44%</span></div><div class="tile d1" style="left:38.4542%;top:34.3571%;width:18.3990%;height:35.7304%" title="MA · Mastercard Incorporated -0.09%"><span class="tile-tk">MA</span><span class="tile-ch">-0.09%</span></div><div class="tile u1" style="left:38.4542%;top:70.7875%;width:18.3990%;height:28.5125%" title="COST · Costco Wholesale Corporation +0.15%"><span class="tile-tk">COST</span><span class="tile-ch">+0.15%</span></div><div class="tile d2" style="left:57.5532%;top:34.3571%;width:19.3898%;height:23.1005%" title="PG · Procter &amp; Gamble Company (The) -0.79%"><span class="tile-tk">PG</span><span class="tile-ch">-0.79%</span></div><div class="tile d2" style="left:57.5532%;top:58.1576%;width:19.3898%;height:20.2337%" title="HD · Home Depot Inc. (The) -0.84%"><span class="tile-tk">HD</span><span class="tile-ch">-0.84%</span></div><div class="tile d5" style="left:57.5532%;top:79.0913%;width:19.3898%;height:20.2087%" title="NFLX · Netflix Inc. -4.67%"><span class="tile-tk">NFLX</span><span class="tile-ch">-4.67%</span></div><div class="tile u5 compact" style="left:77.6429%;top:34.3571%;width:12.8807%;height:27.6839%" title="BABA · Alibaba Group Holding Limited American Depositary Shares each representing eight Ordinary share +4.33%"><span class="tile-tk">BABA</span><span class="tile-ch">+4.33%</span></div><div class="tile d5 bare" style="left:91.2236%;top:34.3571%;width:8.0764%;height:27.6839%" title="DIS · Walt Disney Company (The) -2.54%"><span class="tile-tk">DIS</span><span class="tile-ch">-2.54%</span></div><div class="tile d1 compact" style="left:77.6429%;top:62.7410%;width:11.5858%;height:19.3915%" title="MCD · McDonald&#x27;s Corporation -0.10%"><span class="tile-tk">MCD</span><span class="tile-ch">-0.10%</span></div><div class="tile d2 bare" style="left:89.9287%;top:62.7410%;width:9.3713%;height:19.3915%" title="UBER · Uber Technologies Inc. -0.52%"><span class="tile-tk">UBER</span><span class="tile-ch">-0.52%</span></div><div class="tile u2 compact" style="left:77.6429%;top:82.8326%;width:10.7560%;height:16.4674%" title="TJX · TJX Companies Inc. (The) +0.55%"><span class="tile-tk">TJX</span><span class="tile-ch">+0.55%</span></div><div class="tile d2 bare" style="left:89.0989%;top:82.8326%;width:10.2011%;height:16.4674%" title="UL · Unilever PLC American Depositary Shares (each representing One Ordinary Share) -0.64%"><span class="tile-tk">UL</span><span class="tile-ch">-0.64%</span></div>
+</div>
+</article>
+<article class="sec-card">
+<div class="sec-card-head">
+<span class="sec-name">工业</span>
+<span class="sec-n">14</span>
+<span class="sec-chg down">-0.34%</span>
+</div>
+<div class="heat">
+<div class="tile d2 lg" style="left:0.0000%;top:0.0000%;width:37.3558%;height:99.3000%" title="TSLA · Tesla Inc. -0.53%"><span class="tile-tk">TSLA</span><span class="tile-ch">-0.53%</span></div><div class="tile u3 lg" style="left:38.0558%;top:0.0000%;width:25.3883%;height:37.0050%" title="CAT · Caterpillar Inc. +1.30%"><span class="tile-tk">CAT</span><span class="tile-ch">+1.30%</span></div><div class="tile u1" style="left:64.1441%;top:0.0000%;width:17.6428%;height:37.0050%" title="RTX · RTX Corporation +0.24%"><span class="tile-tk">RTX</span><span class="tile-ch">+0.24%</span></div><div class="tile d3" style="left:82.4869%;top:0.0000%;width:16.8131%;height:37.0050%" title="TM · Toyota Motor Corporation -1.23%"><span class="tile-tk">TM</span><span class="tile-ch">-1.23%</span></div><div class="tile d3" style="left:38.0558%;top:37.7050%;width:17.3587%;height:34.5818%" title="TMO · Thermo Fisher Scientific Inc -1.04%"><span class="tile-tk">TMO</span><span class="tile-ch">-1.04%</span></div><div class="tile d1" style="left:38.0558%;top:72.9868%;width:17.3587%;height:26.3132%" title="DE · Deere &amp; Company -0.24%"><span class="tile-tk">DE</span><span class="tile-ch">-0.24%</span></div><div class="tile d3 compact" style="left:56.1145%;top:37.7050%;width:12.9989%;height:31.3469%" title="UNP · Union Pacific Corporation -1.10%"><span class="tile-tk">UNP</span><span class="tile-ch">-1.10%</span></div><div class="tile u2 compact" style="left:56.1145%;top:69.7519%;width:12.9989%;height:29.5481%" title="BA · Boeing Company (The) +0.61%"><span class="tile-tk">BA</span><span class="tile-ch">+0.61%</span></div><div class="tile d1" style="left:69.8134%;top:37.7050%;width:15.4555%;height:23.6795%" title="DHR · Danaher Corporation -0.33%"><span class="tile-tk">DHR</span><span class="tile-ch">-0.33%</span></div><div class="tile u4 compact" style="left:85.9689%;top:37.7050%;width:13.3311%;height:23.6795%" title="GLW · Corning Incorporated +1.58%"><span class="tile-tk">GLW</span><span class="tile-ch">+1.58%</span></div><div class="tile d2" style="left:69.8134%;top:62.0845%;width:16.1851%;height:18.5842%" title="LMT · Lockheed Martin Corporation -0.88%"><span class="tile-tk">LMT</span><span class="tile-ch">-0.88%</span></div><div class="tile u4" style="left:69.8134%;top:81.3688%;width:16.1851%;height:17.9312%" title="PH · Parker-Hannifin Corporation +1.97%"><span class="tile-tk">PH</span><span class="tile-ch">+1.97%</span></div><div class="tile d2 compact" style="left:86.6985%;top:62.0845%;width:12.6015%;height:18.2953%" title="GD · General Dynamics Corporation -0.81%"><span class="tile-tk">GD</span><span class="tile-ch">-0.81%</span></div><div class="tile d4 compact" style="left:86.6985%;top:81.0798%;width:12.6015%;height:18.2202%" title="RACE · Ferrari N.V. -1.77%"><span class="tile-tk">RACE</span><span class="tile-ch">-1.77%</span></div>
+</div>
+</article>
+<article class="sec-card">
+<div class="sec-card-head">
+<span class="sec-name">医疗保健</span>
+<span class="sec-n">14</span>
+<span class="sec-chg down">-0.35%</span>
+</div>
+<div class="heat">
+<div class="tile flat lg" style="left:0.0000%;top:0.0000%;width:35.5968%;height:61.8195%" title="LLY · Eli Lilly and Company +0.04%"><span class="tile-tk">LLY</span><span class="tile-ch">+0.04%</span></div><div class="tile d1 lg" style="left:0.0000%;top:62.5195%;width:35.5968%;height:36.7805%" title="JNJ · Johnson &amp; Johnson -0.09%"><span class="tile-tk">JNJ</span><span class="tile-ch">-0.09%</span></div><div class="tile flat" style="left:36.2968%;top:0.0000%;width:23.7026%;height:39.2663%" title="ABBV · AbbVie Inc. -0.02%"><span class="tile-tk">ABBV</span><span class="tile-ch">-0.02%</span></div><div class="tile d1" style="left:36.2968%;top:39.9663%;width:23.7026%;height:30.3472%" title="MRK · Merck &amp; Company Inc. Common Stock (new) -0.19%"><span class="tile-tk">MRK</span><span class="tile-ch">-0.19%</span></div><div class="tile u2" style="left:36.2968%;top:71.0135%;width:23.7026%;height:28.2865%" title="UNH · UnitedHealth Group Incorporated Common Stock (DE) +0.45%"><span class="tile-tk">UNH</span><span class="tile-ch">+0.45%</span></div><div class="tile d3" style="left:60.6994%;top:0.0000%;width:19.8645%;height:29.1906%" title="PM · Philip Morris International Inc -0.98%"><span class="tile-tk">PM</span><span class="tile-ch">-0.98%</span></div><div class="tile d2" style="left:81.2639%;top:0.0000%;width:18.0361%;height:29.1906%" title="NVS · Novartis AG -0.39%"><span class="tile-tk">NVS</span><span class="tile-ch">-0.39%</span></div><div class="tile flat" style="left:60.6994%;top:29.8906%;width:21.0184%;height:24.0942%" title="AZN · AstraZeneca PLC -0.04%"><span class="tile-tk">AZN</span><span class="tile-ch">-0.04%</span></div><div class="tile u4" style="left:82.4179%;top:29.8906%;width:16.8821%;height:24.0942%" title="AMGN · Amgen Inc. +1.55%"><span class="tile-tk">AMGN</span><span class="tile-ch">+1.55%</span></div><div class="tile u1" style="left:60.6994%;top:54.6849%;width:16.7224%;height:22.2776%" title="NVO · Novo Nordisk A/S +0.12%"><span class="tile-tk">NVO</span><span class="tile-ch">+0.12%</span></div><div class="tile d2" style="left:60.6994%;top:77.6625%;width:16.7224%;height:21.6375%" title="GILD · Gilead Sciences Inc. -0.52%"><span class="tile-tk">GILD</span><span class="tile-ch">-0.52%</span></div><div class="tile u2 compact" style="left:78.1218%;top:54.6849%;width:10.8885%;height:31.3354%" title="ABT · Abbott Laboratories +0.37%"><span class="tile-tk">ABT</span><span class="tile-ch">+0.37%</span></div><div class="tile u1 bare" style="left:89.7104%;top:54.6849%;width:9.5896%;height:31.3354%" title="PFE · Pfizer Inc. +0.07%"><span class="tile-tk">PFE</span><span class="tile-ch">+0.07%</span></div><div class="tile u5 compact" style="left:78.1218%;top:86.7203%;width:21.1782%;height:12.5797%" title="ISRG · Intuitive Surgical Inc. +2.55%"><span class="tile-tk">ISRG</span><span class="tile-ch">+2.55%</span></div>
+</div>
+</article>
+<article class="sec-card">
+<div class="sec-card-head">
+<span class="sec-name">基础材料</span>
+<span class="sec-n">14</span>
+<span class="sec-chg down">-0.35%</span>
+</div>
+<div class="heat">
+<div class="tile u2 lg" style="left:0.0000%;top:0.0000%;width:28.7020%;height:55.8186%" title="LIN · Linde plc +0.42%"><span class="tile-tk">LIN</span><span class="tile-ch">+0.42%</span></div><div class="tile d1 lg" style="left:0.0000%;top:56.5186%;width:28.7020%;height:42.7814%" title="SCCO · Southern Copper Corporation -0.21%"><span class="tile-tk">SCCO</span><span class="tile-ch">-0.21%</span></div><div class="tile d2 lg" style="left:29.4020%;top:0.0000%;width:27.1012%;height:35.9228%" title="NEM · Newmont Corporation -0.79%"><span class="tile-tk">NEM</span><span class="tile-ch">-0.79%</span></div><div class="tile d2 lg" style="left:29.4020%;top:36.6228%;width:27.1012%;height:33.7441%" title="RIO · Rio Tinto Plc -0.68%"><span class="tile-tk">RIO</span><span class="tile-ch">-0.68%</span></div><div class="tile u3 lg" style="left:29.4020%;top:71.0669%;width:27.1012%;height:28.2331%" title="FCX · Freeport-McMoRan Inc. +0.97%"><span class="tile-tk">FCX</span><span class="tile-ch">+0.97%</span></div><div class="tile d3" style="left:57.2033%;top:0.0000%;width:24.4105%;height:30.8722%" title="AEM · Agnico Eagle Mines Limited -0.93%"><span class="tile-tk">AEM</span><span class="tile-ch">-0.93%</span></div><div class="tile d2" style="left:82.3138%;top:0.0000%;width:16.9862%;height:30.8722%" title="B · Barrick Mining Corporation -0.82%"><span class="tile-tk">B</span><span class="tile-ch">-0.82%</span></div><div class="tile d2" style="left:57.2033%;top:31.5722%;width:14.3886%;height:34.8890%" title="WPM · Wheaton Precious Metals Corp Common Shares (Canada) -0.78%"><span class="tile-tk">WPM</span><span class="tile-ch">-0.78%</span></div><div class="tile d2" style="left:57.2033%;top:67.1612%;width:14.3886%;height:32.1388%" title="APD · Air Products and Chemicals Inc. -0.68%"><span class="tile-tk">APD</span><span class="tile-ch">-0.68%</span></div><div class="tile d4 compact" style="left:72.2919%;top:31.5722%;width:14.1883%;height:31.2065%" title="VALE · VALE S.A.  American Depositary Shares Each Representing one common share -1.80%"><span class="tile-tk">VALE</span><span class="tile-ch">-1.80%</span></div><div class="tile u3 compact" style="left:87.1802%;top:31.5722%;width:12.1198%;height:31.2065%" title="AU · AngloGold Ashanti PLC +0.91%"><span class="tile-tk">AU</span><span class="tile-ch">+0.91%</span></div><div class="tile d1" style="left:72.2919%;top:63.4786%;width:18.8512%;height:19.8409%" title="FNV · Franco-Nevada Corporation -0.25%"><span class="tile-tk">FNV</span><span class="tile-ch">-0.25%</span></div><div class="tile d3 compact" style="left:72.2919%;top:84.0195%;width:18.8512%;height:15.2805%" title="CCJ · Cameco Corporation -1.27%"><span class="tile-tk">CCJ</span><span class="tile-ch">-1.27%</span></div><div class="tile d4 bare" style="left:91.8430%;top:63.4786%;width:7.4570%;height:35.8214%" title="GFI · Gold Fields Limited American Depositary Shares -1.92%"><span class="tile-tk">GFI</span><span class="tile-ch">-1.92%</span></div>
+</div>
+</article>
+<article class="sec-card">
+<div class="sec-card-head">
+<span class="sec-name">房地产</span>
+<span class="sec-n">14</span>
+<span class="sec-chg down">-0.61%</span>
+</div>
+<div class="heat">
+<div class="tile d3 lg" style="left:0.0000%;top:0.0000%;width:27.5237%;height:55.6386%" title="WELL · Welltower Inc. -1.46%"><span class="tile-tk">WELL</span><span class="tile-ch">-1.46%</span></div><div class="tile d1 lg" style="left:0.0000%;top:56.3386%;width:27.5237%;height:42.9614%" title="PLD · Prologis Inc. -0.25%"><span class="tile-tk">PLD</span><span class="tile-ch">-0.25%</span></div><div class="tile d2 lg" style="left:28.2237%;top:0.0000%;width:25.6900%;height:36.1106%" title="EQIX · Equinix Inc. Common Stock REIT -0.45%"><span class="tile-tk">EQIX</span><span class="tile-ch">-0.45%</span></div><div class="tile u2 lg" style="left:28.2237%;top:36.8106%;width:25.6900%;height:32.8781%" title="BN · Brookfield Corporation Class A Limited Voting Shares +0.86%"><span class="tile-tk">BN</span><span class="tile-ch">+0.86%</span></div><div class="tile d3 lg" style="left:28.2237%;top:70.3887%;width:25.6900%;height:28.9113%" title="AMT · American Tower Corporation (REIT) -0.91%"><span class="tile-tk">AMT</span><span class="tile-ch">-0.91%</span></div><div class="tile u3" style="left:54.6136%;top:0.0000%;width:22.9877%;height:29.2377%" title="BAM · Brookfield Asset Management Inc Class A Limited Voting Shares +1.41%"><span class="tile-tk">BAM</span><span class="tile-ch">+1.41%</span></div><div class="tile d3" style="left:78.3014%;top:0.0000%;width:20.9986%;height:29.2377%" title="DLR · Digital Realty Trust Inc. -1.16%"><span class="tile-tk">DLR</span><span class="tile-ch">-1.16%</span></div><div class="tile u2" style="left:54.6136%;top:29.9377%;width:15.8160%;height:38.0719%" title="SPG · Simon Property Group Inc. +0.42%"><span class="tile-tk">SPG</span><span class="tile-ch">+0.42%</span></div><div class="tile d3" style="left:54.6136%;top:68.7096%;width:15.8160%;height:30.5904%" title="O · Realty Income Corporation -1.15%"><span class="tile-tk">O</span><span class="tile-ch">-1.15%</span></div><div class="tile d3 compact" style="left:71.1297%;top:29.9377%;width:14.2863%;height:32.7717%" title="PSA · Public Storage -1.48%"><span class="tile-tk">PSA</span><span class="tile-ch">-1.48%</span></div><div class="tile d5 compact" style="left:86.1160%;top:29.9377%;width:13.1840%;height:32.7717%" title="VMRK · Vivmark Residential Common Shares of Beneficial Interest -2.84%"><span class="tile-tk">VMRK</span><span class="tile-ch">-2.84%</span></div><div class="tile d3 compact" style="left:71.1297%;top:63.4094%;width:11.0144%;height:35.8906%" title="VTR · Ventas Inc. -1.16%"><span class="tile-tk">VTR</span><span class="tile-ch">-1.16%</span></div><div class="tile u1" style="left:82.8441%;top:63.4094%;width:16.4559%;height:18.4256%" title="IRM · Iron Mountain Incorporated (Delaware)Common Stock REIT +0.30%"><span class="tile-tk">IRM</span><span class="tile-ch">+0.30%</span></div><div class="tile d3" style="left:82.8441%;top:82.5350%;width:16.4559%;height:16.7650%" title="CCI · Crown Castle Inc. -0.92%"><span class="tile-tk">CCI</span><span class="tile-ch">-0.92%</span></div>
+</div>
+</article>
+<article class="sec-card">
+<div class="sec-card-head">
+<span class="sec-name">能源</span>
+<span class="sec-n">14</span>
+<span class="sec-chg down">-0.66%</span>
+</div>
+<div class="heat">
+<div class="tile u1 lg" style="left:0.0000%;top:0.0000%;width:37.5381%;height:61.1979%" title="XOM · ExxonMobil Holdings Corporation +0.17%"><span class="tile-tk">XOM</span><span class="tile-ch">+0.17%</span></div><div class="tile d3 lg" style="left:0.0000%;top:61.8979%;width:37.5381%;height:37.4021%" title="CVX · Chevron Corporation -0.97%"><span class="tile-tk">CVX</span><span class="tile-ch">-0.97%</span></div><div class="tile d3" style="left:38.2381%;top:0.0000%;width:23.0876%;height:37.9930%" title="SHEL · Shell PLC American Depositary Shares (each representing two (2) Ordinary Shares) -1.34%"><span class="tile-tk">SHEL</span><span class="tile-ch">-1.34%</span></div><div class="tile d1" style="left:62.0257%;top:0.0000%;width:19.2491%;height:37.9930%" title="BHP · BHP Group Limited American Depositary Shares (Each representing two Ordinary Shares) -0.34%"><span class="tile-tk">BHP</span><span class="tile-ch">-0.34%</span></div><div class="tile d2" style="left:81.9748%;top:0.0000%;width:17.3252%;height:37.9930%" title="TTE · TotalEnergies SE -0.84%"><span class="tile-tk">TTE</span><span class="tile-ch">-0.84%</span></div><div class="tile d3" style="left:38.2381%;top:38.6930%;width:16.0878%;height:32.5039%" title="COP · ConocoPhillips -1.02%"><span class="tile-tk">COP</span><span class="tile-ch">-1.02%</span></div><div class="tile d2" style="left:38.2381%;top:71.8969%;width:16.0878%;height:27.4031%" title="PBR · Petroleo Brasileiro S.A. Petrobras ADS -0.67%"><span class="tile-tk">PBR</span><span class="tile-ch">-0.67%</span></div><div class="tile u2 compact" style="left:55.0259%;top:38.6930%;width:12.9818%;height:29.9953%" title="MPC · Marathon Petroleum Corporation +0.69%"><span class="tile-tk">MPC</span><span class="tile-ch">+0.69%</span></div><div class="tile u1 compact" style="left:55.0259%;top:69.3883%;width:12.9818%;height:29.9117%" title="VLO · Valero Energy Corporation +0.18%"><span class="tile-tk">VLO</span><span class="tile-ch">+0.18%</span></div><div class="tile d4" style="left:68.7078%;top:38.6930%;width:15.3922%;height:24.8262%" title="BP · BP p.l.c. -1.85%"><span class="tile-tk">BP</span><span class="tile-ch">-1.85%</span></div><div class="tile d2" style="left:84.8000%;top:38.6930%;width:14.5000%;height:24.8262%" title="EQNR · Equinor ASA -0.54%"><span class="tile-tk">EQNR</span><span class="tile-ch">-0.54%</span></div><div class="tile d2" style="left:68.7078%;top:64.2192%;width:20.4901%;height:17.4024%" title="PSX · Phillips 66 -0.39%"><span class="tile-tk">PSX</span><span class="tile-ch">-0.39%</span></div><div class="tile flat" style="left:68.7078%;top:82.3216%;width:20.4901%;height:16.9784%" title="ENB · Enbridge Inc -0.04%"><span class="tile-tk">ENB</span><span class="tile-ch">-0.04%</span></div><div class="tile d4 bare" style="left:89.8979%;top:64.2192%;width:9.4021%;height:35.0808%" title="CNQ · Canadian Natural Resources Limited -1.94%"><span class="tile-tk">CNQ</span><span class="tile-ch">-1.94%</span></div>
+</div>
+</article>
+<article class="sec-card">
+<div class="sec-card-head">
+<span class="sec-name">公用事业</span>
+<span class="sec-n">14</span>
+<span class="sec-chg down">-0.71%</span>
+</div>
+<div class="heat">
+<div class="tile d3" style="left:0.0000%;top:0.0000%;width:21.7627%;height:62.3484%" title="NEE · NextEra Energy Inc. -1.00%"><span class="tile-tk">NEE</span><span class="tile-ch">-1.00%</span></div><div class="tile d3" style="left:0.0000%;top:63.0484%;width:21.7627%;height:36.2516%" title="SO · Southern Company (The) -1.43%"><span class="tile-tk">SO</span><span class="tile-ch">-1.43%</span></div><div class="tile d2" style="left:22.4627%;top:0.0000%;width:22.0813%;height:33.2385%" title="DUK · Duke Energy Corporation (Holding Company) -0.85%"><span class="tile-tk">DUK</span><span class="tile-ch">-0.85%</span></div><div class="tile d5" style="left:22.4627%;top:33.9385%;width:22.0813%;height:32.7227%" title="CEG · Constellation Energy Corporation -3.08%"><span class="tile-tk">CEG</span><span class="tile-ch">-3.08%</span></div><div class="tile u1" style="left:22.4627%;top:67.3612%;width:22.0813%;height:31.9388%" title="WMB · Williams Companies Inc. (The) +0.33%"><span class="tile-tk">WMB</span><span class="tile-ch">+0.33%</span></div><div class="tile d3" style="left:45.2440%;top:0.0000%;width:17.8555%;height:37.6672%" title="WM · Waste Management Inc. -1.04%"><span class="tile-tk">WM</span><span class="tile-ch">-1.04%</span></div><div class="tile u3" style="left:63.7995%;top:0.0000%;width:17.7680%;height:37.6672%" title="EPD · Enterprise Products Partners L.P. +1.14%"><span class="tile-tk">EPD</span><span class="tile-ch">+1.14%</span></div><div class="tile d3" style="left:82.2675%;top:0.0000%;width:17.0325%;height:37.6672%" title="NGG · National Grid Transco PLC National Grid PLC (NEW) American Depositary Shares -1.03%"><span class="tile-tk">NGG</span><span class="tile-ch">-1.03%</span></div><div class="tile u2" style="left:45.2440%;top:38.3672%;width:18.9705%;height:30.5217%" title="ET · Energy Transfer LP Common Units +0.43%"><span class="tile-tk">ET</span><span class="tile-ch">+0.43%</span></div><div class="tile u4" style="left:45.2440%;top:69.5889%;width:18.9705%;height:29.7111%" title="KMI · Kinder Morgan Inc. +1.69%"><span class="tile-tk">KMI</span><span class="tile-ch">+1.69%</span></div><div class="tile d2" style="left:64.9146%;top:38.3672%;width:17.0350%;height:31.0673%" title="RSG · Republic Services Inc. -0.39%"><span class="tile-tk">RSG</span><span class="tile-ch">-0.39%</span></div><div class="tile d3" style="left:82.6496%;top:38.3672%;width:16.6504%;height:31.0673%" title="AEP · American Electric Power Company Inc. -1.33%"><span class="tile-tk">AEP</span><span class="tile-ch">-1.33%</span></div><div class="tile u5" style="left:64.9146%;top:70.1345%;width:17.0002%;height:29.1655%" title="TRGP · Targa Resources Inc. +2.50%"><span class="tile-tk">TRGP</span><span class="tile-ch">+2.50%</span></div><div class="tile d1" style="left:82.6147%;top:70.1345%;width:16.6853%;height:29.1655%" title="TRP · TC Energy Corporation -0.18%"><span class="tile-tk">TRP</span><span class="tile-ch">-0.18%</span></div>
+</div>
+</article>
+<article class="sec-card">
+<div class="sec-card-head">
+<span class="sec-name">必需消费</span>
+<span class="sec-n">14</span>
+<span class="sec-chg down">-1.05%</span>
+</div>
+<div class="heat">
+<div class="tile u1 lg" style="left:0.0000%;top:0.0000%;width:36.7261%;height:67.4939%" title="KO · Coca-Cola Company (The) +0.22%"><span class="tile-tk">KO</span><span class="tile-ch">+0.22%</span></div><div class="tile d5 lg" style="left:0.0000%;top:68.1939%;width:36.7261%;height:31.1061%" title="PEP · PepsiCo Inc. -2.92%"><span class="tile-tk">PEP</span><span class="tile-ch">-2.92%</span></div><div class="tile d3 lg" style="left:37.4261%;top:0.0000%;width:27.7328%;height:35.5398%" title="BUD · Anheuser-Busch Inbev SA Sponsored ADR (Belgium) -1.32%"><span class="tile-tk">BUD</span><span class="tile-ch">-1.32%</span></div><div class="tile d4 lg" style="left:37.4261%;top:36.2398%;width:27.7328%;height:32.0002%" title="SONY · Sony Group Corporation American Depositary Shares -1.55%"><span class="tile-tk">SONY</span><span class="tile-ch">-1.55%</span></div><div class="tile u2 lg" style="left:37.4261%;top:68.9399%;width:27.7328%;height:30.3601%" title="MNST · Monster Beverage Corporation +0.45%"><span class="tile-tk">MNST</span><span class="tile-ch">+0.45%</span></div><div class="tile d4" style="left:65.8589%;top:0.0000%;width:19.5797%;height:36.9606%" title="CVS · CVS Health Corporation -1.58%"><span class="tile-tk">CVS</span><span class="tile-ch">-1.58%</span></div><div class="tile d4 compact" style="left:86.1386%;top:0.0000%;width:13.1614%;height:36.9606%" title="MDLZ · Mondelez International Inc. Class A -1.92%"><span class="tile-tk">MDLZ</span><span class="tile-ch">-1.92%</span></div><div class="tile d3" style="left:65.8589%;top:37.6606%;width:17.3953%;height:19.2583%" title="CTVA · Corteva Inc. -1.23%"><span class="tile-tk">CTVA</span><span class="tile-ch">-1.23%</span></div><div class="tile d3" style="left:83.9542%;top:37.6606%;width:15.3458%;height:19.2583%" title="DEO · Diageo plc -1.30%"><span class="tile-tk">DEO</span><span class="tile-ch">-1.30%</span></div><div class="tile d3 compact" style="left:65.8589%;top:57.6189%;width:13.8332%;height:20.7323%" title="ABEV · Ambev S.A. American Depositary Shares (Each representing 1 Common Share) -1.34%"><span class="tile-tk">ABEV</span><span class="tile-ch">-1.34%</span></div><div class="tile d2 compact" style="left:65.8589%;top:79.0512%;width:13.8332%;height:20.2488%" title="CCEP · Coca-Cola Europacific Partners plc -0.71%"><span class="tile-tk">CCEP</span><span class="tile-ch">-0.71%</span></div><div class="tile d3 bare" style="left:80.3920%;top:57.6189%;width:9.2310%;height:27.8161%" title="KDP · Keurig Dr Pepper Inc. -1.50%"><span class="tile-tk">KDP</span><span class="tile-ch">-1.50%</span></div><div class="tile d5 bare" style="left:90.3231%;top:57.6189%;width:8.9769%;height:27.8161%" title="ADM · Archer-Daniels-Midland Company -3.30%"><span class="tile-tk">ADM</span><span class="tile-ch">-3.30%</span></div><div class="tile d3 compact" style="left:80.3920%;top:86.1350%;width:18.9080%;height:13.1650%" title="FMX · Fomento Economico Mexicano S.A.B. de C.V. -1.39%"><span class="tile-tk">FMX</span><span class="tile-ch">-1.39%</span></div>
+</div>
+</article>
+</div>
+<div class="heat-legend"><span class="lg-label">-3%</span><i class="swatch sw-d5"></i><i class="swatch sw-d3"></i><i class="swatch sw-d1"></i><span class="lg-label">0</span><i class="swatch sw-flat"></i><i class="swatch sw-u1"></i><i class="swatch sw-u3"></i><span class="lg-label">+3%</span><i class="swatch sw-u5"></i><span class="lg-label">色阶在 ±3% 处封顶</span></div>
+<p class="board-note">块的大小按市值，颜色按当日涨跌幅，行业按当日强弱从左到右排。行业涨跌是市值加权的：简单平均会让一堆微型股盖过苹果，得出「科技板块大跌」而指数其实在涨的结论。</p>
+</section></div>
+<div class="tab-panel" data-tab="momentum"><div class="sec-head t2"><h2 class="label">价量异动</h2><span class="asof">截至 2026-09-17 收盘 · 扫描 2586 只</span></div>
 <div class="mo-disclaimer">价量筛选，不是买卖信号。全量回测（2515 只、两年、5090 次初动信号）：20 日胜率 51.4%、期望 +1.1%，仅略好过抛硬币，且收益几乎全部来自极少数走出趋势的标的，中位数只有 +0.3%。样本未剔除幸存者偏差、区间偏多头、未计交易成本。同一批数据还显示「越早越好」并不成立——按早期度排序，最早的一批前向收益反而更差。所以这里的顺序只代表「有多新」，不代表「有多值得买」，每一条都需要你自己再查一遍基本面与消息面。</div>
 <div class="mo-groups">
 <div class="mo-group g-ignition">
@@ -1453,8 +2147,7 @@ a:focus-visible, summary:focus-visible {
 <div class="mo-head">
 <span class="mo-tk">PSIX</span>
 <span class="mo-px">44.72</span>
-<span class="mo-chg up">+11.55%</span>
-<span class="mo-cov c-none">无报道</span>
+<span class="mo-chg up"><span class="mo-chg-day">09-17 </span>+11.55%</span>
 </div>
 <div class="mo-metrics">
 <div class="mo-metric"><span class="mo-metric-k">突破</span><span class="mo-metric-v">当天</span></div>
@@ -1467,8 +2160,7 @@ a:focus-visible, summary:focus-visible {
 <div class="mo-head">
 <span class="mo-tk">ACVA</span>
 <span class="mo-px">10.48</span>
-<span class="mo-chg up">+0.53%</span>
-<span class="mo-cov c-heavy">已发酵</span>
+<span class="mo-chg up"><span class="mo-chg-day">09-17 </span>+0.53%</span>
 </div>
 <div class="mo-metrics">
 <div class="mo-metric"><span class="mo-metric-k">突破</span><span class="mo-metric-v">当天</span></div>
@@ -1489,8 +2181,7 @@ a:focus-visible, summary:focus-visible {
 <div class="mo-head">
 <span class="mo-tk">ARE</span>
 <span class="mo-px">56.01</span>
-<span class="mo-chg up">+4.65%</span>
-<span class="mo-cov c-none">无报道</span>
+<span class="mo-chg up"><span class="mo-chg-day">09-17 </span>+4.65%</span>
 </div>
 <div class="mo-metrics">
 <div class="mo-metric"><span class="mo-metric-k">突破</span><span class="mo-metric-v">当天</span></div>
@@ -1503,8 +2194,7 @@ a:focus-visible, summary:focus-visible {
 <div class="mo-head">
 <span class="mo-tk">BXSL</span>
 <span class="mo-px">25.48</span>
-<span class="mo-chg up">+2.41%</span>
-<span class="mo-cov c-none">无报道</span>
+<span class="mo-chg up"><span class="mo-chg-day">09-17 </span>+2.41%</span>
 </div>
 <div class="mo-metrics">
 <div class="mo-metric"><span class="mo-metric-k">突破</span><span class="mo-metric-v">当天</span></div>
@@ -1517,8 +2207,7 @@ a:focus-visible, summary:focus-visible {
 <div class="mo-head">
 <span class="mo-tk">FFIV</span>
 <span class="mo-px">435.48</span>
-<span class="mo-chg up">+2.81%</span>
-<span class="mo-cov c-none">无报道</span>
+<span class="mo-chg up"><span class="mo-chg-day">09-17 </span>+2.81%</span>
 </div>
 <div class="mo-metrics">
 <div class="mo-metric"><span class="mo-metric-k">突破</span><span class="mo-metric-v">当天</span></div>
@@ -1531,8 +2220,7 @@ a:focus-visible, summary:focus-visible {
 <div class="mo-head">
 <span class="mo-tk">GNK</span>
 <span class="mo-px">28.23</span>
-<span class="mo-chg up">+2.95%</span>
-<span class="mo-cov c-none">无报道</span>
+<span class="mo-chg up"><span class="mo-chg-day">09-17 </span>+2.95%</span>
 </div>
 <div class="mo-metrics">
 <div class="mo-metric"><span class="mo-metric-k">突破</span><span class="mo-metric-v">当天</span></div>

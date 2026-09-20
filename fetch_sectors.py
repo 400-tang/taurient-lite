@@ -83,6 +83,30 @@ NOTE = (
 )
 
 
+def last_trading_day(now: dt.datetime) -> dt.date:
+    """数据所属的交易日。
+
+    **不能直接用抓取日期。** screener 在盘前返回的是上一个交易日的收盘数据，
+    而页面上写的是「截至 X 收盘」——把抓取日期填进去，周六抓一次就会印出
+    「截至周六收盘」这种不存在的时点。``momentum.py`` 里记过同一个教训：
+    一个没有限定的涨跌幅必然被读成「今天的」。
+
+    工作流排在 12:30 UTC（美东 8:30，开盘前），所以规则是：往前找最近的
+    一个工作日，周一往前退到周五。
+
+    **已知局限：不认节假日。** 感恩节这类休市日会把 asof 标成休市当天，
+    差一天。要修得准就得引入交易日历，而那是一份需要每年维护的数据；
+    在「标注可能差一天」和「引入一个会过期的依赖」之间，这里选了前者，
+    并把这个取舍写在这儿，免得以后有人以为是漏写。
+    """
+    day = now.date()
+    # 盘前抓的是昨天的收盘，所以先退一天，再跳过周末。
+    day -= dt.timedelta(days=1)
+    while day.weekday() >= 5:  # 5=周六, 6=周日
+        day -= dt.timedelta(days=1)
+    return day
+
+
 def _num(raw: object) -> float | None:
     """把 ``"$156.47"`` / ``"0.083%"`` / ``"44113407785.00"`` 解析成数字。
 
@@ -176,8 +200,10 @@ def main(argv: list[str]) -> int:
         print("错误：一个行业都没聚出来，筛选条件可能过严", file=sys.stderr)
         return 1
 
+    now = dt.datetime.now()
     block = {
-        "asof": dt.date.today().isoformat(),
+        "asof": last_trading_day(now).isoformat(),
+        "fetched_at": now.isoformat(timespec="seconds"),
         "source": "Nasdaq screener",
         "note": NOTE,
         "sectors": sectors,
