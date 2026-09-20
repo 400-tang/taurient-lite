@@ -41,10 +41,17 @@ RANGE_LABELS: dict[str, str] = {
 }
 
 CSS = """
+/* 整页撑满视口：图表是这一页的主体，让它吃掉剩下的全部高度。
+   固定高度（原来是 26rem）在高屏幕上会留出大半屏空白，而 K 线恰恰是
+   越高越好读——纵向空间直接决定价格轴的分辨率。 */
 .stock {
-  max-width: 62rem;
+  max-width: 96rem;
   margin: 0 auto;
-  padding: 2rem var(--gutter) 4rem;
+  padding: 1.4rem var(--gutter) 1.6rem;
+  min-height: 100vh;
+  min-height: 100dvh;   /* 手机上地址栏会伸缩，dvh 才是真正可见的高度 */
+  display: flex;
+  flex-direction: column;
 }
 
 .stock-head {
@@ -111,11 +118,12 @@ CSS = """
   font-weight: 500;
 }
 
-/* 图表容器必须有确定的高度：图表库按容器尺寸初始化，高度为 0 时
-   它会画出一张看不见的图，而且不报错。 */
+/* 图表吃掉纵向的剩余空间。min-height 是底线：图表库按容器尺寸初始化，
+   高度为 0 时它会画出一张看不见的图，而且不报错。 */
 #chart {
   width: 100%;
-  height: 26rem;
+  flex: 1 1 auto;
+  min-height: 16rem;
   border: 1px solid var(--rule-soft);
   border-radius: 3px;
 }
@@ -170,8 +178,14 @@ CSS = """
   text-wrap: pretty;
 }
 
+/* 底部这两块是固定高度的附属信息，不参与抢高度。 */
+.stock-stats { flex: none; }
+.stock-note { flex: none; margin-top: 0.9rem; }
+
 @media (max-width: 34rem) {
-  #chart { height: 18rem; }
+  .stock { padding: 1rem var(--gutter) 1.2rem; }
+  #chart { min-height: 14rem; }
+  .stock-note { font-size: var(--t-xs); }
 }
 """
 

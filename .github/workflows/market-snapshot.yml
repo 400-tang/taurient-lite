@@ -29,7 +29,8 @@ jobs:
 
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
+          # 读仓库根目录的 .python-version，和 Render、本地共用一个来源。
+          python-version-file: .python-version
 
       # 整个流水线零第三方依赖，标准库足够，所以没有 pip install 这一步。
       - name: 抓取行情与空头持仓
