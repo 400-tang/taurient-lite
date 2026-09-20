@@ -53,7 +53,71 @@ TOKENS: dict[str, tuple[str, str]] = {
     "tier-1": ("#C4342B", "#E4634F"),
     "tier-2": ("#1F3FCB", "#8AA0FF"),
     "tier-3": ("#79848C", "#6C7982"),
+    # ---------------------------------------------------------------- 热力色阶
+    #
+    # 热力图跟随主题，两套色阶**方向相反**：亮色模式下低幅度接近纸张底色、
+    # 高幅度压深；暗色模式下低幅度暗而浊、高幅度亮而饱和。两边都是「幅度
+    # 越大、离底色越远」，只是底色一个亮一个暗。
+    #
+    # 这里曾经做成一块不跟随主题的深色「行情板」，理由是白底上的浅绿浅红
+    # 在小色块上难分辨。做出来一看，它在纸张版面里像一块异物，整页最抢眼
+    # 的东西变成了一个次要板块。分辨率的问题另有解法（每块加一条发丝边框
+    # 把边界勾出来，见 ``heat-edge``），而版面不协调没有解法。
+    #
+    # 低档的红两边都刻意偏棕/偏粉而不是正红：小幅下跌如果用正红，版面上会
+    # 出现一片和大跌同样刺眼的红，而它们的意义相差一个数量级。
+    #
+    # **每一档的色值都跑过 WCAG 对比度校验**，配套的文字色见下面的
+    # ``heat-on-*``，``tests.test_heatmap.TestContrast`` 会按公式重算一遍。
+    "heat-board": ("#E9ECEE", "#0B0F13"),
+    "heat-card": ("#F6F7F8", "#141A20"),
+    "heat-flat": ("#DCE0E3", "#1F262D"),
+    # 色块之间的发丝边框。亮色模式下把小幅度的浅色块勾出边界——不加的话
+    # +0.21% 这种块淡得和卡片底色分不开，看起来像空格子。暗色模式下取卡片
+    # 底色，等于不画。
+    "heat-edge": ("#D7DCDF", "#141A20"),
+    "heat-u1": ("#DDEFE6", "#0F3325"),
+    "heat-u2": ("#B4E0CD", "#165639"),
+    "heat-u3": ("#78C5A6", "#1C7A4D"),
+    "heat-u4": ("#2E9C74", "#24A162"),
+    "heat-u5": ("#0B6F4E", "#3AC776"),
+    "heat-d1": ("#FAE0DB", "#3A201C"),
+    "heat-d2": ("#F4C3B9", "#5C2723"),
+    "heat-d3": ("#E79683", "#87332A"),
+    "heat-d4": ("#C24E36", "#B24232"),
+    "heat-d5": ("#A32E20", "#D95833"),
+    "heat-ink": ("#10231C", "#F2F6F8"),
+    "heat-ink-dim": ("#6B757D", "#8C9AA5"),
 }
+
+#: 色块上文字的默认色与反转色。亮色模式默认深字、反转成白字；
+#: 暗色模式正好倒过来。
+HEAT_INK: tuple[str, str] = ("#10231C", "#F2F6F8")
+HEAT_INK_FLIP: tuple[str, str] = ("#FFFFFF", "#06110B")
+
+#: 需要反转文字色的档位，两套主题各一份。
+#:
+#: **两份名单不一样，这不是笔误。** 亮色色阶到 u5 才压得够深，而暗色色阶
+#: 从 u4 就亮到白字压不住了。判据是同一条：默认文字色在该底色上的对比度
+#: 掉到 4.5:1 以下就翻。``tests.test_heatmap`` 按 WCAG 公式重算这两份名单，
+#: 所以名单写错了测试会红，不会靠人眼把关。
+HEAT_INVERT_LIGHT: tuple[str, ...] = ("u5", "d4", "d5")
+HEAT_INVERT_DARK: tuple[str, ...] = ("u4", "u5", "d5")
+
+#: 所有色阶档名。定义在这里而不是靠近 CSS，是因为下面要用它生成
+#: ``heat-on-*`` 这一批 token，而 token 必须在 :data:`TOKENS` 里就位。
+HEAT_LEVEL_NAMES: tuple[str, ...] = tuple(
+    [f"u{i}" for i in range(1, 6)] + [f"d{i}" for i in range(1, 6)] + ["flat"]
+)
+
+# 每一档配一个文字色 token。生成而不是手写十一行，是因为「哪些档要反转」
+# 已经由上面两份名单表达了，手写等于把同一个事实抄第二遍。
+for _level in HEAT_LEVEL_NAMES:
+    TOKENS[f"heat-on-{_level}"] = (
+        HEAT_INK_FLIP[0] if _level in HEAT_INVERT_LIGHT else HEAT_INK[0],
+        HEAT_INK_FLIP[1] if _level in HEAT_INVERT_DARK else HEAT_INK[1],
+    )
+del _level
 
 #: 字体族。Newsreader 是为新闻正文优化的衬线体，不是常见的展示型衬线；
 #: IBM Plex 两支给正文和数据，中文回退到系统黑体与宋体。
@@ -780,7 +844,9 @@ TABS_CSS = """
 #: 这个标签，点开却是一片空白。这种失败不报错、不告警，只是内容消失。
 #: 现在选择器由这份名单生成，:mod:`tests.test_theme` 再断言渲染层用到的
 #: 每个 slug 都在名单里，同样的漏改会在测试阶段就炸出来。
-TAB_SLUGS: tuple[str, ...] = ("brief", "calendar", "momentum")
+TAB_SLUGS: tuple[str, ...] = (
+    "brief", "calendar", "momentum", "fundamentals", "market",
+)
 
 
 def build_tabs_css(slugs: Sequence[str] = TAB_SLUGS) -> str:
@@ -928,6 +994,43 @@ CALENDAR_CSS = """
 # -------------------------------------------------------------------------- 价量异动
 
 MOMENTUM_CSS = """
+/* 首页上的初动摘要条。视觉上刻意贴近自选股面板——两者回答的是同一类
+   问题（哪些代码今天值得多看一眼），长得像才不会让读者以为是新东西。 */
+.mo-strip { margin-top: 1rem; }
+
+.mo-strip-grid { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+
+.mo-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.26rem 0.5rem;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  font-family: var(--font-data);
+  font-size: var(--t-sm);
+  letter-spacing: var(--track-mono);
+  color: var(--ink-mid);
+  text-decoration: none;
+  transition: border-color 140ms ease, color 140ms ease;
+}
+
+.mo-chip:hover { border-color: var(--accent-strong); color: var(--accent-strong); }
+
+.mo-chip-n {
+  font-size: var(--t-2xs);
+  font-variant-numeric: tabular-nums;
+  opacity: 0.75;
+}
+
+.mo-strip-foot {
+  margin: 0.55rem 0 0;
+  font-size: var(--t-sm);
+  color: var(--ink-faint);
+  max-width: var(--measure);
+  text-wrap: pretty;
+}
+
 .mo-lede {
   margin: 0.9rem 0 0;
   max-width: var(--measure);
@@ -1020,23 +1123,14 @@ MOMENTUM_CSS = """
   font-variant-numeric: tabular-nums;
 }
 
-.mo-chg.up { color: var(--up); }
-.mo-chg.down { color: var(--down); }
-
-/* 覆盖度是反着读的：无报道 = 最早 = 用品牌色点亮，已发酵 = 已经晚了 = 压暗。
-   这个反直觉的编码是本板块的核心信息，所以给它独立的视觉语言。 */
-.mo-cov {
-  margin-left: auto;
-  padding: 0.1rem 0.4rem;
-  border-radius: 2px;
+.mo-chg-day {
   font-size: var(--t-2xs);
-  letter-spacing: var(--track-mono);
-  white-space: nowrap;
+  color: var(--ink-faint);
+  margin-right: 0.15rem;
 }
 
-.mo-cov.c-none { background: var(--accent-soft); color: var(--accent-strong); }
-.mo-cov.c-light { background: var(--paper-sunk); color: var(--ink-mid); }
-.mo-cov.c-heavy { color: var(--ink-faint); border: 1px solid var(--rule-soft); }
+.mo-chg.up { color: var(--up); }
+.mo-chg.down { color: var(--down); }
 
 .mo-metrics {
   display: flex;
@@ -1084,8 +1178,477 @@ MOMENTUM_CSS = """
 
 @media (max-width: 34rem) {
   .mo-group-blurb { flex-basis: 100%; }
-  .mo-cov { margin-left: 0; }
   .mo-metrics { gap: 0.3rem 0.8rem; }
+}
+"""
+
+# -------------------------------------------------------------------------- 基本面
+#
+# 分数格子用品牌色的浅洗做「进度条」底色，不用涨跌绿红——分数不是涨跌，借用
+# 语义色会让读者把「现金 90 分」读成「涨了」。低分改用必读层那支「需要注意」
+# 的红，只染数字不染底色：它提示的是「去看这一步」，不是「利空」。
+
+FUNDAMENTALS_CSS = """
+.fu-lede {
+  margin: 0.9rem 0 0;
+  max-width: var(--measure);
+  font-size: var(--t-base);
+  line-height: 1.7;
+  text-wrap: pretty;
+}
+
+.fu-disclaimer {
+  margin-top: 0.9rem;
+  padding: 0.6rem 0.75rem;
+  border-left: 2px solid var(--rule);
+  font-size: var(--t-sm);
+  line-height: 1.6;
+  color: var(--ink-mid);
+  max-width: var(--measure);
+  text-wrap: pretty;
+}
+
+/* 矩阵在窄屏上自己横向滚动，整页不出现横向滚动条。 */
+.fu-matrix-wrap { overflow-x: auto; margin-top: 1.4rem; }
+
+.fu-matrix {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-data);
+  font-size: var(--t-sm);
+  font-variant-numeric: tabular-nums;
+}
+
+.fu-matrix th, .fu-matrix td {
+  padding: 0.42rem 0.45rem;
+  border-bottom: 1px solid var(--rule-hair);
+  text-align: right;
+  white-space: nowrap;
+}
+
+.fu-matrix thead th {
+  font-family: var(--font-body);
+  font-size: var(--t-2xs);
+  font-weight: 500;
+  letter-spacing: var(--track-label);
+  color: var(--ink-faint);
+  border-bottom: 1px solid var(--rule);
+}
+
+.fu-matrix thead th:first-child,
+.fu-matrix tbody th { text-align: left; }
+
+.fu-matrix tbody th { font-weight: 400; }
+
+.fu-tk {
+  color: var(--ink);
+  font-weight: 500;
+  letter-spacing: var(--track-mono);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+}
+
+.fu-tk:hover { color: var(--accent-strong); border-bottom-color: var(--accent); }
+
+.fu-prof {
+  margin-left: 0.45rem;
+  font-family: var(--font-body);
+  font-size: var(--t-2xs);
+  color: var(--ink-faint);
+}
+
+.fu-total { color: var(--ink); font-weight: 500; }
+
+.fu-grade {
+  margin-left: 0.3rem;
+  font-size: var(--t-2xs);
+  color: var(--ink-faint);
+}
+
+.fu-cell {
+  min-width: 2.6rem;
+  color: var(--ink-mid);
+  background: linear-gradient(
+    to right, var(--accent-soft) var(--fill, 0%), transparent var(--fill, 0%)
+  );
+}
+
+.fu-cell.fu-weak { color: var(--tier-1); font-weight: 500; }
+.fu-cell.fu-nodata { color: var(--ink-faint); background: none; }
+
+.fu-flags { color: var(--tier-1); }
+
+.fu-flagn::before { content: "\\25B2 "; font-size: 0.7em; }
+
+.fu-legend {
+  margin: 0.55rem 0 0;
+  font-size: var(--t-xs);
+  color: var(--ink-faint);
+  max-width: var(--measure);
+  text-wrap: pretty;
+}
+
+.fu-cards { margin-top: 1.8rem; }
+
+.fu-card {
+  padding: 1rem 0 1.05rem;
+  border-top: 1px solid var(--rule);
+  scroll-margin-top: 1rem;
+}
+
+.fu-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.fu-card-tk {
+  font-family: var(--font-data);
+  font-size: var(--t-md);
+  font-weight: 500;
+  letter-spacing: var(--track-mono);
+}
+
+.fu-name { font-size: var(--t-sm); color: var(--ink-mid); }
+
+.fu-score {
+  margin-left: auto;
+  font-family: var(--font-data);
+  font-size: var(--t-md);
+  font-variant-numeric: tabular-nums;
+}
+
+.fu-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 0.9rem;
+  margin-top: 0.3rem;
+  font-size: var(--t-xs);
+  color: var(--ink-faint);
+}
+
+.fu-meta .fu-prof { margin-left: 0; }
+.fu-pen { color: var(--tier-1); }
+
+.fu-verdict, .fu-note {
+  margin: 0.55rem 0 0;
+  max-width: var(--measure);
+  font-size: var(--t-sm);
+  line-height: 1.65;
+  text-wrap: pretty;
+}
+
+.fu-note { color: var(--ink-mid); font-style: italic; }
+
+.fu-gate, .fu-redflags {
+  margin: 0.55rem 0 0;
+  padding: 0;
+  list-style: none;
+  max-width: var(--measure);
+  font-size: var(--t-sm);
+  line-height: 1.55;
+}
+
+.fu-gate li {
+  padding-left: 0.6rem;
+  border-left: 2px solid var(--tier-1);
+  color: var(--ink);
+}
+
+.fu-redflags li { position: relative; padding-left: 1rem; color: var(--ink-mid); }
+
+.fu-redflags li::before {
+  content: "\\25B2";
+  position: absolute;
+  left: 0;
+  top: 0.18em;
+  font-size: 0.65em;
+  color: var(--tier-1);
+}
+
+.fu-gate li + li, .fu-redflags li + li { margin-top: 0.25rem; }
+
+.fu-val {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.15rem 0.6rem;
+  align-items: baseline;
+  margin-top: 0.7rem;
+  padding: 0.45rem 0.6rem;
+  background: var(--paper-sunk);
+  border-radius: 3px;
+  font-size: var(--t-sm);
+  max-width: var(--measure);
+}
+
+.fu-val-k {
+  font-size: var(--t-2xs);
+  letter-spacing: var(--track-label);
+  color: var(--ink-faint);
+}
+
+.fu-val-v { font-family: var(--font-data); font-variant-numeric: tabular-nums; }
+.fu-val-t { color: var(--ink-mid); }
+.fu-val-void .fu-val-v { text-decoration: line-through; color: var(--ink-faint); }
+
+.fu-more { margin-top: 0.7rem; }
+
+.fu-more summary {
+  cursor: pointer;
+  list-style: none;
+  font-size: var(--t-xs);
+  color: var(--accent);
+}
+
+.fu-more summary::-webkit-details-marker { display: none; }
+.fu-more summary::before { content: "+ "; }
+.fu-more[open] summary::before { content: "\\2212 "; }
+
+.fu-stages { margin-top: 0.4rem; }
+
+.fu-stage { padding: 0.55rem 0; border-bottom: 1px solid var(--rule-hair); }
+.fu-stage:last-child { border-bottom: 0; }
+
+.fu-stage-head { display: flex; align-items: baseline; gap: 0.5rem; }
+
+.fu-step {
+  font-family: var(--font-data);
+  font-size: var(--t-2xs);
+  color: var(--ink-faint);
+  min-width: 0.9rem;
+}
+
+.fu-stage-t { font-size: var(--t-sm); font-weight: 500; }
+
+.fu-stage-s {
+  margin-left: auto;
+  font-family: var(--font-data);
+  font-size: var(--t-sm);
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-mid);
+}
+
+.fu-stage-s.fu-weak { color: var(--tier-1); font-weight: 500; }
+
+.fu-find {
+  margin: 0.3rem 0 0 1.4rem;
+  padding: 0;
+  font-size: var(--t-sm);
+  line-height: 1.6;
+  color: var(--ink-mid);
+  max-width: var(--measure);
+}
+
+.fu-find li + li { margin-top: 0.15rem; }
+
+.fu-source {
+  margin: 1.4rem 0 0;
+  font-family: var(--font-data);
+  font-size: var(--t-2xs);
+  color: var(--ink-faint);
+}
+
+@media (max-width: 34rem) {
+  .fu-score { margin-left: 0; }
+  .fu-find { margin-left: 0.9rem; }
+}
+"""
+
+# -------------------------------------------------------------------- 市场热力
+
+#: 树图画布的长宽比。**这个值同时被两处使用**：CSS 的 ``aspect-ratio``
+#: 和 :func:`~taurient_lite.treemap.squarify` 的 ``box_w``/``box_h``。
+#: 两边不一致，算出来的正方形就会被容器拉成长条——``tests.test_heatmap``
+#: 里有一条断言专门盯这个。
+HEAT_BOX: tuple[int, int] = (100, 62)
+
+def build_heat_levels_css() -> str:
+    """按档位生成色块规则。
+
+    十一条规则手写一遍不是不行，但那样「新增一档」就要改两个地方，
+    而漏改的那一档会静默退化成透明色块——生成出来，档位表就是唯一真相。
+
+    文字色走 ``--heat-on-<档位>``，而不是在这里按主题分支：那批 token 本身
+    就是成对的（亮色一套、暗色一套），所以这里一条规则同时管两套主题，
+    不需要为亮暗各写一遍选择器。
+    """
+    rules = []
+    for name in HEAT_LEVEL_NAMES:
+        rules.append(
+            f".tile.{name} {{ background: var(--heat-{name}); "
+            f"color: var(--heat-on-{name}); }}"
+        )
+    for name in HEAT_LEVEL_NAMES:
+        rules.append(f".swatch.sw-{name} {{ background: var(--heat-{name}); }}")
+    return "\n".join(rules)
+
+
+HEATMAP_CSS = """
+/* 行情板。跟随亮暗主题——理由见 TOKENS 里的注释。 */
+.board {
+  margin: 0.4rem 0 1.6rem;
+  padding: 1rem 0.9rem 1.1rem;
+  background: var(--heat-board);
+  border: 1px solid var(--rule-soft);
+  border-radius: 10px;
+  color: var(--heat-ink);
+}
+
+.board-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  padding: 0 0.15rem;
+  margin-bottom: 0.7rem;
+}
+
+.board-title {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--t-md);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--heat-ink);
+}
+
+.board-asof {
+  font-size: var(--t-xs);
+  color: var(--heat-ink-dim);
+}
+
+.board-note {
+  margin: 0.8rem 0.15rem 0;
+  font-size: var(--t-xs);
+  line-height: 1.5;
+  color: var(--heat-ink-dim);
+  max-width: var(--measure);
+  text-wrap: pretty;
+}
+
+/* 横向轨道。手机上一屏放不下 12 个行业，竖着堆会把下面的内容推到
+   三屏之外；横向滑动配 scroll-snap 是这种场景的原生解法。 */
+.sec-rail {
+  display: flex;
+  gap: 0.7rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 0.4rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--heat-flat) transparent;
+}
+
+.sec-card {
+  flex: 0 0 min(82%, 20rem);
+  scroll-snap-align: start;
+  padding: 0.7rem 0.7rem 0.75rem;
+  background: var(--heat-card);
+  border: 1px solid var(--rule-hair);
+  border-radius: 8px;
+}
+
+.sec-card-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  margin-bottom: 0.55rem;
+}
+
+.sec-name {
+  font-size: var(--t-base);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--heat-ink);
+}
+
+.sec-n {
+  font-size: var(--t-2xs);
+  color: var(--heat-ink-dim);
+}
+
+/* 行业涨跌幅。**刻意不按色阶上色。**
+   色阶是给「色块背景」设计的：低档 #3A201C 这种暗棕压在同样暗的卡片上，
+   一个 -0.07% 会直接消失。文字只取方向，用色阶最亮的一档保证读得出来，
+   幅度由数字本身表达——数字已经写在那里了，不需要颜色再说一遍。 */
+.sec-chg {
+  margin-left: auto;
+  font-family: var(--font-data);
+  font-size: var(--t-sm);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  color: var(--heat-ink-dim);
+}
+
+.sec-chg.up { color: var(--heat-u5); }
+.sec-chg.down { color: var(--heat-d5); }
+
+/* 树图画布。aspect-ratio 必须和 treemap.squarify 的 box_w/box_h 一致，
+   否则算出来的「正方形」会被容器拉成长条。两边都引用 HEAT_BOX。 */
+.heat {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 100 / 62;
+}
+
+.tile {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.05rem;
+  border: 1px solid var(--heat-edge);
+  border-radius: 3px;
+  overflow: hidden;
+  font-family: var(--font-data);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.15;
+  text-align: center;
+}
+
+.tile-tk {
+  font-size: var(--t-2xs);
+  font-weight: 500;
+  letter-spacing: var(--track-mono);
+}
+
+.tile-ch { font-size: var(--t-2xs); opacity: 0.85; }
+
+/* 小块降级：放不下两行就只留代码，再小就只剩色块。
+   不降级的话文字会溢出成一团糊，比没有文字更糟。 */
+.tile.compact .tile-ch { display: none; }
+.tile.bare .tile-tk,
+.tile.bare .tile-ch { display: none; }
+
+/* 大块放大字号：块的大小已经在说「这块更重要」，字号跟上才不矛盾。 */
+.tile.lg { gap: 0.15rem; }
+.tile.lg .tile-tk { font-size: var(--t-sm); font-weight: 600; }
+.tile.lg .tile-ch { font-size: var(--t-xs); opacity: 0.92; }
+
+.heat-legend {
+  display: flex;
+  align-items: center;
+  gap: 0.22rem;
+  margin: 0.8rem 0.15rem 0;
+  font-size: var(--t-2xs);
+  font-family: var(--font-data);
+  color: var(--heat-ink-dim);
+}
+
+.swatch {
+  width: 1.15rem;
+  height: 0.45rem;
+  border: 1px solid var(--heat-edge);
+  border-radius: 2px;
+  display: inline-block;
+  flex: none;
+}
+
+.heat-legend .lg-label { margin: 0 0.2rem; }
+
+@media (max-width: 34rem) {
+  .board { padding: 0.85rem 0.7rem 0.9rem; border-radius: 14px; }
+  .sec-card { flex-basis: 88%; }
 }
 """
 
@@ -1176,6 +1739,9 @@ def build_css() -> str:
             build_tabs_css(),
             CALENDAR_CSS,
             MOMENTUM_CSS,
+            FUNDAMENTALS_CSS,
+            HEATMAP_CSS,
+            build_heat_levels_css(),
             TAIL_CSS,
         ]
     )

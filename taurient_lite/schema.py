@@ -87,18 +87,6 @@ STAGE_LABEL: dict[str, str] = {
     "extended": "已延伸",
 }
 
-#: 一只异动标的当天的新闻覆盖度。**这个字段是反着读的**：覆盖度越低
-#: 说明市场越没注意到，这条线索越早；满屏报道则意味着已经晚了。
-#: 价量异动由脚本算出，新闻覆盖度只有每天在扫新闻的这条流水线知道，
-#: 两者相交才是这个模块相对于任何通用选股器的独有价值。
-NEWS_COVERAGE: tuple[str, ...] = ("none", "light", "heavy")
-
-COVERAGE_LABEL: dict[str, str] = {
-    "none": "无报道",
-    "light": "零星",
-    "heavy": "已发酵",
-}
-
 
 class SchemaError(ValueError):
     """简报 JSON 结构非法。
@@ -522,9 +510,14 @@ class MomentumCandidate:
     """一只被价量筛出来的异动标的。
 
     数字部分由 ``scan_momentum.py`` 算好写进 ``data/momentum_scan.json``，
-    每日流水线把它和当天扫到的新闻交叉之后，挑一部分写进简报 JSON。
-    所以这里的字段分两类：``stage`` 往下的是机器算的事实，
-    ``coverage`` 和 ``note`` 是流水线交叉新闻之后补的判断。
+    每日流水线挑一部分写进简报 JSON，再补上 ``note`` 那句人写的判断。
+
+    **这里刻意没有「新闻覆盖度」字段。** 曾经有过一个 ``coverage``，
+    取值「无报道/零星/已发酵」，本意是「今天扫的新闻里这只票出现过没有」。
+    问题出在它说不准：流水线只读了当天扫到的几十篇，而标签写出来是
+    「无报道」，读者会理解成「网上没有任何相关报道」——两者差得很远。
+    要让它名副其实就得对每只标的单独搜一轮，那又会毁掉它本来想测的
+    「有没有自然浮现」。一个无法诚实标注的字段，不如不要。
     """
 
     ticker: str
@@ -535,17 +528,12 @@ class MomentumCandidate:
     breakout_age: int | None = None
     ext_ma20: float = 0.0
     run_from_base: float = 0.0
-    coverage: str = "none"
     note: str = ""
     sources: tuple[Source, ...] = ()
 
     @property
     def stage_label(self) -> str:
         return STAGE_LABEL[self.stage]
-
-    @property
-    def coverage_label(self) -> str:
-        return COVERAGE_LABEL[self.coverage]
 
     @property
     def age_label(self) -> str:
@@ -576,9 +564,6 @@ class MomentumCandidate:
             ext_ma20=_as_float(data.get("ext_ma20", 0.0), _join(path, "ext_ma20")),
             run_from_base=_as_float(
                 data.get("run_from_base", 0.0), _join(path, "run_from_base")
-            ),
-            coverage=_as_enum(
-                data.get("coverage", "none"), NEWS_COVERAGE, _join(path, "coverage")
             ),
             note=_as_str(data.get("note", ""), _join(path, "note"), allow_empty=True),
             sources=sources,
@@ -621,6 +606,340 @@ class Momentum:
         )
 
 
+# --------------------------------------------------------------------- 基本面
+
+#: 行业口径。与 :data:`taurient_lite.fundamentals.methodology.PROFILES` 的键
+#: 一一对应，``tests.test_fundamentals`` 会断言两边一致——schema 要能独立校验
+#: 简报 JSON，不该为了拿一个名单去导入整个分析引擎。
+FUNDAMENTALS_PROFILES: tuple[str, ...] = ("hardware", "saas")
+
+#: 七步法等级，同样与 ``METHODOLOGY_GRADES`` 对齐。
+FUNDAMENTALS_GRADES: tuple[str, ...] = ("A", "B", "C", "D", "E")
+
+
+def _opt_float(value: Any, path: str) -> float | None:
+    """可空的数字。基本面里大量指标会合法地缺失（比如 FCF 为负时 P/FCF 无意义），
+    缺失必须保持为 None——写成 0 会被读成「0 倍」或「0 分」。"""
+    return None if value is None else _as_float(value, path)
+
+
+def _as_bool(value: Any, path: str) -> bool:
+    if not isinstance(value, bool):
+        raise SchemaError(f"{path} 应该是 true 或 false，实际是 {type(value).__name__}")
+    return value
+
+
+@dataclass(frozen=True, slots=True)
+class FundamentalsStage:
+    """七步中的一步。结论是引擎写好的句子，渲染层原样展示、不再组织语言。"""
+
+    step: int
+    key: str
+    title: str
+    #: None 表示这一步完全没有数据，不是 0 分——「没法判断」和「判断为差」
+    #: 是两件事，页面上要画成不同的样子。
+    score: float | None
+    coverage: float = 0.0
+    findings: tuple[str, ...] = ()
+
+    @classmethod
+    def from_dict(cls, data: Any, path: str) -> FundamentalsStage:
+        return cls(
+            step=_as_int(_require(data, "step", path), _join(path, "step")),
+            key=_as_str(_require(data, "key", path), _join(path, "key")),
+            title=_as_str(_require(data, "title", path), _join(path, "title")),
+            score=_opt_float(data.get("score"), _join(path, "score")),
+            coverage=_as_float(data.get("coverage", 0.0), _join(path, "coverage")),
+            findings=tuple(_str_list(data, "findings", path)),
+        )
+
+
+@dataclass(frozen=True, slots=True)
+class FundamentalsValuation:
+    """估值在自身历史中的位置。
+
+    **这一块是用户设定的假设层，不是方法论的结论。** 方法论第 7 步只做否决、
+    不给锚；「回到自身历史中位数」是叠加在上面的假设。页面必须把两者分开标注。
+    """
+
+    anchor: str
+    current: float | None
+    median: float | None
+    percentile: float | None
+    multiple_upside: float | None = None
+    #: 基本面在窗口内发生量级变化（如 NVDA 的 FCF 三年涨了 33 倍），历史中位数
+    #: 指向的已是另一家公司。为 True 时页面不展示回归空间。
+    regime_change: bool = False
+    verdict: str = ""
+    span_days: int = 0
+
+    @classmethod
+    def from_dict(cls, data: Any, path: str) -> FundamentalsValuation:
+        return cls(
+            anchor=_as_str(_require(data, "anchor", path), _join(path, "anchor")),
+            current=_opt_float(data.get("current"), _join(path, "current")),
+            median=_opt_float(data.get("median"), _join(path, "median")),
+            percentile=_opt_float(data.get("percentile"), _join(path, "percentile")),
+            multiple_upside=_opt_float(
+                data.get("multiple_upside"), _join(path, "multiple_upside")
+            ),
+            regime_change=_as_bool(
+                data.get("regime_change", False), _join(path, "regime_change")
+            ),
+            verdict=_as_str(data.get("verdict", ""), _join(path, "verdict"), allow_empty=True),
+            span_days=_as_int(data.get("span_days", 0), _join(path, "span_days")),
+        )
+
+
+@dataclass(frozen=True, slots=True)
+class FundamentalsRow:
+    """一只标的的七步法结果。
+
+    数字与结论由 ``scan_fundamentals.py`` 算好，``apply_fundamentals.py`` 原样
+    抄进简报；``note`` 是人写的一句判断，重跑时保留。
+    """
+
+    ticker: str
+    name: str
+    profile: str
+    profile_label: str
+    #: 最新年报的期末日。三家公司的"最新年报"常常不是同一个 12 个月
+    #: （NVDA 止于 1 月、AVGO 止于 10 月），页面必须把它印出来。
+    fiscal_end: str
+    currency: str
+    score: float
+    raw_score: float
+    grade: str
+    verdict: str
+    coverage: float
+    gate_warnings: tuple[str, ...] = ()
+    flags: tuple[str, ...] = ()
+    stages: tuple[FundamentalsStage, ...] = ()
+    valuation: FundamentalsValuation | None = None
+    note: str = ""
+
+    @property
+    def penalty(self) -> float:
+        """红旗扣掉的分数。"""
+        return max(0.0, self.raw_score - self.score)
+
+    @classmethod
+    def from_dict(cls, data: Any, path: str) -> FundamentalsRow:
+        stages = tuple(
+            FundamentalsStage.from_dict(v, f"{_join(path, 'stages')}[{i}]")
+            for i, v in enumerate(_as_list(data.get("stages") or [], _join(path, "stages")))
+        )
+        valuation_raw = data.get("valuation")
+        return cls(
+            ticker=_as_str(_require(data, "ticker", path), _join(path, "ticker")).upper(),
+            name=_as_str(_require(data, "name", path), _join(path, "name")),
+            profile=_as_enum(
+                _require(data, "profile", path), FUNDAMENTALS_PROFILES, _join(path, "profile")
+            ),
+            profile_label=_as_str(
+                data.get("profile_label", ""), _join(path, "profile_label"), allow_empty=True
+            ),
+            fiscal_end=_as_str(
+                data.get("fiscal_end", ""), _join(path, "fiscal_end"), allow_empty=True
+            ),
+            currency=_as_str(data.get("currency", ""), _join(path, "currency"), allow_empty=True),
+            score=_as_float(_require(data, "score", path), _join(path, "score")),
+            raw_score=_as_float(
+                data.get("raw_score", data.get("score")), _join(path, "raw_score")
+            ),
+            grade=_as_enum(_require(data, "grade", path), FUNDAMENTALS_GRADES, _join(path, "grade")),
+            verdict=_as_str(data.get("verdict", ""), _join(path, "verdict"), allow_empty=True),
+            coverage=_as_float(data.get("coverage", 0.0), _join(path, "coverage")),
+            gate_warnings=tuple(_str_list(data, "gate_warnings", path)),
+            flags=tuple(_str_list(data, "flags", path)),
+            stages=stages,
+            valuation=(
+                FundamentalsValuation.from_dict(valuation_raw, _join(path, "valuation"))
+                if valuation_raw else None
+            ),
+            note=_as_str(data.get("note", ""), _join(path, "note"), allow_empty=True),
+        )
+
+
+@dataclass(frozen=True, slots=True)
+class Fundamentals:
+    """基本面板块。"""
+
+    #: 扫描日期。财报本身按季更新，这里记的是「什么时候拉的数」。
+    asof: str
+    scanned: int = 0
+    source: str = ""
+    note: str = ""
+    rows: tuple[FundamentalsRow, ...] = ()
+
+    @classmethod
+    def from_dict(cls, data: Any, path: str) -> Fundamentals:
+        if not isinstance(data, dict):
+            raise SchemaError(f"{path} 应该是一个对象，实际是 {type(data).__name__}")
+        rows = tuple(
+            FundamentalsRow.from_dict(v, f"{path}.rows[{i}]")
+            for i, v in enumerate(_as_list(data.get("rows") or [], _join(path, "rows")))
+        )
+        return cls(
+            asof=_as_str(_require(data, "asof", path), _join(path, "asof")),
+            scanned=_as_int(data.get("scanned", 0), _join(path, "scanned")),
+            source=_as_str(data.get("source", ""), _join(path, "source"), allow_empty=True),
+            note=_as_str(data.get("note", ""), _join(path, "note"), allow_empty=True),
+            rows=rows,
+        )
+
+
+# ------------------------------------------------------------------- 市场热力
+
+#: 涨跌幅的钳位阈值（百分点）。超过这个值一律按最深一档画。
+#:
+#: **没有钳位的热力图会被单只妖股毁掉。** 色阶如果按当日最大涨幅归一化，
+#: 一只 +40% 的小票会把其余所有块压进同一个浅色区间，整张图退化成一片
+#: 灰绿——而读者真正要看的「今天科技板块是涨是跌」恰好就藏在那片灰绿里。
+#: 钳在 ±3% 上，是因为标普成分股单日波动的绝大多数落在这个区间内，
+#: 把色阶的分辨率全部留给常态。
+HEAT_CLAMP_PCT: float = 3.0
+
+#: 色阶档数（单边）。五档是「看得出差别」和「不至于眼花」之间的经验值。
+HEAT_LEVELS: int = 5
+
+#: 低于这个绝对值就算平盘，走中性色而不是极浅的绿或红。
+#: 没有这一档的话，+0.01% 和 -0.01% 会被画成两种颜色，暗示一个不存在的差别。
+HEAT_FLAT_PCT: float = 0.05
+
+
+#: 分档曲线的指数。1.0 是线性，小于 1 会把低幅度区间拉开。
+#:
+#: **这个值是看着真实数据调出来的，不是推导出来的。** 一开始用的是
+#: 平方根（0.5），理由听起来很对：日内波动集中在 0 附近，线性分档会让
+#: 绝大多数块挤在最浅的一两档，色阶等于白给。但把当天真实数据渲染出来
+#: 一看，满屏都是最亮的绿——+1.3% 这种再普通不过的涨幅就顶到了色阶
+#: 上限，于是「今天有没有异常」这个信息反而丢了。0.75 是重新渲染几轮
+#: 之后定的：常态波动落在中间档，亮色留给真正值得停一下的块。
+HEAT_CURVE: float = 0.75
+
+
+def heat_level(change_pct: float) -> str:
+    """把涨跌幅映射成色阶类名：``u1``–``u5`` / ``d1``–``d5`` / ``flat``。"""
+    if change_pct != change_pct:  # NaN
+        return "flat"
+    if abs(change_pct) < HEAT_FLAT_PCT:
+        return "flat"
+    ratio = min(abs(change_pct) / HEAT_CLAMP_PCT, 1.0) ** HEAT_CURVE
+    level = min(int(ratio * HEAT_LEVELS) + 1, HEAT_LEVELS)
+    return f"{'u' if change_pct > 0 else 'd'}{level}"
+
+
+@dataclass(frozen=True, slots=True)
+class SectorTile:
+    """热力图里的一块：一只股票。"""
+
+    ticker: str
+    change_pct: float
+    market_cap: float
+    name: str = ""
+
+    @property
+    def level(self) -> str:
+        return heat_level(self.change_pct)
+
+    @property
+    def signed(self) -> str:
+        """带符号的涨跌幅。**符号必须显式写出来**——纯靠颜色区分涨跌
+        对红绿色盲读者等于没有信息，这是整张热力图唯一的兜底。"""
+        return f"{self.change_pct:+.2f}%"
+
+    @classmethod
+    def from_dict(cls, data: Any, path: str) -> SectorTile:
+        if not isinstance(data, dict):
+            raise SchemaError(f"{path} 应该是一个对象，实际是 {type(data).__name__}")
+        return cls(
+            ticker=_as_str(_require(data, "ticker", path), _join(path, "ticker")),
+            change_pct=_as_float(
+                _require(data, "change_pct", path), _join(path, "change_pct")
+            ),
+            market_cap=_as_float(
+                _require(data, "market_cap", path), _join(path, "market_cap")
+            ),
+            name=_as_str(data.get("name", ""), _join(path, "name"), allow_empty=True),
+        )
+
+
+@dataclass(frozen=True, slots=True)
+class SectorBlock:
+    """一个行业。``change_pct`` 是市值加权的，不是简单平均。
+
+    简单平均会让一堆微型股盖过苹果，得出「科技板块大跌」而指数其实在涨的
+    结论。加权在抓取时算好写进 JSON，渲染层不做算术。
+    """
+
+    name: str
+    change_pct: float
+    market_cap: float
+    tiles: tuple[SectorTile, ...] = ()
+
+    @property
+    def level(self) -> str:
+        return heat_level(self.change_pct)
+
+    @property
+    def signed(self) -> str:
+        return f"{self.change_pct:+.2f}%"
+
+    @classmethod
+    def from_dict(cls, data: Any, path: str) -> SectorBlock:
+        if not isinstance(data, dict):
+            raise SchemaError(f"{path} 应该是一个对象，实际是 {type(data).__name__}")
+        tiles = tuple(
+            SectorTile.from_dict(v, f"{path}.tiles[{i}]")
+            for i, v in enumerate(_as_list(data.get("tiles") or [], _join(path, "tiles")))
+        )
+        return cls(
+            name=_as_str(_require(data, "name", path), _join(path, "name")),
+            change_pct=_as_float(
+                _require(data, "change_pct", path), _join(path, "change_pct")
+            ),
+            market_cap=_as_float(data.get("market_cap", 0), _join(path, "market_cap")),
+            tiles=tiles,
+        )
+
+
+@dataclass(frozen=True, slots=True)
+class Market:
+    """市场热力板块：若干行业，每个行业里若干股票。"""
+
+    asof: str
+    source: str = ""
+    note: str = ""
+    sectors: tuple[SectorBlock, ...] = ()
+
+    @property
+    def ranked(self) -> tuple[SectorBlock, ...]:
+        """按当日涨跌排序，最强的在前。
+
+        不按市值排，是因为按市值排每天的顺序都一样，版面就没有信息了；
+        按涨跌排，「今天谁在领涨」这件事由位置本身表达。
+        """
+        return tuple(sorted(self.sectors, key=lambda s: -s.change_pct))
+
+    @classmethod
+    def from_dict(cls, data: Any, path: str) -> Market:
+        if not isinstance(data, dict):
+            raise SchemaError(f"{path} 应该是一个对象，实际是 {type(data).__name__}")
+        sectors = tuple(
+            SectorBlock.from_dict(v, f"{path}.sectors[{i}]")
+            for i, v in enumerate(
+                _as_list(data.get("sectors") or [], _join(path, "sectors"))
+            )
+        )
+        return cls(
+            asof=_as_str(_require(data, "asof", path), _join(path, "asof")),
+            source=_as_str(data.get("source", ""), _join(path, "source"), allow_empty=True),
+            note=_as_str(data.get("note", ""), _join(path, "note"), allow_empty=True),
+            sectors=sectors,
+        )
+
+
 @dataclass(frozen=True, slots=True)
 class Brief:
     """一天的完整简报。"""
@@ -637,6 +956,8 @@ class Brief:
     calendar: tuple[CalendarEntry, ...] = ()
     mag7: Mag7 | None = None
     momentum: Momentum | None = None
+    fundamentals: Fundamentals | None = None
+    market: Market | None = None
     #: 覆写时效上限。周日与周一的前瞻版覆盖整个周末，用得上。
     max_age_days: int | None = None
 
@@ -715,6 +1036,8 @@ class Brief:
 
         mag7_raw = data.get("mag7")
         momentum_raw = data.get("momentum")
+        fundamentals_raw = data.get("fundamentals")
+        market_raw = data.get("market")
         max_age = data.get("max_age_days")
 
         return cls(
@@ -730,6 +1053,11 @@ class Brief:
             calendar=calendar,
             mag7=Mag7.from_dict(mag7_raw, "mag7") if mag7_raw else None,
             momentum=Momentum.from_dict(momentum_raw, "momentum") if momentum_raw else None,
+            fundamentals=(
+                Fundamentals.from_dict(fundamentals_raw, "fundamentals")
+                if fundamentals_raw else None
+            ),
+            market=Market.from_dict(market_raw, "market") if market_raw else None,
             max_age_days=(
                 _as_int(max_age, "max_age_days") if max_age is not None else None
             ),

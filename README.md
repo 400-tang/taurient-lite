@@ -19,10 +19,15 @@
 - **独立的日历标签页**：接下来的事件摆在滚动周网格上，哪几天扎堆一眼可见；
   日期没定的事件（比如还没排期的 FOMC 决议）单独列在「日期待定」，
   不会为了视觉整齐编一个假日期
-- **独立的异动标签页**：每天开盘前扫约 2500 只流动性达标的美股，按「离起涨点
-  多近」分成初动/延续/基底/已延伸四档。它解决的是「等我从新闻里知道，
-  这波已经走完了」——新闻天然滞后，价量不滞后。每只标的都标注当天的新闻
-  覆盖度，而且是**反着读**的：无报道 = 市场还没注意到 = 线索最早
+- **板块热力**：独立的「市场」标签页。十一个行业各一张矩形树图，块的大小
+  按市值、颜色按当日涨跌幅，行业按当日强弱从左到右排。它回答的是别的板块
+  都回答不了的一个问题——今天钱往哪个方向流。不做成涨幅榜，是因为涨幅榜
+  天然只给极值，而极值几乎全是微型股和消息股；热力图里大公司天然占大块，
+  这正是它比排行榜诚实的地方
+- **价量异动**：每天开盘前扫约 2500 只流动性达标的美股，按「离起涨点多近」
+  分成初动/延续/基底/已延伸四档。它解决的是「等我从新闻里知道，这波已经
+  走完了」——新闻天然滞后，价量不滞后。初动档（通常只有个位数）直接摆在
+  简报首页，完整指标在独立的「异动」标签页
 
 ## 覆盖范围
 
@@ -40,6 +45,7 @@ taurient-lite/
 ├── fetch_quotes.py         命令行入口：取行情
 ├── scan_momentum.py        命令行入口：全市场价量异动扫描
 ├── apply_momentum.py       命令行入口：把扫描结果写进当天的简报 JSON
+├── fetch_sectors.py        命令行入口：抓全市场行业分类与市值，算板块热力
 ├── fetch_short_interest.py 命令行入口：查 FINRA 官方空头持仓
 ├── import_watchlist.py     导入 TradingView 的自选股导出
 ├── render.yaml             Render 部署配置（Blueprint）
@@ -53,13 +59,14 @@ taurient-lite/
 │   ├── pipeline.py         编排
 │   ├── quotes.py           行情抓取
 │   ├── momentum.py         价量异动判定，纯函数
+│   ├── treemap.py          矩形树图布局，纯几何
 │   └── short_interest.py   FINRA 空头持仓抓取，研究/核实工具
 ├── backend/                Web 后端，部署在 Render，唯一需要装依赖的地方
 │   ├── server.py           FastAPI，复用 taurient_lite，不重新实现逻辑
 │   ├── auth_panel.py       登录与个人自选股面板（Supabase），backend 独有
 │   ├── requirements.txt    fastapi / uvicorn / httpx
 │   └── test_server.py      路由测试，独立于主测试套件
-├── tests/                  296 个用例，零依赖
+├── tests/                  366 个用例，零依赖
 ├── briefs/                 每日 JSON（真相来源）与 Markdown 存档
 └── site/index.html         渲染产物，发布成 Artifact
 ```
@@ -79,8 +86,7 @@ taurient-lite/
    空头持仓用 `fetch_short_interest.py` 查 FINRA 官方数据
 2. 筛选：同一事件跨媒体合并，来源数量当重要性信号，分成三层
 3. 写 JSON：必读层补齐资产矩阵、交叉信源、历史脉络
-4. 取行情并渲染：`fetch_quotes.py` 然后 `render.py`；异动候选从
-   `data/momentum_scan.json` 里挑，补上新闻覆盖度和一句话
+4. 取行情并渲染：`fetch_quotes.py`、`apply_momentum.py`，然后 `render.py`
 5. 发布到同一个 Artifact 链接，归档提交回 GitHub
 
 ## 定时运行
@@ -309,7 +315,7 @@ python3 render.py 2026-09-06
 python3 -m unittest discover -s tests -t .
 ```
 
-243 个用例，只用标准库。改完 `taurient_lite/` 下的任何文件都要跑一遍。
+366 个用例，只用标准库。改完 `taurient_lite/` 下的任何文件都要跑一遍。
 覆盖反序列化的每条校验规则、组件的空数据分支、主题三个块的完整性、
 HTML 转义、行情解析与重试路径、以及临时目录里的端到端渲染。
 
