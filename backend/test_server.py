@@ -65,7 +65,11 @@ class TestIndex(unittest.TestCase):
         self.assertIn('class="sheet"', body)
 
     def test_defaults_to_latest_when_no_date_given(self):
-        response = client.get("/")
+        # 不带 date 会走实时取数，测试里一律挡掉：测试不该依赖外网，
+        # 也不该因为 Yahoo 限流而变红。
+        with patch("backend.server.live.live_mag7", return_value=None), \
+             patch("backend.server.live.live_market", return_value=None):
+            response = client.get("/")
         self.assertEqual(response.status_code, 200)
 
     def test_missing_date_is_404_not_500(self):
@@ -177,5 +181,187 @@ class TestApiShortInterest(unittest.TestCase):
         self.assertEqual(response.status_code, 502)
 
 
+
+class SearchRouteTest(unittest.TestCase):
+    """``/api/search`` 供自选股面板做自动补全。网络照例 patch 掉。"""
+
+    def setUp(self):
+        self.client = TestClient(app)
+
+    def test_empty_query_returns_empty_list(self):
+        """用户还在打字时的空查询是正常状态，不是错误——
+        返回 4xx 会让前端把中间状态显示成失败。"""
+        response = self.client.get("/api/search", params={"q": ""})
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.json(), [])
+
+    def test_overlong_query_rejected(self):
+        response = self.client.get("/api/search", params={"q": "x" * 200})
+        self.assertEqual(response.status_code, 400)
+
+    def test_returns_matches(self):
+        from .search import Match
+
+        with patch("backend.server.search", return_value=[Match("AAPL", "Apple Inc.", "NasdaqGS")]):
+            response = self.client.get("/api/search", params={"q": "apple"})
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.json()[0]["symbol"], "AAPL")
+
+    def test_upstream_failure_is_502(self):
+        """上游真的挂了要如实报错，前端才知道该退回老行为，
+        而不是把「搜索坏了」显示成「没有匹配结果」。"""
+        from .search import SearchError
+
+        with patch("backend.server.search", side_effect=SearchError("boom")):
+            response = self.client.get("/api/search", params={"q": "apple"})
+        self.assertEqual(response.status_code, 502)
+
+
 if __name__ == "__main__":
     unittest.main()
+
+class TestLiveData(unittest.TestCase):
+    """页面上的数字是现场取的，新闻仍是每天一次的批处理产物。
+
+    这组测试全部把上游挡掉：测试不该依赖外网，也不该因为 Yahoo 或
+    Nasdaq 限流而变红。
+    """
+
+    MARKET = {
+        "asof": "14:32 ET",
+        "session": "intraday",
+        "source": "Nasdaq screener",
+        "sectors": [
+            {
+                "name": "科技",
+                "change_pct": 1.23,
+                "market_cap": 1e12,
+                "tiles": [
+                    {"ticker": "LIVE", "name": "Live Inc.",
+                     "change_pct": 2.5, "market_cap": 1e12}
+                ],
+            }
+        ],
+    }
+
+    MAG7 = {
+        "asof": "盘中 · 9/18 14:32 ET",
+        "rows": [{"ticker": "NVDA", "price": "999.99", "change_pct": 3.21}],
+        "source": "Yahoo Finance chart endpoint",
+    }
+
+    def test_historic_date_never_gets_live_numbers(self):
+        """翻看旧简报时必须是那天的数字。
+
+        给一份旧简报配今天的行情，读者会把两者当成同一天的事实——
+        整个项目反复在防的就是这类错配。
+        """
+        with patch("backend.server.live.live_mag7") as mag7, \
+             patch("backend.server.live.live_market") as market:
+            response = client.get(f"/?date={REAL_DATE}")
+        self.assertEqual(response.status_code, 200)
+        mag7.assert_not_called()
+        market.assert_not_called()
+
+    def test_latest_page_uses_live_numbers(self):
+        with patch("backend.server.live.live_mag7", return_value=self.MAG7), \
+             patch("backend.server.live.live_market", return_value=self.MARKET):
+            html = client.get("/").text
+        self.assertIn("LIVE", html)
+        self.assertIn("999.99", html)
+
+    def test_intraday_page_says_intraday_not_close(self):
+        """盘中数据绝不能标成「截至某日收盘」。"""
+        with patch("backend.server.live.live_mag7", return_value=None), \
+             patch("backend.server.live.live_market", return_value=self.MARKET):
+            html = client.get("/").text
+        self.assertIn("盘中 · 14:32 ET", html)
+
+    def test_falls_back_to_the_archive_when_upstream_is_down(self):
+        with patch("backend.server.live.live_mag7", return_value=None), \
+             patch("backend.server.live.live_market", return_value=None):
+            response = client.get("/")
+        self.assertEqual(response.status_code, 200)
+
+    def test_malformed_live_data_falls_back_instead_of_500(self):
+        """上游格式变了也不能让整页崩掉。"""
+        with patch("backend.server.live.live_mag7", return_value={"rows": []}), \
+             patch("backend.server.live.live_market", return_value={"nope": 1}):
+            response = client.get("/")
+        self.assertEqual(response.status_code, 200)
+
+
+class TestApiSectors(unittest.TestCase):
+    def test_returns_the_live_block(self):
+        with patch("backend.server.live.live_market",
+                   return_value=TestLiveData.MARKET):
+            response = client.get("/api/sectors")
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.json()["session"], "intraday")
+
+    def test_upstream_failure_is_502(self):
+        with patch("backend.server.live.live_market", return_value=None):
+            response = client.get("/api/sectors")
+        self.assertEqual(response.status_code, 502)
+
+
+class TestCache(unittest.TestCase):
+    """缓存存在的理由是别把上游打爆，所以它必须真的挡住重复调用。"""
+
+    def test_second_call_within_ttl_does_not_hit_upstream(self):
+        from backend.live import _Cached
+        calls = []
+
+        def produce():
+            calls.append(1)
+            return {"v": len(calls)}
+
+        cache = _Cached(ttl=60.0)
+        self.assertEqual(cache.get(produce), {"v": 1})
+        self.assertEqual(cache.get(produce), {"v": 1})
+        self.assertEqual(len(calls), 1)
+
+    def test_expired_entry_is_refetched(self):
+        from backend.live import _Cached
+        calls = []
+
+        def produce():
+            calls.append(1)
+            return len(calls)
+
+        cache = _Cached(ttl=0.0)
+        cache.get(produce)
+        cache.get(produce)
+        self.assertEqual(len(calls), 2)
+
+    def test_failure_is_cached_too(self):
+        """上游挂掉时不记时间戳的话，每个请求都会重试一次，
+        页面从「慢一点」变成「每次都卡满超时」。"""
+        from backend.live import _Cached
+        from taurient_lite.sectors import SectorError
+        calls = []
+
+        def boom():
+            calls.append(1)
+            raise SectorError("上游挂了")
+
+        cache = _Cached(ttl=60.0)
+        self.assertIsNone(cache.get(boom))
+        self.assertIsNone(cache.get(boom))
+        self.assertEqual(len(calls), 1)
+
+
+class TestQuoteAsof(unittest.TestCase):
+    def test_intraday_timestamp_is_not_called_a_close(self):
+        from backend.live import quote_asof
+        from taurient_lite.sectors import EASTERN
+        moment = dt.datetime(2026, 9, 18, 14, 32, tzinfo=EASTERN)
+        label = quote_asof(int(moment.timestamp()))
+        self.assertIn("盘中", label)
+        self.assertNotIn("收盘", label)
+
+    def test_after_hours_timestamp_keeps_the_close_wording(self):
+        from backend.live import quote_asof
+        from taurient_lite.sectors import EASTERN
+        moment = dt.datetime(2026, 9, 18, 18, 5, tzinfo=EASTERN)
+        self.assertIn("收盘", quote_asof(int(moment.timestamp())))

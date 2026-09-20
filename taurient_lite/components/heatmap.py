@@ -153,7 +153,7 @@ def market_tab(market: Market | None) -> str:
             '<section class="board">',
             '<div class="board-head">',
             '<h2 class="board-title">板块热力</h2>',
-            f'<span class="board-asof">截至 {esc(market.asof)} 收盘</span>',
+            f'<span class="board-asof">{esc(market.asof_label)}</span>',
             "</div>",
             '<div class="sec-rail">',
             join(cards),

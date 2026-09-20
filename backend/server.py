@@ -8,6 +8,8 @@
 2. **任意股票查询。** 不限于 `config.json` 里固定的七巨头或自选股，
    ``/api/short-interest/{ticker}`` 能查任何一只股票在 FINRA 的
    最新空头持仓。
+3. **按名字找代码。** ``/api/search`` 让自选股面板能做自动补全——
+   在此之前用户必须知道确切代码才能添加，不知道 AAPL 就加不了苹果。
 
 **这个服务不做新闻抓取、不做 LLM 判断。** 每天的新闻扫描、分层、
 深度元数据这些需要模型去读原文、做取舍的活，还是云端的 Claude Code
@@ -27,6 +29,7 @@ from __future__ import annotations
 
 import json
 import re
+from dataclasses import replace
 from pathlib import Path
 
 from fastapi import FastAPI, HTTPException, Query
@@ -36,10 +39,11 @@ from taurient_lite.config import Config
 from taurient_lite.html_renderer import render_body, render_head
 from taurient_lite.pipeline import Paths, PipelineError, latest_date, load_brief
 from taurient_lite.quotes import Quote, QuoteError, fetch_quote
-from taurient_lite.schema import Brief
+from taurient_lite.schema import Brief, Mag7, Market, SchemaError
 from taurient_lite.short_interest import ShortInterestError, fetch_latest
 
-from . import auth_panel
+from . import auth_panel, live
+from .search import MAX_RESULTS, SearchError, search
 
 ROOT = Path(__file__).resolve().parent.parent
 PATHS = Paths(ROOT)
@@ -88,6 +92,39 @@ def _wrap_page(brief: Brief, config: Config) -> str:
     )
 
 
+def _with_live_data(brief: Brief, config: Config, requested_date: str | None) -> Brief:
+    """把行情与板块热力换成现场取的实时数据。
+
+    **只对最新那份简报生效。** 翻看 ``?date=2026-09-10`` 这种历史存档时，
+    页面上必须是那天的数字——给一份旧简报配今天的行情，读者会把两者当成
+    同一天的事实，而那正是这个项目反复在防的错误。
+
+    取不到就原样返回：实时数据是锦上添花，Yahoo 或 Nasdaq 不通的时候，
+    页面该照常显示存档里的收盘数字，而不是整页 502。
+    """
+    if requested_date is not None:
+        return brief
+
+    updates: dict = {}
+
+    previous = {"note": brief.mag7.note} if brief.mag7 else None
+    mag7 = live.live_mag7(tuple(config.mag7), previous)
+    if mag7:
+        try:
+            updates["mag7"] = Mag7.from_dict(mag7, "mag7")
+        except SchemaError:
+            pass
+
+    market = live.live_market()
+    if market:
+        try:
+            updates["market"] = Market.from_dict(market, "market")
+        except SchemaError:
+            pass
+
+    return replace(brief, **updates) if updates else brief
+
+
 @app.get("/health")
 def health() -> dict:
     """给 Render 的健康检查用。"""
@@ -101,6 +138,10 @@ def index(date: str | None = Query(default=None, description="YYYY-MM-DD，缺�
     跟 Artifact 上那份的区别：Artifact 是「发布」出去的静态快照，
     这里每次请求都重新读一遍 `briefs/` 目录、重新渲染一遍——如果
     云端任务刚推送了新的一天，这里立刻就是最新的，不需要任何手动发布。
+
+    **行情与板块热力还会就地换成实时的**（见 :func:`_with_live_data`）。
+    新闻仍然是每天一次的批处理产物，因为那部分需要模型判断；但数字不该
+    跟着新闻一起等到明天早上。
     """
     try:
         target = date or latest_date(PATHS)
@@ -109,7 +150,7 @@ def index(date: str | None = Query(default=None, description="YYYY-MM-DD，缺�
         raise HTTPException(status_code=404, detail=str(exc)) from exc
 
     config = Config.load(PATHS.config)
-    return HTMLResponse(_wrap_page(brief, config))
+    return HTMLResponse(_wrap_page(_with_live_data(brief, config, date), config))
 
 
 @app.get("/api/brief")
@@ -167,6 +208,31 @@ def api_quotes_live() -> list[dict]:
     return results
 
 
+@app.get("/api/search")
+def api_search(
+    q: str = Query(default="", description="公司名或代码，支持中文常用名"),
+    limit: int = Query(default=MAX_RESULTS, ge=1, le=MAX_RESULTS),
+) -> list[dict]:
+    """按名字或代码搜股票，供自选股面板的自动补全使用。
+
+    **搜不到返回空数组而不是报错。** 用户还在往输入框里打字时，
+    每一次按键都会打到这里，「还没打完所以没有结果」是正常状态，
+    不是错误——返回 4xx 会让前端把正常的中间状态显示成失败。
+
+    上游挂掉才返回 502：那是真的坏了，前端应该退回「只能输精确代码」
+    的老行为，而不是假装搜索结果为空。
+    """
+    term = (q or "").strip()
+    if len(term) > 64:
+        raise HTTPException(status_code=400, detail="查询词过长")
+    if not term:
+        return []
+    try:
+        return [m.as_dict() for m in search(term, limit=limit)]
+    except SearchError as exc:
+        raise HTTPException(status_code=502, detail=str(exc)) from exc
+
+
 @app.get("/api/short-interest/{ticker}")
 def api_short_interest(ticker: str) -> dict:
     """查任意一只股票在 FINRA 的最新空头持仓快照。"""
@@ -187,3 +253,17 @@ def api_short_interest(ticker: str) -> dict:
         "avg_daily_volume": record.avg_daily_volume,
         "citation": record.as_citation(),
     }
+
+
+@app.get("/api/sectors")
+def api_sectors() -> JSONResponse:
+    """现场抓一份板块热力数据，绕开简报里存档的那份。
+
+    页面自己已经在用它了（见 `_with_live_data`），单独开一个路由是为了
+    让别的程序也能拿到同一份数据，跟 `/api/quotes/live` 对 `mag7` 的关系
+    完全一样。走的是同一个缓存，所以频繁调用不会真的去打 Nasdaq。
+    """
+    block = live.live_market()
+    if not block:
+        raise HTTPException(status_code=502, detail="板块数据暂时取不到")
+    return JSONResponse(block)

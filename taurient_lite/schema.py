@@ -904,14 +904,34 @@ class SectorBlock:
         )
 
 
+#: ``market.session`` 的取值。``close`` 是走完的交易日收盘，``intraday``
+#: 是还在变动的盘中快照。
+MARKET_SESSIONS: tuple[str, ...] = ("close", "intraday")
+
+
 @dataclass(frozen=True, slots=True)
 class Market:
     """市场热力板块：若干行业，每个行业里若干股票。"""
 
     asof: str
+    #: 这份数据是哪种时点。缺省是 ``close``——简报 JSON 里存档的那份永远
+    #: 是收盘数据，只有后端现场抓的才可能是盘中。
+    session: str = "close"
     source: str = ""
     note: str = ""
     sectors: tuple[SectorBlock, ...] = ()
+
+    @property
+    def asof_label(self) -> str:
+        """页面上那行小字。
+
+        **盘中数据绝不能写成「截至某日收盘」。** 那是在陈述一个没有发生的
+        事实：盘中取到的价格还在变，标成收盘价，读者会拿它当当天的定论。
+        ``momentum.py`` 里记过同一个教训的代价——数字没错，错的是标注。
+        """
+        if self.session == "intraday":
+            return f"盘中 · {self.asof}"
+        return f"截至 {self.asof} 收盘"
 
     @property
     def ranked(self) -> tuple[SectorBlock, ...]:
@@ -934,6 +954,9 @@ class Market:
         )
         return cls(
             asof=_as_str(_require(data, "asof", path), _join(path, "asof")),
+            session=_as_enum(
+                data.get("session", "close"), MARKET_SESSIONS, _join(path, "session")
+            ),
             source=_as_str(data.get("source", ""), _join(path, "source"), allow_empty=True),
             note=_as_str(data.get("note", ""), _join(path, "note"), allow_empty=True),
             sectors=sectors,
