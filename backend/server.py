@@ -28,6 +28,8 @@
 from __future__ import annotations
 
 import json
+import os
+import platform
 import re
 from dataclasses import replace
 from pathlib import Path
@@ -129,8 +131,20 @@ def _with_live_data(brief: Brief, config: Config, requested_date: str | None) ->
 
 @app.get("/health")
 def health() -> dict:
-    """给 Render 的健康检查用。"""
-    return {"status": "ok"}
+    """给 Render 的健康检查用，同时报告**跑的是哪个版本**。
+
+    **加这两个字段是有代价换来的。** 部署失败时 Render 会继续跑上一个成功
+    的构建，于是所有路由照样 200，从外面看服务是好的——这个项目已经因此
+    误判过一次：连着两次推送都没真正上线，而检查脚本一路绿灯。
+
+    有了这两个字段，「线上跑的是不是我刚推的那个提交」就是一个可以直接
+    查的事实，不再靠猜路由在不在。commit 由 Render 注入，本地跑时为空。
+    """
+    return {
+        "status": "ok",
+        "python": platform.python_version(),
+        "commit": os.environ.get("RENDER_GIT_COMMIT", "")[:7],
+    }
 
 
 @app.get("/", response_class=HTMLResponse)

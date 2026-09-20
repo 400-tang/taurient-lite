@@ -44,7 +44,18 @@ class TestHealth(unittest.TestCase):
     def test_ok(self):
         response = client.get("/health")
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.json(), {"status": "ok"})
+        self.assertEqual(response.json()["status"], "ok")
+
+    def test_reports_the_running_python(self):
+        """部署失败时 Render 会继续跑旧构建，所有路由照样 200。
+        报出解释器版本，「线上跑的是不是我刚推的那个」才是可查的事实。"""
+        import platform as pf
+        self.assertEqual(client.get("/health").json()["python"], pf.python_version())
+
+    def test_commit_is_present_even_when_empty(self):
+        """本地没有 RENDER_GIT_COMMIT，字段要在但可以是空串——
+        缺字段会让检查脚本报 KeyError，而不是报告「认不出版本」。"""
+        self.assertIn("commit", client.get("/health").json())
 
 
 class TestIndex(unittest.TestCase):
