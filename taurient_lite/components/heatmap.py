@@ -70,8 +70,24 @@ def _fit(width: float, height: float) -> str:
     return "bare"
 
 
-def sector_card(block: SectorBlock) -> str:
-    """一个行业的卡片：标题行加一张树图。"""
+def stock_href(ticker: str, base: str) -> str:
+    """个股页的链接。``base`` 为空时返回空串，调用方据此退回不可点的色块。
+
+    **用绝对地址而不是 ``/stock/X``。** 这个组件的产出有两个去处：后端
+    渲染的页面，和提交进仓库、可能被单独打开的 `site/index.html`。相对
+    路径在后者里指向的是文件系统，点了就是 404；绝对地址两边都对。
+    """
+    if not base:
+        return ""
+    return f"{base.rstrip('/')}/stock/{ticker}"
+
+
+def sector_card(block: SectorBlock, *, base_url: str = "") -> str:
+    """一个行业的卡片：标题行加一张树图。
+
+    ``base_url`` 给出后端地址时，每个色块变成通向个股 K 线页的链接；
+    不给就是普通色块——静态产物没有后端可去，不该渲染出点了会 404 的链接。
+    """
     tiles = sorted(block.tiles, key=lambda t: -t.market_cap)[:MAX_TILES]
     if not tiles:
         return ""
@@ -89,12 +105,15 @@ def sector_card(block: SectorBlock) -> str:
         hint = f"{tile.ticker} {tile.signed}"
         if tile.name:
             hint = f"{tile.ticker} · {tile.name} {tile.signed}"
+        href = stock_href(tile.ticker, base_url)
+        tag, close = ("a", "a") if href else ("div", "div")
+        link = f' href="{esc(href)}"' if href else ""
         cells.append(
-            f'<div class="tile {tile.level}{" " + fit if fit else ""}" '
-            f'style="{rect.style(gap=TILE_GAP)}"{attr("title", hint)}>'
+            f'<{tag} class="tile {tile.level}{" " + fit if fit else ""}" '
+            f'style="{rect.style(gap=TILE_GAP)}"{link}{attr("title", hint)}>'
             f'<span class="tile-tk">{esc(tile.ticker)}</span>'
             f'<span class="tile-ch">{esc(tile.signed)}</span>'
-            f"</div>"
+            f"</{close}>"
         )
 
     return join(
@@ -133,12 +152,15 @@ def legend() -> str:
     return "".join(bits)
 
 
-def market_tab(market: Market | None) -> str:
-    """「市场」标签页的全部内容。没有数据就返回空串，标签页自动消失。"""
+def market_tab(market: Market | None, *, base_url: str = "") -> str:
+    """「市场」标签页的全部内容。没有数据就返回空串，标签页自动消失。
+
+    ``base_url`` 透传给每张卡片，决定色块是不是通向个股 K 线页的链接。
+    """
     if market is None or not market.sectors:
         return ""
 
-    cards = [sector_card(b) for b in market.ranked]
+    cards = [sector_card(b, base_url=base_url) for b in market.ranked]
     cards = [c for c in cards if c]
     if not cards:
         return ""
@@ -147,6 +169,8 @@ def market_tab(market: Market | None) -> str:
         "块的大小按市值，颜色按当日涨跌幅，行业按当日强弱从左到右排。"
         "每块都带符号数字，不依赖颜色也能读。"
     )
+    if base_url:
+        note += "点色块看这只票的 K 线。"
 
     return join(
         [

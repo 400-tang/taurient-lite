@@ -65,7 +65,7 @@ def render_body(brief: Brief, config: Config) -> str:
     """
     brief_html = _brief_tab(brief, config)
     calendar_html = C.calendar_tab(brief)
-    market_html = C.market_tab(brief.market)
+    market_html = C.market_tab(brief.market, base_url=config.backend_url)
     momentum_html = C.momentum_tab(brief.momentum)
     fundamentals_html = C.fundamentals_tab(brief.fundamentals)
 

@@ -30,6 +30,7 @@ from unittest.mock import patch
 from fastapi.testclient import TestClient
 
 from backend.server import app
+from taurient_lite.history import Bar, HistoryError
 from taurient_lite.quotes import Quote, QuoteError
 from taurient_lite.short_interest import ShortInterestError, ShortInterestRecord
 
@@ -365,3 +366,80 @@ class TestQuoteAsof(unittest.TestCase):
         from taurient_lite.sectors import EASTERN
         moment = dt.datetime(2026, 9, 18, 18, 5, tzinfo=EASTERN)
         self.assertIn("收盘", quote_asof(int(moment.timestamp())))
+
+
+class TestApiHistory(unittest.TestCase):
+    BARS = [
+        Bar("2026-09-17", 10.0, 11.0, 9.0, 10.5, 1000),
+        Bar("2026-09-18", 10.5, 12.0, 10.0, 11.5, 2000),
+    ]
+
+    def test_returns_chart_ready_shapes(self):
+        with patch("backend.server.fetch_history", return_value=self.BARS):
+            body = client.get("/api/history/AAPL").json()
+        self.assertEqual(body["ticker"], "AAPL")
+        self.assertEqual(body["candles"][0],
+                         {"time": "2026-09-17", "open": 10.0, "high": 11.0,
+                          "low": 9.0, "close": 10.5})
+        self.assertEqual(body["stats"]["bars"], 2)
+
+    def test_volume_colours_come_from_the_server(self):
+        """「这根是涨是跌」的判据只应该有一处，前端再判一次迟早会不一致。"""
+        with patch("backend.server.fetch_history", return_value=self.BARS):
+            body = client.get("/api/history/AAPL").json()
+        self.assertTrue(all("color" in v for v in body["volumes"]))
+
+    def test_unknown_range_is_400(self):
+        response = client.get("/api/history/AAPL?range=99y")
+        self.assertEqual(response.status_code, 400)
+
+    def test_bad_ticker_is_400(self):
+        self.assertEqual(client.get("/api/history/123$%").status_code, 400)
+
+    def test_upstream_failure_is_502(self):
+        with patch("backend.server.fetch_history",
+                   side_effect=HistoryError("上游挂了")):
+            self.assertEqual(client.get("/api/history/AAPL").status_code, 502)
+
+
+class TestStockPage(unittest.TestCase):
+    def test_renders_a_chart_container_and_the_library(self):
+        with patch("backend.server.fetch_history",
+                   return_value=TestApiHistory.BARS), \
+             patch("backend.server.resolve", return_value=None):
+            html = client.get("/stock/AAPL").text
+        self.assertIn('id="chart"', html)
+        self.assertIn("lightweight-charts", html)
+        self.assertIn("AAPL", html)
+
+    def test_data_is_inlined_so_the_chart_does_not_wait_for_a_round_trip(self):
+        with patch("backend.server.fetch_history",
+                   return_value=TestApiHistory.BARS), \
+             patch("backend.server.resolve", return_value=None):
+            html = client.get("/stock/AAPL").text
+        self.assertIn('"time": "2026-09-18"', html)
+
+    def test_selected_range_is_marked(self):
+        with patch("backend.server.fetch_history",
+                   return_value=TestApiHistory.BARS), \
+             patch("backend.server.resolve", return_value=None):
+            html = client.get("/stock/AAPL?range=1y").text
+        self.assertIn('class="range-btn on" href="?range=1y"', html)
+
+    def test_name_lookup_failure_does_not_break_the_page(self):
+        """公司名是锦上添花，查不到就只显示代码。"""
+        from backend.search import SearchError as SE
+        with patch("backend.server.fetch_history",
+                   return_value=TestApiHistory.BARS), \
+             patch("backend.server.resolve", side_effect=SE("搜索挂了")):
+            response = client.get("/stock/AAPL")
+        self.assertEqual(response.status_code, 200)
+
+    def test_upstream_failure_is_502_not_a_blank_chart(self):
+        with patch("backend.server.fetch_history",
+                   side_effect=HistoryError("上游挂了")):
+            self.assertEqual(client.get("/stock/AAPL").status_code, 502)
+
+    def test_escapes_hostile_ticker(self):
+        """代码来自 URL，属于不可信输入。"""
+        self.assertEqual(client.get("/stock/<script>").status_code, 400)

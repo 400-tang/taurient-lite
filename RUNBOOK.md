@@ -261,13 +261,24 @@ Nasdaq，所以云端任务应当读 GitHub Actions 已经提交好的 `data/sec
 - **质量警告**只打印不阻断：条目超时效、条数不足、`rank` 不连续、缺 `published`、
   必读层没有深度元数据。看到警告就回去补，补不了也能发布。
 
-## 第 5 步 · 发布
+## 第 5 步 · 提交
 
-用 Artifact 工具发布 `site/index.html`，**必须**把 `config.json` 里的 `artifact_url`
-作为 `url` 参数传进去，这样链接保持不变。发布前先 `action: "read"` 读一次线上版本。
-不要传 `favicon`。
+`git add` 改动的简报 JSON、Markdown 存档、`site/index.html` 与 `data/` 下的快照，
+提交并推送到 `main`。**推送即上线**：Render 读到新提交会自动重新部署，
+`https://taurient-lite-backend.onrender.com/` 随即是最新的一份。
 
-发布完成后给 Eddie 一句话：今天的主线是什么，加上链接。
+推送完成后给 Eddie 一句话：今天的主线是什么，加上 Render 的链接。
+
+### 关于 Artifact（已降级为按需）
+
+**这一步不再每天做。** Artifact 那份是静态快照，Eddie 日常读的是 Render 页面，
+而静态页拿不到现场取数（行情、板块热力都是活的），也跑不了外部脚本（K 线图表库
+在那边用不了）。每天维护它的结果是：一个没人看的页面，还会拖住这边的技术选择——
+每加一个交互功能都要迁就能力更弱的那个出口。
+
+要一个随时秒开、不受 Render 休眠影响的分享链接时，再手动发一次：用 Artifact 工具
+发布 `site/index.html`，把 `config.json` 里的 `artifact_url` 作为 `url` 参数传进去，
+这样链接保持不变；发布前先 `action: "read"` 读一次线上版本；不要传 `favicon`。
 
 ---
 

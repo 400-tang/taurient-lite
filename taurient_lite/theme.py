@@ -1614,6 +1614,12 @@ HEATMAP_CSS = """
 
 .tile-ch { font-size: var(--t-2xs); opacity: 0.85; }
 
+/* 色块可能是链接（通向个股 K 线页），也可能只是色块。两种形态必须长得
+   一模一样，所以在这里把链接的默认装饰全部抹掉，颜色交给档位规则。 */
+a.tile { text-decoration: none; cursor: pointer; }
+a.tile:hover { outline: 2px solid var(--heat-ink); outline-offset: -2px; }
+a.tile:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+
 /* 小块降级：放不下两行就只留代码，再小就只剩色块。
    不降级的话文字会溢出成一团糊，比没有文字更糟。 */
 .tile.compact .tile-ch { display: none; }

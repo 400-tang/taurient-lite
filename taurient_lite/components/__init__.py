@@ -4,7 +4,7 @@ from .base import attr, classes, esc, join, section_head
 from .calendar import calendar_tab
 from .depth import asset_matrix, cross_source_card, depth_block, history_card
 from .fundamentals import fundamentals_tab
-from .heatmap import legend, market_tab, sector_card
+from .heatmap import legend, market_tab, sector_card, stock_href
 from .items import age_badge, all_tiers, render_item, tier_section
 from .momentum import candidate_card, momentum_strip, momentum_tab, stage_group
 from .panels import masthead, mag7_chart, mag7_panel, tape_panel, watchlist_panel
@@ -30,6 +30,7 @@ __all__ = [
     "legend",
     "market_tab",
     "sector_card",
+    "stock_href",
     "age_badge",
     "all_tiers",
     "render_item",

@@ -23,6 +23,7 @@ from taurient_lite.components.heatmap import (
     legend,
     market_tab,
     sector_card,
+    stock_href,
 )
 from taurient_lite.schema import (
     HEAT_CLAMP_PCT,
@@ -399,3 +400,36 @@ class TestMarketTab(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestTileLinks(unittest.TestCase):
+    """色块可以是通向个股 K 线页的链接，也可以只是色块。"""
+
+    def test_no_base_url_means_plain_tiles(self):
+        """静态产物没有后端可去，不该渲染出点了会 404 的链接。"""
+        html = sector_card(block(n=3))
+        self.assertNotIn("<a class=\"tile", html)
+        self.assertIn('<div class="tile', html)
+
+    def test_base_url_turns_tiles_into_links(self):
+        html = sector_card(block(n=3), base_url="https://example.com")
+        self.assertIn('<a class="tile', html)
+        self.assertIn('href="https://example.com/stock/T0"', html)
+
+    def test_link_is_absolute_not_relative(self):
+        """相对路径在单独打开的 site/index.html 里指向文件系统，点了就是 404。"""
+        html = sector_card(block(n=2), base_url="https://example.com")
+        self.assertNotIn('href="/stock/', html)
+
+    def test_trailing_slash_does_not_double_up(self):
+        self.assertEqual(stock_href("AAPL", "https://x.com/"), "https://x.com/stock/AAPL")
+
+    def test_empty_base_returns_empty(self):
+        self.assertEqual(stock_href("AAPL", ""), "")
+
+    def test_market_tab_mentions_the_link_only_when_there_is_one(self):
+        with_link = market_tab(Market(asof="2026-09-18", sectors=(block(),)),
+                               base_url="https://example.com")
+        without = market_tab(Market(asof="2026-09-18", sectors=(block(),)))
+        self.assertIn("K 线", with_link)
+        self.assertNotIn("K 线", without)

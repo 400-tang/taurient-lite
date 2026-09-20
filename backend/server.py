@@ -40,10 +40,12 @@ from taurient_lite.html_renderer import render_body, render_head
 from taurient_lite.pipeline import Paths, PipelineError, latest_date, load_brief
 from taurient_lite.quotes import Quote, QuoteError, fetch_quote
 from taurient_lite.schema import Brief, Mag7, Market, SchemaError
+from taurient_lite.history import DEFAULT_RANGE, RANGES, HistoryError, fetch_history, summarise
 from taurient_lite.short_interest import ShortInterestError, fetch_latest
+from taurient_lite.theme import GOOGLE_FONTS, LAYOUT_CSS, TOKENS, build_palette_css
 
-from . import auth_panel, live
-from .search import MAX_RESULTS, SearchError, search
+from . import auth_panel, live, stock_page
+from .search import MAX_RESULTS, SearchError, resolve, search
 
 ROOT = Path(__file__).resolve().parent.parent
 PATHS = Paths(ROOT)
@@ -267,3 +269,81 @@ def api_sectors() -> JSONResponse:
     if not block:
         raise HTTPException(status_code=502, detail="板块数据暂时取不到")
     return JSONResponse(block)
+
+
+@app.get("/api/history/{ticker}")
+def api_history(
+    ticker: str,
+    range: str = Query(default=DEFAULT_RANGE, description="1mo/3mo/6mo/1y/5y"),
+) -> JSONResponse:
+    """一只股票的历史 K 线，形状就是图表库直接能吃的那种。
+
+    颜色在服务端就配好塞进成交量柱里，而不是让前端自己判断涨跌再上色——
+    「这根是涨是跌」的判据只应该有一处，两边各写一遍迟早会不一致。
+    """
+    symbol = _clean_ticker(ticker)
+    if range not in RANGES:
+        raise HTTPException(status_code=400, detail=f"不支持的区间 {range!r}")
+    try:
+        bars = fetch_history(symbol, span=range)
+    except HistoryError as exc:
+        raise HTTPException(status_code=502, detail=str(exc)) from exc
+
+    up, down = TOKENS["up"][0], TOKENS["down"][0]
+    return JSONResponse(
+        {
+            "ticker": symbol,
+            "range": range,
+            "candles": [b.as_candle() for b in bars],
+            "volumes": [b.as_volume(up_color=up, down_color=down) for b in bars],
+            "stats": summarise(bars),
+        }
+    )
+
+
+@app.get("/stock/{ticker}", response_class=HTMLResponse)
+def stock(
+    ticker: str,
+    range: str = Query(default=DEFAULT_RANGE, description="1mo/3mo/6mo/1y/5y"),
+):
+    """个股页面：一张可缩放、可拖动、带十字光标的 K 线图。
+
+    **这是唯一一个带前端交互的页面**，理由见 `backend/stock_page.py` 的
+    模块注释。其余页面仍然是零 JavaScript 的服务端渲染。
+    """
+    symbol = _clean_ticker(ticker)
+    if range not in RANGES:
+        raise HTTPException(status_code=400, detail=f"不支持的区间 {range!r}")
+    try:
+        bars = fetch_history(symbol, span=range)
+    except HistoryError as exc:
+        raise HTTPException(status_code=502, detail=str(exc)) from exc
+
+    # 公司名是锦上添花：查不到就只显示代码，不该为了一个名字让整页失败。
+    name = ""
+    try:
+        match = resolve(symbol)
+        name = match.name if match else ""
+    except SearchError:
+        pass
+
+    config = Config.load(PATHS.config)
+    body = stock_page.render(
+        symbol,
+        name=name,
+        span=range,
+        bars=bars,
+        stats=summarise(bars),
+        backend_url=config.backend_url,
+        up_color=TOKENS["up"][0],
+        down_color=TOKENS["down"][0],
+    )
+    return HTMLResponse(
+        "<!doctype html>\n"
+        '<html lang="zh">\n<head>\n<meta charset="utf-8">\n'
+        '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
+        f"<title>{symbol} · Morning Tape</title>\n"
+        f'<link rel="stylesheet" href="{GOOGLE_FONTS}">\n'
+        f"<style>{build_palette_css()}\n{LAYOUT_CSS}\n{stock_page.CSS}</style>\n"
+        f"</head>\n<body>\n{body}\n</body>\n</html>\n"
+    )
