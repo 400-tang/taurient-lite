@@ -86,7 +86,6 @@ class Config:
     backend_url: str = ""
     timezone: str = "America/Los_Angeles"
     freshness: Freshness = field(default_factory=Freshness)
-    mag7: tuple[str, ...] = ()
     watchlist: tuple[str, ...] = ()
     #: 基本面标签页扫哪些代码。留空就用自选股——但两者分开设是有理由的：
     #: 自选股决定每天**新闻**额外查谁，基本面要的是你想**比较**的一组，
@@ -137,7 +136,6 @@ class Config:
             backend_url=str(data.get("backend_url", "") or ""),
             timezone=str(data.get("timezone", "America/Los_Angeles") or "America/Los_Angeles"),
             freshness=Freshness.from_dict(data.get("freshness")),
-            mag7=symbols(data.get("mag7"), "mag7"),
             watchlist=symbols(watchlist_raw.get("symbols"), "watchlist.symbols"),
             fundamentals=symbols(fundamentals_raw.get("symbols"), "fundamentals.symbols"),
             min_items=min_items,

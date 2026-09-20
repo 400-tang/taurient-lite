@@ -16,8 +16,7 @@ from taurient_lite.schema import (
     CrossSource,
     HistoricalContext,
     Item,
-    Mag7,
-    SchemaError,
+        SchemaError,
     Source,
     Tape,
 )
@@ -156,33 +155,6 @@ class TestItem(unittest.TestCase):
         self.assertIn("items[4]", str(ctx.exception))
 
 
-class TestMag7(unittest.TestCase):
-    def test_direction_derived_from_sign(self):
-        mag7 = Mag7.from_dict(F.make_mag7(), "mag7")
-        self.assertEqual(mag7.rows[0].direction, "up")
-        self.assertEqual(mag7.rows[1].direction, "down")
-
-    def test_zero_change_counts_as_up(self):
-        # 平盘归到涨侧只是为了让条形有个确定的方向，宽度是 0，视觉上没有区别。
-        mag7 = Mag7.from_dict(
-            F.make_mag7(rows=[{"ticker": "X", "price": "1.00", "change_pct": 0}]), "mag7"
-        )
-        self.assertEqual(mag7.rows[0].direction, "up")
-
-    def test_empty_rows_rejected(self):
-        with self.assertRaises(SchemaError) as ctx:
-            Mag7.from_dict(F.make_mag7(rows=[]), "mag7")
-        self.assertIn("mag7.rows", str(ctx.exception))
-
-    def test_change_pct_must_be_number(self):
-        with self.assertRaises(SchemaError) as ctx:
-            Mag7.from_dict(
-                F.make_mag7(rows=[{"ticker": "X", "price": "1", "change_pct": "0.84"}]),
-                "mag7",
-            )
-        self.assertIn("mag7.rows[0].change_pct", str(ctx.exception))
-
-
 class TestTape(unittest.TestCase):
     def test_direction_enum_enforced(self):
         bad = F.make_tape(rows=[{"name": "X", "value": "1", "change": "", "dir": "sideways"}])
@@ -253,12 +225,6 @@ class TestBrief(unittest.TestCase):
         brief = Brief.from_dict(F.make_brief())
         self.assertEqual(brief.date, dt.date(2026, 9, 6))
         self.assertEqual(len(brief.items), 2)
-        self.assertIsNotNone(brief.mag7)
-
-    def test_mag7_optional(self):
-        data = F.make_brief()
-        del data["mag7"]
-        self.assertIsNone(Brief.from_dict(data).mag7)
 
     def test_empty_items_rejected(self):
         with self.assertRaises(SchemaError):

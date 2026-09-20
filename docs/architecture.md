@@ -247,8 +247,8 @@ python3 render.py                           # 最新一份
 python3 render.py 2026-09-10                # 指定日期
 
 # 数据
-python3 fetch_quotes.py                     # 取行情
-python3 snapshot_market.py                  # 行情 + 空头持仓快照
+python3 snapshot_market.py                  # 空头持仓快照
+python3 fetch_sectors.py --apply <日期>     # 板块热力
 python3 scan_momentum.py                    # 全市场异动扫描
 python3 scan_momentum.py --limit 200        # 本地调试，只扫 200 只
 python3 scan_momentum.py --refresh-universe # 重建流动性名单

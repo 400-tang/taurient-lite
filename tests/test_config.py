@@ -68,7 +68,6 @@ class TestSupabase(unittest.TestCase):
 class TestConfig(unittest.TestCase):
     def test_parses_full_config(self):
         cfg = Config.from_dict(F.make_config())
-        self.assertEqual(cfg.mag7, ("NVDA", "TSLA"))
         self.assertEqual(cfg.watchlist, ("SPY", "NVDA"))
         self.assertEqual(cfg.min_items, 2)
 
@@ -95,10 +94,6 @@ class TestConfig(unittest.TestCase):
             Config.from_dict(F.make_config(watchlist={"symbols": ["NVDA", "  "]}))
         self.assertIn("watchlist.symbols[1]", str(ctx.exception))
 
-    def test_symbols_must_be_list(self):
-        with self.assertRaises(ConfigError):
-            Config.from_dict(F.make_config(mag7="NVDA"))
-
     def test_watchlist_must_be_object(self):
         with self.assertRaises(ConfigError):
             Config.from_dict(F.make_config(watchlist=["NVDA"]))
@@ -122,7 +117,6 @@ class TestConfigLoad(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             path = Path(tmp) / "config.json"
             path.write_text(json.dumps(F.make_config()), encoding="utf-8")
-            self.assertEqual(Config.load(path).mag7, ("NVDA", "TSLA"))
 
     def test_malformed_json_reports_path(self):
         with tempfile.TemporaryDirectory() as tmp:

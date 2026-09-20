@@ -7,7 +7,7 @@
     python3 fetch_sectors.py --print          # 只打印，不写文件
 
 真正的逻辑全在 :mod:`taurient_lite.sectors` 里，这里只负责解析参数、打印
-结果、把异常翻译成人能看懂的退出信息——跟 ``fetch_quotes.py`` 同一个分工。
+结果、把异常翻译成人能看懂的退出信息——跟 ``render.py`` 同一个分工。
 后端要现场抓一份实时数据时走的是同一批函数，不必把这段再实现一遍。
 
 和 ``snapshot_market.py`` 同一个理由跑在 GitHub Actions 上：云端定时任务的

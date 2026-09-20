@@ -79,8 +79,7 @@ class TestIndex(unittest.TestCase):
     def test_defaults_to_latest_when_no_date_given(self):
         # 不带 date 会走实时取数，测试里一律挡掉：测试不该依赖外网，
         # 也不该因为 Yahoo 限流而变红。
-        with patch("backend.server.live.live_mag7", return_value=None), \
-             patch("backend.server.live.live_market", return_value=None):
+        with patch("backend.server.live.live_market", return_value=None):
             response = client.get("/")
         self.assertEqual(response.status_code, 200)
 
@@ -137,33 +136,6 @@ class TestApiQuote(unittest.TestCase):
             response = client.get("/api/quote/NVDA")
         self.assertEqual(response.status_code, 502)
         self.assertIn("NVDA", response.json()["detail"])
-
-
-class TestApiQuotesLive(unittest.TestCase):
-    def test_returns_one_entry_per_configured_ticker(self):
-        def fake_fetch(symbol):
-            return Quote(ticker=symbol, price=100.0, change_pct=1.0, market_time=0)
-
-        with patch("backend.server.fetch_quote", side_effect=fake_fetch):
-            response = client.get("/api/quotes/live")
-        self.assertEqual(response.status_code, 200)
-        body = response.json()
-        self.assertGreater(len(body), 0)
-        self.assertEqual({row["ticker"] for row in body} & {"NVDA", "TSLA"}, {"NVDA", "TSLA"})
-
-    def test_partial_failure_reports_per_ticker_error(self):
-        def flaky(symbol):
-            if symbol == "TSLA":
-                raise QuoteError("TSLA 限流了")
-            return Quote(ticker=symbol, price=1.0, change_pct=0.0, market_time=0)
-
-        with patch("backend.server.fetch_quote", side_effect=flaky):
-            response = client.get("/api/quotes/live")
-        body = response.json()
-        tsla_row = next(row for row in body if row["ticker"] == "TSLA")
-        self.assertIn("error", tsla_row)
-        other_rows = [row for row in body if row["ticker"] != "TSLA"]
-        self.assertTrue(all("error" not in row for row in other_rows))
 
 
 class TestApiShortInterest(unittest.TestCase):
@@ -256,49 +228,36 @@ class TestLiveData(unittest.TestCase):
         ],
     }
 
-    MAG7 = {
-        "asof": "盘中 · 9/18 14:32 ET",
-        "rows": [{"ticker": "NVDA", "price": "999.99", "change_pct": 3.21}],
-        "source": "Yahoo Finance chart endpoint",
-    }
-
     def test_historic_date_never_gets_live_numbers(self):
         """翻看旧简报时必须是那天的数字。
 
         给一份旧简报配今天的行情，读者会把两者当成同一天的事实——
         整个项目反复在防的就是这类错配。
         """
-        with patch("backend.server.live.live_mag7") as mag7, \
-             patch("backend.server.live.live_market") as market:
+        with patch("backend.server.live.live_market") as market:
             response = client.get(f"/?date={REAL_DATE}")
         self.assertEqual(response.status_code, 200)
-        mag7.assert_not_called()
         market.assert_not_called()
 
     def test_latest_page_uses_live_numbers(self):
-        with patch("backend.server.live.live_mag7", return_value=self.MAG7), \
-             patch("backend.server.live.live_market", return_value=self.MARKET):
+        with patch("backend.server.live.live_market", return_value=self.MARKET):
             html = client.get("/").text
         self.assertIn("LIVE", html)
-        self.assertIn("999.99", html)
 
     def test_intraday_page_says_intraday_not_close(self):
         """盘中数据绝不能标成「截至某日收盘」。"""
-        with patch("backend.server.live.live_mag7", return_value=None), \
-             patch("backend.server.live.live_market", return_value=self.MARKET):
+        with patch("backend.server.live.live_market", return_value=self.MARKET):
             html = client.get("/").text
         self.assertIn("盘中 · 14:32 ET", html)
 
     def test_falls_back_to_the_archive_when_upstream_is_down(self):
-        with patch("backend.server.live.live_mag7", return_value=None), \
-             patch("backend.server.live.live_market", return_value=None):
+        with patch("backend.server.live.live_market", return_value=None):
             response = client.get("/")
         self.assertEqual(response.status_code, 200)
 
     def test_malformed_live_data_falls_back_instead_of_500(self):
         """上游格式变了也不能让整页崩掉。"""
-        with patch("backend.server.live.live_mag7", return_value={"rows": []}), \
-             patch("backend.server.live.live_market", return_value={"nope": 1}):
+        with patch("backend.server.live.live_market", return_value={"nope": 1}):
             response = client.get("/")
         self.assertEqual(response.status_code, 200)
 
@@ -361,22 +320,6 @@ class TestCache(unittest.TestCase):
         self.assertIsNone(cache.get(boom))
         self.assertIsNone(cache.get(boom))
         self.assertEqual(len(calls), 1)
-
-
-class TestQuoteAsof(unittest.TestCase):
-    def test_intraday_timestamp_is_not_called_a_close(self):
-        from backend.live import quote_asof
-        from taurient_lite.sectors import EASTERN
-        moment = dt.datetime(2026, 9, 18, 14, 32, tzinfo=EASTERN)
-        label = quote_asof(int(moment.timestamp()))
-        self.assertIn("盘中", label)
-        self.assertNotIn("收盘", label)
-
-    def test_after_hours_timestamp_keeps_the_close_wording(self):
-        from backend.live import quote_asof
-        from taurient_lite.sectors import EASTERN
-        moment = dt.datetime(2026, 9, 18, 18, 5, tzinfo=EASTERN)
-        self.assertIn("收盘", quote_asof(int(moment.timestamp())))
 
 
 class TestApiHistory(unittest.TestCase):

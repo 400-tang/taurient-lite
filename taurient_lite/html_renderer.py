@@ -36,10 +36,15 @@ def _brief_tab(brief: Brief, config: Config) -> str:
     异动摘要紧跟自选股，因为两者回答的是同一类问题——「哪些代码今天
     值得我多看一眼」。区别只在于自选股是你已经在关注的，异动是你还没
     注意到的。完整的异动指标在「异动」标签页里，这里只放最紧的初动档。
+
+    **板块热力排在最前，取代了原来的七巨头条形图。** 两者回答的是同一
+    类问题——「今天盘面什么情况」——但七巨头只看七只票，而且那七只
+    每天都在头版，涨跌幅本身很少构成新信息；热力图一眼铺开十一个行业，
+    回答的是钱往哪个方向流。同一个版面位置，后者的信息密度高一个量级。
     """
     return C.join(
         [
-            C.mag7_panel(brief.mag7),
+            C.market_tab(brief.market, base_url=config.backend_url),
             C.watchlist_panel(config.watchlist, brief),
             C.momentum_strip(brief.momentum),
             C.tape_panel(brief.tape),
@@ -49,7 +54,7 @@ def _brief_tab(brief: Brief, config: Config) -> str:
 
 
 def render_body(brief: Brief, config: Config) -> str:
-    """页面主体：报头，标签页（简报 / 日历 / 市场 / 异动 / 基本面），页脚。
+    """页面主体：报头，标签页（简报 / 日历 / 异动 / 基本面），页脚。
 
     某一块数据为空时 :func:`~taurient_lite.components.tabs.tabs` 会退化成
     只出剩下的标签页；全空就连标签栏都不显示——空标签页毫无意义。
@@ -59,21 +64,17 @@ def render_body(brief: Brief, config: Config) -> str:
     基本面排最后：它一个季度才变一次，不是每天打开页面要先看的东西，
     而是想深究某只票时才去翻的参照。
 
-    市场热力紧挨着异动排在它前面：两者讲的是同一个时点（上一个收盘），
-    区别只在粒度——热力图是整个市场的钱往哪流，异动是具体哪几只票的
-    价量结构变了。从宽到窄，读者不用在两个标签页之间来回跳。
+    **市场热力不再单列标签页**，它搬到了简报首页的最前面。同一块内容
+    出现在两个地方是冗余，而且会让读者冒出「这两个是不是不一样」的疑问。
     """
     brief_html = _brief_tab(brief, config)
     calendar_html = C.calendar_tab(brief)
-    market_html = C.market_tab(brief.market, base_url=config.backend_url)
     momentum_html = C.momentum_tab(brief.momentum)
     fundamentals_html = C.fundamentals_tab(brief.fundamentals)
 
     panels = [("brief", "简报", brief_html)]
     if calendar_html:
         panels.append(("calendar", "日历", calendar_html))
-    if market_html:
-        panels.append(("market", "市场", market_html))
     if momentum_html:
         panels.append(("momentum", "异动", momentum_html))
     if fundamentals_html:

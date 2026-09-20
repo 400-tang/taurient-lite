@@ -88,7 +88,6 @@
 | `scanned` / `kept` | 实际扫描与保留的条数，如实填 |
 | `thesis` | 一句话把当天所有新闻串成一条主线，两三句以内 |
 | `max_age_days` | 可选。只在周日或周一的前瞻版上写，覆写时效上限 |
-| `mag7` | 只写 `note` 那一句解读，`rows` 交给第 4 步的脚本 |
 | `tape` | 指数、收益率、油价。`dir` 只能是 `up`/`down`/`flat` |
 | `items` | 新闻条目，见下 |
 | `calendar` | 未来的已知事件，见下 |
@@ -220,7 +219,6 @@
 
 ```bash
 cd /Users/eddie/Desktop/DSO429/taurient-lite
-python3 fetch_quotes.py <日期>     # 抓七巨头收盘价，写进 mag7.rows
 python3 apply_momentum.py <日期>   # 把价量扫描结果写进 momentum.candidates
 python3 fetch_sectors.py --apply <日期>  # 板块热力，写进 market
 python3 render.py                  # 不带参数就渲染最新的那份
@@ -240,16 +238,10 @@ Nasdaq，所以云端任务应当读 GitHub Actions 已经提交好的 `data/sec
 `data/momentum_scan.json` 里按档位配额挑候选（初动档全要，延续档 4 只，
 已延伸 2 只做参照），把七个数字原样搬进简报 JSON，然后打印一份
 「还需要你补 note」的清单。补完可以再跑一次——**已经写好的 `note` 与
-`sources` 会被原样保留，只有数字被刷新**，跟 `fetch_quotes.py` 保留
-`mag7.note` 是同一个约定。
+`sources` 会被原样保留，只有数字被刷新**。
 
 顺序上它要放在第 3 步写完 JSON 之后：脚本是往已有的简报里写字段，
 简报文件还不存在时它会直接报错退出。
-
-`fetch_quotes.py` 走 Yahoo Finance 的 chart 端点，不需要 API key，返回里带
-`regularMarketTime`，所以 `asof` 是数据自己报的时点，不是推断的。这个端点未受
-官方支持，可能被限流或改动；**取不到就跳过 `mag7` 板块，绝不手填数字。**
-它会保留你写的 `note`，只覆盖数字。
 
 涉及空头持仓的条目，第 1 步扫描时就该跑过 `fetch_short_interest.py`
 （见上文），把查到的引用文字和来源直接写进对应条目，这里不重复。
@@ -291,7 +283,7 @@ taurient_lite/
 ├── theme.py             设计 token 与样式表生成
 ├── components/          组件层，每个模块一组板块
 │   ├── base.py          HTML 拼装原语与转义
-│   ├── panels.py        页首、七巨头图表、自选股、指数行情
+│   ├── panels.py        页首、自选股、指数行情
 │   ├── depth.py         资产矩阵、交叉信源、历史脉络
 │   ├── items.py         新闻条目与分层
 │   ├── calendar.py      日历标签页：周网格 + 日期待定列表

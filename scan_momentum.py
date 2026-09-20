@@ -244,7 +244,7 @@ def load_universe(config: Config) -> list[str]:
         print("还没有 data/universe.txt，本轮只扫发现层和自选股；", file=sys.stderr)
         print("跑一次 --refresh-universe 建立流动性名单。", file=sys.stderr)
 
-    merged = dict.fromkeys(base + discover() + list(config.watchlist) + list(config.mag7))
+    merged = dict.fromkeys(base + discover() + list(config.watchlist))
     return list(merged)
 
 

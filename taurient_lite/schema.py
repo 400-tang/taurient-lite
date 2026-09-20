@@ -376,54 +376,6 @@ class Item:
 
 
 @dataclass(frozen=True, slots=True)
-class QuoteRow:
-    """七巨头面板里的一行。"""
-
-    ticker: str
-    price: str
-    change_pct: float
-
-    @property
-    def direction(self) -> str:
-        return "up" if self.change_pct >= 0 else "down"
-
-    @classmethod
-    def from_dict(cls, data: Any, path: str) -> QuoteRow:
-        return cls(
-            ticker=_as_str(_require(data, "ticker", path), _join(path, "ticker")),
-            price=_as_str(_require(data, "price", path), _join(path, "price")),
-            change_pct=_as_float(
-                _require(data, "change_pct", path), _join(path, "change_pct")
-            ),
-        )
-
-
-@dataclass(frozen=True, slots=True)
-class Mag7:
-    """七巨头单日涨跌面板。"""
-
-    asof: str
-    rows: tuple[QuoteRow, ...]
-    note: str = ""
-    source: str = ""
-
-    @classmethod
-    def from_dict(cls, data: Any, path: str) -> Mag7:
-        rows = tuple(
-            QuoteRow.from_dict(v, f"{_join(path, 'rows')}[{i}]")
-            for i, v in enumerate(_as_list(_require(data, "rows", path), _join(path, "rows")))
-        )
-        if not rows:
-            raise SchemaError(f"{_join(path, 'rows')} 不能是空数组；取不到行情就整个省掉 mag7")
-        return cls(
-            asof=_as_str(_require(data, "asof", path), _join(path, "asof")),
-            rows=rows,
-            note=_as_str(data.get("note", ""), _join(path, "note"), allow_empty=True),
-            source=_as_str(data.get("source", ""), _join(path, "source"), allow_empty=True),
-        )
-
-
-@dataclass(frozen=True, slots=True)
 class TapeRow:
     """指数与利率面板里的一行。"""
 
@@ -977,7 +929,6 @@ class Brief:
     tape: Tape
     items: tuple[Item, ...]
     calendar: tuple[CalendarEntry, ...] = ()
-    mag7: Mag7 | None = None
     momentum: Momentum | None = None
     fundamentals: Fundamentals | None = None
     market: Market | None = None
@@ -1057,7 +1008,6 @@ class Brief:
             for i, v in enumerate(_as_list(data.get("calendar") or [], "calendar"))
         )
 
-        mag7_raw = data.get("mag7")
         momentum_raw = data.get("momentum")
         fundamentals_raw = data.get("fundamentals")
         market_raw = data.get("market")
@@ -1074,7 +1024,6 @@ class Brief:
             tape=Tape.from_dict(_require(data, "tape", path), "tape"),
             items=items,
             calendar=calendar,
-            mag7=Mag7.from_dict(mag7_raw, "mag7") if mag7_raw else None,
             momentum=Momentum.from_dict(momentum_raw, "momentum") if momentum_raw else None,
             fundamentals=(
                 Fundamentals.from_dict(fundamentals_raw, "fundamentals")

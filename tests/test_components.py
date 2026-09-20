@@ -18,7 +18,6 @@ from taurient_lite.schema import (
     CrossSource,
     HistoricalContext,
     Item,
-    Mag7,
 )
 
 from . import fixtures as F
@@ -54,10 +53,6 @@ class TestBase(unittest.TestCase):
         self.assertIn("收盘", full)
 
 
-class TestMag7Chart(unittest.TestCase):
-    def setUp(self):
-        self.mag7 = Mag7.from_dict(F.make_mag7(), "mag7")
-
     def test_axis_domain_rounds_up_to_half_steps(self):
         self.assertEqual(_axis_domain(5.92), 6.0)
         self.assertEqual(_axis_domain(0.84), 1.0)
@@ -66,35 +61,6 @@ class TestMag7Chart(unittest.TestCase):
     def test_axis_domain_has_a_floor(self):
         """全员平盘时不能出现零标度，否则宽度计算会除以零。"""
         self.assertEqual(_axis_domain(0.0), 0.5)
-
-    def test_rows_sorted_descending(self):
-        html = panels.mag7_chart(self.mag7)
-        self.assertLess(html.index("NVDA"), html.index("TSLA"))
-
-    def test_bar_width_proportional_to_domain(self):
-        html = panels.mag7_chart(self.mag7)
-        # TSLA -5.92 在 6.0 的标度上占半幅的 98.67%，即整轨的 49.33%
-        self.assertIn("width:49.33%", html)
-
-    def test_signed_labels_present(self):
-        """带符号数值是颜色之外的编码，必须出现。"""
-        html = panels.mag7_chart(self.mag7)
-        self.assertIn("+0.84%", html)
-        self.assertIn("-5.92%", html)
-
-    def test_zero_axis_labels(self):
-        html = panels.mag7_chart(self.mag7)
-        self.assertIn("<span>0</span>", html)
-
-    def test_panel_omitted_without_data(self):
-        self.assertEqual(panels.mag7_panel(None), "")
-
-    def test_single_row_does_not_crash(self):
-        one = Mag7.from_dict(
-            F.make_mag7(rows=[{"ticker": "X", "price": "1.00", "change_pct": 0.0}]), "m"
-        )
-        self.assertIn("X", panels.mag7_chart(one))
-
 
 class TestWatchlist(unittest.TestCase):
     def setUp(self):

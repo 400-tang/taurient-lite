@@ -1,7 +1,7 @@
 {
   "artifact_url": "https://claude.ai/code/artifact/65328183-42d9-4ead-93c5-d2d3dc41b97a",
   "backend_url": "https://taurient-lite-backend.onrender.com",
-  "backend_note": "Render 上的后端地址。云端定时任务所在沙箱的网络出口是「仅包管理器」模式，直连 Yahoo、FINRA 会在 CONNECT 阶段被网关 403 拒绝；Render 是普通云主机外网不受限。fetch_quotes.py 直连全部失败时会改从这里的 /api/quotes/live 取数。",
+  "backend_note": "Render 上的后端地址。云端定时任务所在沙箱的网络出口是「仅包管理器」模式，直连 Yahoo、FINRA、Nasdaq 会在 CONNECT 阶段被网关 403 拒绝；Render 是普通云主机外网不受限，页面上的板块热力与个股资料都由它现场去取。",
   "timezone": "America/Los_Angeles",
   "run_time": "06:00",
   "run_days": "Mon-Fri",
@@ -33,15 +33,6 @@
   },
   "min_queries": 12,
   "min_articles_scanned": 60,
-  "mag7": [
-    "NVDA",
-    "AAPL",
-    "MSFT",
-    "GOOGL",
-    "AMZN",
-    "META",
-    "TSLA"
-  ],
   "watchlist": {
     "source": "manual",
     "note": "这是给每日新闻扫描用的默认名单，决定 RUNBOOK 第 1 步额外查哪些代码。跟登录后每个人在 Supabase 里存的个人自选股是两回事——那个只做前端个性化筛选，不影响扫描范围。TradingView 导出的 TXT 用 import_watchlist.py 导进来。Robinhood 没有公开的股票 API，只能手工维护。",

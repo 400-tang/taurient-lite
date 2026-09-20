@@ -6,7 +6,7 @@
 # runner 外网不受限，而 GitHub 又恰好是沙箱唯一能连通的外部服务，所以
 # 把取数的方向反过来：runner 抓好数据提交进仓库，任务 clone 时带下来。
 
-name: 行情快照
+name: 市场快照
 
 on:
   schedule:
@@ -33,7 +33,7 @@ jobs:
           python-version-file: .python-version
 
       # 整个流水线零第三方依赖，标准库足够，所以没有 pip install 这一步。
-      - name: 抓取行情与空头持仓
+      - name: 抓取空头持仓
         run: python3 snapshot_market.py
 
       # 板块热力。和行情快照同一个时点、同一个理由，只是数据源不同：

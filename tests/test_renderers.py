@@ -47,7 +47,7 @@ class TestHtmlBody(unittest.TestCase):
         html = render_body(brief, config)
         order = [
             html.index("Morning <em>Tape</em>"),
-            html.index("七巨头单日涨跌"),
+            html.index("板块热力"),
             html.index("自选股"),
             html.index("指数与利率"),
             html.index("必读"),
@@ -61,16 +61,6 @@ class TestHtmlBody(unittest.TestCase):
         html = render_body(brief, config)
         self.assertIn('for="tab-brief"', html)
         self.assertIn('for="tab-calendar"', html)
-
-    def test_mag7_section_absent_when_quotes_missing(self):
-        data = F.make_brief()
-        del data["mag7"]
-        brief, config = build()
-        brief = Brief.from_dict(data)
-        html = render_body(brief, config)
-        self.assertNotIn("七巨头单日涨跌", html)
-        # 缺一个板块不该影响别的板块
-        self.assertIn("指数与利率", html)
 
     def test_watchlist_absent_when_not_configured(self):
         brief, _ = build()
@@ -131,11 +121,6 @@ class TestMarkdown(unittest.TestCase):
         self.assertIn("## 必读", md)
         self.assertIn("### 01.", md)
 
-    def test_mag7_table_sorted_descending(self):
-        brief, config = build()
-        md = render_markdown(brief, config)
-        self.assertLess(md.index("| NVDA |"), md.index("| TSLA |"))
-
     def test_asset_matrix_as_table_with_text_strength(self):
         """纯文本环境下强度也要读得出来，所以用方块而不是颜色。"""
         brief, config = build()
@@ -154,16 +139,6 @@ class TestMarkdown(unittest.TestCase):
         brief, config = build()
         md = render_markdown(brief, config)
         self.assertIn("今天有新闻：SPY", md)
-
-    def test_sections_skipped_when_empty(self):
-        data = F.make_brief(calendar=[])
-        del data["mag7"]
-        brief = Brief.from_dict(data)
-        config = Config.from_dict(F.make_config(watchlist={"symbols": []}))
-        md = render_markdown(brief, config)
-        self.assertNotIn("## 七巨头", md)
-        self.assertNotIn("## 自选股", md)
-        self.assertNotIn("## 接下来要盯的时间点", md)
 
     def test_ends_with_boundary_statement(self):
         brief, config = build()

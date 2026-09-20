@@ -7,7 +7,7 @@ from .fundamentals import fundamentals_tab
 from .heatmap import legend, market_tab, sector_card, stock_href
 from .items import age_badge, all_tiers, render_item, tier_section
 from .momentum import candidate_card, momentum_strip, momentum_tab, stage_group
-from .panels import masthead, mag7_chart, mag7_panel, tape_panel, watchlist_panel
+from .panels import masthead, tape_panel, watchlist_panel
 from .tabs import tabs
 from .tail import colophon
 
@@ -36,8 +36,6 @@ __all__ = [
     "render_item",
     "tier_section",
     "masthead",
-    "mag7_chart",
-    "mag7_panel",
     "tape_panel",
     "watchlist_panel",
     "tabs",

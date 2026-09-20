@@ -4,7 +4,7 @@
     python3 fetch_short_interest.py AI PATH      # 查指定的几只
     python3 fetch_short_interest.py              # 查 config.json 里的自选股
 
-这是个研究/核实工具，不是像 fetch_quotes.py 那样自动写进简报 JSON 的
+这是个研究/核实工具，不是像 apply_momentum.py 那样自动写进简报 JSON 的
 固定板块——空头持仓只在某条新闻本身是「轧空」「仓位拥挤」这类主题时
 才用得上，不是每天都要展示的东西。用法是：写新闻条目时，如果涉及
 空头仓位，先跑这个查到权威数字，把输出里的引用文字和来源链接手动

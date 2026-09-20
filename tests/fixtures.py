@@ -76,16 +76,29 @@ def make_tape(**over: Any) -> dict:
     }
 
 
-def make_mag7(**over: Any) -> dict:
-    return {
-        "asof": "收盘 · Fri 9/4 16:00 ET",
-        "note": "五跌两涨。",
-        "rows": [
-            {"ticker": "NVDA", "price": "230.36", "change_pct": 0.84},
-            {"ticker": "TSLA", "price": "354.08", "change_pct": -5.92},
+def make_market(**over: Any) -> dict:
+    """板块热力。**这一块现在是简报首页的头一个板块**，
+    取代了原来的七巨头条形图。"""
+    block = {
+        "asof": "2026-09-05",
+        "session": "close",
+        "source": "Nasdaq screener",
+        "sectors": [
+            {
+                "name": "科技",
+                "change_pct": 0.65,
+                "market_cap": 4.0e13,
+                "tiles": [
+                    {"ticker": "NVDA", "name": "NVIDIA", "change_pct": 1.45,
+                     "market_cap": 4.5e12},
+                    {"ticker": "AAPL", "name": "Apple", "change_pct": -0.63,
+                     "market_cap": 3.4e12},
+                ],
+            }
         ],
-        **over,
     }
+    block.update(over)
+    return block
 
 
 def make_brief(**over: Any) -> dict:
@@ -98,7 +111,7 @@ def make_brief(**over: Any) -> dict:
         "kept": 2,
         "thesis": "就业数据把叙事从降息翻转到加息。",
         "tape": make_tape(),
-        "mag7": make_mag7(),
+        "market": make_market(),
         "items": [
             make_deep_item(),
             make_item(rank=2, tier="noise", headline="次要新闻", tickers=[]),
@@ -131,7 +144,6 @@ def make_config(**over: Any) -> dict:
         "timezone": "America/Los_Angeles",
         "freshness": {"max_age_days": 3, "must_read_max_age_days": 2},
         "target_counts": {"total_min": 2},
-        "mag7": ["NVDA", "TSLA"],
         "watchlist": {"symbols": ["SPY", "NVDA"]},
         **over,
     }

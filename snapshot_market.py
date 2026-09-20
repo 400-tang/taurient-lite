@@ -33,7 +33,6 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from taurient_lite.config import Config  # noqa: E402
 from taurient_lite.pipeline import Paths  # noqa: E402
-from taurient_lite.quotes import build_mag7_block, fetch_many  # noqa: E402
 from taurient_lite.short_interest import fetch_many as fetch_si_many  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent
@@ -46,16 +45,18 @@ def main() -> int:
 
     failures: list[str] = []
 
-    quotes, quote_failures = fetch_many(config.mag7)
-    failures += quote_failures
-
     # 空头持仓 FINRA 每月才更新两次，天天抓是浪费，但它便宜，而且顺带
     # 让云端任务在写「轧空」类新闻时也有权威数字可用，不必再自己联网。
+    #
+    # **这个脚本曾经还抓七巨头行情。** 七巨头板块被整个撤掉之后（首页那个
+    # 版面位置换成了板块热力图），行情这一半就没有消费者了，留着只是每天
+    # 白打七次 Yahoo。
     records, si_failures = fetch_si_many(config.watchlist)
     failures += si_failures
 
-    if not quotes:
-        print("一只行情都没取到，不写快照——宁可让云端任务跳过 mag7，", file=sys.stderr)
+    if not records:
+        print("一条空头持仓都没取到，不写快照——宁可让云端任务少一份数据，",
+              file=sys.stderr)
         print("也不要把一份空的或过期的快照留在仓库里冒充新数据。", file=sys.stderr)
         for reason in failures:
             print(f"  {reason}", file=sys.stderr)
@@ -65,12 +66,8 @@ def main() -> int:
         "fetched_at": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "note": (
             "由 GitHub Actions 抓取并提交，供云端定时任务读取——那个沙箱连不了 "
-            "Yahoo 和 FINRA。asof 与 settlement_date 都是数据源自己报的时点，"
-            "不是抓取时刻。"
+            "FINRA。settlement_date 是数据源自己报的时点，不是抓取时刻。"
         ),
-        "mag7": build_mag7_block(quotes),
-        # 保留原始时间戳，读取方靠它判断快照是否过期。
-        "market_time": max(q.market_time for q in quotes),
         "short_interest": [
             {
                 "symbol": r.symbol,
@@ -92,7 +89,6 @@ def main() -> int:
     )
 
     print(f"写入 {SNAPSHOT}")
-    print(f"  行情 {len(quotes)} 只，{payload['mag7']['asof']}")
     print(f"  空头持仓 {len(records)} 只")
     for reason in failures:
         print(f"  失败：{reason}")

@@ -2,10 +2,9 @@
 
 这个服务解决的是静态 Artifact 页面做不到的两件事：
 
-1. **现场刷新。** Artifact 上的数字是当天早上批处理生成时的快照，
-   这里的 ``/api/quotes/live`` 和 ``/api/quote/{ticker}`` 现场去查
-   Yahoo，拿到的是此刻的价格，不用等第二天的定时任务。
-2. **任意股票查询。** 不限于 `config.json` 里固定的七巨头或自选股，
+1. **现场刷新。** 页面上的板块热力与 ``/api/quote/{ticker}`` 都是现场
+   去查，拿到的是此刻的数字，不用等第二天的定时任务。
+2. **任意股票查询。** 不限于 `config.json` 里固定的自选股，
    ``/api/short-interest/{ticker}`` 能查任何一只股票在 FINRA 的
    最新空头持仓。
 3. **按名字找代码。** ``/api/search`` 让自选股面板能做自动补全——
@@ -41,7 +40,7 @@ from taurient_lite.config import Config
 from taurient_lite.html_renderer import render_body, render_head
 from taurient_lite.pipeline import Paths, PipelineError, latest_date, load_brief
 from taurient_lite.quotes import Quote, QuoteError, fetch_quote
-from taurient_lite.schema import Brief, Mag7, Market, SchemaError
+from taurient_lite.schema import Brief, Market, SchemaError
 from taurient_lite.history import DEFAULT_RANGE, RANGES, HistoryError, fetch_history, summarise
 from taurient_lite.short_interest import ShortInterestError, fetch_latest
 from taurient_lite.theme import GOOGLE_FONTS, LAYOUT_CSS, TOKENS, build_palette_css
@@ -112,14 +111,6 @@ def _with_live_data(brief: Brief, config: Config, requested_date: str | None) ->
 
     updates: dict = {}
 
-    previous = {"note": brief.mag7.note} if brief.mag7 else None
-    mag7 = live.live_mag7(tuple(config.mag7), previous)
-    if mag7:
-        try:
-            updates["mag7"] = Mag7.from_dict(mag7, "mag7")
-        except SchemaError:
-            pass
-
     market = live.live_market()
     if market:
         try:
@@ -186,7 +177,7 @@ def api_brief(date: str | None = Query(default=None)) -> JSONResponse:
 
 @app.get("/api/quote/{ticker}")
 def api_quote(ticker: str) -> dict:
-    """现场查一只股票的最新价，不限于七巨头名单。"""
+    """现场查一只股票的最新价。"""
     symbol = _clean_ticker(ticker)
     try:
         quote: Quote = fetch_quote(symbol)
@@ -198,31 +189,6 @@ def api_quote(ticker: str) -> dict:
         "change_pct": quote.change_pct,
         "market_time": quote.market_time,
     }
-
-
-@app.get("/api/quotes/live")
-def api_quotes_live() -> list[dict]:
-    """现场刷新 `config.json` 里配置的七巨头名单，绕开当天存档的快照。"""
-    config = Config.load(PATHS.config)
-    if not config.mag7:
-        raise HTTPException(status_code=404, detail="config.json 里的 mag7 是空的")
-
-    results = []
-    for symbol in config.mag7:
-        try:
-            quote = fetch_quote(symbol)
-        except QuoteError as exc:
-            results.append({"ticker": symbol, "error": str(exc)})
-            continue
-        results.append(
-            {
-                "ticker": quote.ticker,
-                "price": quote.price,
-                "change_pct": quote.change_pct,
-                "market_time": quote.market_time,
-            }
-        )
-    return results
 
 
 @app.get("/api/search")
@@ -277,8 +243,7 @@ def api_sectors() -> JSONResponse:
     """现场抓一份板块热力数据，绕开简报里存档的那份。
 
     页面自己已经在用它了（见 `_with_live_data`），单独开一个路由是为了
-    让别的程序也能拿到同一份数据，跟 `/api/quotes/live` 对 `mag7` 的关系
-    完全一样。走的是同一个缓存，所以频繁调用不会真的去打 Nasdaq。
+    让别的程序也能拿到同一份数据，跟 `/api/quote/{ticker}` 的关系类似。走的是同一个缓存，所以频繁调用不会真的去打 Nasdaq。
     """
     block = live.live_market()
     if not block:

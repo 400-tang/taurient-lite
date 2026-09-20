@@ -18,27 +18,6 @@ from .schema import (
 from .components.items import age_badge
 
 
-def _mag7_section(brief: Brief) -> list[str]:
-    if brief.mag7 is None:
-        return []
-    rows = sorted(brief.mag7.rows, key=lambda r: r.change_pct, reverse=True)
-    lines = [
-        f"## 七巨头单日涨跌 — {brief.mag7.asof}",
-        "",
-        "| 代码 | 价格 | 涨跌 |",
-        "|---|---|---|",
-    ]
-    for row in rows:
-        sign = "+" if row.change_pct >= 0 else ""
-        lines.append(f"| {row.ticker} | `${row.price}` | `{sign}{row.change_pct:.2f}%` |")
-    lines.append("")
-    if brief.mag7.note:
-        lines += [brief.mag7.note, ""]
-    if brief.mag7.source:
-        lines += [f"*行情来源：{brief.mag7.source}*", ""]
-    return lines
-
-
 def _watchlist_section(brief: Brief, config: Config) -> list[str]:
     if not config.watchlist:
         return []
@@ -160,7 +139,7 @@ def _momentum_section(brief: Brief) -> list[str]:
     if momentum is None or not momentum.candidates:
         return []
 
-    head = f"## 价量异动 — {momentum.asof}"
+    head = f"## 价量异动 — 截至 {momentum.asof} 收盘"
     if momentum.scanned:
         head += f"（扫描 {momentum.scanned} 只）"
     lines = [head, ""]
@@ -170,14 +149,14 @@ def _momentum_section(brief: Brief) -> list[str]:
         "*价量筛选，不是买卖信号：全量回测 5090 次初动信号，20 日胜率 51.4%、"
         "期望 +1.1%，收益集中在少数尾部标的；排序只表示「有多新」，不表示「有多值得买」。*",
         "",
-        "| 代码 | 阶段 | 价格 | 涨跌 | 突破 | 相对量 | 乖离 | 自基底 | 新闻 |",
-        "|---|---|---|---|---|---|---|---|---|",
+        f"| 代码 | 阶段 | {momentum.asof} 收盘 | 当日涨跌 | 突破 | 相对量 | 乖离 | 自基底 |",
+        "|---|---|---|---|---|---|---|---|",
     ]
     for c in momentum.candidates:
         lines.append(
             f"| {c.ticker} | {c.stage_label} | `${c.close:,.2f}` | "
             f"`{c.change_pct:+.2f}%` | {c.age_label} | `{c.rvol:.1f}x` | "
-            f"`{c.ext_ma20:+.0%}` | `{c.run_from_base:+.0%}` | {c.coverage_label} |"
+            f"`{c.ext_ma20:+.0%}` | `{c.run_from_base:+.0%}` |"
         )
     lines.append("")
     for c in momentum.candidates:
@@ -185,6 +164,55 @@ def _momentum_section(brief: Brief) -> list[str]:
             continue
         sources = " · ".join(f"[{s.name}]({s.url})" for s in c.sources)
         lines.append(f"- **{c.ticker}** — {c.note}" + (f" {sources}" if sources else ""))
+    lines.append("")
+    return lines
+
+
+def _fundamentals_section(brief: Brief) -> list[str]:
+    """基本面板块。矩阵照搬成表格，每只标的的红旗与关口警告列在下面——
+    七步的逐条结论不进存档，它们在扫描文件里，存档只记「那天页面上的判断」。"""
+    fundamentals = brief.fundamentals
+    if fundamentals is None or not fundamentals.rows:
+        return []
+
+    from .components.fundamentals import STAGE_ORDER, STAGE_SHORT
+
+    rows = sorted(fundamentals.rows, key=lambda r: r.score, reverse=True)
+    lines = [f"## 七步法基本面 — 截至 {fundamentals.asof} 扫描", ""]
+    if fundamentals.note:
+        lines += [fundamentals.note, ""]
+    lines += [
+        "*报表质量排序，不是买卖信号。数据来自 Yahoo Finance 二手汇编；各家财年截止日不同，"
+        "见「财年止于」列。估值位置是叠加在方法论之上的假设（回到自身历史中位数）。*",
+        "",
+        "| 代码 | 口径 | 财年止于 | 总分 | "
+        + " | ".join(STAGE_SHORT[k] for k in STAGE_ORDER)
+        + " | 红旗 |",
+        "|---|---|---|---|" + "---|" * len(STAGE_ORDER) + "---|",
+    ]
+    for r in rows:
+        by_key = {st.key: st for st in r.stages}
+        cells = " | ".join(
+            "—" if by_key.get(k) is None or by_key[k].score is None else f"{by_key[k].score:.0f}"
+            for k in STAGE_ORDER
+        )
+        lines.append(
+            f"| {r.ticker} | {r.profile_label} | {r.fiscal_end[:7]} | "
+            f"`{r.score:.1f}` {r.grade} | {cells} | {len(r.flags) or ''} |"
+        )
+    lines.append("")
+    for r in rows:
+        notes = list(r.gate_warnings) + list(r.flags)
+        if not notes and not r.note:
+            continue
+        lines.append(f"- **{r.ticker}** — {r.verdict}")
+        if r.note:
+            lines.append(f"  - {r.note}")
+        for n in notes:
+            lines.append(f"  - ⚠ {n}")
+        v = r.valuation
+        if v is not None and v.regime_change:
+            lines.append(f"  - 估值：{v.anchor} 历史中位数失效（基本面发生量级变化）")
     lines.append("")
     return lines
 
@@ -201,7 +229,6 @@ def render_markdown(brief: Brief, config: Config) -> str:
         "",
     ]
 
-    lines += _mag7_section(brief)
     lines += _watchlist_section(brief, config)
     lines += _tape_section(brief)
 
@@ -215,5 +242,6 @@ def render_markdown(brief: Brief, config: Config) -> str:
 
     lines += _calendar_section(brief)
     lines += _momentum_section(brief)
+    lines += _fundamentals_section(brief)
     lines += ["---", "*Taurient Lite。新闻摘要，不是投资建议。*"]
     return "\n".join(lines) + "\n"

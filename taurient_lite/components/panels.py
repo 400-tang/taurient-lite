@@ -6,7 +6,7 @@
 
 from __future__ import annotations
 
-from ..schema import Brief, Mag7, Tape
+from ..schema import Brief, Tape
 from .base import esc, join, section_head
 
 # --------------------------------------------------------------------------- 页首
@@ -43,58 +43,6 @@ def _axis_domain(peak: float) -> float:
     下界 0.5 保证全员平盘时不会出现除以零，也不会把 0.01% 画成满格。
     """
     return max(0.5, (int(peak / 0.5) + 1) * 0.5)
-
-
-def mag7_chart(mag7: Mag7) -> str:
-    """七只权重股的单日涨跌，横向发散条形图。
-
-    形态选择的理由：数据的任务是「带符号的量级在若干具名实体之间比较」，
-    对应发散条形。一条零轴、一个对称标度，条形从零轴向左右伸出。
-
-    可达性上有三重编码，颜色只是其中之一：条形方向（左跌右涨）、
-    带符号的数值标签、以及行首固定的代码。色觉障碍读者丢掉颜色仍然能读。
-    """
-    rows = sorted(mag7.rows, key=lambda r: r.change_pct, reverse=True)
-    domain = _axis_domain(max(abs(r.change_pct) for r in rows))
-
-    out = ['<section class="mag7">']
-    for row in rows:
-        direction = row.direction
-        # 半幅占轨道的 50%，所以单边宽度是占比乘 50。
-        width = abs(row.change_pct) / domain * 50.0
-        sign = "+" if row.change_pct >= 0 else ""
-        out += [
-            '<div class="mag7-row">',
-            f'<div class="mag7-tick">{esc(row.ticker)}</div>',
-            '<div class="mag7-track">',
-            f'<div class="mag7-bar {direction}" style="width:{width:.2f}%"></div>',
-            "</div>",
-            f'<div class="mag7-price">${esc(row.price)}</div>',
-            f'<div class="mag7-val {direction}">{sign}{row.change_pct:.2f}%</div>',
-            "</div>",
-        ]
-
-    out += [
-        '<div class="mag7-axis"><div class="lbl">',
-        f"<span>−{domain:.1f}%</span><span>0</span><span>+{domain:.1f}%</span>",
-        "</div></div>",
-    ]
-    if mag7.note:
-        out.append(f'<p class="mag7-foot">{esc(mag7.note)}</p>')
-    out.append("</section>")
-    return join(out)
-
-
-def mag7_panel(mag7: Mag7 | None) -> str:
-    """带标题的完整七巨头板块。取不到行情时整块省掉，不留空壳。"""
-    if mag7 is None:
-        return ""
-    return join(
-        [section_head("七巨头单日涨跌", asof=mag7.asof), mag7_chart(mag7)]
-    )
-
-
-# ------------------------------------------------------------------- 自选股
 
 
 def watchlist_panel(symbols: tuple[str, ...], brief: Brief) -> str:

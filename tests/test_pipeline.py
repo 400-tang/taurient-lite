@@ -61,7 +61,7 @@ class TestHappyPath(ProjectCase):
         html = (self.root / "site" / "index.html").read_text(encoding="utf-8")
         for marker in (
             "<title>Morning Tape</title>",
-            "七巨头单日涨跌",
+            "板块热力",
             "自选股",
             "指数与利率",
             "必读",

@@ -316,102 +316,6 @@ body {
 
 # ------------------------------------------------------------------ 七巨头图表
 
-MAG7_CSS = """
-.mag7 { margin-top: 1rem; }
-
-.mag7-row {
-  display: grid;
-  grid-template-columns: 3.7rem 1fr 4.4rem;
-  align-items: center;
-  gap: 0 0.7rem;
-  padding: 0.24rem 0;
-  position: relative;
-}
-
-.mag7-row:hover .mag7-track { background: var(--paper-sunk); }
-.mag7-row:hover .mag7-price { opacity: 1; }
-
-.mag7-tick {
-  font-family: var(--font-data);
-  font-size: var(--t-sm);
-  font-weight: 500;
-  letter-spacing: var(--track-mono);
-}
-
-.mag7-track {
-  position: relative;
-  height: 1.4rem;
-  border-radius: 2px;
-  transition: background 140ms ease;
-}
-
-/* 零轴。条形从这里出发，方向本身就是颜色之外的第二重编码。 */
-.mag7-track::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: -0.12rem;
-  bottom: -0.12rem;
-  width: 1px;
-  background: var(--rule);
-}
-
-.mag7-bar { position: absolute; top: 0.32rem; height: 0.76rem; }
-.mag7-bar.up { left: 50%; background: var(--up); border-radius: 0 3px 3px 0; }
-.mag7-bar.down { right: 50%; background: var(--down); border-radius: 3px 0 0 3px; }
-
-.mag7-val {
-  font-family: var(--font-data);
-  font-size: var(--t-sm);
-  font-variant-numeric: tabular-nums;
-  text-align: right;
-}
-
-.mag7-val.up { color: var(--up); }
-.mag7-val.down { color: var(--down); }
-
-.mag7-price {
-  position: absolute;
-  right: 5.1rem;
-  font-family: var(--font-data);
-  font-size: var(--t-2xs);
-  color: var(--ink-faint);
-  font-variant-numeric: tabular-nums;
-  opacity: 0;
-  transition: opacity 140ms ease;
-  pointer-events: none;
-  background: var(--paper);
-  padding: 0 0.3rem;
-}
-
-.mag7-axis {
-  display: grid;
-  grid-template-columns: 3.7rem 1fr 4.4rem;
-  gap: 0 0.7rem;
-  margin-top: 0.35rem;
-}
-
-.mag7-axis .lbl {
-  grid-column: 2;
-  display: flex;
-  justify-content: space-between;
-  font-family: var(--font-data);
-  font-size: var(--t-2xs);
-  color: var(--ink-faint);
-  font-variant-numeric: tabular-nums;
-}
-
-.mag7-foot {
-  margin-top: 0.7rem;
-  font-size: var(--t-sm);
-  color: var(--ink-mid);
-  max-width: var(--measure);
-  text-wrap: pretty;
-}
-"""
-
-# ------------------------------------------------------------------ 自选股与行情
-
 PANELS_CSS = """
 .wl { margin-top: 1rem; }
 .wl-grid { display: flex; flex-wrap: wrap; gap: 0.4rem; }
@@ -1718,8 +1622,6 @@ a:focus-visible, summary:focus-visible {
 @media (max-width: 34rem) {
   .item { grid-template-columns: 1.9rem 1fr; gap: 0 0.7rem; }
   .item h3 { font-size: var(--t-lg); }
-  .mag7-row, .mag7-axis { grid-template-columns: 3.1rem 1fr 3.8rem; }
-  .mag7-price { display: none; }
   .assets { grid-template-columns: 1fr 1fr; }
 }
 
@@ -1737,7 +1639,6 @@ def build_css() -> str:
         [
             build_palette_css(),
             LAYOUT_CSS,
-            MAG7_CSS,
             PANELS_CSS,
             ITEMS_CSS,
             DEPTH_CSS,

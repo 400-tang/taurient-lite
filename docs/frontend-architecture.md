@@ -90,7 +90,7 @@ taurient_lite/
 
 | React 里的概念 | 这个项目里对应什么 |
 |---|---|
-| 组件（Component） | `components/` 里的函数，比如 `mag7_panel(brief.mag7)` |
+| 组件（Component） | `components/` 里的函数，比如 `market_tab(brief.market)` |
 | props | 函数参数，就是普通的 Python 对象 |
 | JSX | f-string 拼出来的 HTML 字符串 |
 | 组件组合 | `C.join([...])` 把一堆片段按顺序接起来 |
