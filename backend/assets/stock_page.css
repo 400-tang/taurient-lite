@@ -404,3 +404,31 @@
   #chart { min-height: 14rem; }
   .stock-note { font-size: var(--t-xs); }
 }
+
+
+/* 最新消息：未经筛选的标题流。**刻意比「简报里提到过」轻**——
+   后者有分层徽章、有「为什么重要」，视觉上更重；这一块只是标题，
+   排版上就该让人看出它没有经过判断。 */
+.wire {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--rule-hair);
+}
+
+.wire-meta {
+  font-family: var(--font-data);
+  font-size: var(--t-2xs);
+  color: var(--ink-faint);
+}
+
+.wire-title {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: var(--t-sm);
+  line-height: 1.5;
+  color: var(--ink);
+  text-decoration: none;
+  max-width: var(--measure);
+  text-wrap: pretty;
+}
+
+.wire-title:hover { color: var(--accent); }

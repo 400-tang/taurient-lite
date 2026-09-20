@@ -146,6 +146,29 @@ def render_earnings(quarters) -> str:
     return _block("财报", "".join(rows), "每股收益：实际 vs 预期")
 
 
+def render_headlines(headlines) -> str:
+    """最新消息：未经筛选的标题流。
+
+    **标题必须说清楚这一块不带判断。** 同一页上另有一块「简报里提到过」，
+    那是筛过、写过「为什么重要」的；这一块是机器扒来的原始标题。两块摆
+    在一起，读者必须一眼分得清哪块带判断——整个项目的信任基础就是
+    标注不撒谎。
+    """
+    if not headlines:
+        return ""
+    rows = []
+    for h in headlines:
+        meta = " · ".join(x for x in (h.age_label(), h.source) if x)
+        rows.append(
+            f'<article class="wire">'
+            f'<div class="wire-meta">{esc(meta)}</div>'
+            f'<a class="wire-title" href="{esc(h.url)}" target="_blank" '
+            f'rel="noopener">{esc(h.title)}</a>'
+            f"</article>"
+        )
+    return _block("最新消息", "".join(rows), "未经筛选，按时间排")
+
+
 def render_mentions(mentions) -> str:
     """这只票在历史简报里出现过的条目。"""
     if not mentions:
@@ -166,7 +189,7 @@ def render_mentions(mentions) -> str:
             + (f"<p>{esc(m.why)}</p>" if m.why else "")
             + "</article>"
         )
-    return _block("相关新闻", "".join(rows), "来自历史简报")
+    return _block("简报里提到过", "".join(rows), "筛选过，带判断")
 
 
 def render(
@@ -181,6 +204,7 @@ def render(
     down_color: str = "#C4342B",
     company=None,
     mentions=(),
+    headlines=(),
 ) -> str:
     """整页个股视图的 body 部分。
 
@@ -228,6 +252,9 @@ def render(
         blocks += render_stats(company.stats)
         blocks += render_ratings(company.ratings)
         blocks += render_earnings(company.quarters)
+    # 「最新消息」排在「简报里提到过」前面：前者回答「刚刚发生了什么」，
+    # 后者回答「这只票在我们的简报里出现过什么」。时效性决定顺序。
+    blocks += render_headlines(headlines)
     blocks += render_mentions(mentions)
 
     return f"""<div class="stock">

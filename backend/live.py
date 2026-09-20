@@ -23,6 +23,7 @@ from typing import Any, Callable
 
 from taurient_lite.quotes import QuoteError
 from .company import CompanyError, fetch_company
+from .news_feed import NewsError, fetch_headlines
 from taurient_lite.sectors import SectorError, fetch_market_block
 
 
@@ -53,7 +54,7 @@ class _Cached:
         # 代价是缓存过期的瞬间可能有两个请求同时去取，重复一次远比串行阻塞便宜。
         try:
             value = produce()
-        except (QuoteError, SectorError, CompanyError, OSError):
+        except (QuoteError, SectorError, CompanyError, NewsError, OSError):
             value = None
         with self._lock:
             self._value = value
@@ -65,12 +66,33 @@ class _Cached:
 #: 放半小时都嫌短；这里取 10 分钟只是为了让偶发的上游故障能自己恢复。
 COMPANY_TTL = 600.0
 
+#: 最新消息的缓存时长。比公司资料短得多——这一块的全部价值就是新鲜；
+#: 但也没必要比行情还勤，新闻不是逐笔跳动的。
+HEADLINES_TTL = 300.0
+
 _sectors_cache = _Cached(SECTORS_TTL)
 
 #: 每只票一个缓存槽。个股页是按代码访问的，共用一个槽会让两个人同时
 #: 看不同股票时互相把对方的数据挤掉，等于缓存完全失效。
 _company_caches: dict[str, _Cached] = {}
 _company_lock = threading.Lock()
+
+
+def live_headlines(symbol: str, name: str = ""):
+    """一只票的最新消息，取不到返回空元组。
+
+    **取不到就是空，不是 None。** 调用方拿到空元组直接不渲染那一块；
+    用 None 表达「失败」会让调用方多写一个分支，而这两种情况在页面上
+    的表现本来就一样——没有消息就不显示。
+    """
+    symbol = symbol.upper()
+    key = f"news:{symbol}"
+    with _company_lock:
+        cache = _company_caches.get(key)
+        if cache is None:
+            cache = _Cached(HEADLINES_TTL)
+            _company_caches[key] = cache
+    return cache.get(lambda: fetch_headlines(symbol, name=name)) or ()
 
 
 def live_company(symbol: str):

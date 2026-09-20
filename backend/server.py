@@ -322,6 +322,7 @@ def stock(
         # 资料是补充，补充拿不到不该让主体一起陪葬。
         company=live.live_company(symbol),
         mentions=mentions_for(PATHS.briefs, symbol),
+        headlines=live.live_headlines(symbol, name),
     )
     return HTMLResponse(
         "<!doctype html>\n"

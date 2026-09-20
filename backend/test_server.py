@@ -362,7 +362,8 @@ class TestStockPage(unittest.TestCase):
                    return_value=TestApiHistory.BARS), \
              patch("backend.server.resolve", return_value=None), \
              patch("backend.server.live.live_company", return_value=None), \
-             patch("backend.server.mentions_for", return_value=()):
+             patch("backend.server.mentions_for", return_value=()), \
+             patch("backend.server.live.live_headlines", return_value=()):
             html = client.get("/stock/AAPL").text
         self.assertIn('id="chart"', html)
         self.assertIn("lightweight-charts", html)
@@ -373,7 +374,8 @@ class TestStockPage(unittest.TestCase):
                    return_value=TestApiHistory.BARS), \
              patch("backend.server.resolve", return_value=None), \
              patch("backend.server.live.live_company", return_value=None), \
-             patch("backend.server.mentions_for", return_value=()):
+             patch("backend.server.mentions_for", return_value=()), \
+             patch("backend.server.live.live_headlines", return_value=()):
             html = client.get("/stock/AAPL").text
         self.assertIn('"time": "2026-09-18"', html)
 
@@ -382,7 +384,8 @@ class TestStockPage(unittest.TestCase):
                    return_value=TestApiHistory.BARS), \
              patch("backend.server.resolve", return_value=None), \
              patch("backend.server.live.live_company", return_value=None), \
-             patch("backend.server.mentions_for", return_value=()):
+             patch("backend.server.mentions_for", return_value=()), \
+             patch("backend.server.live.live_headlines", return_value=()):
             html = client.get("/stock/AAPL?range=1y").text
         self.assertIn('class="range-btn on" href="?range=1y"', html)
 
@@ -393,7 +396,8 @@ class TestStockPage(unittest.TestCase):
                    return_value=TestApiHistory.BARS), \
              patch("backend.server.resolve", side_effect=SE("搜索挂了")), \
              patch("backend.server.live.live_company", return_value=None), \
-             patch("backend.server.mentions_for", return_value=()):
+             patch("backend.server.mentions_for", return_value=()), \
+             patch("backend.server.live.live_headlines", return_value=()):
             response = client.get("/stock/AAPL")
         self.assertEqual(response.status_code, 200)
 
@@ -422,7 +426,8 @@ class TestPriceLines(unittest.TestCase):
                    return_value=TestApiHistory.BARS), \
              patch("backend.server.resolve", return_value=None), \
              patch("backend.server.live.live_company", return_value=None), \
-             patch("backend.server.mentions_for", return_value=()):
+             patch("backend.server.mentions_for", return_value=()), \
+             patch("backend.server.live.live_headlines", return_value=()):
             return client.get(f"/stock/{symbol}").text
 
     def test_toolbar_and_list_are_present(self):
@@ -467,7 +472,8 @@ class TestTrendLines(unittest.TestCase):
                    return_value=TestApiHistory.BARS), \
              patch("backend.server.resolve", return_value=None), \
              patch("backend.server.live.live_company", return_value=None), \
-             patch("backend.server.mentions_for", return_value=()):
+             patch("backend.server.mentions_for", return_value=()), \
+             patch("backend.server.live.live_headlines", return_value=()):
             return client.get(f"/stock/{symbol}").text
 
     def test_anchors_use_logical_index_not_time(self):
@@ -562,18 +568,90 @@ class TestStockPageBlocks(unittest.TestCase):
         html = self._get(mentions=(
             Mention("2026-09-18", 1, "must-read", "标题在这", "为什么重要", ("NVDA",)),
         )).text
-        self.assertIn("<h2>相关新闻</h2>", html)
+        self.assertIn("<h2>简报里提到过</h2>", html)
         self.assertIn("标题在这", html)
         self.assertIn("必读", html)
         self.assertIn("2026-09-18", html)
 
     def test_no_mentions_means_no_news_block(self):
-        """冷门票查不到就整块不显示，不放「暂无新闻」的占位。"""
-        self.assertNotIn("<h2>相关新闻</h2>", self._get(mentions=()).text)
+        """冷门票在历史简报里查不到就整块不显示。
+
+        注意这不代表个股页上没有新闻——「最新消息」那一块是另一个来源，
+        覆盖任何代码。改名正是为了让这两块不被混为一谈。
+        """
+        self.assertNotIn("<h2>简报里提到过</h2>", self._get(mentions=()).text)
 
     def test_hostile_company_text_is_escaped(self):
         from backend.company import Company, Profile
         evil = Company(symbol="X",
                        profile=Profile(description='<img src=x onerror=alert(1)>'))
         html = self._get(company=evil).text
+        self.assertNotIn("<img src=x", html)
+
+
+class TestStockHeadlines(unittest.TestCase):
+    """个股页上的「最新消息」：未经筛选的标题流。"""
+
+    def _get(self, headlines=()):
+        with patch("backend.server.fetch_history",
+                   return_value=TestApiHistory.BARS), \
+             patch("backend.server.resolve", return_value=None), \
+             patch("backend.server.live.live_company", return_value=None), \
+             patch("backend.server.mentions_for", return_value=()), \
+             patch("backend.server.live.live_headlines", return_value=headlines):
+            return client.get("/stock/NVDA").text
+
+    def _headline(self, title="英伟达发布新平台"):
+        import datetime as dt
+        from backend.news_feed import Headline
+        return Headline(title, "https://example.com/a", "CNBC",
+                        dt.datetime.now(dt.timezone.utc) - dt.timedelta(hours=3))
+
+    def test_renders_headlines_with_time_and_source(self):
+        html = self._get((self._headline(),))
+        self.assertIn("<h2>最新消息</h2>", html)
+        self.assertIn("英伟达发布新平台", html)
+        self.assertIn("CNBC", html)
+        self.assertIn("小时前", html)
+
+    def test_says_it_is_unfiltered(self):
+        """同一页上另有一块筛过、带判断的新闻。两块摆在一起，
+        读者必须一眼分得清哪块带判断——项目的信任基础就是标注不撒谎。"""
+        self.assertIn("未经筛选", self._get((self._headline(),)))
+
+    def test_the_two_news_blocks_are_named_differently(self):
+        from backend.stock_news import Mention
+        with patch("backend.server.fetch_history",
+                   return_value=TestApiHistory.BARS), \
+             patch("backend.server.resolve", return_value=None), \
+             patch("backend.server.live.live_company", return_value=None), \
+             patch("backend.server.live.live_headlines",
+                   return_value=(self._headline(),)), \
+             patch("backend.server.mentions_for", return_value=(
+                 Mention("2026-09-18", 1, "must-read", "简报标题", "为什么重要",
+                         ("NVDA",)),)):
+            html = client.get("/stock/NVDA").text
+        self.assertIn("<h2>最新消息</h2>", html)
+        self.assertIn("<h2>简报里提到过</h2>", html)
+
+    def test_fresh_news_comes_before_the_archive(self):
+        """时效性决定顺序：「刚刚发生了什么」排在「简报里出现过什么」前面。"""
+        from backend.stock_news import Mention
+        with patch("backend.server.fetch_history",
+                   return_value=TestApiHistory.BARS), \
+             patch("backend.server.resolve", return_value=None), \
+             patch("backend.server.live.live_company", return_value=None), \
+             patch("backend.server.live.live_headlines",
+                   return_value=(self._headline(),)), \
+             patch("backend.server.mentions_for", return_value=(
+                 Mention("2026-09-18", 1, "must-read", "简报标题", "", ("NVDA",)),)):
+            html = client.get("/stock/NVDA").text
+        self.assertLess(html.index("最新消息"), html.index("简报里提到过"))
+
+    def test_no_headlines_means_no_block(self):
+        """冷门票拿不到消息就整块不显示，不放「暂无」的占位。"""
+        self.assertNotIn("<h2>最新消息</h2>", self._get(()))
+
+    def test_hostile_headline_is_escaped(self):
+        html = self._get((self._headline('<img src=x onerror=alert(1)>'),))
         self.assertNotIn("<img src=x", html)
