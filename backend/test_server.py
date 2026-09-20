@@ -495,3 +495,48 @@ class TestPriceLines(unittest.TestCase):
         html = self._html()
         self.assertIn("try {", html)
         self.assertIn("localStorage", html)
+
+
+class TestTrendLines(unittest.TestCase):
+    """趋势线的服务端这一侧。
+
+    交互（两点画线、点线选中、拖端点、缩放后跟随、刷新后仍在）用 CDP 驱动
+    真实 Chrome 逐项断言过——那部分不适合放进单元测试。这里守住的是三个
+    容易被后来的改动悄悄破坏的约定。
+    """
+
+    def _html(self, symbol="TSM"):
+        with patch("backend.server.fetch_history",
+                   return_value=TestApiHistory.BARS), \
+             patch("backend.server.resolve", return_value=None):
+            return client.get(f"/stock/{symbol}").text
+
+    def test_anchors_use_logical_index_not_time(self):
+        """趋势线要能延伸到最后一根 K 线右侧的空白区去预判。
+
+        按时间换算的坐标越过最后一根就返回 null，线会在图表边缘断掉；
+        逻辑序号没有这个限制。这是整个实现最关键的一个选择。
+        """
+        html = self._html()
+        self.assertIn("logicalToCoordinate", html)
+        self.assertIn("coordinateToLogical", html)
+
+    def test_overlay_does_not_swallow_chart_events_by_default(self):
+        """覆盖层默认必须让事件穿透，否则图表拖不动也缩放不了。"""
+        html = self._html()
+        self.assertIn("pointer-events: none", html)
+        self.assertIn("#draw.drawing { pointer-events: auto;", html)
+
+    def test_overlay_sits_above_the_canvas(self):
+        """图表库内部元素带 z-index，光靠 DOM 顺序赢不了——不加 z-index
+        覆盖层会沉到画布底下，点击全被吃掉，而处理器看着完全正常。"""
+        self.assertIn("z-index: 5", self._html())
+
+    def test_drag_listens_on_window(self):
+        """svg 平时 pointer-events: none，拖拽途中指针移出线外就收不到事件，
+        手柄会在半路脱手。"""
+        self.assertIn("window.addEventListener('pointermove'", self._html())
+
+    def test_storage_key_is_scoped_per_ticker(self):
+        self.assertIn("tl:trends:TSM", self._html("TSM"))
+        self.assertIn("tl:trends:NVDA", self._html("NVDA"))
