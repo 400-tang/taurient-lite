@@ -1,0 +1,78 @@
+.tl-topbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 0.7rem var(--gutter) 0;
+}
+
+.tl-account-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-data);
+  font-size: var(--t-xs);
+  letter-spacing: var(--track-mono);
+  padding: 0.3rem 0.7rem;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  color: var(--ink-mid);
+  text-decoration: none;
+  transition: border-color 140ms ease, color 140ms ease;
+}
+
+.tl-account-link:hover { border-color: var(--accent); color: var(--accent); }
+
+/* 已登录时按钮变成品牌色的实心点加邮箱，一眼能区分状态。 */
+.tl-account-link.on { border-color: var(--accent); color: var(--accent); }
+
+.tl-account-link.on::before {
+  content: "";
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 999px;
+  background: var(--accent);
+}
+
+/* 过滤开关只在登录后出现：没有自选股时它切不出任何区别。 */
+.tl-filter {
+  display: none;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: var(--t-xs);
+  color: var(--ink-mid);
+  cursor: pointer;
+}
+
+.tl-filter.show { display: inline-flex; }
+
+.tl-hint {
+  max-width: 48rem;
+  margin: 0.35rem auto 0;
+  padding: 0 var(--gutter);
+  font-size: var(--t-xs);
+  color: var(--ink-faint);
+  text-align: right;
+}
+
+@media (max-width: 34rem) {
+  .tl-topbar { padding-top: 0.5rem; flex-wrap: wrap; }
+  .tl-hint { text-align: left; }
+}
+
+/* 命中自选股的条目：跟日历标签页「今天」那格同一套视觉语言
+   （柔和底色 + 内嵌强调色描边），不用负 margin 那种容易在网格
+   布局里出岔子的技巧。 */
+.item.tl-mine {
+  background: var(--accent-soft);
+  box-shadow: inset 3px 0 0 var(--accent);
+}
+
+/* 打开筛选开关时，只隐藏「带了股票代码、但都不在你自选股里」的条目。
+   完全没有 data-tickers 的条目是宏观新闻（联储、地缘、油价这类），
+   它们不属于任何个股，却往往是当天最重要的几条——第一版把它们也
+   一并隐藏了，结果 18 条里有 10 条属于这一类，一开筛选整页就空了，
+   还没有任何提示，看起来像页面坏了。 */
+body.tl-filtering .item[data-tickers]:not(.tl-mine) { display: none; }

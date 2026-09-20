@@ -1,0 +1,108 @@
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--t-base);
+  font-weight: 400;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.sheet {
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 2.75rem var(--gutter) 5rem;
+}
+
+/* 全大写小标签的通用形态。整页所有 eyebrow 都走这一个类。 */
+.label {
+  font-family: var(--font-body);
+  font-size: var(--t-xs);
+  font-weight: 600;
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+}
+
+.mono {
+  font-family: var(--font-data);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: var(--track-mono);
+}
+
+/* ---------------------------------------------------------------- masthead */
+
+.masthead {
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 0.8rem;
+}
+
+.masthead h1 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--t-2xl);
+  line-height: 1.02;
+  letter-spacing: var(--track-display);
+  margin: 0;
+  text-wrap: balance;
+}
+
+.masthead h1 em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--accent);
+}
+
+.stamp {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 1.15rem;
+  margin-top: 0.95rem;
+  font-family: var(--font-data);
+  font-size: var(--t-2xs);
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.stamp b { color: var(--ink-mid); font-weight: 500; }
+
+.lede {
+  font-family: var(--font-display);
+  font-size: var(--t-lg);
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 1.7rem 0 0;
+  padding-left: 1.05rem;
+  border-left: 3px solid var(--accent);
+  text-wrap: pretty;
+  max-width: var(--measure);
+}
+
+/* ----------------------------------------------------------- section heads */
+
+.sec-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  margin: 3rem 0 0.2rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.sec-head h2 { margin: 0; }
+.sec-head .n { font-family: var(--font-data); font-size: var(--t-xs); color: var(--ink-faint); }
+
+.sec-head .asof {
+  margin-left: auto;
+  font-family: var(--font-data);
+  font-size: var(--t-2xs);
+  color: var(--ink-faint);
+  letter-spacing: var(--track-mono);
+}
+
+.t1 h2 { color: var(--tier-1); }
+.t2 h2 { color: var(--tier-2); }
+.t3 h2 { color: var(--tier-3); }

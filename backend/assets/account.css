@@ -1,0 +1,180 @@
+/* 跟 taurient_lite/theme.py 里 .sheet 的宽度和左右留白对齐，这样这个
+   面板跟下面的正文在同一条竖线上对齐，不会显得是另一个不相关的模块。
+   只是不套 .sheet 本身的大段上下 padding——那是给正文用的，这里
+   只是页顶的一条工具条，贴着往下走就行。 */
+
+.tl-auth {
+  margin: 0;
+  padding: 1rem 1.2rem;
+  background: var(--paper-raised);
+  border: 1px solid var(--rule-hair);
+  border-radius: 4px;
+}
+
+.tl-auth-lede { margin: 0 0 0.7rem; font-size: var(--t-sm); color: var(--ink-mid); }
+
+#tl-google-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.5rem 1rem 0.5rem 0.7rem;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  background: var(--paper);
+  color: var(--ink);
+  font-size: var(--t-sm);
+  font-weight: 500;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: border-color 140ms ease, background 140ms ease;
+}
+
+#tl-google-btn:hover { border-color: var(--ink-mid); background: var(--paper-sunk); }
+#tl-google-btn svg { flex: none; }
+
+#tl-add-form button {
+  padding: 0.45rem 0.9rem;
+  border: 1px solid var(--accent);
+  border-radius: 3px;
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+  font-size: var(--t-sm);
+  font-weight: 500;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: background 140ms ease, color 140ms ease;
+}
+
+#tl-add-form button:hover {
+  background: var(--accent);
+  color: var(--paper);
+}
+
+.tl-auth-status { margin: 0 0 0.5rem; font-size: var(--t-sm); color: var(--ink-mid); }
+
+.tl-auth-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  margin-bottom: 0.8rem;
+}
+
+#tl-user-email {
+  font-family: var(--font-data);
+  font-size: var(--t-sm);
+  color: var(--ink-mid);
+}
+
+#tl-logout {
+  padding: 0.35rem 0.75rem;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  background: transparent;
+  color: var(--ink-mid);
+  font-size: var(--t-sm);
+  font-family: var(--font-body);
+  cursor: pointer;
+}
+
+#tl-logout:hover { border-color: var(--ink-mid); background: var(--paper-sunk); color: var(--ink); }
+
+.tl-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.7rem; }
+
+.tl-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: var(--font-data);
+  font-size: var(--t-sm);
+  padding: 0.2rem 0.3rem 0.2rem 0.55rem;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+}
+
+.tl-chip-remove {
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: inherit;
+  font-size: 1rem;
+  line-height: 1;
+  padding: 0 0.15rem;
+}
+
+.tl-chip-remove:hover { color: var(--down); }
+
+#tl-add-form { display: flex; gap: 0.5rem; margin-bottom: 0.8rem; }
+
+/* 下拉列表绝对定位在输入框下方，所以要有个 relative 的容器。
+   flex:1 让输入框继续占满剩余宽度，和改造前的版面一致。 */
+#tl-search-wrap { position: relative; flex: 1; }
+
+#tl-suggest {
+  position: absolute;
+  z-index: 30;
+  top: calc(100% + 2px);
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 0.25rem 0;
+  list-style: none;
+  background: var(--paper-raised);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  max-height: 15rem;
+  overflow-y: auto;
+}
+
+#tl-suggest li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.4rem 0.6rem;
+  cursor: pointer;
+  font-size: var(--t-sm);
+}
+
+/* 键盘选中与鼠标悬停用同一个高亮，避免出现「两个都亮着」的歧义状态。 */
+#tl-suggest li:hover,
+#tl-suggest li[aria-selected="true"] { background: var(--accent-soft); }
+
+#tl-suggest .tl-sym {
+  font-family: var(--font-data);
+  font-weight: 500;
+  color: var(--accent-strong);
+  flex-shrink: 0;
+}
+
+#tl-suggest .tl-name {
+  color: var(--ink-mid);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#tl-suggest .tl-exch {
+  margin-left: auto;
+  font-size: var(--t-2xs);
+  color: var(--ink-faint);
+  flex-shrink: 0;
+}
+
+#tl-add-input {
+  flex: 1 1 10rem;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  background: var(--paper);
+  color: var(--ink);
+  /* 等宽字体和强制大写是当年「只接受股票代码」时留下的。现在这里也输
+     公司名，强制大写会把 apple 显示成 APPLE、把英文名排得歪歪扭扭，
+     所以换回正文字体、去掉大写。代码本身仍然会在提交时转成大写。 */
+  font-family: var(--font-body);
+  font-size: var(--t-sm);
+}
+
+

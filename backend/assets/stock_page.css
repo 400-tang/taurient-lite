@@ -1,0 +1,406 @@
+/* 整页撑满视口：图表是这一页的主体，让它吃掉剩下的全部高度。
+   固定高度（原来是 26rem）在高屏幕上会留出大半屏空白，而 K 线恰恰是
+   越高越好读——纵向空间直接决定价格轴的分辨率。 */
+.stock {
+  max-width: 96rem;
+  margin: 0 auto;
+  padding: 1.4rem var(--gutter) 1.6rem;
+  min-height: 100vh;
+  min-height: 100dvh;   /* 手机上地址栏会伸缩，dvh 才是真正可见的高度 */
+  display: flex;
+  flex-direction: column;
+}
+
+.stock-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 0.7rem;
+}
+
+.stock-tk {
+  font-family: var(--font-data);
+  font-size: var(--t-xl);
+  font-weight: 500;
+  letter-spacing: var(--track-mono);
+}
+
+.stock-name { font-size: var(--t-base); color: var(--ink-mid); }
+
+.stock-last {
+  margin-left: auto;
+  font-family: var(--font-data);
+  font-size: var(--t-lg);
+  font-variant-numeric: tabular-nums;
+}
+
+.stock-chg {
+  font-family: var(--font-data);
+  font-size: var(--t-base);
+  font-variant-numeric: tabular-nums;
+}
+
+.stock-chg.up { color: var(--up); }
+.stock-chg.down { color: var(--down); }
+
+.stock-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin: 0.9rem 0 0.7rem;
+  flex-wrap: wrap;
+}
+
+.range-btn {
+  font-family: var(--font-data);
+  font-size: var(--t-xs);
+  letter-spacing: var(--track-mono);
+  padding: 0.28rem 0.6rem;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  background: transparent;
+  color: var(--ink-mid);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.range-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+.range-btn.on {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+  font-weight: 500;
+}
+
+/* 图表吃掉纵向的剩余空间。min-height 是底线：图表库按容器尺寸初始化，
+   高度为 0 时它会画出一张看不见的图，而且不报错。 */
+.chart-wrap {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 16rem;
+  display: flex;
+}
+
+#chart {
+  width: 100%;
+  flex: 1 1 auto;
+  border: 1px solid var(--rule-soft);
+  border-radius: 3px;
+}
+
+/* 趋势线画在图表上方的一层 SVG 里。
+   **默认 pointer-events: none**，否则它会吃掉所有鼠标事件，图表就拖不动、
+   缩放不了了。只有线本身和端点手柄打开事件，空白处的点击照常穿透给图表；
+   进入绘制模式时才整层接管。 */
+#draw {
+  position: absolute;
+  pointer-events: none;
+  overflow: visible;
+  /* 必须压过图表自己的画布。图表库内部元素带 z-index，光靠 DOM 顺序
+     赢不了——不加这一行，覆盖层会沉到 canvas 底下，点击全被画布吃掉，
+     而处理器看上去完全正常，只是永远收不到事件。 */
+  z-index: 5;
+}
+
+#draw.drawing { pointer-events: auto; cursor: crosshair; }
+#draw .trend { pointer-events: stroke; cursor: pointer; }
+#draw .grab { pointer-events: all; cursor: grab; }
+#draw .grab:active { cursor: grabbing; }
+
+.stock-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(7.5rem, 1fr));
+  gap: 0.5rem;
+  margin-top: 0.9rem;
+}
+
+.stat { border-top: 1px solid var(--rule-soft); padding-top: 0.45rem; }
+
+.stat .k {
+  font-size: var(--t-2xs);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.stat .v {
+  font-family: var(--font-data);
+  font-size: var(--t-md);
+  font-variant-numeric: tabular-nums;
+  margin-top: 0.1rem;
+}
+
+/* ------------------------------------------------------- 公司信息各块 */
+
+/* 图表撑满首屏，这些块在下面。**它们不参与抢高度**——K 线是这一页的
+   主体，往下滚才是查资料。 */
+.co { flex: none; margin-top: 2.2rem; }
+
+.co-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  margin-bottom: 0.6rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.co-head h2 {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--t-xs);
+  font-weight: 600;
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--ink-mid);
+}
+
+.co-head .co-sub { font-size: var(--t-2xs); color: var(--ink-faint); }
+
+.co-desc {
+  margin: 0;
+  font-size: var(--t-base);
+  line-height: 1.7;
+  max-width: var(--measure);
+  text-wrap: pretty;
+}
+
+.co-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.7rem; }
+
+.co-tag {
+  font-family: var(--font-data);
+  font-size: var(--t-2xs);
+  letter-spacing: var(--track-mono);
+  padding: 0.12rem 0.45rem;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  color: var(--ink-mid);
+  text-decoration: none;
+}
+
+.co-tag[href]:hover { border-color: var(--accent); color: var(--accent); }
+
+/* 关键统计：和「指数与利率」同一种格子，整页只有一种数据格。 */
+.co-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+}
+
+.co-stat { padding: 0.6rem 0.9rem 0.6rem 0; border-bottom: 1px solid var(--rule-soft); }
+.co-stat .k { font-size: var(--t-sm); color: var(--ink-faint); }
+
+.co-stat .v {
+  font-family: var(--font-data);
+  font-size: var(--t-md);
+  font-variant-numeric: tabular-nums;
+  margin-top: 0.15rem;
+  /* 长数字宁可换行也不许顶到隔壁格子去。 */
+  overflow-wrap: anywhere;
+}
+
+/* 评级 */
+.rating-line { display: flex; align-items: baseline; gap: 0.6rem; flex-wrap: wrap; }
+
+.rating-badge {
+  font-family: var(--font-data);
+  font-size: var(--t-lg);
+  font-weight: 500;
+}
+
+.rating-badge.buy { color: var(--up); }
+.rating-badge.sell { color: var(--down); }
+.rating-badge.hold { color: var(--ink-mid); }
+
+.rating-note {
+  margin: 0.55rem 0 0;
+  font-size: var(--t-sm);
+  color: var(--ink-mid);
+  max-width: var(--measure);
+  text-wrap: pretty;
+}
+
+.broker-list {
+  margin: 0.6rem 0 0;
+  font-family: var(--font-data);
+  font-size: var(--t-2xs);
+  line-height: 1.8;
+  color: var(--ink-faint);
+  max-width: var(--measure);
+}
+
+/* 财报：每季一行，实际与预期并排，超预期用条形表示幅度。 */
+.eps-row {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr 4.2rem;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--rule-hair);
+}
+
+.eps-q { font-family: var(--font-data); font-size: var(--t-sm); color: var(--ink-mid); }
+
+.eps-pair {
+  font-family: var(--font-data);
+  font-size: var(--t-sm);
+  font-variant-numeric: tabular-nums;
+}
+
+.eps-pair .est { color: var(--ink-faint); }
+
+.eps-sur {
+  font-family: var(--font-data);
+  font-size: var(--t-sm);
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.eps-sur.up { color: var(--up); }
+.eps-sur.down { color: var(--down); }
+
+/* 相关新闻：复用简报里条目的分层配色，读者一眼认得出是同一套语言。 */
+.mention {
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--rule-hair);
+}
+
+.mention-top {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  font-family: var(--font-data);
+  font-size: var(--t-2xs);
+  color: var(--ink-faint);
+}
+
+.mention-tier { padding: 0.05rem 0.35rem; border-radius: 2px; }
+.mention-tier.t1 { color: var(--tier-1); background: var(--down-wash); }
+.mention-tier.t2 { color: var(--tier-2); background: var(--accent-soft); }
+.mention-tier.t3 { color: var(--tier-3); background: var(--flat-wash); }
+
+.mention h3 {
+  margin: 0.3rem 0 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--t-md);
+  line-height: 1.35;
+  max-width: var(--measure);
+  text-wrap: balance;
+}
+
+.mention p {
+  margin: 0.35rem 0 0;
+  font-size: var(--t-sm);
+  line-height: 1.6;
+  color: var(--ink-mid);
+  max-width: var(--measure);
+  text-wrap: pretty;
+}
+
+.stock-note {
+  margin-top: 1.4rem;
+  font-size: var(--t-sm);
+  line-height: 1.7;
+  color: var(--ink-mid);
+  max-width: var(--measure);
+  text-wrap: pretty;
+}
+
+.stock-back {
+  display: inline-block;
+  margin-bottom: 1.2rem;
+  font-family: var(--font-data);
+  font-size: var(--t-xs);
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.stock-back:hover { color: var(--accent-strong); }
+
+.chart-fallback {
+  padding: 1.2rem;
+  font-size: var(--t-sm);
+  color: var(--ink-mid);
+  text-wrap: pretty;
+}
+
+/* 横线工具条与已画横线列表。 */
+.line-tools {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+  margin-left: auto;
+}
+
+.line-btn {
+  font-family: var(--font-data);
+  font-size: var(--t-xs);
+  letter-spacing: var(--track-mono);
+  padding: 0.28rem 0.6rem;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  background: transparent;
+  color: var(--ink-mid);
+  cursor: pointer;
+}
+
+.line-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+/* 待放置状态要一眼可见：此刻点图表就会落一条线，不告诉用户就是个惊吓。 */
+.line-btn.arming {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+  font-weight: 500;
+}
+
+.line-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin: 0.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.line-list li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-data);
+  font-size: var(--t-xs);
+  font-variant-numeric: tabular-nums;
+  padding: 0.18rem 0.3rem 0.18rem 0.5rem;
+  border: 1px solid var(--rule-soft);
+  border-radius: 2px;
+  color: var(--ink-mid);
+}
+
+.line-list button {
+  border: 0;
+  background: none;
+  color: var(--ink-faint);
+  cursor: pointer;
+  font-size: var(--t-sm);
+  line-height: 1;
+  padding: 0 0.15rem;
+}
+
+.line-list button:hover { color: var(--down); }
+
+.line-hint { font-size: var(--t-xs); color: var(--ink-faint); }
+
+/* 底部这两块是固定高度的附属信息，不参与抢高度。 */
+.stock-stats { flex: none; }
+.stock-note { flex: none; margin-top: 0.9rem; }
+
+@media (max-width: 34rem) {
+  .stock { padding: 1rem var(--gutter) 1.2rem; }
+  #chart { min-height: 14rem; }
+  .stock-note { font-size: var(--t-xs); }
+}

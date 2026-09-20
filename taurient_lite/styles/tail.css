@@ -1,0 +1,67 @@
+.cal-scroll { overflow-x: auto; margin-top: 0.5rem; }
+
+table { border-collapse: collapse; width: 100%; font-size: var(--t-base); }
+
+td {
+  padding: 0.62rem 0.7rem 0.62rem 0;
+  border-bottom: 1px solid var(--rule-soft);
+  vertical-align: top;
+}
+
+td.when {
+  font-family: var(--font-data);
+  font-size: var(--t-sm);
+  white-space: nowrap;
+  color: var(--ink-mid);
+}
+
+td.time {
+  font-family: var(--font-data);
+  font-size: var(--t-sm);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  color: var(--ink-faint);
+}
+
+td.w { text-align: right; white-space: nowrap; }
+
+.w span {
+  font-family: var(--font-data);
+  font-size: var(--t-2xs);
+  letter-spacing: 0.08em;
+  padding: 0.1rem 0.42rem;
+  border-radius: 2px;
+}
+
+.w-high { background: var(--accent-soft); color: var(--accent); }
+.w-mid { color: var(--ink-mid); }
+.w-low { color: var(--ink-faint); }
+
+.colophon {
+  margin-top: 3.5rem;
+  padding-top: 1.05rem;
+  border-top: 2px solid var(--ink);
+  font-family: var(--font-data);
+  font-size: var(--t-2xs);
+  line-height: 1.8;
+  color: var(--ink-faint);
+  letter-spacing: 0.02em;
+}
+
+a:focus-visible, summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+@media (max-width: 34rem) {
+  .item { grid-template-columns: 1.9rem 1fr; gap: 0 0.7rem; }
+  .item h3 { font-size: var(--t-lg); }
+  .assets { grid-template-columns: 1fr 1fr; }
+}
+
+/* 页面在静止状态下就是完整可读的，动效只发生在悬停与聚焦上，
+   所以这里整个关掉不会藏起任何内容。 */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}

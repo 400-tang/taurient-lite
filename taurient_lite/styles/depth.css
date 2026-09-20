@@ -1,0 +1,168 @@
+/* 三块深度元数据：资产波及矩阵占满宽度，交叉信源与历史脉络并排成微卡片。 */
+
+.depth { margin-top: 1.1rem; }
+
+.depth-head {
+  font-family: var(--font-data);
+  font-size: var(--t-2xs);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--rule-hair);
+  margin-bottom: 0.55rem;
+}
+
+/* --- 资产波及矩阵 --- */
+
+.assets {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(8.5rem, 1fr));
+  gap: 0.4rem;
+}
+
+.asset {
+  border: 1px solid var(--rule-hair);
+  border-radius: 3px;
+  padding: 0.5rem 0.6rem;
+  background: var(--paper-raised);
+  transition: border-color 140ms ease;
+}
+
+.asset:hover { border-color: var(--rule); }
+
+.asset-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.4rem;
+}
+
+.asset-name {
+  font-size: var(--t-sm);
+  font-weight: 500;
+  color: var(--ink);
+}
+
+/* 方向：箭头字形 + 文字 + 颜色，三重编码，色觉障碍读者不依赖颜色。 */
+.asset-dir {
+  font-family: var(--font-data);
+  font-size: var(--t-2xs);
+  letter-spacing: var(--track-mono);
+  white-space: nowrap;
+}
+
+.asset-dir.up { color: var(--up); }
+.asset-dir.down { color: var(--down); }
+.asset-dir.mixed, .asset-dir.none { color: var(--flat); }
+
+/* 判断强度：三格，填几格就是几档。同样是颜色之外的编码。 */
+.conv { display: flex; gap: 2px; margin-top: 0.4rem; }
+
+.conv i {
+  display: block;
+  width: 0.85rem;
+  height: 3px;
+  border-radius: 1px;
+  background: var(--rule);
+}
+
+.conv.up i.on { background: var(--up); }
+.conv.down i.on { background: var(--down); }
+.conv.mixed i.on, .conv.none i.on { background: var(--flat); }
+
+.asset-note {
+  margin-top: 0.42rem;
+  font-size: var(--t-2xs);
+  line-height: 1.5;
+  color: var(--ink-mid);
+  text-wrap: pretty;
+}
+
+/* --- 交叉信源与历史脉络 --- */
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.6rem;
+  margin-top: 0.9rem;
+}
+
+@media (min-width: 46rem) {
+  .cards.two { grid-template-columns: 1fr 1fr; }
+}
+
+.card {
+  border: 1px solid var(--rule-hair);
+  border-radius: 3px;
+  padding: 0.7rem 0.8rem;
+  background: var(--paper-raised);
+}
+
+.card-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.45rem;
+}
+
+.card-head .t {
+  font-family: var(--font-data);
+  font-size: var(--t-2xs);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.agree {
+  font-family: var(--font-data);
+  font-size: var(--t-2xs);
+  letter-spacing: var(--track-mono);
+  padding: 0.08rem 0.4rem;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+
+.agree.aligned { color: var(--up); background: var(--up-wash); }
+.agree.split { color: var(--down); background: var(--down-wash); }
+.agree.single { color: var(--ink-faint); background: var(--flat-wash); }
+
+.card p { margin: 0; font-size: var(--t-sm); line-height: 1.6; max-width: none; }
+
+/* 时间轴。是真正的时间序列，所以竖轴加节点这个结构是有信息含量的。 */
+.tl { margin: 0; padding: 0 0 0 0.85rem; list-style: none; position: relative; }
+
+.tl::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 0.42rem;
+  bottom: 0.42rem;
+  width: 1px;
+  background: var(--rule);
+}
+
+.tl li { position: relative; padding: 0.22rem 0; font-size: var(--t-sm); line-height: 1.55; }
+
+.tl li::before {
+  content: "";
+  position: absolute;
+  left: -0.85rem;
+  top: 0.62rem;
+  width: 5px;
+  height: 5px;
+  border-radius: 999px;
+  background: var(--ink-faint);
+}
+
+/* 最后一个节点是「当下」，用品牌色点亮，读者一眼看到脉络走到哪了。 */
+.tl li:last-child::before { background: var(--accent); }
+
+.tl .w {
+  font-family: var(--font-data);
+  font-size: var(--t-2xs);
+  letter-spacing: var(--track-mono);
+  color: var(--ink-faint);
+  margin-right: 0.4rem;
+}

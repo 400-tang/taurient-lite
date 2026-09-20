@@ -1,0 +1,171 @@
+/* 行情板。跟随亮暗主题——理由见 TOKENS 里的注释。 */
+.board {
+  margin: 0.4rem 0 1.6rem;
+  padding: 1rem 0.9rem 1.1rem;
+  background: var(--heat-board);
+  border: 1px solid var(--rule-soft);
+  border-radius: 10px;
+  color: var(--heat-ink);
+}
+
+.board-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  padding: 0 0.15rem;
+  margin-bottom: 0.7rem;
+}
+
+.board-title {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--t-md);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--heat-ink);
+}
+
+.board-asof {
+  font-size: var(--t-xs);
+  color: var(--heat-ink-dim);
+}
+
+.board-note {
+  margin: 0.8rem 0.15rem 0;
+  font-size: var(--t-xs);
+  line-height: 1.5;
+  color: var(--heat-ink-dim);
+  max-width: var(--measure);
+  text-wrap: pretty;
+}
+
+/* 横向轨道。手机上一屏放不下 12 个行业，竖着堆会把下面的内容推到
+   三屏之外；横向滑动配 scroll-snap 是这种场景的原生解法。 */
+.sec-rail {
+  display: flex;
+  gap: 0.7rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 0.4rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--heat-flat) transparent;
+}
+
+.sec-card {
+  flex: 0 0 min(82%, 20rem);
+  scroll-snap-align: start;
+  padding: 0.7rem 0.7rem 0.75rem;
+  background: var(--heat-card);
+  border: 1px solid var(--rule-hair);
+  border-radius: 8px;
+}
+
+.sec-card-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  margin-bottom: 0.55rem;
+}
+
+.sec-name {
+  font-size: var(--t-base);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--heat-ink);
+}
+
+.sec-n {
+  font-size: var(--t-2xs);
+  color: var(--heat-ink-dim);
+}
+
+/* 行业涨跌幅。**刻意不按色阶上色。**
+   色阶是给「色块背景」设计的：低档 #3A201C 这种暗棕压在同样暗的卡片上，
+   一个 -0.07% 会直接消失。文字只取方向，用色阶最亮的一档保证读得出来，
+   幅度由数字本身表达——数字已经写在那里了，不需要颜色再说一遍。 */
+.sec-chg {
+  margin-left: auto;
+  font-family: var(--font-data);
+  font-size: var(--t-sm);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  color: var(--heat-ink-dim);
+}
+
+.sec-chg.up { color: var(--heat-u5); }
+.sec-chg.down { color: var(--heat-d5); }
+
+/* 树图画布。aspect-ratio 必须和 treemap.squarify 的 box_w/box_h 一致，
+   否则算出来的「正方形」会被容器拉成长条。两边都引用 HEAT_BOX。 */
+.heat {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 100 / 62;
+}
+
+.tile {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.05rem;
+  border: 1px solid var(--heat-edge);
+  border-radius: 3px;
+  overflow: hidden;
+  font-family: var(--font-data);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.15;
+  text-align: center;
+}
+
+.tile-tk {
+  font-size: var(--t-2xs);
+  font-weight: 500;
+  letter-spacing: var(--track-mono);
+}
+
+.tile-ch { font-size: var(--t-2xs); opacity: 0.85; }
+
+/* 色块可能是链接（通向个股 K 线页），也可能只是色块。两种形态必须长得
+   一模一样，所以在这里把链接的默认装饰全部抹掉，颜色交给档位规则。 */
+a.tile { text-decoration: none; cursor: pointer; }
+a.tile:hover { outline: 2px solid var(--heat-ink); outline-offset: -2px; }
+a.tile:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+/* 小块降级：放不下两行就只留代码，再小就只剩色块。
+   不降级的话文字会溢出成一团糊，比没有文字更糟。 */
+.tile.compact .tile-ch { display: none; }
+.tile.bare .tile-tk,
+.tile.bare .tile-ch { display: none; }
+
+/* 大块放大字号：块的大小已经在说「这块更重要」，字号跟上才不矛盾。 */
+.tile.lg { gap: 0.15rem; }
+.tile.lg .tile-tk { font-size: var(--t-sm); font-weight: 600; }
+.tile.lg .tile-ch { font-size: var(--t-xs); opacity: 0.92; }
+
+.heat-legend {
+  display: flex;
+  align-items: center;
+  gap: 0.22rem;
+  margin: 0.8rem 0.15rem 0;
+  font-size: var(--t-2xs);
+  font-family: var(--font-data);
+  color: var(--heat-ink-dim);
+}
+
+.swatch {
+  width: 1.15rem;
+  height: 0.45rem;
+  border: 1px solid var(--heat-edge);
+  border-radius: 2px;
+  display: inline-block;
+  flex: none;
+}
+
+.heat-legend .lg-label { margin: 0 0.2rem; }
+
+@media (max-width: 34rem) {
+  .board { padding: 0.85rem 0.7rem 0.9rem; border-radius: 14px; }
+  .sec-card { flex-basis: 88%; }
+}

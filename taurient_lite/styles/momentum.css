@@ -1,0 +1,186 @@
+/* 首页上的初动摘要条。视觉上刻意贴近自选股面板——两者回答的是同一类
+   问题（哪些代码今天值得多看一眼），长得像才不会让读者以为是新东西。 */
+.mo-strip { margin-top: 1rem; }
+
+.mo-strip-grid { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+
+.mo-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.26rem 0.5rem;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  font-family: var(--font-data);
+  font-size: var(--t-sm);
+  letter-spacing: var(--track-mono);
+  color: var(--ink-mid);
+  text-decoration: none;
+  transition: border-color 140ms ease, color 140ms ease;
+}
+
+.mo-chip:hover { border-color: var(--accent-strong); color: var(--accent-strong); }
+
+.mo-chip-n {
+  font-size: var(--t-2xs);
+  font-variant-numeric: tabular-nums;
+  opacity: 0.75;
+}
+
+.mo-strip-foot {
+  margin: 0.55rem 0 0;
+  font-size: var(--t-sm);
+  color: var(--ink-faint);
+  max-width: var(--measure);
+  text-wrap: pretty;
+}
+
+.mo-lede {
+  margin: 0.9rem 0 0;
+  max-width: var(--measure);
+  font-size: var(--t-base);
+  line-height: 1.7;
+  text-wrap: pretty;
+}
+
+/* 免责声明用边框而不是底色：它必须一眼看见，但不该抢走候选名单的注意力。 */
+.mo-disclaimer {
+  margin-top: 0.9rem;
+  padding: 0.6rem 0.75rem;
+  border-left: 2px solid var(--rule);
+  font-size: var(--t-sm);
+  line-height: 1.6;
+  color: var(--ink-mid);
+  max-width: var(--measure);
+  text-wrap: pretty;
+}
+
+.mo-groups { margin-top: 1.5rem; }
+.mo-group + .mo-group { margin-top: 1.75rem; }
+
+.mo-group-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.mo-group-name {
+  font-family: var(--font-data);
+  font-size: var(--t-xs);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+}
+
+.mo-group-n {
+  font-family: var(--font-data);
+  font-size: var(--t-2xs);
+  color: var(--ink-faint);
+}
+
+.mo-group-blurb {
+  font-size: var(--t-sm);
+  color: var(--ink-faint);
+  text-wrap: pretty;
+}
+
+/* 初动是整个板块存在的理由，用品牌色标出来；已延伸整组压暗，
+   读者不必逐张卡片去读指标就知道这一组已经错过了。 */
+.g-ignition .mo-group-name { color: var(--accent-strong); }
+.g-ignition .mo-group-head { border-bottom-color: var(--accent); }
+.g-extended { opacity: 0.62; }
+
+.mo-card {
+  padding: 0.7rem 0 0.75rem;
+  border-bottom: 1px solid var(--rule-hair);
+}
+
+.mo-card:last-child { border-bottom: 0; }
+
+.mo-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+}
+
+.mo-tk {
+  font-family: var(--font-data);
+  font-size: var(--t-md);
+  font-weight: 500;
+  letter-spacing: var(--track-mono);
+}
+
+.s-ignition .mo-tk { color: var(--accent-strong); }
+
+.mo-px {
+  font-family: var(--font-data);
+  font-size: var(--t-sm);
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-mid);
+}
+
+.mo-chg {
+  font-family: var(--font-data);
+  font-size: var(--t-sm);
+  font-variant-numeric: tabular-nums;
+}
+
+.mo-chg-day {
+  font-size: var(--t-2xs);
+  color: var(--ink-faint);
+  margin-right: 0.15rem;
+}
+
+.mo-chg.up { color: var(--up); }
+.mo-chg.down { color: var(--down); }
+
+.mo-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.1rem;
+  margin-top: 0.5rem;
+}
+
+.mo-metric { display: flex; align-items: baseline; gap: 0.3rem; }
+
+.mo-metric-k {
+  font-size: var(--t-2xs);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.mo-metric-v {
+  font-family: var(--font-data);
+  font-size: var(--t-sm);
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+}
+
+.mo-note {
+  margin: 0.5rem 0 0;
+  font-size: var(--t-sm);
+  line-height: 1.65;
+  color: var(--ink-mid);
+  max-width: var(--measure);
+  text-wrap: pretty;
+}
+
+.mo-src { margin-top: 0.4rem; }
+
+.mo-src a {
+  font-family: var(--font-data);
+  font-size: var(--t-2xs);
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent-soft);
+}
+
+.mo-src a:hover { border-bottom-color: var(--accent); }
+
+@media (max-width: 34rem) {
+  .mo-group-blurb { flex-basis: 100%; }
+  .mo-metrics { gap: 0.3rem 0.8rem; }
+}

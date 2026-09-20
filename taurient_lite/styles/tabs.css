@@ -1,0 +1,32 @@
+.tab-input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.tab-nav {
+  display: flex;
+  gap: 0.3rem;
+  margin: 2.6rem 0 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.tab-label {
+  font-family: var(--font-body);
+  font-size: var(--t-sm);
+  font-weight: 500;
+  color: var(--ink-faint);
+  padding: 0.55rem 0.15rem;
+  margin-bottom: -1px;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: color 140ms ease, border-color 140ms ease;
+}
+
+.tab-label + .tab-label { margin-left: 1.3rem; }
+
+.tab-label:hover { color: var(--ink); }
+
+.tab-panel { display: none; }

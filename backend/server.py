@@ -43,39 +43,10 @@ from taurient_lite.quotes import Quote, QuoteError, fetch_quote
 from taurient_lite.schema import Brief, Market, SchemaError
 from taurient_lite.history import DEFAULT_RANGE, RANGES, HistoryError, fetch_history, summarise
 from taurient_lite.short_interest import ShortInterestError, fetch_latest
-from taurient_lite.theme import GOOGLE_FONTS, LAYOUT_CSS, TOKENS, build_palette_css
+from taurient_lite.theme import GOOGLE_FONTS, TOKENS, build_palette_css, load_style
 
-#: 账号页的外壳。正文由 ``auth_panel`` 提供，这里只管版心和标题。
-ACCOUNT_CSS = """
-.account {
-  max-width: 34rem;
-  margin: 0 auto;
-  padding: 2.5rem var(--gutter) 4rem;
-}
 
-.account h1 {
-  font-family: var(--font-display);
-  font-weight: 500;
-  font-size: var(--t-xl);
-  letter-spacing: var(--track-display);
-  margin: 0 0 1.2rem;
-  padding-bottom: 0.7rem;
-  border-bottom: 2px solid var(--ink);
-}
-
-.stock-back {
-  display: inline-block;
-  margin-bottom: 1.2rem;
-  font-family: var(--font-data);
-  font-size: var(--t-xs);
-  color: var(--accent);
-  text-decoration: none;
-}
-
-.stock-back:hover { color: var(--accent-strong); }
-"""
-
-from . import auth_bar, auth_panel, live, stock_page
+from . import assets, auth_bar, auth_panel, live, stock_page
 from .stock_news import mentions_for
 from .search import MAX_RESULTS, SearchError, resolve, search
 
@@ -358,7 +329,7 @@ def stock(
         '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
         f"<title>{symbol} · Morning Tape</title>\n"
         f'<link rel="stylesheet" href="{GOOGLE_FONTS}">\n'
-        f"<style>{build_palette_css()}\n{LAYOUT_CSS}\n{stock_page.CSS}</style>\n"
+        f"<style>{build_palette_css()}\n{load_style('layout.css')}\n{assets.load('stock_page.css')}</style>\n"
         f"</head>\n<body>\n{body}\n</body>\n</html>\n"
     )
 
@@ -386,7 +357,7 @@ def account():
         '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
         "<title>账号 · Morning Tape</title>\n"
         f'<link rel="stylesheet" href="{GOOGLE_FONTS}">\n'
-        f"<style>{build_palette_css()}\n{LAYOUT_CSS}\n{ACCOUNT_CSS}</style>\n"
+        f"<style>{build_palette_css()}\n{load_style('layout.css')}\n{assets.load('account_shell.css')}</style>\n"
         "</head>\n<body>\n"
         f'<div class="account">\n'
         f'<a class="stock-back" href="{back}/">&larr; 回简报</a>\n'

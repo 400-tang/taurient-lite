@@ -10,6 +10,7 @@ from __future__ import annotations
 import re
 import unittest
 
+from taurient_lite import theme
 from taurient_lite.theme import (
     TOKENS,
     TYPE_SCALE,
@@ -97,6 +98,35 @@ class TestFullStylesheet(unittest.TestCase):
     def test_focus_visible_styled(self):
         """键盘用户必须看得见焦点。"""
         self.assertIn("focus-visible", self.css)
+
+
+class TestStyleFiles(unittest.TestCase):
+    """样式表现在是真正的 .css 文件，不再是 Python 字符串。"""
+
+    def test_every_listed_file_exists(self):
+        for name in theme.STYLE_FILES:
+            with self.subTest(name):
+                self.assertTrue((theme.STYLES / name).is_file(), name)
+
+    def test_no_css_file_is_left_out_of_the_build(self):
+        """漏在 STYLE_FILES 外面的文件不会报错，只会整块样式静默消失。
+
+        显式列名单是为了控制层叠顺序，代价就是可能漏登记——这条用例
+        就是那个代价的保险。
+        """
+        on_disk = {p.name for p in theme.STYLES.glob("*.css")}
+        self.assertEqual(on_disk, set(theme.STYLE_FILES))
+
+    def test_braces_are_balanced(self):
+        for name in theme.STYLE_FILES:
+            with self.subTest(name):
+                text = theme.load_style(name)
+                self.assertEqual(text.count("{"), text.count("}"))
+
+    def test_generated_parts_come_before_static_ones(self):
+        """静态样式表引用的是生成出来的 CSS 变量，顺序反了就全是默认值。"""
+        css = theme.build_css()
+        self.assertLess(css.index("--paper:"), css.index(".sheet"))
 
 
 if __name__ == "__main__":

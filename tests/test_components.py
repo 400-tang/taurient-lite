@@ -236,8 +236,13 @@ class TestItems(unittest.TestCase):
 
 class TestTail(unittest.TestCase):
     def test_colophon_states_the_boundary(self):
-        """页脚必须写明这不是投资建议，这是工具的实际边界。"""
-        self.assertIn("不是投资建议", tail.colophon())
+        """页脚必须写明这不是投资建议，这是工具的实际边界。
+
+        断言盯的是「投资建议」这个词而不是整句措辞——文案可以精简，
+        边界不能消失。这条用例曾经写死了一整句，页脚从四行压成一行时
+        就红了，而那次改动完全正确。
+        """
+        self.assertIn("投资建议", tail.colophon())
 
 
 if __name__ == "__main__":
