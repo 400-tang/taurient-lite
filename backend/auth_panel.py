@@ -40,11 +40,6 @@ CSS = """
    面板跟下面的正文在同一条竖线上对齐，不会显得是另一个不相关的模块。
    只是不套 .sheet 本身的大段上下 padding——那是给正文用的，这里
    只是页顶的一条工具条，贴着往下走就行。 */
-.tl-bar {
-  max-width: 48rem;
-  margin: 1.75rem auto 0;
-  padding: 0 var(--gutter);
-}
 
 .tl-auth {
   margin: 0;
@@ -220,36 +215,13 @@ CSS = """
   font-size: var(--t-sm);
 }
 
-.tl-toggle {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: var(--t-sm);
-  color: var(--ink-mid);
-  cursor: pointer;
-}
 
-/* 命中自选股的条目：跟日历标签页「今天」那格同一套视觉语言
-   （柔和底色 + 内嵌强调色描边），不用负 margin 那种容易在网格
-   布局里出岔子的技巧。 */
-.item.tl-mine {
-  background: var(--accent-soft);
-  box-shadow: inset 3px 0 0 var(--accent);
-}
-
-/* 打开筛选开关时，只隐藏「带了股票代码、但都不在你自选股里」的条目。
-   完全没有 data-tickers 的条目是宏观新闻（联储、地缘、油价这类），
-   它们不属于任何个股，却往往是当天最重要的几条——第一版把它们也
-   一并隐藏了，结果 18 条里有 10 条属于这一类，一开筛选整页就空了，
-   还没有任何提示，看起来像页面坏了。 */
-body.tl-filtering .item[data-tickers]:not(.tl-mine) { display: none; }
 """
 
 HTML = """
-<div class="tl-bar">
 <div class="tl-auth">
   <div id="tl-auth-logged-out" hidden>
-    <p class="tl-auth-lede">登录后可以保存自己的自选股，跟你相关的新闻会自动高亮。</p>
+    <p class="tl-auth-lede">登录后可以保存自己的自选股。回到简报页时，跟你相关的新闻会自动高亮，也可以只看这些。</p>
     <button id="tl-google-btn" type="button">
       <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">
         <path fill="#4285F4" d="M17.64 9.2c0-.64-.06-1.25-.16-1.84H9v3.48h4.84a4.14 4.14 0 0 1-1.8 2.72v2.26h2.9c1.7-1.57 2.7-3.88 2.7-6.62z"/>
@@ -280,12 +252,7 @@ HTML = """
       </div>
       <button type="submit">添加</button>
     </form>
-    <label class="tl-toggle">
-      <input type="checkbox" id="tl-filter-toggle">
-      只看跟我相关的新闻（宏观新闻始终保留）
-    </label>
   </div>
-</div>
 </div>
 """
 
@@ -323,7 +290,6 @@ def _script(supabase: Supabase) -> str:
   var chipsEl = document.getElementById('tl-chips');
   var addForm = document.getElementById('tl-add-form');
   var addInput = document.getElementById('tl-add-input');
-  var filterToggle = document.getElementById('tl-filter-toggle');
   var matchStatus = document.getElementById('tl-match-status');
 
   var TICKER_RE = /^[A-Z][A-Z0-9.\\-]{{0,9}}$/;
@@ -331,36 +297,9 @@ def _script(supabase: Supabase) -> str:
 
   // 当天这份简报总共涉及哪些代码。用来在「一条都没匹配上」时告诉用户
   // 今天可选的范围是什么，而不是让他对着空页面猜是不是坏了。
-  function availableTickers() {{
-    var seen = {{}};
-    document.querySelectorAll('.item[data-tickers]').forEach(function (el) {{
-      (el.getAttribute('data-tickers') || '').split(' ').filter(Boolean)
-        .forEach(function (t) {{ seen[t] = true; }});
-    }});
-    return Object.keys(seen).sort();
-  }}
-
-  function setMatchStatus(matched) {{
-    if (!currentSymbols.length) {{
-      matchStatus.hidden = true;
-      return;
-    }}
-    matchStatus.hidden = false;
-    if (matched > 0) {{
-      matchStatus.textContent =
-        '\\u4eca\\u5929\\u6709 ' + matched + ' \\u6761\\u8ddf\\u4f60\\u7684\\u81ea\\u9009\\u80a1\\u76f8\\u5173\\uff0c\\u5df2\\u9ad8\\u4eae\\u3002';
-      return;
-    }}
-    var available = availableTickers();
-    matchStatus.textContent = available.length
-      ? '\\u4eca\\u5929\\u6ca1\\u6709\\u8ddf\\u4f60\\u81ea\\u9009\\u80a1\\u76f8\\u5173\\u7684\\u65b0\\u95fb\\u3002\\u4eca\\u65e5\\u7b80\\u62a5\\u6d89\\u53ca\\uff1a' + available.join('\\u3001')
-      : '\\u4eca\\u5929\\u7684\\u7b80\\u62a5\\u91cc\\u6ca1\\u6709\\u4efb\\u4f55\\u4e2a\\u80a1\\u65b0\\u95fb\\u3002';
-  }}
-
   function showLoggedOut() {{
     loggedOutEl.hidden = false;
     loggedInEl.hidden = true;
-    document.body.classList.remove('tl-filtering');
   }}
 
   function showLoggedIn(user) {{
@@ -386,21 +325,6 @@ def _script(supabase: Supabase) -> str:
     }});
   }}
 
-  function applyFilter() {{
-    var mine = {{}};
-    currentSymbols.forEach(function (s) {{ mine[s] = true; }});
-    var matched = 0;
-    document.querySelectorAll('.item').forEach(function (el) {{
-      var raw = el.getAttribute('data-tickers') || '';
-      var tickers = raw.split(' ').filter(Boolean);
-      var isMine = tickers.some(function (t) {{ return mine[t]; }});
-      if (isMine) matched++;
-      el.classList.toggle('tl-mine', isMine);
-    }});
-    document.body.classList.toggle('tl-filtering', filterToggle.checked);
-    setMatchStatus(matched);
-  }}
-
   function persist(userId) {{
     // onConflict 显式指到 user_id（这张表的主键）：不留给默认行为猜，
     // 免得哪天客户端库的默认冲突列判定方式变了，写操作在这里悄悄改行为。
@@ -423,7 +347,6 @@ def _script(supabase: Supabase) -> str:
   function removeSymbol(symbol) {{
     currentSymbols = currentSymbols.filter(function (s) {{ return s !== symbol; }});
     renderChips();
-    applyFilter();
     withUser(persist);
   }}
 
@@ -517,7 +440,6 @@ def _script(supabase: Supabase) -> str:
     }}
     currentSymbols.push(symbol);
     renderChips();
-    applyFilter();
     withUser(persist);
   }}
 
@@ -563,7 +485,6 @@ def _script(supabase: Supabase) -> str:
           currentSymbols = (result.data && result.data.symbols) || [];
         }}
         renderChips();
-        applyFilter();
       }});
   }}
 
@@ -587,7 +508,6 @@ def _script(supabase: Supabase) -> str:
   logoutBtn.addEventListener('click', function () {{
     client.auth.signOut().then(function () {{
       currentSymbols = [];
-      applyFilter();
       showLoggedOut();
     }});
   }});
@@ -631,7 +551,6 @@ def _script(supabase: Supabase) -> str:
     addInput.value = '';
   }});
 
-  filterToggle.addEventListener('change', applyFilter);
 
   // 只挂这一个监听器，不再额外调用一次 getSession()——supabase-js v2
   // 在挂上监听器的那一刻就会用当前会话触发一次 INITIAL_SESSION 事件，
@@ -641,7 +560,6 @@ def _script(supabase: Supabase) -> str:
   client.auth.onAuthStateChange(function (event, session) {{
     if (event === 'SIGNED_OUT' || !session) {{
       currentSymbols = [];
-      applyFilter();
       showLoggedOut();
       return;
     }}
@@ -654,7 +572,7 @@ def _script(supabase: Supabase) -> str:
 """
 
 
-def render(supabase: Supabase) -> str:
+def render_page(supabase: Supabase) -> str:
     """整个面板：样式 + 标记 + 脚本。没配置 Supabase 时返回空串。"""
     if not supabase.configured:
         return ""

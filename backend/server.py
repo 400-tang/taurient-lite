@@ -45,7 +45,37 @@ from taurient_lite.history import DEFAULT_RANGE, RANGES, HistoryError, fetch_his
 from taurient_lite.short_interest import ShortInterestError, fetch_latest
 from taurient_lite.theme import GOOGLE_FONTS, LAYOUT_CSS, TOKENS, build_palette_css
 
-from . import auth_panel, live, stock_page
+#: 账号页的外壳。正文由 ``auth_panel`` 提供，这里只管版心和标题。
+ACCOUNT_CSS = """
+.account {
+  max-width: 34rem;
+  margin: 0 auto;
+  padding: 2.5rem var(--gutter) 4rem;
+}
+
+.account h1 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--t-xl);
+  letter-spacing: var(--track-display);
+  margin: 0 0 1.2rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 2px solid var(--ink);
+}
+
+.stock-back {
+  display: inline-block;
+  margin-bottom: 1.2rem;
+  font-family: var(--font-data);
+  font-size: var(--t-xs);
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.stock-back:hover { color: var(--accent-strong); }
+"""
+
+from . import auth_bar, auth_panel, live, stock_page
 from .stock_news import mentions_for
 from .search import MAX_RESULTS, SearchError, resolve, search
 
@@ -82,7 +112,7 @@ def _wrap_page(brief: Brief, config: Config) -> str:
     """
     head = render_head()
     body = render_body(brief, config)
-    panel = auth_panel.render(config.supabase)  # 没配 Supabase 时是空串
+    panel = auth_bar.render(config.supabase)  # 没配 Supabase 时是空串
     return (
         "<!doctype html>\n"
         '<html lang="zh">\n'
@@ -330,4 +360,36 @@ def stock(
         f'<link rel="stylesheet" href="{GOOGLE_FONTS}">\n'
         f"<style>{build_palette_css()}\n{LAYOUT_CSS}\n{stock_page.CSS}</style>\n"
         f"</head>\n<body>\n{body}\n</body>\n</html>\n"
+    )
+
+
+@app.get("/account", response_class=HTMLResponse)
+def account():
+    """账号页：登录、退出、管理自选股。
+
+    **登录表单从简报页搬到了这里。** 一个登录框嵌在正文上方，读者每天打开
+    看新闻时都要先越过它，而登录是一辈子做一两次的事。简报页现在只在右上角
+    留一个按钮，指向这里。
+
+    高亮与过滤没有跟着搬——它们作用的对象就是简报页的新闻列表，
+    搬到这一页就失去了对象。
+    """
+    config = Config.load(PATHS.config)
+    if not config.supabase.configured:
+        raise HTTPException(status_code=404, detail="没有配置 Supabase，账号功能未启用")
+
+    body = auth_panel.render_page(config.supabase)
+    back = config.backend_url.rstrip("/")
+    return HTMLResponse(
+        "<!doctype html>\n"
+        '<html lang="zh">\n<head>\n<meta charset="utf-8">\n'
+        '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
+        "<title>账号 · Morning Tape</title>\n"
+        f'<link rel="stylesheet" href="{GOOGLE_FONTS}">\n'
+        f"<style>{build_palette_css()}\n{LAYOUT_CSS}\n{ACCOUNT_CSS}</style>\n"
+        "</head>\n<body>\n"
+        f'<div class="account">\n'
+        f'<a class="stock-back" href="{back}/">&larr; 回简报</a>\n'
+        f"<h1>账号</h1>\n{body}\n</div>\n"
+        "</body>\n</html>\n"
     )

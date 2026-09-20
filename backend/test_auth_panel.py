@@ -19,7 +19,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from backend.auth_panel import render
+from backend.auth_panel import render_page as render
 from taurient_lite.config import Supabase
 
 CONFIGURED = Supabase(url="https://x.supabase.co", anon_key="eyJ.fake.token")
@@ -49,11 +49,6 @@ class TestMarkup(unittest.TestCase):
         """换成 Google 登录之后，邮箱表单的痕迹不该还留在标记里。"""
         for leftover in ("tl-login-form", 'id="tl-email"', "发送登录链接"):
             self.assertNotIn(leftover, self.html)
-
-    def test_watchlist_controls_present(self):
-        self.assertIn('id="tl-chips"', self.html)
-        self.assertIn('id="tl-add-form"', self.html)
-        self.assertIn('id="tl-filter-toggle"', self.html)
 
     def test_credentials_embedded(self):
         self.assertIn(CONFIGURED.url, self.html)
@@ -112,28 +107,6 @@ class TestScriptLogic(unittest.TestCase):
 
     def test_upsert_has_explicit_conflict_target(self):
         self.assertIn("onConflict: 'user_id'", self.html)
-
-    def test_filter_never_hides_macro_items(self):
-        """没有 data-tickers 的条目是宏观新闻（联储、地缘、油价），
-        不属于任何个股却往往最重要。第一版把它们也一并隐藏，结果
-        18 条里 10 条属于这类，一开筛选整页就空了。选择器必须带上
-        [data-tickers]，让没有代码的条目根本不进入隐藏范围。
-        """
-        self.assertIn(
-            "body.tl-filtering .item[data-tickers]:not(.tl-mine)", self.html
-        )
-        # 不能存在那条不加限定的旧规则
-        self.assertNotIn("body.tl-filtering .item:not(.tl-mine)", self.html)
-
-    def test_reports_match_count(self):
-        """筛选之后必须说明结果，不能让用户对着空页面猜是不是坏了。"""
-        self.assertIn('id="tl-match-status"', self.html)
-        self.assertIn("setMatchStatus", self.html)
-
-    def test_lists_available_tickers_when_nothing_matches(self):
-        """一条都没匹配上时，告诉用户今天的简报覆盖了哪些代码，
-        他才知道该加什么，而不是反复试。"""
-        self.assertIn("function availableTickers", self.html)
 
     def test_rejected_ticker_input_gives_feedback(self):
         """输入非法代码或重复代码时原来是静默 return，用户分不清
