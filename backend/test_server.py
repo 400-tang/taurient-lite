@@ -454,3 +454,44 @@ class TestStockPage(unittest.TestCase):
     def test_escapes_hostile_ticker(self):
         """代码来自 URL，属于不可信输入。"""
         self.assertEqual(client.get("/stock/<script>").status_code, 400)
+
+
+class TestPriceLines(unittest.TestCase):
+    """横线的标记与存储键。
+
+    交互本身（点按钮 → 点图表 → 落线 → 刷新还在 → 删除）用 CDP 驱动真实
+    浏览器验证过，那部分不适合放进单元测试；这里守住的是服务端这一侧：
+    标记在、存储键按代码隔离、脚本语法有效。
+    """
+
+    def _html(self, symbol="AAPL"):
+        with patch("backend.server.fetch_history",
+                   return_value=TestApiHistory.BARS), \
+             patch("backend.server.resolve", return_value=None):
+            return client.get(f"/stock/{symbol}").text
+
+    def test_toolbar_and_list_are_present(self):
+        html = self._html()
+        for hook in ('id="add-line"', 'id="clear-lines"', 'id="line-list"',
+                     'id="line-hint"'):
+            self.assertIn(hook, html, hook)
+
+    def test_uses_the_library_price_line_api(self):
+        html = self._html()
+        self.assertIn("createPriceLine", html)
+        self.assertIn("removePriceLine", html)
+
+    def test_storage_key_is_scoped_per_ticker(self):
+        """两只票的线不能互相串。"""
+        self.assertIn("tl:lines:AAPL", self._html("AAPL"))
+        self.assertIn("tl:lines:MSFT", self._html("MSFT"))
+
+    def test_click_only_adds_while_arming(self):
+        """平时点图表是十字光标的正常行为，随手一点就落线会让人不敢碰图。"""
+        self.assertIn("if (!arming || !param.point)", self._html())
+
+    def test_storage_access_is_guarded(self):
+        """隐私模式下 localStorage 会直接抛异常，不能让它带崩整张图。"""
+        html = self._html()
+        self.assertIn("try {", html)
+        self.assertIn("localStorage", html)

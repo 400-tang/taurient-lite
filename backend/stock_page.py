@@ -178,6 +178,73 @@ CSS = """
   text-wrap: pretty;
 }
 
+/* 横线工具条与已画横线列表。 */
+.line-tools {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+  margin-left: auto;
+}
+
+.line-btn {
+  font-family: var(--font-data);
+  font-size: var(--t-xs);
+  letter-spacing: var(--track-mono);
+  padding: 0.28rem 0.6rem;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  background: transparent;
+  color: var(--ink-mid);
+  cursor: pointer;
+}
+
+.line-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+/* 待放置状态要一眼可见：此刻点图表就会落一条线，不告诉用户就是个惊吓。 */
+.line-btn.arming {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+  font-weight: 500;
+}
+
+.line-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin: 0.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.line-list li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-data);
+  font-size: var(--t-xs);
+  font-variant-numeric: tabular-nums;
+  padding: 0.18rem 0.3rem 0.18rem 0.5rem;
+  border: 1px solid var(--rule-soft);
+  border-radius: 2px;
+  color: var(--ink-mid);
+}
+
+.line-list button {
+  border: 0;
+  background: none;
+  color: var(--ink-faint);
+  cursor: pointer;
+  font-size: var(--t-sm);
+  line-height: 1;
+  padding: 0 0.15rem;
+}
+
+.line-list button:hover { color: var(--down); }
+
+.line-hint { font-size: var(--t-xs); color: var(--ink-faint); }
+
 /* 底部这两块是固定高度的附属信息，不参与抢高度。 */
 .stock-stats { flex: none; }
 .stock-note { flex: none; margin-top: 0.9rem; }
@@ -287,6 +354,111 @@ def _script(symbol: str, span: str, candles: list, volumes: list) -> str:
     }});
   }};
   if (media.addEventListener) {{ media.addEventListener('change', onTheme); }}
+
+  // ---------------------------------------------------------------- 横线
+  //
+  // 存在浏览器本地，不上服务器：一条「跌破这个价位再看」的线是读者自己的
+  // 草稿，不是需要被别人看到的数据。代价是换个浏览器就没了——这个取舍
+  // 写在界面提示里，不让人以为它会跟着账号走。
+  //
+  // 趋势线没有做。图表库不含任何内置绘图工具，斜线要自己实现命中测试和
+  // 拖拽，几百行；横线是 createPriceLine 一个调用的事。先把便宜的做了，
+  // 等确认真的每天在用，再决定值不值得写那几百行。
+
+  var KEY = 'tl:lines:{esc(symbol)}';
+  var lines = [];          // {{ price: number, handle: IPriceLine }}
+  var arming = false;
+
+  var addBtn = document.getElementById('add-line');
+  var clearBtn = document.getElementById('clear-lines');
+  var listBox = document.getElementById('line-list');
+  var hint = document.getElementById('line-hint');
+
+  function load() {{
+    // 隐私模式下 localStorage 会直接抛异常，不能让它带崩整张图。
+    try {{ return JSON.parse(localStorage.getItem(KEY) || '[]'); }}
+    catch (e) {{ return []; }}
+  }}
+
+  function save() {{
+    try {{ localStorage.setItem(KEY, JSON.stringify(lines.map(function (l) {{ return l.price; }}))); }}
+    catch (e) {{ /* 存不了就只在本次会话里有效，不打扰用户 */ }}
+  }}
+
+  function draw() {{
+    listBox.innerHTML = '';
+    lines.forEach(function (line, i) {{
+      var li = document.createElement('li');
+      var label = document.createElement('span');
+      label.textContent = line.price.toFixed(2);
+      var del = document.createElement('button');
+      del.type = 'button';
+      del.textContent = '\u00d7';
+      del.setAttribute('aria-label', '删除 ' + line.price.toFixed(2) + ' 这条横线');
+      del.addEventListener('click', function () {{ remove(i); }});
+      li.appendChild(label);
+      li.appendChild(del);
+      listBox.appendChild(li);
+    }});
+    clearBtn.hidden = lines.length === 0;
+  }}
+
+  function add(price) {{
+    if (!isFinite(price)) {{ return; }}
+    var handle = candles.createPriceLine({{
+      price: price,
+      color: tone('--accent', '#1F3FCB'),
+      lineWidth: 1,
+      lineStyle: LightweightCharts.LineStyle.Dashed,
+      axisLabelVisible: true,
+      title: ''
+    }});
+    lines.push({{ price: price, handle: handle }});
+    save();
+    draw();
+  }}
+
+  function remove(i) {{
+    var line = lines[i];
+    if (!line) {{ return; }}
+    candles.removePriceLine(line.handle);
+    lines.splice(i, 1);
+    save();
+    draw();
+  }}
+
+  function disarm() {{
+    arming = false;
+    addBtn.classList.remove('arming');
+    hint.textContent = '';
+  }}
+
+  addBtn.addEventListener('click', function () {{
+    if (arming) {{ disarm(); return; }}
+    arming = true;
+    addBtn.classList.add('arming');
+    hint.textContent = '点图表上任意高度放一条线（Esc 取消）';
+  }});
+
+  clearBtn.addEventListener('click', function () {{
+    while (lines.length) {{ remove(lines.length - 1); }}
+  }});
+
+  document.addEventListener('keydown', function (e) {{
+    if (e.key === 'Escape' && arming) {{ disarm(); }}
+  }});
+
+  // 只在「待放置」时才接管点击：平时点图表是选中/取消十字光标的正常行为，
+  // 随手一点就落一条线会让人不敢碰图。
+  chart.subscribeClick(function (param) {{
+    if (!arming || !param.point) {{ return; }}
+    var price = candles.coordinateToPrice(param.point.y);
+    if (price !== null) {{ add(price); }}
+    disarm();
+  }});
+
+  load().forEach(function (price) {{ add(Number(price)); }});
+  draw();
 }})();
 </script>
 """
@@ -335,7 +507,14 @@ def render(
 <span class="stock-last">{stats.get("last", 0):,.2f}</span>
 <span class="stock-chg {tone}">{change:+.2f}%</span>
 </div>
-<div class="stock-bar">{ranges}</div>
+<div class="stock-bar">{ranges}
+<div class="line-tools">
+<button type="button" id="add-line" class="line-btn">＋ 横线</button>
+<button type="button" id="clear-lines" class="line-btn" hidden>清空</button>
+<span class="line-hint" id="line-hint"></span>
+</div>
+</div>
+<ul class="line-list" id="line-list"></ul>
 <div id="chart"></div>
 <div class="stock-stats">{stats_html}</div>
 <p class="stock-note">日线来自 Yahoo Finance，{esc(stats.get("from", ""))} 至
