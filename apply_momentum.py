@@ -11,10 +11,10 @@
 页面照样渲染，只是数字是错的。所以照搬 ``fetch_quotes.py`` 的分工：
 **脚本填数字，人写判断**。
 
-具体来说，``coverage``（新闻覆盖度）和 ``note``（一句话）是每日流水线
-交叉新闻之后才能填的，机器填不了；已经填好的这两项在重跑时会被原样
-保留，只有数字被覆盖。这样「先跑脚本、再补判断、发现漏了再跑一次」
-这条最自然的工作流不会把已经写好的东西冲掉。
+具体来说，``note``（一句话判断）是人写的，机器填不了；已经写好的
+``note`` 与 ``sources`` 在重跑时会被原样保留，只有数字被覆盖。这样
+「先跑脚本、再补判断、发现漏了再跑一次」这条最自然的工作流不会把
+已经写好的东西冲掉。
 
 退出码：0 成功；1 失败（找不到简报或扫描文件）。
 """
@@ -27,11 +27,18 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
+import datetime as dt  # noqa: E402
+
 from taurient_lite.pipeline import Paths, PipelineError, latest_date  # noqa: E402
-from taurient_lite.schema import NEWS_COVERAGE  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent
 SCAN = ROOT / "data" / "momentum_scan.json"
+
+#: 扫描结果允许比简报旧几天。跟 `quotes.py` 的快照过期保护是同一套思路：
+#: 文件会一直躺在仓库里，哪天 Actions 挂了没人发现，读到的就是上周的突破。
+#: 4 天能扛过三天连休；再长就说明抓取环节已经坏了一阵子，那更该让板块
+#: 消失以引起注意，而不是把陈数据当成当天的。
+MAX_AGE_DAYS = 4
 
 #: 从扫描结果里原样复制的字段。**只有这些**——其余的属于人的判断。
 MECHANICAL = (
@@ -66,13 +73,12 @@ def pick(candidates: list[dict]) -> list[dict]:
 
 
 def merge(picked: list[dict], existing: list[dict]) -> list[dict]:
-    """用扫描结果覆盖数字，保留人已经写好的 ``coverage`` 与 ``note``。"""
+    """用扫描结果覆盖数字，保留人已经写好的 ``note`` 与 ``sources``。"""
     by_ticker = {c.get("ticker"): c for c in existing}
     merged = []
     for row in picked:
         prior = by_ticker.get(row["ticker"], {})
         entry = {k: row[k] for k in MECHANICAL if k in row}
-        entry["coverage"] = prior.get("coverage", "none")
         entry["note"] = prior.get("note", "")
         if prior.get("sources"):
             entry["sources"] = prior["sources"]
@@ -119,6 +125,19 @@ def main(argv: list[str]) -> int:
         return 1
 
     brief = json.loads(target.read_text(encoding="utf-8"))
+
+    asof = scan.get("asof", "")
+    try:
+        age = (dt.date.fromisoformat(date) - dt.date.fromisoformat(asof)).days
+    except ValueError:
+        age = None
+    if age is not None and age > MAX_AGE_DAYS:
+        print(f"扫描结果是 {asof} 的，比简报日期 {date} 早了 {age} 天，", file=sys.stderr)
+        print(f"超过 {MAX_AGE_DAYS} 天上限——不写进简报。", file=sys.stderr)
+        print("先查 GitHub Actions 的「价量异动扫描」是不是挂了；", file=sys.stderr)
+        print("宁可让页面少一个板块，也不要把上周的突破当成今天的。", file=sys.stderr)
+        return 1
+
     prior_block = brief.get("momentum") or {}
     candidates = merge(picked, prior_block.get("candidates") or [])
 
@@ -134,14 +153,14 @@ def main(argv: list[str]) -> int:
     kept: dict[str, int] = {}
     for row in candidates:
         kept[row["stage"]] = kept.get(row["stage"], 0) + 1
-    missing = [c["ticker"] for c in candidates if c["coverage"] not in NEWS_COVERAGE or not c["note"]]
+    missing = [c["ticker"] for c in candidates if not c["note"]]
 
     print(f"写入 {target}")
     print(f"  数据日期 {brief['momentum']['asof']}，扫描 {brief['momentum']['scanned']} 只")
     print(f"  带入候选 {len(candidates)} 只：{kept}")
     if missing:
-        print(f"  还需要你补 coverage 与 note：{'、'.join(missing)}")
-        print("  coverage 依据是「今天扫的新闻里这个代码出现过没有」，别为此专门再搜一轮。")
+        print(f"  还需要你补一句 note：{'、'.join(missing)}")
+        print("  只写价量事实与已知信息，不写买卖倾向。")
     return 0
 
 

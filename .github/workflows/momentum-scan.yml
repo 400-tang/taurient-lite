@@ -13,9 +13,18 @@ name: 价量异动扫描
 
 on:
   schedule:
-    # 12:10 UTC = 美东 8:10，比行情快照（12:30）再早二十分钟，
-    # 保证云端任务 13:00 开工时两份数据都已经在仓库里了。
-    - cron: "10 12 * * 1-5"
+    # 21:30 UTC = 美东 17:30，**收盘之后**（常规时段 20:00 UTC 结束）。
+    #
+    # 原本排在开盘前的 12:10，因为「云端任务 13:00 开工前数据要就位」。
+    # 实测发现两个问题：GitHub 的定时任务会延迟 4 到 6 小时（这是官方
+    # 已知行为，不是配置问题），于是扫描落在盘中，拿到的是**还在变动的
+    # 当天 K 线**；而即使代码已经会丢弃未完成的时段（见 momentum.py 的
+    # session_cutoff），盘中跑出来的也只是上一交易日的数据，等第二天早上
+    # 简报读到它时已经落后一天。
+    #
+    # 排在收盘后就两头都解决了：当天的 K 线已经走完，扫描结果是当天的；
+    # 即使再延迟几小时，跨到第二天凌晨，数据仍然是同一个完整交易日的。
+    - cron: "30 21 * * 1-5"
     # 周日 09:00 UTC 重建流动性名单：要发几千次请求，挑周末没人跑的时段。
     - cron: "0 9 * * 0"
   workflow_dispatch:
@@ -55,7 +64,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/momentum_scan.json data/universe.txt
+          git add data/momentum_scan.json data/universe.txt data/symbols.txt
           if git diff --staged --quiet; then
             echo "扫描结果没有变化，跳过提交"
           else

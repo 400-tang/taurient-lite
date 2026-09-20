@@ -50,6 +50,9 @@ from taurient_lite.momentum import (  # noqa: E402
 ROOT = Path(__file__).resolve().parent
 OUT = ROOT / "data" / "momentum_scan.json"
 UNIVERSE = ROOT / "data" / "universe.txt"
+#: 代码到公司名的全量索引，供后端的自选股搜索做模糊匹配与真伪校验。
+#: 顺带在这里产出，因为重建名单时本来就要下载这两份官方目录。
+SYMBOLS = ROOT / "data" / "symbols.txt"
 
 HEADERS = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)"}
 
@@ -120,6 +123,42 @@ def discover() -> list[str]:
     return found
 
 
+def parse_named_listing(text: str) -> list[tuple[str, str]]:
+    """从 Nasdaq 代码目录里取出 ``(代码, 证券名称)``。
+
+    比 :func:`parse_listing` 宽松：**不过滤 ETF**。这份索引的用途是
+    「用户输进来的东西到底存不存在、叫什么名字」，而不是选股范围——
+    有人想把 ETF 加进自选股是完全合理的，在这里替他挡掉反而是越权。
+    """
+    lines = [ln for ln in text.splitlines() if "|" in ln]
+    if not lines:
+        return []
+    header = lines[0].split("|")
+    rows = [ln.split("|") for ln in lines[1:] if not ln.startswith("File Creation")]
+
+    def col(name: str) -> int | None:
+        return header.index(name) if name in header else None
+
+    sym_i = col("Symbol") if col("Symbol") is not None else col("ACT Symbol")
+    name_i, test_i = col("Security Name"), col("Test Issue")
+    if sym_i is None or name_i is None:
+        return []
+
+    out = []
+    for row in rows:
+        if len(row) <= max(sym_i, name_i):
+            continue
+        symbol = row[sym_i].strip()
+        if not symbol or not symbol.isalnum():
+            continue
+        if test_i is not None and len(row) > test_i and row[test_i].strip() == "Y":
+            continue
+        name = row[name_i].strip()
+        if name:
+            out.append((symbol, name))
+    return out
+
+
 def parse_listing(text: str) -> list[str]:
     """从 Nasdaq 代码目录里挑出普通股。
 
@@ -163,12 +202,23 @@ def refresh_universe() -> list[str]:
     而真正新出现的名字由发现层负责捞回来。
     """
     symbols: list[str] = []
+    named: dict[str, str] = {}
     for url in NASDAQ_LISTS:
         try:
-            symbols += parse_listing(fetch_text(url))
+            text = fetch_text(url)
         except (urllib.error.URLError, OSError) as exc:
             print(f"取不到 {url}：{exc}", file=sys.stderr)
+            continue
+        symbols += parse_listing(text)
+        named.update(dict(parse_named_listing(text)))
     symbols = sorted(set(symbols))
+
+    if named:
+        SYMBOLS.parent.mkdir(parents=True, exist_ok=True)
+        SYMBOLS.write_text(
+            "\n".join(f"{s}|{named[s]}" for s in sorted(named)) + "\n", encoding="utf-8"
+        )
+        print(f"写入 {SYMBOLS}：{len(named)} 只（含 ETF，供搜索校验用）")
     print(f"全部上市普通股 {len(symbols)} 只，开始评估流动性……")
 
     kept: list[str] = []

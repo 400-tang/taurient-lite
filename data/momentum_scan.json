@@ -1,5 +1,5 @@
 {
-  "scanned_at": "2026-09-10T21:09:37Z",
+  "scanned_at": "2026-09-10T21:22:06Z",
   "asof": "2026-09-10",
   "note": "由 GitHub Actions 扫描并提交，供云端定时任务读取。stage 只描述这只票走到这波的第几天，score 衡量的是「有多早」而不是「有多好」——回测显示本模块无法预测后续涨跌，它的用途是把观察窗口前移，不是给出买卖信号。",
   "universe_size": 2532,
@@ -88,7 +88,7 @@
       "breakout_age": 3,
       "run_from_base": 0.3805,
       "base_tightness": 0.2857,
-      "gap_pct": -1.29,
+      "gap_pct": -0.83,
       "stage": "ignition",
       "score": 94.69
     },
