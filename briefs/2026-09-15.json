@@ -1,0 +1,923 @@
+{
+  "date": "2026-09-15",
+  "weekday": "Tuesday",
+  "edition": "常规版",
+  "generated_at": "2026-09-15 06:11 PT",
+  "scanned": 96,
+  "kept": 15,
+  "thesis": "10年期美债收益率盘中升破5%，创2007年以来新高，与布伦特原油107美元的相关性升至七年高点，为周三的联储决议预先定下紧缩基调——但期货定价(约92%)与预测市场(Kalshi 57%、Polymarket 49%)对加息概率的分歧仍未收敛。与此同时AI减速争论进入第三天：特朗普公开喊话“谁赢AI谁赢一切”，英伟达却据报考虑向Anthropic的IPO注资100亿美元，芯片与AI服务器股全线下挫，网络安全股连续第二天创历史新高，资金轮动的分裂线一天比一天清晰。",
+  "tape": {
+    "asof": "上一收盘 · 周一 9/14（10年期/30年期收益率与油价为周二盘中读数）",
+    "rows": [
+      {
+        "name": "S&P 500",
+        "value": "7,619.98",
+        "change": "-0.48%",
+        "dir": "down"
+      },
+      {
+        "name": "Nasdaq Composite",
+        "value": "26,186.41",
+        "change": "-0.56%",
+        "dir": "down"
+      },
+      {
+        "name": "Dow Jones",
+        "value": "52,421.20",
+        "change": "-0.29%（-152.09点）",
+        "dir": "down"
+      },
+      {
+        "name": "US 10Y yield",
+        "value": "4.99%",
+        "change": "周二盘中已升破5.02%，触及5.041%，为2007年以来最高",
+        "dir": "up"
+      },
+      {
+        "name": "US 30Y yield",
+        "value": "5.35%",
+        "change": "周二盘中升至约5.384%",
+        "dir": "up"
+      },
+      {
+        "name": "Brent crude",
+        "value": "$107.46",
+        "change": "沙特管道遇袭、霍尔木兹通行谈判推迟后持续走高",
+        "dir": "up"
+      }
+    ]
+  },
+  "items": [
+    {
+      "rank": 1,
+      "tier": "must-read",
+      "published": "2026-09-15",
+      "headline": "10年期美债收益率升破5%，创2007年以来新高；油价与收益率相关性升至七年高点",
+      "sectors": [
+        "宏观",
+        "利率",
+        "大宗商品"
+      ],
+      "body": "周二盘中10年期美债收益率一度跳升8个基点至5.041%，为2007年以来最高，30年期收益率同步升至5.384%附近。彭博援引BMO Capital Markets的研究称，WTI原油与10年期收益率的一个月滚动相关性已升至0.96，为2019年6月以来最强；本轮上行的直接触发是中东供给风险持续升级推动油价走高——布伦特原油周二报107.46美元/桶。多家媒体将周三的联储决议视为下一个关键变量：如果油价继续把通胀预期焊死在高位，收益率上行压力短期内难有安全阀。",
+      "why": "10年期收益率一旦确认突破此前的周期高点，几乎所有依赖贴现率定价的资产都要重新校准，而这次的驱动因素是供给端的油价而非需求端的增长，联储更难用加息去对症下药。",
+      "impact": "全市场 · 长久期资产首当其冲",
+      "sources": [
+        {
+          "name": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-09-15/us-10-year-treasury-yields-rise-to-highest-level-since-2007",
+          "angle": "聚焦收益率数字本身，定性为2007年以来最高"
+        },
+        {
+          "name": "CNBC",
+          "url": "https://www.cnbc.com/2026/09/15/10-year-treasury-yield-rises-to-highest-since-2007.html",
+          "angle": "把收益率上行归因于联储加息预期抬升"
+        },
+        {
+          "name": "CNBC",
+          "url": "https://www.cnbc.com/2026/09/15/oil-us-treasurys-stocks-pressure.html",
+          "angle": "披露油价与收益率相关性升至0.96的量化数据，引用BMO研究"
+        },
+        {
+          "name": "Saxo Bank",
+          "url": "https://www.home.saxo/content/articles/macro/market-quick-take---ai-warning-hits-chips-as-ten-year-tops-5-before-fed---15-september-2026-15092026",
+          "angle": "称收益率触及5.01%后周一收盘回落至4.99%，定性为'2023年10月以来未见的心理关口'而非'2007年以来最高'"
+        }
+      ],
+      "assets": [
+        {
+          "asset_class": "美债",
+          "direction": "down",
+          "conviction": "high",
+          "note": "10年期收益率盘中触及5.041%，价格与收益率反向，创2007年以来新高。"
+        },
+        {
+          "asset_class": "大宗商品",
+          "direction": "up",
+          "conviction": "high",
+          "note": "布伦特原油报107.46美元/桶，供给风险溢价推动价格与收益率的相关性升至0.96。"
+        },
+        {
+          "asset_class": "美股",
+          "direction": "down",
+          "conviction": "medium",
+          "note": "贴现率抬升压制成长股估值，周一三大指数已同步收跌。"
+        },
+        {
+          "asset_class": "美元",
+          "direction": "up",
+          "conviction": "medium",
+          "note": "利差扩大对非美货币构成支撑。"
+        }
+      ],
+      "cross_source": {
+        "agreement": "split",
+        "summary": "彭博与CNBC强调收益率'创2007年以来新高'，暗示已突破上一轮周期高点；Saxo的说法是收益率触及5.01%后回落到4.99%收盘，定性为'2023年10月以来未见的心理关口'——两种说法在'刷新18年新高'与'追平3年高点'之间存在量级差异，可能与统计口径(盘中高点vs收盘价)或引用的具体期限收益率有关，读者应留意这不完全是同一个统计口径下的比较。"
+      },
+      "history": {
+        "summary": "从2023年10月的上一轮周期高点到现在，10年期收益率用了近三年才重新逼近同一区域，这次的驱动因素从彼时的财政赤字担忧换成了供给侧的油价冲击。",
+        "timeline": [
+          {
+            "when": "2023年10月",
+            "event": "10年期收益率上一轮触及约5%的周期高点"
+          },
+          {
+            "when": "9/10-9/13",
+            "event": "沙特东-西管道遇袭关闭，霍尔木兹通行谈判推迟，油价重新走高"
+          },
+          {
+            "when": "9/14",
+            "event": "三大指数收跌，10年期收益率收报4.99%附近"
+          },
+          {
+            "when": "9/15",
+            "event": "10年期收益率盘中升破5%至5.041%，30年期报5.384%"
+          }
+        ]
+      }
+    },
+    {
+      "rank": 2,
+      "tier": "must-read",
+      "published": "2026-09-15",
+      "headline": "联储周三决议悬念未减：加息概率跨平台从49%到92%不等，黄金跌至五周低点与油价背离",
+      "sectors": [
+        "宏观",
+        "利率"
+      ],
+      "body": "美联储9月15-16日FOMC会议将于周三(9/16)下午2点(ET)公布决议，2:30公布经济预测摘要与点阵图。市场对25个基点加息(联邦基金利率从3.50%-3.75%升至3.75%-4.00%)的定价本周继续走高：多家机构援引期货定价称概率已升至约92%，此前CME FedWatch给出60%以上、Central Bank Watch约83%；但两个真金白银的预测市场仍明显落后——Kalshi给57%、Polymarket仅49%。与此同时，黄金周二跌至五周低点附近的4,286美元/盎司(较前一日跌0.84%)，因加息预期升温压制无收益资产，而原油因地缘风险逆势走高——同为传统的通胀对冲品，金价与油价方向罕见背离。",
+      "why": "如果落地，这将是联储自2023年以来首次转向紧缩；但期货定价与预测市场之间近35-40个百分点的分歧意味着结果仍有相当大的不确定性，周三很可能是今年波动最大的一天。黄金与原油的背离也提示，这轮紧缩交易的驱动力是供给侧通胀而非需求过热。",
+      "impact": "全市场 · 利率敏感资产与贵金属首当其冲",
+      "sources": [
+        {
+          "name": "Saxo Bank",
+          "url": "https://www.home.saxo/content/articles/macro/market-quick-take---ai-warning-hits-chips-as-ten-year-tops-5-before-fed---15-september-2026-15092026",
+          "angle": "给出约92%的期货隐含加息概率"
+        },
+        {
+          "name": "Yahoo Finance",
+          "url": "https://finance.yahoo.com/economy/policy/articles/fomc-september-2026-odds-rate-163505675.html",
+          "angle": "追踪CME FedWatch给出的60%以上读数"
+        },
+        {
+          "name": "Kalshi",
+          "url": "https://kalshi.com/markets/kxfeddecision/fed-meeting/kxfeddecision-26sep",
+          "angle": "预测市场给出57%，明显低于期货定价"
+        },
+        {
+          "name": "GoldSilver",
+          "url": "https://goldsilver.com/industry-news/article/gold-price-outlook-september-2026/",
+          "angle": "指出黄金跌至五周低点，与92%的加息概率押注直接相关"
+        }
+      ],
+      "assets": [
+        {
+          "asset_class": "美债",
+          "direction": "down",
+          "conviction": "high",
+          "note": "加息预期升温，10年期收益率同步升破5%。"
+        },
+        {
+          "asset_class": "美元",
+          "direction": "up",
+          "conviction": "medium",
+          "note": "利差扩大对非美货币构成支撑性买盘。"
+        },
+        {
+          "asset_class": "大宗商品",
+          "direction": "mixed",
+          "conviction": "medium",
+          "note": "黄金因加息预期承压跌至五周低点，原油受地缘风险驱动逆势走高至107美元附近，二者方向背离。"
+        },
+        {
+          "asset_class": "美股",
+          "direction": "down",
+          "conviction": "medium",
+          "note": "长久期成长股估值面临贴现率上调压力。"
+        }
+      ],
+      "cross_source": {
+        "agreement": "split",
+        "summary": "基于期货/期权定价的工具(CME FedWatch、Central Bank Watch、多家研报引用的92%)与基于真实资金对赌的预测市场(Kalshi 57%、Polymarket 49%)之间存在约35-40个百分点的分歧，且这个分歧在过去一周持续扩大而非收敛——这本身就是本周最大的不确定性来源。"
+      },
+      "history": {
+        "summary": "加息定价从年中的降息共识到现在只用了两个多月，驱动力从最初的非农数据超预期，演变成现在的中东供给冲击持续推高油价。",
+        "timeline": [
+          {
+            "when": "9/4",
+            "event": "8月非农16.2万人，三倍于预期，叙事翻转为加息"
+          },
+          {
+            "when": "9/11",
+            "event": "8月CPI同比3.4%，加息定价约68-70%"
+          },
+          {
+            "when": "9/14",
+            "event": "多平台概率进一步走高但分歧扩大，Kalshi/Polymarket仍低于期货定价"
+          },
+          {
+            "when": "9/15",
+            "event": "期货隐含概率升至约92%，预测市场仍在49%-57%区间，黄金跌至五周低点"
+          }
+        ]
+      }
+    },
+    {
+      "rank": 3,
+      "tier": "must-read",
+      "published": "2026-09-14",
+      "headline": "AI减速争论进入第三天：特朗普喊话“谁赢AI谁赢一切”，英伟达据报考虑向Anthropic注资100亿美元，网络安全股续创新高、芯片与AI基建股全线下挫",
+      "sectors": [
+        "科技",
+        "AI",
+        "半导体",
+        "网络安全"
+      ],
+      "tickers": [
+        "NVDA",
+        "AMD",
+        "AVGO"
+      ],
+      "body": "围绕Amodei“减速倡议”的市场反应持续发酵。周一(9/14)收盘，英伟达跌2.96%-3.36%，博通跌4.77%，AMD跌4.4%至约485美元；同期网络安全股延续暴涨：CrowdStrike收涨14.9%至历史新高237.57美元、Zscaler收涨15.2%、Palo Alto Networks收涨12.8%，逻辑是“AI失控风险本身催生更多安全支出需求”。同日，Evercore下调评级导致AI服务器股HPE暴跌10.8%、戴尔跌约5%、Super Micro跌约8%，是两周AI基建股飙涨行情的一次回撤。政治层面，特朗普此前回应三位CEO的联合呼吁，称“我们在AI上领先中国……谁赢AI谁赢一切”，暗示不支持放慢节奏。与此同时据路透社报道，英伟达正洽谈以最多100亿美元资金参与Anthropic规模高达1000亿美元、估值约2万亿美元的IPO，充当基石投资者——一边被减速争论拖累股价，一边加码投资同一批AI公司，是这场辩论最矛盾的注脚。微软周一发布首份内部AI模型“行为准则”，为期六周公开征求意见，禁止自家MAI模型协助网络攻击、核武器研发、生成深度伪造内容，纳德拉称“如果我们做的AI不能被人类控制，就不值得追求”。周二(9/15)亚洲市场分化：软银在周一暴跌10.7%后反弹近8%，SK海力士基本持平；欧洲斯托克600跌0.5%，英国富时100逆势涨0.4%(能源股受益于油价)。",
+      "why": "同一份“减速”倡议在不同资产里被读出了相反的方向——芯片股跌是因为市场担心资本开支放缓，网络安全股涨是因为失控风险本身催生更多安全需求；而英伟达一边被这场辩论拖累股价、一边计划用100亿美元加注Anthropic的IPO，说明产业资本的实际行动并未真正减速，特朗普的表态进一步说明“减速”目前只是行业内部的道德姿态，尚未形成任何监管约束。",
+      "impact": "半导体与AI资本开支链条承压 · 网络安全股受益 · AI基建股(HPE/戴尔/SMCI)额外承压",
+      "sources": [
+        {
+          "name": "CNBC",
+          "url": "https://www.cnbc.com/2026/09/14/stocks-making-the-biggest-moves-premarket-intc-mrvl-crwd.html",
+          "angle": "给出芯片股与网络安全股的具体涨跌幅"
+        },
+        {
+          "name": "Forbes",
+          "url": "https://www.forbes.com/sites/antoniopequenoiv/2026/09/14/crowdstrike-skyrockets-14-as-ai-fears-send-cybersecurity-stocks-surging/",
+          "angle": "确认CrowdStrike收盘14.9%涨幅创历史新高的具体数字"
+        },
+        {
+          "name": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-09-11/nvidia-in-talks-to-invest-up-to-10b-in-anthropic-ipo-reuters",
+          "angle": "披露英伟达拟以最多100亿美元参投Anthropic IPO的路透社报道"
+        },
+        {
+          "name": "Yahoo News",
+          "url": "https://www.yahoo.com/news/us/article/trump-responds-to-call-by-ceos-of-anthropic-openai-and-xai-to-slow-ai-down-whoever-wins-ai-wins-182008851.html",
+          "angle": "记录特朗普'谁赢AI谁赢一切'的原话表态"
+        },
+        {
+          "name": "GeekWire",
+          "url": "https://www.geekwire.com/2026/microsoft-floats-rules-for-its-own-ai-models-as-industry-debates-a-slowdown/",
+          "angle": "详述微软AI行为准则的具体条款与六周意见征询期"
+        },
+        {
+          "name": "Yahoo Finance",
+          "url": "https://finance.yahoo.com/markets/stocks/articles/hewlett-packard-enterprise-sinks-9-140418596.html",
+          "angle": "确认HPE因Evercore下调评级暴跌的具体幅度，并与戴尔、Super Micro并列报道"
+        }
+      ],
+      "assets": [
+        {
+          "asset_class": "美股",
+          "direction": "mixed",
+          "conviction": "high",
+          "note": "芯片与AI基建股(NVDA/AMD/AVGO/HPE)全线下挫，网络安全股(CRWD/ZS/PANW)创历史新高，板块内部分化剧烈。"
+        },
+        {
+          "asset_class": "海外股市",
+          "direction": "mixed",
+          "conviction": "medium",
+          "note": "软银周一暴跌10.7%后周二反弹近8%，欧洲斯托克600跌0.5%但富时100受能源股支撑逆势上涨0.4%。"
+        }
+      ],
+      "cross_source": {
+        "agreement": "split",
+        "summary": "行业CEO的表态口径一致(Amodei/Altman/Musk三方呼吁减速)，但市场解读与政治反应出现明显分裂：华尔街把'减速'读成'资本开支降温'从而抛售芯片股，特朗普政府将其读成'可能拖累对华AI竞争'从而公开反对，而英伟达自己的资本动作(拟注资Anthropic IPO)又与'减速'的表态相矛盾——三方对同一份倡议给出了三种完全不同的行动信号。"
+      },
+      "history": {
+        "summary": "从一名研究员的辞职警告到三位CEO联合表态、市场恐慌性抛售芯片股、再到特朗普公开反对与英伟达逆势加码投资，这场辩论在一周内完整走过了'警告-响应-政治化-资本行动'四个阶段。",
+        "timeline": [
+          {
+            "when": "9/9",
+            "event": "Anthropic研究员Jacob Coxon辞职警告AI灭绝风险"
+          },
+          {
+            "when": "9/10",
+            "event": "黄仁勋重申2030年AI基建支出3-4万亿美元预期"
+          },
+          {
+            "when": "9/11-9/13",
+            "event": "路透社报道英伟达洽谈以最多100亿美元投资Anthropic约2万亿美元估值的IPO"
+          },
+          {
+            "when": "9/12",
+            "event": "Amodei发表减速倡议，Altman/Musk附议，OpenAI推迟IPO"
+          },
+          {
+            "when": "9/13",
+            "event": "特朗普回应'谁赢AI谁赢一切'，暗示反对减速"
+          },
+          {
+            "when": "9/14",
+            "event": "芯片股收盘全线重挫，网络安全股创历史新高，Evercore下调评级致HPE暴跌10.8%，微软发布AI行为准则"
+          },
+          {
+            "when": "9/15",
+            "event": "亚洲市场分化，软银反弹近8%，欧洲富时100逆势上涨"
+          }
+        ]
+      }
+    },
+    {
+      "rank": 4,
+      "tier": "worth-knowing",
+      "published": "2026-09-15",
+      "headline": "CLARITY Act今日迎生死程序性投票，通过概率已跌至24%-26%，稳定币股集体承压",
+      "sectors": [
+        "加密",
+        "监管"
+      ],
+      "tickers": [
+        "COIN"
+      ],
+      "body": "美国参议院将于今日(9/15)美东下午2:15进行CLARITY Act的程序性(cloture)投票，需60票门槛才能进入正式辩论。多家追踪机构给出的通过概率大幅走低：DeFi Rate给出24%-26%，Polymarket对该法案年内成为法律的定价已从2月的82%跌至9月上旬的16%，Galaxy Research给出的概率仅10%。核心分歧仍是稳定币条款(银行方担心存款流出)与围绕加密资产利益冲突、反洗钱的伦理条款。受此影响，稳定币发行商Circle(CRCL)周二盘中一度下跌6.62%至95.25美元；Coinbase(COIN)本身波动区间拉大，CEO Brian Armstrong此前坚持认为投票会通过，并重申看好比特币2030年达到40万美元的长期预测。",
+      "why": "这是Coinbase、Circle等加密上市公司今年最大的监管变量——如果连程序性投票都无法迈过60票门槛，'监管不确定性'这个悬而未决的问题会被直接拖到2026年之后，稳定币发行商对这类立法结果的敏感度比交易所更高。",
+      "impact": "COIN、CRCL · 加密合规与市场结构",
+      "sources": [
+        {
+          "name": "Yahoo Finance",
+          "url": "https://finance.yahoo.com/markets/crypto/articles/u-senate-faces-critical-vote-173901748.html",
+          "angle": "记录Armstrong坚持认为投票会通过的乐观表态"
+        },
+        {
+          "name": "DeFi Rate",
+          "url": "https://defirate.com/clarity-act-fact-sheet/",
+          "angle": "给出24%-26%的通过概率区间"
+        },
+        {
+          "name": "crypto.news",
+          "url": "https://crypto.news/clarity-act-september-15-vote-cloture-crypto-regulation/",
+          "angle": "强调这是'不成功便成仁'的关键投票"
+        }
+      ],
+      "cross_source": {
+        "agreement": "split",
+        "summary": "Armstrong本人公开表示乐观，认为法案会通过；但DeFi Rate、Polymarket、Galaxy Research三方独立的量化预测都给出显著更低的概率(10%-26%)，当事方的乐观表态与市场定价之间存在明显落差。"
+      }
+    },
+    {
+      "rank": 5,
+      "tier": "worth-knowing",
+      "published": "2026-09-14",
+      "headline": "AI服务器股集体回撤：HPE遭Evercore下调评级暴跌10.8%，两周涨势逆转",
+      "sectors": [
+        "科技",
+        "AI基建",
+        "硬件"
+      ],
+      "tickers": [
+        "HPE",
+        "DELL"
+      ],
+      "body": "Evercore ISI周一将HPE评级下调至“与大盘一致”(In Line)，目标价65美元，导致该股暴跌10.8%至55.41美元；这是在HPE 9月2日强劲财报(non-GAAP EPS 1.11美元，超预期的0.9261美元；营收122.13亿美元，同比+32.7%)带动股价两周内快速上涨之后的回撤。同一板块的戴尔跌约5%，Super Micro跌约8%，三者同时被卷入更大范围的AI基础设施估值重估。",
+      "why": "下调评级的理由是估值、利润率与供应链约束，而不是需求本身走弱——这提醒近期AI服务器股的暴涨积累了不小的获利了结压力，一次评级下调就足以触发两位数跌幅的回撤。",
+      "impact": "HPE、戴尔、Super Micro · AI服务器供应链",
+      "sources": [
+        {
+          "name": "IBTimes Australia",
+          "url": "https://www.ibtimes.com.au/hpe-shares-fall-evercore-downgrade-ai-selloff-1875498",
+          "angle": "确认Evercore下调评级至In Line、目标价65美元的具体细节"
+        },
+        {
+          "name": "Yahoo Finance",
+          "url": "https://finance.yahoo.com/markets/stocks/articles/hewlett-packard-enterprise-sinks-9-140418596.html",
+          "angle": "把HPE与戴尔、Super Micro的同步下跌并列报道"
+        }
+      ]
+    },
+    {
+      "rank": 6,
+      "tier": "worth-knowing",
+      "published": "2026-09-14",
+      "headline": "2026年科技业裁员已达383起、影响21.07万人，甲骨文3万人居首",
+      "sectors": [
+        "科技",
+        "就业"
+      ],
+      "body": "追踪机构统计显示，截至9月14日，2026年全年已发生383起科技业裁员事件，累计影响210,741名员工，相当于平均每天约820人失业。年内单笔最大裁员来自甲骨文，过去一年累计裁减约3万人(约占其员工总数的13%，6月23日的年度披露中确认)。这一数字延续了此前多个统计口径(128,536人到209,032人不等)方向一致但绝对值差异巨大的特点。",
+      "why": "无论采用哪个统计口径，2026年的科技业裁员规模都已经超过或逼近前一年全年水平，且没有任何口径显示裁员正在放缓——这是与AI资本开支扩张同时发生的另一面。",
+      "impact": "科技业 · 劳动力市场",
+      "sources": [
+        {
+          "name": "InformationWeek",
+          "url": "https://www.informationweek.com/it-staffing-careers/2026-tech-company-layoffs",
+          "angle": "给出383起、21万人的最新汇总数字"
+        },
+        {
+          "name": "SkillSyncer",
+          "url": "https://skillsyncer.com/layoffs-tracker",
+          "angle": "此前给出209,032人的更高口径，凸显统计口径差异"
+        }
+      ],
+      "cross_source": {
+        "agreement": "split",
+        "summary": "不同追踪平台对'裁员事件'的定义与统计范围不同，导致总人数从128,536到210,741不等，但没有一个口径显示裁员放缓——方向一致，绝对值不可比。"
+      }
+    },
+    {
+      "rank": 7,
+      "tier": "worth-knowing",
+      "published": "2026-09-14",
+      "headline": "微软发布首份AI模型行为准则，六周公开征询，纳德拉称“失控的AI不值得追求”",
+      "sectors": [
+        "科技",
+        "AI",
+        "治理"
+      ],
+      "tickers": [
+        "MSFT"
+      ],
+      "body": "微软周一发布针对自研MAI系列模型的首份“行为准则”，这是一份37页文件，开放六周公开意见征询，明确禁止模型协助网络攻击、核武器研发、生成深度伪造内容，同时禁止模型抵抗关停指令、自行设定目标或向审计人员隐藏推理过程。CEO纳德拉表示：“任何对超级智能的追求，都必须建立在这样一个核心原则之上——如果我们构建的AI不能帮助人类、不受人类控制，那就不值得追求。”这是对上周末Amodei减速呼吁的直接回应，但纳德拉强调这是行为规则而非模型发布的暂停。",
+      "why": "这是大型科技公司第一次把'减速'倡议落地成具体的、可公开评议的行为条款，而不是停留在CEO个人表态层面，可能成为其他公司效仿的模板。",
+      "impact": "MSFT · AI治理标准制定",
+      "sources": [
+        {
+          "name": "GeekWire",
+          "url": "https://www.geekwire.com/2026/microsoft-floats-rules-for-its-own-ai-models-as-industry-debates-a-slowdown/",
+          "angle": "详述37页文件的具体禁止条款"
+        },
+        {
+          "name": "IBTimes",
+          "url": "https://www.ibtimes.com/microsoft-puts-new-guardrails-future-ai-industry-leaders-rally-behind-slowing-race-3807430",
+          "angle": "将其置于全行业减速讨论的背景下"
+        }
+      ]
+    },
+    {
+      "rank": 8,
+      "tier": "worth-knowing",
+      "published": "2026-09-15",
+      "headline": "本周央行密集扎堆：联储周三决议后日本央行周四紧跟，全球利率共振",
+      "sectors": [
+        "宏观",
+        "央行"
+      ],
+      "body": "除周三(9/16)美联储FOMC决议外，日本央行将于9月17-18日召开货币政策会议，声明预计当地时间中午发布，行长记者会定于下午3:30(JST)。多家研报指出，两场会议叠加令全球利率交易员本周需要同时消化两个方向可能相反的央行决定——若联储加息、日本央行维持或收紧，美日利差的变化路径会比单看任何一家决议更复杂。",
+      "why": "这不是简单的单一央行事件，而是全球主要央行本周同步行动的一部分，套息交易与日元相关的波动率可能因此被放大。",
+      "impact": "全球利率 · 日元套息交易",
+      "sources": [
+        {
+          "name": "Finance Calendar",
+          "url": "https://www.financecalendar.com/bank-of-japan-rate-decisions/",
+          "angle": "确认BoJ会议具体日期与记者会时间"
+        },
+        {
+          "name": "Saxo Bank",
+          "url": "https://www.home.saxo/content/articles/macro/market-quick-take---ai-warning-hits-chips-as-ten-year-tops-5-before-fed---15-september-2026-15092026",
+          "angle": "把联储与BoJ两场会议并列为本周风险事件"
+        }
+      ]
+    },
+    {
+      "rank": 9,
+      "tier": "worth-knowing",
+      "published": "2026-09-15",
+      "headline": "亚欧股市周二分化：软银反弹近8%抹平部分跌幅，欧洲能源股逆势走强",
+      "sectors": [
+        "海外股市"
+      ],
+      "body": "周一大跌10.7%的软银集团周二反弹近8%；SK海力士基本持平，未延续上一交易日的跌势。日经225跌0.1%，韩国综合指数跌1.2%，恒生指数跌0.4%。欧洲斯托克600跌0.5%，德国DAX跌0.5%，法国CAC40跌0.8%，但英国富时100逆势涨0.4%，得益于成分股中能源权重较高、直接受益于油价上涨。",
+      "why": "同一组'AI减速+高油价+联储决议'的驱动因素，在不同市场里被交易出了不同方向，这提示这轮波动不是单一叙事的简单外溢，而是各地资金对'谁受益、谁受损'有不同判断。",
+      "impact": "海外股市 · 日元资产波动率",
+      "sources": [
+        {
+          "name": "Panthere Group",
+          "url": "https://www.pantheregroup.com/2026/09/15/asian-shares-retreat-ahead-of-fed-decision/",
+          "angle": "给出亚太各主要指数的具体涨跌点位"
+        },
+        {
+          "name": "Saxo Bank",
+          "url": "https://www.home.saxo/content/articles/macro/market-quick-take---ai-warning-hits-chips-as-ten-year-tops-5-before-fed---15-september-2026-15092026",
+          "angle": "记录欧洲斯托克600、DAX、CAC40、富时100的具体涨跌"
+        }
+      ]
+    },
+    {
+      "rank": 10,
+      "tier": "worth-knowing",
+      "published": "2026-09-13",
+      "headline": "英伟达据报考虑做Anthropic规模化IPO的基石投资者，最多认购100亿美元",
+      "sectors": [
+        "AI",
+        "半导体",
+        "一级市场"
+      ],
+      "tickers": [
+        "NVDA"
+      ],
+      "body": "据路透社报道，英伟达正与Anthropic洽谈，考虑在其IPO中认购最多100亿美元股份，充当基石投资者。Anthropic此次IPO计划融资规模最高达1000亿美元，对应估值约2-2.3万亿美元，若成真将是史上最大规模IPO之一。截至目前，双方的洽谈条款仍未最终敲定，也无官方确认。这笔潜在投资会进一步加深英伟达与其主要AI芯片客户之间的资本纽带。",
+      "why": "英伟达一边是'减速'辩论里被市场抛售的对象，一边却计划用创纪录规模的资金加注同一批AI公司的IPO——这种'嘴上减速、真金白银加速'的错位，是当前AI资本开支叙事里最值得跟踪的矛盾信号。",
+      "impact": "NVDA · Anthropic IPO估值锚",
+      "sources": [
+        {
+          "name": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-09-11/nvidia-in-talks-to-invest-up-to-10b-in-anthropic-ipo-reuters",
+          "angle": "首发路透社关于洽谈的报道"
+        },
+        {
+          "name": "Benzinga",
+          "url": "https://www.benzinga.com/markets/tech/26/09/61752792/nvidia-eyes-up-to-10-billion-investment-in-anthropic-ipo-as-claude-ai-maker-mulls-nearly-100-billion-raise-at-2-trillion-valuation-report",
+          "angle": "给出1000亿美元融资规模与2万亿估值的具体数字"
+        }
+      ]
+    },
+    {
+      "rank": 11,
+      "tier": "noise",
+      "published": "2026-09-14",
+      "headline": "英伟达逆势扩展CUDA-Q开源AI项目",
+      "sectors": [
+        "半导体",
+        "开源"
+      ],
+      "tickers": [
+        "NVDA"
+      ],
+      "body": "尽管股价当日下跌，英伟达周一仍宣布扩展其开源项目CUDA-Q，是公司在AI减速争论声浪中为数不多的产品端动态。",
+      "sources": [
+        {
+          "name": "GuruFocus",
+          "url": "https://www.gurufocus.com/news/9080578/chip-stocks-decline-amid-ai-development-concerns"
+        }
+      ]
+    },
+    {
+      "rank": 12,
+      "tier": "noise",
+      "published": "2026-09-08",
+      "headline": "Anthropic IPO最新拼图：6月已秘密递表，目标10月上市、估值上探2万亿美元（信息拼合，非当日新闻）",
+      "sectors": [
+        "AI",
+        "一级市场"
+      ],
+      "tickers": [],
+      "body": "这不是今天的突发新闻，而是把近期分散的报道拼在一起：Anthropic已于6月1日向SEC秘密提交Form S-1草案，目标是10月在纳斯达克挂牌，由高盛、摩根大通、摩根士丹利承销，规模预计超过600亿美元，估值讨论区间上探约2万亿美元(基于2028年1900-2000亿美元营收预测)。需要注意的是，截至9月上旬，SEC EDGAR公开检索系统里仍查不到Anthropic的公开S-1或S-1/A文件，说明公开招股书尚未发布，具体上市日期仍未确认。",
+      "sources": [
+        {
+          "name": "GraniteShares",
+          "url": "https://graniteshares.com/research/anthropic-ipo-2026-explained-from-965-billion-to-a-possible-2-trillion-listing/"
+        },
+        {
+          "name": "Decode the Future",
+          "url": "https://decodethefuture.org/en/anthropic-s1-ipo-filing-explained/"
+        }
+      ]
+    },
+    {
+      "rank": 13,
+      "tier": "noise",
+      "published": "2026-09-15",
+      "headline": "小盘股波动剧烈：Biodexa盘前暴涨95%，Future FinTech重挫26%",
+      "sectors": [
+        "市场结构"
+      ],
+      "body": "周二盘前小盘股波动明显放大：制药股Biodexa Pharmaceuticals暴涨95.4%，My Size上涨63.7%，Veea上涨46.9%；跌幅方面Future FinTech Group重挫26.0%。这类波动主要由各自的独立催化剂驱动，与大盘的宏观叙事关系不大。",
+      "sources": [
+        {
+          "name": "StockAnalysis.com",
+          "url": "https://stockanalysis.com/markets/premarket/"
+        }
+      ]
+    },
+    {
+      "rank": 14,
+      "tier": "noise",
+      "published": "2026-09-15",
+      "headline": "比特币报76,874美元，未跟随科技股波动",
+      "sectors": [
+        "加密"
+      ],
+      "body": "比特币周二交投于76,874美元附近，24小时成交量约157.1亿美元，走势相对独立于同日的芯片股抛售与网络安全股暴涨。",
+      "sources": [
+        {
+          "name": "CoinDesk",
+          "url": "https://www.coindesk.com/price/bitcoin"
+        }
+      ]
+    },
+    {
+      "rank": 15,
+      "tier": "noise",
+      "published": "2026-09-10",
+      "headline": "国会已通过临时拨款法案避免9月底政府关门（旧闻，已解除，无需进一步关注）",
+      "sectors": [
+        "宏观",
+        "财政"
+      ],
+      "body": "这不是今天的新闻：国会两院已于9月上旬通过跨党派临时拨款法案(众院370-48、参院90-6通过)，将联邦政府资金维持到12月11日，避开了原定9月30日财年结束时的关门风险，中期选举前的这一变量已经解除。",
+      "sources": [
+        {
+          "name": "Defense One",
+          "url": "https://www.defenseone.com/policy/2026/09/shutdown-threat-lifted-house-passes-stopgap-spending-bill/415757/"
+        }
+      ]
+    }
+  ],
+  "calendar": [
+    {
+      "when": "Tue 9/15",
+      "time": "14:15 ET",
+      "event": "CLARITY Act参议院程序性(cloture)投票，通过概率已跌至24%-26%",
+      "weight": "high",
+      "date": "2026-09-15",
+      "sources": [
+        {
+          "name": "crypto.news",
+          "url": "https://crypto.news/clarity-act-september-15-vote-cloture-crypto-regulation/"
+        },
+        {
+          "name": "DeFi Rate",
+          "url": "https://defirate.com/clarity-act-fact-sheet/"
+        }
+      ]
+    },
+    {
+      "when": "Tue 9/15",
+      "time": "—",
+      "event": "20年期美债标售、API周度原油库存",
+      "weight": "low",
+      "date": "2026-09-15",
+      "sources": [
+        {
+          "name": "Investing.com",
+          "url": "https://www.investing.com/news/stock-market-news/adp-employment-empire-state-index-and-oil-inventories-due-tuesday-93CH-4900187"
+        }
+      ]
+    },
+    {
+      "when": "Wed 9/16",
+      "time": "08:30 ET",
+      "event": "8月零售销售数据公布，与FOMC决议同日",
+      "weight": "mid",
+      "date": "2026-09-16",
+      "sources": [
+        {
+          "name": "Investing.com",
+          "url": "https://www.investing.com/economic-calendar/retail-sales-256"
+        }
+      ]
+    },
+    {
+      "when": "Wed 9/16",
+      "time": "14:00 ET",
+      "event": "联储9月FOMC利率决议：期货隐含概率约92%，预测市场Kalshi/Polymarket仅49%-57%",
+      "weight": "high",
+      "date": "2026-09-16",
+      "sources": [
+        {
+          "name": "Yahoo Finance",
+          "url": "https://finance.yahoo.com/economy/policy/articles/fomc-september-2026-odds-rate-163505675.html"
+        },
+        {
+          "name": "Kalshi",
+          "url": "https://kalshi.com/markets/kxfeddecision/fed-meeting/kxfeddecision-26sep"
+        }
+      ]
+    },
+    {
+      "when": "Wed-Thu 9/17-18",
+      "time": "—",
+      "event": "日本央行货币政策会议，行长记者会周四15:30 JST",
+      "weight": "mid",
+      "date": "2026-09-17",
+      "sources": [
+        {
+          "name": "Finance Calendar",
+          "url": "https://www.financecalendar.com/bank-of-japan-rate-decisions/"
+        }
+      ]
+    },
+    {
+      "when": "Mon 9/21",
+      "time": "—",
+      "event": "博通(AVGO)股息除息日，每股派发0.65美元",
+      "weight": "low",
+      "date": "2026-09-21",
+      "sources": [
+        {
+          "name": "CNBC",
+          "url": "https://www.cnbc.com/quotes/AVGO"
+        }
+      ]
+    },
+    {
+      "when": "Thu 9/24",
+      "time": "盘后",
+      "event": "好市多(Costco)财报",
+      "weight": "low",
+      "date": "2026-09-24",
+      "sources": [
+        {
+          "name": "TipRanks",
+          "url": "https://www.tipranks.com/stocks/cost/earnings"
+        }
+      ]
+    },
+    {
+      "when": "年底前",
+      "time": "—",
+      "event": "Qorvo与Skyworks合并交易：中国SAMR审查处于最后阶段，目标年底完成交割",
+      "weight": "low",
+      "sources": [
+        {
+          "name": "ad-hoc-news",
+          "url": "https://www.ad-hoc-news.de/boerse/news/corporate-news/qorvo-inc-stock-jumps-to-52-week-high-as-skyworks-merger-momentum-builds/70083267"
+        }
+      ]
+    },
+    {
+      "when": "Thu 10/1",
+      "time": "20:30 CT",
+      "event": "特斯拉新一代Roadster发布会，德州韦科，配SpaceX冷气推进器",
+      "weight": "mid",
+      "date": "2026-10-01",
+      "sources": [
+        {
+          "name": "Motor1",
+          "url": "https://www.motor1.com/news/808103/tesla-roadster-reveal-date-confirmed/"
+        }
+      ]
+    },
+    {
+      "when": "Thu 10/1",
+      "time": "—",
+      "event": "9月ISM制造业PMI公布",
+      "weight": "mid",
+      "date": "2026-10-01",
+      "sources": [
+        {
+          "name": "FedRateCalc",
+          "url": "https://fedratecalc.com/us-economic-calendar/september-2026/"
+        }
+      ]
+    },
+    {
+      "when": "Fri 10/2",
+      "time": "08:30 ET",
+      "event": "9月非农就业报告公布",
+      "weight": "high",
+      "date": "2026-10-02",
+      "sources": [
+        {
+          "name": "FedRateCalc",
+          "url": "https://fedratecalc.com/us-economic-calendar/september-2026/"
+        }
+      ]
+    },
+    {
+      "when": "10月",
+      "time": "—",
+      "event": "Anthropic拟以纳斯达克代码上市：目标10月，高盛/摩根大通/摩根士丹利承销，估值上探约2万亿美元；截至9月上旬SEC EDGAR尚无公开S-1",
+      "weight": "low",
+      "sources": [
+        {
+          "name": "GraniteShares",
+          "url": "https://graniteshares.com/research/anthropic-ipo-2026-explained-from-965-billion-to-a-possible-2-trillion-listing/"
+        },
+        {
+          "name": "Decode the Future",
+          "url": "https://decodethefuture.org/en/anthropic-s1-ipo-filing-explained/"
+        }
+      ]
+    }
+  ],
+  "mag7": {
+    "rows": [
+      {
+        "ticker": "NVDA",
+        "price": "212.38",
+        "change_pct": -2.71
+      },
+      {
+        "ticker": "AAPL",
+        "price": "333.72",
+        "change_pct": 0.44
+      },
+      {
+        "ticker": "MSFT",
+        "price": "509.26",
+        "change_pct": 2.75
+      },
+      {
+        "ticker": "GOOGL",
+        "price": "349.32",
+        "change_pct": 3.2
+      },
+      {
+        "ticker": "AMZN",
+        "price": "255.23",
+        "change_pct": -0.6
+      },
+      {
+        "ticker": "META",
+        "price": "667.75",
+        "change_pct": 3.04
+      },
+      {
+        "ticker": "TSLA",
+        "price": "361.65",
+        "change_pct": -1.04
+      }
+    ],
+    "asof": "收盘 · Mon 9/14 14:07 ET",
+    "source": "Yahoo Finance chart endpoint",
+    "note": "七只里四涨三跌：英伟达跌2.71%领跌，特斯拉、亚马逊小幅走低，而谷歌、Meta、微软逆势收涨2.75%-3.2%。跌幅集中在AI资本开支最敏感的名字上，涨幅居前的几只本身没有直接暴露在'减速'叙事里，市场仍在消化周末以来的争论；周三的联储决议将是下一个共同变量。"
+  },
+  "momentum": {
+    "asof": "2026-09-14",
+    "scanned": 2560,
+    "note": "初动档只有DV一只，放量8.11倍但今天扫描的新闻里完全没有出现，是名单里最早的线索。延续档里的CRWD、ZS是这两天'AI减速→网络安全受益'行情里被反复报道的名字，价量只是对已知消息的确认；NET、AI(C3.ai)、BBY、TEVA今天的新闻扫描里都没有出现，值得留意。",
+    "candidates": [
+      {
+        "ticker": "DV",
+        "stage": "ignition",
+        "close": 13.55,
+        "change_pct": 1.04,
+        "rvol": 8.11,
+        "breakout_age": 0,
+        "ext_ma20": 0.0152,
+        "run_from_base": 0.368,
+        "coverage": "none",
+        "note": "单日仅涨1.04%但放量达8.11倍均量，为当日突破首日；今天扫描的几十篇新闻里完全没有出现这只票。"
+      },
+      {
+        "ticker": "CRWD",
+        "stage": "continuation",
+        "close": 238.57,
+        "change_pct": 15.4,
+        "rvol": 2.27,
+        "breakout_age": 0,
+        "ext_ma20": 0.1437,
+        "run_from_base": 0.4439,
+        "coverage": "heavy",
+        "note": "跳空高开5.93%后收涨15.4%，放量2.27倍；这正是今天新闻里被反复报道的'网络安全受益于AI减速'行情的代表个股，价量只是对已知消息的确认，不是新线索。"
+      },
+      {
+        "ticker": "ZS",
+        "stage": "continuation",
+        "close": 191.13,
+        "change_pct": 16.16,
+        "rvol": 2.11,
+        "breakout_age": 0,
+        "ext_ma20": 0.0823,
+        "run_from_base": 0.5941,
+        "coverage": "heavy",
+        "note": "跳空高开4.67%后收涨16.16%，是今天同一条网络安全受益新闻里另一个反复出现的名字，同样是消息面已经跑在价格前面。"
+      },
+      {
+        "ticker": "NET",
+        "stage": "continuation",
+        "close": 333.05,
+        "change_pct": 8.65,
+        "rvol": 0.87,
+        "breakout_age": 0,
+        "ext_ma20": 0.1291,
+        "run_from_base": 0.5686,
+        "coverage": "none",
+        "note": "收涨8.65%，收盘位于当日区间最高点，量能却只有0.87倍均量；尽管同属网络安全板块，今天扫描的新闻里完全没有单独提到这只票。"
+      },
+      {
+        "ticker": "AI",
+        "stage": "continuation",
+        "close": 11.31,
+        "change_pct": 7.35,
+        "rvol": 0.7,
+        "breakout_age": 0,
+        "ext_ma20": 0.0918,
+        "run_from_base": 0.4305,
+        "coverage": "none",
+        "note": "收涨7.35%，突破当日乖离20日均线9.18%；今天的新闻扫描里'AI'作为行业热词大量出现，但没有任何一篇具体提到C3.ai这家公司。"
+      },
+      {
+        "ticker": "BBY",
+        "stage": "continuation",
+        "close": 94.26,
+        "change_pct": 3.81,
+        "rvol": 0.6,
+        "breakout_age": 0,
+        "ext_ma20": 0.0848,
+        "run_from_base": 0.3,
+        "coverage": "none",
+        "note": "收涨3.81%，量能低于均量(0.6倍)，当日突破；今天扫描的新闻里完全没有出现这只票。"
+      },
+      {
+        "ticker": "TEVA",
+        "stage": "continuation",
+        "close": 39.02,
+        "change_pct": 5.2,
+        "rvol": 0.37,
+        "breakout_age": 0,
+        "ext_ma20": 0.054,
+        "run_from_base": 0.3182,
+        "coverage": "none",
+        "note": "收涨5.2%，量能仅0.37倍均量，当日突破；今天扫描的新闻里完全没有出现这只票。"
+      }
+    ]
+  }
+}
