@@ -93,7 +93,7 @@ CSS = """
   color: var(--paper);
 }
 
-.tl-auth-status { margin: 0.6rem 0 0; font-size: var(--t-sm); color: var(--ink-mid); }
+.tl-auth-status { margin: 0 0 0.5rem; font-size: var(--t-sm); color: var(--ink-mid); }
 
 .tl-auth-row {
   display: flex;
@@ -151,6 +151,61 @@ CSS = """
 
 #tl-add-form { display: flex; gap: 0.5rem; margin-bottom: 0.8rem; }
 
+/* 下拉列表绝对定位在输入框下方，所以要有个 relative 的容器。
+   flex:1 让输入框继续占满剩余宽度，和改造前的版面一致。 */
+#tl-search-wrap { position: relative; flex: 1; }
+
+#tl-suggest {
+  position: absolute;
+  z-index: 30;
+  top: calc(100% + 2px);
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 0.25rem 0;
+  list-style: none;
+  background: var(--paper-raised);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  max-height: 15rem;
+  overflow-y: auto;
+}
+
+#tl-suggest li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.4rem 0.6rem;
+  cursor: pointer;
+  font-size: var(--t-sm);
+}
+
+/* 键盘选中与鼠标悬停用同一个高亮，避免出现「两个都亮着」的歧义状态。 */
+#tl-suggest li:hover,
+#tl-suggest li[aria-selected="true"] { background: var(--accent-soft); }
+
+#tl-suggest .tl-sym {
+  font-family: var(--font-data);
+  font-weight: 500;
+  color: var(--accent-strong);
+  flex-shrink: 0;
+}
+
+#tl-suggest .tl-name {
+  color: var(--ink-mid);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#tl-suggest .tl-exch {
+  margin-left: auto;
+  font-size: var(--t-2xs);
+  color: var(--ink-faint);
+  flex-shrink: 0;
+}
+
 #tl-add-input {
   flex: 1 1 10rem;
   padding: 0.4rem 0.6rem;
@@ -158,8 +213,10 @@ CSS = """
   border-radius: 3px;
   background: var(--paper);
   color: var(--ink);
-  font-family: var(--font-data);
-  text-transform: uppercase;
+  /* 等宽字体和强制大写是当年「只接受股票代码」时留下的。现在这里也输
+     公司名，强制大写会把 apple 显示成 APPLE、把英文名排得歪歪扭扭，
+     所以换回正文字体、去掉大写。代码本身仍然会在提交时转成大写。 */
+  font-family: var(--font-body);
   font-size: var(--t-sm);
 }
 
@@ -210,15 +267,23 @@ HTML = """
       <button id="tl-logout" type="button">退出</button>
     </div>
     <div id="tl-chips" class="tl-chips"></div>
-    <form id="tl-add-form">
-      <input type="text" id="tl-add-input" placeholder="加一个股票代码，比如 NVDA" maxlength="10">
+    <!-- 提示语必须在输入框**上方**：下拉候选是绝对定位的浮层，放在下方
+         会被它整个盖住，而「没有找到代码 X，你是不是想找」这句恰恰要和
+         候选列表同时可见才有意义。 -->
+    <p id="tl-match-status" class="tl-auth-status" hidden></p>
+    <form id="tl-add-form" autocomplete="off">
+      <div id="tl-search-wrap">
+        <input type="text" id="tl-add-input" placeholder="输入公司名或代码，比如 apple 或 AAPL"
+               maxlength="64" role="combobox" aria-expanded="false"
+               aria-controls="tl-suggest" aria-autocomplete="list">
+        <ul id="tl-suggest" role="listbox" hidden></ul>
+      </div>
       <button type="submit">添加</button>
     </form>
     <label class="tl-toggle">
       <input type="checkbox" id="tl-filter-toggle">
       只看跟我相关的新闻（宏观新闻始终保留）
     </label>
-    <p id="tl-match-status" class="tl-auth-status" hidden></p>
   </div>
 </div>
 </div>
@@ -362,24 +427,130 @@ def _script(supabase: Supabase) -> str:
     withUser(persist);
   }}
 
-  function addSymbol(raw) {{
-    var symbol = (raw || '').trim().toUpperCase();
-    // 原来这两种情况都是静默 return，用户输完一按回车什么都没发生，
-    // 分不清是「代码不合法」「已经加过了」还是「功能坏了」。
-    if (!TICKER_RE.test(symbol)) {{
-      matchStatus.hidden = false;
-      matchStatus.textContent = '\\u8fd9\\u4e0d\\u50cf\\u662f\\u4e00\\u4e2a\\u80a1\\u7968\\u4ee3\\u7801\\uff1a' + symbol;
-      return;
+  var suggestBox = document.getElementById('tl-suggest');
+  var suggestRows = [];
+  var suggestIndex = -1;
+  var searchTimer = null;
+  var searchSeq = 0;
+
+  function say(text) {{
+    matchStatus.hidden = false;
+    matchStatus.textContent = text;
+  }}
+
+  function hideSuggest() {{
+    suggestBox.hidden = true;
+    suggestBox.innerHTML = '';
+    suggestRows = [];
+    suggestIndex = -1;
+    addInput.setAttribute('aria-expanded', 'false');
+  }}
+
+  function highlight(i) {{
+    suggestIndex = i;
+    var items = suggestBox.children;
+    for (var k = 0; k < items.length; k++) {{
+      items[k].setAttribute('aria-selected', k === i ? 'true' : 'false');
     }}
+    if (i >= 0 && items[i]) {{ items[i].scrollIntoView({{ block: 'nearest' }}); }}
+  }}
+
+  function showSuggest(rows) {{
+    suggestRows = rows;
+    suggestBox.innerHTML = '';
+    rows.forEach(function (row, i) {{
+      var li = document.createElement('li');
+      li.setAttribute('role', 'option');
+      li.setAttribute('aria-selected', 'false');
+      var sym = document.createElement('span');
+      sym.className = 'tl-sym';
+      sym.textContent = row.symbol;
+      var name = document.createElement('span');
+      name.className = 'tl-name';
+      name.textContent = row.name;
+      li.appendChild(sym);
+      li.appendChild(name);
+      if (row.exchange) {{
+        var ex = document.createElement('span');
+        ex.className = 'tl-exch';
+        ex.textContent = row.exchange;
+        li.appendChild(ex);
+      }}
+      // 用 mousedown 而不是 click：click 发生在 blur 之后，
+      // 那时下拉已经被收起来了，点击会落空。
+      li.addEventListener('mousedown', function (event) {{
+        event.preventDefault();
+        pick(i);
+      }});
+      li.addEventListener('mouseenter', function () {{ highlight(i); }});
+      suggestBox.appendChild(li);
+    }});
+    suggestBox.hidden = rows.length === 0;
+    addInput.setAttribute('aria-expanded', rows.length ? 'true' : 'false');
+    highlight(-1);
+  }}
+
+  function pick(i) {{
+    var row = suggestRows[i];
+    if (!row) {{ return; }}
+    addInput.value = '';
+    hideSuggest();
+    commitSymbol(row.symbol);
+  }}
+
+  function lookup(term) {{
+    // 每次请求带一个序号，只有最新那次的结果才允许改动界面——
+    // 否则打字快的时候先发的慢请求会后到，把界面覆盖成旧结果。
+    var seq = ++searchSeq;
+    return fetch('/api/search?q=' + encodeURIComponent(term)).then(function (res) {{
+      if (!res.ok) {{ throw new Error('search failed'); }}
+      return res.json();
+    }}).then(function (rows) {{
+      return seq === searchSeq ? rows : [];
+    }});
+  }}
+
+  function commitSymbol(symbol) {{
     if (currentSymbols.indexOf(symbol) !== -1) {{
-      matchStatus.hidden = false;
-      matchStatus.textContent = symbol + ' \\u5df2\\u7ecf\\u5728\\u5217\\u8868\\u91cc\\u4e86';
+      say(symbol + ' \\u5df2\\u7ecf\\u5728\\u5217\\u8868\\u91cc\\u4e86');
       return;
     }}
     currentSymbols.push(symbol);
     renderChips();
     applyFilter();
     withUser(persist);
+  }}
+
+  // 直接提交（没从下拉里选）时，必须先确认这个代码真实存在。
+  // 改造前这里只做格式校验，于是 APPLE、GOOGLE、ZZZZZ 全都能存进去，
+  // 页面上出现一个看着正常、却永远匹配不到任何新闻的芯片——静默失败。
+  function addSymbol(raw) {{
+    var text = (raw || '').trim();
+    if (!text) {{ return; }}
+    var symbol = text.toUpperCase();
+    if (currentSymbols.indexOf(symbol) !== -1) {{
+      say(symbol + ' \\u5df2\\u7ecf\\u5728\\u5217\\u8868\\u91cc\\u4e86');
+      return;
+    }}
+    say('\\u6b63\\u5728\\u67e5\\u8bc1 ' + text + ' \\u2026');
+    lookup(text).then(function (rows) {{
+      var exact = null;
+      for (var i = 0; i < rows.length; i++) {{
+        if (rows[i].symbol === symbol) {{ exact = rows[i]; break; }}
+      }}
+      if (exact) {{ hideSuggest(); commitSymbol(exact.symbol); return; }}
+      if (rows.length) {{
+        // 找不到完全一致的，但有候选——让人挑，而不是替他猜。
+        showSuggest(rows);
+        say('\\u6ca1\\u6709\\u627e\\u5230\\u4ee3\\u7801 ' + symbol + '\\uff0c\\u4f60\\u662f\\u4e0d\\u662f\\u60f3\\u627e\\u4e0b\\u9762\\u8fd9\\u4e9b\\uff1f');
+        return;
+      }}
+      say('\\u627e\\u4e0d\\u5230 ' + text + '\\uff0c\\u4e5f\\u6ca1\\u6709\\u76f8\\u8fd1\\u7684\\u4ee3\\u7801\\u3002\\u8bd5\\u8bd5\\u516c\\u53f8\\u82f1\\u6587\\u540d\\uff0c\\u6bd4\\u5982 apple\\u3002');
+    }}).catch(function () {{
+      // 搜索服务挂了就退回老行为：格式过得去就先存，别把人卡死。
+      if (TICKER_RE.test(symbol)) {{ hideSuggest(); commitSymbol(symbol); }}
+      else {{ say('\\u641c\\u7d22\\u6682\\u65f6\\u4e0d\\u53ef\\u7528\\uff0c\\u8bf7\\u76f4\\u63a5\\u8f93\\u5165\\u80a1\\u7968\\u4ee3\\u7801\\u3002'); }}
+    }});
   }}
 
   function loadWatchlist(userId) {{
@@ -421,8 +592,41 @@ def _script(supabase: Supabase) -> str:
     }});
   }});
 
+  addInput.addEventListener('input', function () {{
+    var term = addInput.value.trim();
+    if (searchTimer) {{ clearTimeout(searchTimer); }}
+    if (term.length < 1) {{ hideSuggest(); return; }}
+    // 200ms 防抖：逐字符打到后端既浪费也会触发上游限流。
+    searchTimer = setTimeout(function () {{
+      lookup(term).then(showSuggest).catch(function () {{ hideSuggest(); }});
+    }}, 200);
+  }});
+
+  addInput.addEventListener('keydown', function (event) {{
+    if (suggestBox.hidden) {{ return; }}
+    if (event.key === 'ArrowDown') {{
+      event.preventDefault();
+      highlight((suggestIndex + 1) % suggestRows.length);
+    }} else if (event.key === 'ArrowUp') {{
+      event.preventDefault();
+      highlight(suggestIndex <= 0 ? suggestRows.length - 1 : suggestIndex - 1);
+    }} else if (event.key === 'Enter' && suggestIndex >= 0) {{
+      event.preventDefault();
+      pick(suggestIndex);
+    }} else if (event.key === 'Escape') {{
+      hideSuggest();
+    }}
+  }});
+
+  addInput.addEventListener('blur', function () {{
+    // 延后一拍，让下拉项的 mousedown 先跑完。
+    setTimeout(hideSuggest, 120);
+  }});
+
   addForm.addEventListener('submit', function (event) {{
     event.preventDefault();
+    if (suggestIndex >= 0) {{ pick(suggestIndex); return; }}
+    if (searchTimer) {{ clearTimeout(searchTimer); }}
     addSymbol(addInput.value);
     addInput.value = '';
   }});

@@ -137,9 +137,51 @@ class TestScriptLogic(unittest.TestCase):
 
     def test_rejected_ticker_input_gives_feedback(self):
         """输入非法代码或重复代码时原来是静默 return，用户分不清
-        是输错了还是功能坏了。"""
-        add_fn = self.html.split("function addSymbol", 1)[1].split("function", 1)[0]
-        self.assertIn("matchStatus.textContent", add_fn)
+        是输错了还是功能坏了。
+
+        断言的是「有没有反馈」这个意图，不是某一行具体怎么写的——
+        反馈现在统一走 ``say()``，早先直接写 ``matchStatus.textContent``。
+        """
+        self.assertIn("function say(", self.html)
+        say_fn = self.html.split("function say(", 1)[1][:200]
+        self.assertIn("matchStatus.textContent", say_fn)
+        add_fn = self.html.split("function addSymbol", 1)[1][:1200]
+        self.assertIn("say(", add_fn)
+
+    def test_symbol_must_resolve_before_being_added(self):
+        """代码必须先被查证存在才能加进自选股。
+
+        改造前只有格式校验，于是 APPLE、GOOGLE、ZZZZZ 全都能通过并存进
+        数据库，页面上出现一个看着正常、却永远匹配不到任何新闻的芯片。
+        """
+        add_fn = self.html.split("function addSymbol", 1)[1][:1200]
+        self.assertIn("lookup(", add_fn)
+
+    def test_has_autocomplete_dropdown(self):
+        """必须能按公司名找代码——不知道 AAPL 的人也要加得了苹果。"""
+        self.assertIn('id="tl-suggest"', self.html)
+        self.assertIn("/api/search?q=", self.html)
+        self.assertIn('role="listbox"', self.html)
+
+    def test_autocomplete_is_keyboard_navigable(self):
+        """下拉框必须能用键盘走完，只能点鼠标等于把一部分人挡在外面。"""
+        for key in ("ArrowDown", "ArrowUp", "Enter", "Escape"):
+            self.assertIn(key, self.html)
+
+    def test_search_is_debounced(self):
+        """逐字符打到后端既浪费也会触发上游限流。"""
+        self.assertIn("searchTimer", self.html)
+        self.assertIn("clearTimeout", self.html)
+
+    def test_stale_search_results_are_discarded(self):
+        """打字快的时候先发的慢请求会后到，不丢弃就会用旧结果覆盖新界面。"""
+        self.assertIn("searchSeq", self.html)
+
+    def test_falls_back_when_search_is_down(self):
+        """搜索服务挂掉时要退回「只能输精确代码」的老行为，不能把人卡死。"""
+        add_fn = self.html.split("function addSymbol", 1)[1][:1600]
+        self.assertIn("catch", add_fn)
+        self.assertIn("TICKER_RE.test", add_fn)
 
     def test_ticker_regex_matches_client_side_validation(self):
         """跟 taurient_lite/schema.py 和 backend/server.py 里同一条
