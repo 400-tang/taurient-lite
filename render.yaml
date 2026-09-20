@@ -11,6 +11,11 @@ services:
   - type: web
     name: taurient-lite-backend
     runtime: python
+    # 锁住版本。不写的话 Render 取它当时的默认版本（2026-09 是 3.14），
+    # 而本地开发和 GitHub Actions 都是 3.12——三个环境跑不同的解释器，
+    # 本地全绿的测试仍可能在线上挂掉，而且会在 Render 某天抬高默认版本时
+    # 毫无预兆地发生。追新的收益远小于三个环境一致。
+    pythonVersion: "3.12"
     plan: free
     buildCommand: pip install -r backend/requirements.txt
     startCommand: uvicorn backend.server:app --host 0.0.0.0 --port $PORT
