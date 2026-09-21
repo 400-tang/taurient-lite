@@ -177,7 +177,53 @@
   --heat-on-d5: #06110B;
   --heat-on-flat: #F2F6F8;
 }
+#tab-brief:focus-visible ~ .tab-nav label[for="tab-brief"],
+#tab-calendar:focus-visible ~ .tab-nav label[for="tab-calendar"],
+#tab-momentum:focus-visible ~ .tab-nav label[for="tab-momentum"],
+#tab-fundamentals:focus-visible ~ .tab-nav label[for="tab-fundamentals"],
+#tab-market:focus-visible ~ .tab-nav label[for="tab-market"] {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
 
+#tab-brief:checked ~ .tab-panel[data-tab="brief"],
+#tab-calendar:checked ~ .tab-panel[data-tab="calendar"],
+#tab-momentum:checked ~ .tab-panel[data-tab="momentum"],
+#tab-fundamentals:checked ~ .tab-panel[data-tab="fundamentals"],
+#tab-market:checked ~ .tab-panel[data-tab="market"] {
+  display: block;
+}
+
+#tab-brief:checked ~ .tab-nav label[for="tab-brief"],
+#tab-calendar:checked ~ .tab-nav label[for="tab-calendar"],
+#tab-momentum:checked ~ .tab-nav label[for="tab-momentum"],
+#tab-fundamentals:checked ~ .tab-nav label[for="tab-fundamentals"],
+#tab-market:checked ~ .tab-nav label[for="tab-market"] {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+.tile.u1 { background: var(--heat-u1); color: var(--heat-on-u1); }
+.tile.u2 { background: var(--heat-u2); color: var(--heat-on-u2); }
+.tile.u3 { background: var(--heat-u3); color: var(--heat-on-u3); }
+.tile.u4 { background: var(--heat-u4); color: var(--heat-on-u4); }
+.tile.u5 { background: var(--heat-u5); color: var(--heat-on-u5); }
+.tile.d1 { background: var(--heat-d1); color: var(--heat-on-d1); }
+.tile.d2 { background: var(--heat-d2); color: var(--heat-on-d2); }
+.tile.d3 { background: var(--heat-d3); color: var(--heat-on-d3); }
+.tile.d4 { background: var(--heat-d4); color: var(--heat-on-d4); }
+.tile.d5 { background: var(--heat-d5); color: var(--heat-on-d5); }
+.tile.flat { background: var(--heat-flat); color: var(--heat-on-flat); }
+.swatch.sw-u1 { background: var(--heat-u1); }
+.swatch.sw-u2 { background: var(--heat-u2); }
+.swatch.sw-u3 { background: var(--heat-u3); }
+.swatch.sw-u4 { background: var(--heat-u4); }
+.swatch.sw-u5 { background: var(--heat-u5); }
+.swatch.sw-d1 { background: var(--heat-d1); }
+.swatch.sw-d2 { background: var(--heat-d2); }
+.swatch.sw-d3 { background: var(--heat-d3); }
+.swatch.sw-d4 { background: var(--heat-d4); }
+.swatch.sw-d5 { background: var(--heat-d5); }
+.swatch.sw-flat { background: var(--heat-flat); }
 *, *::before, *::after { box-sizing: border-box; }
 
 body {
@@ -287,7 +333,6 @@ body {
 .t2 h2 { color: var(--tier-2); }
 .t3 h2 { color: var(--tier-3); }
 
-
 .wl { margin-top: 1rem; }
 .wl-grid { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 
@@ -358,7 +403,6 @@ body {
 .d.up { color: var(--up); }
 .d.down { color: var(--down); }
 .d.flat { color: var(--ink-faint); }
-
 
 .item {
   display: grid;
@@ -460,7 +504,7 @@ body {
   color: var(--ink-mid);
 }
 
-.impact::before { content: "\2192\00a0"; color: var(--ink-faint); }
+.impact::before { content: "\\2192\\00a0"; color: var(--ink-faint); }
 
 .srcs { margin-top: 0.75rem; }
 
@@ -476,7 +520,7 @@ body {
 
 .srcs summary::-webkit-details-marker { display: none; }
 .srcs summary::before { content: "+ "; }
-.srcs[open] summary::before { content: "\2212 "; }
+.srcs[open] summary::before { content: "\\2212 "; }
 .srcs summary:hover { color: var(--accent); }
 
 .srcs ul { margin: 0.45rem 0 0; padding: 0; list-style: none; }
@@ -492,7 +536,6 @@ body {
 }
 
 .srcs a:hover { border-bottom-color: var(--accent); }
-
 
 /* 三块深度元数据：资产波及矩阵占满宽度，交叉信源与历史脉络并排成微卡片。 */
 
@@ -663,7 +706,6 @@ body {
   margin-right: 0.4rem;
 }
 
-
 .tab-input {
   position: absolute;
   opacity: 0;
@@ -696,32 +738,6 @@ body {
 .tab-label:hover { color: var(--ink); }
 
 .tab-panel { display: none; }
-
-#tab-brief:focus-visible ~ .tab-nav label[for="tab-brief"],
-#tab-calendar:focus-visible ~ .tab-nav label[for="tab-calendar"],
-#tab-momentum:focus-visible ~ .tab-nav label[for="tab-momentum"],
-#tab-fundamentals:focus-visible ~ .tab-nav label[for="tab-fundamentals"],
-#tab-market:focus-visible ~ .tab-nav label[for="tab-market"] {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
-}
-
-#tab-brief:checked ~ .tab-panel[data-tab="brief"],
-#tab-calendar:checked ~ .tab-panel[data-tab="calendar"],
-#tab-momentum:checked ~ .tab-panel[data-tab="momentum"],
-#tab-fundamentals:checked ~ .tab-panel[data-tab="fundamentals"],
-#tab-market:checked ~ .tab-panel[data-tab="market"] {
-  display: block;
-}
-
-#tab-brief:checked ~ .tab-nav label[for="tab-brief"],
-#tab-calendar:checked ~ .tab-nav label[for="tab-calendar"],
-#tab-momentum:checked ~ .tab-nav label[for="tab-momentum"],
-#tab-fundamentals:checked ~ .tab-nav label[for="tab-fundamentals"],
-#tab-market:checked ~ .tab-nav label[for="tab-market"] {
-  color: var(--accent);
-  border-bottom-color: var(--accent);
-}
 
 .cal-grid {
   display: grid;
@@ -834,7 +850,6 @@ body {
   .cal-chip { font-size: 0.62rem; padding: 0.16rem 0.3rem; }
   .cal-wd { font-size: 0.62rem; padding: 0.45rem 0; }
 }
-
 
 /* 首页上的初动摘要条。视觉上刻意贴近自选股面板——两者回答的是同一类
    问题（哪些代码今天值得多看一眼），长得像才不会让读者以为是新东西。 */
@@ -1023,7 +1038,6 @@ body {
   .mo-metrics { gap: 0.3rem 0.8rem; }
 }
 
-
 .fu-lede {
   margin: 0.9rem 0 0;
   max-width: var(--measure);
@@ -1113,7 +1127,7 @@ body {
 
 .fu-flags { color: var(--tier-1); }
 
-.fu-flagn::before { content: "\25B2 "; font-size: 0.7em; }
+.fu-flagn::before { content: "\\25B2 "; font-size: 0.7em; }
 
 .fu-legend {
   margin: 0.55rem 0 0;
@@ -1194,7 +1208,7 @@ body {
 .fu-redflags li { position: relative; padding-left: 1rem; color: var(--ink-mid); }
 
 .fu-redflags li::before {
-  content: "\25B2";
+  content: "\\25B2";
   position: absolute;
   left: 0;
   top: 0.18em;
@@ -1238,7 +1252,7 @@ body {
 
 .fu-more summary::-webkit-details-marker { display: none; }
 .fu-more summary::before { content: "+ "; }
-.fu-more[open] summary::before { content: "\2212 "; }
+.fu-more[open] summary::before { content: "\\2212 "; }
 
 .fu-stages { margin-top: 0.4rem; }
 
@@ -1288,7 +1302,6 @@ body {
   .fu-score { margin-left: 0; }
   .fu-find { margin-left: 0.9rem; }
 }
-
 
 /* 行情板。跟随亮暗主题——理由见 TOKENS 里的注释。 */
 .board {
@@ -1462,29 +1475,6 @@ a.tile:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
   .sec-card { flex-basis: 88%; }
 }
 
-.tile.u1 { background: var(--heat-u1); color: var(--heat-on-u1); }
-.tile.u2 { background: var(--heat-u2); color: var(--heat-on-u2); }
-.tile.u3 { background: var(--heat-u3); color: var(--heat-on-u3); }
-.tile.u4 { background: var(--heat-u4); color: var(--heat-on-u4); }
-.tile.u5 { background: var(--heat-u5); color: var(--heat-on-u5); }
-.tile.d1 { background: var(--heat-d1); color: var(--heat-on-d1); }
-.tile.d2 { background: var(--heat-d2); color: var(--heat-on-d2); }
-.tile.d3 { background: var(--heat-d3); color: var(--heat-on-d3); }
-.tile.d4 { background: var(--heat-d4); color: var(--heat-on-d4); }
-.tile.d5 { background: var(--heat-d5); color: var(--heat-on-d5); }
-.tile.flat { background: var(--heat-flat); color: var(--heat-on-flat); }
-.swatch.sw-u1 { background: var(--heat-u1); }
-.swatch.sw-u2 { background: var(--heat-u2); }
-.swatch.sw-u3 { background: var(--heat-u3); }
-.swatch.sw-u4 { background: var(--heat-u4); }
-.swatch.sw-u5 { background: var(--heat-u5); }
-.swatch.sw-d1 { background: var(--heat-d1); }
-.swatch.sw-d2 { background: var(--heat-d2); }
-.swatch.sw-d3 { background: var(--heat-d3); }
-.swatch.sw-d4 { background: var(--heat-d4); }
-.swatch.sw-d5 { background: var(--heat-d5); }
-.swatch.sw-flat { background: var(--heat-flat); }
-
 .cal-scroll { overflow-x: auto; margin-top: 0.5rem; }
 
 table { border-collapse: collapse; width: 100%; font-size: var(--t-base); }
@@ -1557,13 +1547,13 @@ a:focus-visible, summary:focus-visible {
 <header class="masthead">
 <h1>Morning <em>Tape</em></h1>
 <div class="stamp">
-<span><b>2026-09-18</b> Friday</span>
-<span>Daily edition</span>
-<span>扫描 <b>84</b> 篇 · 保留 <b>16</b> 条</span>
-<span>生成于 2026-09-18 06:30 PT</span>
+<span><b>2026-09-21</b> Monday</span>
+<span>Week-ahead edition</span>
+<span>扫描 <b>68</b> 篇 · 保留 <b>17</b> 条</span>
+<span>生成于 2026-09-21 06:30 PT</span>
 </div>
 </header>
-<p class="lede">周三加息引发的抛售在周四迅速逆转：标普纳指录得8月以来最佳单日，10年期收益率从5.02%回落到4.98%，油价同步走软，市场把加息读作一次性冲击而非持续紧缩的开端。但地缘供给风险没有消退——伊朗革命卫队今天又击中一艘尝试穿越霍尔木兹的油轮，沙特管道修复时间表官方与独立分析师仍相差数周。监管上，SEC绕开国会流产的Clarity法案，直接给代币化美股交易开了五年豁免；消费电子这边，iPhone 18 Pro今天正式开售，同一组预订数据被两派分析师读出完全相反的结论。</p>
+<p class="lede">特朗普与习近平周三至周五在华盛顿会晤前，贝森特称与中方谈判「富有成效」，美股期货周一普涨；与此同时，霍尔木兹海峡通行量升至六个月高点、沙特管道修复提速，油价连跌四日至年内低位，缓解了上周加息后紧绷的收益率与通胀预期。但联储主席沃什在发布会上拒绝回答「距中性利率还有多远」，让市场对年内加息路径的猜测持续发酵；华为同日宣布将旗舰AI芯片量产提前到2027年一季度，直接叫板英伟达在华份额。本周是非农与CPI之间的数据真空期，中美峰会是唯一的确定性事件。</p>
 <input type="radio" name="tab" id="tab-brief" class="tab-input" checked><input type="radio" name="tab" id="tab-calendar" class="tab-input"><input type="radio" name="tab" id="tab-momentum" class="tab-input">
 <div class="tab-nav" role="tablist"><label class="tab-label" for="tab-brief">简报</label><label class="tab-label" for="tab-calendar">日历</label><label class="tab-label" for="tab-momentum">异动</label></div>
 <div class="tab-panel" data-tab="brief"><section class="board">
@@ -1688,285 +1678,286 @@ a:focus-visible, summary:focus-visible {
 </section>
 <div class="sec-head t2"><h2 class="label">自选股</h2><span class="n">8</span></div>
 <section class="wl"><div class="wl-grid">
-<a class="wl-chip hit" href="#item-7">NVDA<span class="cnt">1</span></a><a class="wl-chip hit" href="#item-16">TSLA<span class="cnt">1</span></a><a class="wl-chip hit" href="#item-4">AAPL<span class="cnt">1</span></a><span class="wl-chip">MSFT</span><a class="wl-chip hit" href="#item-13">AVGO<span class="cnt">1</span></a><a class="wl-chip hit" href="#item-5">AMD<span class="cnt">1</span></a><a class="wl-chip hit" href="#item-12">PLTR<span class="cnt">1</span></a><a class="wl-chip hit" href="#item-3">COIN<span class="cnt">2</span></a>
+<a class="wl-chip hit" href="#item-4">NVDA<span class="cnt">1</span></a><span class="wl-chip">TSLA</span><a class="wl-chip hit" href="#item-11">AAPL<span class="cnt">1</span></a><span class="wl-chip">MSFT</span><span class="wl-chip">AVGO</span><a class="wl-chip hit" href="#item-5">AMD<span class="cnt">1</span></a><a class="wl-chip hit" href="#item-6">PLTR<span class="cnt">1</span></a><a class="wl-chip hit" href="#item-14">COIN<span class="cnt">1</span></a>
 </div>
-<p class="wl-foot">你的 8 只自选股里，今天有 7 只出现在新闻中，点代码跳到对应条目。</p>
+<p class="wl-foot">你的 8 只自选股里，今天有 5 只出现在新闻中，点代码跳到对应条目。</p>
 </section>
-<div class="sec-head t2"><h2 class="label">价量异动</h2><span class="n">2</span><span class="asof">截至 2026-09-17 收盘</span></div>
+<div class="sec-head t2"><h2 class="label">价量异动</h2><span class="n">26</span><span class="asof">截至 2026-09-18 收盘</span></div>
 <div class="mo-strip">
-<div class="mo-strip-grid"><a class="mo-chip" href="#tab-momentum">PSIX<span class="mo-chip-n">2.5x</span></a><a class="mo-chip" href="#tab-momentum">ACVA<span class="mo-chip-n">4.6x</span></a></div>
-<p class="mo-strip-foot">2 只刚进入初动档。数字是相对成交量，完整指标见「异动」标签页。</p>
+<div class="mo-strip-grid"><a class="mo-chip" href="#tab-momentum">CON<span class="mo-chip-n">7.4x</span></a><a class="mo-chip" href="#tab-momentum">UHS<span class="mo-chip-n">2.9x</span></a><a class="mo-chip" href="#tab-momentum">HALO<span class="mo-chip-n">6.4x</span></a><a class="mo-chip" href="#tab-momentum">ILMN<span class="mo-chip-n">17.0x</span></a><a class="mo-chip" href="#tab-momentum">TH<span class="mo-chip-n">3.3x</span></a><a class="mo-chip" href="#tab-momentum">TMO<span class="mo-chip-n">2.7x</span></a><a class="mo-chip" href="#tab-momentum">CVX<span class="mo-chip-n">6.0x</span></a><a class="mo-chip" href="#tab-momentum">GRDN<span class="mo-chip-n">6.5x</span></a><a class="mo-chip" href="#tab-momentum">LTC<span class="mo-chip-n">2.9x</span></a><a class="mo-chip" href="#tab-momentum">NAVI<span class="mo-chip-n">3.2x</span></a><a class="mo-chip" href="#tab-momentum">ZD<span class="mo-chip-n">5.1x</span></a><a class="mo-chip" href="#tab-momentum">PGEN<span class="mo-chip-n">3.2x</span></a><a class="mo-chip" href="#tab-momentum">NRGV<span class="mo-chip-n">4.0x</span></a><a class="mo-chip" href="#tab-momentum">NTRA<span class="mo-chip-n">3.4x</span></a><a class="mo-chip" href="#tab-momentum">PSX<span class="mo-chip-n">3.8x</span></a><a class="mo-chip" href="#tab-momentum">INSP<span class="mo-chip-n">4.1x</span></a><a class="mo-chip" href="#tab-momentum">INSW<span class="mo-chip-n">3.0x</span></a><a class="mo-chip" href="#tab-momentum">NEO<span class="mo-chip-n">2.8x</span></a><a class="mo-chip" href="#tab-momentum">VLO<span class="mo-chip-n">3.3x</span></a><a class="mo-chip" href="#tab-momentum">CAI<span class="mo-chip-n">2.9x</span></a><a class="mo-chip" href="#tab-momentum">PS<span class="mo-chip-n">9.4x</span></a><a class="mo-chip" href="#tab-momentum">DK<span class="mo-chip-n">6.2x</span></a><a class="mo-chip" href="#tab-momentum">LILAK<span class="mo-chip-n">3.9x</span></a><a class="mo-chip" href="#tab-momentum">MPC<span class="mo-chip-n">4.2x</span></a><a class="mo-chip" href="#tab-momentum">GEMI<span class="mo-chip-n">7.3x</span></a><a class="mo-chip" href="#tab-momentum">ACVA<span class="mo-chip-n">3.4x</span></a></div>
+<p class="mo-strip-foot">26 只刚进入初动档。数字是相对成交量，完整指标见「异动」标签页。</p>
 </div>
-<div class="sec-head t2"><h2 class="label">指数与利率</h2><span class="asof">上一收盘 · 周四 9/17</span></div>
+<div class="sec-head t2"><h2 class="label">指数与利率</h2><span class="asof">指数为上一收盘 · 周五 9/18；油价为盘中 · 周一 9/21</span></div>
 <section><div class="tape-grid">
 <div class="tape-cell">
 <div class="k">S&amp;P 500</div>
-<div class="v">7,637.76</div>
-<div class="d up">+1.14%</div>
+<div class="v">7,650.50</div>
+<div class="d up">+0.17%</div>
 </div>
 <div class="tape-cell">
 <div class="k">Nasdaq Composite</div>
-<div class="v">26,418.30</div>
-<div class="d up">+1.69%</div>
+<div class="v">26,522.55</div>
+<div class="d up">+0.39%</div>
 </div>
 <div class="tape-cell">
 <div class="k">Dow Jones</div>
-<div class="v">51,779.85</div>
-<div class="d up">+0.62%</div>
+<div class="v">51,682.64</div>
+<div class="d down">-0.18%</div>
 </div>
 <div class="tape-cell">
 <div class="k">US 10Y yield</div>
-<div class="v">4.98%</div>
-<div class="d down">较周三5.02%回落，三周多来最大单日跌幅</div>
-</div>
-<div class="tape-cell">
-<div class="k">US 2Y yield</div>
-<div class="v">4.73%</div>
-<div class="d down">较周三4.74%略降</div>
+<div class="v">5.01%</div>
+<div class="d up">周五收盘，贴近本轮加息后高位</div>
 </div>
 <div class="tape-cell">
 <div class="k">WTI crude</div>
-<div class="v">$101.91</div>
-<div class="d down">-0.51%</div>
+<div class="v">$97.56</div>
+<div class="d down">-2.73%，连续第四日下跌</div>
 </div>
 <div class="tape-cell">
 <div class="k">Brent crude</div>
-<div class="v">$104.82</div>
-<div class="d down">较周三回落</div>
+<div class="v">约$103</div>
+<div class="d down">同步走软，三个月来最长跌势</div>
 </div>
 </div></section>
 <div class="sec-head t1"><h2 class="label">必读</h2><span class="n">4</span></div>
 <article class="item t1" id="item-1">
 <div class="rank">01</div>
 <div>
-<h3>加息冲击一天内逆转：10年期收益率回落到4.98%创三周最大单日跌幅，标普纳指录得8月以来最佳单日，油价同步走软</h3>
-<div class="meta"><span class="age fresh">昨天</span><span class="tag">宏观</span><span class="tag">利率</span></div>
-<p>周四(9/17)三大股指集体反弹：标普500涨1.14%至7,637.76，纳指涨1.69%至26,418.30，道指涨0.62%至51,779.85，是标普与纳指8月以来最好的单日表现。10年期美债收益率从周三加息当天的5.02%(2007年以来最高)回落到4.98%，为三周多来最大单日跌幅；2年期收益率也小幅降至4.73%。WTI跌至$101.91、布伦特跌至$104.82，双双走软。市场把这次反弹解读为：加息决定本身已经落地兑现，沃什发布会的强硬措辞没有改变加息路径的实质，联储的经济预测摘要(SEP)显示18位官员中16位预计年内还有一次加息(其中4位认为可能有两次)，只有2位认为加完这次就够，且2028年前没有排入任何降息。周五早盘期货延续了这一反弹势头。</p>
-<div class="why"><span class="lbl">为什么重要</span><p>这把周三的恐慌定性成了&#x27;一次性冲击&#x27;而不是&#x27;紧缩周期重新开启&#x27;——市场用一天的时间消化完了加息本身，现在的分歧只在于年内到底还有几次，而不是要不要加。收益率与油价同步回落，说明这次反弹背后有两个独立的缓解因素在起作用，不是单纯的抄底。</p></div>
-<div class="impact">全市场 · 利率敏感成长股率先反弹</div>
+<h3>中美元首周三起在华盛顿会晤，贝森特称周末谈判「富有成效」，美股期货周一普涨</h3>
+<div class="meta"><span class="age fresh">今天</span><span class="tag">宏观</span><span class="tag">贸易</span><span class="tag">地缘</span></div>
+<p>美国财长贝森特与中国副总理何立峰周日在纽约结束会谈，为周三至周五(9/23-25)特朗普与习近平在华盛顿的会晤铺路。市场解读谈判信号积极：美方提出了一套AI安全通报机制，双方预计将讨论延长去年的贸易休战，方案可能包括下调美国能源与农产品关税、降低中国制造业投入品的对美关税。受此提振，周一亚股普涨、科技股领涨，标普500期货涨0.6%-0.7%、纳指期货涨0.8%-1.1%、道指期货涨0.7%-0.8%。</p>
+<div class="why"><span class="lbl">为什么重要</span><p>过去几周市场的注意力被加息和霍尔木兹危机占据，这场峰会是少数几个能主动改善情绪的确定性事件——哪怕只是延长现有休战而非达成新突破，也足以移除一块尾部风险。</p></div>
+<div class="impact">全市场 · 中国相关股票、半导体与关键矿产供应链、关税敏感消费股</div>
 <div class="depth">
 <div class="depth-head">资产波及矩阵</div>
-<div class="assets"><div class="asset"><div class="asset-top"><span class="asset-name">美股</span><span class="asset-dir up">&#8593; 利好</span></div><div class="conv up"><i class="on"></i><i class="on"></i><i class="on"></i></div><p class="asset-note">标普、纳指录得8月以来最佳单日，利率敏感的成长股领涨反弹。</p></div><div class="asset"><div class="asset-top"><span class="asset-name">美债</span><span class="asset-dir up">&#8593; 利好</span></div><div class="conv up"><i class="on"></i><i class="on"></i><i class="on"></i></div><p class="asset-note">10年期收益率从5.02%回落到4.98%，为三周多来最大单日跌幅，价格相应走高。</p></div><div class="asset"><div class="asset-top"><span class="asset-name">大宗商品</span><span class="asset-dir down">&#8595; 利空</span></div><div class="conv down"><i class="on"></i><i class="on"></i><i class=""></i></div><p class="asset-note">WTI、布伦特同步走软，缓解了通胀预期，与收益率回落互为因果。</p></div></div>
-<div class="cards two"><div class="card"><div class="card-head"><span class="t">多方信源交叉对比</span><span class="agree aligned">口径一致</span></div><p>各家对反弹的量级(标普8月以来最佳单日)与驱动因素(收益率、油价同步回落)没有分歧，差别只在于是否强调周五早盘的延续性。</p><ul class="tl" style="margin-top:0.55rem"><li><span class="w">Yahoo Finance</span>把反弹归因于油价走软叠加加息落地的双重缓解</li><li><span class="w">TheStreet</span>指出周五早盘期货延续了周四的反弹</li><li><span class="w">CNBC Live Updates</span>强调这是标普与纳指8月以来最佳单日</li><li><span class="w">The Washington Post</span>提供三大指数的精确收盘点位</li></ul></div><div class="card"><div class="card-head"><span class="t">历史背景与演进</span></div><p>从9/4非农数据翻转降息预期，到9/16加息落地引发抛售，再到9/17一天内的强劲反弹，市场对同一轮紧缩的定价在两周内经历了三次方向切换。</p><ul class="tl" style="margin-top:0.55rem"><li><span class="w">9/4</span>非农162k三倍于预期，加息定价升到68%</li><li><span class="w">9/16</span>联储加息25基点至3.75%-4%，沃什强硬措辞引发抛售，道指跌631点</li><li><span class="w">9/17</span>标普、纳指反弹，录得8月以来最佳单日，收益率与油价同步回落</li></ul></div></div>
+<div class="assets"><div class="asset"><div class="asset-top"><span class="asset-name">美股</span><span class="asset-dir up">&#8593; 利好</span></div><div class="conv up"><i class="on"></i><i class="on"></i><i class="on"></i></div><p class="asset-note">标普期货+0.6%-0.7%、纳指期货+0.8%-1.1%，科技股领涨周一亚欧盘。</p></div><div class="asset"><div class="asset-top"><span class="asset-name">海外股市</span><span class="asset-dir up">&#8593; 利好</span></div><div class="conv up"><i class="on"></i><i class="on"></i><i class=""></i></div><p class="asset-note">亚股周一普涨，中国相关股票对谈判信号最敏感。</p></div><div class="asset"><div class="asset-top"><span class="asset-name">大宗商品</span><span class="asset-dir mixed">&#8644; 分化</span></div><div class="conv mixed"><i class="on"></i><i class=""></i><i class=""></i></div><p class="asset-note">关键矿产相关个股(如稀土)因谈判乐观情绪走高，但与同日油价下跌是两条独立逻辑线。</p></div></div>
+<div class="cards two"><div class="card"><div class="card-head"><span class="t">多方信源交叉对比</span><span class="agree split">存在分歧</span></div><p>多数媒体把周末谈判定性为「富有成效」的risk-on信号，但Investing.com提醒市场预期已经被有意压低——真正的看点只是「是否释放休战延长信号」，而不是全新突破，这与更乐观的框架形成对比。</p><ul class="tl" style="margin-top:0.55rem"><li><span class="w">US News</span>报道贝森特对周末谈判的正面表态与周一期货涨幅</li><li><span class="w">Investing.com</span>提示市场预期已被压低，真正的看点是能否释放休战延长信号</li><li><span class="w">Free Malaysia Today</span>报道亚股尤其中国股市周一的乐观反应</li></ul></div><div class="card"><div class="card-head"><span class="t">历史背景与演进</span></div><p>这是去年贸易休战达成后，两国元首首次直接会晤，此前一周财长层面的沟通渠道已重新打开。</p></div></div>
 </div>
-<details class="srcs"><summary>4 个来源</summary>
-<ul><li><a href="https://finance.yahoo.com/markets/live/stock-market-today-thursday-september-17-dow-sp-500-nasdaq-oil-fed-081248626.html" target="_blank" rel="noopener">Yahoo Finance</a>　把反弹归因于油价走软叠加加息落地的双重缓解</li><li><a href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-sept-18-2026" target="_blank" rel="noopener">TheStreet</a>　指出周五早盘期货延续了周四的反弹</li><li><a href="https://www.cnbc.com/2026/09/17/stock-market-today-live-updates.html" target="_blank" rel="noopener">CNBC Live Updates</a>　强调这是标普与纳指8月以来最佳单日</li><li><a href="https://www.washingtonpost.com/business/2026/09/17/wall-street-stocks-dow-nasdaq/0dbde6b4-b2d5-11f1-92c2-5c918f4a6127_story.html" target="_blank" rel="noopener">The Washington Post</a>　提供三大指数的精确收盘点位</li></ul>
+<details class="srcs"><summary>3 个来源</summary>
+<ul><li><a href="https://www.usnews.com/news/business/articles/2026-09-21/stocks-advance-after-bessent-says-talks-with-china-were-successful-before-trump-xi-meeting" target="_blank" rel="noopener">US News</a>　报道贝森特对周末谈判的正面表态与周一期货涨幅</li><li><a href="https://www.investing.com/news/stock-market-news/trumpxi-summit-outlook-us-stocks-and-sectors-to-watch-93CH-4908255" target="_blank" rel="noopener">Investing.com</a>　提示市场预期已被压低，真正的看点是能否释放休战延长信号</li><li><a href="https://www.freemalaysiatoday.com/category/business/2026/09/21/china-shares-rise-ahead-of-trump-xi-summit" target="_blank" rel="noopener">Free Malaysia Today</a>　报道亚股尤其中国股市周一的乐观反应</li></ul>
 </details>
 </div></article>
 <article class="item t1" id="item-2">
 <div class="rank">02</div>
 <div>
-<h3>霍尔木兹再添新伤：伊朗革命卫队今日击中多哥籍油轮&#x27;Trend&#x27;，沙特管道修复时间表仍分裂，油价却因复产预期继续下跌</h3>
-<div class="meta"><span class="age fresh">今天</span><span class="tag">地缘</span><span class="tag">能源</span><span class="tag">大宗商品</span></div>
-<p>伊朗革命卫队今天(9/18)宣布击中一艘多哥籍油轮&#x27;Trend&#x27;，称其为&#x27;非法穿越&#x27;霍尔木兹海峡，油轮中弹后起火并停航；革命卫队海军同时警告，任何未经授权的穿越都将导致船只被&#x27;摧毁&#x27;。与此同时，沙特东西输油管道(9/11遇袭关闭，占全球供给约4%)的修复时间表仍未对齐：美国能源部长本周稍早称是&#x27;几天内&#x27;的短暂中断，但据知情的地区官员透露，损伤修复可能需要三到五周，Kpler原油分析主管的估计是四到六周；沙特阿美的官方计划是几天内恢复约一半产能、六周全面恢复。油价周四因&#x27;复产预期&#x27;下跌(WTI跌至$101.91、布伦特跌至$104.82)，但海峡实际通行量仍处于危机前基准的一成左右。</p>
-<div class="why"><span class="lbl">为什么重要</span><p>官方&#x27;几天&#x27;的说法和独立分析师&#x27;数周&#x27;的估计相差好几倍，而今天新增的油轮打击说明海峡的实际通行风险还在恶化，不是缓解。油价下跌反映的是对&#x27;复产预期&#x27;的定价，一旦这个预期落空，价格随时可能被打回。</p></div>
-<div class="impact">能源、油轮运营商受益 · 能源进口型经济体、债券承压</div>
+<h3>原油连跌四日至$97.56，霍尔木兹通行量升至六个月高点，沙特管道称「数天内」恢复一半产能</h3>
+<div class="meta"><span class="age fresh">今天</span><span class="tag">能源</span><span class="tag">大宗商品</span><span class="tag">地缘</span></div>
+<p>WTI周一盘中跌至$97.56，跌幅2.73%，是三个月来最长的连续下跌(第四个交易日)；布伦特同步走软至约$103。价格下跌的驱动是供给端风险溢价的持续消退：霍尔木兹海峡的船只通行量升至六个月高点，沙特东西输油管道(9/10遭无人机袭击、9/11全线关闭，占全球供给约4%-5%)的修复也在推进——沙特阿美官方口径是「数天内」绕过受损段恢复约一半产能、六周内全面恢复；但地区官员与Kpler等独立机构此前给出的估计仍是三到六周。卡塔尔证实美伊之间已有信息交换，特朗普称伊朗战争「即将结束」并证实与胡塞武装的谈判；周末胡塞武装对沙特的导弹与无人机袭击未能扭转油价跌势，显示市场目前认为这类扰动是可控的。</p>
+<div class="why"><span class="lbl">为什么重要</span><p>这是几周来「供给冲击」叙事第一次明确松动，但松动的基础是修复预期而非已完成的修复——官方「数天」和独立机构「数周」的口径差仍未消除，管道此前也曾经历过修复时间表从「数天」拉长到「数周」的反复，一旦进度不及预期，油价随时可能被打回。</p></div>
+<div class="impact">能源股承压 · 通胀预期与收益率跟随缓解 · 航空/消费等油价敏感板块受益</div>
 <div class="depth">
 <div class="depth-head">资产波及矩阵</div>
-<div class="assets"><div class="asset"><div class="asset-top"><span class="asset-name">大宗商品</span><span class="asset-dir mixed">&#8644; 分化</span></div><div class="conv mixed"><i class="on"></i><i class="on"></i><i class=""></i></div><p class="asset-note">油价因复产预期短期下跌，但新增油轮打击与官方/独立分析师的时间表分歧说明结构性供给风险未消退，短期与长期方向相反。</p></div><div class="asset"><div class="asset-top"><span class="asset-name">美股</span><span class="asset-dir mixed">&#8644; 分化</span></div><div class="conv mixed"><i class="on"></i><i class="on"></i><i class=""></i></div><p class="asset-note">油轮运营商随运价上行受益(见异动标签页DHT、STNG)，能源生产商随油价回落承压。</p></div><div class="asset"><div class="asset-top"><span class="asset-name">海外股市</span><span class="asset-dir down">&#8595; 利空</span></div><div class="conv down"><i class="on"></i><i class=""></i><i class=""></i></div><p class="asset-note">能源净进口的亚欧市场对海峡实际通行量的敞口高于油价本身。</p></div></div>
-<div class="cards two"><div class="card"><div class="card-head"><span class="t">多方信源交叉对比</span><span class="agree split">存在分歧</span></div><p>修复时间表三方口径不一致：美国能源部长说&#x27;几天&#x27;，沙特阿美官方计划是几天恢复一半、六周全面恢复，地区官员与Kpler的独立估计是三到六周；与此同时油价因&#x27;复产预期&#x27;下跌，跟今天新增的油轮打击方向相反。</p><ul class="tl" style="margin-top:0.55rem"><li><span class="w">Local 10 News (AP)</span>报道革命卫队今天击中&#x27;Trend&#x27;号油轮的最新进展</li><li><span class="w">The Hans India</span>强调革命卫队关于&#x27;非法穿越即摧毁&#x27;的警告表态</li><li><span class="w">gCaptain</span>量化管道占全球供给4%的敞口</li><li><span class="w">CNBC</span>报道油价因沙特转移出口路线缓解供给担忧而下跌</li></ul></div><div class="card"><div class="card-head"><span class="t">历史背景与演进</span></div><p>管道9/11遇袭关闭后，官方与独立分析的修复时间表已经僵持了一周，霍尔木兹的实际通行量在危机基准的一成上下震荡，今天的新进展是革命卫队再次动手且措辞升级为&#x27;摧毁&#x27;威胁。</p><ul class="tl" style="margin-top:0.55rem"><li><span class="w">9/11</span>沙特东西输油管道遭袭关闭，敞口达全球供给4%</li><li><span class="w">9/15-16</span>美国能源部长称&#x27;几天内&#x27;修复，阿美官方计划几天恢复一半、六周全面恢复</li><li><span class="w">9/17</span>地区官员与Kpler估计修复需三到六周，油价因复产预期下跌</li><li><span class="w">9/18</span>革命卫队击中多哥籍油轮&#x27;Trend&#x27;，警告非法穿越将被&#x27;摧毁&#x27;</li></ul></div></div>
+<div class="assets"><div class="asset"><div class="asset-top"><span class="asset-name">大宗商品</span><span class="asset-dir down">&#8595; 利空</span></div><div class="conv down"><i class="on"></i><i class="on"></i><i class="on"></i></div><p class="asset-note">WTI跌至$97.56(-2.73%)，连续第四日下跌，为三个月来最长跌势。</p></div><div class="asset"><div class="asset-top"><span class="asset-name">美债</span><span class="asset-dir mixed">&#8644; 分化</span></div><div class="conv mixed"><i class="on"></i><i class="on"></i><i class=""></i></div><p class="asset-note">10年期收益率周五收于5.01%高位，但过去一个月油价与10年期收益率的相关性升到0.96(七年最强)，若油价延续跌势，收益率存在跟随回落的空间。</p></div><div class="asset"><div class="asset-top"><span class="asset-name">美股</span><span class="asset-dir mixed">&#8644; 分化</span></div><div class="conv mixed"><i class="on"></i><i class="on"></i><i class=""></i></div><p class="asset-note">能源股料随油价承压，航空、消费等对油价敏感的板块受益，指数层面方向不明。</p></div></div>
+<div class="cards two"><div class="card"><div class="card-head"><span class="t">多方信源交叉对比</span><span class="agree split">存在分歧</span></div><p>沙特阿美与美国能源部的官方口径是「数天内」恢复一半产能，地区官员与Kpler等独立机构此前的估计仍是三到六周才能实现同等进度，官方与独立评估之间的分歧尚未消除。</p><ul class="tl" style="margin-top:0.55rem"><li><span class="w">Trading Economics</span>提供WTI当日精确价格与跌幅</li><li><span class="w">Saxo Bank Market Quick Take</span>指出霍尔木兹通行量升至六个月高点、沙特管道修复进展是跌价主因</li><li><span class="w">Bloomberg</span>报道沙特阿美「数天内恢复一半产能」的官方目标</li><li><span class="w">gCaptain</span>量化管道占全球供给约4%的敞口</li></ul></div><div class="card"><div class="card-head"><span class="t">历史背景与演进</span></div><p>从9/11管道遇袭关闭到本周，修复时间表已经反复过一次(官方口径从「数天」变成「数周」又回到「数天」)，霍尔木兹的实际通行量则第一次明确回升。</p><ul class="tl" style="margin-top:0.55rem"><li><span class="w">9/11</span>沙特东西输油管道遇袭后全线关闭，占全球供给约4%-5%</li><li><span class="w">9/16</span>联储加息当日10年期收益率触及本轮高位</li><li><span class="w">9/17-18</span>官方称「数天内」恢复部分产能，独立机构估计需三到六周</li><li><span class="w">9/19-21</span>霍尔木兹通行量升至六个月高点，油价连跌四日至$97.56，胡塞周末袭击沙特未能扭转跌势</li></ul></div></div>
 </div>
 <details class="srcs"><summary>4 个来源</summary>
-<ul><li><a href="https://www.local10.com/news/world/2026/09/18/iran-says-it-strikes-an-oil-tanker-and-other-mideast-developments/" target="_blank" rel="noopener">Local 10 News (AP)</a>　报道革命卫队今天击中&#x27;Trend&#x27;号油轮的最新进展</li><li><a href="https://www.thehansindia.com/news/international/irans-irgc-says-violating-oil-tanker-hit-in-hormuz-strait-1123128" target="_blank" rel="noopener">The Hans India</a>　强调革命卫队关于&#x27;非法穿越即摧毁&#x27;的警告表态</li><li><a href="https://gcaptain.com/saudi-pipeline-outage-threatens-loss-of-4-of-global-oil-supply/" target="_blank" rel="noopener">gCaptain</a>　量化管道占全球供给4%的敞口</li><li><a href="https://www.cnbc.com/2026/09/17/oil-prices-today-wti-brent-hormuz-iran-war.html" target="_blank" rel="noopener">CNBC</a>　报道油价因沙特转移出口路线缓解供给担忧而下跌</li></ul>
+<ul><li><a href="https://tradingeconomics.com/commodity/crude-oil" target="_blank" rel="noopener">Trading Economics</a>　提供WTI当日精确价格与跌幅</li><li><a href="https://www.home.saxo/content/articles/macro/market-quick-take---oil-extends-its-slide-before-the-trump-xi-summit---21-september-2026-21092026" target="_blank" rel="noopener">Saxo Bank Market Quick Take</a>　指出霍尔木兹通行量升至六个月高点、沙特管道修复进展是跌价主因</li><li><a href="https://www.bloomberg.com/news/articles/2026-09-16/saudis-seek-to-resume-half-of-key-oil-pipeline-within-days" target="_blank" rel="noopener">Bloomberg</a>　报道沙特阿美「数天内恢复一半产能」的官方目标</li><li><a href="https://gcaptain.com/saudi-pipeline-outage-threatens-loss-of-4-of-global-oil-supply/" target="_blank" rel="noopener">gCaptain</a>　量化管道占全球供给约4%的敞口</li></ul>
 </details>
 </div></article>
-<article class="item t1" id="item-3" data-tickers="COIN">
+<article class="item t1" id="item-3">
 <div class="rank">03</div>
 <div>
-<h3>SEC绕开国会给代币化美股开五年豁免，Coinbase等盘前走高，但豁免明确排除支撑&#x27;加密炒股热&#x27;的合成代币</h3>
-<div class="meta"><span class="age fresh">昨天</span><span class="tag tk">COIN</span><span class="tag">加密</span><span class="tag">监管</span><span class="tag">政策</span></div>
-<p>SEC周四(9/17)发布一对五年期&#x27;创新豁免&#x27;，允许符合条件的代币化证券交易平台(TSV)在不被认定为交易所或经纪商的前提下交易代币化的美国国家市场体系股票；平台需在把某公司股票代币化前30天通知发行人，发行人有权拒绝参与。多家媒体将此举明确定性为国会Clarity法案周二(9/15)以49-50票程序性投票失利后，SEC绕开立法僵局推出的行政替代路径。Coinbase、Robinhood、Gemini此前已在美国以外推出代币化股票交易，但因监管不明一直未在美国本土落地，此次豁免为它们打开了国内窗口。周五早盘加密关联股延续涨势，Coinbase同时宣布下调Coinbase Advanced活跃交易者的手续费。</p>
-<div class="why"><span class="lbl">为什么重要</span><p>这是Clarity法案立法失败后，市场原本预期要拖到2030年才能重启的&#x27;监管明确性&#x27;叙事，被行政部门用另一条路径提前接上了。但豁免的实际覆盖范围比标题看起来窄——它明确不适用于目前撑起&#x27;加密炒股热&#x27;的合成代币，实际能落地的产品范围还要打折扣。</p></div>
-<div class="impact">加密关联股权 · 代币化证券基础设施</div>
+<h3>沃什拒答「距中性利率还有多远」，华尔街对联储年内加息路径的猜测持续发酵</h3>
+<div class="meta"><span class="age stale">3 天前</span><span class="tag">宏观</span><span class="tag">利率</span></div>
+<p>联储9/16加息25个基点至3.75%-4%后的记者会上，CNBC记者Steve Liesman追问沃什，当前利率相对「中性利率」还有多少距离，沃什直接拒绝了这套提问框架，称中性利率的讨论「只在学术上有用」，对当下的政策决定「没有实际操作意义」。他把这次加息定性为撤走「一剂宽松」，而不是「收紧政策」。联储同日公布的经济预测摘要(SEP)显示，18位官员中16位预计年内至少再加一次息(其中4位认为可能有两次)，没有人预计2028年前会降息。</p>
+<div class="why"><span class="lbl">为什么重要</span><p>「距中性利率多远」是联储官员过去十几年引导市场加息路径预期的标准框架，沃什直接拒绝回答，意味着这套工具对判断他的下一步失效了——市场现在只能依赖SEP的点阵图和他本人日益「神秘」的表态去猜，这种不确定性本身就是波动率的来源。</p></div>
+<div class="impact">全市场 · 利率敏感资产 · 美元</div>
 <div class="depth">
 <div class="depth-head">资产波及矩阵</div>
-<div class="assets"><div class="asset"><div class="asset-top"><span class="asset-name">美股</span><span class="asset-dir up">&#8593; 利好</span></div><div class="conv up"><i class="on"></i><i class="on"></i><i class=""></i></div><p class="asset-note">Coinbase等加密关联股权盘前走高，行政路径部分对冲了立法失败的负面预期。</p></div><div class="asset"><div class="asset-top"><span class="asset-name">加密资产</span><span class="asset-dir none">&#8212; 无影响</span></div><div class="conv none"><i class="on"></i><i class=""></i><i class=""></i></div><p class="asset-note">豁免针对的是股票代币化基础设施而非加密货币本身，且明确排除合成代币，对币价没有直接传导路径。</p></div></div>
-<div class="cards two"><div class="card"><div class="card-head"><span class="t">多方信源交叉对比</span><span class="agree split">存在分歧</span></div><p>SiliconANGLE、The Block把豁免定性为监管突破，Axios强调它是国会立法失败后的替代路径；Coinpedia则指出豁免的文字明确排除了目前支撑加密炒股热的合成代币，实际适用范围比头条窄得多——三方对&#x27;豁免到底解决了多少问题&#x27;判断不一致。</p><ul class="tl" style="margin-top:0.55rem"><li><span class="w">SiliconANGLE</span>强调豁免为代币化股票交易打开大门</li><li><span class="w">The Block</span>引用SEC&#x27;把美国资本市场带入数字时代&#x27;的表态</li><li><span class="w">Coinpedia</span>指出豁免明确排除支撑当前加密炒股热的合成代币，实际覆盖范围有限</li><li><span class="w">Axios</span>将豁免与Clarity法案立法失败直接挂钩</li></ul></div><div class="card"><div class="card-head"><span class="t">历史背景与演进</span></div><p>监管明确性叙事在四十八小时内经历了一次立法失败和一次行政补位。</p><ul class="tl" style="margin-top:0.55rem"><li><span class="w">9/15</span>Clarity法案参院程序性投票49-50失利，卢米斯警告下次窗口或要等到2030年</li><li><span class="w">9/16</span>Coinbase、Circle单日跌超10%，加密关联股权率先定价立法失败</li><li><span class="w">9/17</span>SEC发布五年期代币化证券&#x27;创新豁免&#x27;，加密关联股权盘前反弹</li></ul></div></div>
+<div class="assets"><div class="asset"><div class="asset-top"><span class="asset-name">美债</span><span class="asset-dir mixed">&#8644; 分化</span></div><div class="conv mixed"><i class="on"></i><i class="on"></i><i class=""></i></div><p class="asset-note">SEP显示16/18官员预计年内至少再加一次息，但沃什拒绝给出量化路径，收益率曲线短端定价仍有分歧空间。</p></div><div class="asset"><div class="asset-top"><span class="asset-name">美元</span><span class="asset-dir up">&#8593; 利好</span></div><div class="conv up"><i class="on"></i><i class=""></i><i class=""></i></div><p class="asset-note">鹰派基调支撑美元指数维持在100附近。</p></div></div>
+<div class="cards two"><div class="card"><div class="card-head"><span class="t">多方信源交叉对比</span><span class="agree aligned">口径一致</span></div><p>各家对沃什「一剂宽松」这句表态本身及其引发的猜测没有分歧，差别只在框架——CNN侧重这是对特朗普施压的公开抵制，CNBC更关注这句话对市场加息路径定价的实际影响。</p><ul class="tl" style="margin-top:0.55rem"><li><span class="w">CNBC</span>披露沃什「一剂宽松」表态的完整语境与市场猜测</li><li><span class="w">CNN Business</span>把沃什的鹰派立场框定为与特朗普的公开分歧</li><li><span class="w">CNBC 会议实录</span>提供SEP点阵图与官方声明原文</li></ul></div><div class="card"><div class="card-head"><span class="t">历史背景与演进</span></div><p>从8月底Jackson Hole讲话到9/16正式加息，市场对沃什鹰派程度的定价持续走高，如今连「加息路径」这个最基本的问题都失去了官方的量化答案。</p><ul class="tl" style="margin-top:0.55rem"><li><span class="w">8/28</span>Jackson Hole讲话偏鹰，9月加息概率从三分之一升破五成</li><li><span class="w">9/16</span>联储加息25个基点至3.75%-4%，SEP显示多数官员预计年内还有加息</li><li><span class="w">9/18</span>「一剂宽松」表态发酵，华尔街对路径的猜测升温</li></ul></div></div>
 </div>
-<details class="srcs"><summary>4 个来源</summary>
-<ul><li><a href="https://siliconangle.com/2026/09/17/tokenized-stock-trading-is-about-to-take-off-after-sec-issues-five-year-exemption-from-securities-laws/" target="_blank" rel="noopener">SiliconANGLE</a>　强调豁免为代币化股票交易打开大门</li><li><a href="https://www.theblock.co/news/regulation/2026-09-17-sec-releases-innovation-exemption-415324" target="_blank" rel="noopener">The Block</a>　引用SEC&#x27;把美国资本市场带入数字时代&#x27;的表态</li><li><a href="https://coinpedia.org/news/secs-innovation-exemption-excludes-the-synthetic-tokens-fueling-cryptos-stock-craze/" target="_blank" rel="noopener">Coinpedia</a>　指出豁免明确排除支撑当前加密炒股热的合成代币，实际覆盖范围有限</li><li><a href="https://www.axios.com/2026/09/17/sec-tokenization-crypto-stocks" target="_blank" rel="noopener">Axios</a>　将豁免与Clarity法案立法失败直接挂钩</li></ul>
+<details class="srcs"><summary>3 个来源</summary>
+<ul><li><a href="https://www.cnbc.com/2026/09/18/three-words-from-kevin-warsh-have-wall-street-wondering-how-far-the-fed-will-go-with-rate-hikes.html" target="_blank" rel="noopener">CNBC</a>　披露沃什「一剂宽松」表态的完整语境与市场猜测</li><li><a href="https://www.cnn.com/2026/09/17/economy/fed-trump-rate-hike-warsh" target="_blank" rel="noopener">CNN Business</a>　把沃什的鹰派立场框定为与特朗普的公开分歧</li><li><a href="https://www.cnbc.com/2026/09/16/fed-meeting-today-live-updates.html" target="_blank" rel="noopener">CNBC 会议实录</a>　提供SEP点阵图与官方声明原文</li></ul>
 </details>
 </div></article>
-<article class="item t1" id="item-4" data-tickers="AAPL">
+<article class="item t1" id="item-4" data-tickers="NVDA">
 <div class="rank">04</div>
 <div>
-<h3>iPhone 18 Pro今日正式开售：同一组预订等待时间数据，被两派分析师读出完全相反的结论</h3>
-<div class="meta"><span class="age fresh">今天</span><span class="tag tk">AAPL</span><span class="tag">消费电子</span><span class="tag">供应链</span></div>
-<p>iPhone 18 Pro与Pro Max今天(9/18)正式在美国上市销售。9/12预订开启半小时内，所有配色与配置都不显示延迟发货；但到本周中，Pro机型的预计送达时间已经拉长到2-3周，Pro Max为3-4周(9/29至10/13不等)。对同一组数据，美银(BofA)记录的送达周期比去年iPhone 17同期更短，读作需求转强的信号；摩根大通和GF证券跟踪到类似短窗口，但读作需求相对疲软——GF证券分析师Jeff Pu称首发阶段的预订&#x27;温吞&#x27;，原因包括规格升级有限、高存储版本提价，以及Pro Max可能被10月16日预订开启的iPhone Duo分流。苹果股价目前在$337附近，距7月29日创下的52周高点$344.57仅一步之遥。</p>
-<div class="why"><span class="lbl">为什么重要</span><p>送达周期缩短本身是中性数据，既可能是需求旺盛导致的产能吃紧，也可能是苹果按需求疲软调低了备货——两派分析师对同一份原始数据给出了相反的结论，说明真实的需求强弱要等到後续更完整的销售数据出来才能验证。</p></div>
-<div class="impact">AAPL · 消费电子供应链</div>
+<h3>华为将旗舰AI芯片Ascend 960DT量产提前至2027年一季度，正面叫板英伟达在华份额</h3>
+<div class="meta"><span class="age stale">3 天前</span><span class="tag tk">NVDA</span><span class="tag">半导体</span><span class="tag">AI</span></div>
+<p>华为宣布将旗舰AI芯片Ascend 960DT的商用量产时间从原定的2027年底提前到2027年第一季度，同时发布Atlas 960 SuperPod计算集群与新的「Peerium」互联架构，目标是把数十万颗处理器连成统一算力集群；另一款变体960PR预计三季度交付。这一举动直接对标英伟达在中国市场的份额，也是北京推动芯片自主的最新一步。消息发布后英伟达股价小幅走低。</p>
+<div class="why"><span class="lbl">为什么重要</span><p>这不只是一次产品发布，而是中国自研算力路线图的一次明确提速——缩短的时间表本身就是信号，直接压缩了英伟达在中国市场原本还能缓冲的窗口期。</p></div>
+<div class="impact">NVDA · 半导体设备与封测链条 · 中国AI算力自主叙事</div>
 <div class="depth">
 <div class="depth-head">资产波及矩阵</div>
-<div class="assets"><div class="asset"><div class="asset-top"><span class="asset-name">美股</span><span class="asset-dir mixed">&#8644; 分化</span></div><div class="conv mixed"><i class="on"></i><i class="on"></i><i class=""></i></div><p class="asset-note">AAPL股价目前贴近52周高点，市场尚未在两派分析师的分歧中选边站队。</p></div></div>
-<div class="cards two"><div class="card"><div class="card-head"><span class="t">多方信源交叉对比</span><span class="agree split">存在分歧</span></div><p>美银把缩短的送达周期读作需求转强，摩根大通与GF证券把同样的短窗口读作规格升级有限、提价压制需求的疲软信号——两方用的是同一份预订数据，结论完全相反。</p><ul class="tl" style="margin-top:0.55rem"><li><span class="w">MacRumors</span>追踪预订开启后送达周期的逐日变化</li><li><span class="w">AppleInsider</span>首发定性为&#x27;意外缓慢的开局&#x27;</li><li><span class="w">PC Guide</span>引述GF证券&#x27;温吞&#x27;的判断与分流iPhone Duo的解释</li><li><span class="w">MacRumors</span>汇总美银与摩根大通/GF证券对同一数据的相反解读</li></ul></div><div class="card"><div class="card-head"><span class="t">历史背景与演进</span></div><p>预订窗口的解读分歧从9/12首发&#x27;意外缓慢&#x27;开始，一路持续到今天正式开售，市场始终没有在两种叙事间达成一致。</p><ul class="tl" style="margin-top:0.55rem"><li><span class="w">9/12</span>预订开启，半小时内无发货延迟，随后被指&#x27;意外缓慢&#x27;</li><li><span class="w">9/14-15</span>送达周期拉长到2-4周，美银与摩根大通/GF证券给出相反解读</li><li><span class="w">9/18</span>iPhone 18 Pro正式开售，分歧尚未解决</li></ul></div></div>
+<div class="assets"><div class="asset"><div class="asset-top"><span class="asset-name">美股</span><span class="asset-dir down">&#8595; 利空</span></div><div class="conv down"><i class="on"></i><i class=""></i><i class=""></i></div><p class="asset-note">NVDA消息公布后小幅走低，反映份额侵蚀担忧，但非当日主导性下跌因素。</p></div><div class="asset"><div class="asset-top"><span class="asset-name">海外股市</span><span class="asset-dir mixed">&#8644; 分化</span></div><div class="conv mixed"><i class="on"></i><i class="on"></i><i class=""></i></div><p class="asset-note">中国半导体供应链相关标的受提振，而依赖对华出口的封测与设备链条前景复杂化。</p></div></div>
+<div class="cards two"><div class="card"><div class="card-head"><span class="t">多方信源交叉对比</span><span class="agree aligned">口径一致</span></div><p>彭博、NBC与Advisor Perspectives对时间表提速的事实与战略定性没有分歧，均将其解读为中国算力自主叙事的关键一步。</p><ul class="tl" style="margin-top:0.55rem"><li><span class="w">Bloomberg</span>披露华为芯片路线图提速的具体时间表</li><li><span class="w">NBC News</span>报道Atlas 960 SuperPod与Peerium架构细节</li><li><span class="w">Advisor Perspectives</span>分析提速对英伟达中国份额的影响</li></ul></div><div class="card"><div class="card-head"><span class="t">历史背景与演进</span></div><p>华为过去一年持续压缩与英伟达在中国市场的时间差，从早期的Atlas SuperPod到如今的960DT，量产节奏一次次提前。</p></div></div>
 </div>
-<details class="srcs"><summary>4 个来源</summary>
-<ul><li><a href="https://www.macrumors.com/2026/09/14/iphone-18-pro-pre-orders-shipping-delivery-dates/" target="_blank" rel="noopener">MacRumors</a>　追踪预订开启后送达周期的逐日变化</li><li><a href="https://appleinsider.com/articles/26/09/12/iphone-18-pro-pre-orders-off-to-a-surprisingly-slow-start" target="_blank" rel="noopener">AppleInsider</a>　首发定性为&#x27;意外缓慢的开局&#x27;</li><li><a href="https://www.pcguide.com/news/iphone-18-pro-pro-max-pre-orders-are-lukewarm-with-up-to-4-week-wait-times-says-industry-analyst/" target="_blank" rel="noopener">PC Guide</a>　引述GF证券&#x27;温吞&#x27;的判断与分流iPhone Duo的解释</li><li><a href="https://www.macrumors.com/2026/09/15/iphone-18-pro-orders-muted-start/" target="_blank" rel="noopener">MacRumors</a>　汇总美银与摩根大通/GF证券对同一数据的相反解读</li></ul>
+<details class="srcs"><summary>3 个来源</summary>
+<ul><li><a href="https://www.bloomberg.com/news/articles/2026-09-16/huawei-set-to-unveil-china-s-best-answer-to-nvidia-ai-chip-reign" target="_blank" rel="noopener">Bloomberg</a>　披露华为芯片路线图提速的具体时间表</li><li><a href="https://www.nbcnews.com/world/china/huawei-unveils-new-chip-technologies-chinese-firm-steps-ai-race-nvidia-rcna598288" target="_blank" rel="noopener">NBC News</a>　报道Atlas 960 SuperPod与Peerium架构细节</li><li><a href="https://www.advisorperspectives.com/articles/2026/09/17/huawei-accelerates-launch-ai-chip-take-nvidia" target="_blank" rel="noopener">Advisor Perspectives</a>　分析提速对英伟达中国份额的影响</li></ul>
 </details>
 </div></article>
-<div class="sec-head t2"><h2 class="label">值得知道</h2><span class="n">8</span></div>
+<div class="sec-head t2"><h2 class="label">值得知道</h2><span class="n">7</span></div>
 <article class="item t2" id="item-5" data-tickers="AMD">
 <div class="rank">05</div>
 <div>
-<h3>AMD盘前涨1.4%：未经证实的传闻称Q4起芯片全线提价10%，源头指向台积电代工成本上涨</h3>
-<div class="meta"><span class="age fresh">今天</span><span class="tag tk">AMD</span><span class="tag">半导体</span><span class="tag">AI</span></div>
-<p>周五盘前AMD股价上涨1.4%，市场流传未经证实的消息称，公司已通知客户从第四季度起对AI加速器、图形处理器与主板芯片组全面提价约10%，报道将涨价源头指向台积电代工成本的上调；消费级Ryzen产品线的定价是否同步调整尚未确认。</p>
-<div class="why"><span class="lbl">为什么重要</span><p>如果消息属实，这会是继英特尔、Nebius之后本月第三家把台积电代工成本上涨转嫁给客户的芯片公司，说明先进制程的成本压力正沿着整条供应链传导，而不是单一公司的定价策略。</p></div>
+<h3>AMD单周涨幅近8%，跑赢英伟达四倍；未经证实的芯片全线提价10%传闻仍未证实</h3>
+<div class="meta"><span class="age stale">3 天前</span><span class="tag tk">AMD</span><span class="tag">半导体</span><span class="tag">AI</span></div>
+<p>AMD上周五当周累计上涨约8%，涨幅约是英伟达同期的四倍，尽管两只股票周一(9/14)都随AI行业「放慢模型开发」的呼吁同步下跌过。上周流传的未经证实传闻——AMD将从Q4起对AI加速器、GPU与主板芯片组全线提价约10%，源头指向台积电代工成本上涨——截至周一早盘仍未获得公司或台积电方面的证实。</p>
+<div class="why"><span class="lbl">为什么重要</span><p>一周内跑赢英伟达四倍且传闻未被证伪，说明市场在给AMD的AI份额叙事定价上比给英伟达更激进，但这个定价目前仍建立在一条未经证实的消息上。</p></div>
 <div class="impact">半导体 · AI硬件成本链条</div>
 <div class="depth">
 <div class="depth-head">资产波及矩阵</div>
-<div class="assets"><div class="asset"><div class="asset-top"><span class="asset-name">美股</span><span class="asset-dir up">&#8593; 利好</span></div><div class="conv up"><i class="on"></i><i class=""></i><i class=""></i></div><p class="asset-note">消息尚未证实，AMD盘前涨幅温和(+1.4%)，反映市场对涨价能否落地仍有保留。</p></div></div>
-<div class="cards"><div class="card"><div class="card-head"><span class="t">多方信源交叉对比</span><span class="agree single">单一来源</span></div><p>目前只有一家媒体报道且明确标注&#x27;未经证实&#x27;，尚无第二信源交叉确认。</p><ul class="tl" style="margin-top:0.55rem"><li><span class="w">Stocktwits</span>披露涨价传闻涵盖的具体产品线范围</li></ul></div></div>
+<div class="assets"><div class="asset"><div class="asset-top"><span class="asset-name">美股</span><span class="asset-dir up">&#8593; 利好</span></div><div class="conv up"><i class="on"></i><i class=""></i><i class=""></i></div><p class="asset-note">AMD单周涨幅约8%，但驱动力部分建立在未经证实的提价传闻上。</p></div></div>
+<div class="cards"><div class="card"><div class="card-head"><span class="t">多方信源交叉对比</span><span class="agree single">单一来源</span></div><p>提价传闻目前只有一家媒体报道且明确标注未经证实，尚无第二信源交叉确认。</p><ul class="tl" style="margin-top:0.55rem"><li><span class="w">Yahoo Finance</span>报道AMD单周涨幅与跑赢英伟达的对比</li><li><span class="w">Stocktwits</span>披露涨价传闻涵盖的具体产品线，并标注未经证实</li></ul></div></div>
 </div>
-<details class="srcs"><summary>1 个来源</summary>
-<ul><li><a href="https://stocktwits.com/news-articles/markets/equity/amd-stock-rises-premarket-report-flags-chip-price-hike-linked-to-tsmc-costs/cZtupybRB30" target="_blank" rel="noopener">Stocktwits</a>　披露涨价传闻涵盖的具体产品线范围</li></ul>
+<details class="srcs"><summary>2 个来源</summary>
+<ul><li><a href="https://finance.yahoo.com/markets/stocks/articles/amd-stock-jumped-8-last-050609561.html" target="_blank" rel="noopener">Yahoo Finance</a>　报道AMD单周涨幅与跑赢英伟达的对比</li><li><a href="https://stocktwits.com/news-articles/markets/equity/amd-stock-rises-premarket-report-flags-chip-price-hike-linked-to-tsmc-costs/cZtupybRB30" target="_blank" rel="noopener">Stocktwits</a>　披露涨价传闻涵盖的具体产品线，并标注未经证实</li></ul>
 </details>
 </div></article>
-<article class="item t2" id="item-6">
+<article class="item t2" id="item-6" data-tickers="PLTR">
 <div class="rank">06</div>
 <div>
-<h3>英特尔本周持续上涨，盘前再涨逾3%：分析师上调目标价至$145/$120，18A与AI/Xeon叙事是主线</h3>
-<div class="meta"><span class="age fresh">今天</span><span class="tag">半导体</span><span class="tag">AI</span></div>
-<p>英特尔股价本周持续走高，周五盘前再涨约3.19%至$104.27附近，年内累计涨幅约174%。Tigress Financial将目标价从$118上调至$145并维持买入，理由是AI驱动的业务转型、Terafab合作、Xeon服务器需求改善与18A制程执行顺利；Northland将评级上调至跑赢大盘，目标价$120，看重服务器CPU供给紧张与Terafab跟SpaceX、特斯拉的合作空间。公司高数值孔径EUV设备已投入量产，18A/Panther Lake制程良率达到或超过此前0.33NA水平的表现；管理层还计划10月初对PC CPU再涨价约10%。</p>
-<div class="why"><span class="lbl">为什么重要</span><p>AI推理负载正在提升CPU在整体算力中的角色，这是英特尔叙事从&#x27;制程落后&#x27;转向&#x27;AI转型&#x27;的核心支撑点，两家机构在同一周内先后上调目标价说明这个转型故事正在被更多分析师接受。</p></div>
-<div class="impact">半导体 · CPU定价权</div>
+<h3>Palantir单周涨超7%，Karp呼吁「AI实验室国有化」，UBS上调目标价至$250</h3>
+<div class="meta"><span class="age stale">3 天前</span><span class="tag tk">PLTR</span><span class="tag">AI</span><span class="tag">国防科技</span></div>
+<p>Palantir股价上周五(9/18)上涨7.71%，UBS此前已于9/15把目标价从$220上调至$250。CEO Alex Karp周四(9/18)公开谈及「AI实验室应当国有化」的主张，为公司在政府AI基础设施领域的定位造势。目前21位分析师中21位给予买入评级、2位卖出，平均目标价约$196.84，低于UBS的最新目标价。</p>
+<div class="why"><span class="lbl">为什么重要</span><p>Karp的表态本质上是在为Palantir与政府客户的深度绑定叙事背书——如果「AI实验室国有化」的讨论获得政策关注，受益最直接的会是本来就以政府合同为核心业务的Palantir。</p></div>
+<div class="impact">PLTR · 国防与政府AI基础设施叙事</div>
 <div class="depth">
 <div class="depth-head">资产波及矩阵</div>
-<div class="assets"><div class="asset"><div class="asset-top"><span class="asset-name">美股</span><span class="asset-dir up">&#8593; 利好</span></div><div class="conv up"><i class="on"></i><i class="on"></i><i class=""></i></div><p class="asset-note">INTC本周持续跑赢大盘，年内涨幅约174%，盘前再涨逾3%。</p></div></div>
-<div class="cards"><div class="card"><div class="card-head"><span class="t">多方信源交叉对比</span><span class="agree aligned">口径一致</span></div><p>两家机构都把上调目标价的理由落在18A执行与AI/Xeon需求上，没有分歧，差别只在于是否额外提及SK海力士或Terafab的合作传闻。</p><ul class="tl" style="margin-top:0.55rem"><li><span class="w">Benzinga</span>汇总多份分析师报告对英特尔AI转型的乐观预期</li><li><span class="w">StocksToTrade</span>披露SK海力士潜在合作传闻与目标价上调细节</li></ul></div></div>
+<div class="assets"><div class="asset"><div class="asset-top"><span class="asset-name">美股</span><span class="asset-dir up">&#8593; 利好</span></div><div class="conv up"><i class="on"></i><i class="on"></i><i class=""></i></div><p class="asset-note">PLTR单日涨7.71%，UBS目标价上调至$250，高于市场平均目标价。</p></div></div>
+<div class="cards"><div class="card"><div class="card-head"><span class="t">多方信源交叉对比</span><span class="agree single">单一来源</span></div><p>目前主要信源集中在24/7 Wall St.对期权与股价动能的追踪，尚缺第二家独立信源对Karp言论的报道。</p><ul class="tl" style="margin-top:0.55rem"><li><span class="w">24/7 Wall St.</span>追踪Palantir9月的期权与股价动能</li></ul></div></div>
 </div>
-<details class="srcs"><summary>2 个来源</summary>
-<ul><li><a href="https://www.benzinga.com/markets/equities/26/09/61839701/intel-stock-could-nearly-double-to-200-in-2-years-analyst-says-potential-apple-tesla-and-ai-chip-deals-could-fuel-the-rally" target="_blank" rel="noopener">Benzinga</a>　汇总多份分析师报告对英特尔AI转型的乐观预期</li><li><a href="https://stockstotrade.com/news/intel-corporation-intc-news-2026_09_17-2/" target="_blank" rel="noopener">StocksToTrade</a>　披露SK海力士潜在合作传闻与目标价上调细节</li></ul>
+<details class="srcs"><summary>1 个来源</summary>
+<ul><li><a href="https://247wallst.com/investing/2026/08/26/palantir-stock-could-be-in-for-a-big-september-heres-why/" target="_blank" rel="noopener">24/7 Wall St.</a>　追踪Palantir9月的期权与股价动能</li></ul>
 </details>
 </div></article>
-<article class="item t2" id="item-7" data-tickers="NVDA">
+<article class="item t2" id="item-7">
 <div class="rank">07</div>
 <div>
-<h3>黄仁勋：预计明年芯片出货量翻倍，AI需求&#x27;没有放缓&#x27;</h3>
-<div class="meta"><span class="age fresh">昨天</span><span class="tag tk">NVDA</span><span class="tag">半导体</span><span class="tag">AI</span></div>
-<p>英伟达CEO黄仁勋周四在苏格兰出席与查尔斯三世的峰会前对媒体表示，预计明年公司芯片出货量将是今年的两倍，驱动力是AI需求在各行业、各经济体的持续扩散。需要注意的是，&#x27;翻倍&#x27;指的是芯片出货量而非营收——英伟达销售的芯片种类涵盖数据中心GPU、CPU、交换与光模块芯片、笔记本芯片及机器人/汽车用Jetson模块，出货量翻倍不直接等于营收翻倍。</p>
-<div class="why"><span class="lbl">为什么重要</span><p>这番表态是对近期&#x27;AI资本开支放缓&#x27;讨论的直接回应，出自公司一把手之口，比分析师的转述更接近第一手信号，但&#x27;出货量&#x27;与&#x27;营收&#x27;的口径差异是解读这条消息时容易被忽略的细节。</p></div>
-<div class="impact">半导体 · AI资本开支预期</div>
-<details class="srcs"><summary>2 个来源</summary>
-<ul><li><a href="https://www.cnbc.com/2026/09/17/nvidia-huang-ai-chip-guidance.html" target="_blank" rel="noopener">CNBC</a>　完整引用黄仁勋在苏格兰的表态原文</li><li><a href="https://seekingalpha.com/news/4644148-jensen-huang-says-nvidia-will-double-chip-volume-next-year-amid-strong-ai-demand" target="_blank" rel="noopener">Seeking Alpha</a>　提示&#x27;出货量翻倍&#x27;不等于&#x27;营收翻倍&#x27;的口径差异</li></ul>
-</details>
-</div></article>
-<article class="item t2" id="item-8" data-tickers="STNG">
-<div class="rank">08</div>
-<div>
-<h3>霍尔木兹危机把油轮股送上十年高点：35只美欧上市航运股年内涨68%，Scorpio、Navios创多年新高</h3>
-<div class="meta"><span class="age fresh">昨天</span><span class="tag tk">STNG</span><span class="tag">能源</span><span class="tag">航运</span></div>
-<p>美银证券估计，穿越霍尔木兹海峡的船只数量较危机前下降超过90%，Clarksons给出的估计也在90%以上。这场持续数月的危机把一个此前被忽视的市场角落变成了今年最热门的交易之一：一个包含35只美欧上市航运股的组合年内上涨约68%，过去12个月涨约82%。Scorpio Tankers二季度营收同比增长78%、净利润同比增长427%，利润率达95%；Navios Maritime Partners股价创下多年新高。</p>
-<div class="why"><span class="lbl">为什么重要</span><p>这是霍尔木兹危机在股票市场最清晰的定价映射——运力稀缺直接转化成了运价与利润率的历史级别扩张，也是异动标签页里STNG、DHT等标的今天继续走强的宏观背景。</p></div>
-<div class="impact">航运 · 油轮运营商</div>
+<h3>Cohere与Aleph Alpha正式签署合并协议，合并后估值200亿美元</h3>
+<div class="meta"><span class="age stale">5 天前</span><span class="tag">AI</span><span class="tag">并购</span></div>
+<p>Cohere与德国Aleph Alpha周三(9/16)正式签署具有约束力的合并协议——这份协议把今年4月已经公开的合并计划落地成正式合同。合并后公司仍名为Cohere，总部设在柏林与多伦多两地，保留Aleph Alpha位于海德堡的研发中心，合计估值约200亿美元；Schwarz Gruppe同意向合并后的公司追加投资6亿美元。交易尚需加拿大、德国(可能还有欧盟层面)的监管批准，预计年内完成交割。</p>
+<div class="why"><span class="lbl">为什么重要</span><p>这是主权AI叙事(欧洲希望拥有不依赖美国大厂的本土大模型公司)少数真正落地的整合案例，200亿美元的估值也为其他中型AI实验室的并购定价提供了一个新的参照点。</p></div>
+<div class="impact">AI一级市场估值锚 · 欧洲主权AI叙事</div>
 <div class="depth">
 <div class="depth-head">资产波及矩阵</div>
-<div class="assets"><div class="asset"><div class="asset-top"><span class="asset-name">美股</span><span class="asset-dir up">&#8593; 利好</span></div><div class="conv up"><i class="on"></i><i class="on"></i><i class="on"></i></div><p class="asset-note">航运股组合年内涨约68%，是霍尔木兹危机在股票市场最直接的定价映射。</p></div></div>
+<div class="assets"><div class="asset"><div class="asset-top"><span class="asset-name">美股</span><span class="asset-dir none">&#8212; 无影响</span></div><div class="conv none"><i class="on"></i><i class=""></i><i class=""></i></div><p class="asset-note">两家均为未上市公司，对公开市场没有直接传导路径，但为AI一级市场估值提供参照。</p></div></div>
+<div class="cards"><div class="card"><div class="card-head"><span class="t">多方信源交叉对比</span><span class="agree aligned">口径一致</span></div><p>三家信源对协议签署日期、估值与总部安排的描述一致，没有分歧。</p><ul class="tl" style="margin-top:0.55rem"><li><span class="w">SiliconANGLE</span>披露协议签署日期与200亿估值</li><li><span class="w">BetaKit</span>强调交易对Cohere加拿大属性的意义</li><li><span class="w">Securities.io</span>确认Schwarz Gruppe的6亿美元追加投资</li></ul></div></div>
+</div>
+<details class="srcs"><summary>3 个来源</summary>
+<ul><li><a href="https://siliconangle.com/2026/09/16/cohere-and-aleph-alpha-agree-to-merge-in-reported-20b-deal/" target="_blank" rel="noopener">SiliconANGLE</a>　披露协议签署日期与200亿估值</li><li><a href="https://betakit.com/cohere-reaches-terms-with-german-peer-aleph-alpha-to-take-on-ai-giants/" target="_blank" rel="noopener">BetaKit</a>　强调交易对Cohere加拿大属性的意义</li><li><a href="https://www.securities.io/cohere-signs-definitive-agreement-to-combine-with-aleph-alpha/" target="_blank" rel="noopener">Securities.io</a>　确认Schwarz Gruppe的6亿美元追加投资</li></ul>
+</details>
+</div></article>
+<article class="item t2" id="item-8">
+<div class="rank">08</div>
+<div>
+<h3>8月制造业产出环比降0.3%，产能利用率跌至75.7%，与联储鹰派加息形成对照</h3>
+<div class="meta"><span class="age stale">5 天前</span><span class="tag">宏观</span><span class="tag">制造业</span></div>
+<p>联储G.17工业生产报告显示，8月制造业产出环比下降0.3%，制造业产能利用率下滑0.3个百分点至75.7%，比1972-2025年的长期均值低2.5个百分点；整体工业生产环比持平，产能利用率76.3%，比长期均值低3.1个百分点。</p>
+<div class="why"><span class="lbl">为什么重要</span><p>这份数据发布的时点几乎与9/16加息决定重合——工厂端并未显示出满负荷运转的迹象，与联储以「经济强劲、能承受加息」为由收紧政策的表态存在一定张力。</p></div>
+<div class="impact">宏观 · 周期性板块的需求信号</div>
+<div class="depth">
+<div class="depth-head">资产波及矩阵</div>
+<div class="assets"><div class="asset"><div class="asset-top"><span class="asset-name">美股</span><span class="asset-dir none">&#8212; 无影响</span></div><div class="conv none"><i class="on"></i><i class=""></i><i class=""></i></div><p class="asset-note">数据偏软但未见明显的市场当日反应，更多作为背景信息与加息决定形成对照。</p></div></div>
+<div class="cards"><div class="card"><div class="card-head"><span class="t">多方信源交叉对比</span><span class="agree single">单一来源</span></div><p>目前主要依据联储官方G.17数据本身，未见财经媒体对这份数据的专门解读报道。</p><ul class="tl" style="margin-top:0.55rem"><li><span class="w">Federal Reserve G.17</span>官方一手数据来源</li><li><span class="w">FRED</span>提供产能利用率的历史序列对比</li></ul></div></div>
 </div>
 <details class="srcs"><summary>2 个来源</summary>
-<ul><li><a href="https://www.cnbc.com/2026/09/03/shipping-hormuz-tankers-earnings-freight-rates-iran-trump-crude-china-stocks.html" target="_blank" rel="noopener">CNBC</a>　汇总航运股组合年内与12个月的涨幅数据</li><li><a href="https://finance.yahoo.com/markets/stocks/articles/scorpio-tankers-stng-focus-strait-100857362.html" target="_blank" rel="noopener">Yahoo Finance</a>　披露Scorpio Tankers二季度营收与利润率数据</li></ul>
+<ul><li><a href="https://www.federalreserve.gov/releases/g17/current/default.htm" target="_blank" rel="noopener">Federal Reserve G.17</a>　官方一手数据来源</li><li><a href="https://fred.stlouisfed.org/series/TCU" target="_blank" rel="noopener">FRED</a>　提供产能利用率的历史序列对比</li></ul>
 </details>
 </div></article>
-<article class="item t2" id="item-9" data-tickers="ILMN">
+<article class="item t2" id="item-9">
 <div class="rank">09</div>
 <div>
-<h3>Illumina将于9月21日纳入标普500指数，被动资金再平衡推动股价创52周新高</h3>
-<div class="meta"><span class="age fresh">昨天</span><span class="tag tk">ILMN</span><span class="tag">医疗器械</span><span class="tag">指数纳入</span></div>
-<p>Illumina股价周四大涨7.10%至$245.18，创52周新高，主要驱动是公司将于9月21日开盘前从标普中盘400指数升级纳入标普500指数。盘中波动加剧，主要来自被动跟踪基金提前建仓与投机性抢跑的叠加。公司二季度营收与每股收益增长强劲，全年营收与EPS指引已上调。</p>
-<div class="why"><span class="lbl">为什么重要</span><p>指数纳入带来的被动资金再平衡是可预期、机械性的买盘，跟公司基本面驱动的上涨性质不同，但对短期股价的影响同样真实，也是判断这几天涨幅有多少是&#x27;真实需求&#x27;的关键背景。</p></div>
-<div class="impact">ILMN · 被动资金流</div>
+<h3>2026年迄今科技裁员逾21万人，已超过2025全年总和</h3>
+<div class="meta"><span class="age fresh">昨天</span><span class="tag">科技</span><span class="tag">就业</span></div>
+<p>截至9月10日，2026年内已有299家公司裁员128,536人；追踪到9月20日，全年裁员事件达383起，累计影响210,741人，已超过2025年全年总数。9月前十天单月就已裁减逾6,300个科技岗位，Uber(约3,300人)、甲骨文、PayPal、苹果等公司均涉及其中。</p>
+<div class="why"><span class="lbl">为什么重要</span><p>这是一轮持续了一整年的结构性调整，AI相关资本开支挤压运营预算是反复出现的解释——省下的薪酬被重新配置到GPU集群与数据中心，而不是简单的需求收缩。</p></div>
+<div class="impact">科技业就业情绪 · AI资本开支挤出效应</div>
 <details class="srcs"><summary>2 个来源</summary>
-<ul><li><a href="https://www.tradingkey.com/news/market-movers/262173925-market-movers-ilmn-20260917" target="_blank" rel="noopener">TradingKey</a>　报道股价单日涨幅与52周新高</li><li><a href="https://www.ad-hoc-news.de/boerse/news/corporate-news/illumina-inc-stock-gains-on-s-and-p-500-inclusion-and-fresh-52-week-high/70118776" target="_blank" rel="noopener">AD-HOC-NEWS</a>　确认9月21日纳入标普500的具体日期</li></ul>
+<ul><li><a href="https://www.secondtalent.com/resources/tech-layoffs-statistics/" target="_blank" rel="noopener">Second Talent</a>　提供2026年迄今累计裁员人数与公司数</li><li><a href="https://www.business-standard.com/industry/news/global-tech-layoffs-2026-oracle-amazon-dell-uber-paypal-it-sector-job-cuts-126091100188_1.html" target="_blank" rel="noopener">Business Standard</a>　汇总9月前十天的具体裁员案例</li></ul>
 </details>
 </div></article>
-<article class="item t2" id="item-10" data-tickers="TCOM">
+<article class="item t2" id="item-10">
 <div class="rank">10</div>
 <div>
-<h3>Trip.com二季度业绩超预期，盘前上涨：国际旅游业务是主要驱动</h3>
-<div class="meta"><span class="age fresh">今天</span><span class="tag tk">TCOM</span><span class="tag">消费</span><span class="tag">旅游</span></div>
-<p>Trip.com二季度调整后每股收益$1.07，营收23.1亿美元，双双超出市场预期，国际旅游业务的增长是主要驱动力，股价周五盘前走高。</p>
-<div class="why"><span class="lbl">为什么重要</span><p>作为跟踪中国跨境消费的代表性标的，这份财报是判断国际旅游需求是否依然强劲的一个直接参照点。</p></div>
-<div class="impact">TCOM · 跨境消费需求信号</div>
-<details class="srcs"><summary>1 个来源</summary>
-<ul><li><a href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-sept-18-2026" target="_blank" rel="noopener">TheStreet</a>　报道盘前涨幅与营收、EPS具体数字</li></ul>
+<h3>VIX回落至14.81，黄金周一开局走软，美元指数维持在100附近</h3>
+<div class="meta"><span class="age stale">3 天前</span><span class="tag">市场结构</span></div>
+<p>衡量恐慌情绪的VIX指数上周五(9/18)收于14.81，30日已实现波动率9.49，处于相对平静区间。黄金本周一走软，跌0.6%至每盎司约$4,355，延续上周联储鹰派加息后的回调。美元指数上周五收于100.20附近。</p>
+<div class="why"><span class="lbl">为什么重要</span><p>VIX处于低位、黄金走软，说明市场目前把中美峰会和油价缓解当作利好来交易，避险资产的需求相应降温——这与利率端仍存在的不确定性(沃什的表态)形成一定反差。</p></div>
+<div class="impact">全市场情绪指标</div>
+<div class="depth">
+<div class="depth-head">资产波及矩阵</div>
+<div class="assets"><div class="asset"><div class="asset-top"><span class="asset-name">美元</span><span class="asset-dir up">&#8593; 利好</span></div><div class="conv up"><i class="on"></i><i class=""></i><i class=""></i></div><p class="asset-note">美元指数维持在100附近的相对高位。</p></div><div class="asset"><div class="asset-top"><span class="asset-name">加密资产</span><span class="asset-dir none">&#8212; 无影响</span></div><div class="conv none"><i class="on"></i><i class=""></i><i class=""></i></div><p class="asset-note">黄金走软但未见与加密资产明确的联动信号。</p></div></div>
+</div>
+<details class="srcs"><summary>2 个来源</summary>
+<ul><li><a href="https://fred.stlouisfed.org/series/VIXCLS" target="_blank" rel="noopener">FRED VIXCLS</a>　提供VIX的精确收盘数值</li><li><a href="https://convextrade.com/metrics/gold" target="_blank" rel="noopener">Convex</a>　追踪黄金现货价格走势</li></ul>
 </details>
 </div></article>
-<article class="item t2" id="item-11" data-tickers="COIN">
+<article class="item t2" id="item-11" data-tickers="AAPL">
 <div class="rank">11</div>
 <div>
-<h3>Coinbase借SEC豁免下调交易手续费，Mizuho维持中性评级、目标价$155</h3>
-<div class="meta"><span class="age fresh">今天</span><span class="tag tk">COIN</span><span class="tag">加密</span><span class="tag">交易所</span></div>
-<p>Coinbase宣布下调Coinbase Advanced平台上活跃交易者的手续费。Mizuho对此维持中性评级，目标价$155，低于当前股价。</p>
-<div class="why"><span class="lbl">为什么重要</span><p>手续费下调发生在SEC代币化豁免公布后的同一时间窗口，读作交易所在为潜在的国内代币化股票交易竞争提前卡位，但分析师尚未把这个预期反映进目标价里。</p></div>
-<div class="impact">COIN · 交易所竞争格局</div>
-<details class="srcs"><summary>1 个来源</summary>
-<ul><li><a href="https://www.tipranks.com/stocks/ai/earnings" target="_blank" rel="noopener">TipRanks</a>　披露手续费下调与Mizuho评级、目标价细节</li></ul>
+<h3>iPhone 18 Pro今起正式开售，预订等待时间的「需求强弱」分歧仍未解决</h3>
+<div class="meta"><span class="age stale">3 天前</span><span class="tag tk">AAPL</span><span class="tag">消费电子</span><span class="tag">供应链</span></div>
+<p>iPhone 18 Pro与Pro Max已于上周五(9/18)正式在美国上市销售，此前围绕预订送达周期缩短是「需求转强」(美银读法)还是「规格升级有限、提价压制需求」(摩根大通/GF证券读法)的分歧持续到正式开售当天仍未解决。苹果股价周一盘前小幅走低约0.3%-0.31%，报$335附近，贴近7月创下的52周高点$344.57。华尔街目前更关注即将登场的Duo折叠机。</p>
+<div class="why"><span class="lbl">为什么重要</span><p>这条线索已经跑了一周多，两派分析师用的是同一份预订数据，至今没有更完整的销售数字来裁决谁对——是判断苹果这轮新品周期真实成色的关键悬念，但还没有新证据。</p></div>
+<div class="impact">AAPL · 消费电子供应链</div>
+<div class="depth">
+<div class="depth-head">资产波及矩阵</div>
+<div class="assets"><div class="asset"><div class="asset-top"><span class="asset-name">美股</span><span class="asset-dir mixed">&#8644; 分化</span></div><div class="conv mixed"><i class="on"></i><i class=""></i><i class=""></i></div><p class="asset-note">AAPL周一盘前小幅走低，市场仍未在需求强弱的分歧中选边站队。</p></div></div>
+<div class="cards"><div class="card"><div class="card-head"><span class="t">多方信源交叉对比</span><span class="agree split">存在分歧</span></div><p>这一分歧从9/12预订开启延续至今：美银把缩短的送达周期读作需求转强，摩根大通与GF证券读作提价压制需求的疲软信号，正式开售并未提供新的裁决证据。</p><ul class="tl" style="margin-top:0.55rem"><li><span class="w">Benzinga</span>报道周一盘前股价走势与分析师对Duo折叠机的关注</li><li><span class="w">AD-HOC-NEWS</span>确认周一盘前的具体跌幅</li></ul></div></div>
+</div>
+<details class="srcs"><summary>2 个来源</summary>
+<ul><li><a href="https://www.benzinga.com/markets/tech/26/09/61888941/this-analyst-loves-apples-duo-but-says-the-stock-is-relatively-rich" target="_blank" rel="noopener">Benzinga</a>　报道周一盘前股价走势与分析师对Duo折叠机的关注</li><li><a href="https://www.ad-hoc-news.de/boerse/news/corporate-news/apple-stock-heads-into-the-open-after-a-0-26-percent-dip/70141675" target="_blank" rel="noopener">AD-HOC-NEWS</a>　确认周一盘前的具体跌幅</li></ul>
 </details>
 </div></article>
-<article class="item t2" id="item-12" data-tickers="PLTR">
+<div class="sec-head t3"><h2 class="label">背景噪音</h2><span class="n">5</span></div>
+<article class="item t3" id="item-12" data-tickers="ILMN">
 <div class="rank">12</div>
 <div>
-<h3>Palantir 9/18期权到期日看涨合约超25万张，Q2营收增速93%仍是同类中最快</h3>
-<div class="meta"><span class="age fresh">今天</span><span class="tag tk">PLTR</span><span class="tag">AI</span><span class="tag">仓位</span></div>
-<p>Palantir股价过去一个月累计上涨超43%，本周五(9/18)到期的期权中看涨合约达254,823张，交易员普遍押注股价会有较大方向性波动。公司二季度营收同比增长93%至19.35亿美元，每股收益$0.41高于预期的$0.28，美国商业业务收入同比暴涨149%，是主要软件同类公司中增速最快、且已实现GAAP盈利的公司。</p>
-<div class="why"><span class="lbl">为什么重要</span><p>大量集中到期的看涨合约本身会放大到期日附近的股价波动(伽马效应)，这是仓位结构层面的信息，跟公司基本面是否值这个估值是两回事。</p></div>
-<div class="impact">PLTR · 期权到期日波动</div>
+<h3>Illumina今日正式纳入标普500指数，被动资金再平衡在异动扫描中仍有余温</h3>
+<div class="meta"><span class="age fresh">今天</span><span class="tag tk">ILMN</span><span class="tag">医疗器械</span><span class="tag">指数纳入</span></div>
+<p>此前预告的Illumina从标普中盘400升级纳入标普500指数已于今日(9/21)开盘前生效。上周五该股大涨7.10%创52周新高，被动跟踪基金的提前建仓是主要驱动，今天扫描的价量异动名单里ILMN仍在初动档。</p>
 <details class="srcs"><summary>1 个来源</summary>
-<ul><li><a href="https://247wallst.com/investing/2026/08/26/palantir-stock-could-be-in-for-a-big-september-heres-why/" target="_blank" rel="noopener">24/7 Wall St.</a>　披露9/18期权到期日的看涨合约规模</li></ul>
+<ul><li><a href="https://www.ad-hoc-news.de/boerse/news/corporate-news/illumina-inc-stock-gains-on-s-and-p-500-inclusion-and-fresh-52-week-high/70118776" target="_blank" rel="noopener">AD-HOC-NEWS</a></li></ul>
 </details>
 </div></article>
-<div class="sec-head t3"><h2 class="label">背景噪音</h2><span class="n">4</span></div>
-<article class="item t3" id="item-13" data-tickers="AVGO">
+<article class="item t3" id="item-13" data-tickers="GEMI">
 <div class="rank">13</div>
 <div>
-<h3>博通推出Cloud Network Insights，加强多云网络可视化</h3>
-<div class="meta"><span class="age fresh">今天</span><span class="tag tk">AVGO</span><span class="tag">半导体</span><span class="tag">云</span></div>
-<p>博通今天发布Cloud Network Insights产品，用于增强企业在多云环境下的网络可视化能力，股价小幅走高。</p>
+<h3>Gemini Space Station单日暴涨31.2%，加密交易所意外发布「深空通信平台」</h3>
+<div class="meta"><span class="age stale">3 天前</span><span class="tag tk">GEMI</span><span class="tag">加密</span><span class="tag">另类</span></div>
+<p>加密交易所Gemini Space Station(GEMI)上周五(9/18)股价大涨31.2%，罕见地宣布了一个「突破性深空通信平台」，与公司主业(加密交易与托管)关联度并不直接。公司二季度营收同比增37%至$4,550万，但交易所收入同比降38%，净亏损超$1.07亿。高盛9/9将目标价从$3.50上调至$4，Truist维持持有评级。</p>
 <details class="srcs"><summary>1 个来源</summary>
-<ul><li><a href="https://finance.yahoo.com/quote/AVGO/news/" target="_blank" rel="noopener">Yahoo Finance</a>　报道新产品发布</li></ul>
+<ul><li><a href="https://www.fool.com/investing/2026/09/18/why-gemini-space-station-stock-jumped-312-today/" target="_blank" rel="noopener">The Motley Fool</a></li></ul>
 </details>
 </div></article>
-<article class="item t3" id="item-14" data-tickers="ACVA">
+<article class="item t3" id="item-14" data-tickers="COIN">
 <div class="rank">14</div>
 <div>
-<h3>ACV Auctions/Copart 19亿美元收购已发酵一周多，套利空间随交易推进收窄</h3>
-<div class="meta"><span class="age stale">7 天前</span><span class="tag tk">ACVA</span><span class="tag">并购</span><span class="tag">汽车</span></div>
-<p>这笔交易已经是一周多前(9/11)的旧闻，列在这里是因为ACVA今天仍在异动扫描的初动名单里——新进展是套利空间随交易稳步推进而收窄。Copart此前同意以每股$10.50现金收购ACV Auctions，交易规模约19-20亿美元，较公告前股价溢价41-45%，双方董事会已一致通过，以要约收购形式推进，预计年底前完成，ACVA将作为独立子公司保留现有管理层。</p>
-<details class="srcs"><summary>1 个来源</summary>
-<ul><li><a href="https://simplywall.st/stocks/us/commercial-services/nyse-acva/acv-auctions/news/acv-auctions-acva-agrees-to-19-billion-all-cash-acquisition" target="_blank" rel="noopener">Simply Wall St</a>　披露收购条款与交易结构</li></ul>
+<h3>CLARITY法案程序性投票失利后，众院税收委员会转推加密税收法案，市场预期通过概率仅7%-9%</h3>
+<div class="meta"><span class="age stale">5 天前</span><span class="tag tk">COIN</span><span class="tag">加密</span><span class="tag">监管</span><span class="tag">政策</span></div>
+<p>CLARITY法案9/15以49-50未能跨过60票门槛后，众议院筹款委员会(Ways and Means)9/16转而推进一项独立的加密税收法案，作为立法受挫后的替代路径；行业追踪机构DeFi Rate将CLARITY法案年内通过的概率评估为7%-9%。参议院预计10/2进入休会，留给谈判的时间已经不多。</p>
+<details class="srcs"><summary>2 个来源</summary>
+<ul><li><a href="https://www.coindesk.com/policy/2026/09/16/u-s-house-s-tax-committee-advances-crypto-tax-bill-in-wake-of-clarity-act-loss" target="_blank" rel="noopener">CoinDesk</a></li><li><a href="https://defirate.com/clarity-act-fact-sheet/" target="_blank" rel="noopener">DeFi Rate</a></li></ul>
 </details>
 </div></article>
-<article class="item t3" id="item-15">
+<article class="item t3" id="item-15" data-tickers="NVO HAS">
 <div class="rank">15</div>
 <div>
-<h3>VIX恐慌指数回落，投资者情绪从周三的紧张中企稳</h3>
-<div class="meta"><span class="age fresh">今天</span><span class="tag">市场结构</span></div>
-<p>衡量市场恐慌情绪的VIX指数近日回落，与10年期收益率的回落方向一致，反映投资者情绪从周三加息后的紧张中逐步企稳。</p>
+<h3>周一早盘个股分化：诺和诺德跌4.35%、孩之宝跌3.60%</h3>
+<div class="meta"><span class="age fresh">今天</span><span class="tag tk">NVO</span><span class="tag tk">HAS</span><span class="tag">消费</span><span class="tag">医药</span></div>
+<p>诺和诺德(NVO)周一盘中跌4.35%，市场对其减肥药长期战略能否在日趋拥挤的市场中保持竞争力仍有疑虑；孩之宝(HAS)跌3.60%，主要受宏观利率与可选消费板块整体承压拖累，未见公司自身的独立催化剂。</p>
 <details class="srcs"><summary>1 个来源</summary>
-<ul><li><a href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-sept-18-2026" target="_blank" rel="noopener">TheStreet</a>　提及VIX回落作为情绪指标</li></ul>
+<ul><li><a href="https://www.cnbc.com/2026/09/21/stocks-making-the-biggest-moves-premarket-psky-wbd-acn-nvo.html" target="_blank" rel="noopener">CNBC</a></li></ul>
 </details>
 </div></article>
-<article class="item t3" id="item-16" data-tickers="TSLA">
+<article class="item t3" id="item-16">
 <div class="rank">16</div>
 <div>
-<h3>特斯拉第二代Roadster发布会定于10月1日德州韦科，预订者受邀见证SpaceX冷气推进包</h3>
-<div class="meta"><span class="age aging">2 天前</span><span class="tag tk">TSLA</span><span class="tag">汽车</span></div>
-<p>特斯拉确认第二代Roadster发布会将于10月1日晚8:30(当地时间)在德州韦科举行，仅限Roadster预订者凭不可转让邀请函到场，主打与SpaceX合作开发的冷气推进包功能。量产目标仍是2027或2028年在得州超级工厂，这次活动只是发布不是量产或交付节点。</p>
+<h3>稀土与关键矿产股周一走强：USA Rare Earth联手Pasqal开发量子分离技术，Evolution Metals获纳入罗素指数</h3>
+<div class="meta"><span class="age fresh">今天</span><span class="tag">稀土</span><span class="tag">关键矿产</span></div>
+<p>USA Rare Earth(USAR)周一走高，宣布与Pasqal、Riven Systems合作开发基于量子计算与AI的稀土分离技术，同时受益于中美关键矿产谈判在峰会前启动的乐观情绪；Evolution Metals因即将纳入罗素2000/3000指数吸引被动资金买盘，另获Aletheia Capital给予买入评级、目标价$4.50。</p>
 <details class="srcs"><summary>1 个来源</summary>
-<ul><li><a href="https://insideevs.com/news/808054/tesla-roadster-ev-october-2026-reveal/" target="_blank" rel="noopener">InsideEVs</a>　确认10月1日发布会的时间地点与邀请规则</li></ul>
+<ul><li><a href="https://seekingalpha.com/news/4644658-biggest-stock-movers-monday-wbd-psky-and-more" target="_blank" rel="noopener">Seeking Alpha</a></li></ul>
 </details>
 </div></article></div>
 <div class="tab-panel" data-tab="calendar"><div class="sec-head t2"><h2 class="label">接下来的日历</h2><span class="asof">6 周窗口</span></div>
-<div class="cal-grid"><div class="cal-wd">一</div><div class="cal-wd">二</div><div class="cal-wd">三</div><div class="cal-wd">四</div><div class="cal-wd">五</div><div class="cal-wd">六</div><div class="cal-wd">日</div><div class="cal-day empty"><div class="cal-daynum">14</div></div><div class="cal-day empty"><div class="cal-daynum">15</div></div><div class="cal-day empty"><div class="cal-daynum">16</div></div><div class="cal-day empty"><div class="cal-daynum">17</div></div><div class="cal-day today empty"><div class="cal-daynum">18</div></div><div class="cal-day weekend empty"><div class="cal-daynum">19</div></div><div class="cal-day weekend empty"><div class="cal-daynum">20</div></div><div class="cal-day"><div class="cal-daynum">21</div><div class="cal-chip w-low"><span>博通(AVGO)除息日，每股派息$0.65</span><a class="cal-src" href="https://www.investing.com/equities/avago-technologies" target="_blank" rel="noopener" aria-label="来源：Investing.com">&#8599;</a></div><div class="cal-chip w-mid"><span>Illumina(ILMN)正式纳入标普500指数(自标普中盘400升级)</span><a class="cal-src" href="https://www.ad-hoc-news.de/boerse/news/corporate-news/illumina-inc-stock-gains-on-s-and-p-500-inclusion-and-fresh-52-week-high/70118776" target="_blank" rel="noopener" aria-label="来源：AD-HOC-NEWS">&#8599;</a></div></div><div class="cal-day empty"><div class="cal-daynum">22</div></div><div class="cal-day empty"><div class="cal-daynum">23</div></div><div class="cal-day empty"><div class="cal-daynum">24</div></div><div class="cal-day empty"><div class="cal-daynum">25</div></div><div class="cal-day weekend empty"><div class="cal-daynum">26</div></div><div class="cal-day weekend empty"><div class="cal-daynum">27</div></div><div class="cal-day empty"><div class="cal-daynum">28</div></div><div class="cal-day empty"><div class="cal-daynum">29</div></div><div class="cal-day"><div class="cal-daynum">30</div><div class="cal-chip w-low"><span>Rogers Corporation投资者日</span><a class="cal-src" href="https://www.barchart.com/stocks/pre-market-trading/percent-change/advances" target="_blank" rel="noopener" aria-label="来源：Barchart">&#8599;</a></div></div><div class="cal-day"><div class="cal-daynum">10/1</div><div class="cal-chip w-mid"><span class="cal-chip-time">10:00 ET</span><span>9月ISM制造业PMI；Nebius GPU租赁新价格同日生效</span><a class="cal-src" href="https://fedratecalc.com/us-economic-calendar/september-2026/" target="_blank" rel="noopener" aria-label="来源：FedRateCalc、Benzinga">&#8599;</a></div><div class="cal-chip w-low"><span class="cal-chip-time">20:30 CT</span><span>特斯拉第二代Roadster发布会，德州韦科</span><a class="cal-src" href="https://insideevs.com/news/808054/tesla-roadster-ev-october-2026-reveal/" target="_blank" rel="noopener" aria-label="来源：InsideEVs">&#8599;</a></div></div><div class="cal-day"><div class="cal-daynum">2</div><div class="cal-chip w-high"><span class="cal-chip-time">08:30 ET</span><span>9月非农就业报告</span><a class="cal-src" href="https://fedratecalc.com/us-economic-calendar/september-2026/" target="_blank" rel="noopener" aria-label="来源：FedRateCalc">&#8599;</a></div></div><div class="cal-day weekend empty"><div class="cal-daynum">3</div></div><div class="cal-day weekend empty"><div class="cal-daynum">4</div></div><div class="cal-day"><div class="cal-daynum">5</div><div class="cal-chip w-mid"><span class="cal-chip-time">10:00 ET</span><span>9月ISM服务业PMI</span><a class="cal-src" href="https://fedratecalc.com/us-economic-calendar/september-2026/" target="_blank" rel="noopener" aria-label="来源：FedRateCalc">&#8599;</a></div></div><div class="cal-day empty"><div class="cal-daynum">6</div></div><div class="cal-day"><div class="cal-daynum">7</div><div class="cal-chip w-low"><span>微软Surface硬件发布会</span><a class="cal-src" href="https://www.tipranks.com/news/company-announcements/microsoft-reports-strong-q1-2026-financial-results" target="_blank" rel="noopener" aria-label="来源：TipRanks">&#8599;</a></div></div><div class="cal-day empty"><div class="cal-daynum">8</div></div><div class="cal-day empty"><div class="cal-daynum">9</div></div><div class="cal-day weekend empty"><div class="cal-daynum">10</div></div><div class="cal-day weekend empty"><div class="cal-daynum">11</div></div><div class="cal-day empty"><div class="cal-daynum">12</div></div><div class="cal-day empty"><div class="cal-daynum">13</div></div><div class="cal-day empty"><div class="cal-daynum">14</div></div><div class="cal-day empty"><div class="cal-daynum">15</div></div><div class="cal-day empty"><div class="cal-daynum">16</div></div><div class="cal-day weekend empty"><div class="cal-daynum">17</div></div><div class="cal-day weekend empty"><div class="cal-daynum">18</div></div><div class="cal-day empty"><div class="cal-daynum">19</div></div><div class="cal-day empty"><div class="cal-daynum">20</div></div><div class="cal-day empty"><div class="cal-daynum">21</div></div><div class="cal-day empty"><div class="cal-daynum">22</div></div><div class="cal-day empty"><div class="cal-daynum">23</div></div><div class="cal-day weekend empty"><div class="cal-daynum">24</div></div><div class="cal-day weekend empty"><div class="cal-daynum">25</div></div></div>
+<div class="cal-grid"><div class="cal-wd">一</div><div class="cal-wd">二</div><div class="cal-wd">三</div><div class="cal-wd">四</div><div class="cal-wd">五</div><div class="cal-wd">六</div><div class="cal-wd">日</div><div class="cal-day today empty"><div class="cal-daynum">21</div></div><div class="cal-day"><div class="cal-daynum">22</div><div class="cal-chip w-low"><span>芝加哥联储全国活动指数(8月)</span><a class="cal-src" href="https://www.kiplinger.com/investing/economy/this-weeks-economic-calendar" target="_blank" rel="noopener" aria-label="来源：Kiplinger">&#8599;</a></div></div><div class="cal-day"><div class="cal-daynum">23</div><div class="cal-chip w-high"><span>特朗普与习近平在华盛顿会晤，市场关注贸易休战能否延长</span><a class="cal-src" href="https://www.usnews.com/news/business/articles/2026-09-21/stocks-advance-after-bessent-says-talks-with-china-were-successful-before-trump-xi-meeting" target="_blank" rel="noopener" aria-label="来源：US News、Investing.com">&#8599;</a></div><div class="cal-chip w-mid"><span>9月标普全球制造业/服务业PMI初值；里士满联储制造业指数</span><a class="cal-src" href="https://fedratecalc.com/us-economic-calendar/september-2026/" target="_blank" rel="noopener" aria-label="来源：FedRateCalc">&#8599;</a></div></div><div class="cal-day empty"><div class="cal-daynum">24</div></div><div class="cal-day"><div class="cal-daynum">25</div><div class="cal-chip w-mid"><span class="cal-chip-time">08:30 ET</span><span>首次申请失业救济人数；耐用品订单；Q2 GDP终值；成屋销售</span><a class="cal-src" href="https://www.kiplinger.com/investing/economy/this-weeks-economic-calendar" target="_blank" rel="noopener" aria-label="来源：Kiplinger">&#8599;</a></div></div><div class="cal-day weekend empty"><div class="cal-daynum">26</div></div><div class="cal-day weekend empty"><div class="cal-daynum">27</div></div><div class="cal-day empty"><div class="cal-daynum">28</div></div><div class="cal-day empty"><div class="cal-daynum">29</div></div><div class="cal-day empty"><div class="cal-daynum">30</div></div><div class="cal-day"><div class="cal-daynum">10/1</div><div class="cal-chip w-mid"><span class="cal-chip-time">10:00 ET</span><span>9月ISM制造业PMI；特斯拉第二代Roadster发布会(德州韦科)</span><a class="cal-src" href="https://fedratecalc.com/us-economic-calendar/september-2026/" target="_blank" rel="noopener" aria-label="来源：FedRateCalc、InsideEVs">&#8599;</a></div></div><div class="cal-day"><div class="cal-daynum">2</div><div class="cal-chip w-high"><span class="cal-chip-time">08:30 ET</span><span>9月非农就业报告</span><a class="cal-src" href="https://fedratecalc.com/us-economic-calendar/september-2026/" target="_blank" rel="noopener" aria-label="来源：FedRateCalc">&#8599;</a></div></div><div class="cal-day weekend empty"><div class="cal-daynum">3</div></div><div class="cal-day weekend empty"><div class="cal-daynum">4</div></div><div class="cal-day empty"><div class="cal-daynum">5</div></div><div class="cal-day empty"><div class="cal-daynum">6</div></div><div class="cal-day empty"><div class="cal-daynum">7</div></div><div class="cal-day empty"><div class="cal-daynum">8</div></div><div class="cal-day empty"><div class="cal-daynum">9</div></div><div class="cal-day weekend empty"><div class="cal-daynum">10</div></div><div class="cal-day weekend empty"><div class="cal-daynum">11</div></div><div class="cal-day empty"><div class="cal-daynum">12</div></div><div class="cal-day empty"><div class="cal-daynum">13</div></div><div class="cal-day"><div class="cal-daynum">14</div><div class="cal-chip w-high"><span class="cal-chip-time">08:30 ET</span><span>9月CPI</span><a class="cal-src" href="https://fedratecalc.com/us-economic-calendar/september-2026/" target="_blank" rel="noopener" aria-label="来源：FedRateCalc">&#8599;</a></div></div><div class="cal-day empty"><div class="cal-daynum">15</div></div><div class="cal-day empty"><div class="cal-daynum">16</div></div><div class="cal-day weekend empty"><div class="cal-daynum">17</div></div><div class="cal-day weekend empty"><div class="cal-daynum">18</div></div><div class="cal-day empty"><div class="cal-daynum">19</div></div><div class="cal-day empty"><div class="cal-daynum">20</div></div><div class="cal-day empty"><div class="cal-daynum">21</div></div><div class="cal-day empty"><div class="cal-daynum">22</div></div><div class="cal-day empty"><div class="cal-daynum">23</div></div><div class="cal-day weekend empty"><div class="cal-daynum">24</div></div><div class="cal-day weekend empty"><div class="cal-daynum">25</div></div><div class="cal-day empty"><div class="cal-daynum">26</div></div><div class="cal-day empty"><div class="cal-daynum">27</div></div><div class="cal-day"><div class="cal-daynum">28</div><div class="cal-chip w-high"><span class="cal-chip-time">14:00 ET (10/28)</span><span>10月FOMC利率决议</span><a class="cal-src" href="https://finance.yahoo.com/personal-finance/banking/article/when-is-the-next-fed-meeting-full-schedule-150709698.html" target="_blank" rel="noopener" aria-label="来源：Yahoo Finance、FedRateCalc">&#8599;</a></div></div><div class="cal-day empty"><div class="cal-daynum">29</div></div><div class="cal-day empty"><div class="cal-daynum">30</div></div><div class="cal-day weekend empty"><div class="cal-daynum">31</div></div><div class="cal-day weekend empty"><div class="cal-daynum">11/1</div></div></div>
 <div class="cal-later-head">日期待定 · 更远的事件</div>
 <div class="cal-scroll"><table><tbody>
-<tr>
-<td class="when">10/28</td>
-<td class="time">14:00 ET (10/28)</td>
-<td>10月FOMC利率决议</td>
-<td class="cal-later-src"><a href="https://finance.yahoo.com/personal-finance/banking/article/when-is-the-next-fed-meeting-full-schedule-150709698.html" target="_blank" rel="noopener">Yahoo Finance</a> · <a href="https://fedratecalc.com/fomc-meeting-schedule/" target="_blank" rel="noopener">FedRateCalc</a></td>
-<td class="w"><span class="w-high">关键</span></td>
-</tr>
 <tr>
 <td class="when">12/9</td>
 <td class="time">14:00 ET (12/9)</td>
@@ -1975,48 +1966,360 @@ a:focus-visible, summary:focus-visible {
 <td class="w"><span class="w-high">关键</span></td>
 </tr>
 <tr>
-<td class="when">本届国会内</td>
+<td class="when">本届国会内(10/2休会前)</td>
 <td class="time"></td>
-<td>Clarity法案地位复杂：蒂利斯已提交重新表决动议，卢米斯警告若本届国会不过或要等到2030年；SEC已于9/17发布代币化股票&#x27;创新豁免&#x27;作为平行的行政路径</td>
-<td class="cal-later-src"><a href="https://www.bitget.com/academy/clarity-act-vote-september-2026-senate-cloture-what-to-know" target="_blank" rel="noopener">Bitget Academy</a> · <a href="https://www.theblock.co/news/regulation/2026-09-17-sec-releases-innovation-exemption-415324" target="_blank" rel="noopener">The Block</a></td>
+<td>CLARITY法案地位不明：Tillis保留复议动议权利，伦理条款谈判仍在继续，参议院10/2进入休会</td>
+<td class="cal-later-src"><a href="https://www.theblock.co/news/regulation/2026-09-15-this-one-stings-clarity-act-fails-senate-is-cryptos-biggest-regulatory-push-dead-415135" target="_blank" rel="noopener">The Block</a> · <a href="https://www.crowdfundinsider.com/2026/09/310520-not-the-end-hope-remains-that-the-clarity-act-can-be-re-animated/" target="_blank" rel="noopener">Crowdfund Insider</a></td>
 <td class="w"><span class="w-mid">留意</span></td>
 </tr>
 </tbody></table></div></div>
-<div class="tab-panel" data-tab="momentum"><div class="sec-head t2"><h2 class="label">价量异动</h2><span class="asof">截至 2026-09-17 收盘 · 扫描 2586 只</span></div>
+<div class="tab-panel" data-tab="momentum"><div class="sec-head t2"><h2 class="label">价量异动</h2><span class="asof">截至 2026-09-18 收盘 · 扫描 2571 只</span></div>
 <div class="mo-disclaimer">价量筛选，不是买卖信号。全量回测（2515 只、两年、5090 次初动信号）：20 日胜率 51.4%、期望 +1.1%，仅略好过抛硬币，且收益几乎全部来自极少数走出趋势的标的，中位数只有 +0.3%。样本未剔除幸存者偏差、区间偏多头、未计交易成本。同一批数据还显示「越早越好」并不成立——按早期度排序，最早的一批前向收益反而更差。所以这里的顺序只代表「有多新」，不代表「有多值得买」，每一条都需要你自己再查一遍基本面与消息面。</div>
 <div class="mo-groups">
 <div class="mo-group g-ignition">
 <div class="mo-group-head">
 <span class="mo-group-name">初动</span>
-<span class="mo-group-n">2</span>
+<span class="mo-group-n">26</span>
 <span class="mo-group-blurb">突破前高的头几天，量能同步放大</span>
 </div>
 <div class="mo-card s-ignition">
 <div class="mo-head">
-<span class="mo-tk">PSIX</span>
-<span class="mo-px">44.72</span>
-<span class="mo-chg up"><span class="mo-chg-day">09-17 </span>+11.55%</span>
+<span class="mo-tk">CON</span>
+<span class="mo-px">35.47</span>
+<span class="mo-chg down"><span class="mo-chg-day">09-18 </span>-0.17%</span>
+</div>
+<div class="mo-metrics">
+<div class="mo-metric"><span class="mo-metric-k">突破</span><span class="mo-metric-v">2 日</span></div>
+<div class="mo-metric"><span class="mo-metric-k">相对量</span><span class="mo-metric-v">7.4x</span></div>
+<div class="mo-metric"><span class="mo-metric-k">乖离</span><span class="mo-metric-v">+2%</span></div>
+<div class="mo-metric"><span class="mo-metric-k">自基底</span><span class="mo-metric-v">+26%</span></div>
+</div>
+<p class="mo-note">单日-0.17%，量比7.41倍，突破第2天，从底部已跑出26.32%。</p>
+</div><div class="mo-card s-ignition">
+<div class="mo-head">
+<span class="mo-tk">UHS</span>
+<span class="mo-px">176.69</span>
+<span class="mo-chg down"><span class="mo-chg-day">09-18 </span>-2.25%</span>
+</div>
+<div class="mo-metrics">
+<div class="mo-metric"><span class="mo-metric-k">突破</span><span class="mo-metric-v">2 日</span></div>
+<div class="mo-metric"><span class="mo-metric-k">相对量</span><span class="mo-metric-v">2.9x</span></div>
+<div class="mo-metric"><span class="mo-metric-k">乖离</span><span class="mo-metric-v">+1%</span></div>
+<div class="mo-metric"><span class="mo-metric-k">自基底</span><span class="mo-metric-v">+25%</span></div>
+</div>
+<p class="mo-note">单日-2.25%，量比2.89倍，突破第2天，从底部已跑出25.46%。</p>
+</div><div class="mo-card s-ignition">
+<div class="mo-head">
+<span class="mo-tk">HALO</span>
+<span class="mo-px">112.45</span>
+<span class="mo-chg up"><span class="mo-chg-day">09-18 </span>+2.53%</span>
 </div>
 <div class="mo-metrics">
 <div class="mo-metric"><span class="mo-metric-k">突破</span><span class="mo-metric-v">当天</span></div>
-<div class="mo-metric"><span class="mo-metric-k">相对量</span><span class="mo-metric-v">2.5x</span></div>
+<div class="mo-metric"><span class="mo-metric-k">相对量</span><span class="mo-metric-v">6.4x</span></div>
+<div class="mo-metric"><span class="mo-metric-k">乖离</span><span class="mo-metric-v">+4%</span></div>
+<div class="mo-metric"><span class="mo-metric-k">自基底</span><span class="mo-metric-v">+61%</span></div>
+</div>
+<p class="mo-note">单日+2.53%，量比6.41倍，突破当天，从底部已跑出61.26%。</p>
+</div><div class="mo-card s-ignition">
+<div class="mo-head">
+<span class="mo-tk">ILMN</span>
+<span class="mo-px">239.62</span>
+<span class="mo-chg down"><span class="mo-chg-day">09-18 </span>-2.27%</span>
+</div>
+<div class="mo-metrics">
+<div class="mo-metric"><span class="mo-metric-k">突破</span><span class="mo-metric-v">1 日</span></div>
+<div class="mo-metric"><span class="mo-metric-k">相对量</span><span class="mo-metric-v">17.0x</span></div>
+<div class="mo-metric"><span class="mo-metric-k">乖离</span><span class="mo-metric-v">+9%</span></div>
+<div class="mo-metric"><span class="mo-metric-k">自基底</span><span class="mo-metric-v">+50%</span></div>
+</div>
+<p class="mo-note">今日(9/21)正式纳入标普500指数，上周五(9/18)已因被动资金提前建仓大涨7.10%创52周新高；今天量比达17倍，是本轮扫描里放量最猛的一只。</p>
+</div><div class="mo-card s-ignition">
+<div class="mo-head">
+<span class="mo-tk">TH</span>
+<span class="mo-px">21.19</span>
+<span class="mo-chg up"><span class="mo-chg-day">09-18 </span>+2.07%</span>
+</div>
+<div class="mo-metrics">
+<div class="mo-metric"><span class="mo-metric-k">突破</span><span class="mo-metric-v">1 日</span></div>
+<div class="mo-metric"><span class="mo-metric-k">相对量</span><span class="mo-metric-v">3.3x</span></div>
+<div class="mo-metric"><span class="mo-metric-k">乖离</span><span class="mo-metric-v">+13%</span></div>
+<div class="mo-metric"><span class="mo-metric-k">自基底</span><span class="mo-metric-v">+50%</span></div>
+</div>
+<p class="mo-note">单日+2.07%，量比3.29倍，突破第1天，从底部已跑出50.5%，乖离20日均线12.64%——本轮扫描里乖离幅度较大的一只。</p>
+</div><div class="mo-card s-ignition">
+<div class="mo-head">
+<span class="mo-tk">TMO</span>
+<span class="mo-px">651.45</span>
+<span class="mo-chg down"><span class="mo-chg-day">09-18 </span>-1.04%</span>
+</div>
+<div class="mo-metrics">
+<div class="mo-metric"><span class="mo-metric-k">突破</span><span class="mo-metric-v">2 日</span></div>
+<div class="mo-metric"><span class="mo-metric-k">相对量</span><span class="mo-metric-v">2.7x</span></div>
+<div class="mo-metric"><span class="mo-metric-k">乖离</span><span class="mo-metric-v">+5%</span></div>
+<div class="mo-metric"><span class="mo-metric-k">自基底</span><span class="mo-metric-v">+42%</span></div>
+</div>
+<p class="mo-note">单日-1.04%，量比2.74倍，突破第2天，从底部已跑出41.96%。</p>
+</div><div class="mo-card s-ignition">
+<div class="mo-head">
+<span class="mo-tk">CVX</span>
+<span class="mo-px">209.51</span>
+<span class="mo-chg down"><span class="mo-chg-day">09-18 </span>-0.97%</span>
+</div>
+<div class="mo-metrics">
+<div class="mo-metric"><span class="mo-metric-k">突破</span><span class="mo-metric-v">3 日</span></div>
+<div class="mo-metric"><span class="mo-metric-k">相对量</span><span class="mo-metric-v">6.0x</span></div>
+<div class="mo-metric"><span class="mo-metric-k">乖离</span><span class="mo-metric-v">+0%</span></div>
+<div class="mo-metric"><span class="mo-metric-k">自基底</span><span class="mo-metric-v">+27%</span></div>
+</div>
+<p class="mo-note">单日-0.97%，量比6.0倍，突破第3天，从底部已跑出27.15%——处于原油连跌四日的宏观背景中，今天扫描的新闻里没有看到针对雪佛龙自身的独立催化剂。</p>
+</div><div class="mo-card s-ignition">
+<div class="mo-head">
+<span class="mo-tk">GRDN</span>
+<span class="mo-px">44.99</span>
+<span class="mo-chg down"><span class="mo-chg-day">09-18 </span>-0.13%</span>
+</div>
+<div class="mo-metrics">
+<div class="mo-metric"><span class="mo-metric-k">突破</span><span class="mo-metric-v">3 日</span></div>
+<div class="mo-metric"><span class="mo-metric-k">相对量</span><span class="mo-metric-v">6.5x</span></div>
+<div class="mo-metric"><span class="mo-metric-k">乖离</span><span class="mo-metric-v">+9%</span></div>
+<div class="mo-metric"><span class="mo-metric-k">自基底</span><span class="mo-metric-v">+25%</span></div>
+</div>
+<p class="mo-note">单日-0.13%，量比6.49倍，突破第3天，从底部已跑出25.32%。</p>
+</div><div class="mo-card s-ignition">
+<div class="mo-head">
+<span class="mo-tk">LTC</span>
+<span class="mo-px">42.56</span>
+<span class="mo-chg down"><span class="mo-chg-day">09-18 </span>-2.16%</span>
+</div>
+<div class="mo-metrics">
+<div class="mo-metric"><span class="mo-metric-k">突破</span><span class="mo-metric-v">3 日</span></div>
+<div class="mo-metric"><span class="mo-metric-k">相对量</span><span class="mo-metric-v">2.9x</span></div>
+<div class="mo-metric"><span class="mo-metric-k">乖离</span><span class="mo-metric-v">+2%</span></div>
+<div class="mo-metric"><span class="mo-metric-k">自基底</span><span class="mo-metric-v">+18%</span></div>
+</div>
+<p class="mo-note">单日-2.16%，量比2.88倍，突破第3天，从底部已跑出18.22%。</p>
+</div><div class="mo-card s-ignition">
+<div class="mo-head">
+<span class="mo-tk">NAVI</span>
+<span class="mo-px">9.51</span>
+<span class="mo-chg down"><span class="mo-chg-day">09-18 </span>-3.35%</span>
+</div>
+<div class="mo-metrics">
+<div class="mo-metric"><span class="mo-metric-k">突破</span><span class="mo-metric-v">3 日</span></div>
+<div class="mo-metric"><span class="mo-metric-k">相对量</span><span class="mo-metric-v">3.2x</span></div>
+<div class="mo-metric"><span class="mo-metric-k">乖离</span><span class="mo-metric-v">+0%</span></div>
+<div class="mo-metric"><span class="mo-metric-k">自基底</span><span class="mo-metric-v">+22%</span></div>
+</div>
+<p class="mo-note">单日-3.35%，量比3.25倍，突破第3天，从底部已跑出21.91%。</p>
+</div><div class="mo-card s-ignition">
+<div class="mo-head">
+<span class="mo-tk">ZD</span>
+<span class="mo-px">57.49</span>
+<span class="mo-chg down"><span class="mo-chg-day">09-18 </span>-2.77%</span>
+</div>
+<div class="mo-metrics">
+<div class="mo-metric"><span class="mo-metric-k">突破</span><span class="mo-metric-v">3 日</span></div>
+<div class="mo-metric"><span class="mo-metric-k">相对量</span><span class="mo-metric-v">5.1x</span></div>
+<div class="mo-metric"><span class="mo-metric-k">乖离</span><span class="mo-metric-v">+2%</span></div>
+<div class="mo-metric"><span class="mo-metric-k">自基底</span><span class="mo-metric-v">+30%</span></div>
+</div>
+<p class="mo-note">单日-2.77%，量比5.13倍，突破第3天，从底部已跑出30.27%。</p>
+</div><div class="mo-card s-ignition">
+<div class="mo-head">
+<span class="mo-tk">PGEN</span>
+<span class="mo-px">7.78</span>
+<span class="mo-chg down"><span class="mo-chg-day">09-18 </span>-1.14%</span>
+</div>
+<div class="mo-metrics">
+<div class="mo-metric"><span class="mo-metric-k">突破</span><span class="mo-metric-v">1 日</span></div>
+<div class="mo-metric"><span class="mo-metric-k">相对量</span><span class="mo-metric-v">3.2x</span></div>
+<div class="mo-metric"><span class="mo-metric-k">乖离</span><span class="mo-metric-v">+9%</span></div>
+<div class="mo-metric"><span class="mo-metric-k">自基底</span><span class="mo-metric-v">+62%</span></div>
+</div>
+<p class="mo-note">单日-1.14%，量比3.21倍，突破第1天，从底部已跑出61.75%。</p>
+</div><div class="mo-card s-ignition">
+<div class="mo-head">
+<span class="mo-tk">NRGV</span>
+<span class="mo-px">4.49</span>
+<span class="mo-chg up"><span class="mo-chg-day">09-18 </span>+6.15%</span>
+</div>
+<div class="mo-metrics">
+<div class="mo-metric"><span class="mo-metric-k">突破</span><span class="mo-metric-v">当天</span></div>
+<div class="mo-metric"><span class="mo-metric-k">相对量</span><span class="mo-metric-v">4.0x</span></div>
+<div class="mo-metric"><span class="mo-metric-k">乖离</span><span class="mo-metric-v">+15%</span></div>
+<div class="mo-metric"><span class="mo-metric-k">自基底</span><span class="mo-metric-v">+80%</span></div>
+</div>
+<p class="mo-note">单日+6.15%，量比3.99倍，突破当天，从底部已跑出79.6%——本轮扫描里从底部涨幅最大的标的之一。</p>
+</div><div class="mo-card s-ignition">
+<div class="mo-head">
+<span class="mo-tk">NTRA</span>
+<span class="mo-px">369.39</span>
+<span class="mo-chg up"><span class="mo-chg-day">09-18 </span>+0.84%</span>
+</div>
+<div class="mo-metrics">
+<div class="mo-metric"><span class="mo-metric-k">突破</span><span class="mo-metric-v">1 日</span></div>
+<div class="mo-metric"><span class="mo-metric-k">相对量</span><span class="mo-metric-v">3.4x</span></div>
+<div class="mo-metric"><span class="mo-metric-k">乖离</span><span class="mo-metric-v">+10%</span></div>
+<div class="mo-metric"><span class="mo-metric-k">自基底</span><span class="mo-metric-v">+65%</span></div>
+</div>
+<p class="mo-note">单日+0.84%，量比3.43倍，突破第1天，从底部已跑出64.65%。</p>
+</div><div class="mo-card s-ignition">
+<div class="mo-head">
+<span class="mo-tk">PSX</span>
+<span class="mo-px">273.13</span>
+<span class="mo-chg down"><span class="mo-chg-day">09-18 </span>-0.39%</span>
+</div>
+<div class="mo-metrics">
+<div class="mo-metric"><span class="mo-metric-k">突破</span><span class="mo-metric-v">1 日</span></div>
+<div class="mo-metric"><span class="mo-metric-k">相对量</span><span class="mo-metric-v">3.8x</span></div>
+<div class="mo-metric"><span class="mo-metric-k">乖离</span><span class="mo-metric-v">+7%</span></div>
+<div class="mo-metric"><span class="mo-metric-k">自基底</span><span class="mo-metric-v">+65%</span></div>
+</div>
+<p class="mo-note">单日-0.39%，量比3.82倍，突破第1天，从底部已跑出65.06%——同样处于原油连跌的宏观背景中，未查到针对公司自身的独立催化剂。</p>
+</div><div class="mo-card s-ignition">
+<div class="mo-head">
+<span class="mo-tk">INSP</span>
+<span class="mo-px">76.78</span>
+<span class="mo-chg up"><span class="mo-chg-day">09-18 </span>+5.55%</span>
+</div>
+<div class="mo-metrics">
+<div class="mo-metric"><span class="mo-metric-k">突破</span><span class="mo-metric-v">当天</span></div>
+<div class="mo-metric"><span class="mo-metric-k">相对量</span><span class="mo-metric-v">4.1x</span></div>
 <div class="mo-metric"><span class="mo-metric-k">乖离</span><span class="mo-metric-v">+16%</span></div>
+<div class="mo-metric"><span class="mo-metric-k">自基底</span><span class="mo-metric-v">+83%</span></div>
+</div>
+<p class="mo-note">单日+5.55%，量比4.08倍，突破当天，从底部已跑出82.81%。</p>
+</div><div class="mo-card s-ignition">
+<div class="mo-head">
+<span class="mo-tk">INSW</span>
+<span class="mo-px">111.15</span>
+<span class="mo-chg up"><span class="mo-chg-day">09-18 </span>+0.56%</span>
+</div>
+<div class="mo-metrics">
+<div class="mo-metric"><span class="mo-metric-k">突破</span><span class="mo-metric-v">3 日</span></div>
+<div class="mo-metric"><span class="mo-metric-k">相对量</span><span class="mo-metric-v">3.0x</span></div>
+<div class="mo-metric"><span class="mo-metric-k">乖离</span><span class="mo-metric-v">+8%</span></div>
+<div class="mo-metric"><span class="mo-metric-k">自基底</span><span class="mo-metric-v">+48%</span></div>
+</div>
+<p class="mo-note">油轮运营商，单日+0.56%，量比2.95倍，突破第3天，从底部已跑出48.1%——与上期简报提到的霍尔木兹危机油轮股行情同属一个板块，今天未查到针对公司自身的独立催化剂。</p>
+</div><div class="mo-card s-ignition">
+<div class="mo-head">
+<span class="mo-tk">NEO</span>
+<span class="mo-px">19.91</span>
+<span class="mo-chg up"><span class="mo-chg-day">09-18 </span>+0.10%</span>
+</div>
+<div class="mo-metrics">
+<div class="mo-metric"><span class="mo-metric-k">突破</span><span class="mo-metric-v">1 日</span></div>
+<div class="mo-metric"><span class="mo-metric-k">相对量</span><span class="mo-metric-v">2.8x</span></div>
+<div class="mo-metric"><span class="mo-metric-k">乖离</span><span class="mo-metric-v">+11%</span></div>
+<div class="mo-metric"><span class="mo-metric-k">自基底</span><span class="mo-metric-v">+79%</span></div>
+</div>
+<p class="mo-note">单日+0.1%，量比2.82倍，突破第1天，从底部已跑出78.89%。</p>
+</div><div class="mo-card s-ignition">
+<div class="mo-head">
+<span class="mo-tk">VLO</span>
+<span class="mo-px">413.28</span>
+<span class="mo-chg up"><span class="mo-chg-day">09-18 </span>+0.18%</span>
+</div>
+<div class="mo-metrics">
+<div class="mo-metric"><span class="mo-metric-k">突破</span><span class="mo-metric-v">2 日</span></div>
+<div class="mo-metric"><span class="mo-metric-k">相对量</span><span class="mo-metric-v">3.3x</span></div>
+<div class="mo-metric"><span class="mo-metric-k">乖离</span><span class="mo-metric-v">+11%</span></div>
 <div class="mo-metric"><span class="mo-metric-k">自基底</span><span class="mo-metric-v">+77%</span></div>
 </div>
-<p class="mo-note">单日+11.55%，跳空缺口8.76%，量比2.55倍，从底部已跑出76.9%，但今天扫描的新闻里完全没有出现这只票——能查到的最近背景是8月的Q2财报改善与新CEO上任，看不出是什么触发了今天这个跳空。</p>
+<p class="mo-note">炼油商，单日+0.18%，量比3.32倍，突破第2天，从底部已跑出76.65%，处于原油连跌四日的宏观背景中逆势小幅收涨。</p>
+</div><div class="mo-card s-ignition">
+<div class="mo-head">
+<span class="mo-tk">CAI</span>
+<span class="mo-px">29.98</span>
+<span class="mo-chg down"><span class="mo-chg-day">09-18 </span>-3.04%</span>
+</div>
+<div class="mo-metrics">
+<div class="mo-metric"><span class="mo-metric-k">突破</span><span class="mo-metric-v">1 日</span></div>
+<div class="mo-metric"><span class="mo-metric-k">相对量</span><span class="mo-metric-v">2.9x</span></div>
+<div class="mo-metric"><span class="mo-metric-k">乖离</span><span class="mo-metric-v">+14%</span></div>
+<div class="mo-metric"><span class="mo-metric-k">自基底</span><span class="mo-metric-v">+98%</span></div>
+</div>
+<p class="mo-note">单日-3.04%，量比2.89倍，突破第1天，从底部已跑出98.41%——本轮扫描里从底部涨幅最大的标的。</p>
+</div><div class="mo-card s-ignition">
+<div class="mo-head">
+<span class="mo-tk">PS</span>
+<span class="mo-px">49.83</span>
+<span class="mo-chg up"><span class="mo-chg-day">09-18 </span>+13.69%</span>
+</div>
+<div class="mo-metrics">
+<div class="mo-metric"><span class="mo-metric-k">突破</span><span class="mo-metric-v">当天</span></div>
+<div class="mo-metric"><span class="mo-metric-k">相对量</span><span class="mo-metric-v">9.4x</span></div>
+<div class="mo-metric"><span class="mo-metric-k">乖离</span><span class="mo-metric-v">+23%</span></div>
+<div class="mo-metric"><span class="mo-metric-k">自基底</span><span class="mo-metric-v">+70%</span></div>
+</div>
+<p class="mo-note">单日+13.69%，量比9.37倍，是本轮扫描里单日涨幅与量比都最高的标的，突破当天，从底部已跑出69.61%。</p>
+</div><div class="mo-card s-ignition">
+<div class="mo-head">
+<span class="mo-tk">DK</span>
+<span class="mo-px">78.12</span>
+<span class="mo-chg down"><span class="mo-chg-day">09-18 </span>-4.21%</span>
+</div>
+<div class="mo-metrics">
+<div class="mo-metric"><span class="mo-metric-k">突破</span><span class="mo-metric-v">2 日</span></div>
+<div class="mo-metric"><span class="mo-metric-k">相对量</span><span class="mo-metric-v">6.2x</span></div>
+<div class="mo-metric"><span class="mo-metric-k">乖离</span><span class="mo-metric-v">+6%</span></div>
+<div class="mo-metric"><span class="mo-metric-k">自基底</span><span class="mo-metric-v">+91%</span></div>
+</div>
+<p class="mo-note">炼油商，单日-4.21%，量比6.16倍，是今天炼油相关标的里跌幅最大的一只，突破第2天，从底部已跑出91.05%。</p>
+</div><div class="mo-card s-ignition">
+<div class="mo-head">
+<span class="mo-tk">LILAK</span>
+<span class="mo-px">8.40</span>
+<span class="mo-chg down"><span class="mo-chg-day">09-18 </span>-1.98%</span>
+</div>
+<div class="mo-metrics">
+<div class="mo-metric"><span class="mo-metric-k">突破</span><span class="mo-metric-v">3 日</span></div>
+<div class="mo-metric"><span class="mo-metric-k">相对量</span><span class="mo-metric-v">3.9x</span></div>
+<div class="mo-metric"><span class="mo-metric-k">乖离</span><span class="mo-metric-v">-2%</span></div>
+<div class="mo-metric"><span class="mo-metric-k">自基底</span><span class="mo-metric-v">+77%</span></div>
+</div>
+<p class="mo-note">单日-1.98%，量比3.89倍，突破第3天，从底部已跑出76.66%，乖离20日均线转负(-2.01%)——涨势已从高点回落。</p>
+</div><div class="mo-card s-ignition">
+<div class="mo-head">
+<span class="mo-tk">MPC</span>
+<span class="mo-px">424.89</span>
+<span class="mo-chg up"><span class="mo-chg-day">09-18 </span>+0.69%</span>
+</div>
+<div class="mo-metrics">
+<div class="mo-metric"><span class="mo-metric-k">突破</span><span class="mo-metric-v">3 日</span></div>
+<div class="mo-metric"><span class="mo-metric-k">相对量</span><span class="mo-metric-v">4.2x</span></div>
+<div class="mo-metric"><span class="mo-metric-k">乖离</span><span class="mo-metric-v">+10%</span></div>
+<div class="mo-metric"><span class="mo-metric-k">自基底</span><span class="mo-metric-v">+78%</span></div>
+</div>
+<p class="mo-note">炼油商，单日+0.69%，量比4.16倍，突破第3天，从底部已跑出78.32%。</p>
+</div><div class="mo-card s-ignition">
+<div class="mo-head">
+<span class="mo-tk">GEMI</span>
+<span class="mo-px">5.81</span>
+<span class="mo-chg up"><span class="mo-chg-day">09-18 </span>+31.15%</span>
+</div>
+<div class="mo-metrics">
+<div class="mo-metric"><span class="mo-metric-k">突破</span><span class="mo-metric-v">当天</span></div>
+<div class="mo-metric"><span class="mo-metric-k">相对量</span><span class="mo-metric-v">7.3x</span></div>
+<div class="mo-metric"><span class="mo-metric-k">乖离</span><span class="mo-metric-v">+28%</span></div>
+<div class="mo-metric"><span class="mo-metric-k">自基底</span><span class="mo-metric-v">+72%</span></div>
+</div>
+<p class="mo-note">上周五(9/18)因意外宣布的「深空通信平台」暴涨31.15%，量比7.31倍，是本轮扫描里单日涨幅最大的标的；公司主业是加密资产交易所，与公告内容的业务关联度并不直接。</p>
 </div><div class="mo-card s-ignition">
 <div class="mo-head">
 <span class="mo-tk">ACVA</span>
 <span class="mo-px">10.48</span>
-<span class="mo-chg up"><span class="mo-chg-day">09-17 </span>+0.53%</span>
+<span class="mo-chg up"><span class="mo-chg-day">09-18 </span>+0.00%</span>
 </div>
 <div class="mo-metrics">
-<div class="mo-metric"><span class="mo-metric-k">突破</span><span class="mo-metric-v">当天</span></div>
-<div class="mo-metric"><span class="mo-metric-k">相对量</span><span class="mo-metric-v">4.6x</span></div>
-<div class="mo-metric"><span class="mo-metric-k">乖离</span><span class="mo-metric-v">+31%</span></div>
+<div class="mo-metric"><span class="mo-metric-k">突破</span><span class="mo-metric-v">1 日</span></div>
+<div class="mo-metric"><span class="mo-metric-k">相对量</span><span class="mo-metric-v">3.4x</span></div>
+<div class="mo-metric"><span class="mo-metric-k">乖离</span><span class="mo-metric-v">+29%</span></div>
 <div class="mo-metric"><span class="mo-metric-k">自基底</span><span class="mo-metric-v">+65%</span></div>
 </div>
-<p class="mo-note">延续9/11 Copart每股$10.50、约19亿美元现金收购带来的并购套利行情，量比高达4.57倍但涨幅已收窄到0.53%，股价逼近收购价，是消息面早已跑在价格前面的典型例子。</p>
+<p class="mo-note">延续9/11 Copart每股$10.50、约19亿美元现金收购带来的并购套利行情，涨幅已收窄到0%，量比3.44倍，股价逼近收购价——消息面早已跑在价格前面的典型例子。</p>
 </div>
 </div>
 <div class="mo-group g-continuation">
@@ -2028,57 +2331,57 @@ a:focus-visible, summary:focus-visible {
 <div class="mo-card s-continuation">
 <div class="mo-head">
 <span class="mo-tk">ARE</span>
-<span class="mo-px">56.01</span>
-<span class="mo-chg up"><span class="mo-chg-day">09-17 </span>+4.65%</span>
+<span class="mo-px">53.30</span>
+<span class="mo-chg down"><span class="mo-chg-day">09-18 </span>-5.40%</span>
 </div>
 <div class="mo-metrics">
-<div class="mo-metric"><span class="mo-metric-k">突破</span><span class="mo-metric-v">当天</span></div>
-<div class="mo-metric"><span class="mo-metric-k">相对量</span><span class="mo-metric-v">0.6x</span></div>
-<div class="mo-metric"><span class="mo-metric-k">乖离</span><span class="mo-metric-v">+7%</span></div>
-<div class="mo-metric"><span class="mo-metric-k">自基底</span><span class="mo-metric-v">+22%</span></div>
+<div class="mo-metric"><span class="mo-metric-k">突破</span><span class="mo-metric-v">1 日</span></div>
+<div class="mo-metric"><span class="mo-metric-k">相对量</span><span class="mo-metric-v">2.4x</span></div>
+<div class="mo-metric"><span class="mo-metric-k">乖离</span><span class="mo-metric-v">+2%</span></div>
+<div class="mo-metric"><span class="mo-metric-k">自基底</span><span class="mo-metric-v">+16%</span></div>
 </div>
-<p class="mo-note">REIT，昨天曾随大盘因加息下跌0.8%，今天+4.65%更像是10年期收益率回落带动利率敏感型资产反弹的一部分，没有查到公司自身独立的催化剂；季度仍处净亏损，年内涨幅约12.5%。</p>
+<p class="mo-note">REIT，单日-5.4%，量比2.4倍，从9/17曾随收益率回落反弹4.65%的势头回落，突破第1天，从底部涨幅收窄至16.43%。</p>
 </div><div class="mo-card s-continuation">
 <div class="mo-head">
 <span class="mo-tk">BXSL</span>
-<span class="mo-px">25.48</span>
-<span class="mo-chg up"><span class="mo-chg-day">09-17 </span>+2.41%</span>
+<span class="mo-px">24.84</span>
+<span class="mo-chg down"><span class="mo-chg-day">09-18 </span>-1.90%</span>
 </div>
 <div class="mo-metrics">
-<div class="mo-metric"><span class="mo-metric-k">突破</span><span class="mo-metric-v">当天</span></div>
-<div class="mo-metric"><span class="mo-metric-k">相对量</span><span class="mo-metric-v">0.8x</span></div>
-<div class="mo-metric"><span class="mo-metric-k">乖离</span><span class="mo-metric-v">+3%</span></div>
-<div class="mo-metric"><span class="mo-metric-k">自基底</span><span class="mo-metric-v">+12%</span></div>
+<div class="mo-metric"><span class="mo-metric-k">突破</span><span class="mo-metric-v">1 日</span></div>
+<div class="mo-metric"><span class="mo-metric-k">相对量</span><span class="mo-metric-v">1.0x</span></div>
+<div class="mo-metric"><span class="mo-metric-k">乖离</span><span class="mo-metric-v">+0%</span></div>
+<div class="mo-metric"><span class="mo-metric-k">自基底</span><span class="mo-metric-v">+9%</span></div>
 </div>
-<p class="mo-note">私募信贷BDC，除了9/30除息每股0.77美元和8月中旬Keefe Bruyette下调目标价至23美元外没有查到独立催化剂，涨势同样更像是跟随利率回落的板块性反弹。</p>
+<p class="mo-note">私募信贷BDC，单日-1.9%，量比仅1.01倍(接近地量)，是本轮扫描里放量程度最低的标的，突破第1天，从底部涨幅9.38%。</p>
 </div><div class="mo-card s-continuation">
 <div class="mo-head">
-<span class="mo-tk">FFIV</span>
-<span class="mo-px">435.48</span>
-<span class="mo-chg up"><span class="mo-chg-day">09-17 </span>+2.81%</span>
+<span class="mo-tk">GME</span>
+<span class="mo-px">22.64</span>
+<span class="mo-chg down"><span class="mo-chg-day">09-18 </span>-0.57%</span>
 </div>
 <div class="mo-metrics">
-<div class="mo-metric"><span class="mo-metric-k">突破</span><span class="mo-metric-v">当天</span></div>
-<div class="mo-metric"><span class="mo-metric-k">相对量</span><span class="mo-metric-v">0.3x</span></div>
-<div class="mo-metric"><span class="mo-metric-k">乖离</span><span class="mo-metric-v">+9%</span></div>
-<div class="mo-metric"><span class="mo-metric-k">自基底</span><span class="mo-metric-v">+19%</span></div>
+<div class="mo-metric"><span class="mo-metric-k">突破</span><span class="mo-metric-v">1 日</span></div>
+<div class="mo-metric"><span class="mo-metric-k">相对量</span><span class="mo-metric-v">1.3x</span></div>
+<div class="mo-metric"><span class="mo-metric-k">乖离</span><span class="mo-metric-v">+15%</span></div>
+<div class="mo-metric"><span class="mo-metric-k">自基底</span><span class="mo-metric-v">+27%</span></div>
 </div>
-<p class="mo-note">9/15与Omnissa达成安全虚拟桌面合作，叠加Q3 AI安全产品客户数环比翻倍，是能查到的最新催化剂，但今天扫描的十几组通用新闻查询里都没有出现这只票，属于专门去查才找到的情况。</p>
+<p class="mo-note">单日-0.57%，量比1.33倍，突破第1天，从底部已跑出27.26%。</p>
 </div><div class="mo-card s-continuation">
 <div class="mo-head">
-<span class="mo-tk">GNK</span>
-<span class="mo-px">28.23</span>
-<span class="mo-chg up"><span class="mo-chg-day">09-17 </span>+2.95%</span>
+<span class="mo-tk">STNG</span>
+<span class="mo-px">87.16</span>
+<span class="mo-chg down"><span class="mo-chg-day">09-18 </span>-0.79%</span>
 </div>
 <div class="mo-metrics">
-<div class="mo-metric"><span class="mo-metric-k">突破</span><span class="mo-metric-v">当天</span></div>
-<div class="mo-metric"><span class="mo-metric-k">相对量</span><span class="mo-metric-v">0.5x</span></div>
-<div class="mo-metric"><span class="mo-metric-k">乖离</span><span class="mo-metric-v">+5%</span></div>
-<div class="mo-metric"><span class="mo-metric-k">自基底</span><span class="mo-metric-v">+23%</span></div>
+<div class="mo-metric"><span class="mo-metric-k">突破</span><span class="mo-metric-v">1 日</span></div>
+<div class="mo-metric"><span class="mo-metric-k">相对量</span><span class="mo-metric-v">2.0x</span></div>
+<div class="mo-metric"><span class="mo-metric-k">乖离</span><span class="mo-metric-v">+7%</span></div>
+<div class="mo-metric"><span class="mo-metric-k">自基底</span><span class="mo-metric-v">+28%</span></div>
 </div>
-<p class="mo-note">干散货航运股，与今天霍尔木兹条目里的油轮股是不同的子板块(干散货不受海峡油轮禁运直接影响)，9/2曾获Weiss Ratings上调评级，今天创52周新高但没有查到新的独立催化剂。</p>
+<p class="mo-note">油轮运营商，单日-0.79%，量比2.03倍，突破第1天，从底部已跑出28.18%——同属上期简报提到的霍尔木兹危机受益板块(年内航运股组合+68%)，今天涨幅收窄，未查到针对公司自身的独立催化剂。</p>
 </div>
 </div>
 </div></div>
-<footer class="colophon">Taurient Lite · 由 Claude Code 每个交易日早晨自动生成<br>覆盖范围：美股与宏观、科技与 AI 行业、影响能源与通胀的地缘事件<br>涨跌色经过色觉障碍可辨度校验，方向箭头与带符号数值是颜色之外的编码<br>这是新闻摘要，不是投资建议。数字以原始来源为准。</footer>
+<footer class="colophon">Taurient Lite · 非投资建议 数字以原始来源为准。</footer>
 </div>
