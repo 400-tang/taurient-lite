@@ -88,6 +88,27 @@ class TestAssetFiles(unittest.TestCase):
                 text = (assets.ASSETS / name).read_text()
                 self.assertEqual(text.count("{"), text.count("}"))
 
+    def test_chart_height_does_not_depend_on_leftover_space(self):
+        """图表高度必须是显式的，不能靠「吃掉剩余空间」算出来。
+
+        **这条守的是一个已经发生过的静默退化。** ``.chart-wrap`` 原来写的是
+        ``flex: 1 1 auto``——页面上只有图表和几个统计数字时，它确实撑满了
+        一屏。后来加了简介、关键统计、分析师评级、财报、两块新闻，内容一
+        超过一屏，「剩余空间」就变成 0，图表被压回 ``min-height`` 的底线，
+        从 26rem 缩到 16rem。没有任何报错，页面照常渲染，只是越加内容图表
+        越小，而谁都不会想到去怪那行 flex。
+
+        所以判据是：``.chart-wrap`` 里必须出现一个显式的 ``height``。
+        """
+        css = (assets.ASSETS / "stock_page.css").read_text()
+        block = re.search(r"\.chart-wrap\s*\{([^}]*)\}", css)
+        self.assertIsNotNone(block, "找不到 .chart-wrap 规则")
+        body = block.group(1)
+        self.assertRegex(
+            body, r"(?<!min-)(?<!max-)height:\s*\S",
+            ".chart-wrap 没有显式高度，又会被下面的内容挤没",
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -1,12 +1,15 @@
-/* 整页撑满视口：图表是这一页的主体，让它吃掉剩下的全部高度。
-   固定高度（原来是 26rem）在高屏幕上会留出大半屏空白，而 K 线恰恰是
-   越高越好读——纵向空间直接决定价格轴的分辨率。 */
+/* 图表是这一页的主体，高度直接按视口给，不跟下面的内容抢。
+
+   **这里原来写的是「吃掉剩余高度」（flex: 1 1 auto + min-height: 16rem），
+   那是页面上只有图表和几个统计数字时的写法。** 后来加了简介、关键统计、
+   分析师评级、财报、两块新闻——内容一超过一屏，「剩余高度」就变成了 0，
+   图表被悄悄压到 16rem 的底线上。没有报错，只是越加内容图表越小。
+
+   所以改成按视口取固定比例：下面的内容可以往下划，不需要挤在第一屏里。 */
 .stock {
   max-width: 96rem;
   margin: 0 auto;
   padding: 1.4rem var(--gutter) 1.6rem;
-  min-height: 100vh;
-  min-height: 100dvh;   /* 手机上地址栏会伸缩，dvh 才是真正可见的高度 */
   display: flex;
   flex-direction: column;
 }
@@ -75,12 +78,20 @@
   font-weight: 500;
 }
 
-/* 图表吃掉纵向的剩余空间。min-height 是底线：图表库按容器尺寸初始化，
-   高度为 0 时它会画出一张看不见的图，而且不报错。 */
+/* 78vh 是「尽量大，但别满屏」。**留一截给下面的统计数字露头**：
+   整屏的图表会让人以为这一页到此为止，而事实上底下还有五块内容。
+   那一截露出来的边缘就是唯一的下滑提示。
+
+   min/max 两头都要夹：图表库按容器尺寸初始化，高度为 0 时它会画出一张
+   看不见的图而且不报错；另一头，超宽的显示器上纯粹按 vh 取会得到一张
+   又高又扁、价格轴拉得毫无意义的图。 */
 .chart-wrap {
   position: relative;
-  flex: 1 1 auto;
-  min-height: 16rem;
+  flex: none;
+  height: 70vh;
+  height: 70dvh;   /* 手机上地址栏会伸缩，dvh 才是真正可见的高度 */
+  min-height: 22rem;
+  max-height: 54rem;
   display: flex;
 }
 
@@ -401,7 +412,13 @@
 
 @media (max-width: 34rem) {
   .stock { padding: 1rem var(--gutter) 1.2rem; }
-  #chart { min-height: 14rem; }
+  /* 手机上收一点。竖屏里同样的 vh 会得到一张又窄又高的图，K 线挤成
+     一片，反而不如矮一些好读。 */
+  .chart-wrap {
+    height: 62vh;
+    height: 62dvh;
+    min-height: 17rem;
+  }
   .stock-note { font-size: var(--t-xs); }
 }
 
