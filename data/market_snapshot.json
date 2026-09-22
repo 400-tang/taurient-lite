@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-21T18:15:57Z",
+  "fetched_at": "2026-09-22T17:08:17Z",
   "note": "由 GitHub Actions 抓取并提交，供云端定时任务读取——那个沙箱连不了 FINRA。settlement_date 是数据源自己报的时点，不是抓取时刻。",
   "short_interest": [
     {
