@@ -1,14 +1,14 @@
 {
-  "scanned_at": "2026-09-27T14:32:55Z",
-  "asof": "2026-09-25",
+  "scanned_at": "2026-09-29T01:06:41Z",
+  "asof": "2026-09-28",
   "note": "由 GitHub Actions 扫描并提交，供云端定时任务读取。stage 只描述这只票走到这波的第几天，score 衡量的是「有多早」而不是「有多好」——回测显示本模块无法预测后续涨跌，它的用途是把观察窗口前移，不是给出买卖信号。",
-  "universe_size": 2615,
-  "evaluated": 2612,
-  "failed": 3,
+  "universe_size": 2621,
+  "evaluated": 2614,
+  "failed": 7,
   "counts": {
     "continuation": 128,
-    "base": 2197,
-    "extended": 250
+    "base": 2195,
+    "extended": 251
   },
   "candidates": [
     {
@@ -428,22 +428,6 @@
       "score": 56.36
     },
     {
-      "ticker": "SMCIP",
-      "date": "2026-09-25",
-      "close": 72.2,
-      "change_pct": 4.21,
-      "rvol": 2.44,
-      "dollar_volume": 44582988,
-      "ext_ma20": 0.1003,
-      "closing_range": 0.707,
-      "breakout_age": 0,
-      "run_from_base": 0.6822,
-      "base_tightness": 0.6636,
-      "gap_pct": 1.73,
-      "stage": "continuation",
-      "score": 56.18
-    },
-    {
       "ticker": "DT",
       "date": "2026-09-25",
       "close": 57.95,
@@ -554,6 +538,22 @@
       "gap_pct": -0.03,
       "stage": "continuation",
       "score": 55.5
+    },
+    {
+      "ticker": "SMCIP",
+      "date": "2026-09-28",
+      "close": 69.93,
+      "change_pct": -3.14,
+      "rvol": 0.24,
+      "dollar_volume": 45874729,
+      "ext_ma20": 0.0599,
+      "closing_range": 0.286,
+      "breakout_age": 1,
+      "run_from_base": 0.6293,
+      "base_tightness": 0.6636,
+      "gap_pct": -0.73,
+      "stage": "continuation",
+      "score": 55.21
     },
     {
       "ticker": "INTC",
