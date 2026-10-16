@@ -1,0 +1,781 @@
+{
+  "date": "2026-10-16",
+  "weekday": "Friday",
+  "edition": "Daily edition",
+  "generated_at": "2026-10-16 06:22 PT",
+  "scanned": 118,
+  "kept": 15,
+  "thesis": "CoreWeave债务压力测试引爆的信用恐慌本周带崩芯片股，六个交易日蒸发1.64万亿美元，周四黄仁勋喊话护盘后一度反弹，周五又在分析师警告声中重新下跌；与此同时特斯拉携SpaceX发布推进器版Roadster、叠加Q3交付超预期，股价逆势跳涨，三季度银行股财报收官但分化加剧，MSCI对比特币资产负债表公司的指数剔除结果也在今日出炉。",
+  "tape": {
+    "asof": "上一收盘 · 周四10/15",
+    "rows": [
+      {
+        "name": "S&P 500",
+        "value": "7,744.06",
+        "change": "+0.3%",
+        "dir": "up"
+      },
+      {
+        "name": "Nasdaq Composite",
+        "value": "26,713.03",
+        "change": "+0.1%，未能收复周三AI抛售的失地",
+        "dir": "up"
+      },
+      {
+        "name": "Dow Jones Industrial Average",
+        "value": "52,177.69",
+        "change": "+1.1%，银行股财报带动",
+        "dir": "up"
+      },
+      {
+        "name": "US 10Y yield",
+        "value": "5.05%~5.10%",
+        "change": "较周三CPI后高点回落，不同信源读数不完全一致；分析认为是避险情绪而非通胀乐观驱动",
+        "dir": "down"
+      },
+      {
+        "name": "Brent crude",
+        "value": "约$104",
+        "change": "较周三$106.06回落；另有信源称油价当日上涨，说法不一致",
+        "dir": "down"
+      }
+    ]
+  },
+  "items": [
+    {
+      "rank": 1,
+      "tier": "must-read",
+      "published": "2026-10-16",
+      "headline": "CoreWeave债务压力测试拖累芯片股六日蒸发1.64万亿美元，黄仁勋喊话护盘后今日再度下跌",
+      "sectors": [
+        "科技",
+        "半导体",
+        "AI基建",
+        "信用市场"
+      ],
+      "tickers": [
+        "NVDA",
+        "AMD"
+      ],
+      "body": "半导体板块本周连续承压，费城半导体指数周四(10/15)单日再跌3.3%，六个交易日累计蒸发约1.64万亿美元市值，起点是周三意外走热的9月CPI数据引发的利率维持更久担忧，但市场焦点很快从\"AI支出会不会放缓\"转向\"谁来为这轮基建扩张的融资买单\"。CoreWeave是这场压力测试的焦点：公司背负约500亿美元债务，2031年到期债券收益率逼近16%，五年期信用违约互换(CDS)利差一度突破1,140个基点；周四英伟达CEO黄仁勋公开表态英伟达不需要为CoreWeave兜底，称\"他们的融资成本实际在下降\"，带动相关\"新云\"股当日反弹约6%；但周五(10/16)盘前CoreWeave又因D.A. Davidson警告\"若AI周期放缓其股权价值可能归零\"、Bernstein维持\"跑输大盘\"评级而再跌约4%-5%，本月累计跌幅已达21.5%。",
+      "why": "这已经不是单纯的AI需求放缓担忧，而是转向了融资端的信用压力——债券收益率与CDS利差的恶化，往往比股价更早反映风险，值得和今天银行股财报里净利息收入指引的分化对照着看。",
+      "impact": "半导体与AI基建全链条 · 信用市场同步承压",
+      "sources": [
+        {
+          "name": "KuCoin新闻",
+          "url": "https://www.kucoin.com/news/flash/semiconductor-stocks-lose-1-64-trillion-in-six-sessions-amid-ai-spending-concerns",
+          "angle": "聚焦六个交易日累计跌幅的总量数字"
+        },
+        {
+          "name": "CNBC",
+          "url": "https://www.cnbc.com/2026/10/15/sk-hynix-samsung-softbank-stocks-asia-tech-rout-ai-funding-worries.html",
+          "angle": "把视角扩展到亚太——SK海力士、三星、软银同步下跌"
+        },
+        {
+          "name": "TipRanks",
+          "url": "https://www.tipranks.com/news/why-is-coreweave-stock-falling-today-cantor-says-the-market-is-getting-it-wrong",
+          "angle": "引入做多方声音，Cantor认为市场定价过度悲观"
+        },
+        {
+          "name": "Yahoo Finance",
+          "url": "https://finance.yahoo.com/markets/stocks/article/why-coreweave-stock-panic-matters-to-nvidia-explained-in-under-30-seconds-095931846.html",
+          "angle": "聚焦黄仁勋的护盘喊话及其对英伟达自身的意义"
+        }
+      ],
+      "assets": [
+        {
+          "asset_class": "美股",
+          "direction": "mixed",
+          "conviction": "high",
+          "note": "半导体与AI基建股本周连续重挫，周四黄仁勋喊话后反弹，周五又因分析师警告再度下跌，板块内部方向不统一。"
+        },
+        {
+          "asset_class": "美债",
+          "direction": "mixed",
+          "conviction": "medium",
+          "note": "10年期国债收益率本周从CPI后高点回落，被解读为避险买盘而非通胀乐观；但CoreWeave自身的企业债收益率与CDS利差逆势走阔，企业信用与主权债走势背道而驰。"
+        },
+        {
+          "asset_class": "加密资产",
+          "direction": "none",
+          "conviction": "low",
+          "note": "目前未观察到AI基建信用压力明显传导至加密资产价格本身。"
+        }
+      ],
+      "cross_source": {
+        "agreement": "split",
+        "summary": "对本周芯片股具体跌幅，各家统计口径不一致：英伟达盘前跌幅有报道给1.8%，AMD的跌幅在1.5%到3.5%之间不等，美光更是有的说跌4%、有的说涨1.87%；对后续走势的判断也分歧明显，Cantor认为市场定价过度悲观，D.A. Davidson与Bernstein则持续警告下行风险。"
+      },
+      "history": {
+        "summary": "这场抛售由周三意外走热的CPI引发，随后从通胀担忧转向了对AI基建融资能力的质疑，CoreWeave的债务压力成为这场压力测试的焦点，中间还经历了一次黄仁勋喊话带来的短暂反弹。",
+        "timeline": [
+          {
+            "when": "10/14",
+            "event": "9月CPI意外走热，核心同比2.6%超预期，引发利率维持更久的担忧"
+          },
+          {
+            "when": "10/15",
+            "event": "半导体指数单日再跌3.3%，六日累计蒸发1.64万亿美元，CoreWeave盘中跌15%"
+          },
+          {
+            "when": "10/15傍晚",
+            "event": "黄仁勋公开表态英伟达不需要为CoreWeave兜底，相关个股当日反弹约6%"
+          },
+          {
+            "when": "10/16",
+            "event": "D.A. Davidson与Bernstein接连警告，CoreWeave盘前再跌4%-5%，本月累计跌21.5%"
+          }
+        ]
+      }
+    },
+    {
+      "rank": 2,
+      "tier": "must-read",
+      "published": "2026-10-16",
+      "headline": "MSCI拟将Strategy、Metaplanet等比特币资产负债表公司剔出全球指数，最终名单11/11出炉",
+      "sectors": [
+        "加密资产",
+        "指数基金",
+        "金融监管"
+      ],
+      "tickers": [
+        "MSTR"
+      ],
+      "body": "MSCI今年8月启动的\"非运营公司\"认定咨询，结果于今日(10/16)公布。新规以经营性资产占总资产比例、叠加五项财务指标为门槛，持有加密资产等非运营性资产过高的公司将被排除出MSCI全球可投资市场指数系列；据多家加密媒体报道，新规已基本敲定，受影响公司包括比特币资产负债表公司Strategy(MSTR)、日本的Metaplanet，以及以太坊资产负债表公司SharpLink，铀投资公司Yellow Cake同样在咨询名单内。最终剔除名单将于11月11日公布，若无变化将于11月30日生效。消息公布当日，Strategy股价下跌约3.5%，同期还有报道称公司在监管文件中披露了一笔比特币出售。摩根大通此前估算，若Strategy被剔出指数，被动资金流出规模最高可达28亿美元，若其他指数跟进剔除则可能达116亿美元，但该估算基于今年早些时候的咨询阶段，具体数字可能已经过时。",
+      "why": "这不是比特币价格本身的风险，而是\"持币上市公司\"这个商业模式的结构性风险——指数基金的被动资金本质上不该为一家公司的资产负债表杠杆买单，规则一旦落地会倒逼整个比特币国库股赛道重新定价。",
+      "impact": "加密资产关联股 · 被动指数基金资金流",
+      "sources": [
+        {
+          "name": "Coin Academy",
+          "url": "https://coinacademy.fr/actu/strategy-exclusion-indices-msci-novembre",
+          "angle": "法语加密媒体，称新规已基本敲定，给出最终名单与生效日期"
+        },
+        {
+          "name": "CryptoTicker",
+          "url": "https://cryptoticker.io/en/msci-strategy-exclusion-check-etf/",
+          "angle": "给出11月30日生效日期，提醒投资者自查ETF持仓"
+        },
+        {
+          "name": "Decrypt",
+          "url": "https://decrypt.co/349464/bitcoin-giant-strategy-shed-billions-removed-stock-indices-jpmorgan",
+          "angle": "引用摩根大通对被动资金流出规模的估算"
+        },
+        {
+          "name": "Webull",
+          "url": "https://www.webull.com/news/15402210656019456",
+          "angle": "聚焦当日股价下跌幅度与同期比特币出售披露"
+        }
+      ],
+      "assets": [
+        {
+          "asset_class": "加密资产",
+          "direction": "down",
+          "conviction": "medium",
+          "note": "若按11月30日生效的新规调仓，被动指数基金将面临强制卖出Strategy等比特币国库股的压力，摩根大通早前估算最高可达116亿美元(估算时点较早，数字可能已过时)。"
+        },
+        {
+          "asset_class": "美股",
+          "direction": "down",
+          "conviction": "medium",
+          "note": "Strategy股价当日下跌约3.5%，Metaplanet、SharpLink等同类资产负债表驱动型公司面临同样的指数剔除风险。"
+        }
+      ],
+      "cross_source": {
+        "agreement": "split",
+        "summary": "不同信源对这件事\"有多确定\"的描述并不一致：法语与加密垂直媒体的标题用\"已敲定\"的措辞，但MSCI自身今年1月曾一次性搁置过类似的排除计划并承诺\"更广泛的咨询\"，这次10月的结果是否等同于最终决定，仍待MSCI官方文件确认。"
+      },
+      "history": {
+        "summary": "MSCI对\"持币上市公司\"的指数资格认定，今年内已经反转过一次方向。",
+        "timeline": [
+          {
+            "when": "2026年1月",
+            "event": "MSCI搁置早前的排除计划，承诺就非运营公司认定标准展开更广泛咨询"
+          },
+          {
+            "when": "8月",
+            "event": "MSCI启动咨询，提出以经营性资产占比与五项财务指标判定非运营公司"
+          },
+          {
+            "when": "9/30",
+            "event": "咨询意见征集截止"
+          },
+          {
+            "when": "10/16",
+            "event": "咨询结果公布，多方报道称新规将排除Strategy、Metaplanet、SharpLink"
+          }
+        ]
+      }
+    },
+    {
+      "rank": 3,
+      "tier": "must-read",
+      "published": "2026-10-16",
+      "headline": "特斯拉携手SpaceX发布推进器版Roadster，叠加Q3交付超预期，股价盘前跳涨近5%",
+      "sectors": [
+        "汽车",
+        "电动车",
+        "航天"
+      ],
+      "tickers": [
+        "TSLA"
+      ],
+      "body": "特斯拉周五的发布会上展示了与SpaceX联合研发的新一代Roadster原型车，搭载类似猎鹰9号助推器姿态控制所用的冷气推进器组件，可实现短时离地\"飞跃\"，量产计划定在2028年。受消息带动，特斯拉股价盘前上涨约4%到5%，终结此前连续四个交易日的下跌。叠加此前公布的Q3交付量486,532辆，超市场预期约24,558辆(环比增1.3%，但同比仍降2.1%，储能业务13.7GWh不及预期)；巴克莱分析师本周早些时候的研报认为，特斯拉与SpaceX的合并有望在12月6日年度股东大会前正式宣布，SpaceX本身也获得Evercore ISI上调估值目标。特斯拉Q3财报定于10月21日美股收盘后公布。",
+      "why": "市场把这场发布会解读为\"马斯克系资产整合\"叙事的延续，而不只是一款超跑的营销噱头——如果合并猜测兑现，特斯拉的估值锚点会从单纯的汽车/能源公司进一步向太空资产倾斜。",
+      "impact": "美股电动车与航天概念股联动",
+      "sources": [
+        {
+          "name": "TipRanks",
+          "url": "https://www.tipranks.com/news/why-is-tesla-stock-rising-over-4-in-premarket-today-october-16",
+          "angle": "给出盘前涨幅与发布会细节"
+        },
+        {
+          "name": "24/7 Wall St.",
+          "url": "https://247wallst.com/investing/2026/10/16/tesla-rises-4-on-thruster-powered-roadster-reveal-rivian-edges-higher-lucid-holds-steady/",
+          "angle": "把视角扩展到Rivian、Lucid等同业的联动反应"
+        },
+        {
+          "name": "GuruFocus",
+          "url": "https://www.gurufocus.com/news/9127316/tesla-tsla-shares-rise-premarket-on-roadster-revamp-with-spacex-thrusters",
+          "angle": "聚焦SpaceX联合研发的推进器技术细节"
+        },
+        {
+          "name": "TradingKey",
+          "url": "https://www.tradingkey.com/analysis/stocks/us-stocks/262220413-stock-tesla-tsla-price-prediction-roadster-spacex-model-tradingkey",
+          "angle": "讨论马斯克-SpaceX合并猜测与技术位"
+        }
+      ],
+      "assets": [
+        {
+          "asset_class": "美股",
+          "direction": "up",
+          "conviction": "medium",
+          "note": "特斯拉领涨拉动电动车与航天概念股联动上涨，终结此前连续四个交易日的下跌。"
+        }
+      ],
+      "cross_source": {
+        "agreement": "split",
+        "summary": "各家对盘前涨幅的具体数字不一致，从3%到接近5%不等，可能是不同时间点快照所致；主流媒体聚焦发布会本身，个别财经站则更强调Q3交付超预期与合并猜测的叠加效应。"
+      },
+      "history": {
+        "summary": "这款Roadster原计划10月1日发布，因推进器测试等原因推迟，直到今天才实际亮相。"
+      }
+    },
+    {
+      "rank": 4,
+      "tier": "must-read",
+      "published": "2026-10-16",
+      "headline": "三季度银行股财报收官：Truist周五跌2.5%，紧接周二高盛涨、摩根大通持平、富国因交易收入疲软跌超3%的分化表现",
+      "sectors": [
+        "金融",
+        "银行"
+      ],
+      "tickers": [
+        "GS",
+        "JPM",
+        "WFC",
+        "TFC"
+      ],
+      "body": "三季度大行财报季本周基本收官。周二(10/13)，高盛每股收益17.01美元大幅超市场预期的13.09美元，主要受股票业务拉动，股价当日上涨约1%；摩根大通净利润153.1亿美元，不同信源对\"超预期\"还是\"不及预期\"的解读相互矛盾，但公司上调了2026年全年净利息收入指引至1062亿美元(对2027年的展望约1070亿美元)，股价基本持平；富国银行净利润60亿美元、每股收益1.87美元超预期的1.84美元，但营收218.7亿美元不及预期的223.1亿美元(主因交易业务收入环比下滑约17%)，叠加1.7亿美元一次性税收优惠拉高了每股收益的\"含金量\"疑虑，股价当日跌约3%。周五(10/16)跟进公布的Truist Financial三季报后，股价跌约2.5%。",
+      "why": "大行财报本身没有爆出系统性风险，但富国\"核心盈利质量不如headline数字\"的疑虑，加上净利息收入指引的分化，说明银行股对利率维持更久这件事的敏感度正在上升，与AI基建信用压力的叙事形成呼应。",
+      "impact": "金融板块 · 净利息收入与交易业务收入前景",
+      "sources": [
+        {
+          "name": "24/7 Wall St.",
+          "url": "https://247wallst.com/investing/2026/10/13/goldman-sachs-rises-on-equities-led-earnings-beat-jpmorgan-chase-treads-water-wells-fargo-declines-3/",
+          "angle": "三家横向对比，给出具体每股收益数字"
+        },
+        {
+          "name": "富国银行官方三季报",
+          "url": "https://www.wellsfargo.com/assets/pdf/about/investor-relations/earnings/third-quarter-2026-earnings.pdf",
+          "angle": "公司官方数据，确认净利润与营收分项、交易收入降幅"
+        },
+        {
+          "name": "CNBC",
+          "url": "https://www.cnbc.com/2026/10/16/stocks-making-the-biggest-moves-premarket-tsla-spcx-aa-crwv.html",
+          "angle": "把Truist周五的下跌纳入同一条财报季叙事"
+        }
+      ],
+      "assets": [
+        {
+          "asset_class": "美股",
+          "direction": "mixed",
+          "conviction": "medium",
+          "note": "大行财报喜忧不一，高盛涨、富国与Truist跌，板块内部分化而非系统性利好或利空。"
+        }
+      ],
+      "cross_source": {
+        "agreement": "split",
+        "summary": "对摩根大通三季报是\"超预期\"还是\"不及预期\"，不同信源结论相反——有报道强调净利息收入超预期带动EPS和营收双超，另一篇报道则说净利润低于市场估算、盘前股价跌2.8%；两种说法指向同一份财报但强调的分项不同。"
+      }
+    },
+    {
+      "rank": 5,
+      "tier": "worth-knowing",
+      "published": "2026-10-15",
+      "headline": "Netflix内容负责人Bela Bajaria离任，彼得·赖斯接棒，叠加约1000人裁员，临近10/20财报",
+      "sectors": [
+        "媒体",
+        "流媒体"
+      ],
+      "tickers": [
+        "NFLX"
+      ],
+      "body": "据Puck等媒体率先报道，Netflix首席内容官Bela Bajaria将在任职约10年后离开公司，由来自迪士尼与福克斯的高管彼得·赖斯(Peter Rice)接任，10月26日到任后将统管公司全球内容组织，涵盖剧集、电影、直播等全地区业务。这一人事变动紧随公司宣布的约1000人(约占员工总数6%)裁员——这是Netflix四年来首次大规模裁员。消息公布后，股价周五盘前下跌约1.5%，临近10月20日的三季报发布。",
+      "why": "内容负责人换帅叠加裁员，发生在财报发布前5天这个敏感窗口，市场容易把这当作管理层对内容储备或增长放缓的某种预警信号来解读。",
+      "impact": "流媒体内容策略 · 临近财报的信号意义",
+      "sources": [
+        {
+          "name": "Variety",
+          "url": "https://variety.com/2026/film/news/netflix-bela-bajaria-leaving-layoffs-1236913504/",
+          "angle": "行业媒体视角，强调人事震动的突然性"
+        },
+        {
+          "name": "TipRanks",
+          "url": "https://www.tipranks.com/news/netflix-replaces-content-chief-ahead-of-earnings-as-it-seeks-new-hits",
+          "angle": "聚焦财报前换帅的时点与寻找爆款内容的业务动机"
+        },
+        {
+          "name": "CNBC",
+          "url": "https://www.cnbc.com/2026/10/16/stocks-making-the-biggest-moves-premarket-tsla-spcx-aa-crwv.html",
+          "angle": "给出盘前股价跌幅"
+        }
+      ]
+    },
+    {
+      "rank": 6,
+      "tier": "worth-knowing",
+      "published": "2026-10-14",
+      "headline": "ASML三季报营收117亿欧元超自身指引上限，上调全年展望",
+      "sectors": [
+        "半导体",
+        "芯片设备"
+      ],
+      "tickers": [],
+      "body": "荷兰光刻机巨头ASML于10月14日公布三季报，总净销售额117亿欧元、毛利率57.5%，均高于公司此前给出的110亿至120亿欧元指引区间上限；公司将四季度销售额展望上调至142亿至152亿欧元，全年展望上调至440亿至450亿欧元，毛利率指引约56%；安装基础管理(服务)收入33亿欧元同样超出公司自身指引，主要受益于客户升级产能需求持续强劲。不过市场反应口径不一——有报道称股价盘前因\"营收不及预期\"下跌2.9%，但另一份数据对比显示实际营收117亿欧元其实超过了市场一致预期的115.8亿欧元。",
+      "why": "在本周芯片股因AI基建融资担忧普跌的背景下，设备端龙头给出的强劲指引是少数没有被信用叙事波及的正面信号，值得和CoreWeave的负面叙事对照着看。",
+      "impact": "半导体设备与存储链条",
+      "sources": [
+        {
+          "name": "ASML官方新闻稿(SEC 6-K)",
+          "url": "https://www.sec.gov/Archives/edgar/data/0000937966/000162828026065813/pressreleasefinancialresul.htm",
+          "angle": "公司官方财报数据，权威但不含市场反应"
+        },
+        {
+          "name": "Newsquawk",
+          "url": "https://www.newsquawk.com/headlines/asml-asml-na-q3-2026-eur-eps-1295-exp-1068-revenue-117bln-exp-1158bln",
+          "angle": "给出与市场一致预期的具体数字对比"
+        },
+        {
+          "name": "Yahoo Finance",
+          "url": "https://finance.yahoo.com/markets/stocks/articles/asml-just-delivered-massive-news-165000848.html",
+          "angle": "聚焦对美光等存储厂商的外溢影响"
+        }
+      ],
+      "cross_source": {
+        "agreement": "split",
+        "summary": "对ASML三季报是\"超预期\"还是\"不及预期\"，信源说法相反——一份数据对比显示营收117亿欧元超市场一致预期115.8亿欧元，但另一篇报道却说盘前股价因\"营收不及预期\"下跌2.9%，两者所指的\"预期\"基准可能不是同一个数字。"
+      }
+    },
+    {
+      "rank": 7,
+      "tier": "worth-knowing",
+      "published": "2026-10-16",
+      "headline": "美国铝业三季度每股收益1.82美元超预期1.54美元，股价涨逾2%",
+      "sectors": [
+        "材料",
+        "工业原材料"
+      ],
+      "tickers": [
+        "AA"
+      ],
+      "body": "美国铝业(Alcoa)周五公布三季报，调整后每股收益1.82美元，超市场预期的约1.54美元，股价盘前涨超2%；不过营收略低于市场预期。",
+      "why": "工业原材料公司的超预期，侧面反映制造业与建筑业需求并未像芯片股叙事那样全面转弱。",
+      "impact": "材料板块",
+      "sources": [
+        {
+          "name": "CNBC",
+          "url": "https://www.cnbc.com/2026/10/16/stocks-making-the-biggest-moves-premarket-tsla-spcx-aa-crwv.html",
+          "angle": "给出每股收益与盘前涨幅具体数字"
+        }
+      ],
+      "cross_source": {
+        "agreement": "single",
+        "summary": "目前只看到一家来源给出具体数字。"
+      }
+    },
+    {
+      "rank": 8,
+      "tier": "worth-knowing",
+      "published": "2026-10-16",
+      "headline": "旅行者集团三季度核心每股收益9.18美元大幅超预期7.42美元，股价却跌4%",
+      "sectors": [
+        "保险",
+        "金融"
+      ],
+      "tickers": [
+        "TRV"
+      ],
+      "body": "财产险公司旅行者集团(Travelers)三季度核心每股收益9.18美元，远超市场预期的7.42美元，营收124.8亿美元；但股价盘前反而下跌约4%，媒体暂未给出明确的下跌原因解释。",
+      "why": "大幅超预期却股价下跌，这种背离本身就是信息——可能指向市场对保险定价周期见顶或巨灾准备金的担忧，值得留意后续财报电话会的说法。",
+      "impact": "财产险板块",
+      "sources": [
+        {
+          "name": "CNBC",
+          "url": "https://www.cnbc.com/2026/10/16/stocks-making-the-biggest-moves-premarket-tsla-spcx-aa-crwv.html",
+          "angle": "给出核心每股收益数字与股价反应"
+        },
+        {
+          "name": "Digrin财报日历",
+          "url": "https://www.digrin.com/stocks/earnings_calendar/2026-10-16",
+          "angle": "给出营收预期对照"
+        }
+      ],
+      "cross_source": {
+        "agreement": "single",
+        "summary": "目前只看到一家来源报道具体数字，且未解释股价下跌的直接原因。"
+      }
+    },
+    {
+      "rank": 9,
+      "tier": "worth-knowing",
+      "published": "2026-10-16",
+      "headline": "Guardant Health盘前走势分化：Shield检测数据积极，但专利诉讼败诉",
+      "sectors": [
+        "医疗",
+        "生物科技"
+      ],
+      "tickers": [],
+      "body": "液体活检公司Guardant Health周五盘前消息面喜忧并存——公司披露的Shield检测新数据表现积极，但同时在一项专利诉讼中败诉，两则消息相互抵消，盘前股价反应偏向中性偏弱。",
+      "why": "单一利好利空对冲，不构成明确的方向性判断，更多是一条值得跟踪专利诉讼后续影响的信号。",
+      "impact": "个股层面 · 液体活检赛道",
+      "sources": [
+        {
+          "name": "CNBC",
+          "url": "https://www.cnbc.com/2026/10/16/stocks-making-the-biggest-moves-premarket-tsla-spcx-aa-crwv.html",
+          "angle": "目前唯一报道这条消息的来源"
+        }
+      ],
+      "cross_source": {
+        "agreement": "single",
+        "summary": "目前只有一家媒体提及，尚未看到其他信源交叉确认细节。"
+      }
+    },
+    {
+      "rank": 10,
+      "tier": "worth-knowing",
+      "published": "2026-10-14",
+      "headline": "中国9月出口同比飙升36.3%，贸易顺差逼近万亿美元年化规模",
+      "sectors": [
+        "宏观",
+        "全球贸易"
+      ],
+      "tickers": [],
+      "body": "中国海关总署10月14日公布数据，9月以美元计价出口同比增长36.3%，远超路透调查预期的约25.5%，创2026年2月以来最快增速；进口同比增长31%，亦超24.5%的预期；当月贸易顺差约1,335.3亿美元，1至9月累计顺差约9,380亿美元，全年有望超过去年纪录。对美出口同比增长39.6%，对东盟出口增长52.3%。分析认为半导体与AI相关产品需求、以及\"十一\"长假前的抢出口效应是主要驱动。",
+      "why": "对美出口增速加快，说明中美贸易休战期的需求回补效应仍在继续，这与国内对AI硬件需求的解读形成呼应，但持续扩大的顺差也可能在未来给贸易摩擦带来新的口实。",
+      "impact": "全球贸易与半导体需求链条",
+      "sources": [
+        {
+          "name": "South China Morning Post",
+          "url": "https://www.scmp.com/economy/china-economy/article/3370799/chinas-trade-momentum-quickens-september-amid-tech-demand-holiday-rush",
+          "angle": "聚焦科技需求与假期抢运的驱动因素"
+        },
+        {
+          "name": "CGTN",
+          "url": "https://news.cgtn.com/news/2026-10-14/China-s-foreign-trade-tops-5-trillion-yuan-in-September-up-27-5--1Rej2mT0sRa/p.html",
+          "angle": "官方媒体口径，强调5万亿元人民币关口"
+        },
+        {
+          "name": "FXStreet",
+          "url": "https://www.fxstreet.com/analysis/chinas-export-engine-continued-to-hum-in-september-202610140756",
+          "angle": "给出与路透调查预期的对比数字"
+        }
+      ]
+    },
+    {
+      "rank": 11,
+      "tier": "noise",
+      "published": "2026-10-15",
+      "headline": "Coinbase股价反弹6.3%至183.83美元，收复前一日跌幅",
+      "sectors": [
+        "加密资产",
+        "金融科技"
+      ],
+      "tickers": [
+        "COIN"
+      ],
+      "body": "Coinbase股价周四反弹约6.3%至183.83美元，收复了前一交易日下跌4.9%的失地，媒体未给出明确催化因素；三季报定于10月29日公布。",
+      "sources": [
+        {
+          "name": "AskTraders",
+          "url": "https://asktraders.com/analysis/coinbase-global-shares-jump-more-than-6-after-yesterdays-fall"
+        }
+      ]
+    },
+    {
+      "rank": 12,
+      "tier": "noise",
+      "published": "2026-10-15",
+      "headline": "10年期美债收益率从CPI后高点回落至5.05%~5.10%区间",
+      "sectors": [
+        "宏观",
+        "利率"
+      ],
+      "tickers": [],
+      "body": "10年期美债收益率周四从周三CPI公布后触及的高点回落，收于5.05%~5.10%区间(不同信源给出的具体数字略有差异)，分析认为这更多反映避险情绪而非通胀预期改善。",
+      "sources": [
+        {
+          "name": "Babypips",
+          "url": "https://www.babypips.com/news/financial-forex-market-recap-2026-10-15"
+        }
+      ]
+    },
+    {
+      "rank": 13,
+      "tier": "noise",
+      "published": "2026-10-15",
+      "headline": "黄金大涨1.5%至每盎司4170.10美元",
+      "sectors": [
+        "大宗商品",
+        "避险资产"
+      ],
+      "tickers": [],
+      "body": "现货黄金周四上涨约1.5%，收于每盎司4170.10美元，避险买盘受益于本周美股与信用市场的波动。",
+      "sources": [
+        {
+          "name": "Babypips",
+          "url": "https://www.babypips.com/news/financial-forex-market-recap-2026-10-15"
+        }
+      ]
+    },
+    {
+      "rank": 14,
+      "tier": "noise",
+      "published": "2026-10-16",
+      "headline": "Rivian、Lucid随特斯拉发布会情绪走高",
+      "sectors": [
+        "汽车",
+        "电动车"
+      ],
+      "tickers": [],
+      "body": "特斯拉Roadster发布会带动电动车板块情绪，Rivian(RIVN)盘前小幅走高，Lucid(LCID)基本持平，均未见独立催化因素。",
+      "sources": [
+        {
+          "name": "24/7 Wall St.",
+          "url": "https://247wallst.com/investing/2026/10/16/tesla-rises-4-on-thruster-powered-roadster-reveal-rivian-edges-higher-lucid-holds-steady/"
+        }
+      ]
+    },
+    {
+      "rank": 15,
+      "tier": "noise",
+      "published": "2026-10-16",
+      "headline": "Evercore ISI上调SpaceX估值目标",
+      "sectors": [
+        "航天",
+        "私募股权"
+      ],
+      "tickers": [],
+      "body": "分析机构Evercore ISI周五上调了对SpaceX的估值目标，为特斯拉Roadster发布会带来的乐观情绪再添一把火；SpaceX尚未上市，这一估值无法通过公开市场价格验证。",
+      "sources": [
+        {
+          "name": "CNBC",
+          "url": "https://www.cnbc.com/2026/10/16/stocks-making-the-biggest-moves-premarket-tsla-spcx-aa-crwv.html"
+        }
+      ]
+    }
+  ],
+  "calendar": [
+    {
+      "when": "Tue 10/20",
+      "time": "美股收盘后",
+      "event": "Netflix三季报，市场预期营收约128.79亿美元(+11.9%同比)、每股收益0.82美元",
+      "weight": "high",
+      "date": "2026-10-20",
+      "sources": [
+        {
+          "name": "InsiderFinance",
+          "url": "https://www.insiderfinance.io/news/netflix-q3-2026-earnings-oct-20"
+        }
+      ]
+    },
+    {
+      "when": "Wed 10/21",
+      "time": "17:30 ET电话会",
+      "event": "特斯拉三季报",
+      "weight": "high",
+      "date": "2026-10-21",
+      "sources": [
+        {
+          "name": "Basenor",
+          "url": "https://basenor.com/blogs/news/tesla-q3-2026-earnings-call-5-details-that-matter"
+        }
+      ]
+    },
+    {
+      "when": "Thu 10/22",
+      "time": "08:30 ET",
+      "event": "美国运通三季报",
+      "weight": "mid",
+      "date": "2026-10-23",
+      "sources": [
+        {
+          "name": "The Right Trader",
+          "url": "https://therighttrader.com/earnings-calendar/axp"
+        }
+      ]
+    },
+    {
+      "when": "Wed 10/28",
+      "time": "14:00 ET",
+      "event": "FOMC利率决议(10/27-28两日会议，本次无经济预测摘要)",
+      "weight": "high",
+      "date": "2026-10-28",
+      "sources": [
+        {
+          "name": "Century.ae",
+          "url": "https://www.century.ae/en/blog/fomc-meeting-schedule-2026/"
+        },
+        {
+          "name": "FedRateCalc",
+          "url": "https://fedratecalc.com/fomc-meeting-schedule/october-2026/"
+        }
+      ]
+    },
+    {
+      "when": "Thu 10/29",
+      "time": "08:30 ET",
+      "event": "PCE物价指数(9月)与三季度GDP初值",
+      "weight": "mid",
+      "date": "2026-10-29",
+      "sources": [
+        {
+          "name": "FedRateCalc",
+          "url": "https://fedratecalc.com/pce-inflation-release-date/"
+        }
+      ]
+    },
+    {
+      "when": "Fri 10/30",
+      "time": "",
+      "event": "日本央行(BOJ)利率决议",
+      "weight": "mid",
+      "date": "2026-10-30",
+      "sources": [
+        {
+          "name": "Days.to",
+          "url": "https://days.to/when-is/bank-of-japan-interest-rate-decision"
+        }
+      ]
+    },
+    {
+      "when": "11月中",
+      "time": "",
+      "event": "MSCI公布比特币资产负债表公司剔除最终名单(11/11)，若无变化11/30生效",
+      "weight": "mid",
+      "date": "2026-11-11",
+      "sources": [
+        {
+          "name": "CryptoTicker",
+          "url": "https://cryptoticker.io/en/msci-strategy-exclusion-check-etf/"
+        }
+      ]
+    },
+    {
+      "when": "Fri 11/6",
+      "time": "08:30 ET",
+      "event": "10月非农就业报告",
+      "weight": "high",
+      "date": "2026-11-06",
+      "sources": [
+        {
+          "name": "FinanceCalendar",
+          "url": "https://www.financecalendar.com/?p=1293"
+        }
+      ]
+    }
+  ],
+  "momentum": {
+    "asof": "2026-10-15",
+    "scanned": 2642,
+    "note": "由GitHub Actions在开盘前扫描全市场写入，note为人工判断，仅陈述价量事实，不构成买卖建议。",
+    "candidates": [
+      {
+        "ticker": "ERIC",
+        "stage": "ignition",
+        "close": 10.71,
+        "change_pct": 11.8,
+        "rvol": 5.3,
+        "breakout_age": 0,
+        "ext_ma20": 0.1159,
+        "run_from_base": 0.1847,
+        "note": "初动阶段，当天刚突破，收盘10.71美元(+11.8%)，相对量5.3倍，较基底已涨18.5%，20日均线乖离11.6%。"
+      },
+      {
+        "ticker": "VSTM",
+        "stage": "ignition",
+        "close": 9.23,
+        "change_pct": 19.71,
+        "rvol": 6.18,
+        "breakout_age": 0,
+        "ext_ma20": 0.1537,
+        "run_from_base": 0.6661,
+        "note": "初动阶段，当天刚突破，收盘9.23美元(+19.71%)，相对量6.18倍，较基底已大涨66.6%，20日均线乖离15.4%。"
+      },
+      {
+        "ticker": "CCC",
+        "stage": "ignition",
+        "close": 7.63,
+        "change_pct": -0.13,
+        "rvol": 28.83,
+        "breakout_age": 2,
+        "ext_ma20": 0.1127,
+        "run_from_base": 0.4119,
+        "note": "初动阶段，突破后第2日，收盘7.63美元(-0.13%，价格几乎不变但成交量异常放大至28.83倍)，较基底已涨41.2%，20日均线乖离11.3%。"
+      },
+      {
+        "ticker": "BDX",
+        "stage": "continuation",
+        "close": 193.76,
+        "change_pct": 2.58,
+        "rvol": 1.25,
+        "breakout_age": 0,
+        "ext_ma20": 0.0598,
+        "run_from_base": 0.2736,
+        "note": "延续阶段，当天刚突破，收盘193.76美元(+2.58%)，相对量1.25倍，较基底已涨27.4%，20日均线乖离6.0%。"
+      },
+      {
+        "ticker": "CI",
+        "stage": "continuation",
+        "close": 298.81,
+        "change_pct": 3.19,
+        "rvol": 1.31,
+        "breakout_age": 0,
+        "ext_ma20": 0.081,
+        "run_from_base": 0.1368,
+        "note": "延续阶段，当天刚突破，收盘298.81美元(+3.19%)，相对量1.31倍，较基底已涨13.7%，20日均线乖离8.1%。"
+      },
+      {
+        "ticker": "COKE",
+        "stage": "continuation",
+        "close": 204.55,
+        "change_pct": 2.28,
+        "rvol": 1.46,
+        "breakout_age": 0,
+        "ext_ma20": 0.0614,
+        "run_from_base": 0.1722,
+        "note": "延续阶段，当天刚突破，收盘204.55美元(+2.28%)，相对量1.46倍，较基底已涨17.2%，20日均线乖离6.1%。"
+      },
+      {
+        "ticker": "COR",
+        "stage": "continuation",
+        "close": 341.41,
+        "change_pct": 1.56,
+        "rvol": 1.44,
+        "breakout_age": 0,
+        "ext_ma20": 0.0794,
+        "run_from_base": 0.1573,
+        "note": "延续阶段，当天刚突破，收盘341.41美元(+1.56%)，相对量1.44倍，较基底已涨15.7%，20日均线乖离7.9%。"
+      }
+    ]
+  }
+}
