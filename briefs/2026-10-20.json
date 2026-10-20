@@ -1,0 +1,895 @@
+{
+  "date": "2026-10-20",
+  "weekday": "Tuesday",
+  "edition": "Daily edition",
+  "generated_at": "2026-10-20 06:22 PT",
+  "scanned": 165,
+  "kept": 17,
+  "thesis": "半导体股周一刚结束2008年来最长的8连跌纪录,周二盘前又因CoreWeave式举债扩张的担忧卷土重来;与此同时霍尔木兹海峡局势骤然升级,把布伦特原油推上五个月高点,再通胀风险正好撞上两周后的10/27-28美联储议息会议和本周三密集开场的科技巨头财报季。字节跳动、阿里巴巴、腾讯联手抛出的350亿美元英伟达订单则提醒市场:AI需求的热度与实际可交付产能之间的缺口,才是贯穿这一切的真正主线。",
+  "tape": {
+    "asof": "上一收盘 · 周一10/19",
+    "rows": [
+      {
+        "name": "S&P 500",
+        "value": "7,690.73",
+        "change": "+0.41%(31.29点);另一信源给出+0.66%报7,709.63点,两者不一致",
+        "dir": "up"
+      },
+      {
+        "name": "Nasdaq Composite",
+        "value": "26,430.89",
+        "change": "+1.1%(290.85点),上周四连跌后的首次反弹",
+        "dir": "up"
+      },
+      {
+        "name": "Dow Jones Industrial Average",
+        "value": "51,966.03",
+        "change": "-0.07%(36.38点),盘中一度跌破50日均线",
+        "dir": "down"
+      },
+      {
+        "name": "Brent crude",
+        "value": "约110~111美元",
+        "change": "两日内从107.8美元反弹至五个月高点,各信源给出110.07~111.05美元不等",
+        "dir": "up"
+      }
+    ]
+  },
+  "items": [
+    {
+      "rank": 1,
+      "tier": "must-read",
+      "published": "2026-10-20",
+      "headline": "半导体股结束2008年来最长8连跌纪录后,周二盘前因CoreWeave式AI举债担忧再度走软",
+      "sectors": [
+        "半导体",
+        "科技",
+        "大盘"
+      ],
+      "tickers": [
+        "NVDA",
+        "AMD",
+        "AVGO",
+        "AMZN"
+      ],
+      "body": "周一(10/19)美股三大指数涨跌不一:标普500指数涨0.41%报7,690.73点,纳斯达克综合指数大涨1.1%报26,430.89点,道指小跌0.07%报51,966.03点、盘中一度跌破50日均线。亚马逊是道指当日最大涨幅股,涨4.98%,据报道与摩根士丹利将其列为'首选股'的评级报道有关。真正的焦点是费城半导体指数(SOX):此前该指数连续8个交易日下跌,累计蒸发约2万亿美元市值,是2008年金融危机以来最长连跌纪录,核心担忧是AI资本支出能否持续、以及CoreWeave等数据中心运营商靠举债扩张是否可持续——CoreWeave 2031年到期债券收益率已升破16%,五年期信用违约互换(CDS)点差据报道升至约1,000个基点的纪录水平(与甲骨文同步走阔),其二季度利息支出达6.4亿美元(去年同期2.67亿美元),市场估算其总债务及租赁负债约520亿美元;公司8月已将资本开支预期上调至350亿~390亿美元。周一这轮连跌纪录终结,SOX单日涨1.61%,但反弹未能延续到周二:英伟达、博通、AMD、英特尔等芯片股周二盘前再度走低(各家统计的具体跌幅略有出入,英伟达跌约0.6%,博通跌约0.6%,AMD跌约2%,英特尔跌约1.7%)。同一板块的海外联动也在延续:韩国Kospi指数本月13日、15日分别因同样的AI链条抛售下跌约5.5%和7.6%。",
+      "why": "反弹只维持了一个交易日就被证伪,说明把AI资本支出和CoreWeave式举债扩张当作系统性风险的那批投资者还没被说服,这比指数本身的涨跌更值得关注。",
+      "impact": "半导体与AI基建全链条 · 波及海外联动板块",
+      "sources": [
+        {
+          "name": "TipRanks",
+          "url": "https://www.tipranks.com/news/why-ai-chip-stocks-nvidia-broadcom-amd-and-intel-are-falling-in-premarket-today-october-20",
+          "angle": "周二盘前芯片股走软的具体跌幅,以及英伟达对华订单细节"
+        },
+        {
+          "name": "myMotherLode/AP",
+          "url": "https://mymotherlode.com/news/national/11235328/how-major-us-stock-indexes-fared-monday-10-19-2026.html",
+          "angle": "周一收盘指数数据,含亚马逊领涨细节"
+        },
+        {
+          "name": "AOL/PRNewswire",
+          "url": "https://www.aol.com/articles/nasdaq-jumps-past-1-percent-221100000.html",
+          "angle": "对标普500涨幅给出不同数字(0.66%对0.41%)"
+        },
+        {
+          "name": "Stocktwits",
+          "url": "https://stocktwits.com/news-articles/Markets/Equity/semiconductor-stocks-sox-losing-streak-2-trillion-ai-selloff/cZxKaOoRBsy",
+          "angle": "SOX连跌纪录的历史背景与市值蒸发规模"
+        },
+        {
+          "name": "Korea Times",
+          "url": "https://www.koreatimes.co.kr/economy/20261015/seoul-stocks-extend-losses-as-ai-us-inflation-concerns-persist",
+          "angle": "韩国AI链条股同步承压的海外联动视角"
+        }
+      ],
+      "assets": [
+        {
+          "asset_class": "美股",
+          "direction": "mixed",
+          "conviction": "high",
+          "note": "大盘指数周一反弹(纳指+1.1%)但芯片股周二盘前转跌,板块内部分化明显。"
+        },
+        {
+          "asset_class": "海外股市",
+          "direction": "down",
+          "conviction": "medium",
+          "note": "韩国Kospi指数本月两度因美股芯片抛售联动下跌5.5%~7.6%,显示AI链条担忧的全球传导。"
+        }
+      ],
+      "cross_source": {
+        "agreement": "split",
+        "summary": "对标普500周一涨幅的具体数字,AP/CNBC系统计为+0.41%报7,690.73点,另一份PRNewswire稿件给出+0.66%报7,709.63点,两者不一致;周二盘前芯片股跌幅各家统计也略有出入。"
+      },
+      "history": {
+        "summary": "费城半导体指数从8连跌到单日反弹只用了一天,又在反弹次日出现跟跌,说明市场对AI资本支出可持续性的分歧尚未收敛。",
+        "timeline": [
+          {
+            "when": "10/15-16",
+            "event": "SOX连跌8个交易日,累计蒸发约2万亿美元市值,为2008年来最长纪录"
+          },
+          {
+            "when": "10/19",
+            "event": "反弹终结连跌纪录,SOX单日涨1.61%,亚马逊领涨道指"
+          },
+          {
+            "when": "10/20盘前",
+            "event": "英伟达、博通、AMD、英特尔等再度走低"
+          }
+        ]
+      }
+    },
+    {
+      "rank": 2,
+      "tier": "must-read",
+      "published": "2026-10-20",
+      "headline": "霍尔木兹海峡局势骤然升级,布伦特原油两日内反弹至五个月高点",
+      "sectors": [
+        "能源",
+        "大宗商品",
+        "宏观"
+      ],
+      "tickers": [],
+      "body": "周一(10/19)原油一度因特朗普政府放宽对俄石油制裁而下跌,布伦特跌1.9%至107.8美元,WTI跌1%至100.4美元;但到周二(10/20),原油在波斯湾紧张局势再度升温的推动下迅速收复失地并刷新五个月高点——不同信源给出的具体点位略有差异,一份报道称布伦特触及111.05美元/桶,另一份称布伦特涨0.47%至110.07美元,WTI方面一份报道给出103.66美元。伊朗革命卫队称一艘油轮在霍尔木兹海峡南部触雷起火爆炸;胡塞武装宣称打击了沙特阿美延布(Yanbu)设施和沙伊巴(Shaybah)油田,但沙特官方尚未证实这一说法。据大宗商品数据商Kpler统计,过去两周海湾地区至少有18艘船只报告遭袭,该地区原油日均流量从此前一周超过2,000万桶骤降至约850万桶。ING分析师表示,市场目前计入了较高的地缘风险溢价,一旦海湾原油流量保持稳定,这部分溢价可能回落。",
+      "why": "地缘风险溢价正在和'放宽对俄制裁'这类降温因素拔河,方向切换只用了一个交易日,说明这轮油价本质上是消息驱动,而非基本面驱动——这对两周后FOMC的通胀判断是个新的变量。",
+      "impact": "再通胀预期升温 · 对冲美联储决议前的利率路径",
+      "sources": [
+        {
+          "name": "CNBC",
+          "url": "https://www.cnbc.com/amp/2026/10/20/brent-crude-holds-near-five-month-high-middle-east-tension.html",
+          "angle": "五个月高点定性与ING风险溢价评论"
+        },
+        {
+          "name": "ADVFN",
+          "url": "https://uk.advfn.com/market-news/article/24855/brent-crude-reaches-five-month-high-of-111-05-as-houthi-attack-claims-raise-supply-risks",
+          "angle": "给出111.05美元的具体点位与胡塞武装说法"
+        },
+        {
+          "name": "Oilprice.com",
+          "url": "https://oilprice.com/Latest-Energy-News/World-News/Oil-Jumps-2-as-Iran-Steps-Up-Attacks-on-Hormuz-Tankers.html",
+          "angle": "聚焦伊朗一方在霍尔木兹海峡的军事行动与Kpler船运数据"
+        },
+        {
+          "name": "HDFC Sky",
+          "url": "https://hdfcsky.com/news/brent-crude-oil-price-today-october-19-2026-brent-falls-1-9percent-to-107-8-wti-drops-1percent-to-100-4-as-trump-eases-russia-sanctions",
+          "angle": "周一原油因制裁放松下跌的反向背景"
+        },
+        {
+          "name": "Newsbytes",
+          "url": "https://www.newsbytesapp.com/news/business/houthi-strike-sends-brent-to-10955-while-wti-hits-10366/tldr",
+          "angle": "给出109.55/103.66美元的另一组点位"
+        }
+      ],
+      "assets": [
+        {
+          "asset_class": "大宗商品",
+          "direction": "up",
+          "conviction": "high",
+          "note": "布伦特两天内从107.8美元反弹至110~111美元区间,核心是海湾供应中断风险重新计价。"
+        },
+        {
+          "asset_class": "美股",
+          "direction": "down",
+          "conviction": "medium",
+          "note": "油价走高推升再通胀担忧,是周二芯片等高估值板块盘前承压的背景因素之一。"
+        }
+      ],
+      "cross_source": {
+        "agreement": "split",
+        "summary": "布伦特具体点位各家给出110.07、110.40、110.67、111.05美元等不同数字,WTI从98.64到104.03美元不等,反映抓取时点或合约月份不同。"
+      },
+      "history": {
+        "summary": "霍尔木兹海峡局势自2月停火瓦解以来反复升级,如今进一步刷新五个月高点。",
+        "timeline": [
+          {
+            "when": "9月初",
+            "event": "布伦特涨至95.63美元,为7月以来首次破95"
+          },
+          {
+            "when": "10/19",
+            "event": "特朗普放宽对俄制裁,布伦特一度跌至107.8美元"
+          },
+          {
+            "when": "10/20",
+            "event": "伊朗称油轮触雷起火,胡塞宣称打击沙特设施,布伦特反弹至110~111美元"
+          }
+        ]
+      }
+    },
+    {
+      "rank": 3,
+      "tier": "must-read",
+      "published": "2026-10-19",
+      "headline": "美联储10/27-28议息会议临近,市场押注大概率维持利率不变,12月加息预期升温",
+      "sectors": [
+        "宏观",
+        "利率",
+        "美联储"
+      ],
+      "tickers": [],
+      "body": "美联储将于10月27-28日召开议息会议,决议定于10月28日美东下午2点公布。当前联邦基金利率目标区间为3.75%~4.00%(9/16已加息一次)。9月CPI于10/14公布,核心同比2.6%、总体3.7%,双双超预期走热,一度推动10月加息概率在9月下旬跳升至73%。但随后招聘数据转弱、通胀担忧部分缓解,目前各预测市场给出的10月加息概率已回落,且相互不一致:Kalshi约12%,rateprobability.com等给出约18%~22%。纽约联储主席威廉姆斯表示即便通胀仍偏高,加息也'没有紧迫性';市场普遍预期如果10月按兵不动,12月9日是下一次加息更可能的时点——9月会议上多数官员曾预计今年还有一次加息,少数预计两次,这为'10月暂停、12月视情况行动'留出了空间。本次会议也是沃什(Kevin Warsh)今年5月接替鲍威尔出任联储主席以来首次面临的重大政策分歧考验,外界关注他是否会在记者会上释放意外的鹰派或鸽派信号。",
+      "why": "'是否加息'的悬念已经明显淡化,但'沃什会不会在记者会上释放意外信号'成为新的不确定性来源,这与过去两任主席偏好'按部就班'的风格形成对比。",
+      "impact": "债市与利率敏感股对10/28决议当天的记者会表态更敏感,而非决议本身",
+      "sources": [
+        {
+          "name": "Forbes",
+          "url": "https://www.forbes.com/sites/simonmoore/2026/10/19/what-to-look-for-from-the-feds-october-meeting",
+          "angle": "总结10月决议的关键变量与威廉姆斯表态"
+        },
+        {
+          "name": "CNBC",
+          "url": "https://www.cnbc.com/2026/10/16/kevin-warsh-fed-october-rate-hike-interest-rates-markets.html",
+          "angle": "聚焦沃什可能带来的意外信号"
+        },
+        {
+          "name": "Kalshi",
+          "url": "https://kalshi.com/markets/kxfeddecision/fed-meeting/kxfeddecision-26oct",
+          "angle": "预测市场给出的具体概率数字(约12%)"
+        },
+        {
+          "name": "CNBC",
+          "url": "https://www.cnbc.com/2026/09/23/market-sees-next-fed-hike-in-october-following-barr-comments-hot-inflation.html",
+          "angle": "9月下旬73%加息概率的历史对照"
+        }
+      ],
+      "assets": [
+        {
+          "asset_class": "美债",
+          "direction": "mixed",
+          "conviction": "medium",
+          "note": "暂停加息已被较大程度计入价格,但各预测市场给出的概率本身就有12到22个百分点的分歧,利率敏感资产仍有重新定价空间。"
+        },
+        {
+          "asset_class": "美股",
+          "direction": "none",
+          "conviction": "low",
+          "note": "决议前一周半,市场尚未明确计入超预期情形,暂判无方向性影响。"
+        }
+      ],
+      "cross_source": {
+        "agreement": "split",
+        "summary": "Kalshi给出的10月加息概率约12%,rateprobability.com等给出约18%~22%,各预测市场对'意外加息'可能性的定价不一致。"
+      },
+      "history": {
+        "summary": "加息预期在一个月内经历了大幅摆动。",
+        "timeline": [
+          {
+            "when": "9/16",
+            "event": "美联储加息25个基点至3.75%~4.00%,为2023年以来首次"
+          },
+          {
+            "when": "9月下旬",
+            "event": "巴尔表态与偏热通胀数据推动10月加息概率跳升至73%"
+          },
+          {
+            "when": "10/14",
+            "event": "9月CPI公布,核心同比2.6%、总体3.7%,均超预期"
+          },
+          {
+            "when": "10/16-19",
+            "event": "沃什与官员'无需紧迫加息'表态进一步压低加息概率至12%~22%区间"
+          }
+        ]
+      }
+    },
+    {
+      "rank": 4,
+      "tier": "must-read",
+      "published": "2026-10-20",
+      "headline": "字节跳动、阿里、腾讯联手下单超350亿美元英伟达芯片,但产能仅能满足5%~10%需求",
+      "sectors": [
+        "半导体",
+        "AI",
+        "海外股市"
+      ],
+      "tickers": [
+        "NVDA"
+      ],
+      "body": "据路透社援引知情人士独家报道,字节跳动、阿里巴巴和腾讯已合计下单超过300万张英伟达RTX PRO 5500显卡,按约11,400美元的单张标价计算,总订单金额超过350亿美元;来自中国客户的订单总量据称已超过600万张。英伟达已告知客户和合作伙伴,公司无法保证完全履约——有消息人士称合作伙伴可能只能拿到所需数量的5%到10%,英伟达方面表示2027年全球RTX PRO 5500产能上限约为300万张。RTX PRO 5500性能低于英伟达的H200和B300芯片,但由于美国出口管制完全禁止中国买家获取Blackwell B300,中国企业正转向购买这款'合规'芯片用于AI推理。英伟达发言人将这一局面归咎于'管制几乎五年前游戏产品的过时出口规则'以及中国自身对美国产品的限制。字节跳动、阿里巴巴和腾讯均未回应置评请求。",
+      "why": "这笔'天量订单'本质上是需求信号而非业绩兑现——产能缺口意味着它短期内不会变成英伟达的实际收入,但长期看反映出中国市场对合规AI芯片的真实渴求程度。",
+      "impact": "凸显出口管制与中国AI算力需求之间的结构性矛盾",
+      "sources": [
+        {
+          "name": "Investing.com (Reuters)",
+          "url": "https://www.investing.com/news/stock-market-news/exclusivebytedance-alibaba-tencent-place-over-35-billion-worth-of-nvidia-chip-orders-4959231",
+          "angle": "路透独家报道原文,给出订单规模与产能数字"
+        },
+        {
+          "name": "Tom's Hardware",
+          "url": "https://www.tomshardware.com/pc-components/gpus/chinas-tech-giants-drop-usd35-billion-on-export-compliant-nvidia-rtx-pro-5500-workstation-gpu-orders-to-power-ai-ambitions-according-to-reports-bytedance-alibaba-and-tencent-order-3-million-cards-despite-warnings-that-only-10-percent-of-orders-are-fulfillable",
+          "angle": "侧重出口管制背景与芯片定位解读"
+        },
+        {
+          "name": "CoinCentral",
+          "url": "https://coincentral.com/bytedance-alibaba-and-tencent-order-over-35-billion-in-nvidia-rtx-pro-chips",
+          "angle": "转载路透数据的二次整理"
+        }
+      ],
+      "assets": [
+        {
+          "asset_class": "美股",
+          "direction": "mixed",
+          "conviction": "medium",
+          "note": "订单金额巨大但产能缺口意味着近期难以转化为英伟达实际收入,属于需求信号而非业绩兑现。"
+        }
+      ],
+      "cross_source": {
+        "agreement": "aligned",
+        "summary": "多家媒体转载同一篇路透独家报道,核心数字(300万张、350亿美元、5%~10%履约率)一致,差异主要在侧重的解读角度(管制政策vs商业影响)。"
+      }
+    },
+    {
+      "rank": 5,
+      "tier": "worth-knowing",
+      "published": "2026-10-20",
+      "headline": "通用汽车、3M、孩之宝盘前公布三季度业绩,但好数字不等于股价上涨",
+      "sectors": [
+        "工业",
+        "消费",
+        "财报季"
+      ],
+      "tickers": [
+        "GM"
+      ],
+      "body": "通用汽车三季度营收500亿美元、净利润33亿美元,超市场一致预期的485.1亿美元,董事会批准新的200亿美元股票回购计划,并将全年净利润指引收窄至89亿~95亿美元(此前为84亿~98亿美元);但股价周二盘前仍下跌约6.3%,据报道是因为这次指引上调的幅度不及投资者预期。3M三季度GAAP销售额66亿美元、同比增1.0%,有机增长3.3%,调整后每股收益2.50美元、同比增12%(新计算口径下),并上调全年调整后每股收益指引至9.10~9.15美元。孩之宝营收同比大增15%,调整后营业利润5.41亿美元、同比增52%,调整后每股收益2.90美元,其中约5,500万美元来自关税退税的一次性提振。本次扫描未找到3M与孩之宝当天的具体盘前股价反应数据。",
+      "why": "GM的案例提醒:财报'好于预期'不等于'好于投资者的心理价位',这跟同一早晨工业/国防股的分化(见下一条)是同一个现象的两个样本。",
+      "impact": "工业与消费板块财报反应分化",
+      "sources": [
+        {
+          "name": "SEC EDGAR (General Motors 8-K)",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001467858/000146785826000056/gmq32026pressreleaseandfin.htm",
+          "angle": "GM三季度官方业绩与指引原文"
+        },
+        {
+          "name": "SEC EDGAR (3M 8-K)",
+          "url": "https://www.sec.gov/Archives/edgar/data/0000066740/000006674026000308/q32026-8kerexx991.htm",
+          "angle": "3M三季度官方业绩与上调后的全年指引"
+        },
+        {
+          "name": "SEC EDGAR (Hasbro 8-K)",
+          "url": "https://www.sec.gov/Archives/edgar/data/0000046080/000004608026000058/exhibit991q32026.htm",
+          "angle": "孩之宝三季度官方业绩,含关税退税细节"
+        },
+        {
+          "name": "StockMarketWatch",
+          "url": "https://stockmarketwatch.com/live/stock-market-today",
+          "angle": "GM股价盘前下跌约6.3%的具体数字与解读"
+        }
+      ]
+    },
+    {
+      "rank": 6,
+      "tier": "worth-knowing",
+      "published": "2026-10-20",
+      "headline": "工业与国防股财报分化:雷神、哈里伯顿盘前上涨,GE航空航天、吉尼斯零件下跌",
+      "sectors": [
+        "工业",
+        "国防",
+        "财报季"
+      ],
+      "tickers": [
+        "RTX"
+      ],
+      "body": "据Investing.com与AOL的盘前综述,雷神技术(RTX)三季度调整后每股收益2.26美元,超市场预期的1.78美元,营收250亿美元、同比增11%且上调全年展望,股价盘前涨约2.2%;哈里伯顿三季度盈利与营收均超预期,股价盘前涨约3.4%。相比之下,GE航空航天三季度业绩同样好于预期、并上调了2026年展望,但股价盘前仍跌约1.4%;吉尼斯零件(Genuine Parts)三季报小幅超预期但收窄了全年展望,股价盘前跌约8.2%。同一批工业股财报季呈现'几家欢喜几家愁'的局面,股价反应的方向并不总是跟随业绩本身。",
+      "why": "同一天、同一类工业股财报,股价反应却完全相反,说明投资者现在对'指引是否够好'比对'这一季是否达标'更敏感。",
+      "impact": "工业与国防板块财报季波动加大",
+      "sources": [
+        {
+          "name": "AOL",
+          "url": "https://www.aol.com/articles/5-things-know-stock-market-122803000.html",
+          "angle": "今晨五只财报股的盘前涨跌综述"
+        },
+        {
+          "name": "Investing.com",
+          "url": "https://ca.investing.com/news/stock-market-news/premarket-movers-rtx-rises-ge-slips-following-quarterly-results-4890503",
+          "angle": "RTX与GE航空航天盘前走势的具体数字"
+        },
+        {
+          "name": "Chartmill",
+          "url": "https://www.chartmill.com/news/RAIL/Chartmill-56457-Premarket-Movers-on-Oct-20-2026-Gainers-and-Losers",
+          "angle": "当日盘前涨跌幅排行"
+        }
+      ]
+    },
+    {
+      "rank": 7,
+      "tier": "worth-knowing",
+      "published": "2026-10-20",
+      "headline": "Netflix、联合航空、SpaceX今晚盘后公布财报,特斯拉、Meta定于周三登场",
+      "sectors": [
+        "科技",
+        "财报季",
+        "媒体",
+        "航空"
+      ],
+      "tickers": [
+        "TSLA"
+      ],
+      "body": "据Investrade盘前综述,Netflix、联合航空与SpaceX均定于周二(10/20)美股盘后公布三季度财报。SpaceX今年6月以135美元/股完成规模空前的IPO,8月4日公布的首份季度业绩显示营收78.1亿美元超预期,但因资本开支激增(上半年资本开支约285亿美元)、现金消耗加大,股价盘后一度跌约8%;今晚将是其上市以来第二份季度财报,市场关注其AI数据中心相关资本开支能否企稳。特斯拉已确认将于周三(10/21)美股盘后公布三季度财报,电话问答环节定于美东下午5:30(美国中部时间4:30);同一天Meta也将公布三季度业绩,Wall Street Horizon将其标记为'已确认'。这意味着本周二晚至周三将连续出现'航天+流媒体+电动车+社交媒体'四条业绩线索,交叉验证AI与资本开支故事。",
+      "why": "本周密集的财报节点,是检验上周芯片股抛售背后'AI支出降温'担忧是否成立的第一批真实数据。",
+      "impact": "科技与消费板块波动率可能在周三集中释放",
+      "sources": [
+        {
+          "name": "Investrade",
+          "url": "https://investrade.com/morning-preview-october-20-2026/",
+          "angle": "今明两日财报日程的盘前综述"
+        },
+        {
+          "name": "Tesla (SEC 8-K)",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001318605/000162828026064366/exhibit991111111.htm",
+          "angle": "特斯拉官方确认的财报发布与电话会时间"
+        },
+        {
+          "name": "TeslaOracle",
+          "url": "https://www.teslaoracle.com/?p=66789",
+          "angle": "特斯拉电话会的具体时间安排"
+        },
+        {
+          "name": "CNBC",
+          "url": "https://www.cnbc.com/2026/08/04/spacex-spcx-earnings-live-updates-q2-2026.html",
+          "angle": "SpaceX今年8月首份上市后财报的具体数字"
+        }
+      ]
+    },
+    {
+      "rank": 8,
+      "tier": "worth-knowing",
+      "published": "2026-10-20",
+      "headline": "本周余下财报日程:微软、Alphabet与美联储决议同日登场,亚马逊、苹果紧随其后",
+      "sectors": [
+        "科技",
+        "财报季",
+        "宏观"
+      ],
+      "tickers": [
+        "MSFT"
+      ],
+      "body": "据多家盈利日历网站交叉核对,微软与Alphabet均定于10月28日(与美联储当天的利率决议同一天)美股盘后公布三季度业绩;亚马逊定于10月29日盘后;苹果则定于11月2日盘后,电话会定于美东下午5点。这意味着10月28日将出现'美联储决议'与'两大科技巨头财报'同日公布的罕见组合,当天波动率可能被双重放大。AMD定于11月3日公布三季度业绩(市场预期每股收益1.94美元、营收130.8亿美元),英伟达与博通的财报日期则要等到11月下旬。",
+      "why": "把美联储决议和微软、Alphabet财报摆在同一天,意味着10/28当天的多空情绪可能相互放大,而不是互相抵消。",
+      "impact": "10/28单日波动率风险上升",
+      "sources": [
+        {
+          "name": "Signalstack",
+          "url": "https://www.signalstack.news/earnings/q3-2026/",
+          "angle": "大科技与芯片股财报日期的交叉核对"
+        },
+        {
+          "name": "Wall Street Horizon (Amazon)",
+          "url": "https://www.wallstreethorizon.com/amazon-earnings-calendar",
+          "angle": "亚马逊财报日期的确认状态"
+        },
+        {
+          "name": "TipRanks",
+          "url": "https://www.tipranks.com/news/why-ai-chip-stocks-nvidia-broadcom-amd-and-intel-are-falling-in-premarket-today-october-20",
+          "angle": "AMD三季度业绩预期的具体数字"
+        }
+      ]
+    },
+    {
+      "rank": 9,
+      "tier": "worth-knowing",
+      "published": "2026-10-19",
+      "headline": "VIX上周五突破下降趋势线阻力位,策略师警示波动性抬头风险",
+      "sectors": [
+        "宏观",
+        "波动率"
+      ],
+      "tickers": [],
+      "body": "据Equity Clock周一发布的周二展望,VIX在上周五(10/16)突破了此前的下降趋势线阻力位,被视为市场不稳定性可能'才刚刚开始'的信号。历史上8月中到10月中是波动率的历史高发窗口,尤其是在中期选举年,叠加中东冲突、霍尔木兹海峡紧张局势与美国消费者承压的迹象,构成这一轮风险的背景。",
+      "why": "技术面的阻力位突破与前述芯片股、原油两条主线形成呼应,说明波动性抬头不是孤立的技术信号。",
+      "impact": "期权与对冲需求可能上升",
+      "sources": [
+        {
+          "name": "Equity Clock",
+          "url": "https://equityclock.com/2026/10/19/stock-market-outlook-for-october-20-2026",
+          "angle": "VIX技术位突破的具体描述与中期选举年背景"
+        },
+        {
+          "name": "Pluang (citing CNBC)",
+          "url": "https://pluang.com/en/news-feed/indeks-ketakutan-wall-street-vix-terendah-2026-tapi-risiko-masih-ada",
+          "angle": "8月中-10月中波动高发窗口的历史背景"
+        }
+      ]
+    },
+    {
+      "rank": 10,
+      "tier": "worth-knowing",
+      "published": "2026-10-20",
+      "headline": "CoreWeave债务压力细节:2031年债券收益率破16%,CDS点差升至纪录水平",
+      "sectors": [
+        "AI",
+        "信贷",
+        "数据中心"
+      ],
+      "tickers": [
+        "CRWV"
+      ],
+      "body": "CoreWeave 2031年到期债券收益率已升破16%,五年期信用违约互换(CDS)点差据报道升至约1,000个基点的纪录水平,与甲骨文的CDS同步走阔。该公司二季度利息支出达6.4亿美元,较上年同期的2.67亿美元大幅增加;市场估算其总债务及租赁负债约520亿美元(其中纯债务约350亿美元)。公司今年8月已将资本开支预期上调至350亿~390亿美元区间。CoreWeave首席执行官表示,数据中心的监管阻力并未影响公司指引;相比之下,Meta今年早些时候获得的85亿美元投资级贷款被视为'更稳健'的融资范例。这组细节本身发生在上周,但据今日TipRanks报道,它仍是周二芯片股盘前走软的核心线索之一(详见第1条)。",
+      "why": "'靠高收益债融资的数据中心扩张'与'投资级贷款支持的数据中心扩张'正在分化成两条不同风险等级的叙事,这比单纯的股价涨跌更能说明AI基建融资的裂痕在哪里。",
+      "impact": "AI数据中心板块的信贷利差可能继续走阔",
+      "sources": [
+        {
+          "name": "letsdatascience.com",
+          "url": "https://letsdatascience.com/news/coreweave-slump-exposes-ai-infrastructure-debt-risks-2691f237",
+          "angle": "CDS点差与债券收益率的具体数字"
+        },
+        {
+          "name": "cryptobriefing.com",
+          "url": "https://cryptobriefing.com/coreweave-high-yield-debt-scrutiny/",
+          "angle": "高收益债融资模式的争议焦点"
+        }
+      ]
+    },
+    {
+      "rank": 11,
+      "tier": "worth-knowing",
+      "published": "2026-10-20",
+      "headline": "韩国AI数据中心公司Elice上市首日暴跌,CoreWeave同步下跌,一级市场的AI估值质疑开始显现",
+      "sectors": [
+        "AI",
+        "海外股市",
+        "IPO"
+      ],
+      "tickers": [
+        "CRWV"
+      ],
+      "body": "韩国AI基础设施公司Elice Group周二在KOSDAQ上市,股价较90,500韩元的发行价一度暴跌超37%,收盘跌幅各信源给出28%~32%不等;尽管此次IPO认购火爆——机构认购倍数达388.84倍,散户认购约408倍,融资规模约2,011亿韩元(约1.5亿美元)。据CNBC报道,受此拖累,美股的CoreWeave当天同步下跌超4%,科技股情绪一度受挫。报道将Elice股价暴跌归因于投资者对AI数据中心高资本开支、高借贷成本、以及投资何时能转化为盈利的疑虑加深。上周,由英伟达投资的澳大利亚企业Firmus也搁置了原计划规模50亿美元的IPO,被视为同一类估值担忧的另一个信号。",
+      "why": "一级市场对AI数据中心估值的质疑,比二级市场的股价波动更能说明这轮狂热的边际在哪里——388倍认购依然挡不住上市即暴跌。",
+      "impact": "AI数据中心板块的估值分歧从二级市场蔓延到一级市场",
+      "sources": [
+        {
+          "name": "CNBC",
+          "url": "https://www.cnbc.com/2026/10/20/ai-rally-fades-elice-ipo-dives.html",
+          "angle": "将Elice暴跌与CoreWeave当天下跌超4%联系起来的报道"
+        },
+        {
+          "name": "TipRanks",
+          "url": "https://www.tipranks.com/news/elice-ipo-crashes-33-raising-fresh-concerns-for-coreweave-crwv",
+          "angle": "给出33%跌幅并联系到CoreWeave的解读"
+        },
+        {
+          "name": "Yahoo Finance Australia",
+          "url": "https://au.finance.yahoo.com/news/elice-shares-plunge-28-debut-043411956.html",
+          "angle": "给出28%跌幅的另一组数字"
+        },
+        {
+          "name": "Technode Global",
+          "url": "https://technode.global/2026/10/20/elice-shares-fall-kosdaq-debut-151m-ipo/",
+          "angle": "IPO融资规模与认购倍数的具体数字"
+        }
+      ],
+      "cross_source": {
+        "agreement": "split",
+        "summary": "对Elice收盘跌幅,各信源给出28%、32%、33%、37%等不同数字,反映不同的收盘价定义或抓取时点。"
+      }
+    },
+    {
+      "rank": 12,
+      "tier": "noise",
+      "published": "2026-10-16",
+      "headline": "9月工业产能利用率升至近三年新高(旧闻,无当日新进展,仅作FOMC背景参照)",
+      "sectors": [
+        "宏观",
+        "制造业"
+      ],
+      "tickers": [],
+      "body": "美国9月工业产能利用率升至76.9%,为2023年12月以来最高,高于市场预期的76.5%;制造业产能利用率上升0.1个百分点至75.9%,仍低于长期均值2.3个百分点。这组数据已发布几天,今天没有新的官方数据,仅作为理解10/27-28 FOMC决议'经济是否过热'判断的背景参照。",
+      "sources": [
+        {
+          "name": "Trading Economics",
+          "url": "https://tradingeconomics.com/united-states/capacity-utilization/news/592810",
+          "angle": "9月产能利用率具体数字与历史对照"
+        }
+      ]
+    },
+    {
+      "rank": 13,
+      "tier": "noise",
+      "published": "2026-10-14",
+      "headline": "9月CPI已于10/14公布,核心同比2.6%、总体3.7%,均超预期(旧闻,无当日新进展)",
+      "sectors": [
+        "宏观"
+      ],
+      "tickers": [],
+      "body": "9月CPI已于10/14按计划公布,核心同比2.6%、总体3.7%,均高于市场预期,是推动10月加息概率一度跳升至73%的直接原因(详见第3条)。这是几天前的旧闻,今天没有新的官方数据发布,仅作为理解FOMC决议背景的参照。"
+    },
+    {
+      "rank": 14,
+      "tier": "noise",
+      "published": "2026-10-14",
+      "headline": "三季度大行财报季已于上周收官,四大行前三季度净利润合计近1,050亿美元(旧闻)",
+      "sectors": [
+        "金融"
+      ],
+      "tickers": [],
+      "body": "摩根大通、高盛、富国银行、花旗三季度财报已于10/13-14全部公布:摩根大通净利润153亿美元、超预期,并上调全年净利息收入指引至1,062亿美元;高盛营收187亿美元。四大行前三季度合计净利润近1,050亿美元,同比增约25%。这是一周前的旧闻,本周美股财报季的关注重心已转向工业、消费与科技股。"
+    },
+    {
+      "rank": 15,
+      "tier": "noise",
+      "published": "2026-09-30",
+      "headline": "2026年迄今科技业裁员已超16.6万人,同比增54%(旧闻,本次扫描未见10月新公告)",
+      "sectors": [
+        "科技",
+        "就业"
+      ],
+      "tickers": [],
+      "body": "截至9月,2026年科技业已宣布裁员超16.6万人,同比增54%;优步、微软、贝宝9月均有新裁员。这组数据截至9月底,本次扫描未发现10月的新裁员公告,暂记为背景趋势。"
+    },
+    {
+      "rank": 16,
+      "tier": "noise",
+      "published": "2026-10-05",
+      "headline": "黄金价格较今年1月纪录高点回落约20%(数据非当日,仅作宏观情绪参照)",
+      "sectors": [
+        "大宗商品"
+      ],
+      "tickers": [],
+      "body": "黄金价格较1月29日创下的纪录高点(约5,318~5,595美元,各信源数字不一致)回落约14%~22%不等,最近一次可查数据(10月5日)报约4,157美元/盎司。这组数据抓取时点不早于10月5日,可能已过时,仅作为风险偏好的粗略参照。"
+    },
+    {
+      "rank": 17,
+      "tier": "noise",
+      "published": "2026-10-10",
+      "headline": "比特币价格各信源报价不一,约8.3万~9万美元区间",
+      "sectors": [
+        "加密资产"
+      ],
+      "tickers": [
+        "COIN"
+      ],
+      "body": "比特币价格各信源数据不一致:一份10月10日的追踪报告给出约83,031美元,另一未注明日期的页面给出约90,547美元。本次扫描未发现驱动当天走势的具体催化剂,暂记为背景参照。"
+    }
+  ],
+  "calendar": [
+    {
+      "when": "今晚 10/20",
+      "time": "盘后",
+      "event": "Netflix、联合航空三季度财报",
+      "weight": "mid",
+      "date": "2026-10-20",
+      "sources": [
+        {
+          "name": "Investrade",
+          "url": "https://investrade.com/morning-preview-october-20-2026/"
+        }
+      ]
+    },
+    {
+      "when": "周三 10/21",
+      "time": "盘后,电话会17:30 ET",
+      "event": "特斯拉三季度财报",
+      "weight": "high",
+      "date": "2026-10-21",
+      "sources": [
+        {
+          "name": "SEC EDGAR",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001318605/000162828026064366/exhibit991111111.htm"
+        }
+      ]
+    },
+    {
+      "when": "周三 10/21",
+      "time": "盘后",
+      "event": "Meta三季度财报",
+      "weight": "high",
+      "date": "2026-10-21",
+      "sources": [
+        {
+          "name": "Wall Street Horizon",
+          "url": "https://www.wallstreethorizon.com/meta-earnings-calendar"
+        }
+      ]
+    },
+    {
+      "when": "周二 10/27 - 周三 10/28",
+      "time": "决议10/28 14:00 ET",
+      "event": "美联储FOMC议息会议与利率决议",
+      "weight": "high",
+      "date": "2026-10-28",
+      "sources": [
+        {
+          "name": "Forbes",
+          "url": "https://www.forbes.com/sites/simonmoore/2026/10/19/what-to-look-for-from-the-feds-october-meeting"
+        },
+        {
+          "name": "Kalshi",
+          "url": "https://kalshi.com/markets/kxfeddecision/fed-meeting/kxfeddecision-26oct"
+        }
+      ]
+    },
+    {
+      "when": "周三 10/28",
+      "time": "盘后",
+      "event": "微软、Alphabet三季度财报(与美联储决议同日)",
+      "weight": "high",
+      "date": "2026-10-28",
+      "sources": [
+        {
+          "name": "Signalstack",
+          "url": "https://www.signalstack.news/earnings/q3-2026/"
+        }
+      ]
+    },
+    {
+      "when": "周四 10/29",
+      "time": "盘后",
+      "event": "亚马逊三季度财报",
+      "weight": "mid",
+      "date": "2026-10-29",
+      "sources": [
+        {
+          "name": "Wall Street Horizon",
+          "url": "https://www.wallstreethorizon.com/amazon-earnings-calendar"
+        }
+      ]
+    },
+    {
+      "when": "11/2",
+      "time": "盘后,电话会17:00 ET",
+      "event": "苹果财年四季度财报",
+      "weight": "mid",
+      "date": "2026-11-02",
+      "sources": [
+        {
+          "name": "Signalstack",
+          "url": "https://www.signalstack.news/earnings/q3-2026/"
+        }
+      ]
+    },
+    {
+      "when": "11/3",
+      "time": "",
+      "event": "AMD三季度财报(市场预期EPS 1.94美元、营收130.8亿美元)",
+      "weight": "mid",
+      "date": "2026-11-03",
+      "sources": [
+        {
+          "name": "TipRanks",
+          "url": "https://www.tipranks.com/news/why-ai-chip-stocks-nvidia-broadcom-amd-and-intel-are-falling-in-premarket-today-october-20"
+        }
+      ]
+    },
+    {
+      "when": "11月下旬",
+      "time": "",
+      "event": "英伟达、博通三季度财报(具体日期待定)",
+      "weight": "mid",
+      "sources": [
+        {
+          "name": "TipRanks",
+          "url": "https://www.tipranks.com/news/why-ai-chip-stocks-nvidia-broadcom-amd-and-intel-are-falling-in-premarket-today-october-20"
+        }
+      ]
+    },
+    {
+      "when": "12/11",
+      "time": "",
+      "event": "联邦政府资金到期日(9/2签署的临时拨款法案到期)",
+      "weight": "low",
+      "date": "2026-12-11",
+      "sources": [
+        {
+          "name": "Polymarkettrader",
+          "url": "https://polymarkettrader.com/events/us-government-shutdown-october-2026/"
+        }
+      ]
+    }
+  ],
+  "momentum": {
+    "asof": "2026-10-19",
+    "scanned": 2592,
+    "note": "本期候选中TRV、AFG、CB三只财产险股同期出现,是扫描结果本身呈现的板块聚类,非特意筛选所致。",
+    "candidates": [
+      {
+        "ticker": "FMX",
+        "stage": "ignition",
+        "close": 126.46,
+        "change_pct": 4.52,
+        "rvol": 3.3,
+        "breakout_age": 0,
+        "ext_ma20": 0.0597,
+        "run_from_base": 0.1163,
+        "note": "点火阶段,10/16单日涨4.52%、收126.46,相对成交量3.3倍,较基底已上涨11.63%,基底收窄度25%,当日跳空1.53%。"
+      },
+      {
+        "ticker": "KOF",
+        "stage": "ignition",
+        "close": 118.95,
+        "change_pct": 2.84,
+        "rvol": 3.0,
+        "breakout_age": 0,
+        "ext_ma20": 0.0746,
+        "run_from_base": 0.1653,
+        "note": "点火阶段,10/16涨2.84%至118.95,量能3.0倍,与母公司FEMSA(FMX)同日同步放量上攻。"
+      },
+      {
+        "ticker": "TRV",
+        "stage": "ignition",
+        "close": 389.54,
+        "change_pct": 1.47,
+        "rvol": 2.95,
+        "breakout_age": 0,
+        "ext_ma20": 0.0613,
+        "run_from_base": 0.101,
+        "note": "点火阶段,10/16涨1.47%至389.54,量能2.95倍。"
+      },
+      {
+        "ticker": "IHG",
+        "stage": "ignition",
+        "close": 167.77,
+        "change_pct": 0.98,
+        "rvol": 2.54,
+        "breakout_age": 1,
+        "ext_ma20": 0.047,
+        "run_from_base": 0.1044,
+        "note": "点火阶段,突破天数1日,10/16涨0.98%至167.77,量能2.54倍。"
+      },
+      {
+        "ticker": "AVTR",
+        "stage": "ignition",
+        "close": 16.42,
+        "change_pct": 2.05,
+        "rvol": 3.72,
+        "breakout_age": 0,
+        "ext_ma20": 0.0653,
+        "run_from_base": 0.4799,
+        "note": "点火阶段,10/16涨2.05%至16.42,量能达3.72倍,是本轮候选中相对成交量最高的几只之一。"
+      },
+      {
+        "ticker": "CCC",
+        "stage": "ignition",
+        "close": 7.61,
+        "change_pct": -0.26,
+        "rvol": 8.65,
+        "breakout_age": 3,
+        "ext_ma20": 0.1013,
+        "run_from_base": 0.4082,
+        "note": "点火阶段但当日收跌0.26%,量能达8.65倍为全场最高,突破天数已有3天,价跌量增的组合与其余以上涨点火的候选形成对比。"
+      },
+      {
+        "ticker": "AFG",
+        "stage": "continuation",
+        "close": 149.13,
+        "change_pct": 2.33,
+        "rvol": 1.29,
+        "breakout_age": 0,
+        "ext_ma20": 0.0581,
+        "run_from_base": 0.0964,
+        "note": "延续阶段,10/16涨2.33%至149.13,量能1.29倍。"
+      },
+      {
+        "ticker": "AMT",
+        "stage": "continuation",
+        "close": 185.27,
+        "change_pct": 2.16,
+        "rvol": 0.81,
+        "breakout_age": 0,
+        "ext_ma20": 0.0805,
+        "run_from_base": 0.1558,
+        "note": "延续阶段,10/16涨2.16%至185.27,量能0.81倍,低于其余候选的平均水平。"
+      },
+      {
+        "ticker": "BP",
+        "stage": "continuation",
+        "close": 50.21,
+        "change_pct": 3.65,
+        "rvol": 1.31,
+        "breakout_age": 0,
+        "ext_ma20": 0.1035,
+        "run_from_base": 0.2199,
+        "note": "延续阶段,10/16涨3.65%至50.21,量能1.31倍。"
+      },
+      {
+        "ticker": "CB",
+        "stage": "continuation",
+        "close": 359.79,
+        "change_pct": 1.98,
+        "rvol": 1.1,
+        "breakout_age": 0,
+        "ext_ma20": 0.0636,
+        "run_from_base": 0.107,
+        "note": "延续阶段,10/16涨1.98%至359.79,量能1.1倍。"
+      }
+    ]
+  }
+}
