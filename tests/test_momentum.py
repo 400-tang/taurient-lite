@@ -505,12 +505,18 @@ class SessionCutoffTest(unittest.TestCase):
     def test_mid_session_returns_start(self):
         from taurient_lite.momentum import session_cutoff
 
-        self.assertEqual(session_cutoff(self.meta(self.OPEN + 3600)), self.OPEN)
+        self.assertEqual(session_cutoff(self.meta(self.OPEN + 3600), now=self.OPEN + 3600), self.OPEN)
 
     def test_after_close_returns_none(self):
         from taurient_lite.momentum import session_cutoff
 
-        self.assertIsNone(session_cutoff(self.meta(self.CLOSE + 60)))
+        self.assertIsNone(session_cutoff(self.meta(self.CLOSE + 60), now=self.CLOSE + 60))
+
+    def test_last_trade_before_close_still_counts_as_closed(self):
+        """最后一笔成交停在 15:59:55，但扫描跑在收盘后——这根已经走完了。"""
+        from taurient_lite.momentum import session_cutoff
+
+        self.assertIsNone(session_cutoff(self.meta(self.CLOSE - 5), now=self.CLOSE + 4 * 3600))
 
     def test_missing_metadata_returns_none(self):
         """判断不了就不过滤——宁可用上完整数据，也不要因为缺字段丢掉一天。"""
@@ -541,7 +547,7 @@ class SessionCutoffTest(unittest.TestCase):
                 ]
             }
         }
-        bars = parse_chart_bars("X", payload)
+        bars = parse_chart_bars("X", payload, now=self.OPEN + 3600)
         self.assertEqual(len(bars), 1)
         self.assertEqual(bars.closes, (10.2,))
 
@@ -567,4 +573,4 @@ class SessionCutoffTest(unittest.TestCase):
                 ]
             }
         }
-        self.assertEqual(len(parse_chart_bars("X", payload)), 2)
+        self.assertEqual(len(parse_chart_bars("X", payload, now=self.CLOSE + 600)), 2)

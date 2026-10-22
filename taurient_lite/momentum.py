@@ -31,6 +31,7 @@
 from __future__ import annotations
 
 import datetime as dt
+import time
 from dataclasses import dataclass, replace
 from typing import Any, Sequence
 
@@ -171,7 +172,7 @@ class Signal:
 # --------------------------------------------------------------------------- 解析
 
 
-def session_cutoff(meta: dict) -> int | None:
+def session_cutoff(meta: dict, now: int | None = None) -> int | None:
     """当天这根还没走完时，返回它的起始时间戳；已收盘或判断不了则返回 ``None``。
 
     **这个函数存在的理由是一次真实的事故。** 扫描本来排在开盘前跑，那时
@@ -182,21 +183,27 @@ def session_cutoff(meta: dict) -> int | None:
     还会继续变。这种错误不报警、不抛异常，产出的文件看上去完全正常。
 
     判断依据用 Yahoo 自己给的时段信息，不自己推算时区：
-    ``currentTradingPeriod.regular`` 给出当天时段的起止，``regularMarketTime``
-    是数据自身的时点。后者早于时段结束，就说明这一场还没打完。
+    ``currentTradingPeriod.regular`` 给出当天时段的起止，``now``（扫描时刻，
+    缺省取当前时间）早于时段结束，就说明这一场还没打完。
+
+    **不能拿 ``regularMarketTime`` 当时钟。** 这里曾经这么做，但它是最后一笔
+    成交的时间，收盘后常常停在 15:59:5x，比时段结束早几秒——于是收盘后跑的
+    扫描把大多数票刚走完的这根也当成未完成丢掉了。10-21 晚上的扫描就是这样：
+    只有少数在 16:00 整有收盘集合竞价成交的票留下了 10-21，其余全停在 10-20。
 
     这样处理之后，扫描在什么时候跑都只吃完整交易日的数据——定时任务
     延迟多久都不影响结果的正确性，只影响它新不新。
     """
     period = (meta.get("currentTradingPeriod") or {}).get("regular") or {}
     start, end = period.get("start"), period.get("end")
-    market_time = meta.get("regularMarketTime")
-    if not isinstance(start, int) or not isinstance(end, int) or not isinstance(market_time, int):
+    if not isinstance(start, int) or not isinstance(end, int):
         return None
-    return start if market_time < end else None
+    if now is None:
+        now = int(time.time())
+    return start if now < end else None
 
 
-def parse_chart_bars(ticker: str, payload: object) -> Bars:
+def parse_chart_bars(ticker: str, payload: object, *, now: int | None = None) -> Bars:
     """从 Yahoo chart 端点的响应里取出日线序列。
 
     用 ``range=6mo&interval=1d`` 请求同一个 :mod:`~taurient_lite.quotes`
@@ -213,7 +220,7 @@ def parse_chart_bars(ticker: str, payload: object) -> Bars:
     except (KeyError, IndexError, TypeError) as exc:
         raise MomentumError(f"{ticker}：响应结构不对，取不到日线（{exc}）") from exc
 
-    cutoff = session_cutoff(result.get("meta") or {})
+    cutoff = session_cutoff(result.get("meta") or {}, now)
 
     dates: list[dt.date] = []
     opens: list[float] = []
