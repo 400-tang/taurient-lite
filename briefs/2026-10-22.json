@@ -1,0 +1,866 @@
+{
+  "date": "2026-10-22",
+  "weekday": "Thursday",
+  "edition": "Daily edition",
+  "generated_at": "2026-10-22 06:16 PT",
+  "scanned": 78,
+  "kept": 15,
+  "thesis": "Meta与特斯拉周三盘后同时交出核心数字超预期的三季报——Meta营收同比+26%、特斯拉调整后EPS超预期且自由现金流转正——但今早盘前两只股票都陷入观望甚至下跌，Meta被99亿美元反垄断和解计提拖累营业利润，特斯拉则被审慎的Optimus与Robotaxi时间表盖过业绩本身；IBM、半导体设备商Lam Research同样财报后走低，宝洁却逆势大涨，本周\"数字好看不等于股价上涨\"的主题继续发酵。下周二三(10/27-28)的FOMC决议——预测市场押注大概率维持利率不变——以及同日登场的微软、Alphabet财报，是接下来最大的悬念。",
+  "tape": {
+    "asof": "上一收盘 · 周三 10/21",
+    "rows": [
+      {
+        "name": "S&P 500",
+        "value": "7,757.17",
+        "change": "+0.58%（+44.60点）",
+        "dir": "up"
+      },
+      {
+        "name": "Nasdaq Composite",
+        "value": "26,702.86",
+        "change": "+1.05%（+278.04点），科技股领涨",
+        "dir": "up"
+      },
+      {
+        "name": "Dow Jones Industrial Average",
+        "value": "52,856.09",
+        "change": "+0.69%（+360.21点）",
+        "dir": "up"
+      }
+    ]
+  },
+  "items": [
+    {
+      "rank": 1,
+      "tier": "must-read",
+      "published": "2026-10-21",
+      "headline": "美股周三三大指数齐涨：标普500涨0.58%、纳指涨逾1%，SpaceX财报后大涨近8%领涨科技股",
+      "tickers": [],
+      "sectors": [
+        "大盘",
+        "科技"
+      ],
+      "body": "周三(10/21)美股三大指数集体收高：标普500指数涨44.60点（+0.58%）至7,757.17点，接近10月初创下的历史高点；道指涨360.21点（+0.69%）至52,856.09点；纳指综合涨278.04点（+1.05%）至26,702.86点，科技股领涨大盘。Yahoo Finance的盘中直播将纳指的强势归因于SpaceX财报后股价大涨近8%，叠加其他科技权重股的普涨；市场同时在消化当晚盘后登场的Meta、特斯拉财报。",
+      "why": "这是本周第三个交易日指数上涨，但涨势主要由少数公司的财报行情驱动（SpaceX+8%），而非普涨——盘后登场的Meta、特斯拉财报结果喜忧参半（见第2、3条），说明周三的乐观情绪在周四早盘已经开始接受检验。",
+      "impact": "大盘情绪 · 科技权重股财报行情",
+      "sources": [
+        {
+          "name": "Yahoo Finance（周三收盘直播）",
+          "url": "https://finance.yahoo.com/markets/live/stock-market-today-wednesday-october-21-dow-sp-500-nasdaq-100000105.html",
+          "angle": "将纳指涨势归因于SpaceX财报后大涨近8%"
+        },
+        {
+          "name": "The Washington Post（AP wire，三大指数收盘数据）",
+          "url": "https://www.washingtonpost.com/business/2026/10/21/wall-street-stocks-dow-nasdaq/f78fcba0-cd8c-11f1-ac04-9f58578a68b4_story.html",
+          "angle": "给出标普500收盘点位及其与历史高点的距离"
+        },
+        {
+          "name": "Yahoo Finance（标普500历史数据）",
+          "url": "https://finance.yahoo.com/quote/%5EGSPC/",
+          "angle": "确认标普500收盘点位"
+        }
+      ],
+      "assets": [
+        {
+          "asset_class": "美股",
+          "direction": "up",
+          "conviction": "medium",
+          "note": "三大指数普涨，但涨幅集中在SpaceX等个股财报利好，而非板块性普涨，当晚盘后的Meta、特斯拉财报将决定周四早盘能否延续。"
+        }
+      ],
+      "cross_source": {
+        "agreement": "aligned",
+        "summary": "Yahoo Finance与Washington Post对三大指数收盘点位及涨跌方向的描述一致，均将当日强势归因于个股财报而非宏观消息。"
+      }
+    },
+    {
+      "rank": 2,
+      "tier": "must-read",
+      "published": "2026-10-21",
+      "headline": "Meta三季度营收646亿美元超预期26%，但99亿美元反垄断和解计提拖累营业利润，盘前涨跌不一",
+      "tickers": [
+        "META"
+      ],
+      "sectors": [
+        "科技",
+        "AI",
+        "社交媒体"
+      ],
+      "body": "Meta Platforms周三(10/21)盘后公布三季度财报：总营收646.0亿美元，同比增长26%，超市场预期的633.4亿美元；营业利润129.9亿美元，同比大降37%(减少75.5亿美元)，主因是与2026年8月\"多州总检察长协议\"相关的99亿美元一次性计提——公司CFO表示若剔除该计提，营业利润同比本应增长11%。净利润98.6亿美元，每股收益3.83美元，高于市场预期的3.57美元。广告展示量同比增长10%，单次广告均价同比增长14%；9月家庭日均活跃用户(DAP)平均为36.4亿，同比增长3%。资本开支达349亿美元，自由现金流转负至-21亿美元。公司同时宣布发行新的C类普通股，CEO扎克伯格提及公司首个前沿模型\"Muse\"的发布。财报公布当晚盘后股价一度上涨3.79%至723.93美元，但周四早盘多份盘前快照显示股价转为下跌1%~3%。",
+      "why": "营收与每股收益双双超预期，但盈利质量被一次性和解计提严重扭曲，叠加349亿美元的单季资本开支和由正转负的自由现金流，市场今天明显更关注\"AI支出什么时候能转化为利润\"而不是\"这一季账面赚了多少\"——这是本周继Netflix之后第二次出现\"数字好看但股价不买账\"的样本。",
+      "impact": "科技权重股情绪 · AI资本开支叙事",
+      "sources": [
+        {
+          "name": "Benzinga（Meta Q3 2026财报电话会议纪要）",
+          "url": "https://www.benzinga.com/news/26/10/62514401/meta-platforms-q3-2026-earnings-call-transcript",
+          "angle": "给出财报电话会议的详细纪要"
+        },
+        {
+          "name": "Investing.com（财报摘要与AI叙事角度）",
+          "url": "https://www.investing.com/news/transcripts/earnings-call-transcript-meta-beats-q3-2026-estimates-as-ai-push-lifts-shares-93CH-4964260",
+          "angle": "强调AI投入对股价的拉动，聚焦盘后上涨"
+        },
+        {
+          "name": "Investing.com（Q3财报幻灯片解读）",
+          "url": "https://www.investing.com/news/company-news/meta-q3-2026-slides-revenue-surges-26-as-margins-compress-sharply-93CH-4964286",
+          "angle": "给出营收增速与营业利润率压缩的具体数字"
+        },
+        {
+          "name": "Investing.com（周四盘前异动：Meta earnings fail to lift sentiment）",
+          "url": "https://www.investing.com/news/stock-market-news/premarket-movers-tesla-ibm-slide-meta-earnings-fail-to-lift-sentiment-4965382",
+          "angle": "报道周四早盘Meta股价未能延续盘后涨幅、转为下跌"
+        }
+      ],
+      "assets": [
+        {
+          "asset_class": "美股",
+          "direction": "mixed",
+          "conviction": "medium",
+          "note": "营收与每股收益超预期支撑长期AI叙事，但一次性和解计提与资本开支扩大压制短期情绪，盘后到盘前的股价方向出现反转。"
+        }
+      ],
+      "cross_source": {
+        "agreement": "split",
+        "summary": "各信源对营收、营业利润、每股收益等核心数字的报道基本一致，但对股价方向的描述随时间点变化——财报当晚盘后一度上涨3.79%，周四早盘的多份快照却显示转跌1%~3%，说明市场在消化资本开支细节后改变了方向。"
+      }
+    },
+    {
+      "rank": 3,
+      "tier": "must-read",
+      "published": "2026-10-21",
+      "headline": "特斯拉三季度调整后EPS 0.48美元超预期、自由现金流转正，但Optimus与Robotaxi时间表谨慎致盘前剧烈波动",
+      "tickers": [
+        "TSLA"
+      ],
+      "sectors": [
+        "电动车",
+        "AI",
+        "机器人"
+      ],
+      "body": "特斯拉周三(10/21)盘后公布三季度财报：调整后每股收益0.48美元，高于市场约0.45美元的预期；营收约280.5亿美元，同比基本持平；营业利润7.18亿美元，同比大降56%；自由现金流转正至15.3亿美元；剔除信用额度后的汽车业务毛利率升至18.1%，高于上一季度的16.3%；GAAP净利润7.87亿美元，当季资本开支47.3亿美元。公司此前已通过8-K文件披露当季交付486,532辆汽车。周三常规交易时段股价上涨3.41%收于386.47美元，但财报公布后的盘后与周四早盘走势出现明显分歧：部分信源显示股价一度下跌3%~5%至367.20美元附近（主因是管理层对Optimus人形机器人与Robotaxi营收兑现时间表的表态仍偏谨慎），而Yahoo Finance周四早盘8:18 ET的快照则显示股价上涨约3.4%。",
+      "why": "经营利润同比暴跌56%、FSD与Optimus商业化时间表依旧谨慎，这些细节被市场在电话会议后重新消化，导致从周三收盘到周四早盘股价方向出现罕见的大幅摇摆——不同信源抓取的时间点不同，呈现出几乎相反的画面，这本身就是市场情绪尚未企稳的信号。",
+      "impact": "电动车板块情绪 · 人形机器人/Robotaxi商业化叙事",
+      "sources": [
+        {
+          "name": "Investing.com（特斯拉Q3 2026财报电话会议纪要）",
+          "url": "https://www.investing.com/news/transcripts/earnings-call-transcript-tesla-beats-q3-2026-estimates-as-stock-slips-after-hours-93CH-4964365",
+          "angle": "给出财报电话会议细节，聚焦盘后下跌"
+        },
+        {
+          "name": "Gate.com（盘后股价快照）",
+          "url": "https://www.gate.com/news/detail/TSLA/tesla-stocks-fall-332-after-hours-as-q3-beat-meets-2027-timelines-25123827",
+          "angle": "记录19:59 ET的盘后下跌快照，约367美元附近"
+        },
+        {
+          "name": "Yahoo Finance（周四早盘财报直播）",
+          "url": "https://finance.yahoo.com/markets/live/earnings-live-updates-all-eyes-on-musk-and-meta-as-q3-earnings-roll-on-134152191.html",
+          "angle": "8:18 ET快照显示特斯拉早盘上涨约3.4%，与盘后下跌的报道相反"
+        }
+      ],
+      "assets": [
+        {
+          "asset_class": "美股",
+          "direction": "mixed",
+          "conviction": "medium",
+          "note": "核心财务指标超预期但机器人业务时间表引发分歧，盘前走势随快照时间点剧烈摇摆，尚未形成稳定方向。"
+        }
+      ],
+      "cross_source": {
+        "agreement": "split",
+        "summary": "Investing.com与Gate.com的盘后快照显示股价下跌3%~5%，而Yahoo Finance周四早盘8:18 ET的快照显示上涨约3.4%，两种画面几乎相反，很可能反映的是盘前交易在不同时间点的真实大幅波动，而非单纯的报道口径差异。"
+      }
+    },
+    {
+      "rank": 4,
+      "tier": "must-read",
+      "published": "2026-10-22",
+      "headline": "财报季继续分化：IBM、Lam Research盘前重挫，宝洁逆势大涨",
+      "tickers": [],
+      "sectors": [
+        "科技",
+        "半导体设备",
+        "消费品"
+      ],
+      "body": "周四(10/22)早盘，除Meta、特斯拉外，另有多家公司的财报行情呈现明显分化：据Newsquawk与Benzinga的盘前异动名单，IBM、半导体设备商Lam Research均在各自的季度财报公布后于盘前下跌（Benzinga将二者与Rollins列为周四早盘跌幅最大的股票之一）；与此同时，宝洁(P&G)则在财报超预期后逆势上涨约3%。这是本周继Netflix(10/20)、Meta与特斯拉(10/21盘后)之后，第三、四、五次出现\"财报本身不差但股价反应两极\"的样本。",
+      "why": "同一个财报季内，不同公司的\"超预期\"被市场用完全不同的方式定价——这反映的是投资者正在用更挑剔的标准区分\"真实增长\"与\"账面数字\"，尤其是在AI资本开支与半导体设备需求的可持续性仍存争议的背景下，而不是简单的逐笔利好交易。",
+      "impact": "财报季情绪 · 科技与消费板块分化",
+      "sources": [
+        {
+          "name": "Newsquawk（周四美股盘前异动名单）",
+          "url": "https://www.newsquawk.com/headlines/us-premarket-movers-meta-tsla-ibm-lrcx-bx-pg-cmcsa-sap-baba",
+          "angle": "列出META、TSLA、IBM、LRCX、PG等当日盘前异动名单"
+        },
+        {
+          "name": "Benzinga（周四盘前走低个股名单）",
+          "url": "https://www.benzinga.com/trading-ideas/movers/26/10/62522553/tesla-lam-research-rollins-and-other-big-stocks-moving-lower-in-thursdays-pre-market-session",
+          "angle": "确认特斯拉、Lam Research、Rollins等个股周四盘前走低"
+        },
+        {
+          "name": "Investing.com（周四盘前异动综述）",
+          "url": "https://www.investing.com/news/stock-market-news/premarket-movers-tesla-ibm-slide-meta-earnings-fail-to-lift-sentiment-4965382",
+          "angle": "将特斯拉、IBM的盘前下跌与Meta财报情绪未能提振市场放在一起报道"
+        }
+      ],
+      "assets": [
+        {
+          "asset_class": "美股",
+          "direction": "mixed",
+          "conviction": "medium",
+          "note": "同一财报季内个股涨跌两极分化，指数层面的方向将取决于权重股之间的分化能否收敛，而非单一板块性趋势。"
+        }
+      ],
+      "cross_source": {
+        "agreement": "aligned",
+        "summary": "Newsquawk与Benzinga对IBM、Lam Research盘前下跌、宝洁盘前上涨的方向描述一致，均将这组分化与Meta、特斯拉财报后的复杂反应放在同一叙事下报道。"
+      }
+    },
+    {
+      "rank": 5,
+      "tier": "worth-knowing",
+      "published": "2026-10-22",
+      "headline": "IBM三季度营收174亿美元超预期，但GAAP每股收益2.31美元明显低于非GAAP口径的2.95美元，盘前仍下跌",
+      "tickers": [],
+      "sectors": [
+        "科技",
+        "云计算"
+      ],
+      "body": "据SEC 10-Q备案文件，IBM周三(10/21)盘后公布三季度营收171.03亿美元，同比增长约4.7%(上年同期163.31亿美元)，高于市场约168.5亿美元的预期；GAAP口径下持续经营业务摊薄每股收益2.31美元，非GAAP(\"运营\"口径)每股收益2.95美元，后者高于市场约2.89美元的预期，但两种口径之间存在明显差距。软件业务营收增长8%(按固定汇率增长9%)，咨询业务基本持平，基础设施业务增长4%；GAAP毛利率56.8%，非GAAP运营毛利率58.5%；年初至今自由现金流78亿美元。公司维持全年固定汇率营收增速4%~5%的指引，并将全年自由现金流增幅预期上修至超过10亿美元(同比)。财报公布后，IBM股价仍被Newsquawk与Benzinga的盘前异动名单列为周四早盘跌幅最大个股之一——GAAP与非GAAP每股收益之间的较大落差，可能是市场在\"营收超预期\"标题之外更关注的细节。",
+      "why": "营收和非GAAP每股收益双双超预期，但GAAP每股收益明显落后，这种口径之间的落差本身就是一个需要解释的信号——市场显然没有只看标题数字，这是本周\"财报超预期≠股价上涨\"主题在IBM身上的又一次体现。",
+      "impact": "科技与云计算板块情绪",
+      "sources": [
+        {
+          "name": "SEC EDGAR（IBM 2026年三季度10-Q原文）",
+          "url": "https://www.sec.gov/Archives/edgar/data/0000051143/000005114326000095/ibm-20260930.htm",
+          "angle": "一手备案文件，给出营收、GAAP与非GAAP每股收益、毛利率、自由现金流等官方数字"
+        },
+        {
+          "name": "Newsquawk（周四美股盘前异动名单）",
+          "url": "https://www.newsquawk.com/headlines/us-premarket-movers-meta-tsla-ibm-lrcx-bx-pg-cmcsa-sap-baba",
+          "angle": "将IBM列入周四盘前异动名单"
+        },
+        {
+          "name": "Investing.com（周四盘前异动综述）",
+          "url": "https://www.investing.com/news/stock-market-news/premarket-movers-tesla-ibm-slide-meta-earnings-fail-to-lift-sentiment-4965382",
+          "angle": "明确指出IBM盘前下跌（headline即为\"Tesla, IBM slide\"）"
+        }
+      ],
+      "assets": [
+        {
+          "asset_class": "美股",
+          "direction": "mixed",
+          "conviction": "medium",
+          "note": "营收与非GAAP每股收益超预期支撑长期叙事，但GAAP每股收益落后、与非GAAP口径的落差压制盘前股价，呈现分化反应。"
+        }
+      ]
+    },
+    {
+      "rank": 6,
+      "tier": "worth-knowing",
+      "published": "2026-10-22",
+      "headline": "半导体设备商Lam Research财报后盘前重挫，此前7月指引为本季营收81亿±4亿美元",
+      "tickers": [],
+      "sectors": [
+        "半导体设备",
+        "AI硬件"
+      ],
+      "body": "Lam Research周四(10/22)早盘因财报在Newsquawk、Benzinga的盘前异动名单中被列为跌幅最大个股之一。该公司今年7月29日公布上一季度(2026财年四季度)业绩时，曾给出本季度(2027财年一季度，对应9月结束的自然季度)营收指引81.0亿美元±4亿美元、非GAAP每股收益2.15美元±0.15美元，CEO Tim Archer同时将2026年全球晶圆制造设备行业规模展望上调至1,500亿美元区间。本次扫描未能独立核实公司今天实际公布的具体数字，仅能确认股价盘前明显走弱。",
+      "why": "如果实际数字不及此前的乐观指引，将是本周继Netflix、IBM之后第三次'对AI/半导体资本开支能否持续'的担忧找到具体公司层面的证据，与SpaceX、美超微上周的强劲业绩形成对照。",
+      "impact": "半导体设备板块情绪 · AI资本开支可持续性",
+      "sources": [
+        {
+          "name": "Benzinga（周四盘前走低个股名单）",
+          "url": "https://www.benzinga.com/trading-ideas/movers/26/10/62522553/tesla-lam-research-rollins-and-other-big-stocks-moving-lower-in-thursdays-pre-market-session",
+          "angle": "将Lam Research列入周四盘前走低个股名单"
+        },
+        {
+          "name": "Hudson Labs（Lam Research 2027财年一季度财报前瞻）",
+          "url": "https://www.hudson-labs.com/research/lam-research-q1-2027-earnings-preview-lrcx-results-preview",
+          "angle": "给出公司7月指引的营收与每股收益区间，作为对照本季实际表现的基准"
+        }
+      ]
+    },
+    {
+      "rank": 7,
+      "tier": "worth-knowing",
+      "published": "2026-10-22",
+      "headline": "宝洁(P&G)财报超预期，股价逆势上涨约3%",
+      "tickers": [],
+      "sectors": [
+        "消费品"
+      ],
+      "body": "宝洁周四(10/22)早盘公布财报后股价上涨约3%，据Newsquawk的盘前异动名单。公司过去8个季度中有8次每股收益超预期，但营收仅2次超预期，本次具体数字本次扫描未能独立核实；此前管理层对本季度给出的指引是每股收益同比至少下降5%，全年核心每股收益指引区间为6.89~7.11美元。",
+      "why": "在IBM、Lam Research、特斯拉盘前都承压的早盘，宝洁逆势上涨进一步凸显出市场正在逐家公司甄别'超预期'的含金量，而不是统一按财报季情绪交易。",
+      "impact": "消费品板块情绪",
+      "sources": [
+        {
+          "name": "Newsquawk（周四美股盘前异动名单）",
+          "url": "https://www.newsquawk.com/headlines/us-premarket-movers-meta-tsla-ibm-lrcx-bx-pg-cmcsa-sap-baba",
+          "angle": "将宝洁列入周四盘前上涨名单"
+        },
+        {
+          "name": "Benzinga（宝洁盈利预测页）",
+          "url": "https://www.benzinga.com/quote/PG/earnings-forecasts",
+          "angle": "给出此前管理层对本季每股收益与全年指引的具体区间"
+        }
+      ]
+    },
+    {
+      "rank": 8,
+      "tier": "worth-knowing",
+      "published": "2026-10-20",
+      "headline": "FOMC决议临近(10/27-28)，预测市场对降息定价降至15%~23%，本次会议无经济预测摘要",
+      "tickers": [],
+      "sectors": [
+        "宏观",
+        "利率"
+      ],
+      "body": "美联储下一次FOMC会议定于10月27日至28日，决议将于10月28日美东时间下午2:00公布，本次会议不附带经济预测摘要(SEP)；芝加哥联储公布的日历显示，本次会议的\"缄默期\"为10月17日至29日。多个预测市场(Manifold、Polymarket)对\"降息25个基点\"的定价在15%~23%之间，意味着市场仍普遍押注10月维持利率不变。近期联储官员表态出现分歧：10月初Jefferson、Williams的讲话曾被市场解读为\"不急于进一步收紧\"，但10月中旬包括克利夫兰联储主席Hammack的讲话又偏鹰派，暗示可能仍需进一步收紧以压降需求——不同信源对\"官员整体口风转向\"的判断并不一致。",
+      "why": "本次会议没有经济预测摘要，市场只能依赖官员表态和数据来猜测后续路径；官员口风从'暂停'到'偏鹰'的反复，解释了为什么预测市场的降息定价一直在15%~23%的窄幅区间波动，而没有形成清晰共识。",
+      "impact": "全市场利率定价",
+      "sources": [
+        {
+          "name": "fedratecalc.com（10月FOMC会议日程）",
+          "url": "https://fedratecalc.com/fomc-meeting-schedule/october-2026/",
+          "angle": "给出决议公布的具体时间(10/28 14:00 ET)"
+        },
+        {
+          "name": "capital.com（联储事件日历）",
+          "url": "https://capital.com/en-gb/news/federal-reserve-events",
+          "angle": "确认声明发布与新闻发布会的具体时间安排"
+        },
+        {
+          "name": "Chase（联储官员鹰派表态综述）",
+          "url": "https://www.chase.com/personal/investments/learning-and-insights/article/federal-reserve-officials-hawkish-tone-ahead-of-october-2026-fomc-meeting",
+          "angle": "报道10月中旬联储官员表态偏鹰派，与月初的温和口风形成对比"
+        },
+        {
+          "name": "Manifold Markets（降息概率预测市场）",
+          "url": "https://manifold.markets/CalibratedGhosts/will-the-fed-cut-rates-by-at-least-gsyCdSpcsg",
+          "angle": "给出预测市场对25个基点降息的定价区间"
+        }
+      ],
+      "cross_source": {
+        "agreement": "split",
+        "summary": "月初Jefferson、Williams的讲话被解读为偏鸽派，但10月中旬Hammack等官员的表态偏鹰派，两组信源对\"联储整体口风\"的判断方向不一致。"
+      }
+    },
+    {
+      "rank": 9,
+      "tier": "worth-knowing",
+      "published": "2026-10-22",
+      "headline": "下周三大型科技财报撞上FOMC决议：微软、Alphabet 10/28同日登场，亚马逊10/29，波音10/27新确认",
+      "tickers": [],
+      "sectors": [
+        "宏观",
+        "科技",
+        "工业"
+      ],
+      "body": "下周的日程相当密集：波音已确认将于10/27发布三季度财报并在美东时间10:30召开电话会议(此前部分跟踪网站给出的日期是10/26，但公司自己的公告以10/27为准)，市场预期当季每股亏损约0.15美元；同一天(10/27)FOMC会议开始，10/28公布决议；微软与Alphabet的三季度财报也定在10/28，与FOMC决议同日揭晓；亚马逊三季度财报则在10/29登场。",
+      "why": "三大科技巨头的资本开支指引将在FOMC决议公布的同一周集中亮相，如果财报继续强化\"AI支出能否持续\"的分化逻辑（见本期第2、4条），叠加利率决议本身的不确定性，下周可能是近期波动率最集中的一周。",
+      "impact": "科技权重股与宏观利率事件共振",
+      "sources": [
+        {
+          "name": "autobound.ai（波音三季度财报公告）",
+          "url": "https://www.autobound.ai/companies/boeing/news/boeing-to-release-third-quarter-results-on-october-27-c204f3c9",
+          "angle": "确认波音公司自己公告的财报日期为10/27，与部分第三方日历网站的10/26不一致"
+        },
+        {
+          "name": "Zacks（经TradingView转载，大型科技财报前瞻）",
+          "url": "https://jp.tradingview.com/news/zacks:d318fcd14094b:0-microsoft-meta-platforms-alphabet-apple-and-amazon-are-part-of-zacks-earnings-preview",
+          "angle": "列出微软、Alphabet、亚马逊等本轮财报季的日程"
+        }
+      ]
+    },
+    {
+      "rank": 10,
+      "tier": "worth-knowing",
+      "published": "2026-10-22",
+      "headline": "今日(10/22)美国将公布首次申领失业金人数，市场预期20万人",
+      "tickers": [],
+      "sectors": [
+        "宏观",
+        "就业"
+      ],
+      "body": "美国劳工部定于美东时间今天(10/22)上午8:30公布截至10/17当周的首次申领失业金人数，TD Economics汇总的市场预期为20.0万人，此前一周的数字为19.9万人。本次扫描时点尚未捕捉到实际公布值，只能确认这是今天上午的既定数据日程。",
+      "why": "这是FOMC决议前最后几批劳动力市场数据之一，如果数字明显偏离预期，可能在决议前进一步影响市场对12月降息路径的押注。",
+      "impact": "劳动力市场数据 · 利率路径预期",
+      "sources": [
+        {
+          "name": "TD Economics（美国经济数据日历）",
+          "url": "https://economics.td.com/domains/economics.td.com/documents/reports/bottom-line/tables/2026-10-16/upcoming.htm",
+          "angle": "给出本周首次申领失业金人数的市场预期与前值"
+        }
+      ]
+    },
+    {
+      "rank": 11,
+      "tier": "noise",
+      "published": "2026-10-15",
+      "headline": "CoreWeave债务压力仍未缓解：5年期CDS点差一度破1,100基点（旧闻，本次扫描未见新进展）",
+      "tickers": [],
+      "sectors": [
+        "AI基建",
+        "信用市场"
+      ],
+      "body": "这条背景从10/15就开始发酵，此前的简报已连续报道：CoreWeave 2031年债券收益率一度破16%，5年期信用违约互换(CDS)点差一度突破1,100基点，隐含的五年违约概率已升至约63%（一年前约30%）；甲骨文同期的5年期CDS也走阔至创纪录的288基点。本次扫描未见该话题在10月22日有新的具体进展。",
+      "why": "这是AI基建举债扩张担忧的信用市场体现，只要CoreWeave的CDS和债券收益率没有实质性回落，这个担忧就会持续作为芯片与AI基建股情绪的潜在风险点存在。",
+      "impact": "AI基建信用风险 · 债券与CDS市场",
+      "sources": [
+        {
+          "name": "S&P Global Market Intelligence（经多家媒体转引）",
+          "url": "https://letsdatascience.com/news/coreweave-slump-exposes-ai-infrastructure-debt-risks-2691f237",
+          "angle": "给出CDS点差、隐含违约概率与甲骨文CDS走阔的具体数字"
+        }
+      ]
+    },
+    {
+      "rank": 12,
+      "tier": "noise",
+      "published": "2026-09-30",
+      "headline": "2026年迄今科技业裁员已超16.6万人，同比增54%（旧闻，本次扫描未见10月新公告）",
+      "tickers": [],
+      "sectors": [
+        "科技",
+        "就业"
+      ],
+      "body": "这是截至9月末的滚动统计、并非今天的新进展：2026年以来美国科技公司已公布约165,925个岗位的裁员，同比增长54%，技术行业占全年全部行业裁员公告的约31%。本次扫描未见10月的新公告，仅作为就业市场背景参照。",
+      "why": "持续的科技裁员是\"AI资本开支挤压传统岗位\"叙事的一部分背景，但没有新的具体公告就不构成今天的新闻。",
+      "impact": "科技行业就业背景",
+      "sources": [
+        {
+          "name": "Fast Company",
+          "url": "https://www.fastcompany.com/91616653/tech-layoffs-165925-jobs-slashed-2026-september-cuts-rise",
+          "angle": "给出截至9月末的累计裁员人数与同比增幅"
+        }
+      ]
+    },
+    {
+      "rank": 13,
+      "tier": "noise",
+      "published": "2026-10-19",
+      "headline": "分析师押注特斯拉与SpaceX年内合并，马斯克持续放出暗示但未确认（旧闻，本次扫描未见新进展）",
+      "tickers": [
+        "TSLA"
+      ],
+      "sectors": [
+        "电动车",
+        "航天"
+      ],
+      "body": "这条背景从10/19起已连续报道：巴克莱分析师Dan Levy认为合并可能在2026年底前宣布，特斯拉须在12月6日前召开年度股东大会；Dan Ives此前估计2027年促成合并的概率超过80%。马斯克本人仍未正式确认。本次扫描未见该话题有新的具体进展，但值得留意的是，部分盘前报道提到特斯拉股价今早的波动也与市场对马斯克近期言论的解读有关（见第3条）。",
+      "why": "如果合并成真将是马斯克商业版图的一次重大重组，但目前仍停留在分析师猜测与马斯克的暗示阶段。",
+      "impact": "特斯拉与SpaceX估值逻辑",
+      "sources": [
+        {
+          "name": "Kaohoon International（援引Barclays）",
+          "url": "https://www.kaohooninternational.com/?p=592726",
+          "angle": "给出巴克莱分析师对合并时间窗口的具体判断"
+        }
+      ]
+    },
+    {
+      "rank": 14,
+      "tier": "noise",
+      "published": "2026-10-21",
+      "headline": "10/21是VIX月度期货与期权到期日，技术性因素可能放大当周尾盘波动",
+      "tickers": [],
+      "sectors": [
+        "波动率",
+        "大盘情绪"
+      ],
+      "body": "据VIX期货期权到期日历，10月21日(周三)是本月的VIX月度期货与期权到期日。到期日前后的对冲仓位再平衡有时会放大指数尾盘的波动，这是理解本周股价波动（包括今早Meta、特斯拉盘前走势的大幅摇摆）时的一个技术性背景，而非基本面驱动因素。",
+      "why": "这提醒读者，近两天盘前/盘后数字的剧烈摇摆，除了财报本身的基本面解读分歧外，也可能部分掺杂了期权到期带来的技术性仓位调整。",
+      "impact": "波动率市场技术性背景",
+      "sources": [
+        {
+          "name": "macroption.com（VIX到期日历）",
+          "url": "https://www.macroption.com/vix-expiration-calendar/",
+          "angle": "确认10月21日为VIX期货期权的月度到期日"
+        }
+      ]
+    },
+    {
+      "rank": 15,
+      "tier": "noise",
+      "published": "2026-10-21",
+      "headline": "FINRA最新空头持仓数据(结算日9/30)：英伟达环比增5.83%，苹果、微软分别降6.21%、9.22%",
+      "tickers": [
+        "NVDA",
+        "TSLA",
+        "AAPL",
+        "MSFT",
+        "AVGO",
+        "AMD",
+        "PLTR",
+        "COIN"
+      ],
+      "sectors": [
+        "自选股",
+        "仓位数据"
+      ],
+      "body": "FINRA最新一期空头持仓数据(结算日2026-09-30，由仓库内GitHub Actions快照提供)显示，自选股名单中：英伟达空头股数311,389,688股，较上期294,225,803股增5.83%，回补天数2.82天；特斯拉增3.0%至70,931,312股，回补天数1.94天；苹果降6.21%至120,763,539股，回补天数3.03天；微软降9.22%至61,133,927股，回补天数2.55天；博通增4.38%至54,197,605股，回补天数2.32天；AMD降1.74%至39,281,942股，回补天数1.63天；Palantir降7.64%至55,587,983股，回补天数2.43天；Coinbase降3.41%至24,374,578股，回补天数2.5天。FINRA空头持仓每月仅更新两次，这是当前可用的最新一期，本身不是今天发酵的新闻，仅作自选股仓位背景参照；本期未计算占流通股百分比——这需要股本数据，现有行情接口不提供。",
+      "why": "空头持仓的变化方向本身不构成交易信号，但在芯片股与AI权重股近期波动加剧的背景下，这组数字提供了一个可供参照的仓位背景——例如微软空头持仓环比降幅较大，与其财报即将在10/28公布形成对照。",
+      "impact": "自选股仓位背景",
+      "sources": [
+        {
+          "name": "FINRA（经仓库快照脚本snapshot_market.py抓取）",
+          "url": "https://www.finra.org/finra-data/browse-catalog/equity-short-interest",
+          "angle": "官方空头持仓数据源，结算日2026-09-30"
+        }
+      ]
+    }
+  ],
+  "calendar": [
+    {
+      "when": "周四 10/22",
+      "time": "08:30 ET",
+      "event": "首次申领失业金人数（截至10/17当周），市场预期20.0万人",
+      "weight": "low",
+      "date": "2026-10-22",
+      "sources": [
+        {
+          "name": "TD Economics",
+          "url": "https://economics.td.com/domains/economics.td.com/documents/reports/bottom-line/tables/2026-10-16/upcoming.htm"
+        }
+      ]
+    },
+    {
+      "when": "周二 10/27",
+      "time": "10:30 ET",
+      "event": "波音三季度财报，市场预期每股亏损约0.15美元",
+      "weight": "mid",
+      "date": "2026-10-27",
+      "sources": [
+        {
+          "name": "autobound.ai（波音公告）",
+          "url": "https://www.autobound.ai/companies/boeing/news/boeing-to-release-third-quarter-results-on-october-27-c204f3c9"
+        }
+      ]
+    },
+    {
+      "when": "周二 10/27 - 周三 10/28",
+      "time": "决议 · 周三14:00 ET",
+      "event": "美联储FOMC利率决议，预测市场对降息25个基点的定价约15%~23%，本次会议不含经济预测摘要(SEP)",
+      "weight": "high",
+      "date": "2026-10-28",
+      "sources": [
+        {
+          "name": "fedratecalc.com",
+          "url": "https://fedratecalc.com/fomc-meeting-schedule/october-2026/"
+        },
+        {
+          "name": "Manifold Markets",
+          "url": "https://manifold.markets/CalibratedGhosts/will-the-fed-cut-rates-by-at-least-gsyCdSpcsg"
+        }
+      ]
+    },
+    {
+      "when": "周三 10/28",
+      "time": "—",
+      "event": "微软、Alphabet三季度财报（与美联储决议同日）",
+      "weight": "mid",
+      "date": "2026-10-28",
+      "sources": [
+        {
+          "name": "Zacks（via tradingview）",
+          "url": "https://jp.tradingview.com/news/zacks:d318fcd14094b:0-microsoft-meta-platforms-alphabet-apple-and-amazon-are-part-of-zacks-earnings-preview"
+        }
+      ]
+    },
+    {
+      "when": "周四 10/29",
+      "time": "—",
+      "event": "亚马逊三季度财报",
+      "weight": "mid",
+      "date": "2026-10-29",
+      "sources": [
+        {
+          "name": "Zacks（via tradingview）",
+          "url": "https://jp.tradingview.com/news/zacks:d318fcd14094b:0-microsoft-meta-platforms-alphabet-apple-and-amazon-are-part-of-zacks-earnings-preview"
+        }
+      ]
+    },
+    {
+      "when": "周四 10/29",
+      "time": "—",
+      "event": "Coinbase三季度财报（预估日期，公司尚未正式确认）",
+      "weight": "low",
+      "sources": [
+        {
+          "name": "Nasdaq",
+          "url": "https://www.nasdaq.com/articles/coinbase-faces-regulatory-roadblocks-eyes-strong-2026"
+        }
+      ]
+    },
+    {
+      "when": "11/2",
+      "time": "—",
+      "event": "苹果财年四季度财报，约翰·特纳斯首次以CEO身份主持电话会议",
+      "weight": "mid",
+      "date": "2026-11-02",
+      "sources": [
+        {
+          "name": "iClarified",
+          "url": "https://www.iclarified.com/102636/apple-to-announce-q4-fy26-earnings-on-november-2"
+        }
+      ]
+    },
+    {
+      "when": "11/2（未经官方确认）",
+      "time": "—",
+      "event": "Palantir三季度财报，部分信源给出11/2，公司尚未正式确认，另有信源给出11/9",
+      "weight": "low",
+      "sources": [
+        {
+          "name": "247wallst",
+          "url": "https://247wallst.com/investing/2026/10/14/palantirs-earnings-gamble-nine-straight-beats-set-high-bar-for-november-2?.tsrc=rss"
+        }
+      ]
+    },
+    {
+      "when": "11/3",
+      "time": "—",
+      "event": "美超微(SMCI)正式财报电话会议",
+      "weight": "mid",
+      "date": "2026-11-03",
+      "sources": [
+        {
+          "name": "SEC EDGAR",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001375365/000137536526000025/smcifirstquarterfy2027busi.htm"
+        }
+      ]
+    },
+    {
+      "when": "11/3",
+      "time": "—",
+      "event": "AMD三季度财报，市场预期EPS 1.94美元、营收130.8亿美元",
+      "weight": "mid",
+      "date": "2026-11-03",
+      "sources": [
+        {
+          "name": "TipRanks",
+          "url": "https://www.tipranks.com/news/why-ai-chip-stocks-nvidia-broadcom-amd-and-intel-are-falling-in-premarket-today-october-20"
+        }
+      ]
+    },
+    {
+      "when": "11月下旬",
+      "time": "—",
+      "event": "英伟达三季度财报（具体日期待定）",
+      "weight": "low",
+      "sources": [
+        {
+          "name": "TipRanks",
+          "url": "https://www.tipranks.com/news/why-ai-chip-stocks-nvidia-broadcom-amd-and-intel-are-falling-in-premarket-today-october-20"
+        }
+      ]
+    },
+    {
+      "when": "12月初（预计12/10，未经官方确认）",
+      "time": "—",
+      "event": "博通(AVGO) 2026财年四季度财报",
+      "weight": "low",
+      "sources": [
+        {
+          "name": "Days.to",
+          "url": "https://days.to/when-is/broadcom-earnings"
+        }
+      ]
+    },
+    {
+      "when": "12/11",
+      "time": "—",
+      "event": "联邦政府资金到期日（10月初签署的临时拨款法案H.R. 6500到期）",
+      "weight": "mid",
+      "date": "2026-12-11",
+      "sources": [
+        {
+          "name": "Washington Examiner",
+          "url": "https://www.washingtonexaminer.com/?p=4658106"
+        }
+      ]
+    }
+  ],
+  "momentum": {
+    "asof": "2026-10-21",
+    "scanned": 2617,
+    "note": "本期候选覆盖消费、医疗、工业、博彩数据、支付等多个板块，未见明显的单一板块聚类；今日常规新闻扫描未撞上其中任何一只。",
+    "candidates": [
+      {
+        "ticker": "BZH",
+        "stage": "ignition",
+        "close": 33.48,
+        "change_pct": 0.09,
+        "rvol": 3.01,
+        "breakout_age": 0,
+        "ext_ma20": 0.0026,
+        "run_from_base": 0.0572,
+        "note": "点火首日涨幅很小(+0.09%)但放量达3.01倍，刚从基底起涨5.72%，是本期候选中起涨幅度最温和的一只。"
+      },
+      {
+        "ticker": "HLT",
+        "stage": "ignition",
+        "close": 359.29,
+        "change_pct": 3.83,
+        "rvol": 2.84,
+        "breakout_age": 0,
+        "ext_ma20": 0.1025,
+        "run_from_base": 0.1976,
+        "note": "点火首日放量2.84倍，单日涨3.83%，收盘已高出20日均线10.25%，较基底上涨19.76%。"
+      },
+      {
+        "ticker": "MSCI",
+        "stage": "ignition",
+        "close": 591.69,
+        "change_pct": 5.0,
+        "rvol": 2.55,
+        "breakout_age": 0,
+        "ext_ma20": 0.0619,
+        "run_from_base": 0.1092,
+        "note": "点火首日单日涨5%，量能2.55倍，较基底上涨10.92%。"
+      },
+      {
+        "ticker": "QGEN",
+        "stage": "ignition",
+        "close": 48.9,
+        "change_pct": 5.05,
+        "rvol": 4.88,
+        "breakout_age": 0,
+        "ext_ma20": 0.0835,
+        "run_from_base": 0.1965,
+        "note": "点火首日放量达4.88倍（本期候选中最高），单日涨5.05%，较基底已上涨19.65%。"
+      },
+      {
+        "ticker": "KNSA",
+        "stage": "ignition",
+        "close": 83.17,
+        "change_pct": 4.64,
+        "rvol": 2.71,
+        "breakout_age": 0,
+        "ext_ma20": 0.072,
+        "run_from_base": 0.3246,
+        "note": "点火首日涨4.64%，量能2.71倍，较基底的累计涨幅达32.46%，是本期候选中距基底最远的一只。"
+      },
+      {
+        "ticker": "GFL",
+        "stage": "ignition",
+        "close": 44.47,
+        "change_pct": -0.47,
+        "rvol": 3.74,
+        "breakout_age": 1,
+        "ext_ma20": 0.0459,
+        "run_from_base": 0.15,
+        "note": "突破次日价格小幅回落0.47%，但成交量仍达3.74倍，较基底上涨15%。"
+      },
+      {
+        "ticker": "RAMP",
+        "stage": "ignition",
+        "close": 38.2,
+        "change_pct": -0.03,
+        "rvol": 2.72,
+        "breakout_age": 1,
+        "ext_ma20": 0.0148,
+        "run_from_base": 0.0217,
+        "note": "突破次日价格基本持平(-0.03%)，量能2.72倍，距基底仅上涨2.17%，是本期候选中起涨幅度最小的一只。"
+      },
+      {
+        "ticker": "HAS",
+        "stage": "ignition",
+        "close": 109.52,
+        "change_pct": 11.2,
+        "rvol": 4.54,
+        "breakout_age": 0,
+        "ext_ma20": 0.1791,
+        "run_from_base": 0.2829,
+        "note": "点火首日单日大涨11.2%，是本期候选中当日涨幅最大的一只，量能4.54倍，收盘已高出20日均线17.91%。"
+      },
+      {
+        "ticker": "RGR",
+        "stage": "ignition",
+        "close": 48.74,
+        "change_pct": 6.19,
+        "rvol": 3.35,
+        "breakout_age": 1,
+        "ext_ma20": 0.1188,
+        "run_from_base": 0.3292,
+        "note": "突破次日再涨6.19%，量能3.35倍，较基底的累计涨幅达32.92%，是本期候选中第二高的run-from-base。"
+      },
+      {
+        "ticker": "HNGE",
+        "stage": "ignition",
+        "close": 107.51,
+        "change_pct": 3.41,
+        "rvol": 2.51,
+        "breakout_age": 0,
+        "ext_ma20": 0.0825,
+        "run_from_base": 0.5057,
+        "note": "点火首日涨3.41%，量能2.51倍，较基底的累计涨幅达50.57%，是本期候选中距基底最远的一只。"
+      },
+      {
+        "ticker": "KOF",
+        "stage": "ignition",
+        "close": 118.29,
+        "change_pct": -1.39,
+        "rvol": 3.84,
+        "breakout_age": 2,
+        "ext_ma20": 0.0614,
+        "run_from_base": 0.1588,
+        "note": "突破第三日价格回落1.39%，但量能仍有3.84倍，较基底上涨15.88%。"
+      },
+      {
+        "ticker": "TW",
+        "stage": "ignition",
+        "close": 119.37,
+        "change_pct": 4.07,
+        "rvol": 2.57,
+        "breakout_age": 2,
+        "ext_ma20": 0.1136,
+        "run_from_base": 0.266,
+        "note": "突破第三日继续上涨4.07%，量能2.57倍，较基底累计上涨26.6%。"
+      },
+      {
+        "ticker": "ACI",
+        "stage": "continuation",
+        "close": 13.47,
+        "change_pct": 2.51,
+        "rvol": 1.18,
+        "breakout_age": 0,
+        "ext_ma20": 0.1041,
+        "run_from_base": 0.2223,
+        "note": "延续阶段，当日涨2.51%，量能1.18倍，较基底已上涨22.23%。"
+      },
+      {
+        "ticker": "ADP",
+        "stage": "continuation",
+        "close": 292.75,
+        "change_pct": 1.99,
+        "rvol": 1.44,
+        "breakout_age": 0,
+        "ext_ma20": 0.083,
+        "run_from_base": 0.1655,
+        "note": "延续阶段，当日涨1.99%，量能1.44倍，较基底上涨16.55%。"
+      },
+      {
+        "ticker": "AGIO",
+        "stage": "continuation",
+        "close": 36.64,
+        "change_pct": 4.99,
+        "rvol": 1.3,
+        "breakout_age": 0,
+        "ext_ma20": 0.1281,
+        "run_from_base": 0.2569,
+        "note": "延续阶段，当日涨4.99%，量能1.3倍，较基底累计上涨25.69%。"
+      },
+      {
+        "ticker": "AIG",
+        "stage": "continuation",
+        "close": 81.88,
+        "change_pct": 1.51,
+        "rvol": 1.11,
+        "breakout_age": 0,
+        "ext_ma20": 0.0685,
+        "run_from_base": 0.1274,
+        "note": "延续阶段，当日涨1.51%，量能1.11倍（本期候选中最低），较基底上涨12.74%。"
+      }
+    ]
+  }
+}
