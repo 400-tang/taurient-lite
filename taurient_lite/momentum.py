@@ -486,6 +486,22 @@ def tradable(signal: Signal) -> bool:
     return signal.dollar_volume >= MIN_DOLLAR_VOLUME and signal.close >= MIN_PRICE
 
 
+def drop_stale(signals: Sequence[Signal]) -> tuple[list[Signal], list[Signal]]:
+    """只留最新那个交易日的信号，返回 ``(当天的, 过期的)``。
+
+    **一只票的最后一根 K 线不一定是当天的。** 停牌、数据源漏更、刚退市，
+    都会让它的「最新」停在几天前。不过滤的话，它的旧信号会和别人的当天
+    信号混在同一张名单里——实际发生过：GRAL 的数据停在 09-21，别的都是
+    09-23，它照样被判成初动写进了 09-24 的简报。
+    """
+    if not signals:
+        return [], []
+    asof = max(s.date for s in signals)
+    fresh = [s for s in signals if s.date == asof]
+    stale = [s for s in signals if s.date != asof]
+    return fresh, stale
+
+
 def rank(signals: Sequence[Signal], *, limit: int | None = None) -> list[Signal]:
     """过滤、打分、排序，返回可以直接展示的名单。"""
     scored = [replace(s, score=score(s)) for s in signals if tradable(s)]

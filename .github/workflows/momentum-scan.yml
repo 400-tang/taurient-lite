@@ -52,6 +52,15 @@ jobs:
           python-version-file: .python-version
 
       # 整条流水线零第三方依赖，标准库足够，所以没有 pip install 这一步。
+
+      # 板块热力。原来在开盘前的「市场快照」里抓，但那个任务常被 GitHub 延迟
+      # 到美东中午，抓到的是盘中快照，第二天的简报就印着前一天中午的数字。
+      # 挪到收盘后，和异动扫描同一个理由：延迟再久也是完整交易日的收盘数据。
+      # continue-on-error：热力图缺了只是简报少一块，不该连累后面的异动扫描。
+      - name: 抓取板块热力
+        continue-on-error: true
+        run: python3 fetch_sectors.py
+
       - name: 扫描
         run: |
           if [ "${{ github.event.schedule }}" = "0 9 * * 0" ] \
@@ -65,11 +74,11 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/momentum_scan.json data/universe.txt data/symbols.txt
+          git add data/momentum_scan.json data/universe.txt data/symbols.txt data/sectors.json
           if git diff --staged --quiet; then
             echo "扫描结果没有变化，跳过提交"
           else
-            git commit -m "价量异动扫描 $(date -u +%F)"
+            git commit -m "收盘数据：价量异动与板块热力 $(date -u +%F)"
             # 云端任务也往 main 推简报，两边可能撞上；先 rebase 再推。
             git pull --rebase origin main
             git push

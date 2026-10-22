@@ -16,6 +16,7 @@ import json
 import urllib.error
 import urllib.request
 from typing import Any
+from zoneinfo import ZoneInfo
 
 SCREENER = (
     "https://api.nasdaq.com/api/screener/stocks"
@@ -31,10 +32,12 @@ HEADERS = {
     "Accept": "application/json",
 }
 
-#: 美东时区。跟 :mod:`taurient_lite.quotes` 用同一个固定偏移，**同样不处理
-#: 夏令时**：冬令时期间判定会早一小时，影响的只是「盘中/收盘」这个措辞，
-#: 不影响数字。两处保持一致，将来要修就一起修。
-EASTERN = dt.timezone(dt.timedelta(hours=-4))
+#: 美东时区，**按真实的夏令时规则走**。
+#:
+#: 这里曾经是一个写死的 -4 小时偏移，注释说冬令时「只影响措辞」。实际影响的
+#: 是事实：12 月 15:30 EST 还在开盘，被判成了「截至昨天收盘」，盘中的实时价
+#: 被印成了昨天的定论。``zoneinfo`` 是标准库，不增加依赖。
+EASTERN = ZoneInfo("America/New_York")
 
 #: 常规交易时段（美东）。
 MARKET_OPEN = dt.time(9, 30)
@@ -80,18 +83,24 @@ class SectorError(RuntimeError):
 
 
 def last_trading_day(now: dt.datetime) -> dt.date:
-    """``now`` 之前最近一个已经走完的交易日。
+    """``now`` 时刻最近一个已经走完的交易日。``now`` 按美东时间解读。
 
     **不能直接用抓取日期。** screener 在盘前返回的是上一个交易日的收盘数据，
     而页面上写的是「截至 X 收盘」——把抓取日期填进去，周六抓一次就会印出
     「截至周六收盘」这种不存在的时点。:mod:`taurient_lite.momentum` 里记过
     同一个教训：一个没有限定的涨跌幅必然被读成「今天的」。
 
+    **收盘之后，今天就是走完的交易日。** 这里曾经一律减一天，于是周二 17:30
+    抓到的周二收盘被标成了「截至周一收盘」。
+
     **已知局限：不认节假日。** 感恩节这类休市日会把日期标成休市当天，
     差一天。要修得准就得引入交易日历，而那是一份需要每年维护的数据；
     在「标注可能差一天」和「引入一个会过期的依赖」之间，这里选了前者，
     并把这个取舍写在这儿，免得以后有人以为是漏写。
     """
+    now = now.astimezone(EASTERN)
+    if now.weekday() < 5 and now.time() >= MARKET_CLOSE:
+        return now.date()
     day = now.date() - dt.timedelta(days=1)
     while day.weekday() >= 5:  # 5=周六, 6=周日
         day -= dt.timedelta(days=1)

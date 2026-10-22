@@ -5,13 +5,21 @@
     python3 fetch_sectors.py --apply          # 顺带写进最新一份简报
     python3 fetch_sectors.py --apply 2026-09-18
     python3 fetch_sectors.py --print          # 只打印，不写文件
+    python3 fetch_sectors.py --cached --apply 2026-09-18
+                                              # 不联网：把 data/sectors.json 写进简报
 
 真正的逻辑全在 :mod:`taurient_lite.sectors` 里，这里只负责解析参数、打印
 结果、把异常翻译成人能看懂的退出信息——跟 ``render.py`` 同一个分工。
 后端要现场抓一份实时数据时走的是同一批函数，不必把这段再实现一遍。
 
-和 ``snapshot_market.py`` 同一个理由跑在 GitHub Actions 上：云端定时任务的
-沙箱连不了外网，runner 可以。
+跑在 GitHub Actions 上（``momentum-scan.yml``，**收盘之后**）：云端定时任务的
+沙箱连不了 Nasdaq，runner 可以。云端任务第二天早上用 ``--cached --apply``
+把 runner 抓好的那份写进简报，一次外网都不用发。
+
+**为什么是收盘后抓。** 这一步原来排在开盘前的 ``market-snapshot.yml`` 里，
+但 GitHub 的定时任务常常延迟四五个小时，实际抓到的是美东中午的盘中快照，
+第二天早上的简报就印着「盘中 · 13:26 ET」——一个前一天中午的数字。排在
+收盘后，延迟再久拿到的也是完整交易日的收盘数据。
 
 退出码：0 成功；1 失败（网络错误或数据格式变了）。
 """
@@ -32,15 +40,22 @@ OUT = ROOT / "data" / "sectors.json"
 
 
 def main(argv: list[str]) -> int:
-    args = [a for a in argv if a not in {"--print", "--apply"}]
+    args = [a for a in argv if a not in {"--print", "--apply", "--cached"}]
     print_only = "--print" in argv
     apply = "--apply" in argv
+    cached = "--cached" in argv
 
-    try:
-        block = fetch_market_block()
-    except SectorError as exc:
-        print(f"错误：{exc}", file=sys.stderr)
-        return 1
+    if cached:
+        if not OUT.exists():
+            print(f"错误：找不到 {OUT}，Actions 可能还没跑过", file=sys.stderr)
+            return 1
+        block = json.loads(OUT.read_text(encoding="utf-8"))
+    else:
+        try:
+            block = fetch_market_block()
+        except SectorError as exc:
+            print(f"错误：{exc}", file=sys.stderr)
+            return 1
 
     for s in block["sectors"]:
         cap = s["market_cap"] / 1e12
@@ -51,10 +66,11 @@ def main(argv: list[str]) -> int:
     if print_only:
         return 0
 
-    OUT.parent.mkdir(parents=True, exist_ok=True)
-    OUT.write_text(json.dumps(block, ensure_ascii=False, indent=2) + "\n",
-                   encoding="utf-8")
-    print(f"已写入 {OUT}")
+    if not cached:
+        OUT.parent.mkdir(parents=True, exist_ok=True)
+        OUT.write_text(json.dumps(block, ensure_ascii=False, indent=2) + "\n",
+                       encoding="utf-8")
+        print(f"已写入 {OUT}")
 
     if apply:
         paths = Paths(ROOT)

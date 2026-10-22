@@ -22,6 +22,7 @@ from taurient_lite.momentum import (
     active_run,
     breakout_flags,
     classify,
+    drop_stale,
     evaluate,
     parse_chart_bars,
     rank,
@@ -265,6 +266,25 @@ class ScoreTest(unittest.TestCase):
             }
         )
         self.assertAlmostEqual(score(evaluate(quiet)), score(evaluate(loud)), places=6)
+
+
+class DropStaleTest(unittest.TestCase):
+    """停在旧日期的票不能和当天的信号混在一张名单里。"""
+
+    def signal(self, ticker: str, date: dt.date):
+        from dataclasses import replace
+        return replace(evaluate(flat_then_breakout()), ticker=ticker, date=date)
+
+    def test_keeps_only_the_latest_session(self):
+        today, stale_day = dt.date(2026, 9, 23), dt.date(2026, 9, 21)
+        fresh, stale = drop_stale([
+            self.signal("A", today), self.signal("GRAL", stale_day), self.signal("B", today),
+        ])
+        self.assertEqual([s.ticker for s in fresh], ["A", "B"])
+        self.assertEqual([s.ticker for s in stale], ["GRAL"])
+
+    def test_empty_input(self):
+        self.assertEqual(drop_stale([]), ([], []))
 
 
 class RankTest(unittest.TestCase):

@@ -43,6 +43,9 @@ MAX_AGE_DAYS = 4
 #: 从扫描结果里原样复制的字段。**只有这些**——其余的属于人的判断。
 MECHANICAL = (
     "ticker",
+    # 每只票自己的数据日期。和 asof 不一致就说明它是过期的——带进简报，
+    # 这件事才能被 check_brief.py 和读者看出来，而不是悄悄混在名单里。
+    "date",
     "stage",
     "close",
     "change_pct",

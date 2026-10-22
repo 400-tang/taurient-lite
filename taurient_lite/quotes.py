@@ -13,21 +13,16 @@
 
 from __future__ import annotations
 
-import datetime as dt
 import json
 import time
 import urllib.error
 import urllib.request
 from dataclasses import dataclass
-from typing import Callable, Iterable, Sequence
+from typing import Callable, Sequence
 
 ENDPOINT = "https://query1.finance.yahoo.com/v8/finance/chart/{}?range=1d&interval=1d"
 
 HEADERS = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)"}
-
-#: 收盘时点按美东呈现。夏令时是 -4，冬令时 -5；这里只用于给人看的标签，
-#: 一小时的偏差不影响判断，所以不引入 tz 数据库依赖。
-EASTERN = dt.timezone(dt.timedelta(hours=-4))
 
 
 class QuoteError(RuntimeError):

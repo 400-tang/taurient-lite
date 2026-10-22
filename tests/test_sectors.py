@@ -54,6 +54,21 @@ class TestLastTradingDay(unittest.TestCase):
         """周一盘前抓到的是上周五的收盘，不是周日。"""
         self.assertEqual(last_trading_day(et(2026, 9, 21, 8, 30)), dt.date(2026, 9, 18))
 
+    def test_after_the_close_points_at_today(self):
+        """周二 17:30 抓到的是周二的收盘，不是周一的。"""
+        self.assertEqual(last_trading_day(et(2026, 9, 22, 17, 30)), dt.date(2026, 9, 22))
+
+    def test_at_the_bell_today_is_complete(self):
+        self.assertEqual(last_trading_day(et(2026, 9, 22, 16, 0)), dt.date(2026, 9, 22))
+
+    def test_friday_evening_points_at_friday(self):
+        self.assertEqual(last_trading_day(et(2026, 9, 18, 20, 0)), dt.date(2026, 9, 18))
+
+    def test_utc_input_is_read_in_eastern(self):
+        """周三 01:00 UTC 在美东还是周二晚上，周二已经收完盘。"""
+        utc = dt.datetime(2026, 9, 23, 1, 0, tzinfo=dt.timezone.utc)
+        self.assertEqual(last_trading_day(utc), dt.date(2026, 9, 22))
+
     def test_never_returns_a_weekend(self):
         day = et(2026, 1, 1)
         for _ in range(400):
@@ -94,6 +109,18 @@ class TestSessionOf(unittest.TestCase):
         session, asof = session_of(et(2026, 9, 19, 10, 0))
         self.assertEqual(session, "close")
         self.assertEqual(asof, "2026-09-18")
+
+    def test_winter_afternoon_is_still_intraday(self):
+        """冬令时 15:30 EST 还开着盘。写死 -4 偏移的旧实现会把它算成 16:30，
+        把盘中价标成「截至昨天收盘」。"""
+        utc = dt.datetime(2026, 12, 15, 20, 30, tzinfo=dt.timezone.utc)  # 15:30 EST
+        session, asof = session_of(utc)
+        self.assertEqual(session, "intraday")
+        self.assertEqual(asof, "15:30 ET")
+
+    def test_winter_after_close_reports_today(self):
+        utc = dt.datetime(2026, 12, 15, 21, 30, tzinfo=dt.timezone.utc)  # 16:30 EST
+        self.assertEqual(session_of(utc), ("close", "2026-12-15"))
 
     def test_intraday_never_claims_a_close(self):
         """盘中绝不能标成「截至某日收盘」——那是一个还没发生的事实。"""

@@ -42,6 +42,7 @@ from taurient_lite.momentum import (  # noqa: E402
     MIN_PRICE,
     MomentumError,
     Signal,
+    drop_stale,
     evaluate,
     parse_chart_bars,
     rank,
@@ -285,6 +286,12 @@ def main() -> int:
         print("也不要留一份空的或过期的文件冒充当天的扫描。", file=sys.stderr)
         return 1
 
+    # 停牌、漏更的票最后一根 K 线停在几天前，它们的旧信号不能冒充当天的。
+    signals, stale = drop_stale(signals)
+    if stale:
+        print(f"  丢掉 {len(stale)} 只数据不是最新交易日的："
+              f"{'、'.join(s.ticker for s in stale[:10])}{'……' if len(stale) > 10 else ''}")
+
     ranked = rank(signals, limit=args.top)
     counts: dict[str, int] = {}
     for s in rank(signals):
@@ -292,7 +299,7 @@ def main() -> int:
 
     payload = {
         "scanned_at": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
-        "asof": max(s.date for s in signals).isoformat(),
+        "asof": signals[0].date.isoformat(),
         "note": (
             "由 GitHub Actions 扫描并提交，供云端定时任务读取。stage 只描述这只票"
             "走到这波的第几天，score 衡量的是「有多早」而不是「有多好」——回测显示"
@@ -301,6 +308,7 @@ def main() -> int:
         "universe_size": len(symbols),
         "evaluated": len(signals),
         "failed": failed,
+        "stale": len(stale),
         "counts": counts,
         "candidates": [s.as_dict() for s in ranked],
     }
