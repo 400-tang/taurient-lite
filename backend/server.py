@@ -34,8 +34,9 @@ from contextlib import asynccontextmanager
 from dataclasses import replace
 from pathlib import Path
 
-from fastapi import FastAPI, HTTPException, Query
-from fastapi.responses import HTMLResponse, JSONResponse
+from fastapi import FastAPI, Header, HTTPException, Query, Request
+from fastapi.responses import HTMLResponse, JSONResponse, StreamingResponse
+from starlette.concurrency import run_in_threadpool
 
 from taurient_lite.config import Config
 from taurient_lite.html_renderer import render_body, render_head
@@ -47,7 +48,7 @@ from taurient_lite.short_interest import ShortInterestError, fetch_latest
 from taurient_lite.theme import GOOGLE_FONTS, TOKENS, build_palette_css, load_style
 
 
-from . import assets, auth_bar, auth_panel, keepalive, live, stock_page
+from . import ask, assets, auth_bar, auth_panel, keepalive, live, stock_page
 from .stock_news import mentions_for
 from .search import MAX_RESULTS, SearchError, resolve, search
 
@@ -58,6 +59,11 @@ PATHS = Paths(ROOT)
 #: 不是为了穷举合法代码——真伪交给上游接口去判断，这里只挡显然的垃圾输入，
 #: 避免带着奇怪字符去敲 Yahoo/FINRA 的接口。
 TICKER_PATTERN = re.compile(r"^[A-Za-z][A-Za-z0-9.\-]{0,9}$")
+
+#: 简报日期的格式。**这一条是安全边界，不是格式偏好**：``date`` 会被拼进
+#: ``briefs/{date}.json``，不校验的话 ``../config`` 或一串 ``../`` 加绝对路径
+#: 就能读到服务器上任意一个 ``.json`` 文件——这曾经是真实可复现的。
+DATE_PATTERN = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
 
 @asynccontextmanager
@@ -86,6 +92,29 @@ def _clean_ticker(raw: str) -> str:
     return ticker
 
 
+def _clean_date(raw: str | None) -> str | None:
+    """校验 ``?date=``。``None`` 表示没传，调用方取最新一份。"""
+    if raw is None:
+        return None
+    if not DATE_PATTERN.match(raw):
+        raise HTTPException(status_code=400, detail="date 应该是 YYYY-MM-DD 格式")
+    return raw
+
+
+def _load(date: str | None) -> tuple[str, Brief]:
+    """读一份简报。找不到时的 404 只说日期，不带服务器上的绝对路径。"""
+    try:
+        target = date or latest_date(PATHS)
+    except PipelineError as exc:
+        raise HTTPException(status_code=404, detail="还没有任何简报") from exc
+    try:
+        return target, load_brief(PATHS, target)
+    except PipelineError as exc:
+        if not PATHS.brief_json(target).exists():
+            raise HTTPException(status_code=404, detail=f"找不到 {target} 的简报") from exc
+        raise HTTPException(status_code=500, detail=f"{target} 的简报无法解析") from exc
+
+
 def _wrap_page(brief: Brief, config: Config) -> str:
     """套上完整的 HTML 骨架。
 
@@ -99,6 +128,8 @@ def _wrap_page(brief: Brief, config: Config) -> str:
     head = render_head()
     body = render_body(brief, config)
     panel = auth_bar.render(config.supabase)  # 没配 Supabase 时是空串
+    # 划词问答放在正文之后：它的脚本要找 .sheet，还要用 auth_bar 建好的 Supabase 客户端。
+    asker = ask.render(config.supabase)
     return (
         "<!doctype html>\n"
         '<html lang="zh">\n'
@@ -107,7 +138,7 @@ def _wrap_page(brief: Brief, config: Config) -> str:
         '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
         f"{head}\n"
         "</head>\n"
-        f"<body>\n{panel}\n{body}\n</body>\n"
+        f"<body>\n{panel}\n{body}\n{asker}\n</body>\n"
         "</html>\n"
     )
 
@@ -167,11 +198,8 @@ def index(date: str | None = Query(default=None, description="YYYY-MM-DD，缺�
     新闻仍然是每天一次的批处理产物，因为那部分需要模型判断；但数字不该
     跟着新闻一起等到明天早上。
     """
-    try:
-        target = date or latest_date(PATHS)
-        brief = load_brief(PATHS, target)
-    except PipelineError as exc:
-        raise HTTPException(status_code=404, detail=str(exc)) from exc
+    date = _clean_date(date)
+    _, brief = _load(date)
 
     config = Config.load(PATHS.config)
     return HTMLResponse(_wrap_page(_with_live_data(brief, config, date), config))
@@ -180,15 +208,63 @@ def index(date: str | None = Query(default=None, description="YYYY-MM-DD，缺�
 @app.get("/api/brief")
 def api_brief(date: str | None = Query(default=None)) -> JSONResponse:
     """当天（或指定日期）简报的原始 JSON，供别的程序消费。"""
+    date = _clean_date(date)
     try:
         target = date or latest_date(PATHS)
-        path = PATHS.brief_json(target)
-        if not path.exists():
-            raise PipelineError(f"找不到 {path}")
-        raw = json.loads(path.read_text(encoding="utf-8"))
     except PipelineError as exc:
-        raise HTTPException(status_code=404, detail=str(exc)) from exc
+        raise HTTPException(status_code=404, detail="还没有任何简报") from exc
+    path = PATHS.brief_json(target)
+    if not path.exists():
+        raise HTTPException(status_code=404, detail=f"找不到 {target} 的简报")
+    try:
+        raw = json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        raise HTTPException(status_code=500, detail=f"{target} 的简报不是合法 JSON") from exc
     return JSONResponse(raw)
+
+
+#: 划词问答的登录校验与每日额度。进程级单例：缓存和计数都要跨请求共享。
+_ask_users = ask.UserVerifier()
+_ask_quota = ask.DailyQuota()
+
+
+@app.post("/api/ask")
+async def api_ask(request: Request, authorization: str | None = Header(default=None)):
+    """划词问答：把选中的文字、所在新闻和对话转给 DeepSeek，回答以纯文本流回。
+
+    顺序是刻意的：先验登录，再校验请求，再扣额度，最后才连 DeepSeek——
+    越便宜的检查越靠前，被拒的请求一分钱都不花。连 DeepSeek 失败的那次
+    会把额度退回去。今天还剩几次放在 ``X-Ask-Remaining`` 响应头里。
+    """
+    settings = ask.Settings.from_env()
+    config = Config.load(PATHS.config)
+    try:
+        if not settings.configured:
+            raise ask.AskError(503, "服务端还没配置 DeepSeek（缺 DEEPSEEK_API_KEY）")
+        user = await run_in_threadpool(_ask_users.verify, config.supabase, authorization)
+        try:
+            body = await request.json()
+        except ValueError as exc:
+            raise ask.AskError(400, "请求不是合法的 JSON") from exc
+        question = ask.parse_question(body)
+        remaining = _ask_quota.take(
+            user.id, user_limit=settings.user_daily, global_limit=settings.global_daily
+        )
+        try:
+            upstream = await run_in_threadpool(
+                ask.open_stream, settings, ask.build_messages(question)
+            )
+        except ask.AskError:
+            _ask_quota.refund(user.id)
+            raise
+    except ask.AskError as exc:
+        raise HTTPException(status_code=exc.status, detail=exc.message) from exc
+
+    return StreamingResponse(
+        ask.relay(upstream),
+        media_type="text/plain; charset=utf-8",
+        headers={"X-Ask-Remaining": str(remaining), "Cache-Control": "no-store"},
+    )
 
 
 @app.get("/api/quote/{ticker}")

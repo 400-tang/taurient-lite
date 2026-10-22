@@ -100,6 +100,35 @@ class TestApiBrief(unittest.TestCase):
         response = client.get("/api/brief?date=1999-01-01")
         self.assertEqual(response.status_code, 404)
 
+    def test_404_does_not_leak_server_paths(self):
+        detail = client.get("/api/brief?date=1999-01-01").json()["detail"]
+        self.assertNotIn("/", detail.replace("1999-01-01", ""))
+
+
+class TestDateTraversal(unittest.TestCase):
+    """``date`` 会拼进文件路径，任何不是纯日期的输入都必须在入口挡掉。"""
+
+    ATTACKS = (
+        "../config",
+        "../data/momentum_scan",
+        "../../../../../../etc/passwd",
+        "2026-09-24/../../config",
+        "2026-09-24.json",
+    )
+
+    def test_api_brief_rejects_traversal(self):
+        for attack in self.ATTACKS:
+            with self.subTest(attack=attack):
+                response = client.get("/api/brief", params={"date": attack})
+                self.assertEqual(response.status_code, 400)
+                self.assertNotIn("artifact_url", response.text)
+
+    def test_index_rejects_traversal(self):
+        for attack in self.ATTACKS:
+            with self.subTest(attack=attack):
+                response = client.get("/", params={"date": attack})
+                self.assertEqual(response.status_code, 400)
+
 
 class TestTickerValidation(unittest.TestCase):
     def test_ticker_starting_with_digit_rejected(self):

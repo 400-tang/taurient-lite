@@ -1,0 +1,19 @@
+<button class="ask-chip" id="ask-chip" type="button" hidden>
+  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2.5 3.5h11v7h-6l-3 2.5v-2.5h-2z"/></svg>
+  问一问
+</button>
+<aside class="ask-drawer" id="ask-drawer" aria-label="划词问答" hidden>
+  <div class="ask-head">
+    <b>问一问</b>
+    <span class="ask-left" id="ask-left"></span>
+    <button class="ask-close" id="ask-close" type="button" aria-label="关闭">×</button>
+  </div>
+  <div class="ask-quote"><small>你选中的</small><span id="ask-quote"></span></div>
+  <div class="ask-log" id="ask-log" aria-live="polite"></div>
+  <div class="ask-suggest" id="ask-suggest"></div>
+  <form class="ask-compose" id="ask-compose">
+    <textarea id="ask-input" rows="2" placeholder="接着问，比如：这对科技股意味着什么？" aria-label="输入问题"></textarea>
+    <button type="submit" id="ask-send">发送</button>
+  </form>
+  <p class="ask-note">回答由 DeepSeek 生成，结合了这条新闻的原文，不构成投资建议。</p>
+</aside>

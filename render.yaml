@@ -23,3 +23,12 @@ services:
     startCommand: uvicorn backend.server:app --host 0.0.0.0 --port $PORT
     healthCheckPath: /health
     autoDeploy: true
+    envVars:
+      # 划词问答用的 DeepSeek key。sync: false 表示值不写在仓库里，
+      # 在 Render 后台的 Environment 页面手动填；不填这个功能会提示「没配置」。
+      - key: DEEPSEEK_API_KEY
+        sync: false
+      # 下面几个都有默认值，想改再在后台加：
+      #   DEEPSEEK_MODEL      默认 deepseek-chat
+      #   ASK_USER_DAILY      每人每天提问次数，默认 50
+      #   ASK_GLOBAL_DAILY    全站每天提问次数，默认 500

@@ -1,5 +1,8 @@
 (function () {
   var client = supabase.createClient(__SUPABASE_URL__, __SUPABASE_KEY__);
+  // 划词问答（ask.js）要拿登录 token 去调 /api/ask。共用这一个客户端，
+  // 不再建第二个：两个客户端会各自刷新 token，互相踩对方存的会话。
+  window.tlSupabase = client;
 
   var link = document.getElementById('tl-account-link');
   var filterWrap = document.getElementById('tl-filter-wrap');
