@@ -107,6 +107,23 @@ class TestConfig(unittest.TestCase):
             Config.from_dict([1, 2])
 
 
+class TestTierTargets(unittest.TestCase):
+    def test_parsed_per_tier_and_total_min_skipped(self):
+        config = Config.from_dict(F.make_config(
+            target_counts={"total_min": 15, "must-read": [3, 5], "noise": [4, 6]}
+        ))
+        self.assertEqual(config.tier_targets, {"must-read": (3, 5), "noise": (4, 6)})
+        self.assertEqual(config.min_items, 15)
+
+    def test_missing_means_no_targets(self):
+        self.assertEqual(Config.from_dict({}).tier_targets, {})
+
+    def test_malformed_pairs_rejected(self):
+        for bad in ([3], [5, 3], [-1, 2], "3-5", [True, 2]):
+            with self.subTest(bad=bad), self.assertRaises(ConfigError):
+                Config.from_dict(F.make_config(target_counts={"noise": bad}))
+
+
 class TestConfigLoad(unittest.TestCase):
     def test_missing_file_falls_back_to_defaults(self):
         with tempfile.TemporaryDirectory() as tmp:

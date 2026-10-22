@@ -92,6 +92,9 @@ class Config:
     #: 常常包括不在自选股里的同业（看 NVDA 就想顺带看 TSM、AMD）。
     fundamentals: tuple[str, ...] = ()
     min_items: int = 15
+    #: 每一层的条数目标 ``{tier: (下限, 上限)}``。质量门只拿下限卡人，
+    #: 上限留给评分器判断——多一两条噪音不值得返工一轮。
+    tier_targets: dict[str, tuple[int, int]] = field(default_factory=dict)
     scope: tuple[str, ...] = ()
     supabase: Supabase = field(default_factory=Supabase)
 
@@ -123,6 +126,22 @@ class Config:
                 f"target_counts.total_min 应该是不小于 1 的整数，实际是 {min_items!r}"
             )
 
+        tier_targets: dict[str, tuple[int, int]] = {}
+        if isinstance(targets, dict):
+            for tier, pair in targets.items():
+                if tier == "total_min":
+                    continue
+                ok = (
+                    isinstance(pair, list) and len(pair) == 2
+                    and all(isinstance(n, int) and not isinstance(n, bool) and n >= 0 for n in pair)
+                    and pair[0] <= pair[1]
+                )
+                if not ok:
+                    raise ConfigError(
+                        f"target_counts.{tier} 应该是 [下限, 上限] 两个非负整数，实际是 {pair!r}"
+                    )
+                tier_targets[tier] = (pair[0], pair[1])
+
         scope_raw = data.get("scope") or []
         if not isinstance(scope_raw, list):
             raise ConfigError("scope 应该是数组")
@@ -139,6 +158,7 @@ class Config:
             watchlist=symbols(watchlist_raw.get("symbols"), "watchlist.symbols"),
             fundamentals=symbols(fundamentals_raw.get("symbols"), "fundamentals.symbols"),
             min_items=min_items,
+            tier_targets=tier_targets,
             scope=tuple(str(s) for s in scope_raw),
             supabase=Supabase.from_dict(data.get("supabase")),
         )
