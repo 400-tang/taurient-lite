@@ -20,7 +20,7 @@ from __future__ import annotations
 from taurient_lite.config import Supabase
 
 from . import assets
-from .auth_panel import SUPABASE_JS_CDN, _js_string
+from .auth_panel import SUPABASE_JS_TAG, _js_string
 
 HTML = """
 <div class="tl-topbar">
@@ -33,7 +33,7 @@ HTML = """
 <p class="tl-hint" id="tl-match-status" hidden></p>
 """
 
-HTML = f'<script src="{SUPABASE_JS_CDN}"></script>' + HTML
+HTML = SUPABASE_JS_TAG + HTML
 
 
 def render(supabase: Supabase) -> str:

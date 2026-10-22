@@ -156,6 +156,21 @@ def _as_date(value: Any, path: str) -> dt.date:
         raise SchemaError(f"{path} 应该是 YYYY-MM-DD 格式的日期，实际是 {text!r}") from exc
 
 
+def _as_http_url(value: Any, path: str) -> str:
+    """只接受 ``http(s)://`` 链接。
+
+    **转义挡不住这一类注入。** ``javascript:alert(1)`` 里没有一个需要转义的
+    字符，经过 :func:`~taurient_lite.components.base.esc` 之后原样变成一个
+    可点的 ``href``。而来源链接是模型从网页搜索结果里写出来的，属于不可信
+    输入，页面又和登录态同域——所以协议必须在数据入口就卡死，渲染层的
+    每一个出口才都不用再各自设防。
+    """
+    text = _as_str(value, path).strip()
+    if not text.lower().startswith(("http://", "https://")):
+        raise SchemaError(f"{path} 只能是 http(s) 链接，实际是 {text[:40]!r}")
+    return text
+
+
 def _str_list(data: dict, key: str, path: str) -> list[str]:
     """取一个可选的字符串数组，缺省为空列表。"""
     raw = data.get(key)
@@ -183,7 +198,7 @@ class Source:
     def from_dict(cls, data: Any, path: str) -> Source:
         return cls(
             name=_as_str(_require(data, "name", path), _join(path, "name")),
-            url=_as_str(_require(data, "url", path), _join(path, "url")),
+            url=_as_http_url(_require(data, "url", path), _join(path, "url")),
             angle=_as_str(data.get("angle", ""), _join(path, "angle"), allow_empty=True),
         )
 

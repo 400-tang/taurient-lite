@@ -35,7 +35,24 @@ from taurient_lite.config import Supabase
 
 from . import assets
 
-SUPABASE_JS_CDN = "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"
+#: supabase-js 锁到具体版本，并用 SRI 校验文件内容。
+#:
+#: **这是持有登录态的页面加载的第三方脚本。** 原来写的是 ``@2``——Supabase
+#: 每发一个 2.x 版本，页面就在没人审过的情况下换一份新代码；CDN 或 npm 包
+#: 一旦被投毒，恶意代码直接跑在登录页上。锁版本让「换代码」变成一次显式的
+#: 提交，``integrity`` 让被篡改的文件在浏览器里直接拒绝执行。
+#:
+#: 升级时两个值一起改：下载新版本文件，``openssl dgst -sha384 -binary | openssl base64 -A``。
+SUPABASE_JS_VERSION = "2.117.2"
+SUPABASE_JS_CDN = (
+    f"https://cdn.jsdelivr.net/npm/@supabase/supabase-js@{SUPABASE_JS_VERSION}"
+    "/dist/umd/supabase.js"
+)
+SUPABASE_JS_SRI = "sha384-Rj26LVGvoeRVR6+mwQmFfcR3QOBEwT+ZmuCWpuiqeTzJpCs0ER4ITAWGb4Hiy3Ok"
+SUPABASE_JS_TAG = (
+    f'<script src="{SUPABASE_JS_CDN}" integrity="{SUPABASE_JS_SRI}" '
+    'crossorigin="anonymous"></script>'
+)
 
 HTML = """
 <div class="tl-auth">
@@ -95,7 +112,7 @@ def render_page(supabase: Supabase) -> str:
         return ""
     return "\n".join([
         assets.style("account.css"),
-        f'<script src="{SUPABASE_JS_CDN}"></script>',
+        SUPABASE_JS_TAG,
         HTML,
         assets.script(
             "account.js",

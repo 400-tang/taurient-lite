@@ -39,6 +39,18 @@ class TestSource(unittest.TestCase):
             Source.from_dict({"name": "CNBC"}, "items[2].sources[0]")
         self.assertIn("items[2].sources[0].url", str(ctx.exception))
 
+    def test_non_http_schemes_rejected(self):
+        for url in ("javascript:alert(1)", " JavaScript:alert(1)",
+                    "data:text/html,<script>", "vbscript:x", "/relative", "ftp://x"):
+            with self.subTest(url=url), self.assertRaises(SchemaError) as ctx:
+                Source.from_dict(F.make_source(url=url), "items[0].sources[1]")
+            self.assertIn("items[0].sources[1].url", str(ctx.exception))
+
+    def test_http_and_https_accepted(self):
+        for url in ("http://a.com", "https://a.com/x?y=1", "HTTPS://A.COM"):
+            with self.subTest(url=url):
+                self.assertEqual(Source.from_dict(F.make_source(url=url), "s").url, url)
+
 
 class TestAssetImpact(unittest.TestCase):
     def test_conviction_maps_to_steps(self):

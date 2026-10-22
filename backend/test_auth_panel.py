@@ -200,5 +200,21 @@ class TestGeneratedJavaScriptIsValid(unittest.TestCase):
         self._check_syntax(self._extract_inline_script(render(tricky)))
 
 
+
+class TestSupabaseScriptPinned(unittest.TestCase):
+    """持有登录态的两个页面加载的 supabase-js 必须锁版本并带 SRI。"""
+
+    def test_account_page_and_auth_bar_pin_and_verify(self):
+        import re
+        from backend import auth_bar
+
+        conf = Supabase(url="https://x.supabase.co", anon_key="k")
+        for html in (render(conf), auth_bar.render(conf)):
+            tag = re.search(r'<script src="[^"]*supabase-js[^>]*>', html).group(0)
+            self.assertRegex(tag, r"supabase-js@\d+\.\d+\.\d+/")
+            self.assertIn('integrity="sha384-', tag)
+            self.assertIn('crossorigin="anonymous"', tag)
+
+
 if __name__ == "__main__":
     unittest.main()
