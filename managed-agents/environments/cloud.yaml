@@ -1,0 +1,21 @@
+# Taurient Lite 每日简报的运行环境。
+#
+# 网络是白名单：只放行几个行情数据源。旧的 Claude Code 云端沙箱连不上它们，
+# 只能靠 GitHub Actions 先抓好再提交进仓库，Actions 又会延迟几个小时，
+# 于是简报里一直是前一天盘中的数据。这里把行情源直接放进白名单，agent
+# 开盘前现场取数。
+#
+# 不需要列出来的：
+# - GitHub：挂载的仓库走 Anthropic 那边的 git 代理，pull / push 不经过这里的白名单；
+# - web_search / web_fetch：跑在 Anthropic 的服务器上，不受环境网络策略约束；
+# - 包管理器：整条流水线只用标准库，没有 pip install。
+name: taurient-lite
+config:
+  type: cloud
+  networking:
+    type: limited
+    allowed_hosts:
+      - query1.finance.yahoo.com   # 日线 K 线（scan_momentum.py）和预置筛选器
+      - api.nasdaq.com             # 板块热力（fetch_sectors.py）
+      - www.nasdaqtrader.com       # 每周重建流动性名单时的代码目录
+      - api.finra.org              # 空头持仓（snapshot_market.py）

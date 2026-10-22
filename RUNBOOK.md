@@ -1,65 +1,56 @@
 # Taurient Lite — 每日运行手册
 
 这个文件是给 Claude 读的。定时任务每天早上把这份指令交给一个 Claude Code
-会话，它照着做完五步，Eddie 打开同一个链接就能看到当天的简报。
+会话，它照着做完七步，Eddie 打开同一个链接就能看到当天的简报。
+
+**你是主编。** 搜新闻、查漏报、核对事实交给三个子 agent（定义在 `.claude/agents/`）：
+
+- `news-scanner`：负责一个话题的新闻扫描，一次派四个并行；
+- `coverage-checker`：只读，独立找出当天最大的新闻，再对照你的草稿查漏报；
+- `fact-checker`：只读，核对数字和日期。
+
+筛选、分层、写稿、发布由你自己做——需要判断的活不外包。
 
 工作目录：`/Users/eddie/Desktop/DSO429/taurient-lite`
 配置：`config.json`（覆盖范围、条数目标、时效上限、自选股、Artifact 链接）
 
 ---
 
-## 第 1 步 · 扫描
+## 第 1 步 · 并行扫描
 
-用 `WebSearch` 跑至少 12 组查询，覆盖 `config.json` 里的 scope。查询里带上当天日期，
-让搜索引擎优先返回新内容。目标是扫过 60 篇以上，最终留下 15 条以上。
+先读两份 GitHub Actions 已经提交好的数据（沙箱连不上行情网站，不要自己去抓）：
 
-**开始搜之前先读一遍 `data/momentum_scan.json` 里 `stage` 为 `ignition` 的几只。**
-它们是今天价量上刚起变化、但可能还没进入新闻视野的代码。读一眼就好，
-**不要为它们专门搜一轮**——常规扫描里自然撞上了就写进第 3 步的 `note`，
-没撞上就只写价量事实。专门去搜一只票必然搜得到东西，那既浪费查询额度，
-也会让「它有没有在常规新闻流里浮现」这个观察失去意义。
+- `data/momentum_scan.json` 里 `stage` 为 `ignition` 的代码。它们是价量上刚起
+  变化、但可能还没进入新闻视野的票。
+- `data/market_snapshot.json` 里自选股的 FINRA 空头持仓。写「轧空」「仓位拥挤」
+  这类新闻时直接引用这里的数字和结算日期，来源链接用
+  `https://www.finra.org/finra-data/browse-catalog/equity-short-interest/data`。
+  不同财经网站报的空头占比经常对不上，根源是它们都从同一份 FINRA 数据衍生，
+  直接用源头就不用判断「哪家更准」。**不算占流通盘的百分比**——那需要股本
+  数据，这里没有。
 
-固定要跑的：
+然后**在同一条消息里**派四个 `news-scanner` 子 agent 并行开工，一个话题一个：
 
-1. `stock market today <日期> recap S&P 500 Nasdaq`
-2. `Federal Reserve interest rate news <日期>`
-3. `US economic data release <日期> CPI jobs PMI`
-4. `earnings report <日期> stock reaction`
-5. `biggest stock movers <日期> why`
-6. `Nvidia AI semiconductor news <日期>`
-7. `AI company funding acquisition <日期>`
-8. `oil prices treasury yields <日期>`
-9. `premarket movers <日期>`
-10. `tech layoffs guidance cut <日期>`
+| 话题 | 输出文件 | 任务里带上的固定查询 |
+|---|---|---|
+| 美股与宏观 | `scratch/scan-macro.json` | `stock market today <日期> recap S&P 500 Nasdaq`、`Federal Reserve interest rate news <日期>`、`US economic data release <日期> CPI jobs PMI`、`earnings report <日期> stock reaction`、`biggest stock movers <日期> why`、`premarket movers <日期>` |
+| 科技与 AI | `scratch/scan-tech.json` | `Nvidia AI semiconductor news <日期>`、`AI company funding acquisition <日期>`、`tech layoffs guidance cut <日期>` |
+| 地缘与大宗 | `scratch/scan-geo.json` | `oil prices treasury yields <日期>`，以及当天的地缘冲突与供给事件 |
+| 自选股 | `scratch/scan-watchlist.json` | `config.json` 的 `watchlist.symbols` 里每个代码一组 `<代码> stock news <日期>` |
 
-再加：`config.json` 的 `watchlist.symbols` 里每个代码至少一组
-`<代码> stock news <日期>`，命中的条目在 `tickers` 字段里标上代码。
+子 agent 看不到你的对话，所以每个任务里都要写全：话题和范围（照 `config.json`
+的 `scope`）、今天的日期、时效上限、输出文件路径、上表的固定查询，以及上面读到
+的初动代码列表。对初动代码要交代清楚：**不要专门去搜**，常规扫描里自然撞上了
+再记进 `watch_hits`。专门搜一只票必然搜得到东西，那样就测不出它有没有在常规
+新闻流里自然浮现。
 
 **时效是硬要求。** `config.json` 的 `freshness` 定死了上限：超过 `max_age_days` 天的
 不收，`must-read` 层不得超过 `must_read_max_age_days` 天。已经发酵几天的事件只能进
 `noise` 层，而且正文第一句必须说清楚它是旧闻以及今天有什么新进展。周日或周一的
 前瞻版可以在简报 JSON 里写 `"max_age_days": 5` 覆写上限。
 
-对最重要的三到五条，用 `WebFetch` 打开原文确认数字，不要只依赖搜索摘要。
-顺便记下**每家媒体各自的角度**，第 3 步的交叉对比要用。
-
-**能查一手来源就不要停在二手汇总站。** 三类数字有对应的官方源头，
-优先级高于财经媒体或博客的转述：
-
-- **联储会议日期。** 用 `WebFetch` 打开 federalreserve.gov 的会议日程页面
-  核实，不要停在第三方的「FOMC 日历」汇总站——那些站点偶尔会滞后或抄错。
-- **财报日期、公司公告。** 优先查 SEC EDGAR 的全文检索或公司自己的
-  8-K/6-K 备案，财报日期这类信息本质上都是从这里或公司通稿转载的，
-  直接查等于跳过中间商。发布会这类不需要备案的事件（比如产品发布会），
-  查公司自己的新闻室（如 apple.com/newsroom）而不是科技博客。
-- **空头持仓 / 仓位数据。** 用 `python3 fetch_short_interest.py <代码>`
-  查 FINRA 官方数据。不同财经网站报的空头占比经常对不上，根源是它们
-  都从同一份 FINRA 数据衍生，只是抓取时间点不同；直接查权威源头，
-  连"哪家网站更准"这种问题都不需要问了。输出自带结算日期和引用文字，
-  把 `as_citation()` 那句话和来源链接直接用进条目里。**这个工具刻意不算
-  占流通盘的百分比**——那需要股本数据，现有行情接口不提供，为了一个
-  衍生指标去接一个不稳定的新源头不划算。如实呈现 FINRA 给的原始股数、
-  较上期变化、回补天数就够了，比二手网站的百分比更可信。
+四份结果都回来之后，读 `scratch/` 下的四个文件进入第 2 步。某个扫描员失败了，
+重派一次；还失败就用剩下的几份继续，在最后给 Eddie 的一句话里提一下。
 
 ## 第 2 步 · 筛选与排序
 
@@ -125,7 +116,7 @@
 
 ### 异动字段
 
-`data/momentum_scan.json` 是 GitHub Actions 在开盘前扫完全市场（约 2500 只
+`data/momentum_scan.json` 是 GitHub Actions 在前一交易日收盘后扫完全市场（约 2500 只
 流动性达标的美股）写下的，**里面的数字直接抄，一个都不要自己算**——
 判定逻辑在 `taurient_lite/momentum.py` 里，是跑过测试的纯函数。
 
@@ -215,48 +206,68 @@
 每个数字都要能追到 `sources` 里的某一条。不确定的数字宁可不写，也不要估。
 日期和时区一律写清楚（ET / PT）。**不写任何形式的买卖建议或价格预测。**
 
-## 第 4 步 · 取行情，渲染
+## 第 4 步 · 查漏报
+
+写好 `briefs/<日期>.json` 之后，派一个 `coverage-checker` 子 agent，任务里给它
+今天的日期、简报 JSON 的路径和时效上限。它会先独立列出今天最大的十条左右新闻，
+再对照你的草稿。
+
+扫描员是按话题分头搜的，最容易漏的恰恰是跨话题的大事，或者当天临时冒出来的
+突发。所以它报「漏掉了」的，逐条判断：
+
+- 确实是当天的大事、在时效内的，补进简报。它给的来源可以直接用，但数字要在
+  第 5 步一起核查；
+- 它报「层级偏低」的，按第 2 步的分层标准重新判断，该升就升；
+- 你判断不该收的（超时效、其实是旧闻、影响面小），不收，在最后给 Eddie 的一句话里
+  提一句「查漏报提了 X，没收，因为……」。
+
+补完之后重新检查 `rank` 连续、`kept` 条数如实。
+
+## 第 5 步 · 核查
+
+把必读层每一条的关键数字、日历里每一个写了 `date` 的事件，连同来源链接，
+交给 `fact-checker` 子 agent。条目多时拆成两三份并行派。
+
+- 标成「不一致」的，按它给的证据改正；
+- 标成「查不到」的，拿不准就删掉这个数字，不要估；
+- 核查员给了新的一手来源链接的，补进对应条目的 `sources`。
+
+## 第 6 步 · 合成、渲染、过质量关
 
 ```bash
 cd /Users/eddie/Desktop/DSO429/taurient-lite
-python3 apply_momentum.py <日期>   # 把价量扫描结果写进 momentum.candidates
-python3 fetch_sectors.py --apply <日期>  # 板块热力，写进 market
-python3 render.py                  # 不带参数就渲染最新的那份
+python3 apply_momentum.py <日期>                   # 把价量扫描结果写进 momentum.candidates
+python3 fetch_sectors.py --cached --apply <日期>   # 把 data/sectors.json 写进 market
+python3 render.py <日期>
+python3 check_brief.py <日期>
 ```
 
-**`fetch_sectors.py` 全自动，没有要你补的判断。** 它从 Nasdaq 的 screener
-一次请求拿到全市场的行业分类、市值和当日涨跌幅，按行业聚成市值加权的
-板块数据写进 `market` 字段，渲染成「市场」标签页的热力图。沙箱里连不上
-Nasdaq，所以云端任务应当读 GitHub Actions 已经提交好的 `data/sectors.json`
-（工作流 `market-snapshot.yml` 每个工作日 12:30 UTC 抓一次），把它的内容
-原样贴进简报 JSON 的 `market` 字段即可；本地跑才需要 `--apply`。
+**`check_brief.py` 退出码必须是 0 才能发布。** 不通过就按它指出的字段路径修改
+JSON，再从 `render.py` 起重跑，直到通过。它检查的是有唯一答案的东西：各层条数、
+时效、必读层的深度元数据、每条都有来源、板块热力和异动数据是不是上一交易日的
+收盘、异动候选有没有过期的票、`note` 有没有补、有没有「值得关注」「可以考虑」
+这类建议措辞。
 
-**抓不到就不写这个字段。** 没有 `market`，「市场」标签页自动消失，
-其余部分照常发布——绝不手填涨跌幅，那是在版面上造事实。
+唯一的例外：`data/sectors.json` 不是上一交易日的收盘数据（说明 Actions 昨晚没跑
+成功），这时删掉简报里的 `market` 字段，改跑 `python3 check_brief.py <日期> --no-market`，
+并在最后给 Eddie 的一句话里说明。**绝不手填涨跌幅**，那是在版面上造事实。
+
+**`fetch_sectors.py --cached` 全自动，没有要你补的判断。** 板块数据由 GitHub Actions
+在收盘后从 Nasdaq 抓好（工作流 `momentum-scan.yml`），这里只是原样写进简报。
 
 **`apply_momentum.py` 只填数字，判断仍然要你写。** 它从
 `data/momentum_scan.json` 里按档位配额挑候选（初动档全要，延续档 4 只，
-已延伸 2 只做参照），把七个数字原样搬进简报 JSON，然后打印一份
+已延伸 2 只做参照），把数字原样搬进简报 JSON，然后打印一份
 「还需要你补 note」的清单。补完可以再跑一次——**已经写好的 `note` 与
 `sources` 会被原样保留，只有数字被刷新**。
 
-顺序上它要放在第 3 步写完 JSON 之后：脚本是往已有的简报里写字段，
-简报文件还不存在时它会直接报错退出。
+`render.py` 生成 `site/index.html` 和 `briefs/<日期>.md`；结构错误（字段写错）会直接
+退出并指出字段路径，例如 `items[3].assets[0].direction`，照着路径改 JSON 再跑。
 
-涉及空头持仓的条目，第 1 步扫描时就该跑过 `fetch_short_interest.py`
-（见上文），把查到的引用文字和来源直接写进对应条目，这里不重复。
+## 第 7 步 · 提交
 
-`render.py` 生成 `site/index.html` 和 `briefs/<日期>.md`。它区分两类问题：
-
-- **结构错误**直接退出并指出字段路径，例如 `items[3].assets[0].direction`。
-  照着路径改 JSON 再跑一次。
-- **质量警告**只打印不阻断：条目超时效、条数不足、`rank` 不连续、缺 `published`、
-  必读层没有深度元数据。看到警告就回去补，补不了也能发布。
-
-## 第 5 步 · 提交
-
-`git add` 改动的简报 JSON、Markdown 存档、`site/index.html` 与 `data/` 下的快照，
-提交并推送到 `main`。**推送即上线**：Render 读到新提交会自动重新部署，
+`git add` 当天的简报 JSON、Markdown 存档和 `site/index.html`，提交并推送到 `main`。
+`scratch/` 下的扫描结果是中间产物，已被 `.gitignore` 忽略，不要提交。**推送即上线**：Render 读到新提交会自动重新部署，
 `https://taurient-lite-backend.onrender.com/` 随即是最新的一份。
 
 推送完成后给 Eddie 一句话：今天的主线是什么，加上 Render 的链接。
@@ -277,34 +288,37 @@ Nasdaq，所以云端任务应当读 GitHub Actions 已经提交好的 `data/sec
 ## 代码结构
 
 ```
+.claude/agents/
+├── news-scanner.md      子 agent：一个话题的新闻扫描（Haiku）
+├── coverage-checker.md  子 agent：独立找当天大新闻，查简报有没有漏（Haiku）
+└── fact-checker.md      子 agent：只读核查数字和日期（Haiku）
+
 taurient_lite/
 ├── schema.py            数据定义与校验，不依赖其他模块
 ├── config.py            配置读取
+├── quality.py           发布前质量门，check_brief.py 调用
 ├── theme.py             设计 token 与样式表生成
 ├── components/          组件层，每个模块一组板块
-│   ├── base.py          HTML 拼装原语与转义
-│   ├── panels.py        页首、自选股、指数行情
-│   ├── depth.py         资产矩阵、交叉信源、历史脉络
-│   ├── items.py         新闻条目与分层
-│   ├── calendar.py      日历标签页：周网格 + 日期待定列表
-│   ├── momentum.py      异动标签页：按阶段分档的候选卡片
-│   ├── tabs.py          标签页切换的通用脚手架（radio-hack，零 JS）
-│   └── tail.py          页脚
 ├── html_renderer.py     组装整页
 ├── markdown_renderer.py 组装存档
 ├── pipeline.py          编排：读文件、调渲染、写文件
-├── quotes.py            行情抓取，独立于渲染
 ├── momentum.py          价量异动判定，纯函数，不碰网络
-└── short_interest.py    FINRA 空头持仓抓取，研究/核实工具，不进渲染流程
+├── sectors.py           板块热力的抓取与聚合
+├── short_interest.py    FINRA 空头持仓抓取
+├── history.py / quotes.py  后端个股页用的 K 线与报价
+└── fundamentals/        基本面扫描（尚未接入每日流程）
 ```
 
 依赖方向永远向下，没有环。改样式只动 `theme.py`，改结构只动 `schema.py`，
 两者互不影响。
 
 **`backend/` 跟这份 RUNBOOK 描述的每日流程无关**，它是部署在 Render 的
-一个 Web 服务，供人现场刷新价格、查任意股票的空头持仓，不参与新闻扫描
-或简报生成。除非任务明确要求改后端，否则不用碰这个目录，也不用跑
-`backend/test_server.py`——那需要装 FastAPI，云端定时任务的环境里没有。
+一个 Web 服务，负责展示简报、现场刷新板块热力、个股页和划词问答，不参与新闻
+扫描或简报生成。除非任务明确要求改后端，否则不用碰这个目录，也不用跑
+`backend/` 下的测试——那需要装 FastAPI，云端定时任务的环境里没有。
+
+**`managed-agents/` 也跟现在的每日流程无关**，那是迁移到 Anthropic 托管平台的
+备用方案，按 API 用量计费，目前没有启用。
 
 ## 改了代码就跑测试
 
@@ -312,7 +326,7 @@ taurient_lite/
 python3 -m unittest discover -s tests -t .
 ```
 
-366 个用例，零第三方依赖。**改完 `taurient_lite/` 下的任何文件都要跑一遍再发布。**
+四百多个用例，零第三方依赖。**改完 `taurient_lite/` 下的任何文件都要跑一遍再发布。**
 测试覆盖：反序列化的每条校验规则、组件的空数据分支、主题三个块的完整性、
 HTML 转义、行情解析与重试、以及在临时目录里的端到端渲染。
 
