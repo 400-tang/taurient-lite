@@ -32,6 +32,7 @@ from __future__ import annotations
 
 import datetime as dt
 import time
+from collections import Counter
 from dataclasses import dataclass, replace
 from typing import Any, Sequence
 
@@ -500,10 +501,16 @@ def drop_stale(signals: Sequence[Signal]) -> tuple[list[Signal], list[Signal]]:
     都会让它的「最新」停在几天前。不过滤的话，它的旧信号会和别人的当天
     信号混在同一张名单里——实际发生过：GRAL 的数据停在 09-21，别的都是
     09-23，它照样被判成初动写进了 09-24 的简报。
+
+    **基准日取大多数票的日期，不取最大值。** 收盘后几小时内，Yahoo 只给少数
+    票开出当天的日线，其余还停在前一天。取最大值的话，那几只「早到」的票
+    会把其余两千多只全判成过期——10-22 晚上的扫描就这样只剩 36 只。早到的
+    那几只和停牌的一样放进第二个列表：同一张名单里只能有一个数据日期。
     """
     if not signals:
         return [], []
-    asof = max(s.date for s in signals)
+    counts = Counter(s.date for s in signals)
+    asof = max(counts, key=lambda d: (counts[d], d))
     fresh = [s for s in signals if s.date == asof]
     stale = [s for s in signals if s.date != asof]
     return fresh, stale

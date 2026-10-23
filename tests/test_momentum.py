@@ -283,6 +283,21 @@ class DropStaleTest(unittest.TestCase):
         self.assertEqual([s.ticker for s in fresh], ["A", "B"])
         self.assertEqual([s.ticker for s in stale], ["GRAL"])
 
+    def test_a_few_early_tickers_do_not_wipe_out_the_rest(self):
+        """收盘后只有少数票先有了当天的日线——基准日跟大多数走。"""
+        today, yesterday = dt.date(2026, 10, 22), dt.date(2026, 10, 21)
+        fresh, stale = drop_stale([
+            self.signal("EARLY", today),
+            self.signal("A", yesterday), self.signal("B", yesterday), self.signal("C", yesterday),
+        ])
+        self.assertEqual([s.ticker for s in fresh], ["A", "B", "C"])
+        self.assertEqual([s.ticker for s in stale], ["EARLY"])
+
+    def test_tie_prefers_the_later_date(self):
+        today, yesterday = dt.date(2026, 10, 22), dt.date(2026, 10, 21)
+        fresh, _ = drop_stale([self.signal("A", yesterday), self.signal("B", today)])
+        self.assertEqual([s.ticker for s in fresh], ["B"])
+
     def test_empty_input(self):
         self.assertEqual(drop_stale([]), ([], []))
 
