@@ -1,0 +1,50 @@
+# 每天对 Supabase 做一次真实的数据库查询，免得免费项目因闲置被暂停。
+#
+# 为什么需要这个：整个站点只有「已登录的人打开页面」时才会读写 Supabase
+# 的 watchlists 表。简报生成、Render 后端、keepalive 都不经过它。一阵子
+# 没人登录，Supabase 就把项目判成闲置并暂停——2026-10 实际发生过，暂停后
+# 项目域名直接解析不出来，登录、自选股和划词问答一起失效。
+#
+# 为什么查表而不是敲 /auth/v1/health：Supabase 看的是数据库有没有被用，
+# 健康检查不碰 Postgres。这里用 anon key 读一次 watchlists：有 RLS 时匿名
+# 请求读到的是空数组，但 PostgREST 照样要在 Postgres 里执行这条查询。
+#
+# 查询失败就让任务失败：GitHub 会发邮件，项目再被暂停时能第一时间知道，
+# 而不是等到有人登录不上才发现。
+
+name: Supabase 保活
+
+on:
+  schedule:
+    # 每天一次足够，闲置阈值以天计。时点随意，避开整点高峰。
+    - cron: "17 15 * * *"
+  # 允许在 Actions 页面手动点一次，用来验证或在恢复项目后立刻敲一下。
+  workflow_dispatch:
+
+# 只读仓库，拿 config.json 里的地址和 anon key。
+permissions:
+  contents: read
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # 地址和 anon key 本来就公开在 config.json 里（前端页面也在用），
+      # 从那里读，不在这里再抄一份。
+      - name: 查询 watchlists
+        run: |
+          URL=$(python3 -c "import json; print(json.load(open('config.json'))['supabase']['url'].rstrip('/'))")
+          KEY=$(python3 -c "import json; print(json.load(open('config.json'))['supabase']['anon_key'])")
+          code=$(curl -sS -m 30 -o body.txt -w '%{http_code}' \
+            "$URL/rest/v1/watchlists?select=user_id&limit=1" \
+            -H "apikey: $KEY" -H "Authorization: Bearer $KEY") || {
+            echo "连不上 $URL——项目可能已经被暂停，去 Supabase 后台点 Restore project"
+            exit 1
+          }
+          echo "HTTP $code"
+          if [ "$code" != "200" ]; then
+            cat body.txt
+            exit 1
+          fi
