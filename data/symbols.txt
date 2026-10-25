@@ -124,6 +124,7 @@ ACIG|Hartford Alpha Capture International Growth ETF
 ACII|Innovator Index Autocallable Income Strategy ETF
 ACIO|Aptus Collared Investment Opportunity ETF
 ACIU|AC Immune SA - Common Stock
+ACIV|Hartford Alpha Capture International Value ETF
 ACIW|ACI Worldwide, Inc. - Common Stock
 ACKY|VistaShares Target 15 ACKtivist Distribution ETF
 ACLC|American Century Large Cap Equity ETF
@@ -159,7 +160,6 @@ ACTS|FIS Tactical Equity ETF
 ACTU|Actuate Therapeutics, Inc. - Common stock
 ACU|Acme United Corporation. Common Stock
 ACV|Virtus Diversified Income & Convertible Fund Common Shares of Beneficial Interest
-ACVA|ACV Auctions Inc. Class A Common Stock
 ACVF|American Conservative Values ETF
 ACVT|Advent Convertible Bond ETF
 ACVU|Hartford Alpha Capture Value ETF
@@ -192,7 +192,6 @@ ADBT|Advasa Holdings, Inc. - Common stock
 ADBU|Direxion Daily ADBE Bull 2X ETF
 ADC|Agree Realty Corporation Common Stock
 ADCT|ADC Therapeutics SA Common Shares
-ADDS|Hedgeye Index Adds ETF
 ADEA|Adeia Inc.  - Common Stock
 ADGM|Adagio Medical Holdings, Inc - Common Stock
 ADI|Analog Devices, Inc. - Common Stock
@@ -337,22 +336,26 @@ AHBM|Amplify Top 10 Asia Memory ETF
 AHCO|AdaptHealth Corp.  - Common Stock
 AHD|GraniteShares Autocallable HOOD ETF
 AHG|Akso Health Group - American Depositary Shares
+AHIC|Allspring Short-Term High Income Fund ETF
 AHLT|AHL Trend ETF
 AHMA|Ambitions Enterprise Management Co. L.L.C - Class A Ordinary Shares
 AHR|American Healthcare REIT, Inc. Common Stock
 AHRT|AH Realty Trust, Inc. Common Stock
 AHT|Ashford Hospitality Trust Inc Common Stock
 AHYB|American Century Select High Yield ETF
+AHYM|Allspring High Yield Municipal Bond Fund ETF
 AI|C3.ai, Inc. Class A Common Stock
 AIA|iShares Asia 50 ETF
 AIAI|AIAI Holdings Corporation - Class A common stock
 AIB|AIB Data Centers Inc. Common Stock
 AIBD|Direxion Daily AI and Big Data Bear 2X ETF
 AIBF|iShares Future AI Beneficiaries ETF
+AIBN|Defiance AI Infrastructure Bond ETF
 AIBU|Direxion Daily AI and Big Data Bull 2X ETF
 AIBZ|Bitzero Holdings Inc. - Common Shares
 AICH|China AI ETF
 AIDX|20/20 Biolabs, Inc. - Common Stock
+AIED|Defiance LLM Catalyst Momentum ETF
 AIEQ|Amplify AI Powered Equity ETF
 AIFA|All In FutureTech Alliance, Inc. - Common Stock
 AIFC|AI Financial Corporation - Common Stock
@@ -430,7 +433,6 @@ ALAB|Astera Labs, Inc. - Common Stock
 ALAI|Alger AI Enablers & Adopters ETF
 ALAR|Alarum Technologies Ltd. - American Depositary Shares
 ALB|Albemarle Corporation Common Stock
-ALBG|Leverage Shares 2X Long ALB Daily ETF
 ALC|Alcon Inc. Ordinary Shares
 ALCO|Alico, Inc. - Common Stock
 ALDB|Aptus Laddered Deep Buffer ETF
@@ -544,7 +546,6 @@ AMMO|VistaShares Defense Supercycle ETF
 AMN|AMN Healthcare Services Inc
 AMOD|Alpha Modus Holdings, Inc. - Class A Common Stock
 AMODW|Alpha Modus Holdings, Inc. - Warrant
-AMOM|QRAFT AI-Enhanced U.S. Large Cap Momentum ETF
 AMP|Ameriprise Financial, Inc. Common Stock
 AMPG|Amplitech Group, Inc. - Common Stock
 AMPGZ|Amplitech Group, Inc. - Series B Right
@@ -566,7 +567,7 @@ AMSS|AMASS Brands Inc. - Common Stock
 AMST|Amesite Inc. - Common Stock
 AMT|American Tower Corporation (REIT) Common Stock
 AMTB|Amerant Bancorp Inc. Class A Common Stock
-AMTD|AMTD IDEA Group American Depositary Shares, each representing six (6) Class A Ordinary Shares
+AMTD|AMTD IDEA Group American Depositary Shares, each representing three hundred sixty (360) Class A Ordinary Shares
 AMTM|Amentum Holdings, Inc. Common Stock
 AMTX|Aemetis, Inc - Common Stock
 AMUB|ETRACS Alerian MLP Index ETN Series B due July 18, 2042
@@ -687,6 +688,7 @@ APURR|Aperture AC - Rights
 APUS|Apimeds Pharmaceuticals US, Inc. Common Stock
 APVO|Aptevo Therapeutics Inc. - Common Stock
 APWC|Asia Pacific Wire & Cable Corporation Limited  - Common shares, Par value .01 per share
+APXC|Apex Critical Metals Corp. - American Depositary Shares
 APXM|FT Vest U.S. Equity Max Buffer ETF - April
 APXT|Apex Treasury Corporation - Class A Ordinary Share
 APXTU|Apex Treasury Corporation - Units
@@ -838,7 +840,7 @@ ASTG|Leverage Shares 2X Long ASTS Daily ETF
 ASTH|Astrana Health Inc. - Common Stock
 ASTI|Ascent Solar Technologies, Inc - Common Stock
 ASTL|Algoma Steel Group Inc. - Common Shares
-ASTLW|Algoma Steel Group Inc. - Warrant
+ASTM|Allspring Strategic Municipal Bond Fund ETF
 ASTN|Defiance Daily Target 2X Short ASTS ETF
 ASTS|AST SpaceMobile, Inc. - Class A Common Stock
 ASTT|Corgi ASTS 2x Daily ETF
@@ -865,10 +867,6 @@ ATHM|Autohome Inc. American Depositary Shares, each representing four class A or
 ATHR|Aether Holdings, Inc. - Common Stock
 ATHS|Athene Holding Ltd. 7.250% Fixed-Rate Reset Junior Subordinated Debentures due 2064
 ATI|ATI Inc. Common Stock
-ATII|Archimedes Tech SPAC Partners II Co. - Ordinary Shares
-ATIIU|Archimedes Tech SPAC Partners II Co. - Unit
-ATIIW|Archimedes Tech SPAC Partners II Co. - Warrant
-ATKR|Atkore Inc. Common Stock
 ATLC|Atlanticus Holdings Corporation - Common Stock
 ATLCL|Atlanticus Holdings Corporation - 6.125% Senior Notes due 2026
 ATLCP|Atlanticus Holdings Corporation - 7.625% Series B Cumulative Perpetual Preferred Stock, no par value per share
@@ -1462,7 +1460,6 @@ BLRK|Bluerock Acquisition Corp. - Class A Ordinary Shares
 BLRKU|Bluerock Acquisition Corp. - Units
 BLRKW|Bluerock Acquisition Corp. - Warrants
 BLRX|BioLineRx Ltd. - American Depositary Shares
-BLSG|Leverage Shares 2X Long BLSH Daily ETF
 BLSH|Bullish Ordinary Shares
 BLSM|BlossomHill Therapeutics, Inc. - Common Stock
 BLST|Bluemonte Short Term Bond ETF
@@ -1737,7 +1734,6 @@ BTCZ|T-Rex 2X Inverse Bitcoin Daily Target ETF
 BTDL|GraniteShares 2x Long BTDR Daily ETF
 BTDR|Bitdeer Technologies Group - Ordinary Shares
 BTE|Baytex Energy Corp Common Shares
-BTF|CoinShares Bitcoin and Ether ETF
 BTG|B2Gold Corp Common shares (Canada)
 BTGD|STKd 100% Bitcoin & 100% Gold ETF
 BTGO|BitGo Holdings, Inc. Class A Common Stock
@@ -1748,7 +1744,6 @@ BTO|John Hancock Financial Opportunities Fund Common Stock
 BTOC|Armlogi Holding Corp. - common stock
 BTOT|iShares Total USD Fixed Income Market ETF
 BTQ|BTQ Technologies Corp. - Common Stock
-BTRN|Global X Bitcoin Trend Strategy ETF
 BTSG|BrightSpring Health Services, Inc. - Common Stock
 BTSGU|BrightSpring Health Services, Inc. - Tangible Equity Unit
 BTT|BlackRock Municipal 2030 Target Term Trust
@@ -1845,7 +1840,6 @@ BZAI|Blaize Holdings, Inc. - Common Stock
 BZAIW|Blaize Holdings, Inc. - Warrant
 BZFD|BuzzFeed, Inc. - Class A Common Stock
 BZFDW|BuzzFeed, Inc. - Warrant
-BZH|Beazer Homes USA, Inc. Common Stock
 BZQ|ProShares UltraShort MSCI Brazil Capped
 BZUN|Baozun Inc. - American Depositary Shares
 BZZ|Corgi Drones & Urban Air Mobility ETF
@@ -2061,7 +2055,7 @@ CDXS|Codexis, Inc. - Common Stock
 CDZI|Cadiz, Inc. - Common Stock
 CDZIP|Cadiz, Inc. - Depositary Shares
 CE|Celanese Corporation Common Stock
-CECO|CECO Environmental Corp. - Common Stock
+CECO|CECO Environmental Corp. Common Stock
 CEE|The Central and Eastern Europe Fund, Inc. (The) Common Stock
 CEF|Sprott Physical Gold and Silver Trust Units
 CEFA|Global X S&P Catholic Values Developed ex-U.S. ETF
@@ -2485,7 +2479,6 @@ CPNJ|Calamos Nasdaq - 100 Structured Alt Protection ETF -June
 CPNM|Calamos Nasdaq-100 Structured Alt Protection ETF - March
 CPNQ|Calamos Nasdaq-100 Structured Alt Protection ETF December
 CPNS|Calamos Nasdaq-100 Structured Alt Protection ETF  September
-CPNX|Tradr 2X Long CPNG Daily ETF
 CPOP|Pop Culture Group Co., Ltd - Class A Ordinary Shares
 CPRA|Calamos Russell 2000 Structured Alt Protection ETF - April
 CPRI|Capri Holdings Limited Ordinary Shares
@@ -2570,7 +2563,6 @@ CRMG|Leverage Shares 2X Long CRM Daily ETF
 CRML|Critical Metals Corp. - Ordinary Shares
 CRMLW|Critical Metals Corp. - Warrants
 CRMT|America's Car-Mart, Inc. - Common Stock
-CRMU|Leverage Shares 2x Long CRML Daily ETF
 CRMX|Tradr 2X Long CRML Daily ETF
 CRNC|Cerence Inc. - Common Stock
 CRNT|Ceragon Networks Ltd. - Ordinary Shares
@@ -2797,6 +2789,7 @@ DAUG|FT Vest U.S. Equity Deep Buffer ETF - August
 DAVA|Endava plc American Depositary Shares (each representing one Class A Ordinary Share)
 DAVE|Dave Inc.  - Class A Common Stock
 DAVEW|Dave Inc.  - Warrants
+DAVI|Davion Healthcare Plc - Ordinary Shares
 DAX|Global X DAX Germany ETF
 DB|Deutsche Bank AG Common Stock
 DBA|Invesco DB Agriculture Fund
@@ -2830,6 +2823,7 @@ DCBO|Docebo Inc. - Common Shares
 DCGO|DocGo Inc. - Common Stock
 DCH|Dauch Corporation Common Stock
 DCI|Donaldson Company, Inc. Common Stock
+DCM|DeFi Capital Markets, Inc. Common Stock
 DCMT|DoubleLine Commodity Strategy ETF
 DCO|Ducommun Incorporated Common Stock
 DCOM|Dime Commercial Bancshares, Inc. Common Stock
@@ -3010,7 +3004,6 @@ DIEM|Franklin Emerging Market Core Dividend Tilt Index ETF
 DIG|ProShares Ultra Energy
 DIHP|Dimensional International High Profitability ETF
 DIM|WisdomTree International MidCap Dividend Fund
-DIME|CoinShares Altcoins ETF
 DIN|Dine Brands Global, Inc. Common Stock
 DINE|Simplify Tax Aware Diversified Income Strategy ETF
 DINO|HF Sinclair Corporation Common Stock
@@ -3407,7 +3400,7 @@ EFSC|Enterprise Financial Services Corporation - Common Stock
 EFSCP|Enterprise Financial Services Corporation - Depositary Shares Each Representing a 1/40th Interest in a Share of 5% Fixed Rate Non-Cumulative Perpetual Preferred Stock, Series A
 EFSI|Eagle Financial Services Inc - Common Stock
 EFT|Eaton Vance Floating Rate Income Trust Common Shares of Beneficial Interest
-EFTY|Etoiles Capital Group Co., Ltd. - Class A Ordinary Shares
+EFTY|Etoiles Capital Group Co., Ltd. - Common Stock
 EFU|ProShares UltraShort MSCI EAFE
 EFV|iShares MSCI EAFE Value ETF
 EFX|Equifax, Inc. Common Stock
@@ -3489,6 +3482,7 @@ ELVN|Enliven Therapeutics, Inc.  - Common Stock
 ELVR|Elevra Lithium Limited - American Depository Shares
 ELWT|Elauwit Connection, Inc. - Common Stock
 EMA|Emera Incorporated Common Shares
+EMAG|Emerging Markets AI Mag 3 ETF
 EMAT|Evolution Metals & Technologies Corp. - Common Stock
 EMAU|Corgi Emerging Markets Equities 15% Structured Buffer ETF - August Series
 EMB|iShares J.P. Morgan USD Emerging Markets Bond ETF
@@ -3933,7 +3927,6 @@ FCUS|Pinnacle Focused Opportunities ETF
 FCUV|Focus Universal Inc. - Common Stock
 FCVT|First Trust SSI Strategic Convertible Securities ETF
 FCX|Freeport-McMoRan, Inc. Common Stock
-FCXG|Leverage Shares 2x Long FCX Daily ETF
 FDAT|Tactical Advantage ETF
 FDBC|Fidelity D & D Bancorp, Inc. - Common Stock
 FDCF|Fidelity Disruptive Communications ETF
@@ -4085,6 +4078,7 @@ FID|First Trust S&P International Dividend Aristocrats ETF
 FIDI|Fidelity International High Dividend ETF
 FIDU|Fidelity MSCI Industrials Index ETF
 FIEE|FiEE, Inc - Common Stock
+FIFT|HCM Select 50 ETF
 FIG|Figma, Inc. Class A Common Stock
 FIGB|Fidelity Investment Grade Bond ETF
 FIGG|Leverage Shares 2x Long FIG Daily ETF
@@ -4633,7 +4627,6 @@ GELS|Gelteq Limited - Ordinary Shares
 GEM|Goldman Sachs ActiveBeta Emerging Markets Equity ETF
 GEMD|Goldman Sachs Access Emerging Markets USD Bond ETF
 GEME|Pacific North of South EM Equity Active ETF
-GEMG|Leverage Shares 2X Long GEMI Daily ETF
 GEMI|Gemini Space Station, Inc. - Class A Common Stock
 GEMQ|Goldman Sachs Data Enhanced Emerging Markets Equity ETF
 GEN|Gen Digital Inc. - Common Stock
@@ -4758,7 +4751,6 @@ GLDN|Nicholas Gold Income ETF
 GLDW|Roundhill Gold WeeklyPay ETF
 GLE|Global Engine Group Holding Limited - Class A Ordinary Shares
 GLED|GalaxyEdge Acquisition Corporation Ordinary Shares
-GLGG|Leverage Shares 2X Long GLXY Daily ETF
 GLIBA|Liberty Capital Corporation - Series A GCI Group Common Stock
 GLIBK|Liberty Capital Corporation - Series C GCI Group Common Stock
 GLIN|VanEck India Growth Leaders ETF
@@ -4802,6 +4794,7 @@ GMEX|GMEX ROBOTICS CORPORATION - Class A Ordinary Shares
 GMEY|YieldMax GME Option Income Strategy ETF
 GMF|State Street SPDR S&P Emerging Asia Pacific ETF
 GMHS|Gamehaus Holdings Inc. - Class A Ordinary Shares
+GMIE|GMO International Equity Fund, ETF Class
 GMM|Global Mofy AI Limited  - Class A Ordinary Shares
 GMMA|GammaRoad Market Navigation ETF
 GMMF|iShares Government Money Market ETF
@@ -5158,7 +5151,6 @@ HEI|Heico Corporation Common Stock
 HELE|Helen of Troy Limited - Common Stock
 HELO|JPMorgan Hedged Equity Laddered Overlay ETF
 HELP|Helus Pharma Inc.  - Common Stock
-HELS|Hedgeye 130/30 Equity ETF
 HELX|Franklin Genomic Advancements ETF
 HEMI|Hartford Equity Premium Income ETF
 HEPS|D-Market Electronic Services & Trading - American Depositary Shares
@@ -5211,6 +5203,7 @@ HIMS|Hims & Hers Health, Inc. Class A Common Stock
 HIMU|iShares High Yield Muni Active ETF
 HIMX|Himax Technologies, Inc. - American depositary shares, each of which represents two ordinary shares.
 HIMZ|Defiance Daily Target 2X Long HIMS ETF
+HINC|Hartford High Yield ETF
 HIND|Vyome Holdings, Inc. - Common Stock
 HIO|Western Asset High Income Opportunity Fund, Inc. Common Stock
 HIPO|Hippo Holdings Inc. Common Stock
@@ -5271,7 +5264,6 @@ HOMB|Home BancShares, Inc. Common Stock
 HOMZ|Hoya Capital Housing ETF
 HON|Honeywell International Inc. - Common Stock
 HONA|Honeywell Aerospace Inc. - Common Stock
-HONG|Leverage Shares 2X Long HON Daily ETF
 HOOC|Corgi HOOD 2x Daily ETF
 HOOD|Robinhood Markets, Inc. - Class A Common Stock
 HOOG|Leverage Shares 2X Long HOOD Daily ETF
@@ -5528,7 +5520,7 @@ IBMX|iShares iBonds Dec 2035 Term Muni Bond ETF
 IBN|ICICI Bank Limited Common Stock
 IBND|State Street SPDR Bloomberg International Corporate Bond ETF
 IBO|Impact BioMedical, Inc. Common Stock
-IBOC|International Bancshares Corporation - Common Stock
+IBOC|International Bancshares Corporation Common Stock
 IBOT|VanEck Robotics ETF
 IBP|Installed Building Products, Inc. Common Stock
 IBRN|iShares Neuroscience and Healthcare ETF
@@ -5562,6 +5554,7 @@ ICLO|Invesco AAA CLO Floating Rate Note ETF
 ICLR|ICON plc - Ordinary Shares
 ICMB|Investcorp Credit Management BDC, Inc. - Common Stock
 ICMO|Symmetry Panoramic International Country Momentum ETF
+ICOM|Tema Commodity Income ETF
 ICON|Icon Energy Corp. - Common stock
 ICOP|iShares Copper and Metals Mining ETF
 ICOW|Pacer Developed Markets International Cash Cows 100 ETF
@@ -5924,7 +5917,6 @@ IRS|IRSA Inversiones Y Representaciones S.A. Global Depositary Shares (Each repr
 IRT|Independence Realty Trust, Inc. Common Stock
 IRTC|iRhythm Holdings, Inc.  - Common Stock
 IRTR|iShares LifePath Retirement ETF
-IRVH|Global X Interest Rate Volatility & Inflation Hedge ETF
 IRWD|Ironwood Pharmaceuticals, Inc. - Class A Common Stock
 ISBA|Isabella Bank Corporation - Common stock
 ISBG|IncomeSTKd 1x Bitcoin & 1x Gold Premium ETF
@@ -6173,7 +6165,7 @@ JIRE|JPMorgan International Research Enhanced Equity ETF
 JIVE|JPMorgan International Value ETF
 JJSF|J & J Snack Foods Corp. - Common Stock
 JKHY|Jack Henry & Associates, Inc. - Common Stock
-JKS|JinkoSolar Holding Company Limited American Depositary Shares (each representing 4 Common Shares)
+JKS|Jinko Holdings Limited American Depositary Shares (each representing 4 Ordinary Shares)
 JL|J-Long Group Limited - Class A Ordinary Shares
 JLCO|John Hancock Large Cap Opportunities ETF
 JLHL|Julong Holding Limited - Class A Ordinary Shares
@@ -6608,6 +6600,7 @@ LCTD|iShares World ex U.S. Carbon Transition Readiness Aware Active ETF
 LCTO|Kurv U.S. Large Cap TaxOptimized ETF
 LCTU|iShares U.S. Carbon Transition Readiness Aware Active ETF
 LCTX|Lineage Cell Therapeutics, Inc. Common Stock
+LCU|Lion Copper Corp. - Common Shares
 LCUT|Lifetime Brands, Inc. - Common Stock
 LDDR|LifeX 2035 Income Bucket ETF
 LDEM|iShares ESG MSCI EM Leaders ETF
@@ -6831,7 +6824,6 @@ LRGC|AB US Large Cap Strategic Equities ETF
 LRGE|ClearBridge Large Cap Growth Select ETF
 LRGF|iShares U.S. Equity Factor ETF
 LRGG|Nomura Focused Large Growth ETF
-LRHC|La Rosa Holdings Corp. - Common Stock
 LRMR|Larimar Therapeutics, Inc. - Common Stock
 LRN|Stride, Inc. Common Stock
 LRND|NYLIM U.S. Large Cap R&D Leaders ETF
@@ -6870,7 +6862,7 @@ LTRN|Lantern Pharma Inc. - Common Stock
 LTRX|Lantronix, Inc. - Common Stock
 LTRYW|Sports Entertainment Gaming Global Corporation  - Warrant
 LTTI|FT Vest 20+ Year Treasury & Target Income ETF
-LU|Lufax Holding Ltd American Depositary Shares, each representing two (2) Ordinary Shares
+LU|Lufax Holding Ltd American Depositary Shares (each representing twenty (20) Ordinary Shares)
 LUCD|Lucid Diagnostics Inc. - Common Stock
 LUCK|Lucky Strike Entertainment Corporation Class A Common Stock
 LUCY|Innovative Eyewear, Inc. - Common Stock
@@ -6910,6 +6902,7 @@ LXP|LXP Industrial Trust Common Stock (Maryland REIT)
 LXRX|Lexicon Pharmaceuticals, Inc. - Common Stock
 LXU|LSB Industries, Inc. Common Stock
 LYB|LyondellBasell Industries NV Ordinary Shares Class A (Netherlands)
+LYCA|Lycia Therapeutics, Inc. - Common Stock
 LYEL|Lyell Immunopharma, Inc. - Common Stock
 LYFT|Lyft, Inc. - Class A Common Stock
 LYG|Lloyds Banking Group Plc American Depositary Shares
@@ -7278,7 +7271,6 @@ MMAY|Pacer Swan SOS Moderate (May) ETF
 MMCA|NYLIM MacKay California Muni Intermediate ETF
 MMD|NYLIM MacKay DefinedTerm Muni Opportunities Fund Common Shares
 MMED|MiniMed Group, Inc. - Common Stock
-MMEDV|MiniMed Group, Inc. - Common Stock When Issued
 MMF|Corgi Money Market ETF
 MMHI|NYLIM MacKay Muni High Income ETF
 MMI|Marcus & Millichap, Inc. Common Stock
@@ -7483,6 +7475,7 @@ MTEKW|Maris-Tech Ltd. - Warrants
 MTEN|Mingteng International Corporation Inc. - Class A Ordinary Shares
 MTEX|Mannatech, Incorporated - Common Stock
 MTG|MGIC Investment Corporation Common Stock
+MTGG|MayTech Global Growth ETF
 MTGP|WisdomTree Mortgage Plus Bond Fund
 MTH|Meritage Homes Corporation Common Stock
 MTLS|Materialise NV - American Depositary Shares
@@ -7527,7 +7520,6 @@ MUNY|Vanguard New York Tax-Exempt Bond ETF
 MUR|Murphy Oil Corporation Common Stock
 MUSA|Murphy USA Inc. Common Stock
 MUSE|TCW Multisector Credit Income ETF
-MUSQ|MUSQ Global Music Industry Index ETF
 MUST|Columbia Multi-Sector Municipal Income ETF
 MUU|Direxion Daily MU Bull 2X ETF
 MUX|McEwen Inc. Common Stock
@@ -7624,6 +7616,8 @@ NAMS|NewAmsterdam Pharma Company N.V. - Ordinary Shares
 NAMSW|NewAmsterdam Pharma Company N.V. - Warrant
 NAN|Nuveen New York Quality Municipal Income Fund Common Stock
 NANC|Subversive Congressional Democrats Trading ETF
+NANO|Forge Nano Holdings Inc. - Common stock
+NANOW|Forge Nano Holdings Inc. - Warrants
 NANR|State Street SPDR S&P North American Natural Resources ETF
 NAPR|Innovator Growth-100 Power Buffer ETF - April
 NASA|Tema Space Innovators ETF
@@ -7718,7 +7712,6 @@ NEHI|NEOS Ethereum High Income ETF
 NELS|Nelson Select ETF
 NEM|Newmont Corporation
 NEMD|Neuberger Emerging Markets Debt Hard Currency ETF
-NEMG|Leverage Shares 2x Long NEM Daily ETF
 NEN|New England Realty Associates Limited Partnership Class A Depositary Receipts Evidencing Units of Limited Partnership
 NEO|NeoGenomics, Inc. - Common Stock
 NEOG|Neogen Corporation - Common Stock
@@ -7781,7 +7774,7 @@ NHI|National Health Investors, Inc. Common Stock
 NHIV|NewHold Investment Corp IV - Class A Ordinary Shares
 NHIVU|NewHold Investment Corp IV - Units
 NHIVW|NewHold Investment Corp IV - Warrants
-NHP|National Healthcare Properties, Inc. - Class A Common Stock
+NHP|National Healthcare Properties, Inc. - Common Stock
 NHS|Neuberger High Yield Strategies Fund Inc. Common Stock
 NHTC|Natural Health Trends Corp. - Common Stock
 NHYB|Nuveen High Yield Corporate Bond ETF
@@ -7987,7 +7980,6 @@ NUDM|Nuveen ESG International Developed Markets Equity ETF
 NUDV|Nuveen ESG Dividend ETF
 NUE|Nucor Corporation Common Stock
 NUEM|Nuveen ESG Emerging Markets Equity ETF
-NUG|Leverage Shares 2X Long NU Daily ETF
 NUGO|Nuveen Growth Opportunities ETF
 NUGT|Direxion Daily Gold Miners Index Bull 2X ETF
 NUGY|GraniteShares YieldBOOST Gold Miners ETF
@@ -8087,7 +8079,6 @@ NXP|Nuveen Select Tax Free Income Portfolio Common Stock
 NXPG|Leverage Shares 2X Long NXPI Daily ETF
 NXPI|NXP Semiconductors N.V. - Common Stock
 NXPL|NextPlat Corp - Common Stock
-NXPX|Tradr 2X Long NXPI Daily ETF
 NXRT|NexPoint Residential Trust, Inc. Common Stock
 NXST|Nexstar Media Group, Inc. - Common Stock
 NXT|Nextpower Inc. - Common Stock
@@ -8297,7 +8288,6 @@ OPAD|Offerpad Solutions Inc.  - Class A Common Stock
 OPAL|OPAL Fuels Inc. - Class A Common Stock
 OPBK|OP Bancorp - Common Stock
 OPCH|Option Care Health, Inc. - Common Stock
-OPEG|Leverage Shares 2X Long OPEN Daily ETF
 OPEN|Opendoor Technologies Inc  - Common Stock
 OPENL|Opendoor Technologies Inc  - Series A Warrants, each whole warrant exercisable to purchase one share of Common Stock at an exercise price of $13.00 per warrant
 OPENW|Opendoor Technologies Inc  - Series K Warrants, each whole warrant exercisable to purchase one share of Common Stock at an exercise price of $9.00 per warrant
@@ -8396,6 +8386,7 @@ OVL|Overlay Shares Large Cap Equity ETF
 OVLH|Overlay Shares Hedged Large Cap Equity ETF
 OVLY|Oak Valley Bancorp (CA) - Common Stock
 OVM|Overlay Shares Municipal Bond ETF
+OVQ|Overlay Shares Nasdaq 100 Income ETF
 OVS|Overlay Shares Small Cap Equity ETF
 OVT|Overlay Shares Short Term Bond ETF
 OVV|Ovintiv Inc. (DE)
@@ -8486,6 +8477,8 @@ PAVM|PAVmed Inc. - Common Stock
 PAVS|Paranovus Entertainment Technology Ltd. - Class A Ordinary Shares
 PAWZ|ProShares Pet Care ETF
 PAX|Patria Investments Limited - Class A Common Shares
+PAXG|Pine Tree Acquisition Corp. - Class A Ordinary Shares
+PAXGR|Pine Tree Acquisition Corp. - Rights
 PAXGU|Pine Tree Acquisition Corp. - Units
 PAXS|PIMCO Access Income Fund Common Shares of Beneficial Interest
 PAY|Paymentus Holdings, Inc. Class A Common Stock
@@ -8534,7 +8527,6 @@ PBP|Invesco S&P 500 BuyWrite ETF
 PBPH|Portfolio Building Block World Pharma and Biotech Index ETF
 PBQQ|PGIM Laddered Nasdaq-100 Buffer 12 ETF
 PBR|Petroleo Brasileiro S.A. Petrobras ADS
-PBRG|Leverage Shares 2X Long PBR Daily ETF
 PBSC|Pacer Barings Secured Credit Flex ETF
 PBSE|PGIM S&P 500 Buffer 20 ETF - September
 PBT|Permian Basin Royalty Trust Common Stock
@@ -8628,7 +8620,6 @@ PEP|PepsiCo, Inc. - Common Stock
 PEPG|PepGen Inc. - Common Stock
 PEPS|Parametric Equity Plus ETF
 PEPT|REX Peptide ETF
-PERF|Perfect Corp. Class A Ordinary Share
 PERI|Perion Network Ltd - Ordinary Shares
 PESI|Perma-Fix Environmental Services, Inc. - Common Stock
 PETS|PetMed Express, Inc. - Common Stock
@@ -8866,11 +8857,11 @@ POLA|Polar Power, Inc. - Common Stock
 POLE|Andretti Acquisition Corp. II - Class A Ordinary Shares
 POLEU|Andretti Acquisition Corp. II - Unit
 POLEW|Andretti Acquisition Corp. II - Warrant
-POM|POMDOCTOR LIMITED - American Depositary Shares
+POM|POMDOCTOR LIMITED - Class A Ordinary Shares
+POMG|PRIMECAP Odyssey Discovery ETF
 PONO|Pono Capital Four, Inc. - Class A Ordinary Shares
 PONOR|Pono Capital Four, Inc. - Rights
 PONOU|Pono Capital Four, Inc. - Units
-PONX|Tradr 2X Long PONY Daily ETF
 PONY|Pony AI Inc. - American Depositary Shares
 POOL|Pool Corporation - Common Stock
 POR|Portland General Electric Co Common Stock
@@ -8992,7 +8983,6 @@ PSCX|Pacer Swan SOS Conservative (January) ETF
 PSDM|PGIM Short Duration Multi-Sector Bond ETF
 PSEC|Prospect Capital Corporation - Closed End Fund
 PSEP|Innovator U.S. Equity Power Buffer ETF - September
-PSET|Principal Quality ETF
 PSF|Cohen & Steers Select Preferred and Income Fund, Inc. Common Stock
 PSFD|Pacer Swan SOS Flex (January) ETF
 PSFE|Paysafe Limited Common Shares
@@ -9151,7 +9141,6 @@ QCAP|FT Vest Nasdaq-100 Conservative Buffer ETF - April
 QCJA|FT Vest Nasdaq-100 Conservative Buffer ETF - January
 QCJL|FT Vest Nasdaq-100 Conservative Buffer ETF - July
 QCLN|First Trust NASDAQ Clean Edge Green Energy Index Fund
-QCLR|Global X NASDAQ 100 Collar 95-110 ETF
 QCLS|Q/C Technologies, Inc. - Common Stock
 QCMD|Direxion Daily QCOM Bear 1X ETF
 QCML|GraniteShares 2x Long QCOM Daily ETF
@@ -9228,6 +9217,7 @@ QPX|AdvisorShares Q Dynamic Growth ETF
 QQA|Invesco QQQ Income Advantage ETF
 QQAU|Corgi Growth & Technology 15% Structured Buffer ETF - August Series
 QQBF|FT Vest Nasdaq-100 Quarterly 15 Buffer ETF
+QQDH|Tuttle Capital Innovation 100 Income & Hedge ETF
 QQDN|ProShares UltraShort QQQ Mega
 QQEW|First Trust Nasdaq-100 Select Equal Weight ETF
 QQH|HCM Defender 100 Index ETF
@@ -9367,6 +9357,7 @@ RBLX|Roblox Corporation Class A Common Stock
 RBLY|YieldMax RBLX Option Income Strategy ETF
 RBNE|Robin Energy Ltd. - Common Stock
 RBRK|Rubrik, Inc. Class A Common Stock
+RBTX|iShares Future Robotics and Related Technologies Active ETF
 RBUF|Innovator U.S. Small Cap 10 Buffer ETF - Quarterly
 RC|Ready Capital Corporation Common Stock
 RCAT|Red Cat Holdings, Inc. - Common Stock
@@ -9806,7 +9797,6 @@ SAAQW|Space Asset Acquisition Corp. - Warrants
 SABA|Saba Capital Income & Opportunities Fund II Shares of Beneficial Interest
 SABR|Sabre Corporation - Common Stock
 SABS|SAB Biotherapeutics, Inc. - Common Stock
-SABSW|SAB Biotherapeutics, Inc. - Warrant
 SAC|Safeguard Acquisition Corp. Class A Ordinary Shares
 SACH|Sachem Capital Corp. Common Shares
 SAFE|Safehold Inc. New Common Stock
@@ -9843,6 +9833,7 @@ SATA|Strive, Inc. - Variable Rate Series A Perpetual Preferred Stock
 SATL|Satellogic Inc. - Class A Common Stock
 SATLW|Satellogic Inc. - Warrant
 SATO|Invesco Alerian Galaxy Crypto Economy ETF
+SATS|Strive, Inc. - 15.00% Series A Perpetual SATS Preferred Stock
 SAUG|FT Vest U.S. Small Cap Moderate Buffer ETF - August
 SAV|Saratoga Investment Corp 7.50% Notes due 2031
 SAWG|AAM Sawgrass US Large Cap Quality Growth ETF
@@ -9925,6 +9916,7 @@ SCI|Service Corporation International Common Stock
 SCII|SC II Acquisition Corp. - Class A ordinary share
 SCIIR|SC II Acquisition Corp. - Rights
 SCIIU|SC II Acquisition Corp. - Units
+SCIN|Schwab International Bond ETF
 SCIO|First Trust Structured Credit Income Opportunities ETF
 SCJ|iShares MSCI Japan Sm Cap
 SCJL|Corgi U.S. Small-Cap 15% Structured Buffer ETF - July Series
@@ -9984,8 +9976,6 @@ SDP|ProShares UltraShort Utilities
 SDRL|Seadrill Limited Common Shares
 SDS|ProShares UltraShort S&P500
 SDSI|American Century Short Duration Strategic Income ETF
-SDST|Stardust Power Inc. - Common Stock
-SDSTW|Stardust Power Inc. - Warrant
 SDTY|YieldMax S&P 500 0DTE Covered Call Strategy ETF
 SDUR|Aristotle Short Term Income ETF
 SDVD|FT Vest SMID Rising Dividend Achievers Target Income ETF
@@ -9994,7 +9984,6 @@ SDY|State Street SPDR S&P Dividend ETF
 SE|Sea Limited American Depositary Shares, each representing one Class A Ordinary Share
 SEA|U.S. Global Sea to Sky Cargo ETF
 SEAT|Vivid Seats Inc. - Class A common stock
-SEATW|Vivid Seats Inc. - Warrant
 SEB|Seaboard Corporation Common Stock
 SECA|Main Active Rotation ETF
 SECR|NYLIM MacKay Securitized Income ETF
@@ -10034,6 +10023,7 @@ SEPT|AllianzIM U.S. Large Cap Buffer10 Sep ETF
 SEPU|AllianzIM U.S. Equity Buffer15 Uncapped Sep ETF
 SEPW|AllianzIM U.S. Large Cap Buffer20 Sep ETF
 SEPZ|TrueShares Structured Outcome (September) ETF
+SEQ|Sequoia ETF
 SER|Serina Therapeutics, Inc. Common Stock
 SERA|Sera Prognostics, Inc. - Class A Common Stock
 SERV|Serve Robotics Inc. - Common Stock
@@ -10308,6 +10298,7 @@ SMMT|Summit Therapeutics Inc.  - Common Stock
 SMMU|Short Term Municipal Bond Active Exchange-Traded Fund
 SMMV|iShares MSCI USA Small-Cap Min Vol Factor ETF
 SMN|ProShares UltraShort Materials
+SMNG|xETFs Samsung Group ETF
 SMOG|VanEck Low Carbon Energy ETF
 SMOM|Symmetry Panoramic Sector Momentum ETF
 SMOT|VanEck Morningstar SMID Moat ETF
@@ -10335,7 +10326,6 @@ SMX|SMX (Security Matters) Public Limited Company - Ordinary Shares
 SMXT|Solarmax Technology Inc. - Common Stock
 SMXWW|SMX (Security Matters) Public Limited Company - Warrant
 SMYY|GraniteShares YieldBOOST SMCI ETF
-SMZ|Tradr 2X Short SMR Daily ETF
 SN|SharkNinja, Inc. Ordinary Shares
 SNA|Snap-On Incorporated Common Stock
 SNAG|Leverage Shares 2x Long SNAP Daily ETF
@@ -10379,7 +10369,7 @@ SNX|TD SYNNEX Corporation Common Stock
 SNXX|Tradr 2X Long SNDK Daily ETF
 SNY|Sanofi - American Depositary Shares
 SO|Southern Company (The) Common Stock
-SOAR|Volato Group, Inc. Class A Common Stock
+SOAR|SOAR AI, Inc. Class A Common Stock
 SOBO|South Bow Corporation Common Shares
 SOC|Sable Offshore Corp. Common Stock
 SOCA|Solarius Capital Acquisition Corp. - Class A Ordinary Share
@@ -10553,6 +10543,7 @@ SPYU|MAX S&P 500 4X Leveraged ETNs due October 30, 2043
 SPYV|State Street SPDR Portfolio S&P 500 Value ETF
 SPYX|State Street SPDR S&P 500 Fossil Fuel Reserves Free ETF
 SQBA|FT Vest U.S. Equity Quarterly 15 Buffer ETF
+SQBR|FT Vest U.S. Equity Quarterly 20 Barrier ETF
 SQFT|Presidio Property Trust, Inc. - Class A Common Stock
 SQFTP|Presidio Property Trust, Inc. - 9.375% Series D Cumulative Redeemable Perpetual Preferred Stock, $0.01 par value per share
 SQFTW|Presidio Property Trust, Inc. - Series A Common Stock Purchase Warrants
@@ -10583,6 +10574,7 @@ SRPT|Sarepta Therapeutics, Inc. - Common Stock
 SRRK|Scholar Rock Holding Corporation - Common Stock
 SRS|ProShares UltraShort Real Estate
 SRTA|Strata Critical Medical, Inc. - Class A Common Stock
+SRTM|Stratum Holdings Corp. - Common Stock
 SRTS|Sensus Healthcare, Inc. - Common Stock
 SRTY|ProShares UltraPro Short Russell2000
 SRV|NXG Cushing Midstream Energy Fund Common Shares of Beneficial Interest
@@ -11022,6 +11014,7 @@ THOR|Thornburg Premium Income Builder ETF
 THQ|abrdn Healthcare Opportunities Fund Shares of Beneficial Interest
 THRM|Gentherm Inc - Common Stock
 THRO|iShares U.S. Thematic Rotation Active ETF
+THRU|Tema Commodity Infrastructure ETF
 THRV|Prospera Income ETF
 THRY|Thryv Holdings, Inc. - Common Stock
 THTA|SoFi Enhanced Yield ETF
@@ -11080,6 +11073,7 @@ TLA|GraniteShares Autocallable TSLA ETF
 TLAC|Three Lions Acquisition Corp. - Ordinary Shares
 TLACU|Three Lions Acquisition Corp. - Units
 TLACW|Three Lions Acquisition Corp. - Warrants
+TLCE|Thrivent Large Cap Stock ETF
 TLCI|Touchstone International Equity ETF
 TLDR|The Laddered T-Bill ETF
 TLF|Tandy Leather Factory, Inc. - common stock
@@ -11114,7 +11108,7 @@ TMB|Thornburg Multi Sector Bond ETF
 TMC|TMC the metals company Inc. - Common Stock
 TMCI|Treace Medical Concepts, Inc. - Common Stock
 TMCR|The Metals Royalty Company Inc. - Common Stock
-TMDE|TMD Energy Limited Ordinary Shares
+TMDE|TMD Energy Limited Class A Ordinary Shares
 TMDV|ProShares Russell US Dividend Growers ETF
 TMDX|TransMedics Group, Inc. - Common Stock
 TME|Tencent Music Entertainment Group American Depositary Shares, each representing two Class A Ordinary Shares
@@ -11311,11 +11305,11 @@ TSEL|Touchstone Sands Capital US Select Growth ETF
 TSEM|Tower Semiconductor Ltd. - Ordinary Shares
 TSEP|FT Vest Emerging Market Buffer ETF - September
 TSES|Truth Social American Energy Security ETF
-TSEU|Tradr 2X Long TSEM Daily ETF
 TSHA|Taysha Gene Therapies, Inc. - Common Stock
 TSI|TCW Strategic Income Fund, Inc. Common Stock
 TSIB|Direxion TSLA Defined Income Boost ETF
 TSIC|Truth Social American Icons ETF
+TSIE|Thrivent Securitized Income ETF
 TSII|REX TSLA Growth & Income ETF
 TSL|GraniteShares 1.25x Long TSLA Daily ETF
 TSLA|Tesla, Inc.  - Common Stock
@@ -11495,7 +11489,6 @@ UDOW|ProShares UltraPro Dow30
 UDR|UDR, Inc. Common Stock
 UE|Urban Edge Properties Common Shares of Beneficial Interest
 UEC|Uranium Energy Corp. Common Stock
-UECG|Leverage Shares 2x Long UEC Daily ETF
 UEIC|Universal Electronics Inc. - Common Stock
 UEVM|VictoryShares Emerging Markets Value Momentum ETF
 UFCS|United Fire Group, Inc - Common Stock
@@ -11688,7 +11681,6 @@ UTWY|US Treasury 20 Year Bond ETF
 UTZ|Utz Brands Inc Class A Common Stock
 UUP|Invesco DB USD Index Bullish Fund ETF
 UUPP|Principal CLO ETF
-UUU|Universal Safety Products, Inc. Common Stock
 UUUC|Corgi UUUU 2x Daily ETF
 UUUG|Leverage Shares 2X Long UUUU Daily ETF
 UUUU|Energy Fuels Inc Ordinary Shares (Canada)
@@ -11726,7 +11718,6 @@ VAIC|VegaShares US Equity Autocallable Conservative Income ETF
 VAIE|VegaShares US Equity Autocallable Income ETF
 VAL|Valaris Limited Common Shares
 VALE|VALE S.A.  American Depositary Shares Each Representing one common share
-VALG|Leverage Shares 2X Long VALE Daily ETF
 VALN|Valneva SE - American Depositary Shares
 VALQ|American Century U.S. Quality Value ETF
 VALU|Value Line, Inc. - Common Stock
@@ -12164,6 +12155,7 @@ WIA|Western Asset Inflation-Linked Income Fund
 WIMA|WisdomTree International Adaptive Moving Average Fund
 WIMI|WiMi Hologram Cloud Inc. - Class B Ordinary Shares
 WINA|Winmark Corporation - Common Stock
+WINC|William Blair Emerging Income ETF
 WING|Wingstop Inc. - Common Stock
 WINN|Harbor Long-Term Growers ETF
 WIP|State Street SPDR FTSE International Government Inflation-Protected Bond ETF
@@ -12334,7 +12326,6 @@ XCCC|BondBloxx CCC-Rated USD High Yield Corporate Bond ETF
 XCEM|Columbia EM Core ex-China ETF
 XCH|XCHG Limited - ADS
 XCHG|AB US Equity ETF
-XCLR|Global X S&P 500 Collar 95-110 ETF
 XCNY|State Street SPDR S&P Emerging Markets ex-China ETF
 XCOM|Corgi All Commodities 2x Daily ETF
 XCOR|FundX ETF
@@ -12716,7 +12707,6 @@ ZOOZ|ZOOZ Strategy Ltd. - Ordinary Shares
 ZOOZW|ZOOZ Strategy Ltd. - Warrant
 ZROZ|PIMCO 25  Year Zero Coupon U.S. Treasury Index Exchange-Traded Fund
 ZS|Zscaler, Inc. - Common Stock
-ZSB|USCF Sustainable Battery Metals Strategy Fund
 ZSEP|Innovator Equity Defined Protection ETF - 1 Yr September
 ZSL|ProShares UltraShort Silver
 ZSQR|Z Squared Inc. - Common Stock
