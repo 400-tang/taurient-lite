@@ -198,6 +198,16 @@
           "name": "CNBC",
           "url": "https://www.cnbc.com/2026/10/29/treasury-yields-federal-reserve-rates.html",
           "angle": "报道10年期收益率在强劲GDP与通胀数据后跌破5%，徘徊在4.964%附近"
+        },
+        {
+          "name": "BEA官方新闻稿页面(标题确认3.4%)",
+          "url": "https://www.bea.gov/news/2026/gdp-advance-estimate-3rd-quarter-2026",
+          "angle": "BEA官网新闻稿标题本身即确认3.4%这一数字，与多家媒体转述一致"
+        },
+        {
+          "name": "Advisor Perspectives(dshort)",
+          "url": "https://www.advisorperspectives.com/dshort/updates/2026/10/29/q3-gdp-advance-estimate-real-gdp-at-3-4",
+          "angle": "独立转述BEA数据，标题直接写明3.4%，并给出GDP价格指数3.0%(前值5.6%)、PCE价格指数2.1%、核心PCE2.5%等细节"
         }
       ],
       "assets": [
