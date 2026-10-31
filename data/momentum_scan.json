@@ -1,16 +1,16 @@
 {
-  "scanned_at": "2026-10-30T16:24:04Z",
+  "scanned_at": "2026-10-31T00:55:39Z",
   "asof": "2026-10-29",
   "note": "由 GitHub Actions 扫描并提交，供云端定时任务读取。stage 只描述这只票走到这波的第几天，score 衡量的是「有多早」而不是「有多好」——回测显示本模块无法预测后续涨跌，它的用途是把观察窗口前移，不是给出买卖信号。",
-  "universe_size": 2509,
-  "evaluated": 2504,
+  "universe_size": 2521,
+  "evaluated": 2483,
   "failed": 3,
-  "stale": 2,
+  "stale": 35,
   "counts": {
     "ignition": 15,
-    "continuation": 416,
-    "base": 1918,
-    "extended": 105
+    "continuation": 415,
+    "base": 1891,
+    "extended": 104
   },
   "candidates": [
     {
@@ -98,7 +98,7 @@
       "date": "2026-10-29",
       "close": 18.22,
       "change_pct": 13.45,
-      "rvol": 3.56,
+      "rvol": 3.57,
       "dollar_volume": 301753297,
       "ext_ma20": 0.1754,
       "closing_range": 0.766,
@@ -210,7 +210,7 @@
       "date": "2026-10-29",
       "close": 52.46,
       "change_pct": -1.54,
-      "rvol": 2.73,
+      "rvol": 2.76,
       "dollar_volume": 449559835,
       "ext_ma20": 0.0506,
       "closing_range": 0.436,
@@ -346,22 +346,6 @@
       "run_from_base": 0.2767,
       "base_tightness": 0.2517,
       "gap_pct": -0.17,
-      "stage": "continuation",
-      "score": 60.0
-    },
-    {
-      "ticker": "AMG",
-      "date": "2026-10-29",
-      "close": 399.02,
-      "change_pct": 1.47,
-      "rvol": 1.11,
-      "dollar_volume": 102308629,
-      "ext_ma20": 0.0358,
-      "closing_range": 0.861,
-      "breakout_age": 0,
-      "run_from_base": 0.174,
-      "base_tightness": 0.174,
-      "gap_pct": 1.03,
       "stage": "continuation",
       "score": 60.0
     },
@@ -650,6 +634,22 @@
       "run_from_base": 0.1126,
       "base_tightness": 0.112,
       "gap_pct": 0.99,
+      "stage": "continuation",
+      "score": 60.0
+    },
+    {
+      "ticker": "GILD",
+      "date": "2026-10-29",
+      "close": 165.61,
+      "change_pct": 4.03,
+      "rvol": 1.46,
+      "dollar_volume": 878144512,
+      "ext_ma20": 0.0813,
+      "closing_range": 0.981,
+      "breakout_age": 0,
+      "run_from_base": 0.2836,
+      "base_tightness": 0.2466,
+      "gap_pct": 2.32,
       "stage": "continuation",
       "score": 60.0
     }
