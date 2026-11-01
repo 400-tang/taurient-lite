@@ -1,16 +1,16 @@
 {
-  "scanned_at": "2026-10-31T15:33:41Z",
+  "scanned_at": "2026-11-01T15:46:10Z",
   "asof": "2026-10-30",
   "note": "由 GitHub Actions 扫描并提交，供云端定时任务读取。stage 只描述这只票走到这波的第几天，score 衡量的是「有多早」而不是「有多好」——回测显示本模块无法预测后续涨跌，它的用途是把观察窗口前移，不是给出买卖信号。",
-  "universe_size": 2521,
-  "evaluated": 2516,
+  "universe_size": 2510,
+  "evaluated": 2507,
   "failed": 3,
-  "stale": 2,
+  "stale": 0,
   "counts": {
-    "ignition": 27,
-    "continuation": 422,
-    "base": 1892,
-    "extended": 101
+    "ignition": 30,
+    "continuation": 427,
+    "base": 1911,
+    "extended": 104
   },
   "candidates": [
     {
@@ -270,6 +270,22 @@
       "score": 97.51
     },
     {
+      "ticker": "BLCO",
+      "date": "2026-10-30",
+      "close": 20.0,
+      "change_pct": -1.96,
+      "rvol": 3.26,
+      "dollar_volume": 16627621,
+      "ext_ma20": 0.1467,
+      "closing_range": 0.167,
+      "breakout_age": 2,
+      "run_from_base": 0.2928,
+      "base_tightness": 0.1936,
+      "gap_pct": 2.21,
+      "stage": "ignition",
+      "score": 97.0
+    },
+    {
       "ticker": "DOV",
       "date": "2026-10-30",
       "close": 207.74,
@@ -366,6 +382,22 @@
       "score": 93.98
     },
     {
+      "ticker": "MFIC",
+      "date": "2026-10-30",
+      "close": 10.36,
+      "change_pct": -0.38,
+      "rvol": 2.66,
+      "dollar_volume": 12419717,
+      "ext_ma20": 0.1802,
+      "closing_range": 0.538,
+      "breakout_age": 3,
+      "run_from_base": 0.2774,
+      "base_tightness": 0.2269,
+      "gap_pct": -0.67,
+      "stage": "ignition",
+      "score": 93.69
+    },
+    {
       "ticker": "UPBD",
       "date": "2026-10-30",
       "close": 20.7,
@@ -444,6 +476,22 @@
       "gap_pct": 12.72,
       "stage": "ignition",
       "score": 85.41
+    },
+    {
+      "ticker": "OSPN",
+      "date": "2026-10-30",
+      "close": 25.66,
+      "change_pct": 27.34,
+      "rvol": 7.5,
+      "dollar_volume": 11878095,
+      "ext_ma20": 0.3479,
+      "closing_range": 0.474,
+      "breakout_age": 0,
+      "run_from_base": 0.7039,
+      "base_tightness": 0.3825,
+      "gap_pct": 23.37,
+      "stage": "ignition",
+      "score": 84.09
     },
     {
       "ticker": "ABBV",
@@ -602,54 +650,6 @@
       "run_from_base": 0.1103,
       "base_tightness": 0.097,
       "gap_pct": 0.31,
-      "stage": "continuation",
-      "score": 60.0
-    },
-    {
-      "ticker": "CNQ",
-      "date": "2026-10-30",
-      "close": 56.11,
-      "change_pct": 1.85,
-      "rvol": 1.36,
-      "dollar_volume": 280827497,
-      "ext_ma20": 0.0692,
-      "closing_range": 0.826,
-      "breakout_age": 0,
-      "run_from_base": 0.2547,
-      "base_tightness": 0.2411,
-      "gap_pct": 0.47,
-      "stage": "continuation",
-      "score": 60.0
-    },
-    {
-      "ticker": "CSL",
-      "date": "2026-10-30",
-      "close": 376.31,
-      "change_pct": 1.33,
-      "rvol": 1.08,
-      "dollar_volume": 144840044,
-      "ext_ma20": 0.114,
-      "closing_range": 0.91,
-      "breakout_age": 0,
-      "run_from_base": 0.2124,
-      "base_tightness": 0.2671,
-      "gap_pct": 0.0,
-      "stage": "continuation",
-      "score": 60.0
-    },
-    {
-      "ticker": "CUBE",
-      "date": "2026-10-30",
-      "close": 42.74,
-      "change_pct": 4.04,
-      "rvol": 1.42,
-      "dollar_volume": 85595812,
-      "ext_ma20": 0.0947,
-      "closing_range": 0.992,
-      "breakout_age": 0,
-      "run_from_base": 0.1646,
-      "base_tightness": 0.1572,
-      "gap_pct": 1.73,
       "stage": "continuation",
       "score": 60.0
     }
