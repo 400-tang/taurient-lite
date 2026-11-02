@@ -3,10 +3,10 @@
   "weekday": "Monday",
   "edition": "Week-ahead edition",
   "generated_at": "2026-11-02 07:18 PT",
-  "scanned": 90,
-  "kept": 15,
+  "scanned": 110,
+  "kept": 17,
   "max_age_days": 5,
-  "thesis": "OPEC+ 上周末(11/1)决定12月产量维持不变，连续第三个月持平，声明直接点名美伊战争仍在扰乱原油运输——给上周「外交缓和」的乐观叙事浇了一盆冷水。今天美股盘后苹果、Palantir将先后公布财报，叠加上周英特尔、亚马逊暴露的「AI资本开支能否兑现」疑虑，结果会直接决定明天(中期选举投票日)开盘前的情绪基调。联储方面，达拉斯联储主席Logan在10/28决议后公开喊话「委员会至少还需要再加息两次」，把「按兵不动」重新定义成暂停而不是转向，12月议息会议的路径还没有定数。本次扫描再次受到会话网络限制：WebFetch对几乎所有财经媒体域名(包括federalreserve.gov、bls.gov、sec.gov)均返回域名解析失败，所有数字均来自搜索引擎摘要的交叉比对，正文已对关键冲突数字(10/30收盘涨跌幅、10/28投票反对人选、原油具体收盘价)逐条标注差异，不强行取整。",
+  "thesis": "OPEC+ 上周末(11/1)决定12月产量维持不变，连续第三个月持平，声明直接点名美伊战争仍在扰乱原油运输(CNBC、路透转载口径一致)——给上周「外交缓和」的乐观叙事浇了一盆冷水。今天美股盘后苹果将公布财报，叠加上周Alphabet三季报后单日重挫、英特尔四季度指引崩盘、亚马逊资本开支超预期引发的「AI资本开支能否兑现」疑虑，结果会直接决定明天(中期选举投票日)开盘前的情绪基调。联储方面，达拉斯联储主席Logan在10/28决议两天后(10/30)公开喊话「委员会至少还需要再加息两次」，把「按兵不动」重新定义成暂停而不是转向，12月议息会议的路径还没有定数。本次扫描再次受到会话网络限制：WebFetch对几乎所有财经媒体域名(包括federalreserve.gov、bls.gov、sec.gov)均返回域名解析失败，所有数字均来自搜索引擎摘要的交叉比对，经过查漏报与核查两轮复核后，正文已对仍存分歧或无法独立复核的数字(Palantir财报日期、10/30大盘收跌的另一种更小跌幅口径)逐条标注，不强行取整。",
   "tape": {
     "asof": "上一交易日收盘 · 周五 10/30",
     "rows": [
@@ -25,7 +25,7 @@
       {
         "name": "纳斯达克综合指数",
         "value": "25,437.00",
-        "change": "-2.86%，纳指100进入回调区间(单一来源，另一来源给出-1.38%，差距很大)",
+        "change": "-2.86%(单一来源StockMarketWatch，与同页道指/标普跌幅可自洽核对；「纳指100进入回调区间」的说法未能独立核实，未采用)",
         "dir": "down"
       },
       {
@@ -54,10 +54,20 @@
         "大宗商品"
       ],
       "tickers": [],
-      "body": "OPEC+ 七个核心产油国(沙特、俄罗斯、伊拉克、科威特、哈萨克斯坦、阿尔及利亚、阿曼)11月1日(周日)通过视频会议决定，12月份维持9月水平的产量要求不变，这是连续第三个月按兵不动。多家中东及能源媒体的报道均提到，声明将原因归于美伊战争持续扰乱海湾原油流动，而不是配额政策本身。2022年以来仍有约200万桶/日的减产尚未解除，下次会议定于11月29日，预计将审议是否恢复这部分产能，并制定2027年的产量框架，前提是先完成一项产能审计。",
+      "body": "OPEC+ 七个核心产油国(沙特、俄罗斯、伊拉克、科威特、哈萨克斯坦、阿尔及利亚、阿曼)11月1日(周日)通过线上会议决定，12月份维持现有产量目标不变，这是连续第三个月持平(此前9月会议定10月不变、10月4日会议定11月不变)。CNBC与路透转载的报道均提到，多数成员目前的实际产量仍明显低于目标，核心原因是美伊战争持续扰乱海湾出口。全部21个成员国将于11月29日召开会议，市场预期将在那次会议上决定2027年的产量框架，一名Rystad分析师称这次12月的决定「是容易的那一个」。",
       "why": "这打断了上周市场交易「美伊外交缓和」的乐观情绪——供给政策的官方表态直接把当前的运输中断算作既定背景，而不是即将解除的临时状况，油价的供给端风险溢价短期内难以系统性消退。",
       "impact": "原油及能源板块定价 · 通胀路径",
       "sources": [
+        {
+          "name": "CNBC",
+          "url": "https://www.cnbc.com/2026/10/31/opec-oil-output-targets-december.html",
+          "angle": "「为2027年更难的决定铺路」，点名多数成员实际产量低于目标"
+        },
+        {
+          "name": "Business Standard(路透转载)",
+          "url": "https://www.business-standard.com/world-news/opec-agrees-in-principle-to-keep-oil-output-targets-steady-in-dec-126110100053_1.html",
+          "angle": "路透原始措辞：「原则上同意」维持12月目标不变"
+        },
         {
           "name": "Star Advertiser",
           "url": "https://www.staradvertiser.com/2026/11/01/breaking-news/opec-keeps-december-oil-output-targets-steady-as-iran-war-disrupt-flows/",
@@ -69,19 +79,9 @@
           "angle": "强调连续第三个月持平，霍尔木兹中断仍在持续"
         },
         {
-          "name": "Arab News",
-          "url": "https://www.arabnews.com/business/opec-holds-december-oil-output-targets-unchanged-3009277",
-          "angle": "中东本地视角的官方决议转述"
-        },
-        {
-          "name": "Saudi Gazette",
-          "url": "https://saudigazette.com.sa/article/665909/saudi-arabia/opec-agree-to-keep-oil-output-quota-steady-for-december",
-          "angle": "沙特官方媒体口径"
-        },
-        {
-          "name": "Gulf Insider",
-          "url": "https://www.gulf-insider.com/opec-holds-december-oil-output-targets-unchanged/",
-          "angle": "海湾地区视角，提到11/29下次会议安排"
+          "name": "FXStreet",
+          "url": "https://www.fxstreet.com/news/opec-agrees-to-keep-oil-output-target-unchanged-for-december-202611012356",
+          "angle": "11/1当晚的决议快讯"
         }
       ],
       "assets": [
@@ -100,14 +100,18 @@
       ],
       "cross_source": {
         "agreement": "aligned",
-        "summary": "五家中东与能源媒体对「12月维持不变、连续第三个月、下次会议11/29」这组事实口径一致，没有发现分歧，差异只在用词侧重（是否强调「伊朗战争」措辞）。"
+        "summary": "CNBC、路透(经Business Standard转载)与多家中东/能源媒体对「12月维持不变、连续第三个月、11/29全员会议定2027框架」这组事实口径一致，没有发现分歧。"
       },
       "history": {
         "summary": "OPEC+ 的产量冻结已经持续了三个月，背后的叙事逐渐从「配额政策」转向「战争本身决定实际供给」。",
         "timeline": [
           {
+            "when": "9月",
+            "event": "OPEC+ 决定10月份维持产量不变"
+          },
+          {
             "when": "10/4",
-            "event": "OPEC+ 决定11月份维持9月产量水平，暂停月度增产"
+            "event": "决定11月份维持产量不变"
           },
           {
             "when": "11/1",
@@ -115,7 +119,7 @@
           },
           {
             "when": "11/29",
-            "event": "下次会议将审议是否恢复约200万桶/日的剩余减产，并制定2027年框架"
+            "event": "全部21个成员国将召开会议，预期制定2027年产量框架"
           }
         ]
       }
@@ -133,7 +137,7 @@
         "AAPL"
       ],
       "body": "苹果定于今天(11/2)太平洋时间下午2:00(美东17:00)召开财报电话会，公布截至9月的2026财年第四季度业绩，由CEO John Ternus(9月1日接替Tim Cook)与CFO Kevan Parekh出席，这是Ternus首次主持苹果财报电话会。公司7月给出的指引为营收同比增长9%–11%，对应约1117亿–1137亿美元，毛利率47%–48%(其中约2个百分点来自关税退款)。S&P Global引用Visible Alpha的卖方一致预期为营收约1136亿美元，iPhone收入约564亿美元。分析师预计会追问存储器定价与供应约束对下季度毛利率的影响。",
-      "why": "这是今天盘后最大的个股变量之一：既是对「AI/硬件升级周期能否兑现」叙事的直接检验，也是管理层换届后的首次公开沟通，风格本身也会被市场解读。",
+      "why": "这是今天盘后最大的个股变量之一：既是对「AI/硬件升级周期能否兑现」叙事的直接检验，也是管理层换届后的首次公开沟通，发生在上周Alphabet、英特尔财报已经动摇科技股信心的背景下，风格本身也会被市场解读。",
       "impact": "AAPL · 消费电子供应链",
       "sources": [
         {
@@ -152,9 +156,9 @@
           "angle": "日期官宣(10/6)"
         },
         {
-          "name": "Newsquawk",
-          "url": "https://www.newsquawk.com/headlines/newsquawk-daily-us-earnings-estimates---2nd-november-2026-mar-vrtx-aapl",
-          "angle": "11/2 美股财报日程列表"
+          "name": "Beebom",
+          "url": "https://gadgets.beebom.com/news/apple-confirms-q4-2026-earnings-call-date",
+          "angle": "独立确认Ternus 9/1接替Cook、11/2为其首次主持的财报会"
         }
       ],
       "assets": [
@@ -192,10 +196,8 @@
       }
     },
     {
-      "rank": 3,
       "tier": "must-read",
-      "published": "2026-11-02",
-      "headline": "Palantir今天美股盘后公布2026年第三季度业绩",
+      "headline": "Palantir据多方预测今天盘后公布2026年第三季度业绩，但公司官方日期公告未能找到",
       "sectors": [
         "软件",
         "AI",
@@ -204,62 +206,142 @@
       "tickers": [
         "PLTR"
       ],
-      "body": "Palantir定于今天(11/2)盘后公布第三季度业绩。公司在8月3日发布的Q2财报中给出的Q3营收指引为21.60亿–21.64亿美元，分析师预期区间大致在20.0亿–21.8亿美元。247wallst将这次财报形容为「连续九个季度超预期后的高门槛挑战」，意味着哪怕只是符合预期，也可能被解读为增长动能放缓。",
-      "why": "Palantir是年内涨幅与估值争议都很大的AI概念股之一，这场财报结果将直接检验「AI软件需求能否持续兑现高估值」这条叙事，发生在英特尔、亚马逊财报已经动摇「AI资本开支」信心的背景下。",
+      "published": "2026-11-02",
+      "body": "多个财报日历站(Newsquawk、Tickzen等)与分析文章预测Palantir将于今天(11/2)盘后公布第三季度业绩，沿用8月3日Q2财报给出的Q3营收指引(21.60亿–21.64亿美元)。但核查未能找到Palantir官方(投资者关系页或Business Wire「Announces Date of...」格式的新闻稿)发布的日期确认公告——公司去年Q3与今年Q2都是提前约3周正式官宣具体日期，这次没有找到对应公告。247wallst将这次财报形容为「连续九个季度超预期后的高门槛挑战」。",
+      "why": "如果确实是今天盘后公布，这将是继苹果之后第二只在交易时段内直接检验「AI软件需求能否持续兑现高估值」的标的；但日期本身未经官方确认，是本期简报里少数「核查后仍无法完全坐实」的事实，提醒读者以公司官方公告为准。",
       "impact": "PLTR · AI软件估值风向标",
       "sources": [
         {
           "name": "24/7 Wall St.",
           "url": "https://247wallst.com/investing/2026/10/14/palantirs-earnings-gamble-nine-straight-beats-set-high-bar-for-november-2/",
-          "angle": "「高门槛挑战」叙事，强调连续九个季度超预期"
+          "angle": "「高门槛挑战」叙事，预测11/2公布"
         },
         {
           "name": "Palantir Q2 2026 业绩新闻稿(SEC 8-K)",
           "url": "https://www.sec.gov/Archives/edgar/data/0001321655/000132165526000039/a2026q2ex991pressrelease.htm",
-          "angle": "公司自己给出的Q3营收指引(21.60亿–21.64亿美元)"
+          "angle": "公司自己给出的Q3营收指引，但该公告未涉及Q3具体发布日期"
         }
       ],
       "assets": [
         {
           "asset_class": "美股",
           "direction": "mixed",
-          "conviction": "medium",
-          "note": "作为AI软件估值的风向标个股，结果公布前方向不明朗。"
+          "conviction": "low",
+          "note": "作为AI软件估值的风向标个股，连日期本身能否落地都不确定，结果公布前方向不明朗。"
         }
       ],
       "cross_source": {
-        "agreement": "single",
-        "summary": "目前只有公司自身指引与分析师预期区间，结果公布前还没有多方口径可比对。"
-      }
+        "agreement": "split",
+        "summary": "财报日历站一致预测11/2，但没有一家引用公司官方确认公告，与公司以往提前3周官宣的惯例不符。"
+      },
+      "rank": 3
     },
     {
       "rank": 4,
-      "tier": "must-read",
-      "published": "2026-10-31",
+      "tier": "worth-knowing",
+      "published": "2026-10-29",
+      "headline": "Alphabet三季报后股价重挫约12%–13%，为公司史上最大单日跌幅之一，蒸发市值约4800亿美元",
+      "sectors": [
+        "科技",
+        "AI",
+        "财报"
+      ],
+      "tickers": [
+        "GOOGL",
+        "GOOG"
+      ],
+      "body": "Alphabet10月28日盘后公布三季度业绩，净利润同比下滑，自由现金流转负，AI相关资本开支是主要原因。10月29日股价收跌约12%–13%(多个二手来源口径接近，蒸发市值约4800亿美元)，被多家媒体称为公司历史上最大单日跌幅之一。本条未被此前几期简报独立成条报道，查漏报复核后补入；具体跌幅数字未能找到交易所官方收盘记录逐一核对，仅供参考。",
+      "why": "这是本周科技股抛售的源头事件之一，比例尺上可能是过去一周里对指数拖累最大的单一个股变动，与英特尔、亚马逊的财报反应共同构成了「AI资本开支能否兑现」疑虑的证据链。",
+      "impact": "GOOGL/GOOG · 科技板块情绪",
+      "sources": [
+        {
+          "name": "Political.org",
+          "url": "https://political.org/2026/10/30/alphabet-shares-plunge-13-in-worst-day-on-record-after-earnings-miss-and-negative-free-cash-flow/",
+          "angle": "称为公司历史最差单日表现，归因于盈利不及预期与自由现金流转负"
+        },
+        {
+          "name": "El Ceo",
+          "url": "https://elceo.com/mercados/acciones-alphabet-desploman-tras-reporte-trimestral-mayor-caida-desde-2008/",
+          "angle": "称为2008年以来最大单日跌幅"
+        },
+        {
+          "name": "Forbes Argentina",
+          "url": "https://www.forbesargentina.com/money/alphabet-llego-caer-12-perder-us-480000-millones-capitalizacion-tras-presentar-sus-resultados-n101371",
+          "angle": "给出约4800亿美元市值蒸发的具体数字"
+        }
+      ],
+      "cross_source": {
+        "agreement": "aligned",
+        "summary": "三家来源对「三季报后单日暴跌、创纪录级别」的判断一致，具体跌幅数字在12%–13%之间小幅不一，未能用交易所收盘数据统一核实。"
+      }
+    },
+    {
+      "rank": 5,
+      "tier": "worth-knowing",
+      "published": "2026-10-30",
+      "headline": "英特尔四季度指引大幅不及预期引发芯片股抛售，公司警告2027年自由现金流可能为负，以色列工厂爆炸拖累约6亿美元营收",
+      "sectors": [
+        "半导体",
+        "财报"
+      ],
+      "tickers": [
+        "INTC",
+        "AMD",
+        "NVDA"
+      ],
+      "body": "英特尔10月30日盘前因四季度营收指引大幅不及预期(约150亿–160亿美元 vs 市场预期168.6亿美元)股价暴跌，多个来源给出的跌幅在约24%–30%之间(未能用交易所收盘数据统一核实)，带动纳指期货与AMD等同业走低。补充细节：公司同时警告2027年自由现金流可能无法转正；路透报道其以色列工厂发生爆炸事故，预计影响约6亿美元营收。这是10/30财报的细节补充，此前简报已以must-read报道过营收指引不及预期本身，这里补充FCF警告与工厂事故两条新信息。",
+      "why": "FCF警告把「指引不及预期」的叙事升级成「多年投资回报存疑」，工厂事故则是独立于财报本身的新增供给side风险，两者叠加解释了为什么这次抛售会外溢到整个芯片板块。",
+      "impact": "半导体板块 · AI资本开支链条情绪",
+      "sources": [
+        {
+          "name": "247wallst",
+          "url": "https://247wallst.com/investing/2026/10/30/intel-just-warned-it-probably-wont-generate-free-cash-flow-next-year/",
+          "angle": "聚焦2027年自由现金流警告"
+        },
+        {
+          "name": "Finimize",
+          "url": "https://finimize.com/content/intels-warning-sparked-a-chip-selloff",
+          "angle": "把英特尔警告定性为引发芯片股普跌的触发因素"
+        }
+      ],
+      "cross_source": {
+        "agreement": "aligned",
+        "summary": "多家来源对「指引不及预期触发暴跌」与「FCF警告」的判断一致，具体盘中跌幅百分比口径不一，未强行取整。"
+      }
+    },
+    {
+      "rank": 6,
+      "tier": "worth-knowing",
+      "published": "2026-10-30",
       "headline": "达拉斯联储主席Logan鹰派跟进：称委员会至少还需要再加息两次",
       "sectors": [
         "宏观",
         "利率"
       ],
       "tickers": [],
-      "body": "10月28日FOMC以10票对2票维持联邦基金利率目标区间3.75%–4.00%不变，多数报道(Bloomberg、Fortune、CNN)称两位反对票来自理事Cook与克利夫兰联储行长Hammack，均主张加息25个基点；另有报道把第二张反对票写成Logan，人选说法不一，需以联储官方声明为准。会议之后，达拉斯联储主席Logan公开表示，委员会至少还需要再加息两次，每次25个基点，并把10月的按兵不动定性为加息周期中的一次停顿，而不是转向的终点。",
+      "body": "10月28日FOMC以10票对2票维持联邦基金利率目标区间3.75%–4.00%不变，反对票来自理事Lisa Cook与克利夫兰联储行长Beth Hammack，两人均主张加息25个基点(多家独立来源口径一致)。两天后的10月30日，达拉斯联储主席Logan公开表示，委员会至少还需要再加息两次，每次25个基点，这与她10月1日「还需要额外50个基点或更多」的表态方向一致，并把10月的按兵不动定性为加息周期中的一次停顿，而不是转向的终点。",
       "why": "这把「按兵不动」重新定义成「暂停而非转向」。如果12月8–9日的议息会议采纳这个路径，市场此前对降息周期的定价需要进一步修正。",
       "impact": "全市场 · 利率敏感资产",
       "sources": [
         {
-          "name": "24/7 Wall St.",
-          "url": "https://247wallst.com/investing/2026/10/31/two-fed-officials-just-called-for-more-rate-hikes-starting-soon",
-          "angle": "Logan讲话原文转述，「至少再加息两次」"
+          "name": "Kitco",
+          "url": "https://www.kitco.com/news/off-the-wire/2026-10-30/fed-needs-least-two-more-rate-hikes-logan-says",
+          "angle": "路透转载，10/30报道Logan讲话原文"
         },
         {
-          "name": "Bloomberg",
-          "url": "https://www.bloomberg.com/news/videos/2026-10-28/fed-leaves-rates-unchanged-cook-and-hammack-dissent-video",
-          "angle": "10/28投票细节，指名Cook与Hammack反对"
+          "name": "GV Wire",
+          "url": "https://gvwire.com/2026/10/30/fed-needs-at-least-two-more-rate-hikes-logan-says/",
+          "angle": "同一路透稿件，确认讲话日期为10/30"
         },
         {
-          "name": "Fortune",
-          "url": "https://fortune.com/2026/10/28/fed-rates-steady-midterms-october-3-75-to-4-percent-cook-hammack-dissent/",
-          "angle": "同样指名Cook与Hammack，强调通胀仍偏高"
+          "name": "Wolf Street",
+          "url": "https://wolfstreet.com/2026/10/28/fed-holds-rates-but-with-2-dissenters-a-hold-before-the-election-was-expected-dissenters-were-not/",
+          "angle": "10/28投票细节：10:2，反对票为加息"
+        },
+        {
+          "name": "Admiral Markets",
+          "url": "https://admiralmarkets.com/analytics/traders-blog/fomc-october-2026-fed-holds-rates",
+          "angle": "确认Cook与Hammack为反对票"
         }
       ],
       "assets": [
@@ -277,60 +359,59 @@
         }
       ],
       "cross_source": {
-        "agreement": "split",
-        "summary": "关于10/28谁投了反对票，多数报道写Cook与Hammack，另有报道写Hammack与Logan，人选说法不一；但Logan此后的鹰派表态本身各家没有分歧。"
+        "agreement": "aligned",
+        "summary": "多家独立来源(Wolf Street、Admiral Markets、Kitco/路透)对10/28反对票人选(Cook、Hammack)与Logan10/30的鹰派表态口径一致，之前流传的「反对票为Hammack与Logan」一说没有找到支持，不采用。"
       },
       "history": {
-        "summary": "从10/28的「按兵不动」到10/31的「暂停而非转向」，联储内部的鹰派声音在会议后几天内变得更明确。",
+        "summary": "从10/28的「按兵不动」到10/30的「暂停而非转向」，联储内部的鹰派声音在会议后几天内变得更明确。",
         "timeline": [
           {
-            "when": "10/28",
-            "event": "FOMC以10:2投票维持利率3.75%–4.00%不变"
+            "when": "10/1",
+            "event": "Logan此前已表示还需要额外50个基点或更多的加息"
           },
           {
-            "when": "10/31",
+            "when": "10/28",
+            "event": "FOMC以10:2投票维持利率3.75%–4.00%不变，Cook与Hammack反对"
+          },
+          {
+            "when": "10/30",
             "event": "Logan公开表示委员会至少还需要再加息两次"
           }
         ]
       }
     },
     {
-      "rank": 5,
+      "rank": 7,
       "tier": "worth-knowing",
       "published": "2026-10-30",
-      "headline": "10月30日(周五)美股收跌，科技股领跌，纳指回落至回调区间附近，具体跌幅各家说法不一",
+      "headline": "10月30日(周五)美股收跌，科技股领跌，收盘数字以StockMarketWatch为主要口径",
       "sectors": [
         "大盘",
         "科技"
       ],
       "tickers": [],
-      "body": "10月30日周五美股收跌，科技股领跌。Stockmarketwatch的收盘汇总给出道指-1.09%至51,770.31、标普500 -1.82%至7,580.07、纳指-2.86%至25,437.00，并称纳斯达克100指数进入回调区间；但Investrade给出的跌幅明显更小(纳指-1.38%至约26,184.72)，其页面被扫描员标注疑似混入期货数据。两种口径差距很大，均未能找到交易所官方收盘记录核实。",
-      "why": "无论采用哪个口径，方向都是「科技股领跌、大盘承压」，这与AI资本开支担忧和财报季分化的既有叙事一致，是周一开盘的参照基准。",
+      "body": "10月30日周五美股收跌，科技股领跌。StockMarketWatch的收盘汇总给出道指-1.09%至51,770.31、标普500 -1.82%至7,580.07、纳指-2.86%至25,437.00；这组数字内部可以自洽核对(用Investrade页面给出的前一交易日收盘反推涨跌幅与之一致)，是目前相对更可信的口径。此前曾收到另一个「纳指仅跌1.38%至约26,184.72」的说法，经核查该数字在其标注的来源页面中并未真实出现，可信度存疑，不采用。「纳指100进入回调区间」的说法同样未能独立核实。",
+      "why": "这是周一开盘的参照基准，也是Alphabet、英特尔财报引发的科技股抛售在指数层面的体现。",
       "impact": "大盘情绪 · 科技股",
       "sources": [
         {
           "name": "Stockmarketwatch",
           "url": "https://stockmarketwatch.com/digest/2026-10-30",
-          "angle": "收盘汇总，跌幅较大的口径"
+          "angle": "收盘汇总，与前一日收盘数字可自洽核对"
         },
         {
           "name": "Investrade",
           "url": "https://investrade.com/?p=1686",
-          "angle": "跌幅较小的另一种口径，页面疑似混入期货数据"
-        },
-        {
-          "name": "Argaam",
-          "url": "https://argaam.com/en/reports/international_market_daily_report/44884",
-          "angle": "称纳指自历史高点回落，未给出具体幅度"
+          "angle": "提供10/29的道指、标普前一日收盘基准，用于交叉核对"
         }
       ],
       "cross_source": {
         "agreement": "split",
-        "summary": "各家对10/30跌幅的具体数字差距很大(纳指-2.86%对-1.38%)，方向一致但无法确定统一数字，其中一个来源的数据质量存疑。"
+        "summary": "此前流传的两套跌幅数字差距很大，经核查后判断StockMarketWatch的一套内部自洽、更可信，另一套的具体数字找不到出处。"
       }
     },
     {
-      "rank": 6,
+      "rank": 8,
       "tier": "worth-knowing",
       "published": "2026-10-30",
       "headline": "霍尔木兹原油过境流量基本恢复到战前水平，但成品油运输仍远低于战前",
@@ -351,16 +432,16 @@
       ]
     },
     {
-      "rank": 7,
+      "rank": 9,
       "tier": "worth-knowing",
       "published": "2026-10-30",
-      "headline": "欧盟成员国承诺释放4260万桶战略石油储备以抑制油价",
+      "headline": "欧盟成员国承诺释放4260万桶战略石油储备以抑制油价，布伦特10月底收于约113美元",
       "sectors": [
         "能源",
         "政策"
       ],
       "tickers": [],
-      "body": "10月29日欧盟成员国在卢森堡承诺加快释放约4260万桶战略石油储备，其中约2050万桶(约48%)为柴油，预计2027年1月底前陆续进入市场，是在G7此前约1亿桶承诺基础上的追加动作。同期油价周五(10/30)收高，WTI报104.12美元(+2.1%)，布伦特报113.10美元(+2.08%，单一来源)，10月布伦特累计涨约15%。",
+      "body": "10月29日欧盟成员国在卢森堡承诺加快释放约4260万桶战略石油储备，其中约2050万桶(约48%)为柴油，预计2027年1月底前陆续进入市场，是在G7此前约1亿桶承诺基础上的追加动作。布伦特原油10月底收于约113美元(10/30收盘113.10美元，另一来源给出月末113.43美元，两者接近)，10月累计仍维持在高位。",
       "why": "这是需求端国家首次动用战略储备直接对冲供给风险溢价，释放规模集中在柴油上，针对的是炼厂瓶颈而不是原油本身。",
       "impact": "能源 · 炼油板块 · 欧洲通胀",
       "sources": [
@@ -370,19 +451,19 @@
           "angle": "欧盟承诺释放4260万桶，柴油占约48%"
         },
         {
-          "name": "Macrotrends",
-          "url": "https://www.macrotrends.net/1369/crude-oil-price-history-chart",
-          "angle": "WTI 10/30收盘104.12美元，作为交叉核对"
+          "name": "Euronews",
+          "url": "https://www.euronews.com/2026/10/30/eu-countries-pledge-205mn-diesel-barrels-as-winter-supply-fears-grow",
+          "angle": "柴油部分约2050万桶的独立确认"
         },
         {
-          "name": "Oil Monitor Weekly Summary",
-          "url": "https://unbiasednews.substack.com/p/oil-monitor-weekly-summary-october",
-          "angle": "布伦特113.10美元，10月累计涨约15.2%"
+          "name": "FinanceFeeds",
+          "url": "https://financefeeds.com/oil-price-opec-holds-december-targets-for-a-third-month-as-brent-ends-october-at-113-43",
+          "angle": "布伦特10月末收于113.43美元，与另一来源的113.10美元接近"
         }
       ]
     },
     {
-      "rank": 8,
+      "rank": 10,
       "tier": "worth-knowing",
       "published": "2026-11-02",
       "headline": "美国中期选举明天(11/3)投票，历史数据显示中期选举年市场通常偏弱、选后反弹",
@@ -408,7 +489,7 @@
       ]
     },
     {
-      "rank": 9,
+      "rank": 11,
       "tier": "worth-knowing",
       "published": "2026-10-30",
       "headline": "特朗普：能源价格上涨「是为安全付出的很小代价」，冲突成本在中期选举前成为政治压力",
@@ -430,7 +511,7 @@
       ]
     },
     {
-      "rank": 10,
+      "rank": 12,
       "tier": "worth-knowing",
       "published": "2026-11-02",
       "headline": "本周财报日历进入第二波高峰：AMD周二盘后登场，高通、Uber周三跟进",
@@ -441,7 +522,7 @@
       "tickers": [
         "AMD"
       ],
-      "body": "据Newsquawk与Tickzen的财报日历，继苹果、Palantir今天盘后登场后，本周二(11/3)盘前将有伊顿、马拉松石油、辉瑞、安进、缤客、Arista公布业绩，盘后则是AMD；周三(11/4)盘前CVS，盘后Uber、麦当劳、高通、McKesson、ARM陆续公布。AMD是自选股名单里的一只，紧跟在英特尔、亚马逊财报引发的半导体资本开支担忧之后登场。",
+      "body": "据Newsquawk与Tickzen的财报日历，本周二(11/3)盘前将有伊顿、马拉松石油、辉瑞、安进、缤客、Arista公布业绩，盘后则是AMD；周三(11/4)盘前CVS，盘后Uber、麦当劳、高通、McKesson、ARM陆续公布。AMD是自选股名单里的一只，紧跟在英特尔、亚马逊财报引发的半导体资本开支担忧之后登场。",
       "why": "财报季进入第二轮高峰，AMD的指引将是检验「AI资本开支能否持续兑现」叙事的下一个节点。",
       "impact": "半导体 · 医药 · 消费服务",
       "sources": [
@@ -458,7 +539,7 @@
       ]
     },
     {
-      "rank": 11,
+      "rank": 13,
       "tier": "worth-knowing",
       "headline": "MSFT空头持仓至10月15日结算环比上升7.43%",
       "sectors": [
@@ -468,7 +549,7 @@
       "tickers": [
         "MSFT"
       ],
-      "body": "据FINRA官方空头持仓数据，微软空头持仓股数截至10月15日结算为6,567万股，较上期(9月30日结算)上升7.43%，回补天数3.18天。这一结算日期早于微软10月28日公布的FY27第一季度财报(营收、Azure增速均超预期)，意味着部分空头是在财报前加仓做空。",
+      "body": "据FINRA官方空头持仓数据，微软空头持仓股数截至10月15日结算为6,567万股，较上期(9月30日结算)上升7.43%，回补天数3.18天。这一结算日期早于微软10月28日公布的财报(营收、Azure增速均超预期)，意味着部分空头是在财报前加仓做空。",
       "why": "仓位数据本身不解释财报结果，但「财报前空头增加、财报后股价上涨」是一条仓位结构信息，不构成买卖建议。",
       "impact": "MSFT · 仓位结构",
       "sources": [
@@ -481,7 +562,7 @@
       "published": "2026-10-30"
     },
     {
-      "rank": 12,
+      "rank": 14,
       "tier": "noise",
       "published": "2026-10-28",
       "headline": "(旧闻，10/28发布，今日无新进展)SK海力士Q3业绩：HBM等存储供需缺口预计持续到2030年",
@@ -508,7 +589,7 @@
       ]
     },
     {
-      "rank": 13,
+      "rank": 15,
       "tier": "noise",
       "published": "2026-10-31",
       "headline": "霍尔木兹10/31疑似再次发生油轮触雷起火，为伊朗革命卫队单方面说法，未经路透或美军证实",
@@ -532,7 +613,7 @@
       ]
     },
     {
-      "rank": 14,
+      "rank": 16,
       "tier": "noise",
       "published": "2026-10-29",
       "headline": "(旧闻，10/29发布，今日无新进展)亚马逊三季度资本开支773亿美元，超预期近200亿美元",
@@ -558,7 +639,7 @@
       ]
     },
     {
-      "rank": 15,
+      "rank": 17,
       "tier": "noise",
       "published": "2026-10-29",
       "headline": "(旧闻，10/29发布，今日无新进展)Coinbase三季报净利润主要来自加密资产持仓浮盈，而非主营业务",
@@ -603,15 +684,19 @@
       ]
     },
     {
-      "when": "Mon 11/2",
-      "time": "盘后",
-      "event": "Palantir公布2026年第三季度业绩",
-      "weight": "high",
+      "when": "Mon 11/2(日历站预测，官方未确认)",
+      "time": "盘后(预计)",
+      "event": "Palantir预计公布2026年第三季度业绩，日期未见公司官方公告确认",
+      "weight": "mid",
       "date": "2026-11-02",
       "sources": [
         {
           "name": "24/7 Wall St.",
           "url": "https://247wallst.com/investing/2026/10/14/palantirs-earnings-gamble-nine-straight-beats-set-high-bar-for-november-2/"
+        },
+        {
+          "name": "Palantir Q2 2026 业绩新闻稿(SEC 8-K)",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001321655/000132165526000039/a2026q2ex991pressrelease.htm"
         }
       ]
     },
