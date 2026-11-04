@@ -2,10 +2,10 @@
   "date": "2026-11-04",
   "weekday": "Wednesday",
   "edition": "Daily edition",
-  "generated_at": "2026-11-04 06:27 PT",
-  "scanned": 95,
-  "kept": 15,
-  "thesis": "今天的主线是政治与AI硬件的双重\"意外\"：中期选举民主党历史性横扫参众两院(二战以来仅第五次)，市场原本担忧的\"分裂混乱\"没有出现，反而因为不确定性消除、道指期货盘前一度涨超1000点；同一时间AMD三季度财报远超预期、数据中心营收接近翻倍，CEO称2027年营收增速将超80%，盘后大涨并带动韩国Kospi芯片股大涨2.95%——这是过去两周半导体板块经历年内第三次技术性调整之后，罕见出现\"业绩与指引同步超预期+股价不跌反涨\"的组合。背景线是11月3日美股已经止跌反弹(结束三连跌)为今天的进一步上涨做了铺垫，而Marvell收购Lumentum交易则在同一时间遭遇伯恩斯坦对融资与整合风险的警示，提示市场对AI基建整合类交易的容忍度仍在收紧。因本次生成时间是美东早盘开盘前，许多\"今天\"的市场数据(尤其是美股开盘后走势、亚洲以外国际市场收盘价)尚未形成，简报以11月3日收盘与11月4日盘前最新报道为主。",
+  "generated_at": "2026-11-04 07:10 PT",
+  "scanned": 130,
+  "kept": 17,
+  "thesis": "今天的主线是三条互相交织的\"意外\"：一是政治意外——中期选举民主党历史性横扫参众两院(二战以来第五次)，但市场原本担忧的\"分裂混乱\"没有出现，道指期货盘前一度涨超1000点，因为不确定性消除本身被当成利好；二是AI硬件的意外——AMD三季度营收同比+45%、数据中心营收接近翻倍，CEO称2027年营收增速将超80%，带动盘后大涨，但同一时间AI基建股(CoreWeave、Iren、Nebius)却在盘前下跌，与国防股、Trump Media一起构成了\"选举结果重新定价AI监管与政策预期\"的板块分化，韩国Kospi甚至在日内剧烈震荡(开盘上冲3%、一度转跌近7%、收盘仅涨0.62%)后收窄涨幅，说明这种重新定价尚未形成一致方向；三是地缘意外的延续——美军11/3再次打击伊朗格什姆岛、霍尔木兹水道油轮起火，特朗普威胁\"重击\"而伊朗称美方回复\"不可信\"，油价仍承压、能源板块11/3收跌3.7%，这场冲突并未随和谈信号而降温。企业层面，Amdocs因与T-Mobile合同纠纷盘前暴跌36%-40%，是当天盘前跌幅最大的个股；CVS宣布拆分为两家独立上市公司；Novo Nordisk财报表现明显强于同业辉瑞。因生成时间是美东早盘开盘前，许多盘前数字仍是滚动更新的中间值，开盘后走势请以实际成交为准。",
   "tape": {
     "asof": "上一交易日收盘 · 周二 11/3",
     "rows": [
@@ -29,8 +29,8 @@
       },
       {
         "name": "布伦特原油",
-        "value": "约$103.80",
-        "change": "-0.9%左右(仅据单一转载来源，未经一手核实，谨慎参考)",
+        "value": "约$103.60~$103.80",
+        "change": "较11/2暴跌后继续小幅走低，不同来源给出的结算价略有差异",
         "dir": "down"
       }
     ]
@@ -182,8 +182,8 @@
         "政治"
       ],
       "tickers": [],
-      "body": "美联社(AP)于11月4日凌晨约1:30 ET宣布众议院多数席位归属民主党，叠加此前已锁定的参议院多数，CNBC、Axios、Forbes、Boston Globe、MS NOW、ABC News(援引AP数据)等多家主流媒体均以\"历史性大胜\"\"蓝色浪潮\"\"GOP痛失参众两院\"等措辞报道这一结果。选前共和党在众议院维持218-214的微弱多数(另有2个空缺席位及1名与共和党人联合议事的独立议员)，并同时掌控参众两院；选后参议院方面，民主党在堪萨斯、艾奥瓦、德克萨斯、俄亥俄、缅因、北卡罗来纳、南卡罗来纳等州合计翻转约7个席位，拿下参议院多数；众议院方面，民主党净增席位报道不一，MS NOW预测其至少拿下250席(远超218席的多数门槛)，WTHR等媒体在凌晨统计时点给出\"净增至少13席、仍有69场选举未判定\"的阶段性数据。截至发稿，阿拉斯加与密西西比两个参议院席位AP仍未判定胜负(阿拉斯加计票进度约72%)，具体最终席位数仍可能随计票推进而调整。《时代》周刊指出，这是二战结束以来第五次有政党在同一次中期选举中同时翻转参众两院。新一届国会预计2027年1月3日就职。",
-      "why": "民主党同时拿下参众两院意味着特朗普后两年施政将面临国会全面制衡，这在二战后的中期选举历史中极为罕见(仅第五次)。市场原本担忧的\"选举结果不确定性\"和\"分裂政府带来的治理僵局\"在结果明朗后迅速被重新定价为\"政治风险出清\"而非\"治理风险上升\"(详见下一条盘前期货大涨)，这种重新定价的方向本身比选举结果的具体数字更能说明市场当下的焦点。",
+      "body": "11月4日凌晨，随着计票推进，美联社(AP)等机构认定民主党已拿下众议院多数席位，叠加此前已锁定的参议院多数，CNBC、Axios、Forbes、Boston Globe、MS NOW等多家主流媒体均以\"历史性大胜\"\"蓝色浪潮\"\"GOP痛失参众两院\"等措辞报道这一结果；CNBC与CNN同时报道称美股期货因\"政治不确定性被消除\"而大幅走高(详见下一条)，这也从市场反应的角度印证了选举结果已在凌晨明朗。选前共和党在众议院维持218-214的微弱多数(另有2个空缺席位及1名与共和党人联合议事的独立议员)，并同时掌控参众两院。需要说明的是，具体翻转了多少个参议院席位、以及哪些州易手，不同媒体在选举夜给出的名单和数字存在差异且仍在滚动更新，本简报不采用某一家的具体州份清单，以避免引用尚未最终确认的数字；MS NOW曾预测民主党众议院席位至少达250席(远超218席的多数门槛)，但计票仍在进行，最终席位数以后续官方认证为准。《时代》周刊将此次结果置于历史脉络中，称这是二战结束以来第五次有政党在同一次中期选举中同时翻转参众两院。新一届国会预计2027年1月3日就职。",
+      "why": "民主党同时拿下参众两院意味着特朗普后两年施政将面临国会全面制衡，这在二战后的中期选举历史中极为罕见。市场原本担忧的\"选举结果不确定性\"和\"分裂政府带来的治理僵局\"在结果明朗后迅速被重新定价为\"政治风险出清\"而非\"治理风险上升\"(详见下一条盘前期货大涨)，这种重新定价的方向本身比选举结果的具体数字更能说明市场当下的焦点。",
       "impact": "国会控制权转手 · 后续两年财政与监管政策路径的不确定性 · 2027年1月新一届国会就职前的政策真空期",
       "sources": [
         {
@@ -194,7 +194,7 @@
         {
           "name": "CNBC(11/4更新)",
           "url": "https://www.cnbc.com/2026/11/04/2026-midterm-election-results-live-updates.html",
-          "angle": "凌晨更新：众院归属已由AP宣布，后续政策影响分析"
+          "angle": "凌晨更新：众院归属已明朗，后续政策影响分析"
         },
         {
           "name": "Forbes",
@@ -217,92 +217,88 @@
           "angle": "给出历史参照：二战以来第五次两院同时翻转"
         },
         {
-          "name": "ABC News(援引AP数据)",
-          "url": "https://www.abc.net.au/news/2026-11-04/us-midterm-election-results-2026/107235570",
-          "angle": "官方计票数据来源"
+          "name": "CNN(市场反应佐证选举已明朗)",
+          "url": "https://www.cnn.com/2026/11/04/investing/us-markets-midterm-elections",
+          "angle": "报道标题直接称\"民主党已拿下国会控制权\""
         }
       ],
       "cross_source": {
-        "agreement": "aligned",
-        "summary": "所有主流媒体对\"民主党同时拿下参众两院\"这一核心结果口径完全一致，分歧仅在于具体翻转席位数与阿拉斯加/密西西比等个别未判定席位的最新进度——这些数字随计票推进持续更新，属于正常的选举夜数据滚动，不是报道矛盾。"
+        "agreement": "split",
+        "summary": "各家对\"民主党拿下参众两院\"这一方向性结论口径一致；但对AP具体宣布时间、翻转席位的具体名单与数字，不同媒体在选举夜滚动更新中给出的版本存在差异，部分早期报道甚至显示众院控制权尚未被正式判定——这些细节随计票推进持续变化，本简报只采用方向性结论，不采用存在分歧的具体数字。"
       },
       "history": {
-        "summary": "选前一周(10月30日)，Polymarket与Kalshi等预测市场分别给予民主党拿下众院约94%、参院约69%的概率；最终结果方向与预测一致，但参议院的翻盘幅度(7个州易手)超出了多数选前预测的保守预期。"
+        "summary": "选前一周(10月30日)，Polymarket与Kalshi等预测市场分别给予民主党拿下众院约94%、参院约69%的概率；最终结果方向与预测一致，但参议院的翻盘幅度看起来超出了多数选前预测的保守预期。"
       }
     },
     {
       "rank": 2,
       "tier": "must-read",
       "published": "2026-11-04",
-      "headline": "选举结果明朗后美股期货盘前大幅走高：道指期货一度涨超1000点，美元走软、韩国Kospi领涨亚股",
+      "headline": "选举结果明朗后美股期货盘前大涨，但AI基建股与国防股下跌：市场内部对\"分裂政府\"的定价并不一致",
       "sectors": [
         "美股大盘",
         "宏观",
         "海外股市"
       ],
-      "tickers": [],
-      "body": "11月4日美股开盘前，三大股指期货在经历选举结果明朗前的剧烈波动(\"whipsaw\"，早盘一度下跌1%-2.5%)后转为明显走高：CNN报道道指期货一度上涨约1,100点(约+2.1%)；CNBC给出的数据是道指期货上涨近900点、标普500期货涨约1%；FXStreet称道指期货盘前上涨1.6%；Fox Business与Stocktwits在更早的时间点给出的涨幅则小得多(分别约+0.8%、+0.5%)，当时局势还被描述为\"涨跌不一\"——不同机构给出的具体数字差异较大，主要原因是选举结果在凌晨陆续明朗，各篇报道的采集时间点不同，而不是数据矛盾。市场解读为\"确定性消除了政治风险溢价\"，分析师普遍预期后续两年将是分裂政府格局。与此同时，美元走软、黄金小幅走高(Yahoo Finance报道题为\"Stocks rally, dollar dips after Democrats' 'blue sweep' victory\")，10年期美债收益率小幅走低约1个基点至约4.93%。海外市场同步反应：韩国Kospi指数受芯片股带动大涨2.95%，意大利FTSE MIB指数上涨0.88%，领涨欧洲主要股指。",
-      "why": "这次反应印证了2018年中期选举、2021年乔治亚州参院补选等历史案例的共性：市场对\"选举结果的不确定性\"的厌恶程度，往往超过对\"选举结果本身是否对自己有利\"的厌恶程度——只要结果明确、不再悬而不决，风险溢价就会被迅速压缩，哪怕结果本身是市场此前担忧的\"分裂国会\"。这次反弹叠加了AMD财报超预期的提振(见下一条)，两个利好同时出现，也是道指期货单次涨幅能冲到1000点以上的原因之一。",
-      "impact": "大盘风险偏好 · 政治不确定性溢价消退 · 全球股市联动(亚洲、欧洲同步走高)",
+      "tickers": [
+        "TSLA"
+      ],
+      "body": "11月4日美股开盘前，道指期货在经历选举结果明朗前的剧烈波动(一度下跌0.76%)后转为大幅走高：CNN与CNBC均报道道指期货上涨约1,083点(约+2.1%)；其他机构给出的具体数字随采集时间点不同而有差异——美联社报道+1.4%，Yahoo Finance报道+2.2%，Fox Business早盘的报道仅为+0.84%，差异主要反映选举结果在凌晨陆续明朗的过程，而非数据矛盾。但盘前个股与板块的反应并不一致：据CNBC、Investing.com的盘前异动汇总，AI基础设施相关股票(\"neocloud\")普遍下跌，CoreWeave跌约7%、Iren跌约6%、Nebius跌约5%；特朗普媒体(Trump Media/DJT)盘前跌约7%-11%；国防股整体走低；相对地，太阳能与清洁能源股逆势上涨，First Solar涨约8%、Sunrun涨约8.6%。海外市场同步出现剧烈分化：韩国Kospi指数早盘一度跳涨3.17%(受英伟达+2.29%、美光+2.58%、AMD+3.65%、博通+3.07%等费城半导体指数反弹2.64%的带动)，但盘中因市场担忧民主党国会可能收紧AI数据中心相关监管，一度转为日内下跌近4%-7%，尾盘外资持续抛售(一份报道称外资净卖出约2.5万亿韩元)，最终收涨仅0.62%，报5,683.80点——整个交易日呈现\"开盘大涨、盘中暴跌、尾盘收窄涨幅\"的剧烈震荡，而不是简单的单边上涨。",
+      "why": "这次反应印证了2018年中期选举、2021年乔治亚州参院补选等历史案例的共性：市场对\"选举结果的不确定性\"的厌恶程度，往往超过对\"选举结果本身是否对自己有利\"的厌恶程度——只要结果明确、不再悬而不决，整体风险溢价就会被迅速压缩。但板块内部的分化(AI基建股下跌、国防股下跌，清洁能源股上涨，Kospi剧烈震荡)说明，市场同时也在重新评估民主党国会控制权对AI数据中心监管、国防开支、清洁能源政策等具体议题的影响，这种重新定价还远未形成一致方向，不能简单理解为\"选举结果对股市整体是利好\"。",
+      "impact": "大盘风险偏好 · 政治不确定性溢价消退 · AI基建/国防/清洁能源板块的政策预期重新定价 · 全球股市联动但方向分化",
       "sources": [
         {
           "name": "CNN",
           "url": "https://www.cnn.com/2026/11/04/investing/us-markets-midterm-elections",
-          "angle": "道指期货+1,100点(约+2.1%)，强调\"结果确定性\"而非\"结果本身\"驱动反弹"
+          "angle": "道指期货+1,083点(约+2.1%)，强调\"结果确定性\"而非\"结果本身\"驱动反弹"
         },
         {
           "name": "CNBC",
-          "url": "https://www.cnbc.com/2026/11/03/midterm-election-stock-market.html",
-          "angle": "道指期货+900点左右，标普500期货+1%，并给出10年期收益率、Kospi、FTSE MIB等全球数据"
+          "url": "https://www.cnbc.com/2026/11/03/stock-market-today-live-updates.html",
+          "angle": "独立给出道指期货+1,083点的同一数字，并记录早盘下跌0.76%到后续转涨的过程"
         },
         {
-          "name": "FXStreet",
-          "url": "https://www.fxstreet.com/news/democratic-midterm-rout-sends-stock-futures-higher-202611041248",
-          "angle": "道指期货+1.6%，称\"landslide\"(压倒性结果)"
+          "name": "CNBC(盘前异动汇总)",
+          "url": "https://www.cnbc.com/2026/11/04/stocks-making-the-biggest-moves-premarket-djt-tsla-crwv-nvo.html",
+          "angle": "给出CoreWeave、DJT、Tesla等个股盘前涨跌幅"
         },
         {
-          "name": "Yahoo Finance",
-          "url": "https://finance.yahoo.com/markets/stocks/articles/us-stock-futures-rise-democrats-105259840.html",
-          "angle": "将选举结果与AMD财报两大催化剂并列报道"
+          "name": "Investing.com(盘前异动汇总)",
+          "url": "https://www.investing.com/news/stock-market-news/premarket-movers-trump-media-ai-infrastructure-stocks-fall-amd-jumps-4998777",
+          "angle": "标题直接点出\"AI基础设施股下跌、AMD大涨\"的分化"
+        },
+        {
+          "name": "Seoul Economic Daily(Kospi收盘)",
+          "url": "https://en.sedaily.com/finance/2026/11/04/kospi-closes-up-062-percent-at-568380",
+          "angle": "给出Kospi最终收盘涨幅0.62%及点位"
+        },
+        {
+          "name": "Seoul Economic Daily(Kospi盘中震荡)",
+          "url": "https://en.sedaily.com/finance/2026/11/04/kospi-swings-7-percent-before-closing-higher-as-us",
+          "angle": "记录日内从上涨3%+到下跌近7%的剧烈波动过程"
         },
         {
           "name": "Yahoo Finance(whipsaw)",
           "url": "https://finance.yahoo.com/markets/live/stock-market-today-dow-sp-500-nasdaq-midterm-elections-091834396.html",
-          "angle": "记录期货从早盘下跌1%-2.5%到后续转涨的剧烈波动过程"
-        },
-        {
-          "name": "Yahoo Finance(美元/黄金)",
-          "url": "https://finance.yahoo.com/markets/stocks/articles/us-stock-futures-dip-investors-010842458.html",
-          "angle": "\"blue sweep\"后美元走软的角度"
-        },
-        {
-          "name": "Fox Business",
-          "url": "https://www.foxbusiness.com/markets/us-stock-futures-mixed-democrats-score-key-midterm-election-wins",
-          "angle": "较早时间点的报道，当时涨幅尚小、局势被描述为\"涨跌不一\""
+          "angle": "记录期货从早盘下跌到转涨的剧烈波动"
         }
       ],
       "cross_source": {
         "agreement": "split",
-        "summary": "各家对道指期货具体涨幅的报道差异很大(从早盘+0.5%到后来+2.1%)，核心原因是选举结果在凌晨陆续明朗、各篇报道采集时间点不同，而非数据矛盾——这本身恰恰说明了这次反弹的\"渐进确认\"特征：期货跟随计票进展逐步上修涨幅，而不是消息公布瞬间的单次跳涨。"
+        "summary": "各家对道指期货具体涨幅的报道差异较大(从早盘+0.84%到后来+2.2%)，核心原因是选举结果在凌晨陆续明朗、各篇报道采集时间点不同；但对\"AI基建股与国防股下跌、清洁能源股上涨\"这一板块分化现象，CNBC与Investing.com两家独立的盘前异动汇总结论一致。"
       },
       "assets": [
         {
           "asset_class": "美股",
-          "direction": "up",
+          "direction": "mixed",
           "conviction": "medium",
-          "note": "三大股指期货在选举结果明朗后集体转涨，道指期货盘中一度涨超1000点，但不同时点的涨幅报道差异较大，实际开盘表现仍待验证。"
-        },
-        {
-          "asset_class": "美元",
-          "direction": "down",
-          "conviction": "low",
-          "note": "多家媒体报道美元在\"蓝色浪潮\"结果后走软，但未给出具体点位或跌幅数字。"
+          "note": "大盘期货(道指+2.1%左右)与AI基建、国防等细分板块(普遍下跌)方向相反，说明这不是一次无差别的风险偏好回升，而是伴随具体政策预期重新定价的结构性分化。"
         },
         {
           "asset_class": "海外股市",
-          "direction": "up",
+          "direction": "mixed",
           "conviction": "medium",
-          "note": "韩国Kospi受芯片股带动大涨2.95%，意大利FTSE MIB领涨欧股涨0.88%，全球市场同步呼应美股期货的乐观情绪。"
+          "note": "韩国Kospi日内从大涨3%以上到一度下跌近7%、最终仅收涨0.62%，反映亚洲投资者对美国国会控制权转手之后AI监管路径的看法本身存在分歧，而非单向乐观。"
         }
       ]
     },
@@ -310,7 +306,7 @@
       "rank": 3,
       "tier": "must-read",
       "published": "2026-11-03",
-      "headline": "AMD三季度财报远超预期：营收134亿美元同比+45%，数据中心营收接近翻倍，盘后大涨，CEO预计2027年营收增逾80%",
+      "headline": "AMD三季度财报远超预期：营收134亿美元同比+45%，数据中心营收接近翻倍，CEO预计2027年营收增逾80%",
       "sectors": [
         "半导体",
         "人工智能",
@@ -319,54 +315,44 @@
       "tickers": [
         "AMD"
       ],
-      "body": "AMD于11月3日美股收盘后公布2026财年第三季度(截至9月)业绩：营收134亿美元，同比增长45%，超出公司此前130亿美元(±3亿美元浮动)的指引上限；GAAP毛利率54%、non-GAAP毛利率56%；GAAP摊薄每股收益1.46美元，non-GAAP每股收益2.09美元(同比+74%)，超过Benzinga Pro统计的市场一致预期(1.95美元)。数据中心业务营收同比增长约97%、接近翻倍，达约85亿美元，占总营收约64%，由MI450 GPU与Helios机架级平台放量驱动。常规交易收涨3.65%至483.90美元，财报公布后盘后一度上涨约7%-8%，Investing.com报价显示盘后触及520.40美元(不同机构给出的盘后涨幅在6%-8%之间略有差异)。管理层(CEO Lisa Su)表示第四季度数据中心营收预计环比增长约50%，数据中心AI业务规模将首次超过服务器CPU业务，且增速较90天前的预期进一步加快；并表示预计2027年公司整体营收增速将超过80%。第四季度客户与游戏业务预计环比下滑逾20%。AMD财报前一个月(10月)伴随半导体板块整体抛售，股价已累计下跌约23%-25.5%(Chartmill测算)，是年内调整最深的阶段之一。",
-      "why": "这是继Palantir、苹果等上周\"业绩超预期、股价仍跌\"的模式后，罕见出现\"业绩超预期+前瞻指引上调+股价同步上涨\"三者一致的案例，说明市场对AI基础设施需求的信心并未因10月那轮逾29%的半导体板块抛售而彻底动摇。AMD财报前一个月已经累计下跌逾23%，这次反弹更像是对此前过度悲观定价的修正。",
-      "impact": "AI硬件/数据中心需求信心 · 半导体板块情绪 · 对英伟达等同业的比价效应 · 带动亚洲芯片股(韩国Kospi)同步走高",
+      "body": "AMD于11月3日美股收盘后公布2026财年第三季度(截至9月)业绩：营收134亿美元(精确数字133.77亿美元)，同比增长45%，创历史纪录；GAAP毛利率54%；GAAP摊薄每股收益1.46美元，non-GAAP每股收益2.09美元，据CFO Jean Hu披露同比增长74%(以2025年三季度non-GAAP EPS 1.20美元为基准)。数据中心业务营收同比增长97%、接近翻倍，达到创纪录的85亿美元，占总营收约64%(去年同期约47%)，由MI450 GPU与Helios机架级平台放量驱动；客户与游戏业务合计下滑8%，嵌入式业务增长29%至11亿美元。常规交易收涨3.65%至483.90美元，财报公布后盘后一度上涨约7%-8%。管理层给出的第四季度营收指引约170亿美元(±3%)，隐含同比增速约66%；CEO Lisa Su在电话会上表示，预计公司2027年整体营收增速将超过80%(高于市场分析师此前约77%的一致预期)，数据中心业务届时预计占总营收约80%，服务器营收2027年将实现同比翻倍，数据中心AI业务增速将较90天前的预期进一步加快。AMD财报前一个月(10月)伴随半导体板块整体抛售，股价已累计下跌约23%-25.5%，是年内调整最深的阶段之一。",
+      "why": "这是继Palantir、苹果等上周\"业绩超预期、股价仍跌\"的模式后，罕见出现\"业绩超预期+前瞻指引上调+股价同步上涨\"三者一致的案例，说明市场对AI基础设施需求的信心并未因10月那轮逾29%的半导体板块抛售而彻底动摇。CEO给出的2027年增速指引(超80%)高于市场此前约77%的一致预期，这是本次财报里最直接的\"超预期\"信号，也解释了为什么盘后涨幅能达到7%-8%这一量级。",
+      "impact": "AI硬件/数据中心需求信心 · 半导体板块情绪 · 对英伟达等同业的比价效应 · 带动亚洲芯片股(韩国Kospi)早盘同步走高",
       "sources": [
         {
           "name": "CNBC",
           "url": "https://www.cnbc.com/2026/11/03/amd-amd-q3-earnings-report-2026-.html",
-          "angle": "标题直接点出\"数据中心营收接近翻倍\"，给出盘后+8%的涨幅"
+          "angle": "标题直接点出\"数据中心营收接近翻倍\"，给出盘后涨幅"
         },
         {
-          "name": "Investing.com(财报电话会记录)",
-          "url": "https://uk.investing.com/news/stock-market-news/earnings-call-transcript-amd-tops-q3-2026-estimates-as-stock-jumps-after-hours-93CH-4954263",
-          "angle": "完整电话会文字记录"
+          "name": "AMD官方新闻室",
+          "url": "https://newsroom.amd.com/news/amd-reports-third-quarter-2026-earnings/",
+          "angle": "一手财报新闻稿"
         },
         {
-          "name": "Investing.com(业绩PPT解读)",
-          "url": "https://www.investing.com/news/company-news/amd-q3-2026-slides-data-center-surges-97-record-earnings-beat-93CH-4996928",
-          "angle": "给出数据中心+97%的具体测算"
+          "name": "TradingKey",
+          "url": "https://www.tradingkey.com/news/presentation/262272421-",
+          "angle": "标题\"AMD Q3 2026 Revenue Rises 45% on Data Center Growth\"，确认营收同比增速"
         },
         {
-          "name": "Benzinga(电话会记录)",
-          "url": "https://www.benzinga.com/news/26/11/62849372/advanced-micro-devices-q3-2026-earnings-call-transcript",
-          "angle": "电话会细节"
+          "name": "Seeking Alpha",
+          "url": "https://seekingalpha.com/news/4664367-amd-forecasts-more-than-80-percent-revenue-growth-in-2027-as-data-center-targets-more-than-80",
+          "angle": "确认CEO对2027年营收增速超80%的指引，并给出分析师此前77%的一致预期作对比"
         },
         {
-          "name": "Benzinga(双重超预期)",
-          "url": "https://www.benzinga.com/markets/earnings/26/11/62845344/amd-posts-q3-double-beat-as-data-center-segment-shines-growth-expected-to-accelerate-in-q4",
-          "angle": "强调第四季度增速预期进一步加快"
+          "name": "Benzinga",
+          "url": "https://www.benzinga.com/markets/tech/26/11/62853111/amd-lisa-su-ai-data-center-doubling-2027-amd-stock-price-target-q3-results",
+          "angle": "引用Lisa Su关于服务器营收2027年翻倍的原话"
         },
         {
-          "name": "Yahoo Finance",
-          "url": "https://finance.yahoo.com/technology/article/amd-stock-rises-after-q3-earnings-beat-as-data-center-revenue-climbs-97-213907282.html",
-          "angle": "常规交易与盘后走势区分报道"
-        },
-        {
-          "name": "Chartmill",
-          "url": "https://www.chartmill.com/news/AMD/Chartmill-57632-Advanced-Micro-Devices-NASDAQAMD-Q3-2026-Earnings-Data-Center-Nearly-Doubles-and-Guidance-Tops-Consensus",
-          "angle": "给出财报前一个月累计跌幅测算(约23%-25.5%)"
-        },
-        {
-          "name": "Yahoo Finance(2027展望)",
-          "url": "https://finance.yahoo.com/markets/stocks/articles/us-stock-futures-rise-democrats-105259840.html",
-          "angle": "引用Lisa Su关于2027年营收增速超80%的表态"
+          "name": "BigGo Finance",
+          "url": "https://finance.biggo.com/news/043e4acf-19fe-48a1-a630-47d9f350f4ff",
+          "angle": "给出第四季度营收指引约170亿美元的具体数字"
         }
       ],
       "cross_source": {
         "agreement": "aligned",
-        "summary": "CNBC、Investing.com、Benzinga、Yahoo Finance等多家来源对\"营收134亿美元、数据中心+97%、业绩超预期后股价上涨\"的核心叙事完全一致，具体盘后涨幅在6%-8%之间存在正常的统计口径差异(采集时间点不同)。"
+        "summary": "CNBC、AMD官方新闻室、TradingKey、Seeking Alpha、Benzinga等多家来源对\"营收134亿美元、数据中心+97%、2027年营收增速超80%\"等核心数字口径一致，仅盘后涨幅在6%-8%之间存在正常的统计口径差异。"
       },
       "history": {
         "summary": "AMD财报前一个月(10月)伴随半导体板块整体抛售，股价已累计下跌约23%-25.5%，是年内调整最深的阶段之一；这次财报后的反弹是该跌势以来首次出现\"业绩与指引同步超预期\"的组合。"
@@ -375,13 +361,70 @@
         {
           "asset_class": "美股",
           "direction": "up",
-          "conviction": "medium",
-          "note": "AMD作为AI硬件板块风向标之一，财报后大涨进一步带动半导体板块情绪回暖，并与11/3芯片股普涨(见下文)形成呼应。"
+          "conviction": "high",
+          "note": "AMD作为AI硬件板块风向标，财报后大涨并带动韩国Kospi芯片股早盘同步走高，但这种乐观情绪在must-read第2条描述的板块分化中并未扩散到全部AI相关股票(AI基建股盘前反而下跌)。"
         }
       ]
     },
     {
       "rank": 4,
+      "tier": "must-read",
+      "published": "2026-11-04",
+      "headline": "美伊冲突未因和谈信号降温：美军11/3再次打击伊朗格什姆岛，霍尔木兹水道油轮起火，特朗普威胁\"重击\"，伊朗称美方回复\"不可信\"",
+      "sectors": [
+        "地缘政治",
+        "能源",
+        "大宗商品"
+      ],
+      "tickers": [],
+      "body": "这是对11月2日\"美伊和谈信号压过打击消息、油价单日暴跌逾7%\"事件的重要后续：据Al Jazeera、Gulf News、CBS News等多家媒体11月3日至4日的报道，美军再次对伊朗格什姆岛(扼守霍尔木兹海峡)实施\"防御性\"打击，霍尔木兹水道同期有油轮起火；特朗普警告如果伊朗继续拒绝谈判方案将给予\"重击\"(heavy hit)，同时确认了此前的打击行动；伊朗方面则表示美方对其提出的霍尔木兹海峡重开方案的回复\"不可信\"(unconvincing)，暗示外交谈判出现新的阻力。受此影响，布伦特原油在11月2日暴跌逾7%之后，11月3日继续小幅走低至约103.60-103.80美元/桶(不同来源给出的结算价存在小幅差异)。公司层面的影响已经体现在板块数据上：据Taurient Lite自身的板块热力数据，11月3日能源板块收跌3.7%，是当天跌幅最大的板块之一。",
+      "why": "11月2日油价暴跌时，市场交易的逻辑是\"和谈信号压过打击本身\"；但11月3-4日的最新进展显示，军事摩擦(再次打击格什姆岛、油轮起火)与外交僵局(伊朗称美方回复不可信、特朗普威胁重击)同时存在，说明这场已持续约八个月的冲突仍未真正降温，此前油价的大幅回落更多反映的是\"外交渠道尚未破裂\"的预期，而不是冲突已经实质性缓和——这种预期存在被证伪的风险。",
+      "impact": "全球原油定价 · 通胀路径 · 霍尔木兹海峡通行安全 · 能源板块(11/3收跌3.7%)",
+      "sources": [
+        {
+          "name": "Al Jazeera",
+          "url": "https://www.aljazeera.com/news/2026/11/4/iran-says-us-reply-to-hormuz-plan-unconvincing-trump-confirms-strikes",
+          "angle": "标题直接点出伊朗称美方回复\"不可信\"，特朗普确认打击"
+        },
+        {
+          "name": "Gulf News",
+          "url": "https://gulfnews.com/world/mena/middle-east-conflict-trump-warns-of-heavy-hit-as-iran-says-americans-voted-no-to-war-1.500735100",
+          "angle": "记录特朗普\"重击\"警告"
+        },
+        {
+          "name": "CBS News",
+          "url": "https://www.cbsnews.com/live-updates/iran-war-us-trump-negotiations-midterms/",
+          "angle": "将伊朗局势与中期选举背景并列的滚动报道"
+        },
+        {
+          "name": "Oilprice.com",
+          "url": "https://oilprice.com/Latest-Energy-News/World-News/Oil-Prices-Plunge-7-as-US-and-Iran-Signal-Room-for-Diplomacy.html",
+          "angle": "11/2油价暴跌事件的背景报道"
+        },
+        {
+          "name": "Mitrade",
+          "url": "https://www.mitrade.com/insights/commodity-analysis/oil-news/brent-103-physical-market-20261104J1136",
+          "angle": "给出11/3布伦特结算价约103美元区间"
+        }
+      ],
+      "cross_source": {
+        "agreement": "split",
+        "summary": "美方(特朗普)确认打击行动并警告\"重击\"，伊朗方面则强调美方谈判回复\"不可信\"，双方对谈判现状的定性本身存在分歧；对油价结算的具体数字(103.60美元 vs 103.80美元)各家也有细微差异。"
+      },
+      "history": {
+        "summary": "这场冲突已持续约八个月，11月2日布伦特曾单日暴跌逾7%(因市场押注和谈)，但11月3-4日的军事与外交最新进展显示冲突并未真正降温，此前的乐观定价存在反转风险。"
+      },
+      "assets": [
+        {
+          "asset_class": "大宗商品",
+          "direction": "down",
+          "conviction": "medium",
+          "note": "布伦特原油继11/2暴跌后继续小幅走低，但冲突本身并未降温，供给端风险溢价的回吐趋势可能并不稳固。"
+        }
+      ]
+    },
+    {
+      "rank": 5,
       "tier": "worth-knowing",
       "published": "2026-11-03",
       "headline": "背景：11月3日美股收盘已止跌反弹，结束三连跌，芯片股领涨，为今日期货进一步走高做了铺垫",
@@ -418,32 +461,28 @@
       "history": null
     },
     {
-      "rank": 5,
+      "rank": 6,
       "tier": "worth-knowing",
-      "published": "2026-11-02",
-      "headline": "Marvell收购Lumentum交易遭伯恩斯坦示警融资与整合风险，是11/2已公告交易的后续进展",
+      "published": "2026-11-04",
+      "headline": "Amdocs盘前暴跌36%-40%：与T-Mobile合同纠纷升级，FY27营收指引大幅下调",
       "sectors": [
-        "半导体",
-        "光通信",
-        "并购"
+        "电信软件",
+        "合同纠纷"
       ],
-      "tickers": [
-        "MRVL",
-        "LITE"
-      ],
-      "body": "这是11月2日已公告的Marvell以约1150亿美元全股票收购Lumentum交易的后续进展：据路透社报道，伯恩斯坦(Bernstein)分析师警示，这一规模的交易很可能需要额外融资，并可能带来整合挑战；另有科技媒体报道称市场担忧收购溢价与新股发行带来的股权稀释。两家公司股价在11/2公告当天已分别重挫约13%和近19%(详见此前报道)，11/3未见进一步明显异动报道。",
-      "why": "分析师的关注点从\"交易本身是否合理\"转向\"如何融资落地\"，说明市场对这类AI基建整合交易的审视正从交易逻辑延伸到执行层面的财务可行性。",
-      "impact": "半导体并购融资环境 · 投资者对AI基建整合交易的容忍度",
+      "tickers": [],
+      "body": "电信软件服务商Amdocs(DOX)11月4日盘前股价暴跌约36%-40%，是当天盘前跌幅最大的个股之一。据公司公告(6-K)，公司将2027财年营收指引大幅下调至同比下降7%-11%，同时披露与大客户T-Mobile的合同纠纷已升级——双方互指对方违约，并已出现威胁提起仲裁或终止合同的表态。",
+      "why": "这是当天盘前跌幅最大的个股，说明单一大客户的合同风险可以对一家中型电信软件服务商的估值造成剧烈冲击，也提示投资者关注其他高客户集中度的软件服务商是否有类似风险。",
+      "impact": "电信软件板块 · 大客户集中度风险",
       "sources": [
         {
-          "name": "The Motley Fool",
-          "url": "https://www.fool.com/investing/2026/11/02/marvell-technology-is-acquiring-lumentum-why-does-the-market-hate-the-move/",
-          "angle": "分析市场为何不买账，提及融资与稀释担忧"
+          "name": "Amdocs 6-K公告",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001062579/000119312526445966/d28441dex991.htm",
+          "angle": "一手公告，FY27指引下调与T-Mobile纠纷的披露"
         },
         {
-          "name": "SEC EDGAR(Lumentum 8-K)",
-          "url": "https://www.sec.gov/Archives/edgar/data/0001633978/000119312526442758/d163169dex991.htm",
-          "angle": "一手公告文件"
+          "name": "Investing.com(盘前异动汇总)",
+          "url": "https://www.investing.com/news/stock-market-news/premarket-movers-trump-media-ai-infrastructure-stocks-fall-amd-jumps-4998777",
+          "angle": "记录盘前跌幅区间"
         }
       ],
       "cross_source": null,
@@ -451,7 +490,67 @@
       "history": null
     },
     {
-      "rank": 6,
+      "rank": 7,
+      "tier": "worth-knowing",
+      "published": "2026-11-04",
+      "headline": "CVS Health宣布拆分为两家独立上市公司，同时上调2026全年业绩指引",
+      "sectors": [
+        "医药",
+        "医疗保险",
+        "企业重组"
+      ],
+      "tickers": [
+        "CVS"
+      ],
+      "body": "CVS Health于11月4日宣布计划拆分为两家独立上市公司，同时上调了2026全年业绩指引；受此消息影响，公司股价盘前下跌约2%。这是大型医药/医疗保险公司今年少见的结构性重组案例，具体两家公司各自的业务范围与拆分时间表，搜索摘要未能提供细节，需以公司官方公告为准。",
+      "why": "\"拆分\"和\"上调指引\"同时出现但股价仍小幅下跌，说明市场对拆分后的执行风险与协同效益仍持观望态度，而不是无条件为重组故事买账。",
+      "impact": "医药/医疗保险板块 · 大型企业重组趋势",
+      "sources": [
+        {
+          "name": "CVS Health 10-Q/公告",
+          "url": "https://www.sec.gov/Archives/edgar/data/0000064803/000006480326000108/cvs-20260930.htm",
+          "angle": "一手备案文件"
+        },
+        {
+          "name": "CNBC(盘前异动汇总)",
+          "url": "https://www.cnbc.com/2026/11/04/stocks-making-the-biggest-moves-premarket-djt-tsla-crwv-nvo.html",
+          "angle": "记录盘前跌幅约2%"
+        }
+      ],
+      "cross_source": null,
+      "assets": [],
+      "history": null
+    },
+    {
+      "rank": 8,
+      "tier": "worth-knowing",
+      "published": "2026-11-04",
+      "headline": "Novo Nordisk三季度明显超预期并上调全年指引，盘前涨约6%，表现强于同业辉瑞",
+      "sectors": [
+        "医药"
+      ],
+      "tickers": [],
+      "body": "诺和诺德(Novo Nordisk)11月4日公布三季度业绩，明显超出市场预期并上调全年指引，盘前股价上涨约6%——涨幅明显大于同日公布财报的辉瑞(辉瑞11/3盘前反应仅约+0.5%，见下文)，具体营收与每股收益数字未能从搜索摘要中获取，需以公司官方公告为准。",
+      "why": "同一周内两家大型药企财报，诺和诺德的市场反应明显更积极，提示投资者在比较同业财报时不能只看\"是否超预期\"这一个维度，前瞻指引与具体业务驱动因素的差异同样重要。",
+      "impact": "医药板块情绪 · 同业比价",
+      "sources": [
+        {
+          "name": "Novo Nordisk 6-K公告",
+          "url": "https://www.sec.gov/Archives/edgar/data/0000353278/000162828026069805/caq32026.htm",
+          "angle": "一手公告"
+        },
+        {
+          "name": "CNBC(盘前异动汇总)",
+          "url": "https://www.cnbc.com/2026/11/04/stocks-making-the-biggest-moves-premarket-djt-tsla-crwv-nvo.html",
+          "angle": "记录盘前涨幅约6%"
+        }
+      ],
+      "cross_source": null,
+      "assets": [],
+      "history": null
+    },
+    {
+      "rank": 9,
       "tier": "worth-knowing",
       "published": "2026-11-03",
       "headline": "9月JOLTS职位空缺公布：约750万，环比增加约33万，裁员率维持窄幅区间，但离职率数据各家口径不一",
@@ -483,7 +582,7 @@
       "history": null
     },
     {
-      "rank": 7,
+      "rank": 10,
       "tier": "worth-knowing",
       "published": "2026-11-03",
       "headline": "苹果股价11月3日继续走低，财报后对存储芯片成本与iPad销量的担忧仍在发酵",
@@ -509,7 +608,7 @@
       "history": null
     },
     {
-      "rank": 8,
+      "rank": 11,
       "tier": "worth-knowing",
       "published": "2026-11-03",
       "headline": "Palantir股价11月3日继续走低，三季度总合同价值(TCV)增速骤降的影响尚未消化完",
@@ -535,7 +634,7 @@
       "history": null
     },
     {
-      "rank": 9,
+      "rank": 12,
       "tier": "worth-knowing",
       "published": "2026-11-03",
       "headline": "辉瑞(Pfizer)三季度财报超预期，上调全年营收与调整后每股收益指引，并任命新任CFO",
@@ -545,9 +644,9 @@
       "tickers": [
         "PFE"
       ],
-      "body": "辉瑞11月3日盘前公布三季度业绩并上调2026全年营收与调整后摊薄每股收益指引：公司新闻稿称上市及收购产品带动营收实现32%的同比运营增长，非新冠产品运营营收增长约7%；同时公司宣布Cecile Guegan将接任首席财务官兼执行副总裁。搜索摘要未能提供具体的营收与每股收益绝对数字，需以公司官方公告为准。",
-      "why": "辉瑞延续了此前几个季度\"上市新药驱动增长\"的叙事，上调全年指引说明管理层对这一趋势的持续性有信心；新任CFO的任命是公司治理层面的变化，值得后续跟踪其对资本配置策略的影响。",
-      "impact": "医药板块情绪 · 公司治理变动",
+      "body": "辉瑞11月3日盘前公布三季度业绩并上调2026全年营收与调整后摊薄每股收益指引：公司新闻稿称上市及收购产品带动营收实现32%的同比运营增长，非新冠产品运营营收增长约7%；同时公司宣布Cecile Guegan将接任首席财务官兼执行副总裁。搜索摘要未能提供具体的营收与每股收益绝对数字，需以公司官方公告为准。股价盘前反应相对温和(约+0.5%)，明显弱于同一周公布财报的诺和诺德(见上文，盘前涨约6%)。",
+      "why": "辉瑞延续了此前几个季度\"上市新药驱动增长\"的叙事，上调全年指引说明管理层对这一趋势的持续性有信心；但与诺和诺德的市场反应对比，提示同为\"超预期上调指引\"的药企财报，市场给予的奖励幅度可以差异很大。",
+      "impact": "医药板块情绪 · 公司治理变动 · 同业比价",
       "sources": [
         {
           "name": "SEC EDGAR(Pfizer 8-K附件)",
@@ -560,38 +659,10 @@
       "history": null
     },
     {
-      "rank": 10,
+      "rank": 13,
       "tier": "worth-knowing",
       "published": "2026-11-03",
-      "headline": "油价11月3日续跌至约103.80美元(仅单一转载来源，未经一手核实)，伊朗局势仍是市场观望焦点",
-      "sectors": [
-        "能源",
-        "大宗商品",
-        "地缘政治"
-      ],
-      "tickers": [],
-      "body": "据TT News转引Bloomberg的报道，布伦特原油11月3日较前一交易日下跌约0.9%，至约103.80美元/桶——这是继11月2日布伦特单日暴跌逾7%(美伊和谈信号压过同日美军打击伊朗格什姆岛的消息)之后的延续走势。本条数字仅来自单一转载来源，原文未能打开核实，另有多个搜索结果给出的布伦特价位互相矛盾(有来源称11月合约升至107美元以上、另有10月下旬的数据显示在114美元上方)，这些均已超出3天时效或缺乏可靠结算价确认，仅供参照，不作为今日数字使用。",
-      "why": "油价在上一轮暴跌后继续小幅走低而非反弹，说明市场仍在观望美伊外交进程能否真正落地为有约束力的安排，供给端风险溢价的回吐趋势尚未逆转。",
-      "impact": "全球原油定价 · 通胀路径",
-      "sources": [
-        {
-          "name": "TT News(转引Bloomberg，原文未能打开，数字置信度较低)",
-          "url": "https://www.ttnews.com/articles/oil-prices-us-attacks-iran",
-          "angle": "唯一给出11/3具体数字的来源"
-        }
-      ],
-      "cross_source": {
-        "agreement": "single",
-        "summary": "本条数字仅有单一转载来源支持，原文未能打开核实，建议读者以交易所结算价为准，此处仅作参照。"
-      },
-      "assets": [],
-      "history": null
-    },
-    {
-      "rank": 11,
-      "tier": "worth-knowing",
-      "published": "2026-11-03",
-      "headline": "英伟达、博通、美光等芯片股11月3日普遍上涨，为AMD财报与今日Kospi芯片股大涨预热",
+      "headline": "英伟达、博通、美光等芯片股11月3日普遍上涨，为AMD财报与今日Kospi芯片股早盘大涨预热",
       "sectors": [
         "半导体"
       ],
@@ -599,7 +670,7 @@
         "NVDA",
         "AVGO"
       ],
-      "body": "据Yahoo Finance与StockTitan的11/3收盘综述，英伟达与美光股价均上涨超2%，博通上涨约3%，AMD在财报公布前盘中已上涨超3%——这批芯片股的集体走强发生在AMD财报公布之前，随后AMD财报的超预期表现又进一步带动11月4日韩国Kospi等亚洲芯片股大涨(见must-read第2条)，形成了跨越两个交易日、跨越美亚两地市场的半导体板块联动。",
+      "body": "据Yahoo Finance与StockTitan的11/3收盘综述，英伟达与美光股价均上涨超2%，博通上涨约3%，AMD在财报公布前盘中已上涨超3%——这批芯片股的集体走强发生在AMD财报公布之前，随后AMD财报的超预期表现又进一步带动11月4日韩国Kospi早盘芯片股大涨(见must-read第2、3条)，形成了跨越两个交易日、跨越美亚两地市场的半导体板块联动。",
       "why": "芯片股在财报前就已经集体走强，说明市场提前押注AMD数据中心业务会有好消息，这种\"提前交易\"的模式值得在后续财报季中继续观察。",
       "impact": "半导体板块情绪 · 美亚市场联动",
       "sources": [
@@ -619,22 +690,23 @@
       "history": null
     },
     {
-      "rank": 12,
+      "rank": 14,
       "tier": "noise",
       "published": "2026-11-04",
-      "headline": "中期选举收尾：阿拉斯加、密西西比两个参议院席位截至发稿仍未被AP判定胜负",
+      "headline": "财报速览：Duolingo盘前涨约16%(上调营收指引)，Block涨约6%(三季度超预期)，Toast跌约5%(超预期但仍跌)",
       "sectors": [
-        "政治"
+        "软件",
+        "金融科技"
       ],
       "tickers": [],
-      "body": "据Time周刊的选举夜数据，截至11月4日发稿，阿拉斯加(计票进度约72%)与密西西比的参议院选举结果AP仍未判定胜负，不影响民主党已经锁定的参议院多数地位，但最终具体席位数仍可能随计票推进小幅调整。",
+      "body": "据CNBC盘前异动汇总，Duolingo在上调营收指引后盘前上涨约16%；Block三季度业绩超预期，盘前涨约6%；Toast业绩超预期但股价盘前仍跌约5%，延续了本财报季\"超预期不一定涨\"的模式。具体数字均为搜索摘要，未经一手公告逐一核对。",
       "why": "",
       "impact": "",
       "sources": [
         {
-          "name": "Time",
-          "url": "https://time.com/article/2026/11/03/midterm-elections-2026-key-races-live-results-polls-latest-news-updates/",
-          "angle": "选举夜实时数据"
+          "name": "CNBC(盘前异动汇总)",
+          "url": "https://www.cnbc.com/2026/11/04/stocks-making-the-biggest-moves-premarket-djt-tsla-crwv-nvo.html",
+          "angle": "汇总多只中小盘股盘前异动"
         }
       ],
       "cross_source": null,
@@ -642,7 +714,7 @@
       "history": null
     },
     {
-      "rank": 13,
+      "rank": 15,
       "tier": "noise",
       "published": "2026-11-04",
       "headline": "加密货币市场结构立法：参议院CLARITY法案9月已搁浅，国会控制权转手后预计需在新一届国会重新审议",
@@ -666,7 +738,7 @@
       "history": null
     },
     {
-      "rank": 14,
+      "rank": 16,
       "tier": "noise",
       "published": "2026-11-02",
       "headline": "Postal Realty Trust宣布季度股息每股0.245美元(日期与数字未经一手核实)",
@@ -691,7 +763,7 @@
       "history": null
     },
     {
-      "rank": 15,
+      "rank": 17,
       "tier": "noise",
       "published": "2026-11-03",
       "headline": "VIX期货11月3日晚间维持在20上方，显示选举结果公布前投资者仍保持谨慎",
