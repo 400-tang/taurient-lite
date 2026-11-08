@@ -1,16 +1,16 @@
 {
-  "scanned_at": "2026-11-07T15:59:26Z",
+  "scanned_at": "2026-11-08T15:47:28Z",
   "asof": "2026-11-06",
   "note": "由 GitHub Actions 扫描并提交，供云端定时任务读取。stage 只描述这只票走到这波的第几天，score 衡量的是「有多早」而不是「有多好」——回测显示本模块无法预测后续涨跌，它的用途是把观察窗口前移，不是给出买卖信号。",
-  "universe_size": 2532,
-  "evaluated": 2523,
-  "failed": 9,
+  "universe_size": 2552,
+  "evaluated": 2549,
+  "failed": 3,
   "stale": 0,
   "counts": {
-    "ignition": 26,
-    "continuation": 532,
-    "base": 1793,
-    "extended": 91
+    "ignition": 28,
+    "continuation": 538,
+    "base": 1830,
+    "extended": 97
   },
   "candidates": [
     {
@@ -334,6 +334,22 @@
       "score": 95.26
     },
     {
+      "ticker": "BOBS",
+      "date": "2026-11-06",
+      "close": 19.42,
+      "change_pct": -0.26,
+      "rvol": 4.38,
+      "dollar_volume": 13784024,
+      "ext_ma20": 0.2049,
+      "closing_range": 0.433,
+      "breakout_age": 1,
+      "run_from_base": 0.4961,
+      "base_tightness": 0.5008,
+      "gap_pct": -1.75,
+      "stage": "ignition",
+      "score": 93.25
+    },
+    {
       "ticker": "U",
       "date": "2026-11-06",
       "close": 51.49,
@@ -428,6 +444,22 @@
       "gap_pct": 0.02,
       "stage": "ignition",
       "score": 87.61
+    },
+    {
+      "ticker": "DNUT",
+      "date": "2026-11-06",
+      "close": 4.17,
+      "change_pct": -9.35,
+      "rvol": 2.98,
+      "dollar_volume": 15548739,
+      "ext_ma20": 0.301,
+      "closing_range": 0.537,
+      "breakout_age": 1,
+      "run_from_base": 0.484,
+      "base_tightness": 0.3167,
+      "gap_pct": -3.48,
+      "stage": "ignition",
+      "score": 87.6
     },
     {
       "ticker": "AHR",
@@ -618,38 +650,6 @@
       "run_from_base": 0.2561,
       "base_tightness": 0.256,
       "gap_pct": -1.2,
-      "stage": "continuation",
-      "score": 60.0
-    },
-    {
-      "ticker": "RDY",
-      "date": "2026-11-06",
-      "close": 14.91,
-      "change_pct": 2.62,
-      "rvol": 0.97,
-      "dollar_volume": 40975596,
-      "ext_ma20": 0.0929,
-      "closing_range": 1.0,
-      "breakout_age": 0,
-      "run_from_base": 0.2954,
-      "base_tightness": 0.2858,
-      "gap_pct": -0.69,
-      "stage": "continuation",
-      "score": 60.0
-    },
-    {
-      "ticker": "SUZ",
-      "date": "2026-11-06",
-      "close": 9.66,
-      "change_pct": 1.68,
-      "rvol": 2.04,
-      "dollar_volume": 36130311,
-      "ext_ma20": 0.0882,
-      "closing_range": 0.985,
-      "breakout_age": 0,
-      "run_from_base": 0.2377,
-      "base_tightness": 0.2325,
-      "gap_pct": -0.74,
       "stage": "continuation",
       "score": 60.0
     }
