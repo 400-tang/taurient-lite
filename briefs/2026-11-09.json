@@ -1,0 +1,1173 @@
+{
+  "date": "2026-11-09",
+  "weekday": "Monday",
+  "edition": "Week-ahead edition",
+  "generated_at": "2026-11-09 06:40 PT",
+  "scanned": 78,
+  "kept": 18,
+  "thesis": "英伟达董事会周日(11/8)宣布启动独立调查，CEO黄仁勋承认与一名被怀疑受中国情报机构利用接近他的高管有婚外情，NVDA盘前跌约5%，国会方面已要求他11/18列席闭门简报但尚未获确认。同一天，中国正式确认将对美24%关税暂停延长至2027年1月10日，排除了周二CPI发布日原本可能撞上的关税到期风险。上周四因国会变天引发的AI监管抛售、周五部分收复失地的弧线仍未走完，周二的10月CPI将是下一个关键变量。",
+  "tape": {
+    "asof": "上一收盘 · 周五 11/6",
+    "rows": [
+      {
+        "name": "S&P 500",
+        "value": "7,376.86",
+        "change": "+0.3%，当周仍跌约2.7%",
+        "dir": "up"
+      },
+      {
+        "name": "Nasdaq Composite",
+        "value": "24,579.42",
+        "change": "+1.1%，当周仍跌约3.4%",
+        "dir": "up"
+      },
+      {
+        "name": "Dow Jones",
+        "value": "51,285.73",
+        "change": "-0.5%，当周跌约0.9%",
+        "dir": "down"
+      },
+      {
+        "name": "US 10Y yield",
+        "value": "4.86%",
+        "change": "周一亚洲时段据报再升约1个基点至4.87%",
+        "dir": "up"
+      },
+      {
+        "name": "Brent crude",
+        "value": "$98.32",
+        "change": "结算价，当周走势剧烈（跌超8%后反弹），各家周跌幅口径12%-16%不等",
+        "dir": "flat"
+      }
+    ]
+  },
+  "items": [
+    {
+      "rank": 1,
+      "tier": "must-read",
+      "published": "2026-11-08",
+      "headline": "英伟达董事会启动独立调查：CEO黄仁勋承认与涉中国情报关联的高管有婚外情，NVDA盘前跌约5%",
+      "sectors": [
+        "半导体",
+        "AI",
+        "公司治理",
+        "国家安全"
+      ],
+      "tickers": [
+        "NVDA"
+      ],
+      "body": "英伟达董事会于11月8日（周日）发布声明称已启动一项独立调查，由独立董事组成的委员会在外部独立律师协助下主导。起因是有报道称CEO黄仁勋与Megaspeed公司高管Alice Huang（与黄仁勋无亲属关系）存在密切关系，美国情报部门怀疑这段关系可能被中方用于接近黄仁勋收集信息；不同报道对具体指控的表述不完全一致，有的侧重\"中国国家安全部借此接近黄仁勋\"，也有报道提到对Megaspeed本身是否协助芯片流入中国的怀疑。黄仁勋11/8致员工邮件中承认与该女子有婚外情、未履行对家人的责任（多家媒体转述其邮件大意，具体措辞未经一手原文核实）；此前他曾将双方往来描述为\"完全正常、不寻常的商业接触\"。董事会声明称目前没有证据显示公司机密或美国国家安全受损，并表示黄仁勋将不受影响地继续担任CEO。Megaspeed此前已因被怀疑帮助中国企业绕开AI芯片出口管制而受美国官方关注（参议员Tom Cotton此前要求商务部调查，新加坡政府也已介入）。三名共和党众议院委员会主席此前（11/4）已致函要求黄仁勋就与Alice Huang的往来及公司反间谍安全协议作出说明，并要求其在11/11前确认是否接受11/18的闭门简报安排，截至本期简报截稿未见其回应的报道。英伟达股价周一盘前一度下跌约5%。",
+      "why": "这不是公司业务层面的坏消息，而是CEO本人承认婚外情、且被卷入国家安全调查的治理危机，正好发生在上周AI监管担忧引发大盘抛售、英伟达股价尚未完全修复之际。公司明确表态黄仁勋留任，但调查结论如何、国会方面11/18简报能否如期举行，都会在未来几周持续牵动AI硬件板块的情绪。",
+      "impact": "NVDA · AI芯片板块情绪 · 对华芯片出口管制执法力度",
+      "sources": [
+        {
+          "name": "NVIDIA Investor Relations（董事会声明）",
+          "url": "https://investor.nvidia.com/news/press-release-details/2026/Statement-from-NVIDIA-Board-of-Directors/",
+          "angle": "董事会声明原文页面，确认独立调查、无证据显示机密受损、黄仁勋留任CEO"
+        },
+        {
+          "name": "Axios",
+          "url": "https://www.axios.com/2026/11/08/nvidia-ceo-jensen-huang-admits-affair-board-to-launch-investigation",
+          "angle": "标题直接点出\"黄仁勋承认婚外情，董事会将启动调查\""
+        },
+        {
+          "name": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-11-08/nvidia-board-to-probe-spying-case-after-ceo-jensen-huang-admits-infidelity",
+          "angle": "把婚外情承认与间谍指控调查并列报道"
+        },
+        {
+          "name": "CBS News",
+          "url": "https://www.cbsnews.com/news/nvidia-jensen-huang-investigation-china-intelligence/",
+          "angle": "董事会声明口径，强调无证据显示国家安全或商业机密受损"
+        },
+        {
+          "name": "NBC News",
+          "url": "https://www.nbcnews.com/tech/tech-news/nvidia-ceo-jensen-huang-investigation-rcna608148",
+          "angle": "强调这是\"婚外情+涉嫌中国间谍\"的双重性质，转述情报机构认定说法"
+        },
+        {
+          "name": "Implicator.ai（国会函件）",
+          "url": "https://implicator.ai/gop-leaders-three-house-committees-ask-jensen-huang-closed",
+          "angle": "三名共和党主席11/4致函细节，要求11/11前确认是否接受11/18简报"
+        }
+      ],
+      "assets": [
+        {
+          "asset_class": "美股",
+          "direction": "down",
+          "conviction": "medium",
+          "note": "NVDA盘前跌约5%，作为AI硬件板块龙头，情绪拖累可能外溢至其他芯片股，但美股现货市场尚未开盘检验。"
+        }
+      ],
+      "cross_source": {
+        "agreement": "split",
+        "summary": "Axios、Bloomberg、CBS、NBC等对董事会11/8启动调查、黄仁勋承认婚外情、董事会称无证据显示机密受损这几项核心事实口径一致；分歧在于对\"中方指控\"本身的具体表述——有的报道侧重\"中国国家安全部借此接近黄仁勋收集信息\"，另一些报道的措辞更偏向Megaspeed公司层面涉嫌协助芯片流入中国。另外，Megaspeed两年内采购英伟达芯片的具体金额（曾见\"48亿美元\"的说法）本次核查未能找到可独立确认的来源，已从正文中移除，不作为确定数字引用。"
+      },
+      "history": {
+        "summary": "Megaspeed与中国关联的嫌疑并非新事：自2025年底《纽约时报》等媒体首次质疑其是否在帮中国企业绕开出口管制以来，美国商务部、参议员Cotton、新加坡政府和美国国会「中国特别委员会」已先后介入调查；这次曝出的是黄仁勋个人与该公司高管的关系，把公司合规问题升级为CEO本人的问题。",
+        "timeline": [
+          {
+            "when": "2025年底起",
+            "event": "《纽约时报》等报道质疑Megaspeed是否帮中国企业绕开美国对华AI芯片出口管制"
+          },
+          {
+            "when": "此后",
+            "event": "参议员Tom Cotton要求商务部调查，新加坡政府介入调查，黄仁勋当时将与Alice Huang的往来称为\"完全正常的商业接触\""
+          },
+          {
+            "when": "10月",
+            "event": "《纽约时报》调查报道称美国情报部门评估这段关系可能被中方用于接近黄仁勋"
+          },
+          {
+            "when": "11/4",
+            "event": "三名共和党众院委员会主席致函黄仁勋，要求其11/11前确认是否接受11/18闭门简报"
+          },
+          {
+            "when": "11/8（周日）",
+            "event": "英伟达董事会宣布启动独立调查，黄仁勋致员工邮件承认与Alice Huang有婚外情"
+          },
+          {
+            "when": "11/9",
+            "event": "NVDA盘前跌约5%；黄仁勋是否接受11/18简报截至发稿未见回应"
+          }
+        ]
+      }
+    },
+    {
+      "rank": 2,
+      "tier": "must-read",
+      "published": "2026-11-09",
+      "headline": "本周焦点：周二10月CPI数据、英伟达11/17财报日期因CEO调查添不确定性、12月8-9日FOMC决议",
+      "sectors": [
+        "宏观",
+        "利率",
+        "财报日历"
+      ],
+      "tickers": [
+        "NVDA"
+      ],
+      "body": "本周最重要的已知日程：美国劳工统计局将于周二(11/10)美东8:30公布10月CPI数据，是上周AI监管抛售后市场情绪能否企稳的下一个关键变量。英伟达此前已通过官方新闻稿确认，将于11月17日（周二）美西下午2点/美东下午5点召开电话会议，讨论截至10月25日的2027财年第三季度业绩；但这次财报前一天（11/18）黄仁勋还需列席国会三名共和党委员会主席安排的闭门简报会，CEO调查给原本例行的财报日程添加了新的不确定性。再往后，联储12月议息会议定在12月8-9日（周二至周三），决议于12月9日美东14:00公布。",
+      "why": "三件事叠在一起：CPI决定联储12月是否有更多降息空间，英伟达财报决定AI资本开支叙事能否重新获得支撑，而CEO调查的进展可能在财报发布前就影响市场对英伟达管理层稳定性的判断。三条线如果同时出现意外，波动率会明显放大。",
+      "impact": "全市场 · 利率预期 · AI硬件板块",
+      "sources": [
+        {
+          "name": "BLS",
+          "url": "https://www.bls.gov/news.release/cpi.htm",
+          "angle": "10月CPI官方发布日程"
+        },
+        {
+          "name": "NVIDIA Newsroom",
+          "url": "https://nvidianews.nvidia.com/news/nvidia-sets-conference-call-for-third-quarter-financial-results-6928873",
+          "angle": "官方确认财报电话会日期与时间"
+        },
+        {
+          "name": "CNBC（国会反应）",
+          "url": "https://www.cnbc.com/2026/11/08/jensen-huang-nvidia-china-spy-congress.html",
+          "angle": "国会闭门简报安排在11/18，紧邻英伟达财报前一天"
+        }
+      ],
+      "assets": [
+        {
+          "asset_class": "美股",
+          "direction": "mixed",
+          "conviction": "medium",
+          "note": "CPI数据与英伟达财报都是双向风险事件，本周波动率大概率高于平常。"
+        },
+        {
+          "asset_class": "美债",
+          "direction": "none",
+          "conviction": "low",
+          "note": "12月FOMC决议已有明确日期，但市场对加/降息方向的定价本周仍可能随CPI数据大幅摆动。"
+        }
+      ],
+      "cross_source": {
+        "agreement": "single",
+        "summary": "三个日期分别来自官方发布机构（BLS、英伟达官方新闻稿、国会委员会通过CNBC转述的安排），各自独立，没有相互冲突，但本次未能用WebFetch直接打开federalreserve.gov或SEC EDGAR原文核实，均基于搜索结果对官方页面的转述。"
+      },
+      "history": {
+        "summary": "联储10月28日的会议维持利率在3.75%-4.00%不变，两票反对倾向立即加息；本周CPI将是12月会议前最重要的数据点。",
+        "timeline": [
+          {
+            "when": "10/28",
+            "event": "联储维持利率3.75%-4.00%不变，两票反对倾向立即加息"
+          },
+          {
+            "when": "11/10",
+            "event": "10月CPI数据发布"
+          },
+          {
+            "when": "11/17",
+            "event": "英伟达FY2027三季度财报"
+          },
+          {
+            "when": "12/8-12/9",
+            "event": "12月FOMC议息会议"
+          }
+        ]
+      }
+    },
+    {
+      "rank": 3,
+      "tier": "must-read",
+      "published": "2026-11-09",
+      "headline": "中国周一正式确认将对美24%加征关税的暂停延长两个月至2027年1月10日，为周二关税到期前排除了一大不确定性",
+      "sectors": [
+        "宏观",
+        "贸易",
+        "中美关系"
+      ],
+      "tickers": [],
+      "body": "中国国务院关税税则委员会周一（11/9）正式公告，将对美国商品加征的24%关税暂停期再延长两个月，北京时间11月10日13:01起生效，同时保留10%的基础关税；商务部同日公告，将对27个美国关联实体（11家列入不可靠实体清单、16家列入出口管制管控名单）的反制措施暂停两个月，并将稀土出口管制相关豁免延长至2027年1月10日。这是对9月23日财政部长贝森特（Bessent）宣布的\"延长至2027年1月10日\"协议的正式落地——当时中美原定的关税休战本应在11月到期，9月双方已口头同意延长，本周一是中方正式给出文件化确认的一天。贝森特此前表示，更全面的经贸协议能否在明年1月前达成仍不确定。",
+      "why": "这条新闻排除了本周二（10月CPI发布当天，也是原定关税到期日）市场最担心的一个尾部风险——关税休战意外到期引发新一轮贸易摩擦。休战延长意味着未来两个月中美科技与贸易关系至少维持现状，这是对冲上周AI监管抛售情绪的一个正面因素。",
+      "impact": "全市场 · 中美贸易链条 · 科技股供应链",
+      "sources": [
+        {
+          "name": "新华社（Xinhua）",
+          "url": "https://english.news.cn/20261109/4c85025bfdf944c5aab884cc444abb7c/c.html",
+          "angle": "中方11/9当天官方口径报道"
+        },
+        {
+          "name": "CGTN",
+          "url": "https://news.cgtn.com/news/2026-11-09/China-extends-suspension-of-additional-24-tariff-on-US-goods-1RVryl8Dm9i/p.html",
+          "angle": "给出北京时间11/10 13:01生效的具体时点"
+        },
+        {
+          "name": "BusinessWorld（转Reuters）",
+          "url": "https://bworldonline.com/world/2026/11/09/792445/china-extends-suspensions-of-24-tariff-on-us-goods-port-fees-on-us-ships-for-two-months/",
+          "angle": "给出27个实体（11+16）反制暂停与稀土管制延长的细节"
+        },
+        {
+          "name": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-09-23/bessent-says-us-china-agreed-to-extend-trade-truce-to-jan-10",
+          "angle": "9/23贝森特原始宣布，延长至2027年1月10日"
+        }
+      ],
+      "assets": [
+        {
+          "asset_class": "美股",
+          "direction": "up",
+          "conviction": "low",
+          "note": "排除了关税到期的尾部风险，对科技/贸易敏感板块情绪偏正面，但本身不是增量利好，更多是维持现状。"
+        },
+        {
+          "asset_class": "海外股市",
+          "direction": "up",
+          "conviction": "low",
+          "note": "对中国及亚洲出口链条是维持现状的利好，但当日亚太股市的反弹主要驱动因素是芯片股情绪修复，不完全归因于此。"
+        }
+      ],
+      "cross_source": {
+        "agreement": "aligned",
+        "summary": "新华社、CGTN、BusinessWorld（转Reuters）、TimesLive等多家11/9当天报道对关税暂停延长、北京时间11/10 13:01生效、保留10%基础关税、27个实体反制暂停、稀土管制延长至明年1月这几项细节口径一致。9月23日贝森特原始宣布的\"延长至2027年1月10日\"也有Bloomberg、CNBC等多方交叉确认。"
+      },
+      "history": {
+        "summary": "这是9月23日贝森特宣布的\"延长至2027年1月10日\"协议的正式落地，原定11月到期的关税休战因此被确认顺延。",
+        "timeline": [
+          {
+            "when": "9/23",
+            "event": "财政部长贝森特宣布中美同意将关税休战延长至2027年1月10日"
+          },
+          {
+            "when": "11/9",
+            "event": "中国商务部正式确认24%加征关税暂停延长两个月，北京时间11/10 13:01生效"
+          }
+        ]
+      }
+    },
+    {
+      "rank": 4,
+      "tier": "worth-knowing",
+      "published": "2026-11-09",
+      "headline": "亚太股市周一据报反弹，摆脱上周芯片股暴跌，但具体涨跌数字本次未能找到第二方独立确认",
+      "sectors": [
+        "海外股市",
+        "半导体",
+        "美股大盘"
+      ],
+      "tickers": [
+        "TSM"
+      ],
+      "body": "据investingLive等财经媒体综合报道，周一(11/9)亚太股市出现反弹，日股、台股、韩股均录得上涨，被形容为\"摆脱上周因AI监管担忧引发的芯片股暴跌\"。原始报道给出的具体涨跌百分比（日经、台湾加权指数、KOSPI、恒生指数、MSCI亚太指数等）本次核查未能找到第二家独立信源交叉确认，布伦特原油\"周一在97美元附近徘徊\"的说法同样未能独立核实，故本条不在正文引用具体数字，只记录\"据报反弹\"这一方向性事实，供读者参考，不作为确定数据使用。",
+      "why": "如果反弹属实，说明亚洲投资者暂时把上周的AI监管抛售定价为过度反应；但由于具体数字无法交叉核实，这条只作背景参考，不构成独立的资产定价判断。",
+      "impact": "半导体供应链 · 亚太股市 · 美股开盘情绪",
+      "sources": [
+        {
+          "name": "investingLive",
+          "url": "https://investinglive.com/news/investinglive-asia-pacific-market-news-asia-shrugs-off-nvidia-scandal-oil-steadies/",
+          "angle": "唯一给出具体涨跌数字的报道，但本次未能找到第二方独立确认"
+        }
+      ],
+      "history": {
+        "summary": "上周四(11/5)美股因AI监管担忧暴跌，带崩了周五亚洲早盘的台积电、SK海力士等芯片股；周五美股自身收复部分跌幅但全周仍为负；周一亚太市场的反弹是这条弧线上的最新一段，叠加了英伟达CEO丑闻这个新变量。",
+        "timeline": [
+          {
+            "when": "11/5",
+            "event": "美股因AI监管担忧暴跌，带崩周五亚洲早盘芯片股"
+          },
+          {
+            "when": "11/6",
+            "event": "美股自身收复部分跌幅但全周仍跌"
+          },
+          {
+            "when": "11/9",
+            "event": "据报亚太股市反弹，具体数字未经交叉核实"
+          }
+        ]
+      }
+    },
+    {
+      "rank": 5,
+      "tier": "worth-knowing",
+      "published": "2026-11-05",
+      "headline": "【旧闻·回顾】周四(11/5)美股因国会变天引发AI监管担忧暴跌：标普跌4.35%至7,353.73，纳指综合跌5.52%至24,315.00，为2025年4月以来最差单日",
+      "sectors": [
+        "宏观",
+        "半导体",
+        "AI监管"
+      ],
+      "tickers": [
+        "NVDA",
+        "MU",
+        "AMD"
+      ],
+      "body": "【这是上周四的旧闻，作为本周走势的背景保留；周一的最新进展见前两条must-read。】11/3中期选举民主党赢得国会两院控制权后，市场担心联邦与州层面收紧数据中心建设与AI监管。11/5道指跌1,833.06点(-3.44%)至51,523.06点，标普500跌334.89点(-4.35%)至7,353.73点，为2025年4月以来最差单日；纳斯达克综合指数跌1,421.52点(-5.52%)至24,315.00点，较10月高点回落超10%，进入技术性回调；纳指100跌约6.36%，为2020年以来最差单日。费城半导体指数跌约12%（各家口径在10%-12.3%之间）。个股层面，美光跌幅各家报道不一（13%-17.5%），AMD、SK海力士、英伟达（约5%-9%）跌幅也存在分歧。",
+      "why": "这是触发本周整条弧线的起点：从周四的暴跌，到周五部分修复，再到周一亚太反弹与英伟达CEO丑闻，都是这条主线的延续。",
+      "impact": "全市场 · AI硬件供应链",
+      "sources": [
+        {
+          "name": "WUNC/NPR（转载）",
+          "url": "https://www.wunc.org/2026-11-05/fears-of-an-ai-crackdown-after-midterms-spark-2-trillion-rout-in-tech-stocks",
+          "angle": "政策担忧叙事，市值蒸发约2万亿美元的估算"
+        },
+        {
+          "name": "NPR（经STLPR转载）",
+          "url": "https://www.stlpr.org/npr/2026-11-05/fears-of-an-ai-crackdown-after-midterms-spark-2-trillion-rout-in-tech-stocks",
+          "angle": "同一篇NPR稿件的另一转载版本"
+        },
+        {
+          "name": "political.org",
+          "url": "https://political.org/2026/11/05/wall-street-plunges-as-nasdaq-enters-correction-with-ai-and-chip-stocks-hit-hardest-after-democrats-midterm-wins/",
+          "angle": "纳指进入调整区间，AI与芯片股跌幅最大"
+        }
+      ],
+      "assets": [
+        {
+          "asset_class": "美股",
+          "direction": "down",
+          "conviction": "high",
+          "note": "三大指数全线重挫，纳指进入技术性回调。"
+        }
+      ]
+    },
+    {
+      "rank": 6,
+      "tier": "worth-knowing",
+      "published": "2026-11-06",
+      "headline": "周五美股收复部分跌幅：标普+0.3%至7,376.86，纳指+1.1%至24,579.42，道指-0.5%至51,285.73；但全周纳指仍跌约3.4%",
+      "sectors": [
+        "美股大盘"
+      ],
+      "tickers": [
+        "NVDA",
+        "MU"
+      ],
+      "body": "周五(11/6)美股收复周四暴跌的部分跌幅：标普500涨23.13点(+0.3%)至7,376.86点，纳斯达克综合指数涨264.43点(+1.1%)至24,579.42点，道琼斯工业指数跌237.33点(-0.5%)至51,285.73点。但就全周而言，标普500跌约2.7%，纳指跌约3.4%，道指跌约0.9%，说明周五的反弹并未抹去本周的损失。10月非农数据（见下条）同日公布，被解读为推高周五反弹的部分原因。",
+      "why": "周一亚太市场的反弹是在这个「没有完全收复失地」的基础上展开的，说明上周的AI监管抛售叙事还没有真正消退。",
+      "impact": "全市场",
+      "sources": [
+        {
+          "name": "CNBC",
+          "url": "https://www.cnbc.com/2026/11/05/stock-market-today-live-updates.html",
+          "angle": "AP通讯社口径的周五收盘数字"
+        },
+        {
+          "name": "STL.News",
+          "url": "https://www.stl.news/stock-market-weekly-update-november-6-2026/",
+          "angle": "给出全周跌幅：纳指-3.4%、标普-2.7%、道指-0.9%"
+        }
+      ],
+      "assets": [
+        {
+          "asset_class": "美股",
+          "direction": "mixed",
+          "conviction": "medium",
+          "note": "单日反弹但全周仍录得跌幅，说明抛售情绪只是部分缓解。"
+        }
+      ]
+    },
+    {
+      "rank": 7,
+      "tier": "worth-knowing",
+      "published": "2026-11-05",
+      "headline": "美光(MU)周四暴跌，各家跌幅口径不一(13%-17.5%)，传闻与台湾存储芯片厂计划暂停有关",
+      "sectors": [
+        "半导体",
+        "存储"
+      ],
+      "tickers": [
+        "MU",
+        "SNDK"
+      ],
+      "body": "美光11/5收跌，具体跌幅各家报道差异较大：多数来源给出约17%-17.5%（INDMoney称17.46%，Trefis称约17.5%），但TIKR标题称跌13%；同日SanDisk跌约22%。Trefis转述彭博报道称，美光暂停了台湾45亿美元存储芯片厂计划，是股价跳水的直接原因之一；此前11/2美光已因日本存储厂Kioxia的谨慎指引和AI资本开支担忧下跌。",
+      "why": "存储芯片是AI数据中心资本开支的直接下游，美光的跌幅差异本身反映了市场在这条新闻上还没有形成共识的归因。",
+      "impact": "MU · 存储芯片供应链",
+      "sources": [
+        {
+          "name": "Trefis",
+          "url": "https://www.trefis.com/stock/mu/articles/623345/what-sent-micron-stock-lower/2026-11-06",
+          "angle": "把跌幅归因到彭博关于台湾工厂暂停的报道"
+        },
+        {
+          "name": "INDMoney",
+          "url": "https://www.indmoney.com/blog/us-stocks/inside-sandisk-sndk-micron-mu-stock-crash",
+          "angle": "给出SanDisk跌22%与费城半导体指数约跌12%的同日对照"
+        },
+        {
+          "name": "TIKR",
+          "url": "https://www.tikr.com/blog/micron-sinks-13-as-chip-rout-deepens-and-4-5-billion-taiwan-plant-stalls",
+          "angle": "标题口径为跌13%，与多数来源的17%+存在冲突"
+        }
+      ],
+      "assets": [
+        {
+          "asset_class": "美股",
+          "direction": "down",
+          "conviction": "medium",
+          "note": "存储芯片股跌幅各家口径不一，但方向一致为大跌。"
+        }
+      ]
+    },
+    {
+      "rank": 8,
+      "tier": "worth-knowing",
+      "published": "2026-11-06",
+      "headline": "10月非农新增16.5万人远超预期，失业率降至4.1%，但发布时市场情绪已被AI监管抛售笼罩",
+      "sectors": [
+        "宏观",
+        "就业",
+        "利率"
+      ],
+      "body": "美国劳工统计局10月非农报告显示，新增就业165,000人，远超市场预期（约5.9万-6.5万，不同来源口径不一）；失业率从9月的4.2%降至4.1%；平均时薪环比+0.4%（为2026年1月以来最大环比涨幅）、同比+3.1%；8、9月数据合计上修约8.4万人；专业及商业服务业新增7万个岗位。广义失业率(U-6)升至7.9%（前值7.6%）。下一次非农（11月数据）定于2026年12月4日公布。",
+      "why": "这是三倍多于预期的就业增长，本该是纯粹的经济韧性信号，但发布时点恰好在周四科技股暴跌之后，市场正在同时消化「劳动力市场稳」和「AI交易脆弱」两条相互矛盾的叙事。",
+      "impact": "全市场 · 利率预期",
+      "sources": [
+        {
+          "name": "ABC7 News",
+          "url": "https://abc7news.com/story/us-employers-added-surprising-165000-jobs-october-unemployment-rate-dipped-41/20020018/",
+          "angle": "通讯社口径，突出失业率回落"
+        },
+        {
+          "name": "KY3",
+          "url": "https://www.ky3.com/2026/11/06/us-adds-165000-jobs-october-hiring-rebounds/",
+          "angle": "给出U-6、时薪、上修等细节"
+        }
+      ],
+      "assets": [
+        {
+          "asset_class": "美元",
+          "direction": "up",
+          "conviction": "low",
+          "note": "数据超预期后美元指数走高，但当日股市反应被AI抛售主导，信号被部分掩盖。"
+        }
+      ]
+    },
+    {
+      "rank": 9,
+      "tier": "worth-knowing",
+      "published": "2026-11-05",
+      "headline": "Cloudflare第三季度营收同比增长39%并上调全年指引，财报后盘后大涨",
+      "sectors": [
+        "云计算",
+        "网络安全"
+      ],
+      "tickers": [
+        "NET"
+      ],
+      "body": "Cloudflare 2026年第三季度(11/5发布)营收7.825亿美元，同比+39%，是近四年来最快的营收增速；调整后EPS 0.38美元，高于预期的0.34美元；全年调整后EPS指引上调至1.35美元（原预期1.26美元）。GAAP净亏损3,410万美元，主因股权激励费用。股价11/5盘中随科技股下跌约8.77%，但盘后与11/6盘前大涨，具体涨幅各家口径不一（约11%至超14%）。",
+      "why": "在AI基建股普遍承压的同一周，Cloudflare凭实打实的营收增速逆势大涨，说明市场仍愿意为「已兑现的业绩」买单，只是不愿意为「尚未兑现的AI资本开支前景」买单。",
+      "impact": "NET · 云/边缘计算",
+      "sources": [
+        {
+          "name": "TIKR",
+          "url": "https://www.tikr.com/blog/cloudflare-soars-11-on-fastest-revenue-growth-in-nearly-four-years-an-even-higher-gear",
+          "angle": "营收增速为近四年最快，股价涨约11%"
+        },
+        {
+          "name": "Finviz",
+          "url": "https://finviz.com/news/418221/cloudflare-shares-surge-over-14-as-third-quarter-revenue-jumps-39-and-company-raises-2026-outlook",
+          "angle": "盘前涨幅超14%的说法，与TIKR的11%不一致"
+        }
+      ]
+    },
+    {
+      "rank": 10,
+      "tier": "worth-knowing",
+      "published": "2026-11-05",
+      "headline": "Airbnb第三季度营收同比+19%，上调全年指引并新增120亿美元回购，但股价反应平淡、各方评价分歧",
+      "sectors": [
+        "消费互联网"
+      ],
+      "tickers": [
+        "ABNB"
+      ],
+      "body": "Airbnb 2026年第三季度(11/5发布)营收约48.7亿美元，同比+19%，高于约47.5亿美元的一致预期；入住与预订量同比+16%至1.55亿；稀释后EPS 3.16美元（去年同期2.21美元，增幅部分来自税务因素而非经营改善）。第四季度营收指引32.2-32.8亿美元；本季回购约7亿美元，并新增120亿美元回购授权。但股价反应各方评价不一：部分报道称EPS「不及预期」，11/7盘前股价小幅下跌。",
+      "why": "财报本身数字亮眼，但市场反应平淡，说明投资者对消费互联网类公司的估值容忍度在AI抛售后的环境里也变得更苛刻。",
+      "impact": "ABNB",
+      "sources": [
+        {
+          "name": "MarketBeat",
+          "url": "https://www.marketbeat.com/instant-alerts/transcript-airbnb-q3-earnings-call-highlights-2026-11-05/",
+          "angle": "财报电话会要点，11/7盘前小跌"
+        },
+        {
+          "name": "RTTNews",
+          "url": "https://www.rttnews.com/3592395/airbnb-inc-q3-income-advances-but-misses-estimates.aspx",
+          "angle": "利润增长但「不及预期」的标题口径"
+        }
+      ]
+    },
+    {
+      "rank": 11,
+      "tier": "worth-knowing",
+      "published": "2026-11-05",
+      "headline": "【旧闻+周一更新】美伊局势：油价本周经历剧烈震荡，11/4暴跌超8%后反弹，周一油价大致持平、伊朗局势信号不一",
+      "sectors": [
+        "地缘",
+        "能源"
+      ],
+      "body": "【旧闻背景：】布伦特原油11/4暴跌超8%至两个月低点（约95美元附近，不同来源口径不一），11/5反弹近4%至98.29美元，11/6结算价98.32美元；这一周布伦特经历了2020年4月以来最大单周跌幅，各家对具体周跌幅的口径在12%-16%之间，没有统一数字。11/5伊朗革命卫队方面称有油轮遇袭/触雷，但未见权威机构独立证实；此前特朗普据报在考虑新一轮对伊军事行动。【周一(11/9)新进展：】据investingLive等多家媒体综合报道，周一亚洲时段油价大致持平，布伦特在97美元附近徘徊，报道称走势受「伊朗局势信号不一」影响，但具体是哪些信号未能找到可独立核实的一手信息，本期简报不做展开。",
+      "why": "油价本周的剧烈双向波动说明市场对伊朗局势的定价极不稳定，这也是联储在就业数据走强后，仍需要在通胀与增长之间找平衡的背景之一。",
+      "impact": "能源板块 · 通胀路径",
+      "sources": [
+        {
+          "name": "The Star (Xinhua转载)",
+          "url": "https://www.thestar.com.my/news/world/2026/11/07/crude-futures-settle-higher",
+          "angle": "布伦特11/6结算价98.32美元"
+        },
+        {
+          "name": "investingLive（亚太晨报）",
+          "url": "https://investinglive.com/news/investinglive-asia-pacific-market-news-asia-shrugs-off-nvidia-scandal-oil-steadies/",
+          "angle": "周一油价大致持平，伊朗信号不一"
+        }
+      ],
+      "assets": [
+        {
+          "asset_class": "大宗商品",
+          "direction": "mixed",
+          "conviction": "medium",
+          "note": "本周经历剧烈双向波动，周一大致持平，方向不明确。"
+        }
+      ]
+    },
+    {
+      "rank": 12,
+      "tier": "worth-knowing",
+      "published": "2026-11-05",
+      "headline": "OpenAI发布「国家社区公约」与「算力园区政策蓝图」，回应中期选举后的数据中心反弹情绪",
+      "sectors": [
+        "AI政策",
+        "数据中心"
+      ],
+      "body": "OpenAI于11/5发布「国家社区公约」（National Community Compact）与「算力园区政策蓝图」（Compute Campus Policy Blueprint），被分析称为自愿性基础设施承诺。报道指出，联邦层面的AI与数据中心立法预计仍需较长时间，监管压力主要来自州与地方层面（Oxford Economics分析师Bernard Yaros的观点）。",
+      "why": "这是AI公司在中期选举后主动释放善意信号的动作，说明行业已经把「监管风险」当成本周需要管理的公共关系问题，而不只是等政策落地。",
+      "impact": "AI公司公关与政策策略",
+      "sources": [
+        {
+          "name": "AI Business",
+          "url": "https://aibusiness.com/data-centers/enterprises-face-tougher-ai-regulatory-landscape",
+          "angle": "企业端合规视角，关注选后监管环境变化"
+        },
+        {
+          "name": "Implicator.ai",
+          "url": "https://www.implicator.ai/ai-companies-turn-after-midterm-data-center-revolt.md",
+          "angle": "AI公司如何应对中期选举后的数据中心反弹情绪"
+        }
+      ]
+    },
+    {
+      "rank": 13,
+      "tier": "noise",
+      "published": "2026-11-06",
+      "headline": "自选股FINRA空头持仓快照(10/15结算)：苹果、微软空头环比上升，英伟达、特斯拉、AMD、博通、Coinbase环比下降",
+      "sectors": [
+        "仓位"
+      ],
+      "tickers": [
+        "NVDA",
+        "TSLA",
+        "AAPL",
+        "MSFT",
+        "AVGO",
+        "AMD",
+        "PLTR",
+        "COIN"
+      ],
+      "body": "FINRA官方数据（10/15结算）：苹果空头股数较上期+8.97%，微软+7.43%；英伟达-3.14%，特斯拉-2.23%，博通-1.08%，AMD-2.96%，Coinbase-2.49%；Palantir基本持平(+0.91%)。回补天数：苹果3.71天，微软3.18天，英伟达2.91天。",
+      "sources": [
+        {
+          "name": "FINRA官方空头持仓数据",
+          "url": "https://www.finra.org/finra-data/browse-catalog/equity-short-interest/data"
+        }
+      ]
+    },
+    {
+      "rank": 14,
+      "tier": "noise",
+      "published": "2026-11-04",
+      "headline": "【旧闻】11/4财报后股价反应：Block涨15.3%，Datadog跌14.5%，CVS跌12.5%（单一来源汇总）",
+      "sectors": [
+        "财报/个股"
+      ],
+      "tickers": [
+        "XYZ",
+        "DDOG",
+        "CVS"
+      ],
+      "body": "财报反应汇总站数据：Block收涨15.3%，Datadog跌14.5%，CVS跌12.5%。该汇总页为单一来源聚合站，非原始行情数据，仅作背景记录。",
+      "sources": [
+        {
+          "name": "earnings-watcher",
+          "url": "https://earnings-watcher.com/wiki/earnings-reactions-2026-11-04"
+        }
+      ]
+    },
+    {
+      "rank": 15,
+      "tier": "noise",
+      "published": "2026-11-06",
+      "headline": "贵金属周五因利率担忧情绪走软（未核实具体点位）",
+      "sectors": [
+        "贵金属"
+      ],
+      "body": "有报道称国际现货黄金、白银、铂金、钯金周五因市场对利率上行的担忧而走软，但本次未能核实具体价格点位。",
+      "sources": [
+        {
+          "name": "index.vn",
+          "url": "https://index.vn/en/news/precious-metals-prices-today-11-6-2026-world-gold-palladium-and-platinum-fall-sharply-as-rate-fears-weigh-on-sentiment"
+        }
+      ]
+    },
+    {
+      "rank": 16,
+      "tier": "noise",
+      "published": "2026-11-05",
+      "headline": "AI初创公司Sand.ai据报完成约3亿美元A+轮融资（单一来源，待核实）",
+      "sectors": [
+        "AI融资"
+      ],
+      "body": "融资追踪条目称Sand.ai于11/5完成约3亿美元A+轮融资，估值据报超过10亿美元。该数字只出现在单一的融资速览中，未找到原始公告或第二来源交叉核实。",
+      "sources": [
+        {
+          "name": "TechStartups",
+          "url": "https://techstartups.com/?p=140173"
+        }
+      ]
+    },
+    {
+      "rank": 17,
+      "tier": "noise",
+      "published": "2026-11-09",
+      "headline": "高通(QCOM)上周因智能手机芯片销售不及预期跌超11%（单一来源）",
+      "sectors": [
+        "半导体"
+      ],
+      "tickers": [
+        "QCOM"
+      ],
+      "body": "据单一来源报道，高通上周因智能手机芯片销售不及预期下跌超11%，具体日期与数字未能交叉核实。",
+      "sources": [
+        {
+          "name": "heygotrade",
+          "url": "https://www.heygotrade.com/en/news/tsmc-tsm-stock-news-november-6-2026/"
+        }
+      ]
+    },
+    {
+      "rank": 18,
+      "tier": "noise",
+      "published": "2026-11-09",
+      "headline": "今日财报日历：Constellation Energy、monday.com、Occidental Petroleum、Barrick Mining公布业绩",
+      "sectors": [
+        "财报日历"
+      ],
+      "body": "据搜索结果，周一(11/9)公布业绩的公司包括Constellation Energy、monday.com、Occidental Petroleum、Barrick Mining，均不在自选股名单内，具体数字未经一手公告核实。",
+      "sources": [
+        {
+          "name": "TipRanks",
+          "url": "https://www.tipranks.com/news/these-are-the-stocks-reporting-earnings-today-november-9-2026"
+        }
+      ]
+    }
+  ],
+  "calendar": [
+    {
+      "when": "Tue 11/10",
+      "time": "08:30 ET",
+      "event": "10月CPI数据",
+      "weight": "high",
+      "date": "2026-11-10",
+      "sources": [
+        {
+          "name": "BLS",
+          "url": "https://www.bls.gov/news.release/cpi.htm"
+        }
+      ]
+    },
+    {
+      "when": "Tue 11/17",
+      "time": "14:00 PT / 17:00 ET",
+      "event": "英伟达FY2027三季度财报电话会（官方确认），受CEO调查影响存在不确定性",
+      "weight": "high",
+      "date": "2026-11-17",
+      "sources": [
+        {
+          "name": "NVIDIA Newsroom",
+          "url": "https://nvidianews.nvidia.com/news/nvidia-sets-conference-call-for-third-quarter-financial-results-6928873"
+        },
+        {
+          "name": "NVIDIA Investor Relations",
+          "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Sets-Conference-Call-for-Third-Quarter-Financial-Results/default.aspx"
+        }
+      ]
+    },
+    {
+      "when": "Wed 11/18",
+      "time": "",
+      "event": "国会三名共和党众院委员会主席此前致函要求黄仁勋就Megaspeed关联问题列席闭门简报会（截至11/9黄仁勋尚未公开确认是否接受该日期）",
+      "weight": "mid",
+      "date": "2026-11-18",
+      "sources": [
+        {
+          "name": "Implicator.ai",
+          "url": "https://implicator.ai/gop-leaders-three-house-committees-ask-jensen-huang-closed"
+        }
+      ]
+    },
+    {
+      "when": "Wed 11/18",
+      "time": "",
+      "event": "10月新屋开工与营建许可数据（普查局/HUD）",
+      "weight": "low",
+      "date": "2026-11-18",
+      "sources": [
+        {
+          "name": "Census Bureau",
+          "url": "https://www.census.gov/construction/nrc/index.html"
+        }
+      ]
+    },
+    {
+      "when": "Tue-Wed 12/8-12/9",
+      "time": "14:00 ET",
+      "event": "12月FOMC议息会议，含经济预测摘要(SEP)",
+      "weight": "high",
+      "date": "2026-12-08",
+      "sources": [
+        {
+          "name": "Federal Reserve",
+          "url": "https://www.federalreserve.gov/newsevents/2026-december.htm"
+        }
+      ]
+    },
+    {
+      "when": "2027年1月3日",
+      "time": "",
+      "event": "新一届国会(第120届)就职，民主党正式接管众参两院",
+      "weight": "low",
+      "date": "2027-01-03",
+      "sources": []
+    }
+  ],
+  "max_age_days": 5,
+  "momentum": {
+    "asof": "2026-11-06",
+    "scanned": 2552,
+    "note": "",
+    "candidates": [
+      {
+        "ticker": "BIP",
+        "date": "2026-11-06",
+        "stage": "ignition",
+        "close": 39.45,
+        "change_pct": 4.34,
+        "rvol": 3.88,
+        "breakout_age": 0,
+        "ext_ma20": 0.0597,
+        "run_from_base": 0.1501,
+        "note": "单日+4.34%，量能放大至3.88倍均量，突破当天（第0天）。"
+      },
+      {
+        "ticker": "JAN",
+        "date": "2026-11-06",
+        "stage": "ignition",
+        "close": 31.99,
+        "change_pct": 4.03,
+        "rvol": 4.47,
+        "breakout_age": 0,
+        "ext_ma20": 0.1035,
+        "run_from_base": 0.209,
+        "note": "单日+4.03%，量能4.47倍均量，突破当天。"
+      },
+      {
+        "ticker": "ONC",
+        "date": "2026-11-06",
+        "stage": "ignition",
+        "close": 406.96,
+        "change_pct": 5.09,
+        "rvol": 2.64,
+        "breakout_age": 0,
+        "ext_ma20": 0.0946,
+        "run_from_base": 0.2078,
+        "note": "单日+5.09%，量能2.64倍均量，突破当天。"
+      },
+      {
+        "ticker": "CYRX",
+        "date": "2026-11-06",
+        "stage": "ignition",
+        "close": 19.1,
+        "change_pct": 19.0,
+        "rvol": 3.79,
+        "breakout_age": 0,
+        "ext_ma20": 0.0975,
+        "run_from_base": 0.3091,
+        "note": "单日大涨19.0%，量能3.79倍均量，突破当天，已自基底上涨约31%。"
+      },
+      {
+        "ticker": "COLD",
+        "date": "2026-11-06",
+        "stage": "ignition",
+        "close": 16.01,
+        "change_pct": 1.27,
+        "rvol": 3.15,
+        "breakout_age": 1,
+        "ext_ma20": 0.1111,
+        "run_from_base": 0.2011,
+        "note": "单日+1.27%，量能3.15倍均量，突破后第1天，涨幅较小但量能明显放大。"
+      },
+      {
+        "ticker": "CPAY",
+        "date": "2026-11-06",
+        "stage": "ignition",
+        "close": 455.16,
+        "change_pct": 1.83,
+        "rvol": 2.61,
+        "breakout_age": 1,
+        "ext_ma20": 0.1148,
+        "run_from_base": 0.1785,
+        "note": "单日+1.83%，量能2.61倍均量，突破后第1天。"
+      },
+      {
+        "ticker": "PRVA",
+        "date": "2026-11-06",
+        "stage": "ignition",
+        "close": 24.42,
+        "change_pct": 2.01,
+        "rvol": 2.61,
+        "breakout_age": 1,
+        "ext_ma20": 0.0954,
+        "run_from_base": 0.291,
+        "note": "单日+2.01%，量能2.61倍均量，突破后第1天，已自基底上涨约29%。"
+      },
+      {
+        "ticker": "SKWD",
+        "date": "2026-11-06",
+        "stage": "ignition",
+        "close": 60.35,
+        "change_pct": -5.5,
+        "rvol": 3.02,
+        "breakout_age": 1,
+        "ext_ma20": -0.0018,
+        "run_from_base": 0.1497,
+        "note": "单日-5.5%逆势放量（3.02倍均量），突破后第1天即出现明显回撤，初动信号尚未站稳。"
+      },
+      {
+        "ticker": "LION",
+        "date": "2026-11-06",
+        "stage": "ignition",
+        "close": 14.24,
+        "change_pct": 13.38,
+        "rvol": 4.81,
+        "breakout_age": 0,
+        "ext_ma20": 0.1798,
+        "run_from_base": 0.3614,
+        "note": "单日大涨13.38%，量能4.81倍均量，突破当天，已自基底上涨约36%。"
+      },
+      {
+        "ticker": "FWONA",
+        "date": "2026-11-06",
+        "stage": "ignition",
+        "close": 101.01,
+        "change_pct": 1.29,
+        "rvol": 2.74,
+        "breakout_age": 1,
+        "ext_ma20": 0.1724,
+        "run_from_base": 0.2511,
+        "note": "单日+1.29%，量能2.74倍均量，突破后第1天，20日均线上方乖离达17.2%，偏离幅度不小。"
+      },
+      {
+        "ticker": "ASH",
+        "date": "2026-11-06",
+        "stage": "ignition",
+        "close": 76.62,
+        "change_pct": 0.45,
+        "rvol": 3.78,
+        "breakout_age": 2,
+        "ext_ma20": 0.0478,
+        "run_from_base": 0.1436,
+        "note": "单日+0.45%，量能3.78倍均量，突破后第2天，涨幅收窄。"
+      },
+      {
+        "ticker": "BAM",
+        "date": "2026-11-06",
+        "stage": "ignition",
+        "close": 52.95,
+        "change_pct": 0.93,
+        "rvol": 3.17,
+        "breakout_age": 2,
+        "ext_ma20": 0.1045,
+        "run_from_base": 0.2139,
+        "note": "单日+0.93%，量能3.17倍均量，突破后第2天。"
+      },
+      {
+        "ticker": "RDNT",
+        "date": "2026-11-06",
+        "stage": "ignition",
+        "close": 76.0,
+        "change_pct": -2.58,
+        "rvol": 3.5,
+        "breakout_age": 2,
+        "ext_ma20": 0.0525,
+        "run_from_base": 0.1475,
+        "note": "单日-2.58%放量回撤（3.5倍均量），突破后第2天，初动未能延续。"
+      },
+      {
+        "ticker": "TD",
+        "date": "2026-11-06",
+        "stage": "ignition",
+        "close": 122.4,
+        "change_pct": -0.56,
+        "rvol": 2.63,
+        "breakout_age": 2,
+        "ext_ma20": -0.0055,
+        "run_from_base": 0.0864,
+        "note": "单日-0.56%，量能2.63倍均量，突破后第2天，涨幅微弱。"
+      },
+      {
+        "ticker": "SLVM",
+        "date": "2026-11-06",
+        "stage": "ignition",
+        "close": 39.38,
+        "change_pct": 19.08,
+        "rvol": 2.57,
+        "breakout_age": 0,
+        "ext_ma20": 0.2065,
+        "run_from_base": 0.2954,
+        "note": "单日大涨19.08%，量能2.57倍均量，突破当天，20日均线乖离达20.65%，自基底上涨约30%。"
+      },
+      {
+        "ticker": "PAR",
+        "date": "2026-11-06",
+        "stage": "ignition",
+        "close": 20.55,
+        "change_pct": 7.14,
+        "rvol": 4.29,
+        "breakout_age": 0,
+        "ext_ma20": 0.1656,
+        "run_from_base": 0.5521,
+        "note": "单日+7.14%，量能4.29倍均量，突破当天，自基底上涨约55%，涨幅已经偏大。"
+      },
+      {
+        "ticker": "ROKU",
+        "date": "2026-11-06",
+        "stage": "ignition",
+        "close": 160.52,
+        "change_pct": 0.09,
+        "rvol": 5.35,
+        "breakout_age": 3,
+        "ext_ma20": 0.0234,
+        "run_from_base": 0.0699,
+        "note": "单日几乎平盘(+0.09%)但量能放大至5.35倍均量，突破后第3天，量价背离需要留意。"
+      },
+      {
+        "ticker": "ACHC",
+        "date": "2026-11-06",
+        "stage": "ignition",
+        "close": 37.0,
+        "change_pct": 6.35,
+        "rvol": 3.02,
+        "breakout_age": 1,
+        "ext_ma20": 0.188,
+        "run_from_base": 0.3899,
+        "note": "单日+6.35%，量能3.02倍均量，突破后第1天，自基底上涨约39%。"
+      },
+      {
+        "ticker": "VXX",
+        "date": "2026-11-06",
+        "stage": "ignition",
+        "close": 21.95,
+        "change_pct": -1.13,
+        "rvol": 2.66,
+        "breakout_age": 1,
+        "ext_ma20": 0.1989,
+        "run_from_base": 0.3271,
+        "note": "单日-1.13%，量能2.66倍均量，突破后第1天，20日均线乖离19.9%，自基底上涨约33%。"
+      },
+      {
+        "ticker": "ANDG",
+        "date": "2026-11-06",
+        "stage": "ignition",
+        "close": 65.0,
+        "change_pct": -1.92,
+        "rvol": 3.53,
+        "breakout_age": 2,
+        "ext_ma20": 0.041,
+        "run_from_base": 0.4736,
+        "note": "单日-1.92%放量回撤，突破后第2天，自基底涨幅已达47%，初动信号转弱。"
+      },
+      {
+        "ticker": "BOBS",
+        "date": "2026-11-06",
+        "stage": "ignition",
+        "close": 19.42,
+        "change_pct": -0.26,
+        "rvol": 4.38,
+        "breakout_age": 1,
+        "ext_ma20": 0.2049,
+        "run_from_base": 0.4961,
+        "note": "单日-0.26%，量能4.38倍均量，突破后第1天，自基底上涨约50%，涨幅已经较大。"
+      },
+      {
+        "ticker": "U",
+        "date": "2026-11-06",
+        "stage": "ignition",
+        "close": 51.49,
+        "change_pct": 5.51,
+        "rvol": 2.9,
+        "breakout_age": 1,
+        "ext_ma20": 0.2253,
+        "run_from_base": 0.3881,
+        "note": "单日+5.51%，量能2.9倍均量，突破后第1天，20日均线乖离22.5%。"
+      },
+      {
+        "ticker": "VNT",
+        "date": "2026-11-06",
+        "stage": "ignition",
+        "close": 42.23,
+        "change_pct": 5.84,
+        "rvol": 3.54,
+        "breakout_age": 2,
+        "ext_ma20": 0.2023,
+        "run_from_base": 0.388,
+        "note": "单日+5.84%，量能3.54倍均量，突破后第2天，自基底上涨约39%。"
+      },
+      {
+        "ticker": "EPAM",
+        "date": "2026-11-06",
+        "stage": "ignition",
+        "close": 159.31,
+        "change_pct": -3.86,
+        "rvol": 2.93,
+        "breakout_age": 1,
+        "ext_ma20": 0.1883,
+        "run_from_base": 0.6553,
+        "note": "单日-3.86%放量回撤，突破后第1天，自基底涨幅已达66%，涨幅偏大后出现回撤。"
+      },
+      {
+        "ticker": "SHLS",
+        "date": "2026-11-06",
+        "stage": "ignition",
+        "close": 10.08,
+        "change_pct": 12.06,
+        "rvol": 2.57,
+        "breakout_age": 0,
+        "ext_ma20": 0.2637,
+        "run_from_base": 0.525,
+        "note": "单日+12.06%，量能2.57倍均量，突破当天，自基底上涨约53%，涨幅已经偏大。"
+      },
+      {
+        "ticker": "TRUP",
+        "date": "2026-11-06",
+        "stage": "ignition",
+        "close": 36.75,
+        "change_pct": 5.85,
+        "rvol": 2.75,
+        "breakout_age": 2,
+        "ext_ma20": 0.2345,
+        "run_from_base": 0.6667,
+        "note": "单日+5.85%，量能2.75倍均量，突破后第2天，自基底上涨约67%，涨幅已经很大。"
+      },
+      {
+        "ticker": "VCEL",
+        "date": "2026-11-06",
+        "stage": "ignition",
+        "close": 54.62,
+        "change_pct": 5.48,
+        "rvol": 2.79,
+        "breakout_age": 2,
+        "ext_ma20": 0.2795,
+        "run_from_base": 0.4624,
+        "note": "单日+5.48%，量能2.79倍均量，突破后第2天，自基底上涨约46%。"
+      },
+      {
+        "ticker": "DNUT",
+        "date": "2026-11-06",
+        "stage": "ignition",
+        "close": 4.17,
+        "change_pct": -9.35,
+        "rvol": 2.98,
+        "breakout_age": 1,
+        "ext_ma20": 0.301,
+        "run_from_base": 0.484,
+        "note": "单日大跌-9.35%放量，突破后第1天，20日均线乖离仍高达30.1%，初动信号被明显打断。"
+      },
+      {
+        "ticker": "AHR",
+        "date": "2026-11-06",
+        "stage": "continuation",
+        "close": 57.91,
+        "change_pct": 3.34,
+        "rvol": 2.31,
+        "breakout_age": 0,
+        "ext_ma20": 0.081,
+        "run_from_base": 0.1758,
+        "note": "延续档：单日+3.34%，量能2.31倍均量，仍处突破当天附近，属于已有一段时间趋势的延续。"
+      },
+      {
+        "ticker": "AMX",
+        "date": "2026-11-06",
+        "stage": "continuation",
+        "close": 25.72,
+        "change_pct": 2.43,
+        "rvol": 0.89,
+        "breakout_age": 0,
+        "ext_ma20": 0.0807,
+        "run_from_base": 0.2522,
+        "note": "延续档：单日+2.43%，量能仅0.89倍均量（低于均量），上涨缺乏量能验证。"
+      },
+      {
+        "ticker": "ATMU",
+        "date": "2026-11-06",
+        "stage": "continuation",
+        "close": 50.6,
+        "change_pct": 9.62,
+        "rvol": 1.53,
+        "breakout_age": 0,
+        "ext_ma20": 0.1138,
+        "run_from_base": 0.2417,
+        "note": "延续档：单日+9.62%，量能1.53倍均量，自基底上涨约24%。"
+      },
+      {
+        "ticker": "CALY",
+        "date": "2026-11-06",
+        "stage": "continuation",
+        "close": 16.83,
+        "change_pct": 5.72,
+        "rvol": 1.89,
+        "breakout_age": 0,
+        "ext_ma20": 0.1438,
+        "run_from_base": 0.255,
+        "note": "延续档：单日+5.72%，量能1.89倍均量，自基底上涨约26%。"
+      }
+    ]
+  }
+}
