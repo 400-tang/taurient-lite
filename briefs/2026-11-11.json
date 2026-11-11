@@ -1,0 +1,360 @@
+{
+  "date": "2026-11-11",
+  "weekday": "Wednesday",
+  "edition": "Daily edition",
+  "generated_at": "2026-11-11 06:15 PT",
+  "scanned": 310,
+  "kept": 15,
+  "thesis": "英伟达本周处在双重压力的交叉点：国会要求黄仁勋就\"涉外国情报目标\"闭门说明的回复期限正是今天，董事会的独立调查仍无结论，11/17财报又步步临近。与此同时，Anthropic的IPO路演持续推进，官方价格区间已定在70-78美元，但市场对最终估值的分歧仍很大。地缘层面，油价在\"伊朗局势缓和\"与\"霍尔木兹实际袭击仍未停止\"之间反复拉锯，今天小幅反弹约1%，鲁比奥也明确表示谈判并未接近突破。",
+  "tape": {
+    "asof": "原油：周二11/10结算；美债：周一11/9数据（债券市场11/11因退伍军人节休市，无当日结算）",
+    "rows": [
+      {
+        "name": "Brent crude",
+        "value": "$91.49",
+        "change": "结算价(11/10)，跌1.17%，盘中一度跌破90美元为8月以来首次；11/11因霍尔木兹周末再现袭击事件反弹约1%至92-93美元附近",
+        "dir": "down"
+      },
+      {
+        "name": "WTI crude",
+        "value": "$86.04",
+        "change": "结算价(11/10)，跌0.93%，与布伦特同步；11/11同步反弹",
+        "dir": "down"
+      },
+      {
+        "name": "10年期美债收益率",
+        "value": "4.872%",
+        "change": "11/9数据，较前一周五(11/6)的4.858%小幅走高",
+        "dir": "up"
+      }
+    ]
+  },
+  "items": [
+    {
+      "rank": 1,
+      "tier": "must-read",
+      "headline": "国会要求黄仁勋11/18就\"涉外国情报目标\"闭门说明，回复期限正是今天；董事会独立调查仍无结论",
+      "body": "11月4日，众议院三位共和党委员会主席Brian Mast、John Moolenaar、Rick Crawford致信英伟达CEO黄仁勋，要求他11月18日(财报次日)就与Megaspeed前高管Alice Huang(黄乐)的往来、以及公司的反间谍防护措施，向三个委员会联合闭门说明；信件要求英伟达在今天(11/11)之前确认接受该日期或提出替代方案。英伟达董事会已于11月8日宣布由独立董事委员会聘请外部法律顾问展开调查，称没有理由认为国家安全或商业机密已外泄；黄仁勋本人对彭博社表示与对方的往来\"完全正常\"，公司发言人称CEO每年接触数千名客户高管。截至发稿，英伟达尚未公开确认是否接受11/18的闭门说明安排。",
+      "published": "2026-11-11",
+      "tickers": ["NVDA"],
+      "sectors": ["半导体", "科技", "监管"],
+      "why": "回复期限恰好落在今天，是这场风波从\"媒体报道\"变成\"国会正式程序\"的关键节点——英伟达接受与否、是否提出替代日期，会决定这件事在11/17财报前后的热度；若闭门说明如期在财报次日举行，不确定性会一直压在股价上直到那之后。",
+      "impact": "调查结论和国会说明的具体安排目前都未公开，意味着围绕英伟达的政治与合规不确定性至少会持续到11月18日之后，财报本身的关注度可能被这条线分走。",
+      "sources": [
+        {"name": "Axios", "url": "https://axios.com/2026/11/05/jensen-huang-nvidia-congress-china", "angle": "最早披露国会三位主席致信要求及11/11回复期限"},
+        {"name": "The Week (India)", "url": "https://www.theweek.in/news/biz-tech/2026/11/09/nvidia-investigates-jensen-huang-spy-row-megaspeed-alice.amp.html", "angle": "侧重Megaspeed否认非法出口及董事会调查表态"},
+        {"name": "The National", "url": "https://thenationalnews.com/future/technology/2026/11/06/jensen-huang-nvidia-china-ai-congress", "angle": "把事件定性为国会对黄仁勋的审查"},
+        {"name": "Tom's Hardware", "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/singapore-company-alleged-to-have-helped-china-get-usd2-billion-worth-of-nvidia-ai-processors-report-claims-nvidia-denies-that-the-accused-has-any-china-ties-but-a-u-s-investigation-is-underway", "angle": "新加坡警方称对Megaspeed公司的调查仍在进行，强调指控尚无法律定论"}
+      ],
+      "assets": [
+        {"asset_class": "美股", "direction": "mixed", "conviction": "low", "note": "英伟达自身承压明显，但广义芯片板块同期出现反弹，大盘尚未对这条单一公司事件做出一致反应。"}
+      ],
+      "cross_source": {
+        "agreement": "split",
+        "summary": "美方情报评估据报道认定Alice Huang为中国情报资产，但新加坡内政部10月31日已否认对她本人展开调查、仅确认对Megaspeed公司的合规调查仍在进行；中方与Megaspeed均否认存在非法出口行为，各方说法明显不一致。"
+      },
+      "history": {
+        "summary": "事件从10月底的媒体报道一步步升级为国会正式程序：11/4国会致信要求说明，11/8董事会宣布独立调查，11/11是信件设定的回复期限，11/18是要求说明的日期——刚好压在11/17财报电话会之后一天。",
+        "timeline": [
+          {"when": "11/4", "event": "国会三位共和党委员会主席致信黄仁勋，要求11/18闭门说明并设定11/11回复期限"},
+          {"when": "11/8", "event": "英伟达董事会宣布独立董事委员会聘请外部法律顾问展开调查"},
+          {"when": "11/11（今天）", "event": "国会设定的回复期限，英伟达尚未公开确认是否接受11/18安排"}
+        ]
+      }
+    },
+    {
+      "rank": 2,
+      "tier": "must-read",
+      "headline": "油价从两个月低点反弹约1%，霍尔木兹周末仍有油轮遇袭，抵消了伊朗局势缓和带来的跌势",
+      "body": "布伦特原油11月10日(周二)结算91.49美元/桶，跌1.17%，盘中一度跌破90美元，为8月以来首次；WTI结算86.04美元，跌0.93%。CNBC将跌势归因于美方关于伊朗战争可能较快结束的表态，以及市场对霍尔木兹局势缓和的预期。但据Business Standard报道，11月11日(今天)油价从两个月低点反弹约1%，因为霍尔木兹海峡周末仍有商船遇袭——伊朗革命卫队称两艘试图通过海峡的油轮遭爆炸后起火、另有油轮被摧毁，相关说法均未经独立证实；美国中央司令部称已在阿曼湾禁用一艘违反封锁的商船。一家航运追踪机构称海峡周通行量环比下降约33%，多数船只改走伊朗一侧航线。",
+      "published": "2026-11-11",
+      "tickers": [],
+      "sectors": ["大宗商品", "能源", "地缘"],
+      "why": "这是市场在\"外交缓和预期\"和\"海上实际风险仍未解除\"之间来回定价的典型例子——跌破90美元体现的是对停火的乐观，而今天的反弹说明霍尔木兹的实际通行风险还没有被证明已经解除，两种叙事同时在起作用。",
+      "impact": "若霍尔木兹局势进一步恶化，油价有继续反弹甚至上冲的风险，会抬升通胀路径的不确定性，与本周联储加息门槛的讨论形成呼应；若外交进展兑现，则此前的跌势有望延续。",
+      "sources": [
+        {"name": "CNBC", "url": "https://www.cnbc.com/2026/11/10/oil-prices-trump-iran.html", "angle": "把11/10跌势归因于伊朗战争可能结束的表态"},
+        {"name": "Business Standard", "url": "https://www.business-standard.com/amp/markets/commodities/oil-rises-from-2-month-low-as-hormuz-shipping-attacks-offset-truce-hopes-126111100088_1.html", "angle": "强调霍尔木兹袭击抵消停火希望，是11/11反弹的直接原因"}
+      ],
+      "assets": [
+        {"asset_class": "大宗商品", "direction": "mixed", "conviction": "medium", "note": "原油价格本周两次变向：外交缓和预期压低价格，新的航运袭击事件又推高价格，方向尚未稳定。"}
+      ],
+      "cross_source": {
+        "agreement": "split",
+        "summary": "CNBC等多数报道强调地缘风险溢价正在回吐（跌破90美元）；但Business Standard等援引航运追踪数据和伊方说法，强调霍尔木兹的实际袭击风险并未消失，两种叙事方向相反，共同解释了价格的来回拉锯。"
+      },
+      "history": {
+        "summary": "布伦特8月以来持续在90美元上方波动，11/10首次跌破90美元创近两个月新低，11/11在新的霍尔木兹袭击消息下反弹，价格方向在数日内反复切换，反映地缘风险溢价的定价仍不稳定。"
+      }
+    },
+    {
+      "rank": 3,
+      "tier": "must-read",
+      "headline": "Anthropic IPO路演持续推进，但外部对发行价与募资规模的说法出现分歧，部分数字无法独立核实",
+      "body": "Anthropic已于10月26日公开提交S-1、11月2日提交补充至9月末九个月财务数据的修正案，多家报道称路演已于11月9-10日前后启动。关于发行价与募资规模，11月10日CNBC与彭博社曾报道官方价格区间为70-78美元/股、目标募资约64.4亿美元；但本次核查未能找到对这一数字的进一步独立确认，另有搜索结果显示发行条款、股数与价格区间仍\"尚未确定\"，募资规模预期甚至被描述为\"超过600亿美元\"，与64.4亿美元的说法明显不一致，具体以哪个数字为准目前无法判断。关于挂牌时间，一说在11月16日当周定价，另一说可能赶在感恩节前，均未获官方确认。估值层面，各方说法从约1.42万亿美元到2万亿美元不等。",
+      "published": "2026-11-10",
+      "tickers": ["ANT"],
+      "sectors": ["AI", "IPO", "科技"],
+      "why": "这是今年最受关注的AI公司上市案例之一，但围绕发行价、募资规模这些最基本的数字，不同信源的说法本身就互相矛盾——这种分歧比任何单一数字更值得读者注意，说明目前流传的细节尚未收敛。",
+      "impact": "在价格区间、募资规模等关键信息被官方正式确认之前，任何具体估值数字都应谨慎看待；一旦正式定价，会成为其他尚未上市AI公司的重要估值参照。",
+      "sources": [
+        {"name": "CNBC", "url": "https://www.cnbc.com/2026/11/10/anthropic-sets-price-range-of-70-to-78-in-upcoming-ipo.html", "angle": "报道官方价格区间70-78美元及募资规模，未能在本次核查中独立复核"},
+        {"name": "Bloomberg", "url": "https://www.bloomberg.com/news/articles/2026-11-10/anthropic-targets-64-4-billion-ipo-nearing-spacex-s-record", "angle": "报道募资规模644亿美元，同样未能独立复核"},
+        {"name": "ROIC.AI", "url": "https://www.roic.ai/news/anthropic-kicks-off-nasdaq-ipo-roadshow-as-ai-valuation-questions-loom-11-09-2026", "angle": "路演已启动，但对估值存疑"},
+        {"name": "KuCoin Blog", "url": "https://www.kucoin.com/blog/anthropic-ipo-valuation-pushback-market-selloff", "angle": "称估值目标被下调至1.42-1.5万亿美元（可靠性较低，需交叉核对）"}
+      ],
+      "cross_source": {
+        "agreement": "split",
+        "summary": "11/10的CNBC、彭博社报道给出了具体价格区间(70-78美元)和募资目标(644亿美元)；但独立核查找到相互矛盾的说法——价格区间\"尚未确定\"、募资规模被称\"超过600亿美元\"——两组数字出自不同信源且无法互相印证，孰对孰错目前无法判断，发布前应以官方招股书为准。"
+      }
+    },
+    {
+      "rank": 4,
+      "tier": "worth-knowing",
+      "headline": "鲁比奥：美伊谈判未接近突破，批评伊方部分要求\"过分而荒谬\"；卡塔尔斡旋传闻未获官方证实",
+      "body": "美国国务卿鲁比奥11月8日(周日)对记者表示，美国离与伊朗达成突破并不近，称伊方部分要求不可接受、\"过分\"且不现实(相关表态11月9日见报)；他同时表示特朗普仍倾向外交方案，特朗普本人对CNN称，只要谈判有进展，大规模重启打击\"高度不太可能\"。另有报道引述单一匿名外交消息称伊方已接受卡塔尔斡旋的条款(重开霍尔木兹、停止袭击海湾油轮)，但未获官方证实；伊朗官员则否认与美国谈判，称霍尔木兹在满足其设定的条件前将保持关闭。",
+      "published": "2026-11-09",
+      "tickers": [],
+      "sectors": ["地缘", "能源"],
+      "why": "鲁比奥的表态直接给市场一个基准：外交解决仍是主线，但近期内不会有突破，这也解释了为什么油价不会单边下跌。",
+      "impact": "若后续谈判真有进展，会强化油价已经开始的下跌趋势；若僵局持续，霍尔木兹的风险溢价可能重新抬头。",
+      "sources": [
+        {"name": "Anadolu Agency", "url": "https://aa.com.tr/en/americas/diplomatic-agreement-with-iran-may-not-be-possible-says-us-rubio/4116384", "angle": "强调鲁比奥暗示外交协议可能无法达成"},
+        {"name": "Republic World", "url": "https://www.republicworld.com/global-news/marco-rubio-says-no-breakthrough-in-us-iran-talks-calls-tehran-s-demands-outrageous-and-ridiculous-2026-11-09-140685", "angle": "以'过分而荒谬'措辞为标题"},
+        {"name": "Oilprice", "url": "https://oilprice.com/Latest-Energy-News/World-News/Oil-Sinks-to-94-as-Irans-8-Billion-Hormuz-Deal-Heads-to-Trump.html", "angle": "援引匿名外交消息称伊朗已接受卡塔尔斡旋条款（单一来源，未证实）"}
+      ]
+    },
+    {
+      "rank": 5,
+      "tier": "worth-knowing",
+      "headline": "乌军无人机击中俄罗斯第二大炼油厂Kirishi，双方互袭能源设施持续，停火未能落实",
+      "body": "据俄方列宁格勒州州长确认，11月9日无人机袭击导致Kirishi炼油厂起火；州长通报称拦截无人机113架(另有单一来源称81架，口径不一，以州长通报为准)。同一州的Vsevolozhsk一名妇女因坠落的无人机残骸被打死，死亡地点与炼油厂本身不同。乌克兰安全局(SBU)确认击中该厂及其输油泵站。乌克兰能源部称过去一周俄方对乌能源部门发动128次袭击(乌方口径，未独立核实)，同时俄方也在打击乌克兰电网；特朗普10月宣布的能源停火未能遏制双方互袭，乌方表示若俄方停止打击乌能源设施、或美方提供爱国者导弹，乌方可以停止袭击俄炼油厂。",
+      "published": "2026-11-09",
+      "tickers": [],
+      "sectors": ["地缘", "能源"],
+      "why": "炼油厂是俄罗斯能源出口能力的具体载体，持续被打击意味着俄方实际产能和出口能力可能进一步受限，这是比单纯\"地缘紧张\"更具体的供给端信号。",
+      "impact": "若类似打击持续，可能收窄全球原油/成品油的有效供给，对冲掉外交缓和带来的下行压力。",
+      "sources": [
+        {"name": "Meduza", "url": "https://meduza.io/en/news/2026/11/09/ukrainian-drones-strike-russia-s-leningrad-region-sparking-fire-at-one-of-the-country-s-largest-oil-refineries", "angle": "俄语独立媒体，重点在官方通报与起火事实"},
+        {"name": "Al Jazeera", "url": "https://www.aljazeera.com/news/2026/11/9/at-least-one-person-killed-as-russia-and-ukraine-trade-strikes-overnight", "angle": "双方互袭的综合报道"},
+        {"name": "Cyprus Mail", "url": "https://cyprus-mail.com/2026/11/09/ukraine-hits-major-russian-refinery-as-moscow-strikes-power-grid", "angle": "把炼厂打击与俄方打击乌电网并列"}
+      ]
+    },
+    {
+      "rank": 6,
+      "tier": "worth-knowing",
+      "headline": "芯片股11/9领涨带动纳斯达克100指数反弹，但英伟达因调查消息逆势下跌",
+      "body": "据StockAnalysis报道，11月9日(周一)芯片股领涨带动纳斯达克100指数大涨(该报道称涨3.3%)，结束此前一周的AI板块抛售，但英伟达当日逆势下跌(该报道称跌4.6%，与本页第1条引用的约4.3%跌幅口径略有差异，需以行情终端为准)。此前一周11月5日，纳斯达克100在中期选举后反弹之后一度下跌超过4%，市场担心数据中心相关监管收紧。",
+      "published": "2026-11-09",
+      "tickers": ["NVDA"],
+      "sectors": ["半导体", "科技"],
+      "why": "这说明市场对\"芯片板块整体\"和\"英伟达这家公司\"给出了不同的判断——板块性买盘在回补抛售，但个股层面的调查消息仍在单独定价。",
+      "impact": "若调查消息持续压制英伟达但板块整体转强，意味着资金可能正在从英伟达轮动到其他芯片股。",
+      "sources": [
+        {"name": "StockAnalysis", "url": "https://stockanalysis.com/news/nasdaq-100-rallies-after-ai-selloff-nvidia-falls/", "angle": "芯片股反弹但英伟达逆势下跌"}
+      ]
+    },
+    {
+      "rank": 7,
+      "tier": "worth-knowing",
+      "headline": "Coinbase获OCC最终批准设立国家信托公司，承接机构加密资产托管业务",
+      "body": "Coinbase于11月9日(周一)宣布已获美国货币监理署(OCC)最终批准，设立Coinbase National Trust Company，在现有纽约信托牌照之外新增一个联邦监管机构，主要承接机构加密资产托管业务；公司表示不会从事部分准备金银行业务。OCC本身尚未公开发布最终决定，相关信息主要来自Coinbase公告及媒体报道；另有报道援引OCC许可记录称特许流程于11月6日完成，与公司公告日期存在时间差。",
+      "published": "2026-11-09",
+      "tickers": ["COIN"],
+      "sectors": ["加密资产", "监管"],
+      "why": "多一个联邦监管身份，意味着Coinbase的机构托管业务可以用更低的合规摩擦服务跨州客户，这是其机构业务扩张叙事的又一块拼图。",
+      "impact": "对COIN是渐进的正面监管进展，但公告本身不含财务数字，对股价的直接拉动需要观察市场反应。",
+      "sources": [
+        {"name": "MLex", "url": "https://www.mlex.com/mlex/financial-services/articles/2548161/coinbase-crypto-exchange-wins-us-occ-approval-to-become-national-trust-company", "angle": "金融监管与合规角度报道"},
+        {"name": "Bitcoin Magazine", "url": "https://bitcoinmagazine.com/?p=56974", "angle": "援引OCC许可记录称特许流程11/6完成"}
+      ]
+    },
+    {
+      "rank": 8,
+      "tier": "worth-knowing",
+      "headline": "特斯拉Robotaxi服务11月9日在圣安东尼奥上线，是得州第五个落地城市",
+      "body": "特斯拉11月9日将Robotaxi服务扩展至得克萨斯州圣安东尼奥，是继11月2日沃斯堡(Fort Worth)上线后一周内新增的又一个城市。报道口径不完全一致：一家媒体称这是第8个运营城市，另一家称共9个城市(其中5个在得州)；该服务是否属于完全\"无监督\"(unsupervised)也存在分歧——部分报道称是，但特斯拉此前列出的无监督运营城市名单未包含圣安东尼奥。服务覆盖范围与车辆配置目前均未经公司证实。",
+      "published": "2026-11-09",
+      "tickers": ["TSLA"],
+      "sectors": ["汽车", "自动驾驶"],
+      "why": "一周内连开两城，说明特斯拉在加速Robotaxi的地理扩张节奏，这是公司估值叙事里\"自动驾驶车队规模\"这条线的直接进展。",
+      "impact": "扩张速度本身是乐观信号，但服务覆盖范围、车队规模等关键数字仍未经公司证实，实际业务体量尚难评估。",
+      "sources": [
+        {"name": "FourWeekMBA", "url": "https://fourweekmba.com/ai-tesla-robotaxi-opens-in-san-antonio-its-fifth-texas-city/", "angle": "圣安东尼奥为得州第五个城市"},
+        {"name": "TeslaOracle", "url": "https://www.teslaoracle.com/?p=67373", "angle": "称为第8个运营城市，首批载客凌晨5点开始"}
+      ]
+    },
+    {
+      "rank": 9,
+      "tier": "worth-knowing",
+      "headline": "博通确认将于12月9日盘后公布2026财年第四季度及全年业绩",
+      "body": "博通11月9日通过PR Newswire发布公告，确认将于12月9日(周三)收盘后公布2026财年第四季度及全年业绩，电话会议定于太平洋时间下午2点(东部时间下午5点)；本财季已于11月1日结束。公告本身不含业绩数字。",
+      "published": "2026-11-09",
+      "tickers": ["AVGO"],
+      "sectors": ["半导体"],
+      "why": "这只是日程公告，但明确了AVGO接下来最重要的财报时间点，方便提前关注。",
+      "impact": "公告本身不含业绩信息，无直接股价含义。",
+      "sources": [
+        {"name": "Finviz（转载Broadcom公告）", "url": "https://finviz.com/news/418980/broadcom-inc-to-announce-fourth-quarter-and-fiscal-year-2026-financial-results-on-wednesday-december-9-2026", "angle": ""}
+      ]
+    },
+    {
+      "rank": 10,
+      "tier": "worth-knowing",
+      "headline": "比特币11/9美东时间早7:30报约7.45万美元，延续近期下行趋势",
+      "body": "据Fortune每日比特币价格报道，11月9日(周一)美东时间早7:30比特币报约74,549.48美元。该价格延续了11月上旬以来的下行走势；更早几日的逐日对比数字因不同信源口径不一、本次未能独立核实，这里不展开引用。",
+      "published": "2026-11-09",
+      "tickers": ["COIN"],
+      "sectors": ["加密资产"],
+      "why": "加密资产价格的持续走弱，是COIN这类交易所业务环境的直接背景。",
+      "impact": "若跌势持续，可能压制交易量相关收入预期；这里引用的是11/9的快照，具体数字需以当前实时报价为准。",
+      "sources": [
+        {"name": "Fortune", "url": "https://fortune.com/article/price-of-bitcoin-11-09-2026/", "angle": "每日比特币价格追踪"}
+      ]
+    },
+    {
+      "rank": 11,
+      "tier": "noise",
+      "headline": "【背景】美国10年期国债收益率11/9报4.872%，随通胀与利率前景数据小幅走高",
+      "body": "据Dow Jones经Morningstar报道，美国与欧元区债市收益率在通胀与利率前景数据公布前小幅上升，10年期美债收益率升至4.872%，前一个周五(11/6)结算价为4.858%。10月初该收益率曾创24年新高(有报道称盘中触及约5.35%)，当时能源供应担忧推高了通胀预期。",
+      "published": "2026-11-09",
+      "tickers": [],
+      "sectors": ["利率", "美债"],
+      "sources": [
+        {"name": "Dow Jones via Morningstar", "url": "https://www.morningstar.com/news/dow-jones/202611098973/us-eurozone-bond-yields-rise-ahead-of-inflation-rates-outlook-2nd-update", "angle": "把收益率变动放在即将公布的通胀数据框架下"}
+      ]
+    },
+    {
+      "rank": 12,
+      "tier": "noise",
+      "headline": "【单一匿名来源，未经证实】有报道称伊朗已接受卡塔尔斡旋的霍尔木兹协议条款",
+      "body": "Oilprice援引匿名外交消息称，伊朗已接受卡塔尔斡旋的协议条款(包括重开霍尔木兹海峡、停止袭击海湾油轮)，方案已送交特朗普；但该说法只有这一家报道引用匿名消息源，未获任何官方证实，伊朗官员同期对外的表态仍是否认与美方谈判。",
+      "published": "2026-11-09",
+      "tickers": [],
+      "sectors": ["地缘", "能源"],
+      "sources": [
+        {"name": "Oilprice", "url": "https://oilprice.com/Latest-Energy-News/World-News/Oil-Sinks-to-94-as-Irans-8-Billion-Hormuz-Deal-Heads-to-Trump.html", "angle": "单一匿名外交消息源，未经证实"}
+      ]
+    },
+    {
+      "rank": 13,
+      "tier": "noise",
+      "headline": "【乌方单方面说法，未独立核实】乌克兰能源部称过去一周俄方对乌能源设施发动128次袭击",
+      "body": "据Cyprus Mail报道，乌克兰能源部称过去一周俄罗斯对乌克兰能源部门发动了128次袭击；这一数字为乌方官方口径，报道中未见独立核实。该说法与本页Kirishi炼油厂条目描述的俄乌能源设施互袭背景相关。",
+      "published": "2026-11-09",
+      "tickers": [],
+      "sectors": ["地缘", "能源"],
+      "sources": [
+        {"name": "Cyprus Mail", "url": "https://cyprus-mail.com/2026/11/09/ukraine-hits-major-russian-refinery-as-moscow-strikes-power-grid", "angle": "乌克兰能源部的128次袭击说法"}
+      ]
+    },
+    {
+      "rank": 14,
+      "tier": "noise",
+      "headline": "【单一来源，存疑】有报道质疑特朗普\"霍尔木兹已重新开放\"的说法，称实际通行量仍受限",
+      "body": "Rollingout援引航运追踪数据称，尽管特朗普方面声称霍尔木兹海峡已重新开放，但实际船舶通行量仍明显低于冲突前水平，一家追踪机构称海峡周通行量环比下降约33%，多数船只改走伊朗一侧航线。该报道为单一来源，相关数字未经交叉核实。",
+      "published": "2026-11-11",
+      "tickers": [],
+      "sectors": ["地缘", "能源"],
+      "sources": [
+        {"name": "Rollingout", "url": "https://rollingout.com/2026/11/11/trump-iran-hormuz-claim/", "angle": "质疑特朗普关于霍尔木兹已开放的说法"}
+      ]
+    },
+    {
+      "rank": 15,
+      "tier": "noise",
+      "headline": "【未经原文核实】搜索结果显示AMD第五代EPYC CPU将用于Google Cloud TPU主机基础设施",
+      "body": "搜索结果显示，一篇11月9日发布、标题为\"AMD EPYC Expands Its Leadership at the Foundation of AI\"的文章提到，AMD第五代EPYC服务器CPU将作为Google Cloud TPU 8tx系统的主机基础设施，号称是首款支持硬件级机密计算的云端张量处理单元(TPU)系统；本次会话无法打开原文核实细节，具体技术描述以公司后续确认为准。",
+      "published": "2026-11-09",
+      "tickers": ["AMD"],
+      "sectors": ["半导体", "云计算"],
+      "sources": [
+        {"name": "Finviz", "url": "https://finviz.com/news/419013/amd-epyc-expands-its-leadership-at-the-foundation-of-ai", "angle": "标题提及的EPYC与Google Cloud TPU相关表述，未经原文核实"}
+      ]
+    }
+  ],
+  "calendar": [
+    {
+      "when": "周四 11/12",
+      "time": "",
+      "event": "Cisco、Applied Materials盘后公布财报",
+      "weight": "mid",
+      "date": "2026-11-12",
+      "sources": [
+        {"name": "Mitrade", "url": "https://www.mitrade.com/insights/news/live-news/article-8-2239452-20261108"}
+      ]
+    },
+    {
+      "when": "周四 11/12",
+      "time": "13:00 ET",
+      "event": "美国财政部30年期国债拍卖",
+      "weight": "low",
+      "date": "2026-11-12",
+      "sources": [
+        {"name": "美国财政部", "url": "https://home.treasury.gov/news/press-releases/sb0678"}
+      ]
+    },
+    {
+      "when": "周五 11/13",
+      "time": "08:30 ET",
+      "event": "美国劳工统计局公布10月PPI(生产者价格指数)",
+      "weight": "mid",
+      "date": "2026-11-13",
+      "sources": [
+        {"name": "美国劳工统计局(BLS)", "url": "https://www.bls.gov/ppi/notices/2026/ppi-adds-deletes-october-2026.htm"}
+      ]
+    },
+    {
+      "when": "周二 11/17",
+      "time": "17:00 ET",
+      "event": "英伟达公布2027财年第三季度业绩",
+      "weight": "high",
+      "date": "2026-11-17",
+      "sources": [
+        {"name": "NVIDIA投资者关系站", "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Sets-Conference-Call-for-Third-Quarter-Financial-Results/default.aspx"}
+      ]
+    },
+    {
+      "when": "周三 11/18",
+      "time": "",
+      "event": "黄仁勋就外国情报目标调查向国会三名共和党委员会主席说明情况（国会设定的回复期限为11/11，英伟达截至发稿未公开确认是否接受该日程）",
+      "weight": "mid",
+      "date": "2026-11-18",
+      "sources": [
+        {"name": "CNBC", "url": "https://www.cnbc.com/2026/11/08/nvidia-jensen-huang-investigation-china-spy.html"},
+        {"name": "NBC News", "url": "https://www.nbcnews.com/tech/tech-news/nvidia-ceo-jensen-huang-investigation-rcna608148"}
+      ]
+    },
+    {
+      "when": "11月中旬（具体挂牌日期未定，据报道可能为11/16当周或感恩节前）",
+      "time": "",
+      "event": "Anthropic预计开始在纳斯达克交易（代码ANT），官方定价区间70-78美元",
+      "weight": "high",
+      "sources": [
+        {"name": "CNBC", "url": "https://www.cnbc.com/2026/11/10/anthropic-sets-price-range-of-70-to-78-in-upcoming-ipo.html"},
+        {"name": "Bloomberg", "url": "https://www.bloomberg.com/news/articles/2026-11-10/anthropic-targets-64-4-billion-ipo-nearing-spacex-s-record"}
+      ]
+    },
+    {
+      "when": "周二 12/8 - 周三 12/9",
+      "time": "12/9 14:00 ET 公布决议",
+      "event": "FOMC十二月议息会议，公布利率决定并更新经济预测",
+      "weight": "high",
+      "date": "2026-12-09",
+      "sources": [
+        {"name": "Federal Reserve", "url": "https://www.federalreserve.gov/newsevents/2026-december.htm"},
+        {"name": "FedRateCalc", "url": "https://fedratecalc.com/fomc-meeting-schedule/december-2026/"}
+      ]
+    },
+    {
+      "when": "周三 12/9",
+      "time": "17:00 ET",
+      "event": "博通公布2026财年第四季度及全年业绩",
+      "weight": "mid",
+      "date": "2026-12-09",
+      "sources": [
+        {"name": "Finviz（转载Broadcom公告）", "url": "https://finviz.com/news/418980/broadcom-inc-to-announce-fourth-quarter-and-fiscal-year-2026-financial-results-on-wednesday-december-9-2026"}
+      ]
+    }
+  ]
+}
