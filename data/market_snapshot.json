@@ -1,78 +1,78 @@
 {
-  "fetched_at": "2026-11-10T19:54:32Z",
+  "fetched_at": "2026-11-11T19:47:26Z",
   "note": "由 GitHub Actions 抓取并提交，供云端定时任务读取——那个沙箱连不了 FINRA。settlement_date 是数据源自己报的时点，不是抓取时刻。",
   "short_interest": [
     {
       "symbol": "NVDA",
       "issue_name": "NVIDIA Corporation Common Stoc",
-      "settlement_date": "2026-10-15",
-      "current_shares": 301622687,
-      "previous_shares": 311389688,
-      "change_percent": -3.14,
-      "days_to_cover": 2.91
+      "settlement_date": "2026-10-30",
+      "current_shares": 279579505,
+      "previous_shares": 301622687,
+      "change_percent": -7.31,
+      "days_to_cover": 2.8
     },
     {
       "symbol": "TSLA",
       "issue_name": "Tesla, Inc. Common Stock",
-      "settlement_date": "2026-10-15",
-      "current_shares": 69350469,
-      "previous_shares": 70931312,
-      "change_percent": -2.23,
-      "days_to_cover": 2.22
+      "settlement_date": "2026-10-30",
+      "current_shares": 65956693,
+      "previous_shares": 69350469,
+      "change_percent": -4.89,
+      "days_to_cover": 1.57
     },
     {
       "symbol": "AAPL",
       "issue_name": "Apple Inc. Common Stock",
-      "settlement_date": "2026-10-15",
-      "current_shares": 131591865,
-      "previous_shares": 120763539,
-      "change_percent": 8.97,
-      "days_to_cover": 3.71
+      "settlement_date": "2026-10-30",
+      "current_shares": 144791472,
+      "previous_shares": 131591865,
+      "change_percent": 10.03,
+      "days_to_cover": 3.36
     },
     {
       "symbol": "MSFT",
       "issue_name": "Microsoft Corporation Common S",
-      "settlement_date": "2026-10-15",
-      "current_shares": 65674557,
-      "previous_shares": 61133927,
-      "change_percent": 7.43,
-      "days_to_cover": 3.18
+      "settlement_date": "2026-10-30",
+      "current_shares": 60941334,
+      "previous_shares": 65674557,
+      "change_percent": -7.21,
+      "days_to_cover": 2.73
     },
     {
       "symbol": "AVGO",
       "issue_name": "Broadcom Inc. Common Stock",
-      "settlement_date": "2026-10-15",
-      "current_shares": 53611331,
-      "previous_shares": 54197605,
-      "change_percent": -1.08,
-      "days_to_cover": 2.4
+      "settlement_date": "2026-10-30",
+      "current_shares": 51943604,
+      "previous_shares": 53611331,
+      "change_percent": -3.11,
+      "days_to_cover": 2.36
     },
     {
       "symbol": "AMD",
       "issue_name": "Advanced Micro Devices, Inc. C",
-      "settlement_date": "2026-10-15",
-      "current_shares": 38117463,
-      "previous_shares": 39281942,
-      "change_percent": -2.96,
-      "days_to_cover": 1.98
+      "settlement_date": "2026-10-30",
+      "current_shares": 38603935,
+      "previous_shares": 38117463,
+      "change_percent": 1.28,
+      "days_to_cover": 1.86
     },
     {
       "symbol": "PLTR",
       "issue_name": "Palantir Technologies Inc. Cla",
-      "settlement_date": "2026-10-15",
-      "current_shares": 56092550,
-      "previous_shares": 55587983,
-      "change_percent": 0.91,
-      "days_to_cover": 2.42
+      "settlement_date": "2026-10-30",
+      "current_shares": 55905800,
+      "previous_shares": 56092550,
+      "change_percent": -0.33,
+      "days_to_cover": 2.6
     },
     {
       "symbol": "COIN",
       "issue_name": "Coinbase Global, Inc. Class A",
-      "settlement_date": "2026-10-15",
-      "current_shares": 23767692,
-      "previous_shares": 24374578,
-      "change_percent": -2.49,
-      "days_to_cover": 2.87
+      "settlement_date": "2026-10-30",
+      "current_shares": 22834387,
+      "previous_shares": 23767692,
+      "change_percent": -3.93,
+      "days_to_cover": 2.85
     }
   ],
   "failures": []
