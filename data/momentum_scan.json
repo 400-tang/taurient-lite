@@ -1,15 +1,15 @@
 {
-  "scanned_at": "2026-11-10T17:24:00Z",
+  "scanned_at": "2026-11-11T01:21:42Z",
   "asof": "2026-11-09",
   "note": "由 GitHub Actions 扫描并提交，供云端定时任务读取。stage 只描述这只票走到这波的第几天，score 衡量的是「有多早」而不是「有多好」——回测显示本模块无法预测后续涨跌，它的用途是把观察窗口前移，不是给出买卖信号。",
-  "universe_size": 2534,
-  "evaluated": 2529,
+  "universe_size": 2546,
+  "evaluated": 2510,
   "failed": 5,
-  "stale": 0,
+  "stale": 31,
   "counts": {
     "ignition": 26,
-    "continuation": 566,
-    "base": 1788,
+    "continuation": 564,
+    "base": 1762,
     "extended": 104
   },
   "candidates": [
@@ -434,7 +434,7 @@
       "date": "2026-11-09",
       "close": 14.16,
       "change_pct": 7.44,
-      "rvol": 1.23,
+      "rvol": 1.24,
       "dollar_volume": 784152375,
       "ext_ma20": 0.1249,
       "closing_range": 0.683,
