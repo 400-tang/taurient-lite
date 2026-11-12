@@ -1,0 +1,715 @@
+{
+  "date": "2026-11-12",
+  "weekday": "Thursday",
+  "edition": "Daily edition",
+  "generated_at": "2026-11-12 06:20 PT",
+  "scanned": 900,
+  "kept": 16,
+  "thesis": "Anthropic今天把IPO发行价区间正式定在70-78美元，为今年最大的AI公司上市案例钉下第一个官方锚点，但不同媒体给出的估值和募资口径仍不一致。原油本周持续下探后，周三因霍尔木兹海峡新一轮袭击出现反弹，外交缓和预期和海上实际风险仍在互相拉锯；美国10月CPI环比+0.4%，核心+0.3%，同比数字因去年政府停摆缺口仍无法公布。英伟达的多重压力继续叠加——国会设定的回复期限已过却未见公开答复，董事会的独立调查也无结论，11月17日财报步步临近。",
+  "tape": {
+    "asof": "原油：周二11/10结算，周三11/11早盘反弹（未结算，参考价）；美债：周一11/9数据（11/10无新数据，11/11因退伍军人节休市）",
+    "rows": [
+      {
+        "name": "Brent crude",
+        "value": "$91.49",
+        "change": "周二(11/10)结算，跌1.17%，盘中一度跌破90至89.16，为8月以来首次；周三(11/11)早盘因霍尔木兹新一轮袭击反弹约1.1%至92.5附近（未结算）",
+        "dir": "down"
+      },
+      {
+        "name": "WTI crude",
+        "value": "$86.04",
+        "change": "周二(11/10)结算，跌0.93%；周三(11/11)早盘同步反弹约0.8%至86.7附近（未结算）",
+        "dir": "down"
+      },
+      {
+        "name": "US 10Y yield",
+        "value": "4.872%",
+        "change": "周一(11/9)数据，较前一周五(11/6)4.858%小幅走高；11/10未找到新数据，11/11因退伍军人节休市无结算",
+        "dir": "up"
+      }
+    ]
+  },
+  "items": [
+    {
+      "rank": 1,
+      "tier": "must-read",
+      "published": "2026-11-10",
+      "headline": "Anthropic正式启动IPO路演：发行价区间70-78美元，拟在纳斯达克以代码ANT挂牌",
+      "sectors": [
+        "AI",
+        "IPO",
+        "科技"
+      ],
+      "tickers": [
+        "ANT"
+      ],
+      "body": "Anthropic于11月10日在官网发布路演启动公告：拟发行Class A普通股825,000,000股，其中公司发行801,351,354股、部分现有股东出售23,648,646股（公司不获得出售股东部分的收益），预计发行价区间70.00–78.00美元/股；承销商30天内可行使超额配售选择权，最多123,750,000股；已申请在纳斯达克全球精选市场挂牌，代码ANT，主承销商为高盛与摩根士丹利。公告未写定价日和开始交易日——CNBC援引知情人士报道预计11月19日开始交易、订单簿在区间内已有覆盖，但均未获公司证实。估值口径存在分歧：Fortune按完全稀释口径给出最高约1.4万亿美元，Forbes给出约1.3万亿美元。",
+      "why": "这是官方第一次给出具体的发行价区间，为今年最大规模的AI公司IPO钉下了一个可验证的锚点，二级市场第一次有了对纯AI模型公司估值定价的直接参照。",
+      "impact": "一级/二级市场AI估值基准 · 纳斯达克新股市场",
+      "sources": [
+        {
+          "name": "Anthropic官网（一手公告）",
+          "url": "https://www.anthropic.com/news/roadshow-launch",
+          "angle": "公司自己的路演公告，股数、价格区间、代码、交易所均以此为准，不含定价日和交易日"
+        },
+        {
+          "name": "CNBC",
+          "url": "https://www.cnbc.com/2026/11/10/anthropic-sets-price-range-of-70-to-78-in-upcoming-ipo.html",
+          "angle": "引用知情人士，称预计11月19日开始交易，订单簿在区间内已覆盖"
+        },
+        {
+          "name": "Fortune",
+          "url": "https://fortune.com/2026/11/10/anthropic-ipo-price-range-ai-stock-sell-off/",
+          "angle": "把区间定价放在近期AI股抛售的背景下报道，估值口径为最高约1.4万亿美元"
+        },
+        {
+          "name": "Forbes",
+          "url": "https://www.forbes.com/sites/gabrielalinzainescu/2026/11/10/anthropic-ipo-targets-13-trillion-valuation-904-billion-raise/",
+          "angle": "估值口径约1.3万亿美元，标题中的募资数字与其他来源不一致"
+        }
+      ],
+      "assets": [
+        {
+          "asset_class": "美股",
+          "direction": "mixed",
+          "conviction": "medium",
+          "note": "官方定价区间落地为一级市场提供了罕见的二级市场参照，但Fortune把这一步放在近期AI股抛售的背景下报道，说明市场对AI估值整体仍有分歧。"
+        }
+      ],
+      "cross_source": {
+        "agreement": "split",
+        "summary": "官方公告只给出股数与价格区间，募资总额和估值由媒体各自换算：Fortune按完全稀释口径给出最高约1.4万亿美元，Forbes给出约1.3万亿美元；CNBC称区间上限对应整体融资约644亿美元，与此前报道的募资口径也不完全一致。"
+      },
+      "history": {
+        "summary": "从10月底提交S-1到11月正式启动路演，不到三周时间，发行价区间是这个过程中第一个官方确认的具体数字。",
+        "timeline": [
+          {
+            "when": "10/26",
+            "event": "提交S-1注册声明"
+          },
+          {
+            "when": "11/2",
+            "event": "提交补充至9月末九个月财务数据的修正案"
+          },
+          {
+            "when": "11/10（今天）",
+            "event": "官宣路演启动，发行价区间70–78美元/股"
+          }
+        ]
+      }
+    },
+    {
+      "rank": 2,
+      "tier": "must-read",
+      "published": "2026-11-11",
+      "headline": "原油本周先跌后反弹：周二布伦特跌破90美元，周三反弹约1%",
+      "sectors": [
+        "大宗商品",
+        "能源",
+        "地缘"
+      ],
+      "tickers": [],
+      "body": "布伦特原油11月10日（周二）结算91.49美元，跌1.17%，盘中一度触及89.16美元（核查时找到与\"8月以来首次跌破90\"这一说法相矛盾的更早报道，本条不采用这个说法，仅记录跌破90这一事实）；报道称推动跌势的是美方官员表示目前不认为需要对伊朗进行新的大规模打击。11月11日（周三）早盘布伦特反弹约1.1%至约92.5美元附近，WTI反弹约0.8%至约86.7美元（均为盘中参考价，未结算），反弹的主要支撑是霍尔木兹海峡的航运袭击仍在继续，而不是停火预期的消退。往前看，周一（11/9）布伦特曾大跌约4.65%至93.75美元附近（AFP口径），特朗普当天淡化再次对伊朗大规模动武的可能，并计划会见斡旋方卡塔尔首相；据报道11月以来油价累计下跌约17%。",
+      "why": "油价本周两次换向，说明\"外交缓和预期\"和\"海上实际风险未解除\"这两条叙事仍在互相拉锯，这正是联储12月决议要面对的那种不确定的通胀路径。",
+      "impact": "能源 · 通胀预期 · 美债收益率路径",
+      "sources": [
+        {
+          "name": "The Star (Malaysia)",
+          "url": "https://www.thestar.com.my/business/business-news/2026/11/11/oil-rebounds-as-hormuz-shipping-attacks-blunt-hopes-for-iran-truce",
+          "angle": "以'霍尔木兹航运袭击压制伊朗停火希望'为标题，强调袭击对油价的托底作用"
+        },
+        {
+          "name": "Business Recorder",
+          "url": "https://www.brecorder.com/news/40448385/oil-rebounds-as-hormuz-shipping-attacks-blunt-hopes-for-iran-truce",
+          "angle": "同一通稿的另一版本，补充UKMTO周二的油轮遇袭报告"
+        },
+        {
+          "name": "Khaleej Times (AFP稿)",
+          "url": "https://www.khaleejtimes.com/business/oil-falls-almost-5-as-trump-signals-restraint-on-iran",
+          "angle": "周一跌势：特朗普表态克制及与卡塔尔首相会晤的背景"
+        }
+      ],
+      "assets": [
+        {
+          "asset_class": "大宗商品",
+          "direction": "mixed",
+          "conviction": "medium",
+          "note": "本周两次换向：外交缓和预期压低价格，霍尔木兹新一轮袭击又把价格推高，方向尚未稳定。"
+        },
+        {
+          "asset_class": "美债",
+          "direction": "mixed",
+          "conviction": "low",
+          "note": "油价路径直接影响通胀预期，但本周的反复走势还不足以给出明确的收益率方向。"
+        }
+      ],
+      "cross_source": {
+        "agreement": "aligned",
+        "summary": "多数报道都把周三的反弹归因于霍尔木兹袭击抵消停火希望，口径一致；但对周一具体跌幅的数字不完全一致（AFP稿给出约4.65%，另有早盘口径给出不同百分比）。"
+      },
+      "history": {
+        "summary": "本周油价先跌后反弹，方向在数日内明显调头，反映地缘风险溢价的定价仍不稳定。",
+        "timeline": [
+          {
+            "when": "11/9（周一）",
+            "event": "布伦特跌约4.65%至93.75美元附近，特朗普淡化大规模动武可能"
+          },
+          {
+            "when": "11/10（周二）",
+            "event": "布伦特结算91.49美元（-1.17%），盘中跌破90至89.16"
+          },
+          {
+            "when": "11/11（周三）",
+            "event": "布伦特早盘反弹约1.1%至92.5附近，因霍尔木兹新一轮袭击"
+          }
+        ]
+      }
+    },
+    {
+      "rank": 3,
+      "tier": "must-read",
+      "published": "2026-11-11",
+      "headline": "霍尔木兹海峡新一轮袭击：伊朗革命卫队称两艘油轮触雷起火（未经证实），本月确认袭击已达数起",
+      "sectors": [
+        "地缘",
+        "能源",
+        "航运"
+      ],
+      "tickers": [],
+      "body": "据报道，11月10日（周二）前后英国海事机构（UKMTO）再次报告海峡附近有商船遇袭，具体地点与细节本次核查未能逐一确认。伊朗革命卫队海军称另有两艘油轮在试图通过海峡时触雷起火，但该说法未经独立核实，美方也未确认，具体发生时间也未能与官方通报对应。往前看，11月前三天（1-3日）Seatrade统计已有5起确认袭击，其中11月3日一艘油轮机舱被两枚不明弹体击中；一份11月6日的报道称当月已有6起袭击，海事情报机构JMIC将海峡威胁等级维持在\"Severe\"。",
+      "why": "这是外交缓和叙事与海上实际风险之间最新的具体反例——只要类似袭击持续发生，停火预期就缺乏现实支撑，油价的下行空间也会被反复封住。",
+      "impact": "大宗商品风险溢价 · 航运保险成本 · 亚欧能源进口国",
+      "sources": [
+        {
+          "name": "Business Recorder",
+          "url": "https://www.brecorder.com/news/40448385/oil-rebounds-as-hormuz-shipping-attacks-blunt-hopes-for-iran-truce",
+          "angle": "路透口径，引述UKMTO与伊朗IRGC双方说法"
+        },
+        {
+          "name": "Seatrade Maritime",
+          "url": "https://seatrade-maritime.com/security/vlcc-engine-room-struck-in-latest-hormuz-attack",
+          "angle": "航运行业媒体，统计11月前三天的确认袭击数量"
+        }
+      ],
+      "assets": [
+        {
+          "asset_class": "大宗商品",
+          "direction": "up",
+          "conviction": "medium",
+          "note": "新一轮袭击叠加此前已确认的多起事件，供给端风险溢价难以消退。"
+        },
+        {
+          "asset_class": "海外股市",
+          "direction": "down",
+          "conviction": "low",
+          "note": "能源净进口的亚欧市场对海峡中断的敞口高于美国。"
+        }
+      ],
+      "cross_source": {
+        "agreement": "split",
+        "summary": "伊朗革命卫队单方声称两艘油轮触雷起火，美方未予证实；英国海事机构UKMTO只确认了一艘油轮遇袭，双方对本次事件的规模说法不一致。"
+      },
+      "history": {
+        "summary": "海峡袭击已持续多起，11月前六天至少6起，威胁等级一直维持\"Severe\"，本周二至周三的事件是这条线的最新一环。"
+      }
+    },
+    {
+      "rank": 4,
+      "tier": "must-read",
+      "published": "2026-11-10",
+      "headline": "美国10月CPI：季调环比+0.4%，核心+0.3%，同比数字因去年政府停摆缺口仍无法公布",
+      "sectors": [
+        "宏观",
+        "通胀",
+        "利率"
+      ],
+      "tickers": [],
+      "body": "美国劳工统计局（BLS）11月10日发布10月CPI：季调环比+0.4%（住房贡献超过三成的涨幅，能源环比+0.7%），核心CPI（剔除食品与能源）季调环比+0.3%；未季调环比为+0.2%。BLS表示因2025年10月政府停摆未采集价格数据，无法计算10月的12个月同比变化，第三方追踪机构同样把10月同比标为\"未公布\"。9月CPI环比+0.6%、同比3.7%（8月环比+0.4%）。下一次CPI（11月数据）定于12月10日发布。",
+      "why": "环比+0.4%高于此前市场预期的+0.3%，核心环比+0.3%也不算温和，而缺失的同比数字让这组数据本身就更难被干净地定价——这是联储12月决议前最后一组完整的通胀读数之一。",
+      "impact": "全市场 · 利率路径 · 联储12月决议",
+      "sources": [
+        {
+          "name": "BLS（10月CPI新闻稿）",
+          "url": "https://www.bls.gov/news.release/cpi.htm",
+          "angle": "一手数据：季调环比+0.4%，核心+0.3%，说明无法公布同比的原因"
+        },
+        {
+          "name": "BLS 9月CPI发布存档",
+          "url": "https://www.bls.gov/news.release/archives/cpi_10142026.htm",
+          "angle": "前值：9月环比+0.6%、同比3.7%"
+        }
+      ],
+      "assets": [
+        {
+          "asset_class": "美股",
+          "direction": "mixed",
+          "conviction": "low",
+          "note": "环比读数略高于预期，但同比数据缺失削弱了市场对这组数据做出清晰方向性反应的基础。"
+        },
+        {
+          "asset_class": "美债",
+          "direction": "down",
+          "conviction": "medium",
+          "note": "环比+0.4%高于预期的+0.3%，若12月决议前通胀韧性被确认，收益率下行空间会被进一步压缩。"
+        }
+      ],
+      "cross_source": {
+        "agreement": "aligned",
+        "summary": "BLS官方数据与第三方追踪机构对环比读数及同比数据缺失的说法一致，没有分歧。"
+      },
+      "history": {
+        "summary": "这是自2025年10月政府停摆导致数据缺口以来，又一次无法给出12个月同比变化的CPI发布，9月CPI同比仍是3.7%这个此前的参照点。"
+      }
+    },
+    {
+      "rank": 5,
+      "tier": "worth-knowing",
+      "published": "2026-11-09",
+      "headline": "英伟达董事会就黄仁勋相关报道启动独立调查，国会设定的回复期限（11/11）已过仍未见公开答复",
+      "sectors": [
+        "半导体",
+        "科技",
+        "监管"
+      ],
+      "tickers": [
+        "NVDA"
+      ],
+      "body": "11月8日，英伟达董事会宣布由独立董事委员会聘请外部法律顾问，就有关黄仁勋是\"外国情报行动目标\"的报道展开调查，公司称没有理由认为商业机密或国家安全已外泄。背景：众议院外交事务、中国特别委员会和情报委员会三位主席（Mast、Moolenaar、Crawford）此前致信黄仁勋，邀请其11月18日就与Megaspeed高管Alice Huang的往来及公司防范外国间谍的安全制度，向三个委员会闭门说明，并要求11月11日前接受该日期或提出替代方案。11月9日调查消息传出当天，英伟达股价逆势下跌，但各报道给出的跌幅口径不一致（约8%/5%/盘后3.4%）。截至本次扫描（11/12），没有找到英伟达公开确认接受或拒绝11/18安排的报道。公司11月17日的第三季度财报正好在这一拟议简报的前一天。",
+      "why": "调查结论和国会安排的具体日程都还没有公开，意味着这条不确定性至少会持续到11月18日之后，可能会分走11/17财报本身的关注度。",
+      "impact": "NVDA个股 · 半导体监管预期",
+      "sources": [
+        {
+          "name": "CNBC",
+          "url": "https://www.cnbc.com/2026/11/05/nvidia-jensen-huang-china-spy-congress.html",
+          "angle": "最早报道国会三位主席的闭门简报请求，称英伟达未直接回应是否出席"
+        },
+        {
+          "name": "Axios",
+          "url": "https://www.axios.com/2026/11/07/jensen-huang-nvidia-congress-china",
+          "angle": "把事件定性为CEO被国会传唤，强调涉嫌中国间谍关联"
+        },
+        {
+          "name": "abc7news",
+          "url": "https://abc7news.com/story/nvidia-stock-falls-company-opens-probe-ceo-jensen-huang-alleged-affair-chinese-spy/20026775/",
+          "angle": "11/9股价下跌的报道，给出的跌幅口径与其他来源不一致"
+        }
+      ],
+      "cross_source": {
+        "agreement": "split",
+        "summary": "11/9调查消息传出当天的股价跌幅，不同报道给出的数字不一致（约8%、约5%、盘后约3.4%），未能统一到单一口径。"
+      }
+    },
+    {
+      "rank": 6,
+      "tier": "worth-knowing",
+      "published": "2026-11-09",
+      "headline": "乌克兰无人机夜袭俄罗斯第二大炼油厂Kirishi，引发火情，一名女子死亡",
+      "sectors": [
+        "地缘",
+        "能源"
+      ],
+      "tickers": [],
+      "body": "据俄方列宁格勒州州长Drozdenko通报，11月9日夜间共113架无人机被击落（Ukrinform援引的数字为81架，两者不一致）。早期报道称炼油厂一套主要蒸馏装置起火，另有装置据报被击中（未经官方确认）。该厂是俄罗斯第二大炼油厂，为圣彼得堡及Pulkovo机场供应燃料，8月30日袭击后曾全面停止原油加工。一名女子死亡，但地点表述不一：有媒体称在Vsevolozhsk一栋房屋屋顶，另一媒体称系Kirishi袭击坠落残骸所致。",
+      "why": "俄罗斯能源出口与炼油能力持续承压，这是比笼统的\"地缘紧张\"更具体的供给端信号。",
+      "impact": "俄罗斯能源出口能力 · 全球成品油供给",
+      "sources": [
+        {
+          "name": "Meduza",
+          "url": "https://meduza.io/en/news/2026/11/09/ukrainian-drones-strike-russia-s-leningrad-region-sparking-fire-at-one-of-the-country-s-largest-oil-refineries",
+          "angle": "俄语独立媒体视角，记录死者在Vsevolozhsk房屋屋顶的说法及8月30日停产背景"
+        },
+        {
+          "name": "Ukrinform",
+          "url": "https://www.ukrinform.net/rubric-ato/4182797-drones-strike-russias-secondlargest-oil-refinery.html",
+          "angle": "乌克兰官方通讯社，引述81架无人机的数字"
+        },
+        {
+          "name": "ABC News (Australia)",
+          "url": "https://www.abc.net.au/news/2026-11-09/ukrainian-drone-attack-at-russia-kirishi-refinery-woman-dies/107365888",
+          "angle": "称死者系Kirishi袭击坠落残骸所致，地点表述与Meduza不同"
+        }
+      ],
+      "assets": [
+        {
+          "asset_class": "大宗商品",
+          "direction": "up",
+          "conviction": "low",
+          "note": "单一炼厂事件对全球供给影响有限，但方向上利多原油及成品油价格。"
+        }
+      ],
+      "cross_source": {
+        "agreement": "split",
+        "summary": "无人机数量（113架vs81架）与死者所在地点，各家报道的说法均不一致。"
+      }
+    },
+    {
+      "rank": 7,
+      "tier": "worth-knowing",
+      "published": "2026-11-09",
+      "headline": "特朗普会晤卡塔尔首相，美方及海湾官员对伊朗协议前景持怀疑",
+      "sectors": [
+        "地缘",
+        "能源"
+      ],
+      "tickers": [],
+      "body": "11月9日（周一），特朗普在淡化近期对伊朗再度大规模动武可能的同时，计划会见斡旋方卡塔尔首相；报道称美方和海湾官员对近期能与伊朗达成协议的可能性表示怀疑，尽管特朗普本人仍倾向外交方案。",
+      "why": "这给市场一个基准：外交解决仍是主线，但近期内不会有突破，这也解释了为什么油价不会单边下跌。",
+      "impact": "能源 · 地缘风险溢价",
+      "sources": [
+        {
+          "name": "Khaleej Times (AFP稿)",
+          "url": "https://www.khaleejtimes.com/business/oil-falls-almost-5-as-trump-signals-restraint-on-iran",
+          "angle": "AFP角度：特朗普克制表态与卡塔尔斡旋并列报道"
+        }
+      ]
+    },
+    {
+      "rank": 8,
+      "tier": "worth-knowing",
+      "published": "2026-11-09",
+      "headline": "Coinbase获OCC最终批准设立国家信托公司，托管业务三年内迁入",
+      "sectors": [
+        "加密资产",
+        "监管"
+      ],
+      "tickers": [
+        "COIN"
+      ],
+      "body": "Coinbase于11月9日宣布已获美国货币监理署（OCC）最终批准，设立Coinbase National Trust Company；OCC记录显示该申请11月6日生效，此前4月2日曾获有条件批准。新机构将在三年过渡期内承接现由纽约州信托公司（Coinbase Custody Trust Company）经营的机构托管业务，不能吸收存款或放贷，质押、交易与融资仍由Coinbase关联公司提供。Circle、Ripple此前已获得类似的最终批准。",
+      "why": "多一个联邦监管身份，意味着机构托管业务可以用更低的合规摩擦服务跨州客户，是Coinbase机构业务扩张叙事的又一块拼图。",
+      "impact": "COIN机构业务 · 合规护城河",
+      "sources": [
+        {
+          "name": "PaymentExpert",
+          "url": "https://paymentexpert.com/2026/11/09/coinbase-national-trust-company/",
+          "angle": "时间线与托管业务迁移安排"
+        },
+        {
+          "name": "Decrypt",
+          "url": "https://decrypt.co/382816/coinbase-joins-circle-ripple-with-final-occ-approval-for-federal-trust-bank-charter",
+          "angle": "放在Circle、Ripple之后的同类批准背景下报道"
+        }
+      ]
+    },
+    {
+      "rank": 9,
+      "tier": "worth-knowing",
+      "published": "2026-11-09",
+      "headline": "特斯拉Robotaxi扩展至圣安东尼奥，成为第八个运营城市",
+      "sectors": [
+        "汽车",
+        "自动驾驶"
+      ],
+      "tickers": [
+        "TSLA"
+      ],
+      "body": "特斯拉11月9日将Robotaxi服务扩展至德州圣安东尼奥，是其第八个运营城市（此前11月2日已在沃斯堡开放，地理围栏约143平方英里）。圣安东尼奥的地理围栏据报约274平方英里，但特斯拉未证实该面积；具体开放时点在报道间也有出入（一说11/9早5点，一说11/10周二早5点）。目前已运营无人驾驶的城市包括奥斯汀、达拉斯、休斯顿、迈阿密、奥兰多、坦帕、沃斯堡、圣安东尼奥。特斯拉Q3财报电话会上表示目标是2026年底实现Robotaxi全天候运营，下一批点名城市为拉斯维加斯、凤凰城、杰克逊维尔。",
+      "why": "一周内连开两城，是特斯拉\"自动驾驶车队规模\"估值叙事的直接推进节奏。",
+      "impact": "TSLA · 自动驾驶商业化进度",
+      "sources": [
+        {
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/09/tesla-expands-robotaxi-service-to-san-antonio/",
+          "angle": "以圣安东尼奥扩张为主线"
+        },
+        {
+          "name": "Electrek",
+          "url": "https://electrek.co/2026/11/09/tesla-robotaxi-san-antonio-launch-geofence/",
+          "angle": "聚焦地理围栏大小，并提示特斯拉未确认面积"
+        }
+      ]
+    },
+    {
+      "rank": 10,
+      "tier": "worth-knowing",
+      "published": "2026-11-09",
+      "headline": "周一(11/9)美股受益油价暴跌走高，英伟达逆势下跌",
+      "sectors": [
+        "宏观",
+        "市场结构"
+      ],
+      "tickers": [
+        "NVDA"
+      ],
+      "body": "11月9日（周一），美股从上周五（11/5）纳斯达克因AI股抛售重挫5.5%的低位反弹：据Star-Advertiser报道，当日盘中道指上涨约1.86%，标普500上涨约2.05%，纳斯达克上涨约2.34%，推动力是油价大跌带来的风险偏好回升；但英伟达因董事会独立调查消息逆势下跌。注意：Star-Advertiser给出的是盘中口径，另有信源给出的标普涨幅为约0.3%，两者差距明显，具体收盘涨幅请以行情终端为准。",
+      "why": "这是紧接上周AI股抛售之后的修复性反弹，方向很清楚，但具体涨幅因信源口径冲突（盘中2%左右 vs 收盘0.3%）未能统一，提醒读者查实时行情。",
+      "impact": "大盘情绪 · NVDA个股分化",
+      "sources": [
+        {
+          "name": "Star-Advertiser",
+          "url": "https://www.staradvertiser.com/2026/11/09/breaking-news/wall-street-rallies-after-last-weeks-ai-rout-nvidia-falls/",
+          "angle": "给出盘中涨幅口径（道指+1.86%、标普+2.05%、纳指+2.34%），并将反弹与上周AI抛售连起来"
+        },
+        {
+          "name": "Devdiscourse",
+          "url": "https://www.devdiscourse.com/article/international/4004153-global-markets-stocks-jump-as-oil-tumbles-nvidia-falls-amid-internal-probe",
+          "angle": "把油价下跌与英伟达逆势下跌并列报道"
+        },
+        {
+          "name": "Zacks",
+          "url": "https://www.zacks.com/stock/news/3026040/stock-market-news-for-nov-9-2026",
+          "angle": "给出标普涨幅口径（约0.3%），与Star-Advertiser的盘中口径差距明显"
+        }
+      ],
+      "cross_source": {
+        "agreement": "split",
+        "summary": "标普500当日涨幅，Star-Advertiser给出的盘中口径约2.05%，Zacks给出约0.3%，两者差距明显；各家一致认可的是大盘收涨、英伟达逆势下跌的方向。"
+      },
+      "history": {
+        "summary": "这是紧接上周AI股抛售之后的修复性反弹：11月5日纳斯达克因AI股抛售重挫约5.5%，11月9日出现反弹。"
+      }
+    },
+    {
+      "rank": 11,
+      "tier": "worth-knowing",
+      "published": "2026-11-09",
+      "headline": "比特币跌破7.5万美元，现货ETF连续流出",
+      "sectors": [
+        "加密资产"
+      ],
+      "tickers": [
+        "COIN"
+      ],
+      "body": "据Dow Jones经Morningstar报道，比特币11月9日交易价格跌破7.5万美元，反弹迟迟未能出现；此前一个周四，现货比特币ETF净流出约4.31亿美元，以太坊同期报约2,108美元。另一信源称比特币11月8日在7.59万美元附近盘整，此前冲高至约8.1万美元的反弹被打回，过去一周ETF流出约13亿美元。",
+      "why": "加密资产价格持续走弱，是Coinbase交易量相关收入预期的直接背景。",
+      "impact": "COIN交易量预期 · 加密资产情绪",
+      "sources": [
+        {
+          "name": "Morningstar (Dow Jones)",
+          "url": "https://www.morningstar.com/news/dow-jones/202611091075/bitcoin-below-75000-as-rebound-remains-elusive",
+          "angle": "报道ETF流出与以太坊价格"
+        },
+        {
+          "name": "CoinAlyze (引CryptoPotato)",
+          "url": "https://coinalyze.net/bitcoin/usd/deribit/btc-11nov26/price-chart-live/",
+          "angle": "给出11/8的盘整价位与过去一周ETF流出规模"
+        }
+      ]
+    },
+    {
+      "rank": 12,
+      "tier": "worth-knowing",
+      "published": "2026-11-10",
+      "headline": "Anthropic估值口径出现分歧：Fortune给出近1.4万亿美元，Forbes给出约1.3万亿美元",
+      "sectors": [
+        "AI",
+        "IPO"
+      ],
+      "tickers": [
+        "ANT"
+      ],
+      "body": "即使官方发行价区间（70–78美元/股）已经公布，不同媒体对Anthropic估值和募资总额的换算依然不统一：Fortune按完全稀释口径给出最高约1.4万亿美元，Forbes给出约1.3万亿美元；CNBC称区间上限对应整体融资约644亿美元，与此前报道中出现的其他募资口径也不完全一致。",
+      "why": "官方价格区间解决了\"区间是多少\"的问题，但估值和募资规模这类衍生数字依然要等最终定价公告才能统一。",
+      "impact": "AI一级市场估值参照",
+      "sources": [
+        {
+          "name": "Fortune",
+          "url": "https://fortune.com/2026/11/10/anthropic-ipo-price-range-ai-stock-sell-off/",
+          "angle": "估值口径最高约1.4万亿美元"
+        },
+        {
+          "name": "Forbes",
+          "url": "https://www.forbes.com/sites/gabrielalinzainescu/2026/11/10/anthropic-ipo-targets-13-trillion-valuation-904-billion-raise/",
+          "angle": "估值口径约1.3万亿美元"
+        }
+      ],
+      "cross_source": {
+        "agreement": "split",
+        "summary": "两家媒体对完全稀释估值的换算相差约1000亿美元，募资总额的口径也不统一，具体以最终定价公告为准。"
+      }
+    },
+    {
+      "rank": 13,
+      "tier": "noise",
+      "published": "2026-11-09",
+      "headline": "周一(11/9)油价跌幅不同信源口径不一：一说跌约4.65%至93.75美元，另一说早盘报97.49美元",
+      "sectors": [
+        "大宗商品"
+      ],
+      "tickers": [],
+      "body": "AFP稿件报道11月9日布伦特原油跌约4.65%至93.75美元附近；但同日早盘另有信源给出布伦特97.49美元（-0.84%）、WTI 90.48美元（-0.39%）的数字，两者口径差距明显，本条不采用精确结算价，仅记录分歧。",
+      "sources": [
+        {
+          "name": "Khaleej Times (AFP稿)",
+          "url": "https://www.khaleejtimes.com/business/oil-falls-almost-5-as-trump-signals-restraint-on-iran"
+        },
+        {
+          "name": "Journal Arta",
+          "url": "https://journalarta.com/en/2026/11/09/oil-price-today-brent-falls-4-96-to-93-44-on-iran-peace-hopes-as-gold-climbs/"
+        }
+      ]
+    },
+    {
+      "rank": 14,
+      "tier": "noise",
+      "published": "2026-11-11",
+      "headline": "霍尔木兹海峡实际通行量，各方统计口径差异巨大",
+      "sectors": [
+        "地缘",
+        "航运"
+      ],
+      "tickers": [],
+      "body": "关于霍尔木兹海峡本月初的实际通行量，不同机构给出的数字相差悬殊：Lloyd's List称10/26-11/1期间至少21艘非伊朗关联散货船通过，三周共至少58艘；一个美方支持的追踪器称11/1-11/4共126艘（日均31.5）；也有未经采信的说法称海峡在11/2-11/3\"实际关闭\"。本条只记录分歧，不采用单一数字。",
+      "sources": [
+        {
+          "name": "Seatrade Maritime",
+          "url": "https://seatrade-maritime.com/security/vlcc-engine-room-struck-in-latest-hormuz-attack"
+        }
+      ]
+    },
+    {
+      "rank": 15,
+      "tier": "noise",
+      "published": "2026-11-10",
+      "headline": "【标题未核实】The Star转载稿称11月10日美股收高，具体点位未能核实",
+      "sectors": [
+        "市场结构"
+      ],
+      "tickers": [],
+      "body": "The Star转载的一篇标题为\"U.S. stocks close higher\"的稿件日期为2026年11月10日，正文无法打开，指数点位、涨幅与驱动因素均未核实，仅记录标题本身。",
+      "sources": [
+        {
+          "name": "The Star",
+          "url": "https://www.thestar.com.my/news/world/2026/11/10/us-stocks-close-higher"
+        }
+      ]
+    },
+    {
+      "rank": 16,
+      "tier": "noise",
+      "published": "2026-11-09",
+      "headline": "Anthropic路演前瞻：11月9日已有报道称路演预计11月10日前后启动",
+      "sectors": [
+        "AI",
+        "IPO"
+      ],
+      "tickers": [
+        "ANT"
+      ],
+      "body": "在Anthropic 11月10日正式官宣发行价区间之前，11月9日已有报道称路演预计在11月10日前后启动；此前更早的报道（11月2日前后）曾称具体价格区间尚未确定。从\"区间未定\"到\"官方公布70-78美元\"只隔了约一周。",
+      "sources": [
+        {
+          "name": "ROIC.AI",
+          "url": "https://www.roic.ai/news/anthropic-kicks-off-nasdaq-ipo-roadshow-as-ai-valuation-questions-loom-11-09-2026"
+        }
+      ]
+    }
+  ],
+  "calendar": [
+    {
+      "when": "周四 11/12",
+      "time": "",
+      "event": "思科公布2027财年第一季度业绩（8月指引：营收180-182亿美元，non-GAAP EPS 1.32-1.34美元）；应用材料同日盘后公布财报",
+      "weight": "mid",
+      "date": "2026-11-12",
+      "sources": [
+        {
+          "name": "思科投资者关系站",
+          "url": "https://investor.cisco.com/news/news-details/2026/Cisco-Schedules-Conference-Call-for-Q1-Fiscal-Year-2027-Financial-Results/default.aspx"
+        },
+        {
+          "name": "思科新闻室（此前指引）",
+          "url": "https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m08/cisco-reports-fourth-quarter-earnings.html"
+        }
+      ]
+    },
+    {
+      "when": "周四 11/12",
+      "time": "13:00 ET",
+      "event": "美国财政部30年期国债拍卖",
+      "weight": "low",
+      "date": "2026-11-12",
+      "sources": [
+        {
+          "name": "美国财政部",
+          "url": "https://home.treasury.gov/news/press-releases/sb0678"
+        }
+      ]
+    },
+    {
+      "when": "周五 11/13",
+      "time": "08:30 ET",
+      "event": "美国劳工统计局公布10月PPI(生产者价格指数)",
+      "weight": "mid",
+      "date": "2026-11-13",
+      "sources": [
+        {
+          "name": "美国劳工统计局(BLS)",
+          "url": "https://www.bls.gov/ppi/notices/2026/ppi-adds-deletes-october-2026.htm"
+        }
+      ]
+    },
+    {
+      "when": "周二 11/17",
+      "time": "17:00 ET",
+      "event": "英伟达公布2027财年第三季度业绩（公司10/28公告，第三方日历给出11/18或11/25等不同估计日期，以公司公告为准）",
+      "weight": "high",
+      "date": "2026-11-17",
+      "sources": [
+        {
+          "name": "NVIDIA投资者关系站",
+          "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Sets-Conference-Call-for-Third-Quarter-Financial-Results/default.aspx"
+        }
+      ]
+    },
+    {
+      "when": "周三 11/18",
+      "time": "",
+      "event": "黄仁勋拟就外国情报目标调查向国会三名共和党委员会主席闭门说明（国会设定的回复期限11/11已过，英伟达截至发稿未公开确认是否接受该安排）",
+      "weight": "mid",
+      "date": "2026-11-18",
+      "sources": [
+        {
+          "name": "CNBC",
+          "url": "https://www.cnbc.com/2026/11/05/nvidia-jensen-huang-china-spy-congress.html"
+        },
+        {
+          "name": "Axios",
+          "url": "https://www.axios.com/2026/11/07/jensen-huang-nvidia-congress-china"
+        }
+      ]
+    },
+    {
+      "when": "11月中旬（具体挂牌日期未定，CNBC据知情人士报道可能为11/19，未经公司证实）",
+      "time": "",
+      "event": "Anthropic预计开始在纳斯达克交易（代码ANT），官方定价区间70-78美元",
+      "weight": "high",
+      "sources": [
+        {
+          "name": "Anthropic官网",
+          "url": "https://www.anthropic.com/news/roadshow-launch"
+        },
+        {
+          "name": "CNBC",
+          "url": "https://www.cnbc.com/2026/11/10/anthropic-sets-price-range-of-70-to-78-in-upcoming-ipo.html"
+        }
+      ]
+    },
+    {
+      "when": "周二 12/8 - 周三 12/9",
+      "time": "12/9 14:00 ET 公布决议",
+      "event": "FOMC十二月议息会议，公布利率决定并更新经济预测",
+      "weight": "high",
+      "date": "2026-12-09",
+      "sources": [
+        {
+          "name": "Federal Reserve",
+          "url": "https://www.federalreserve.gov/newsevents/2026-december.htm"
+        }
+      ]
+    },
+    {
+      "when": "周三 12/9",
+      "time": "17:00 ET",
+      "event": "博通公布2026财年第四季度及全年业绩",
+      "weight": "mid",
+      "date": "2026-12-09",
+      "sources": [
+        {
+          "name": "Finviz（转载Broadcom公告）",
+          "url": "https://finviz.com/news/418980/broadcom-inc-to-announce-fourth-quarter-and-fiscal-year-2026-financial-results-on-wednesday-december-9-2026"
+        }
+      ]
+    }
+  ]
+}
