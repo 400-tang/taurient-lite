@@ -1,0 +1,651 @@
+{
+  "date": "2026-11-13",
+  "weekday": "Friday",
+  "edition": "Daily edition",
+  "generated_at": "2026-11-13 07:05 PT",
+  "scanned": 95,
+  "kept": 15,
+  "thesis": "霍尔木兹海峡本周第二轮袭击叠加特朗普“无需协议”的强硬表态，让原油在创下数月最大单周跌幅后于周四反弹逾3%，伊朗议员同步推动退出核不扩散条约，地缘风险并未缓和；10月CPI推动10年期美债收益率一度逼近5%，周四小幅回落至4.86%附近，12月是否加息25或50个基点成为市场焦点。英伟达围绕黄仁勋的独立调查仍无结论，国会设定的答复期限已过，公司重申他将继续留任CEO；11月17日财报与(若成行)11月18日国会闭门听证是下一个关键节点。",
+  "tape": {
+    "asof": "原油：周四(11/12)结算；美债收益率：10/10数据与11/12快照口径不一，供参考",
+    "rows": [
+      {
+        "name": "Brent crude",
+        "value": "$95.82",
+        "change": "周四(11/12)结算，涨3.06美元(+3.3%)，受霍尔木兹海峡新一轮袭击及特朗普'无需与伊朗达成协议'表态推动反弹；本周早段一度跌破90美元，全周仍录得数月最大跌幅之一（不同信源给出13%-16%不等，口径不一）",
+        "dir": "up"
+      },
+      {
+        "name": "WTI crude",
+        "value": "$88.74",
+        "change": "周四(11/12)结算，涨2.21美元(+2.6%)，同步反弹",
+        "dir": "up"
+      },
+      {
+        "name": "US 10Y yield",
+        "value": "~4.86%",
+        "change": "10月CPI公布后一度逼近5%整数关口(11/10交易中一份口径为4.98%)，周四(11/12)回落至约4.86%附近；不同信源数据存在差异，未与财政部原始数据核对，仅供参考",
+        "dir": "down"
+      }
+    ]
+  },
+  "items": [
+    {
+      "rank": 1,
+      "tier": "must-read",
+      "headline": "霍尔木兹海峡本月第二轮袭击，布伦特原油周四反弹逾3%，但本周仍创数月最大单周跌幅之一",
+      "published": "2026-11-12",
+      "sectors": [
+        "大宗商品",
+        "能源",
+        "宏观"
+      ],
+      "tickers": [],
+      "body": "伊朗革命卫队称11月12日有四艘油轮在霍尔木兹海峡内遭爆炸袭击，沙特方面同日亦报告延布(Yanbu)附近输油管道泵站及阿美设施遇袭，相关说法均未经独立核实；同一天特朗普在社交媒体表态称美国无需与伊朗达成协议即可维持对其海上封锁。消息叠加下，布伦特原油当日大涨3.06美元(+3.3%)收于95.82美元，WTI涨2.21美元(+2.6%)收于88.74美元，结束此前连续多日的下跌。本周早段，布伦特一度跌破90美元至89.16美元附近，为数月来首次；不同信源对本周跌幅口径不一，一说约13%、一说约16%，但均指向疫情以来最大单周跌幅区间之一。截至周五早盘，布伦特报约95.4美元，基本持平周四收盘。",
+      "why": "海上封锁与袭击叠加特朗普的强硬表态，意味着市场此前押注的'伊朗协议近期可能达成、油价延续下跌'的假设被打破；原油价格的方向直接牵动美国CPI能源分项与12月议息会议前的通胀预期。",
+      "impact": "能源与大宗商品板块 · 美债收益率与通胀预期 · 海湾地区航运保险成本",
+      "sources": [
+        {
+          "name": "Nation Thailand",
+          "url": "https://www.nationthailand.com/news/world/40073442",
+          "angle": "标题将涨幅归因于沙特遭袭的声明"
+        },
+        {
+          "name": "CNBC",
+          "url": "https://www.cnbc.com/2026/11/12/oil-prices-jump-after-trump-says-no-iran-deal-needed-weve-got-their-strait.html",
+          "angle": "把涨幅与特朗普'不需要伊朗协议'的表态连在一起"
+        },
+        {
+          "name": "BOE Report（转载）",
+          "url": "https://boereport.com/2026/11/12/oil-prices-set-for-second-weekly-decline-as-trump-sticks-with-iran-blockade/",
+          "angle": "强调本周仍是连续第二周下跌、特朗普维持封锁"
+        },
+        {
+          "name": "Kalkine",
+          "url": "https://kalkine.ca/news/energy/can-strikes-on-11-vessels-near-hormuz-and-a-fresh-us-land-blockade-undo-the-oil-slide",
+          "angle": "统计本月以来海峡附近至少11艘船只遇袭或布雷"
+        }
+      ],
+      "assets": [
+        {
+          "asset_class": "大宗商品",
+          "direction": "up",
+          "conviction": "high",
+          "note": "袭击与封锁表态直接推高原油的地缘风险溢价，布伦特、WTI同步反弹逾2.5%。"
+        },
+        {
+          "asset_class": "美股",
+          "direction": "mixed",
+          "conviction": "medium",
+          "note": "能源股受益于油价反弹，但油价上行若传导至通胀预期，会压制对利率敏感的成长股。"
+        },
+        {
+          "asset_class": "海外股市",
+          "direction": "mixed",
+          "conviction": "low",
+          "note": "海湾地区航运与保险成本上升，对能源进口依赖度高的亚洲、欧洲市场构成额外不确定性。"
+        }
+      ],
+      "cross_source": {
+        "agreement": "split",
+        "summary": "各家对涨势的归因角度不同：CNBC聚焦特朗普'无需协议'的表态，Nation Thailand聚焦沙特遇袭的声明，BOE Report强调本周仍是net负收益、封锁未解除；本周累计跌幅的具体数字也不一致(13% vs 16%)，袭击细节（四艘油轮爆炸、沙特管道遇袭）均仅为单方说法，未经独立核实。"
+      },
+      "history": {
+        "summary": "原油价格本月经历了'下跌—反弹'的来回拉锯：11月9日特朗普曾表态暂缓对伊朗新一轮打击，油价当日大跌；11月10日CPI公布后跌势延续，布伦特跌破90美元；11月12日袭击消息与特朗普强硬表态令价格反弹，但尚未收复月初跌幅。",
+        "timeline": [
+          {
+            "when": "11/9",
+            "event": "特朗普表态暂缓对伊朗新一轮打击，布伦特盘中跌约4.65%-5.85%(口径不一)"
+          },
+          {
+            "when": "11/10",
+            "event": "CPI公布、通胀担忧叠加，布伦特跌破90美元至89.16美元附近"
+          },
+          {
+            "when": "11/12",
+            "event": "霍尔木兹海峡新一轮袭击叠加特朗普强硬表态，布伦特反弹3.3%至95.82美元"
+          }
+        ]
+      }
+    },
+    {
+      "rank": 2,
+      "tier": "must-read",
+      "headline": "特朗普就伊朗问题发出强硬表态，伊朗部分议员同步推动退出核不扩散条约",
+      "published": "2026-11-12",
+      "sectors": [
+        "地缘政治",
+        "能源",
+        "宏观"
+      ],
+      "tickers": [],
+      "body": "特朗普11月12日在社交平台表态，称美国'掌控着(伊朗的)海峡'，无需与伊朗达成协议即可维持现有的海上封锁，暗示对伊朗的强硬立场将持续；Fox News当天的直播页面将其表述为对伊朗发出'毫不犹豫'动武的警告(该措辞仅见于标题，正文未能核实)。与此同时，据Al Jazeera11月10日报道，伊朗政府官方仍表示支持留在《不扩散核武器条约》(NPT)内，但部分强硬派议员已在10月底公开呼吁退出；分析人士Ali Vaez将伊朗现状形容为'一只脚仍在条约内，另一只脚已靠近出口'。NPT规定成员国可提前三个月书面通知退出。",
+      "why": "伊朗是否退出NPT涉及核扩散风险升级，如果真的退出，可能招致更严厉的国际制裁与军事选项讨论；而特朗普维持海上封锁的表态意味着霍尔木兹海峡的紧张不会在短期内缓解，原油供给端的风险溢价很可能延续。",
+      "impact": "全市场地缘风险溢价 · 能源与国防相关板块 · 美伊外交路径",
+      "sources": [
+        {
+          "name": "CNBC",
+          "url": "https://www.cnbc.com/2026/11/12/oil-prices-jump-after-trump-says-no-iran-deal-needed-weve-got-their-strait.html",
+          "angle": "转述特朗普'掌控海峡'的表态原文"
+        },
+        {
+          "name": "Fox News 直播页",
+          "url": "https://www.foxnews.com/live-news/iran-war-news-trump-israel-hormuz-november-12",
+          "angle": "标题称特朗普发出'毫不犹豫'打击警告，正文未能核实"
+        },
+        {
+          "name": "Al Jazeera",
+          "url": "https://www.aljazeera.com/news/2026/11/10/iran-backs-nuclear-treaty-even-as-hardliners-raise-prospect-of-bomb",
+          "angle": "伊朗官方仍表态支持NPT，但强硬派议员已提出退约"
+        }
+      ],
+      "assets": [
+        {
+          "asset_class": "大宗商品",
+          "direction": "up",
+          "conviction": "medium",
+          "note": "地缘风险溢价维持高位，与item 1共同支撑原油价格。"
+        },
+        {
+          "asset_class": "美元",
+          "direction": "up",
+          "conviction": "low",
+          "note": "地缘不确定性上升时，避险资金历史上倾向流入美元，但本次未见明确的美元指数数据佐证。"
+        }
+      ],
+      "cross_source": {
+        "agreement": "split",
+        "summary": "Fox News的标题把特朗普的表态定性为动武警告，而CNBC的转述更聚焦于'维持封锁、不需要协议'这一相对防御性的表述；伊朗国内对NPT的立场本身也存在分歧——政府官方口径与部分议员的退约呼吁并不一致。"
+      }
+    },
+    {
+      "rank": 3,
+      "tier": "must-read",
+      "headline": "10月CPI推高美债收益率逼近5%整数关口，联储官员表态分化，周四小幅回落",
+      "published": "2026-11-12",
+      "sectors": [
+        "宏观",
+        "利率",
+        "联储"
+      ],
+      "tickers": [],
+      "body": "美国劳工统计局(BLS)11月10日公布的10月CPI环比上涨0.4%(预期0.3%)，核心CPI环比上涨0.3%(预期0.2%)，9月环比为0.6%；因2025年10月政府停摆期间未采集价格数据，本次未公布同比数字。CPI公布后，10年期美债收益率一度逼近5%整数关口(一份交易中口径为4.98%，较前一交易日上行约10个基点)，2年期同步上行约20个基点，交易员对12月加息的押注较此前升温；周四(11/12)收益率回落至约4.86%附近，但不同信源数据口径存在差异，未能与财政部原始数据核对。联储官员表态出现分化：达拉斯联储主席Logan警告10月PCE通胀可能回升，更快加息在今冬是可能选项；堪萨斯城联储主席Schmid称当前政策利率'相当宽松'；而理事Waller在伦敦演讲中为维持利率不变的投票作出解释，理事Bowman则强调抗通胀仍有工作要做。CME FedWatch数据显示（经媒体转述，未直接核对原始页面），12月加息25个基点的概率已升至90%以上，加息50个基点的概率低于10%。",
+      "why": "核心CPI连续第三个月环比上行0.3%，高于预期，使市场从'年底可能降息'的叙事转向'12月仍可能加息'，这是过去一周美债收益率与美股波动的主要驱动因素；官员表态分化说明联储内部对'再加息多少'尚未形成一致意见。",
+      "impact": "全市场利率定价 · 成长股估值 · 12月8-9日FOMC会议前瞻",
+      "sources": [
+        {
+          "name": "BLS 官方发布（经检索摘要引用，原文未能打开核对）",
+          "url": "https://www.bls.gov/news.release/archives/cpi_11102026.htm",
+          "angle": "CPI数据一手发布源"
+        },
+        {
+          "name": "MarketWatch（经Morningstar转载）",
+          "url": "https://www.morningstar.com/news/marketwatch/20261110148/stocks-fall-as-the-10-year-treasury-yield-nears-5-mark",
+          "angle": "聚焦10年期收益率逼近5%这一标题"
+        },
+        {
+          "name": "Axios",
+          "url": "https://www.axios.com/2026/11/10/federal-reserve-rate-hikes",
+          "angle": "CME FedWatch数据与2年期收益率跳升的角度"
+        },
+        {
+          "name": "Dow Jones（经Morningstar转载）",
+          "url": "https://www.morningstar.com/news/dow-jones/202611109872/feds-bowman-still-work-to-do-to-bring-inflation-closer-to-2",
+          "angle": "Bowman鹰派表态，强调抗通胀仍有工作要做"
+        }
+      ],
+      "assets": [
+        {
+          "asset_class": "美债",
+          "direction": "up",
+          "conviction": "medium",
+          "note": "10年期收益率CPI后一度逼近5%，周四回落至4.86%附近，方向尚不明朗，不同信源数字有出入。"
+        },
+        {
+          "asset_class": "美股",
+          "direction": "down",
+          "conviction": "medium",
+          "note": "CPI公布当日(11/10)三大指数收跌，标普500跌0.38%、纳指跌0.74%，利率敏感的成长股承压更明显。"
+        },
+        {
+          "asset_class": "美元",
+          "direction": "up",
+          "conviction": "low",
+          "note": "12月加息概率上升支撑美元，但本条未找到可靠的美元指数数据佐证。"
+        }
+      ],
+      "cross_source": {
+        "agreement": "split",
+        "summary": "联储官员本身意见分化(Logan、Schmid偏鹰 vs Waller、Bowman表态相对温和)，媒体对10年期收益率的具体数字报道也不一致(4.98% vs 其他口径)，是本周最大的分歧点之一。"
+      },
+      "history": {
+        "summary": "市场对12月议息会议的押注在过去两周经历了明显摆动。",
+        "timeline": [
+          {
+            "when": "10/28",
+            "event": "联储维持联邦基金利率目标区间3.75%-4.00%不变，投票10比2"
+          },
+          {
+            "when": "11/10",
+            "event": "10月CPI环比+0.4%、核心+0.3%均超预期，10年期收益率一度逼近5%"
+          },
+          {
+            "when": "11/12",
+            "event": "10年期收益率回落至约4.86%附近"
+          }
+        ]
+      }
+    },
+    {
+      "rank": 4,
+      "tier": "worth-knowing",
+      "headline": "Anthropic将IPO发行价区间定在70-78美元，隐含估值最高约1.4万亿美元",
+      "published": "2026-11-10",
+      "sectors": [
+        "AI",
+        "IPO",
+        "科技"
+      ],
+      "tickers": [],
+      "body": "Anthropic 11月10日提交更新后的招股文件，首次给出指示性发行价区间70-78美元/股，拟发行约8.25亿股A类股(其中约8,013,513股为新股)，计划在纳斯达克全球精选市场挂牌，代码ANT，主承销商为高盛与摩根士丹利。据路透社转述，Google、Nvidia、AMD、Broadcom、Micron、Microsoft、TSMC七家算力供应商拟按IPO价格合计认购约260亿美元的非投票类股份。各方对完全稀释后估值的换算口径不一：媒体给出的区间从约1.2万亿美元(Renaissance Capital，扣除可转债口径)到最高1.4万亿美元(Decrypt等)不等，募资规模预估约610亿美元左右。CNBC援引消息人士称定价与挂牌时点大致在11月中旬，但具体日期各方说法不一(11/16当周定价、11/18定价+11/19挂牌等说法并存)，均未经招股文件本身确认。",
+      "why": "这是今年规模最大的AI公司上市案例，七家算力供应商联合认购的安排也反映出AI产业链对彼此的深度绑定；若按上限定价，将是近年科技股IPO估值的重要参照点。",
+      "impact": "AI/科技板块估值基准 · IPO市场情绪",
+      "sources": [
+        {
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/10/anthropic-sets-ipo-price-range-of-70-to-78-per-share-to-reach-an-implied-valuation-of-1-404-trillion/",
+          "angle": "给出1.404万亿美元的上限估值口径"
+        },
+        {
+          "name": "CNBC",
+          "url": "https://www.cnbc.com/2026/11/10/anthropic-sets-price-range-of-70-to-78-in-upcoming-ipo.html",
+          "angle": "消息人士称目标11/19开始交易"
+        },
+        {
+          "name": "Renaissance Capital",
+          "url": "https://www.renaissancecapital.com/IPO-Center/News/122657/anthropic-sets-terms-for-61-billion-ipo-targeting-a-1.2-trillion-market-cap",
+          "angle": "扣除可转债口径后的1.2万亿美元估值与610亿美元募资规模"
+        },
+        {
+          "name": "InvestingLive",
+          "url": "https://investinglive.com/stocks/anthropic-lines-up-26-billion-from-nvidia-google-others-as-ipo-priced-at-70-to-80/",
+          "angle": "七家算力供应商260亿美元认购安排"
+        }
+      ]
+    },
+    {
+      "rank": 5,
+      "tier": "worth-knowing",
+      "headline": "Palantir三季度营收与全年指引超预期，但估值与美国商业合同增速放缓的担忧压低股价",
+      "published": "2026-11-10",
+      "sectors": [
+        "科技",
+        "AI",
+        "财报"
+      ],
+      "tickers": [
+        "PLTR"
+      ],
+      "body": "Palantir公布的2026年第三季度营收约23.1亿美元，同比增长约96%，净利润约11.3亿美元；公司将全年营收指引上调至约85.3亿美元。财报后股价走势口径不一：一些媒体报道盘前跌幅约8%，另一数据源显示当日收盘仅跌约1.6%至175.41美元，具体跌幅因统计口径不同而存在差异。分析师将下跌归因于市场对美国商业板块合同/订单增速放缓的担忧；据Benzinga转述，高盛认为其估值已达到约80倍远期企业价值/销售收入。",
+      "why": "Palantir是AI/国防数据分析板块的风向标，市场对'增长超预期却仍下跌'的反应，反映出当前AI相关股票的估值敏感度已经很高，任何边际放缓的信号都可能引发获利回吐。",
+      "impact": "AI数据分析板块情绪 · 高估值科技股的风险偏好",
+      "sources": [
+        {
+          "name": "Stocktwits",
+          "url": "https://stocktwits.com/news-articles/markets/equity/palantir-blows-past-expectations-in-q3-on-strong-commercial-sales-but-valuation-concerns-dampen-sentiment/cNGaXtiR9Pv",
+          "angle": "强调商业板块销售强劲但估值担忧压制情绪"
+        },
+        {
+          "name": "Webull",
+          "url": "https://www.webull.com/news/15862517031134208",
+          "angle": "给出当日收盘跌1.6%至175.41美元的口径"
+        },
+        {
+          "name": "IBTimes",
+          "url": "https://www.ibtimes.com/palantir-revenue-growth-contracts-shares-fall-3809340",
+          "angle": "给出盘前跌约8%的口径，聚焦合同增速放缓"
+        },
+        {
+          "name": "Benzinga",
+          "url": "https://benzinga.com/z/48623094",
+          "angle": "转述高盛对估值倍数(约80倍远期EV/销售)的评价"
+        }
+      ],
+      "cross_source": {
+        "agreement": "split",
+        "summary": "各家对财报后股价跌幅的具体数字差异很大(盘前约8% vs 当日收盘约1.6%)，可能是统计的时间点不同；但对'业绩超预期、股价仍跌'这一现象本身的归因基本一致，都指向估值与商业合同增速的担忧。"
+      }
+    },
+    {
+      "rank": 6,
+      "tier": "worth-knowing",
+      "headline": "俄军打击乌克兰八个州的能源设施，乌方称将面临新一轮寒冬断电风险",
+      "published": "2026-11-10",
+      "sectors": [
+        "地缘政治",
+        "能源",
+        "欧洲"
+      ],
+      "tickers": [],
+      "body": "乌克兰电网运营商11月10日通报，俄军当天打击了乌克兰八个州的能源设施，俄国防部表示将继续打击其认定对乌克兰军方有用的燃料与能源设施。这是今年以来持续性打击的延续：据Naftogaz首席执行官转述，11月8日的一次袭击涉及450余架无人机与45枚导弹，是10月初以来第九次针对民用天然气设施的打击(该数字未经独立核实)；同日，俄罗斯列宁格勒州的Kirishi炼油厂(俄第二大炼油厂)附近超60万人一度停电。乌方指出，特朗普10月提出的'能源停火'倡议至今未被任何一方遵守。",
+      "why": "持续的能源基础设施打击意味着乌克兰今冬的电力与供暖缺口可能进一步扩大，也让'能源停火'的外交努力继续承压，间接影响欧洲天然气市场的风险溢价。",
+      "impact": "欧洲能源市场 · 乌克兰人道与经济状况",
+      "sources": [
+        {
+          "name": "Political.org",
+          "url": "https://political.org/2026/11/10/russia-strikes-energy-facilities-in-eight-ukrainian-regions-as-winter-approaches-grid-operator-says/",
+          "angle": "乌方电网运营商口径，八州能源设施遇袭"
+        },
+        {
+          "name": "Al Jazeera",
+          "url": "https://www.aljazeera.com/news/2026/11/8/russian-strikes-on-ukraine-leave-hundreds-of-thousands-without-electricity",
+          "angle": "11月8日打击后超60万人停电"
+        }
+      ]
+    },
+    {
+      "rank": 7,
+      "tier": "worth-knowing",
+      "headline": "多位联储官员CPI后表态分化：达拉斯联储Logan偏鹰，理事Waller、Bowman态度不一",
+      "published": "2026-11-10",
+      "sectors": [
+        "联储",
+        "宏观",
+        "利率"
+      ],
+      "tickers": [],
+      "body": "10月CPI公布后，多位联储官员在公开场合表态，呈现出明显分化：达拉斯联储主席Logan警告10月PCE通胀可能回升，认为今冬更快加息是可能选项；堪萨斯城联储主席Schmid则称当前货币政策立场'相当宽松'，加入偏鹰阵营；理事Waller在伦敦的演讲中解释了自己此前投票维持利率不变的理由；理事Bowman强调抗通胀仍有工作要做，并提到10月PCE与11月就业报告尚未公布，是下次会议前的关键数据。联储10月28日的会议上，以10票对2票的结果维持联邦基金利率目标区间3.75%-4.00%不变。",
+      "why": "官员表态的分化程度本身是一个信号：如果连续几位官员都偏向鹰派，说明12月会议上'多大幅度加息'而非'是否加息'可能才是真正的分歧点。",
+      "impact": "利率路径预期 · 联储沟通传导",
+      "sources": [
+        {
+          "name": "Dow Jones（经Morningstar转载）",
+          "url": "https://www.morningstar.com/news/dow-jones/2026111010580/feds-schmid-joins-hawkish-chorus-on-rate-direction",
+          "angle": "Schmid加入鹰派合唱的表态"
+        },
+        {
+          "name": "Dow Jones（经Morningstar转载）",
+          "url": "https://www.morningstar.com/news/dow-jones/202611109872/feds-bowman-still-work-to-do-to-bring-inflation-closer-to-2",
+          "angle": "Bowman强调抗通胀仍有工作要做"
+        },
+        {
+          "name": "Stocktwits",
+          "url": "https://stocktwits.com/news-articles/markets/equity/dallas-fed-s-logan-warns-october-pce-inflation-could-rise-sees-faster-rate-hikes-as-a-possibility-this-winter/cNGuoe3R9Jf",
+          "angle": "Logan对10月PCE可能回升的警告"
+        }
+      ]
+    },
+    {
+      "rank": 8,
+      "tier": "worth-knowing",
+      "headline": "Sonos第四财季营收超预期，但内存成本上升拖累每股收益，同时启动1.5亿美元新回购",
+      "published": "2026-11-10",
+      "sectors": [
+        "消费电子",
+        "财报"
+      ],
+      "tickers": [
+        "SONO"
+      ],
+      "body": "Sonos公布的2026财年第四季度营收约3.44亿美元，略高于约3.40亿美元的市场预期；调整后每股收益0.04美元，低于0.05美元的预期，公司称主要受内存成本上升拖累，全财年为此多支出约5,600万美元。公司同日宣布新的1.5亿美元股票回购计划。此前8月，公司曾宣布裁员约3%，涉及用户体验与产品团队。",
+      "why": "营收超预期但盈利不及预期、同时启动回购，是消费电子硬件企业在零部件成本上升环境下的典型应对组合，反映出内存涨价正在传导至终端产品的利润率。",
+      "impact": "消费电子硬件板块",
+      "sources": [
+        {
+          "name": "247wallst",
+          "url": "https://247wallst.com/cards/sonos-q4-2026-earnings-sono-01m73nsytnw1nxmthmh4jkryst",
+          "angle": "营收超预期、每股收益不及预期的具体数字"
+        }
+      ]
+    },
+    {
+      "rank": 9,
+      "tier": "worth-knowing",
+      "headline": "CPI超预期后黄金短线回落，美元指数小幅走高",
+      "published": "2026-11-10",
+      "sectors": [
+        "大宗商品",
+        "外汇",
+        "宏观"
+      ],
+      "tickers": [],
+      "body": "在10月CPI公布前，黄金11月9日一度上涨1.86%至4150.50美元/盎司；CPI公布后，市场对12月更快加息的押注升温，黄金11月10日早盘回落向4100美元附近，ICE美元指数同步小幅走高至约101.67。本周早些时候(11月5日)，现货黄金曾触及4146.63美元/盎司的阶段性高点。",
+      "why": "黄金对利率预期的变化非常敏感，CPI超预期后的回落说明市场确实在重新定价'更快加息'的概率，这与美债收益率逼近5%的走势相互印证。",
+      "impact": "贵金属与外汇市场",
+      "sources": [
+        {
+          "name": "Kalkine",
+          "url": "https://kalkine.ca/news/mining/what-is-driving-the-186-gold-climb-toward-usd-4150-for-spdr-gold-shares-nysearcagld",
+          "angle": "11/9黄金上涨1.86%至4150.50美元的数字"
+        },
+        {
+          "name": "Barchart",
+          "url": "https://www.barchart.com/story/news/36214747/dollar-rallies-as-december-fed-rate-cut-expectations-fade",
+          "angle": "美元因12月降息预期降温而走强的角度"
+        }
+      ]
+    },
+    {
+      "rank": 10,
+      "tier": "worth-knowing",
+      "headline": "美股周二(11/10)普跌，英伟达逆势走软，AMD与博通上涨",
+      "published": "2026-11-10",
+      "sectors": [
+        "美股",
+        "宏观"
+      ],
+      "tickers": [
+        "NVDA",
+        "AMD",
+        "AVGO"
+      ],
+      "body": "在前一交易日(11/9)大幅反弹后，美股三大指数11月10日普遍收低：标普500指数跌0.38%，纳斯达克综合指数跌0.74%，道琼斯工业指数跌0.30%，主要受10月CPI超预期引发的加息预期升温拖累。个股层面出现分化：英伟达延续近期跌势，AMD与博通则录得上涨；本条收盘数字来自市场数据汇总站点，未找到路透或美联社的收盘稿予以核对。",
+      "why": "指数层面的下跌主要由利率驱动，但半导体板块内部的分化(英伟达跌、AMD/博通涨)说明市场对不同公司的AI叙事与黄仁勋事件的影响正在做区分，而不是把整个板块一视同仁地抛售。",
+      "impact": "美股大盘与半导体板块",
+      "sources": [
+        {
+          "name": "JournalArta",
+          "url": "https://journalarta.com/en/2026/11/11/stock-market-today-sp-500-slips-0-38-to-7520-93-and-nasdaq-falls-0-74-as-10-year-yield-rises-to-4-98/",
+          "angle": "三大指数收盘跌幅与个股分化的数字"
+        }
+      ]
+    },
+    {
+      "rank": 11,
+      "tier": "noise",
+      "headline": "英伟达董事会独立调查仍无结论，国会设定的11月11日答复期限已过未见公开回应，公司重申黄仁勋继续担任CEO",
+      "published": "2026-11-11",
+      "sectors": [
+        "科技",
+        "半导体"
+      ],
+      "tickers": [
+        "NVDA"
+      ],
+      "body": "这是11月8日爆发的旧闻的最新进展：英伟达董事会就黄仁勋与Megaspeed高管Alice Huang相关的婚外情及其被指为外国情报目标的报道启动的独立调查，至今未公布结论。众议院外交事务、中国特别委员会和情报委员会三位主席此前致信黄仁勋，邀请其在11月11日前答复是否出席11月18日的闭门说明会，目前没有检索到他是否已答复或是否会出席的公开报道。值得注意的是，近期检索中出现多条声称'黄仁勋已辞去CEO、CFO Colette Kress接任临时CEO'的报道标题，但经交叉核查，这些说法与美联社转述的公司发言人表态('Jensen致力于继续无间断地领导英伟达')以及搜索引擎能找到的任何SEC 8-K备案均不一致，本简报不采信'已辞职'这一说法。英伟达11月17日的三季度财报(FQ3 FY2027，10月25日结束的财季)仍按原计划进行，电话会定于当天下午5点(东部时间)。",
+      "why": "尽管事件本身已发酵近一周，但董事会调查结论、国会听证是否成行、以及11月17日财报日的管理层表态，仍是接下来一周影响英伟达股价与整个AI板块情绪的潜在变量。",
+      "impact": "英伟达个股与AI硬件板块情绪",
+      "sources": [
+        {
+          "name": "letsdatascience（转述国会三位主席联名信）",
+          "url": "https://letsdatascience.com/news/house-chairs-ask-nvidia-ceo-jensen-huang-for-closed-door-bri-d3ca0fdc",
+          "angle": "国会三位主席要求11月11日前答复的时间线"
+        },
+        {
+          "name": "stockanalysis.com",
+          "url": "https://stockanalysis.com/news/nvidia-huang-spy-probe-premarket-drop/",
+          "angle": "董事会投资调查与股价反应的背景"
+        }
+      ]
+    },
+    {
+      "rank": 12,
+      "tier": "noise",
+      "headline": "霍尔木兹海峡本月实际通行量，各方统计口径差异巨大，不采信单一数字",
+      "published": "2026-11-10",
+      "sectors": [
+        "地缘政治",
+        "能源"
+      ],
+      "tickers": [],
+      "body": "关于霍尔木兹海峡近期的实际通行量，不同机构给出的数字相差悬殊：Kalkine援引的统计称截至11月10日的10天内，海峡附近至少11艘船只遭袭击或布雷(未经核实)；一个追踪通行数据的机构称美方协助通行的船只11月5-7日日均30.3艘；另有航运媒体Seatrade报道称伊朗自身的石油与天然气出口已接近于零，但过境船只数量却在增加，两种说法并存。鉴于口径差异过大，本条只记录分歧存在这一事实，不采用任何单一数字作为定论。",
+      "why": "通行量数据的分歧说明外界对海峡实际风险程度的判断仍很模糊，这也是油价对任何风吹草动都反应剧烈的部分原因。",
+      "impact": "无直接决策影响，仅作背景",
+      "sources": [
+        {
+          "name": "Kalkine",
+          "url": "https://kalkine.ca/news/energy/can-strikes-on-11-vessels-near-hormuz-and-a-fresh-us-land-blockade-undo-the-oil-slide",
+          "angle": "11艘船只遭袭或布雷的统计"
+        },
+        {
+          "name": "Seatrade Maritime",
+          "url": "https://www.seatrade-maritime.com/tankers/iran-oil-and-gas-exports-nearly-zero-malaysia-eopl-reserves-dry-up",
+          "angle": "伊朗出口接近于零但过境船只增加的说法"
+        }
+      ]
+    },
+    {
+      "rank": 13,
+      "tier": "noise",
+      "headline": "Anthropic估值与募资总额口径不一，各方给出1.2万亿至1.4万亿美元不等",
+      "published": "2026-11-10",
+      "sectors": [
+        "AI",
+        "IPO"
+      ],
+      "tickers": [],
+      "body": "尽管Anthropic已公布70-78美元/股的官方发行价区间，但不同媒体对其完全稀释估值和募资总额的换算依然不统一：Fortune按完全稀释口径给出最高约1.4万亿美元，Forbes给出约1.3万亿美元，Renaissance Capital在扣除可转债后给出约1.2万亿美元，CNBC则称区间上限对应整体融资约644亿美元。差异主要源于股本基数(是否完全稀释、是否扣除可转债)的选取不同。",
+      "why": "无直接决策影响，仅提示读者在看到'Anthropic估值多少万亿'这类标题时留意口径差异。",
+      "impact": "无直接决策影响，仅作背景",
+      "sources": [
+        {
+          "name": "Decrypt",
+          "url": "https://decrypt.co/382939/anthropic-sets-ipo-price-range-at-70-to-78-valuing-company-at-up-to-1-4-trillion?amp=1",
+          "angle": "1.4万亿美元上限口径"
+        },
+        {
+          "name": "Renaissance Capital",
+          "url": "https://www.renaissancecapital.com/IPO-Center/News/122657/anthropic-sets-terms-for-61-billion-ipo-targeting-a-1.2-trillion-market-cap",
+          "angle": "扣除可转债后的1.2万亿美元口径"
+        }
+      ]
+    },
+    {
+      "rank": 14,
+      "tier": "noise",
+      "headline": "布伦特原油本周跌幅口径不一：一说约13%，另一说约16%",
+      "published": "2026-11-12",
+      "sectors": [
+        "大宗商品"
+      ],
+      "tickers": [],
+      "body": "在周四反弹之前，布伦特原油本周的累计跌幅在不同信源间存在明显差异：Trading Economics援引的数字截至11月6日约为13%，而另一份援引Baird Maritime/Nation的说法截至11月9日给出约16%，两者统计的起止时间不同，不构成矛盾，但也无法直接比较得出单一的'本周跌幅'。",
+      "why": "无直接决策影响，仅提示读者在比较'本周油价跌了多少'时留意统计区间的差异。",
+      "impact": "无直接决策影响，仅作背景",
+      "sources": [
+        {
+          "name": "Gulf Today",
+          "url": "https://gulftoday.ae/news/2026/11/10/trump-says-he-will-hold-off-on-fresh-iran-strikes-for-now",
+          "angle": "截至11/6约13%跌幅的转述"
+        },
+        {
+          "name": "Khaleej Times",
+          "url": "https://www.khaleejtimes.com/business/oil-falls-almost-5-as-trump-signals-restraint-on-iran",
+          "angle": "11/9当日跌幅与本周大跌的背景"
+        }
+      ]
+    },
+    {
+      "rank": 15,
+      "tier": "noise",
+      "headline": "欧洲央行理事Lane表态支持12月可能加息，市场定价概率升至约84%",
+      "published": "2026-11-10",
+      "sectors": [
+        "欧洲",
+        "宏观",
+        "利率"
+      ],
+      "tickers": [],
+      "body": "据FXStreet报道，欧洲央行理事Lane11月10日表态支持12月可能的加息，带动市场对该次加息的定价概率升至约84%，欧元区2年期国债收益率当日上行约5个基点至4.56%；报道同时提到，若油价维持在当前水平附近，预计将从11月起缓解欧元区的通胀压力。",
+      "why": "对以美股与美国宏观为主的本简报而言，欧洲央行的表态属于外部背景，暂不构成对美股决策的直接影响，仅记录作为参考。",
+      "impact": "欧元区利率预期，对美股无直接影响",
+      "sources": [
+        {
+          "name": "FXStreet",
+          "url": "https://www.fxstreet.com/analysis/hawks-fly-in-as-feds-waller-puts-50bps-hike-on-table-and-ecbs-lane-backs-hike-202611101041",
+          "angle": "Lane表态与12月加息概率84%的数字"
+        }
+      ]
+    }
+  ],
+  "calendar": [
+    {
+      "when": "Fri 11/13",
+      "time": "08:30 ET",
+      "event": "美国10月PPI(生产者价格指数)公布，为12月FOMC会议前最后一批重要通胀数据之一",
+      "weight": "mid",
+      "date": "2026-11-13",
+      "sources": [
+        {
+          "name": "BLS",
+          "url": "https://www.bls.gov/ppi/notices/2026/ppi-adds-deletes-october-2026.htm"
+        }
+      ]
+    },
+    {
+      "when": "Tue 11/17",
+      "time": "17:00 ET",
+      "event": "英伟达公布FQ3 FY2027财报(截至10/25财季)，电话会17:00 ET；空头持仓2.80亿股(10/30结算，较上期-7.31%，回补天数2.8天，FINRA数据)",
+      "weight": "high",
+      "date": "2026-11-17",
+      "sources": [
+        {
+          "name": "InsiderFinance",
+          "url": "https://www.insiderfinance.io/news/nvidia-earnings-set-for-nov-17-amid-sell-signals"
+        },
+        {
+          "name": "FINRA 官方空头持仓数据",
+          "url": "https://www.finra.org/finra-data/browse-catalog/equity-short-interest/data"
+        }
+      ]
+    },
+    {
+      "when": "Wed 11/18",
+      "time": "",
+      "event": "国会众议院三委员会(外交事务、中国特别委员会、情报委员会)拟议的闭门说明会，邀请英伟达CEO黄仁勋就与Megaspeed高管的往来作说明；是否成行尚未公开确认",
+      "weight": "mid",
+      "date": "2026-11-18",
+      "sources": [
+        {
+          "name": "letsdatascience",
+          "url": "https://letsdatascience.com/news/house-chairs-ask-nvidia-ceo-jensen-huang-for-closed-door-bri-d3ca0fdc"
+        }
+      ]
+    },
+    {
+      "when": "本月中旬",
+      "time": "",
+      "event": "Anthropic预计定价并在纳斯达克挂牌(代码ANT)，具体日期各方说法不一(11/16当周定价、11/18定价+11/19挂牌等并存)，以招股文件最终确认为准",
+      "weight": "mid",
+      "sources": [
+        {
+          "name": "CNBC",
+          "url": "https://www.cnbc.com/2026/11/10/anthropic-sets-price-range-of-70-to-78-in-upcoming-ipo.html"
+        }
+      ]
+    },
+    {
+      "when": "12月8-9日",
+      "time": "决议14:00 ET(12/9)",
+      "event": "12月FOMC议息会议，将公布季度经济预测(SEP)",
+      "weight": "high",
+      "date": "2026-12-09",
+      "sources": [
+        {
+          "name": "fedratecalc.com(汇总联储官方日程)",
+          "url": "https://fedratecalc.com/fomc-meeting-schedule/december-2026/"
+        }
+      ]
+    }
+  ]
+}
