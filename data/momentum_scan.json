@@ -1,16 +1,16 @@
 {
-  "scanned_at": "2026-11-14T16:16:11Z",
+  "scanned_at": "2026-11-15T16:03:52Z",
   "asof": "2026-11-13",
   "note": "由 GitHub Actions 扫描并提交，供云端定时任务读取。stage 只描述这只票走到这波的第几天，score 衡量的是「有多早」而不是「有多好」——回测显示本模块无法预测后续涨跌，它的用途是把观察窗口前移，不是给出买卖信号。",
-  "universe_size": 2542,
-  "evaluated": 2536,
+  "universe_size": 2555,
+  "evaluated": 2551,
   "failed": 4,
-  "stale": 2,
+  "stale": 0,
   "counts": {
-    "ignition": 4,
-    "continuation": 535,
-    "base": 1797,
-    "extended": 119
+    "ignition": 5,
+    "continuation": 551,
+    "base": 1828,
+    "extended": 122
   },
   "candidates": [
     {
@@ -44,6 +44,22 @@
       "gap_pct": 2.32,
       "stage": "ignition",
       "score": 98.2
+    },
+    {
+      "ticker": "PUBM",
+      "date": "2026-11-13",
+      "close": 20.61,
+      "change_pct": 8.36,
+      "rvol": 4.44,
+      "dollar_volume": 10118966,
+      "ext_ma20": 0.1898,
+      "closing_range": 0.902,
+      "breakout_age": 0,
+      "run_from_base": 0.3387,
+      "base_tightness": 0.2653,
+      "gap_pct": 0.05,
+      "stage": "ignition",
+      "score": 97.23
     },
     {
       "ticker": "MAZE",
@@ -634,22 +650,6 @@
       "run_from_base": 0.2655,
       "base_tightness": 0.2923,
       "gap_pct": 0.61,
-      "stage": "continuation",
-      "score": 57.0
-    },
-    {
-      "ticker": "TNC",
-      "date": "2026-11-13",
-      "close": 74.64,
-      "change_pct": -0.52,
-      "rvol": 0.62,
-      "dollar_volume": 13073028,
-      "ext_ma20": 0.0731,
-      "closing_range": 0.258,
-      "breakout_age": 2,
-      "run_from_base": 0.1576,
-      "base_tightness": 0.1787,
-      "gap_pct": 0.93,
       "stage": "continuation",
       "score": 57.0
     }
