@@ -1,0 +1,781 @@
+{
+  "date": "2026-11-16",
+  "weekday": "Monday",
+  "edition": "Week-ahead edition",
+  "generated_at": "2026-11-16 06:22 PT",
+  "scanned": 74,
+  "kept": 15,
+  "max_age_days": 5,
+  "thesis": "英伟达CEO黄仁勋11/12辞职的余震周一仍未散去：股价继续走弱，临时CEO Kress当家，周二财报与周三国会简报接连而至。与此同时12月联储加息预期把美元与收益率同时顶在高位，油价本周一先涨后跌、信源口径互相矛盾。Anthropic也选在同一周定价上市，财报季与IPO季在本周彻底撞车。本环境今日WebFetch被网络策略整体拦截，所有数字均来自搜索摘要的交叉印证，未能逐字核对原文，使用前请知悉。",
+  "tape": {
+    "asof": "跨资产快照 · 各行对应的交易日不同，见各行说明；本环境WebFetch被拦截，均来自搜索摘要，未经原始行情源核实",
+    "rows": [
+      {
+        "name": "Brent crude",
+        "value": "~$95-96",
+        "change": "周一(11/16)盘中数字冲突：一说06:21GMT报96.28美元(较上周五结算95.84美元+0.46%)，另一说稍后跌约1%至94.86美元，理由均指向全球供应过剩担忧与霍尔木兹通行逐步恢复；两个数字均未能核对原始交易所数据",
+        "dir": "flat"
+      },
+      {
+        "name": "WTI crude",
+        "value": "~$87-88",
+        "change": "周一盘中报约87.90美元附近，与Brent同步小幅走软，数字来源同上、未经核实",
+        "dir": "flat"
+      },
+      {
+        "name": "US 10Y yield",
+        "value": "~4.85%",
+        "change": "11/6报收4.86%，11/9企稳于约4.85%附近，反映就业数据偏强、12月加息预期升温；本环境未能核对11/12-11/16的最新收盘数字",
+        "dir": "up"
+      },
+      {
+        "name": "US Dollar Index",
+        "value": "~102.2",
+        "change": "11/11纽约盘后报约102.23，当周累计上涨约0.4%-0.56%，为近六个月最大单周涨幅之一，主要受12月加息押注推动；未能核对11/12-11/16最新点位",
+        "dir": "up"
+      }
+    ]
+  },
+  "items": [
+    {
+      "rank": 1,
+      "tier": "must-read",
+      "published": "2026-11-16",
+      "headline": "英伟达股价周一继续走弱，投资者仍在消化黄仁勋辞职的后续影响，财报与国会简报接连逼近",
+      "sectors": [
+        "科技",
+        "半导体"
+      ],
+      "tickers": [
+        "NVDA"
+      ],
+      "body": "据CNBC周一(11/16)报道，英伟达股价盘前继续下跌，投资者仍在为CEO黄仁勋11/12辞职的连锁影响重新定价；CNBC同时提到该股上周已蒸发数千亿美元市值，依赖英伟达GPU的\"新云\"(neocloud)相关个股也随之走软。临时CEO Colette Kress(兼任CFO)已表态将推进永久CEO的内外部候选人搜寻，董事会首任董事长Harvey Jones表示对运营连续性有信心。英伟达定于11/17(周二)美股收盘后公布FY27第三财季业绩，电话会美东17:00；三位国会委员会主席此前要求黄仁勋以CEO身份11/18出席闭门简报，但他已不再担任CEO，是否仍会出席、以何种身份出席均未见确认。本环境WebFetch被网络策略整体拦截，以上内容均来自搜索引擎多方摘要交叉印证，未能逐字核对CNBC原文与公司公告。",
+      "why": "英伟达是标普500权重最大的成分股之一，非计划性的CEO更替叠加明日财报与国会简报，三件事挤在同一周，任何一个环节的意外都会被放大成对整个AI硬件板块情绪的冲击，而不只是个股波动。",
+      "impact": "英伟达个股 · AI硬件与半导体板块情绪 · 大盘权重股不确定性",
+      "sources": [
+        {
+          "name": "CNBC（11/16报道标题及摘要，原文未能打开核对）",
+          "url": "https://www.cnbc.com/2026/11/16/nvidia-stock-price-jensen-huang.html",
+          "angle": "聚焦周一股价延续跌势，提及上周市值蒸发规模与neocloud股连带走弱"
+        },
+        {
+          "name": "Al Jazeera（辞职背景与Kress介绍）",
+          "url": "https://www.aljazeera.com/news/2026/11/12/why-did-nvidia-ceo-jensen-huang-resign-and-who-is-colette-kress",
+          "angle": "解释辞职原因与临时CEO背景"
+        },
+        {
+          "name": "letsdatascience（国会11/18简报请求的最新进展）",
+          "url": "https://letsdatascience.com/news/house-chairs-ask-nvidia-ceo-jensen-huang-for-closed-door-bri-d3ca0fdc",
+          "angle": "国会三位委员会主席要求的是闭门简报而非公开听证，且回复期限已过"
+        },
+        {
+          "name": "NVIDIA 投资者关系（财报日程公告，原文未能打开核对）",
+          "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Sets-Conference-Call-for-Third-Quarter-Financial-Results/",
+          "angle": "公司官方财报日程"
+        }
+      ],
+      "assets": [
+        {
+          "asset_class": "美股",
+          "direction": "down",
+          "conviction": "medium",
+          "note": "英伟达作为标普权重最大成分股之一持续走软，拖累AI硬件与半导体板块情绪，但大盘层面尚未形成系统性下跌。"
+        },
+        {
+          "asset_class": "海外股市",
+          "direction": "mixed",
+          "conviction": "low",
+          "note": "依赖英伟达GPU的新云(neocloud)类个股连带承压，但本环境未能核实亚欧市场今日的具体传导幅度。"
+        }
+      ],
+      "cross_source": {
+        "agreement": "aligned",
+        "summary": "CNBC、Al Jazeera、letsdatascience等对\"黄仁勋已辞职、Kress任临时CEO、股价持续承压\"这组核心事实口径一致；分歧主要在股价具体跌幅的统计口径（收盘/盘前/不同交易日），以及黄仁勋是否仍会以何种身份出席11/18简报——目前没有任何信源给出确认答案。"
+      },
+      "history": {
+        "summary": "从婚外情曝光到CEO辞职只用了4天，辞职后股价的消化过程却持续了一周以上。",
+        "timeline": [
+          {
+            "when": "11/8",
+            "event": "黄仁勋致员工信为个人行为道歉，董事会宣布就其是否被外国情报机构利用启动独立调查"
+          },
+          {
+            "when": "11/11",
+            "event": "NYT报道第二起婚外情指控(涉VP Kimberly Powell)，股价盘后一度跌约4.5%"
+          },
+          {
+            "when": "11/12",
+            "event": "英伟达公告黄仁勋辞去总裁、CEO及董事职务，Colette Kress任临时CEO，Harvey Jones任董事会首任董事长"
+          },
+          {
+            "when": "11/16",
+            "event": "股价延续跌势，市场继续消化管理层更替的不确定性"
+          }
+        ]
+      }
+    },
+    {
+      "rank": 2,
+      "tier": "must-read",
+      "published": "2026-11-16",
+      "headline": "油价、美债收益率、美元三线交织：12月加息预期撑住收益率与美元，油价本周一先涨后跌、各信源数字互相矛盾",
+      "sectors": [
+        "宏观",
+        "利率",
+        "能源"
+      ],
+      "tickers": [],
+      "body": "周一(11/16)亚盘到早盘，Brent原油的报价在不同信源之间明显冲突：一篇报道称06:21GMT报96.28美元、较上周五结算的95.84美元上涨0.46%；另一篇报道称稍后跌约1%至94.86美元、WTI跌至约87.90美元，理由都指向全球供应过剩担忧与霍尔木兹海峡通行逐步恢复。与此同时，10年期美债收益率仍维持在11月上旬以来约4.85%附近的高位，美元指数在11/11纽约盘后报约102.23、当周累计涨约0.4%-0.56%，为近六个月最大单周涨幅之一——两者的共同驱动力是市场对12月联储会议加息的押注持续升温。本环境WebFetch被网络策略整体拦截，以上数字均来自搜索摘要交叉印证，未能核对交易所结算价、财政部收益率曲线或EIA原始数据。",
+      "why": "原油、美债和美元现在是同一笔交易的三个面：只要12月加息预期不退，收益率和美元的下行空间都被封住；而油价本身的方向连搜索引擎返回的多个信源都对不上，说明这个窗口期的市场定价本身就不稳定，比平时更需要用一手数据源做最终核实。",
+      "impact": "全市场 · 久期敏感资产 · 美元计价资产",
+      "sources": [
+        {
+          "name": "financefeeds（周一早盘Brent报价，原文未能打开核对）",
+          "url": "https://financefeeds.com/brent-crude-oil-price-96-28-monday-iran-bahrain-strike-bull-98-bear-91",
+          "angle": "给出周一早盘96.28美元、较周五结算上涨的口径"
+        },
+        {
+          "name": "hdfcsky（周一Brent下跌口径，原文未能打开核对）",
+          "url": "https://hdfcsky.com/news/brent-crude-oil-price-today-november-16-2026-brent-falls-1percent-to-94-86-wti-slips-below-88-as-supply-surplus-looms",
+          "angle": "归因于供应过剩预期与霍尔木兹运输恢复，给出相反方向的数字"
+        },
+        {
+          "name": "Advisor Perspectives（11/6美债收益率周报，原文未能打开核对）",
+          "url": "https://www.advisorperspectives.com/dshort/updates/2026/11/06/treasury-yields-snapshot-november-6-2026",
+          "angle": "财政部口径的周度收益率快照"
+        },
+        {
+          "name": "RTTNews（美元指数周涨幅，原文未能打开核对）",
+          "url": "https://www.rttnews.com/3707146/dollar-rallied-last-week-amidst-rate-hike-bets.aspx?type=cm",
+          "angle": "将美元上涨与12月加息押注直接挂钩"
+        }
+      ],
+      "assets": [
+        {
+          "asset_class": "美债",
+          "direction": "down",
+          "conviction": "medium",
+          "note": "10年期收益率维持在约4.85%附近的高位，价格端承压，核心驱动是12月加息预期而非今日新增信息。"
+        },
+        {
+          "asset_class": "美元",
+          "direction": "up",
+          "conviction": "medium",
+          "note": "美元指数处于近六个月高位附近，加息押注抬升利差对非美货币构成支撑性买盘。"
+        },
+        {
+          "asset_class": "大宗商品",
+          "direction": "mixed",
+          "conviction": "low",
+          "note": "原油方向在不同信源之间互相矛盾，供应过剩担忧与霍尔木兹局势两种叙事同时存在，方向性判断的把握不足。"
+        }
+      ],
+      "cross_source": {
+        "agreement": "split",
+        "summary": "financefeeds与hdfcsky对周一Brent的方向给出完全相反的描述（上涨0.46%vs下跌约1%），且都未能找到交易所层面的结算价做仲裁；这种分歧本身说明原油这个窗口期的定价不稳定，比平时更需要一手数据源核实。"
+      },
+      "history": {
+        "summary": "美元与收益率的同步走高，背后是同一个12月加息预期在撑着；但撑它的两条腿——就业数据偏强与原油走势——本身在过去两周内方向并不稳定。",
+        "timeline": [
+          {
+            "when": "11/6",
+            "event": "10年期收益率收于4.86%，2年期4.51%"
+          },
+          {
+            "when": "11/9",
+            "event": "收益率企稳于约4.85%附近，就业数据强化12月加息预期"
+          },
+          {
+            "when": "11/11",
+            "event": "美元指数纽约盘后报约102.23，创近六个月最大单周涨幅之一"
+          }
+        ]
+      }
+    },
+    {
+      "rank": 3,
+      "tier": "must-read",
+      "published": "2026-11-14",
+      "headline": "Anthropic本周定价上市：发行价70-78美元、825亿股，订单已超额认购，周三定价、周四登陆纳斯达克",
+      "sectors": [
+        "AI",
+        "一级市场",
+        "新股"
+      ],
+      "tickers": [
+        "ANT"
+      ],
+      "body": "多方报道显示，Anthropic计划11/18(周三)完成IPO定价，11/19(周四)起以代码ANT在纳斯达克全球精选市场开始交易。修订后的招股文件显示发行规模为8.25亿股A类股，价格区间70-78美元，另加260亿美元的私募配售。彭博社11/11曾报道订单已达到发行股数的数倍(\"multiple times\")，大额锚定订单带动需求；截至11/14的后续报道显示认购热度持续，但具体超额认购倍数在不同信源间未见一致数字，本环境也未能找到权威来源确认。估值测算同样存在分歧：部分报道给出1.3万亿至1.4万亿美元区间，另有报道给出9,160亿至1.02万亿美元区间，差异尚未厘清原因。",
+      "why": "如果本周四如期挂牌，二级市场将第一次出现一家纯AI模型公司的可比标的，现阶段所有AI相关资产的估值锚都会被重新校准，而发行时点恰好与英伟达财报、国会简报撞在同一周，AI板块的信息密度在本周被推到了全年少见的高位。",
+      "impact": "AI板块估值锚 · 新股市场 · 风险偏好",
+      "sources": [
+        {
+          "name": "tradingkey（11/14订单与定价进展，原文未能打开核对）",
+          "url": "https://www.tradingkey.com/analysis/stocks/us-stocks/262304476-anthropic-ipo-ant-price-above-78-orders-six-times-november-14-2026-tradingkey",
+          "angle": "11/14更新订单认购情况，标题提及订单可能数倍于发行股数，具体倍数本环境未能核实"
+        },
+        {
+          "name": "RTTNews（价格区间与路演启动，原文未能打开核对）",
+          "url": "https://www.rttnews.com/3712632/anthropic-sets-ipo-price-range-at-70-78-per-share-launches-roadshow.aspx",
+          "angle": "给出70-78美元区间与路演启动时间"
+        },
+        {
+          "name": "letsdatascience（260亿美元私募配售，原文未能打开核对）",
+          "url": "https://letsdatascience.com/news/anthropic-sets-ipo-range-and-adds-26-billion-private-placeme-f6c67619",
+          "angle": "补充私募配售细节"
+        },
+        {
+          "name": "kucoin（定价与交易日程，原文未能打开核对）",
+          "url": "https://www.kucoin.com/news/flash/anthropic-ipo-nears-claude-maker-to-debut-on-nasdaq-nov-19",
+          "angle": "给出11/18定价、11/19挂牌的日程"
+        }
+      ],
+      "assets": [
+        {
+          "asset_class": "美股",
+          "direction": "mixed",
+          "conviction": "low",
+          "note": "大型AI新股上市可能分流部分资金，但也可能提振整个板块的风险偏好，方向尚不明确。"
+        }
+      ],
+      "cross_source": {
+        "agreement": "split",
+        "summary": "各信源对发行价区间(70-78美元)、股数(8.25亿股)与上市日程(11/18定价、11/19挂牌)口径一致，但对认购超额倍数与最终估值区间（1.3-1.4万亿美元 vs 9,160亿-1.02万亿美元）存在明显分歧，本环境未能找到权威来源厘清差异原因。"
+      },
+      "history": {
+        "summary": "从10月26日最初递表到本周定价挂牌，整个流程压缩在不到一个月内。",
+        "timeline": [
+          {
+            "when": "10/26",
+            "event": "最初S-1递交，未给出价格与股数"
+          },
+          {
+            "when": "11/9前后",
+            "event": "S-1修订版给出价格区间70-78美元、发行8.25亿股"
+          },
+          {
+            "when": "11/11",
+            "event": "彭博社报道订单已数倍于发行股数"
+          },
+          {
+            "when": "11/18-11/19",
+            "event": "计划定价并在纳斯达克挂牌交易"
+          }
+        ]
+      }
+    },
+    {
+      "rank": 4,
+      "tier": "worth-knowing",
+      "published": "2026-11-12",
+      "headline": "英伟达正式公告：黄仁勋辞职，Colette Kress任临时CEO兼CFO，Harvey Jones任董事会首任董事长",
+      "sectors": [
+        "科技",
+        "半导体"
+      ],
+      "tickers": [
+        "NVDA"
+      ],
+      "body": "英伟达11/12公告，黄仁勋已辞去总裁、CEO及董事职务，即时生效；董事会任命现任CFO Colette Kress兼任临时CEO并保留CFO职务，同时启动对永久CEO的内外部候选人搜寻，另任命Harvey C. Jones为公司首任董事会董事长。公司公告未说明辞职具体原因，黄仁勋此前已在致员工信中为个人行为道歉。",
+      "why": "这是黄仁勋自1993年创立英伟达以来首次卸任CEO，管理层的非计划性更替本身就是对英伟达治理结构的一次压力测试。",
+      "impact": "英伟达个股 · 公司治理",
+      "sources": [
+        {
+          "name": "NVIDIA Newsroom（公司官方声明，原文未能打开核对）",
+          "url": "https://nvidianews.nvidia.com/news/statement-from-nvidia-board-of-directors",
+          "angle": "公司一手声明"
+        },
+        {
+          "name": "NBC News",
+          "url": "https://www.nbcnews.com/tech/tech-news/nvidia-ceo-jensen-huang-resigns-reports-extramarital-relationships-rcna608402",
+          "angle": "聚焦辞职公告与多段关系指控的关联"
+        }
+      ]
+    },
+    {
+      "rank": 5,
+      "tier": "worth-knowing",
+      "published": "2026-11-11",
+      "headline": "NYT报道英伟达CEO涉第二起婚外情指控（涉VP Kimberly Powell），股价盘后一度跌约4.5%",
+      "sectors": [
+        "科技",
+        "公司治理"
+      ],
+      "tickers": [
+        "NVDA"
+      ],
+      "body": "据报道，《纽约时报》援引五名现任或前任员工称，黄仁勋与英伟达医疗健康业务副总裁Kimberly Powell存在关系，英伟达与双方均未证实。报道发布当日股价盘后一度跌约4.5%。这是继11/8董事会就\"外国情报接触\"指控启动调查后的第二起指控，发生在黄仁勋11/12辞职的前一天。",
+      "why": "指控密度在辞职前一天骤然升高，说明董事会面对的舆论与治理压力在最后关头明显加码，这也是理解11/12为何突然做出辞职决定的关键背景。",
+      "impact": "英伟达个股 · 公司治理",
+      "sources": [
+        {
+          "name": "cryptobriefing（转述NYT报道，原文未能打开核对）",
+          "url": "https://cryptobriefing.com/nvidia-ceo-scandal-market-impact/",
+          "angle": "聚焦第二起指控对股价的冲击"
+        }
+      ]
+    },
+    {
+      "rank": 6,
+      "tier": "worth-knowing",
+      "published": "2026-11-11",
+      "headline": "CoreWeave三季度营收36.6亿美元、同比+168%，上调全年指引，带动AI基础设施股集体走强",
+      "sectors": [
+        "AI基础设施",
+        "云"
+      ],
+      "tickers": [
+        "CRWV"
+      ],
+      "body": "CoreWeave公布三季度业绩，营收36.6亿美元、同比增168%，超LSEG一致预期的35.5亿美元，并将2026全年营收指引上调至130-133亿美元；积压订单132.5亿美元，较6月的104亿美元继续增长。公司仍录得GAAP净亏损7.09亿美元，每股亏损1.27美元。多篇报道提到AI基础设施类个股当天集体走强，但具体涨幅各家口径差异较大(从约5%到13%不等)，本环境未能核实收盘数字。",
+      "why": "作为租赁英伟达GPU算力的代表性\"新云\"公司，CoreWeave的指引上调是对AI资本开支尚未见顶这一叙事的一次实打实的验证，与英伟达同期的治理风波形成对照——基本面与管理层风险是两条独立的线。",
+      "impact": "AI基础设施板块 · GPU租赁需求",
+      "sources": [
+        {
+          "name": "SiliconANGLE",
+          "url": "https://siliconangle.com/2026/11/10/coreweave-arrests-stock-slide-after-posting-a-strong-earnings-beat-and-raising-its-full-year-guidance/",
+          "angle": "把盈利超预期和指引上调与股价止跌联系在一起"
+        },
+        {
+          "name": "investingLive",
+          "url": "https://investinglive.com/stocks/coreweave-q3-beats-on-seven-key-metrics-lifts-full-year-revenue-and-run-rate-guidance/",
+          "angle": "列出七项超预期的关键指标"
+        }
+      ]
+    },
+    {
+      "rank": 7,
+      "tier": "worth-knowing",
+      "published": "2026-11-11",
+      "headline": "俄乌互袭能源设施，美方主持的阿布扎比工作层谈判11/10-11举行，结果未见公开报道",
+      "sectors": [
+        "地缘",
+        "能源"
+      ],
+      "tickers": [],
+      "body": "乌克兰能源部称俄方一周内对乌能源设施发动128次打击；乌方无人机11/9击中俄方一座大型炼油厂。美方特使Witkoff表示将主持11/10-11在阿布扎比的俄乌工作层谈判，但本环境未能找到谈判结果的后续报道——这不代表没有结果，只是搜索索引在这个时间窗口的覆盖明显偏薄。",
+      "why": "俄乌双方在谈判前夕同步加码对能源设施的打击，是谈判筹码博弈的常见模式；谈判结果（如果有）会直接影响欧洲能源供给与油价预期，是需要持续跟踪的缺口。",
+      "impact": "能源供给 · 欧洲天然气与原油价格预期",
+      "sources": [
+        {
+          "name": "Al Jazeera（原文未能打开核对）",
+          "url": "https://www.aljazeera.com/news/2026/11/9/at-least-one-person-killed-as-russia-and-ukraine-trade-strikes-overnight",
+          "angle": "以人员伤亡和夜间互袭为主线"
+        },
+        {
+          "name": "Political.org（原文未能打开核对）",
+          "url": "https://political.org/2026/11/09/russia-and-ukraine-trade-long-range-strikes-on-power-grid-and-oil-refineries-a-day-before-us-brokered-talks-in-abu-dhabi/",
+          "angle": "把炼油厂袭击与美方主持的阿布扎比谈判放在一起"
+        }
+      ]
+    },
+    {
+      "rank": 8,
+      "tier": "worth-knowing",
+      "published": "2026-11-11",
+      "headline": "跨党派议员推动把收紧对华AI芯片出口管控写入国防授权法案",
+      "sectors": [
+        "半导体",
+        "监管",
+        "地缘"
+      ],
+      "tickers": [
+        "NVDA",
+        "AMD"
+      ],
+      "body": "据报道，两党资深议员要求加强对美国先进AI芯片对华出口的限制，并希望把相关条款写入年度国防授权法案；参议院多数党领袖舒默表示支持AI OVERWATCH Act、MATCH Act与Chip Security Act三项法案。本条仅有单一信源（印度官方媒体All India Radio转载），内容需审慎对待。",
+      "why": "如果相关条款真的被写入年度必过的国防授权法案，会绕开单独立法推进缓慢的问题，是AI芯片出口管制收紧的一条现实路径，值得持续跟踪后续立法进展。",
+      "impact": "半导体对华出口敞口 · 监管预期",
+      "sources": [
+        {
+          "name": "All India Radio（newsonair，原文未能打开核对，单一信源）",
+          "url": "https://newsonair.gov.in/us-lawmakers-push-for-tighter-ai-chip-export-controls-on-china/",
+          "angle": "以国会推动立法的角度报道，列出法案名称"
+        }
+      ]
+    },
+    {
+      "rank": 9,
+      "tier": "worth-knowing",
+      "published": "2026-11-15",
+      "headline": "中国技术出口限制草案（涵盖AI模型与芯片设计方法）意见征集11/15截止，最终文本尚未发布",
+      "sectors": [
+        "半导体",
+        "AI",
+        "监管",
+        "地缘"
+      ],
+      "tickers": [
+        "NVDA",
+        "AMD"
+      ],
+      "body": "这是10月16日草案的后续进展：中国商务部与科技部彼时公布的技术出口限制目录草案，主要针对AI模型、智能体、芯片设计方法与算力集群架构（而非仅限实体芯片），意见征集期已于11月15日结束，最终文本是否发布、何时发布均未见确认。草案条目数量在不同报道间口径不一（一处40条、另一处23项技术），尚待核实。",
+      "why": "征集期结束意味着这份草案进入最终文本的临门阶段，一旦正式发布，会直接影响英伟达、AMD等公司面向中国市场的技术与服务出口，是美中科技博弈里一个相对低调但实质性的变量。",
+      "impact": "半导体对华业务 · AI技术出口",
+      "sources": [
+        {
+          "name": "Broadband Breakfast（原文未能打开核对）",
+          "url": "https://broadbandbreakfast.com/china-moves-to-curb-tech-exports-including-ai-citing-national-security-risks.md",
+          "angle": "以国家安全为出口管制理由"
+        },
+        {
+          "name": "Tech Insider（原文未能打开核对）",
+          "url": "https://tech-insider.org/china-ai-export-curbs-23-technologies-2026/",
+          "angle": "标题给出23项技术的口径，与40条的说法不一致"
+        }
+      ]
+    },
+    {
+      "rank": 10,
+      "tier": "worth-knowing",
+      "published": "2026-11-11",
+      "headline": "美股周三(11/11)全线反弹，收复前一周AI股抛售的部分跌幅",
+      "sectors": [
+        "宏观",
+        "市场"
+      ],
+      "tickers": [],
+      "body": "周三(11/11，美国退伍军人节，债市休市、股市照常交易)三大指数全线收涨：S&P 500收于7,619.38点(+1.31%)，纳指收25,466.19点(+1.60%)，道指收52,486.49点(+0.49%)，VIX报17.49。AP将反弹归因于前一周因AI数据中心相关股票抛售后的回升。本环境未能找到11/12-11/15的后续收盘数据，这段窗口的市场走势暂时缺失。",
+      "why": "这是本周前瞻里唯一一组确认的近期大盘收盘数据，用来理解本周英伟达、Anthropic、财报季三条线交织的市场背景，但需要清楚它已经是5天前的快照，中间的空白不代表市场平静。",
+      "impact": "全市场情绪背景",
+      "sources": [
+        {
+          "name": "La Nación（AP指数播报，原文未能打开核对）",
+          "url": "https://www.lanacion.com.ar/usa/how-major-us-stock-indexes-fared-wednesday-11112026-nid11112026/",
+          "angle": "将1.3%涨幅描述为前一周AI相关抛售后的反弹"
+        },
+        {
+          "name": "ADN（AP，原文未能打开核对）",
+          "url": "https://www.adn.com/business-economy/2026/11/11/rebounding-ai-stocks-lift-wall-street/",
+          "angle": "强调AI股反弹带动开盘，同时指出美债休市"
+        }
+      ]
+    },
+    {
+      "rank": 11,
+      "tier": "noise",
+      "published": "2026-11-16",
+      "headline": "本周约136家公司将公布财报，财报季进入尾声密集期",
+      "sectors": [
+        "财报季"
+      ],
+      "tickers": [],
+      "body": "TheStreet财报日历显示，11月16日至20日这一周约有136家公司披露业绩，其中英伟达(11/17)与博通预告(12/9不在本周)是市场关注度最高的两个节点。",
+      "sources": [
+        {
+          "name": "TheStreet（财报日历，原文未能打开核对）",
+          "url": "https://pro.thestreet.com/earnings/2026-11-16",
+          "angle": "只给日程数量，未给个股名单与预期"
+        }
+      ]
+    },
+    {
+      "rank": 12,
+      "tier": "noise",
+      "published": "2026-11-11",
+      "headline": "美元指数上周创近六个月最大单周涨幅之一",
+      "sectors": [
+        "美元",
+        "外汇"
+      ],
+      "tickers": [],
+      "body": "据报道，美元指数在截至11/11当周上涨约0.4%-0.56%，是近六个月以来最大的单周涨幅之一，主要驱动力是市场对12月联储加息的押注持续走高。",
+      "sources": [
+        {
+          "name": "RTTNews（原文未能打开核对）",
+          "url": "https://www.rttnews.com/3707146/dollar-rallied-last-week-amidst-rate-hike-bets.aspx?type=cm",
+          "angle": "将美元上涨与加息押注直接挂钩"
+        }
+      ]
+    },
+    {
+      "rank": 13,
+      "tier": "noise",
+      "published": "2026-11-11",
+      "headline": "11/11退伍军人节：美国债市休市，股市照常交易",
+      "sectors": [
+        "市场机制"
+      ],
+      "tickers": [],
+      "body": "11月11日退伍军人节当天，美国债券市场休市，股票市场照常交易，是当周交易安排里的一个小背景。",
+      "sources": [
+        {
+          "name": "La Nación（原文未能打开核对）",
+          "url": "https://www.lanacion.com.ar/usa/how-major-us-stock-indexes-fared-wednesday-11112026-nid11112026/",
+          "angle": "AP指数播报中提及当日休市安排"
+        }
+      ]
+    },
+    {
+      "rank": 14,
+      "tier": "noise",
+      "published": "2026-11-16",
+      "headline": "美国10月零售销售数据预计11/17发布",
+      "sectors": [
+        "宏观",
+        "数据"
+      ],
+      "tickers": [],
+      "body": "多个财经日历显示，美国10月零售销售数据预计于11月17日(周二)美东8:30发布，与英伟达财报同日；另有一处日历给出11月25日的不同日期，本环境未能核实哪个是最终口径。",
+      "sources": [
+        {
+          "name": "ForexFundamentals（原文未能打开核对）",
+          "url": "https://forexfundamentals.com/economic-calendar/us-retail-sales/2026-11-17",
+          "angle": "给出11/17 13:30 UTC(美东8:30)的发布时间"
+        }
+      ]
+    },
+    {
+      "rank": 15,
+      "tier": "noise",
+      "published": "2026-11-16",
+      "headline": "美国10月新屋开工数据预计11/18发布",
+      "sectors": [
+        "宏观",
+        "房地产"
+      ],
+      "tickers": [],
+      "body": "财经日历显示，美国人口普查局与住房及城市发展部预计将于11月18日(周三)美东8:30发布10月新屋开工数据，与Anthropic预期定价同日。",
+      "sources": [
+        {
+          "name": "FinanceCalendar（原文未能打开核对）",
+          "url": "https://www.financecalendar.com/events/category/economic-indicators/day/2026-11-21/",
+          "angle": "财经日历条目，具体日期待与官方日程交叉核实"
+        }
+      ]
+    }
+  ],
+  "calendar": [
+    {
+      "when": "Tue 11/17",
+      "time": "08:30 ET",
+      "event": "美国10月零售销售数据发布（与英伟达财报同日）",
+      "weight": "mid",
+      "date": "2026-11-17",
+      "sources": [
+        {
+          "name": "ForexFundamentals",
+          "url": "https://forexfundamentals.com/economic-calendar/us-retail-sales/2026-11-17"
+        }
+      ]
+    },
+    {
+      "when": "Tue 11/17",
+      "time": "美股收盘后 · 电话会17:00 ET",
+      "event": "英伟达公布FY27第三财季业绩，公司指引营收1,080亿美元±2%、毛利率74%±50bp",
+      "weight": "high",
+      "date": "2026-11-17",
+      "sources": [
+        {
+          "name": "NVIDIA 投资者关系（原文未能打开核对）",
+          "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Sets-Conference-Call-for-Third-Quarter-Financial-Results/"
+        },
+        {
+          "name": "CME Group Elite 财报日历",
+          "url": "https://www.cmelitegroup.com/knowledge-hub/nvidia-earnings-date/"
+        }
+      ]
+    },
+    {
+      "when": "Wed 11/18",
+      "time": "08:30 ET",
+      "event": "美国10月新屋开工数据发布",
+      "weight": "low",
+      "date": "2026-11-18",
+      "sources": [
+        {
+          "name": "FinanceCalendar",
+          "url": "https://www.financecalendar.com/events/category/economic-indicators/day/2026-11-21/"
+        }
+      ]
+    },
+    {
+      "when": "Wed 11/18",
+      "time": "—",
+      "event": "Anthropic预期完成IPO定价，发行价区间70-78美元、825亿股",
+      "weight": "high",
+      "date": "2026-11-18",
+      "sources": [
+        {
+          "name": "RTTNews",
+          "url": "https://www.rttnews.com/3712632/anthropic-sets-ipo-price-range-at-70-78-per-share-launches-roadshow.aspx"
+        },
+        {
+          "name": "kucoin",
+          "url": "https://www.kucoin.com/news/flash/anthropic-ipo-nears-claude-maker-to-debut-on-nasdaq-nov-19"
+        }
+      ]
+    },
+    {
+      "when": "Wed 11/18",
+      "time": "—",
+      "event": "国会三位委员会主席此前要求黄仁勋出席闭门简报，但他已辞任CEO，是否仍会出席、以何种身份未获确认",
+      "weight": "mid",
+      "date": "2026-11-18",
+      "sources": [
+        {
+          "name": "letsdatascience",
+          "url": "https://letsdatascience.com/news/house-chairs-ask-nvidia-ceo-jensen-huang-for-closed-door-bri-d3ca0fdc"
+        }
+      ]
+    },
+    {
+      "when": "Thu 11/19",
+      "time": "—",
+      "event": "Anthropic预期以代码ANT在纳斯达克开始交易",
+      "weight": "high",
+      "date": "2026-11-19",
+      "sources": [
+        {
+          "name": "kucoin",
+          "url": "https://www.kucoin.com/news/flash/anthropic-ipo-nears-claude-maker-to-debut-on-nasdaq-nov-19"
+        }
+      ]
+    },
+    {
+      "when": "Sun 11/29",
+      "time": "—",
+      "event": "OPEC+核心七国会议，讨论2027年产量配额",
+      "weight": "mid",
+      "date": "2026-11-29",
+      "sources": [
+        {
+          "name": "WorldOil",
+          "url": "https://worldoil.com/news/2026/11/1/opec-subgroup-keeps-oil-production-quotas-unchanged-for-december/"
+        },
+        {
+          "name": "OPEC官方新闻稿",
+          "url": "https://opec.org/pr-detail/620-1-november-2026.html"
+        }
+      ]
+    },
+    {
+      "when": "Wed 12/9",
+      "time": "美股收盘后 · 电话会14:00 PT",
+      "event": "博通公布2026财年第四季度及全年财报",
+      "weight": "mid",
+      "date": "2026-12-09",
+      "sources": [
+        {
+          "name": "Finviz（转载博通新闻稿，原文未能打开核对）",
+          "url": "https://finviz.com/news/418980/broadcom-inc-to-announce-fourth-quarter-and-fiscal-year-2026-financial-results-on-wednesday-december-9-2026"
+        }
+      ]
+    }
+  ],
+  "momentum": {
+    "asof": "2026-11-13",
+    "scanned": 2555,
+    "note": "",
+    "candidates": [
+      {
+        "ticker": "STN",
+        "date": "2026-11-13",
+        "stage": "ignition",
+        "close": 85.69,
+        "change_pct": 14.06,
+        "rvol": 2.84,
+        "breakout_age": 0,
+        "ext_ma20": 0.1572,
+        "run_from_base": 0.3112,
+        "note": "单日+14.06%，量能放大至2.84倍均量，突破当天（第0天），已自基底上涨约31%。"
+      },
+      {
+        "ticker": "WWW",
+        "date": "2026-11-13",
+        "stage": "ignition",
+        "close": 24.89,
+        "change_pct": 8.83,
+        "rvol": 2.74,
+        "breakout_age": 0,
+        "ext_ma20": 0.1726,
+        "run_from_base": 0.3447,
+        "note": "单日+8.83%，量能放大至2.74倍均量，突破当天（第0天），已自基底上涨约34%。"
+      },
+      {
+        "ticker": "PUBM",
+        "date": "2026-11-13",
+        "stage": "ignition",
+        "close": 20.61,
+        "change_pct": 8.36,
+        "rvol": 4.44,
+        "breakout_age": 0,
+        "ext_ma20": 0.1898,
+        "run_from_base": 0.3387,
+        "note": "单日+8.36%，量能放大至4.44倍均量，突破当天（第0天），已自基底上涨约34%。"
+      },
+      {
+        "ticker": "MAZE",
+        "date": "2026-11-13",
+        "stage": "ignition",
+        "close": 34.33,
+        "change_pct": -4.88,
+        "rvol": 2.62,
+        "breakout_age": 2,
+        "ext_ma20": 0.0469,
+        "run_from_base": 0.564,
+        "note": "突破后第2天单日转跌4.88%，量能仍放大至2.62倍均量，已自基底上涨约56%，突破后的回撤值得留意。"
+      },
+      {
+        "ticker": "HAWK",
+        "date": "2026-11-13",
+        "stage": "ignition",
+        "close": 18.16,
+        "change_pct": 23.79,
+        "rvol": 4.41,
+        "breakout_age": 0,
+        "ext_ma20": 0.3237,
+        "run_from_base": 0.6142,
+        "note": "单日+23.79%，量能放大至4.41倍均量，突破当天（第0天），已自基底上涨约61%，是本次名单里涨幅最大的一只。"
+      },
+      {
+        "ticker": "ASND",
+        "date": "2026-11-13",
+        "stage": "continuation",
+        "close": 275.39,
+        "change_pct": 3.12,
+        "rvol": 1.3,
+        "breakout_age": 0,
+        "ext_ma20": 0.0972,
+        "run_from_base": 0.2545,
+        "note": "单日+3.12%，量能放大至1.3倍均量，延续突破后第0天的走势，已自基底上涨约25%。"
+      },
+      {
+        "ticker": "ATAT",
+        "date": "2026-11-13",
+        "stage": "continuation",
+        "close": 38.13,
+        "change_pct": 3.42,
+        "rvol": 1.69,
+        "breakout_age": 0,
+        "ext_ma20": 0.1178,
+        "run_from_base": 0.268,
+        "note": "单日+3.42%，量能放大至1.69倍均量，延续突破后第0天的走势，已自基底上涨约27%。"
+      },
+      {
+        "ticker": "BDX",
+        "date": "2026-11-13",
+        "stage": "continuation",
+        "close": 218.03,
+        "change_pct": 1.08,
+        "rvol": 1.07,
+        "breakout_age": 0,
+        "ext_ma20": 0.0718,
+        "run_from_base": 0.2445,
+        "note": "单日+1.08%，量能放大至1.07倍均量，延续突破后第0天的走势，已自基底上涨约24%。"
+      },
+      {
+        "ticker": "COLD",
+        "date": "2026-11-13",
+        "stage": "continuation",
+        "close": 16.69,
+        "change_pct": 4.97,
+        "rvol": 1.69,
+        "breakout_age": 0,
+        "ext_ma20": 0.1137,
+        "run_from_base": 0.2521,
+        "note": "单日+4.97%，量能放大至1.69倍均量，延续突破后第0天的走势，已自基底上涨约25%。"
+      }
+    ]
+  }
+}
