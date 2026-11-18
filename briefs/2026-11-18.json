@@ -1,0 +1,840 @@
+{
+  "date": "2026-11-18",
+  "weekday": "周三",
+  "edition": "daily",
+  "generated_at": "2026-11-18T06:12:51-08:00",
+  "scanned": 120,
+  "kept": 15,
+  "thesis": "英伟达交出黄仁勋辞任后的首份财报——营收1158亿美元超预期、Q4指引1300亿美元，带动半导体股盘前普涨；同一周Anthropic正定价IPO，明日(11/19)挂牌纳斯达克，成为AI估值的新锚点。商务部对东南亚/巴西的芯片出口新规与霍尔木兹海峡持续升级的油轮袭击，构成了AI叙事与地缘风险交织的背景。",
+  "tape": {
+    "asof": "最后经多方核实的收盘 · 周一 11/16（本环境 WebFetch 无法访问交易所与行情网站，周二/周三数据各信源互相矛盾，未采用）",
+    "rows": [
+      {
+        "name": "S&P 500",
+        "value": "7,416.59",
+        "change": "-1.9%，连续第三个交易日下跌",
+        "dir": "down"
+      },
+      {
+        "name": "Nasdaq Composite",
+        "value": "24,509.76",
+        "change": "-2.5%，英伟达带头拖累科技股",
+        "dir": "down"
+      },
+      {
+        "name": "Dow Jones",
+        "value": "51,608.17",
+        "change": "-1.4%",
+        "dir": "down"
+      }
+    ]
+  },
+  "items": [
+    {
+      "rank": 1,
+      "tier": "must-read",
+      "published": "2026-11-17",
+      "headline": "英伟达黄仁勋辞任后首份财报：Q3营收1158亿美元超预期，Q4指引1300亿美元，半导体同行盘前普涨",
+      "sectors": [
+        "半导体",
+        "AI",
+        "科技"
+      ],
+      "tickers": [
+        "NVDA"
+      ],
+      "body": "英伟达11月17日美股盘后公布截至10月25日的2027财年第三财季业绩，营收约1158亿美元，同比约增103%；数据中心营收约1076亿美元，同比约增110%。非GAAP摊薄每股收益2.68美元，高于分析师一致预期约2.47-2.48美元。第四财季指引1300亿美元±3%，高于市场此前约1250亿美元的预期，但该指引不含中国数据中心计算收入。本环境无法用WebFetch打开SEC EDGAR原文核实，以下数字均来自多家媒体搜索摘要的交叉印证（营收与指引数字在TechCrunch、CNBC与8-K摘录间一致，GAAP每股收益2.70美元与740亿美元数据中心租赁等细节仅见单一来源，未交叉验证）。这是创始人黄仁勋11月12日辞去总裁、CEO及董事职务后，由CFO Colette Kress以代理CEO身份主持的首场财报电话会。",
+      "why": "这份财报同时是业绩与管理层信任度的双重测试：数字本身超预期，但分析师的反应明显掺杂了对CEO过渡不确定性的担忧，两者叠加决定了本周AI硬件板块的方向。",
+      "impact": "半导体与AI硬件板块 · 带动美股大盘与纳指权重",
+      "sources": [
+        {
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/17/nvidia-promises-that-revenue-will-keep-soaring-for-now/",
+          "angle": "聚焦营收增长能否持续，强调新云承诺依赖对方融资落地"
+        },
+        {
+          "name": "SEC EDGAR（NVIDIA 8-K，Q3 FY27新闻稿）",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000088/q3fy27pr.htm",
+          "angle": "一手备案；本环境未能打开，数字仅凭搜索摘要确认"
+        },
+        {
+          "name": "CNBC",
+          "url": "https://www.cnbc.com/2026/11/17/nvidia-earnings-investor-china-jensen.html",
+          "angle": "聚焦中国销售、领导层交接与AI融资"
+        },
+        {
+          "name": "Forbes",
+          "url": "https://www.forbes.com/sites/fionariley/2026/11/17/nvidia-reports-strong-1158-billion-quarterly-revenue-in-first-earnings-post-jensen-huang/",
+          "angle": "以'黄仁勋离任后首份财报'为框架"
+        }
+      ],
+      "assets": [
+        {
+          "asset_class": "美股",
+          "direction": "up",
+          "conviction": "high",
+          "note": "财报超预期带动半导体同行11/18盘前普涨：AMD约+1.9%，博通约+2.2%，美光约+2.7%，Marvell约+3.2%（单一来源，未交叉验证）。"
+        },
+        {
+          "asset_class": "海外股市",
+          "direction": "mixed",
+          "conviction": "medium",
+          "note": "亚洲芯片供应链通常跟随英伟达指引同向波动，但本次指引不含中国数据中心收入，实际传导力度有待观察。"
+        }
+      ],
+      "cross_source": {
+        "agreement": "aligned",
+        "summary": "各家对营收1158亿美元、Q4指引1300亿美元等核心数字口径基本一致，分歧集中在盘后涨幅的具体数字（各家报2.4%至4%以上不等）与对CEO过渡影响的强调程度上。"
+      },
+      "history": {
+        "summary": "这是黄仁勋辞任后的首份财报，发布前市场已连续三个交易日下跌，英伟达财报前景与出口管制新规是主要拖累。",
+        "timeline": [
+          {
+            "when": "11/12",
+            "event": "黄仁勋辞去总裁、CEO及董事职务，CFO Colette Kress任代理CEO"
+          },
+          {
+            "when": "11/16",
+            "event": "美股连续第三日下跌，纳指-2.5%，英伟达领跌"
+          },
+          {
+            "when": "11/17",
+            "event": "Q3财报公布，营收与指引均超预期"
+          }
+        ]
+      }
+    },
+    {
+      "rank": 2,
+      "tier": "must-read",
+      "published": "2026-11-18",
+      "headline": "Anthropic IPO定价在即：区间70-78美元/股，预计今晚定价，明日(11/19)纳斯达克挂牌",
+      "sectors": [
+        "AI",
+        "一级市场",
+        "新股"
+      ],
+      "tickers": [],
+      "body": "Anthropic 11月10日公布IPO发行区间70-78美元/股，拟发行8.25亿股A类股。多家媒体报道今日(11月18日)晚间定价、11月19日起开始交易，承销商另有最多1.2375亿股的超额配售权，据报至多20%配售给散户。截至目前搜索结果中未见最终定价公布。各信源对完全稀释估值的说法不一致：区间上限对应约1.4万亿美元，也有报道称整体目标在1万亿至1.2万亿美元左右，差异可能来自不同轮次口径或媒体各自的推算方式。",
+      "why": "如果最终定价落在区间上限甚至之上，意味着二级市场对纯AI模型公司的估值预期仍在上修，为整个AI板块提供新的估值锚点；如果低于区间，则会印证近期软件股对AI颠覆与估值过高的担忧。",
+      "impact": "AI板块估值锚 · 新股市场",
+      "sources": [
+        {
+          "name": "CNBC",
+          "url": "https://www.cnbc.com/2026/11/10/anthropic-sets-price-range-of-70-to-78-in-upcoming-ipo.html",
+          "angle": "首发价格区间报道，并给出11/19开始交易的消息来源说法"
+        },
+        {
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/10/anthropic-sets-ipo-price-range-of-70-to-78-per-share-to-reach-an-implied-valuation-of-1-404-trillion/",
+          "angle": "以隐含估值1.404万亿美元为标题重点"
+        },
+        {
+          "name": "CNBC",
+          "url": "https://www.cnbc.com/2026/11/16/anthropic-ipo-date-price-range.html",
+          "angle": "IPO日程与定价安排的指南式报道"
+        }
+      ],
+      "cross_source": {
+        "agreement": "split",
+        "summary": "各家对发行区间(70-78美元/股)口径一致，但对完全稀释估值的最终说法不一——1万亿、1.2万亿、1.4万亿美元均有报道，反映不同轮次或推算口径的差异，尚无权威统一数字。"
+      },
+      "history": {
+        "summary": "公司11月10日公布发行区间后进入路演，期间AI软件股估值担忧持续发酵，本次定价结果将检验市场是否仍愿意为纯AI模型公司给出高估值。",
+        "timeline": [
+          {
+            "when": "11/10",
+            "event": "公布IPO区间70-78美元/股，启动路演"
+          },
+          {
+            "when": "11/18晚",
+            "event": "预计今晚定价，明日(11/19)纳斯达克开始交易"
+          }
+        ]
+      }
+    },
+    {
+      "rank": 3,
+      "tier": "must-read",
+      "published": "2026-11-16",
+      "headline": "美国商务部发布临时新规：对新加坡、马来西亚、泰国、印尼、巴西的先进AI芯片出口设许可要求",
+      "sectors": [
+        "半导体",
+        "出口管制",
+        "地缘"
+      ],
+      "tickers": [
+        "NVDA",
+        "AMD"
+      ],
+      "body": "美国商务部工业与安全局(BIS)11月16日发布临时最终规则，对上述五国的先进AI芯片及服务器出口新增许可要求，理由是这些地区存在较高的向中国转运风险。规则针对可能提供算力给受限方的数据中心，既有运营方据报有90天宽限期取得许可。本环境无法打开联邦公报原文核实细节，具体宽限期与集群门槛等数字均来自媒体转述。分析师估计该限制可能使英伟达营收减少约一成，这是估算而非已发生的损失。",
+      "why": "这是中美科技博弈的最新一步反制措施，直接影响英伟达、AMD等公司对东南亚数据中心的出货路径，也发生在特朗普与习近平11月19日APEC会晤前夕，时点本身就是信号。",
+      "impact": "半导体与AI硬件板块 · 中美科技博弈",
+      "sources": [
+        {
+          "name": "W.Media",
+          "url": "https://w.media/us-moves-to-stop-chip-diversion-through-southeast-asia-and-brazil/",
+          "angle": "聚焦东南亚与巴西的转运风险"
+        },
+        {
+          "name": "AI Weekly",
+          "url": "https://aiweekly.co/alerts/commerce-issues-interim-rule-requiring-licenses-for-remote-ai-chip-access-in",
+          "angle": "按'远程访问AI芯片'许可规则解读，称堵住了通过第三国数据中心远程租用算力的漏洞"
+        },
+        {
+          "name": "The Standard (HK)",
+          "url": "https://www.thestandard.com.hk/innovation/article/348666/US-to-curb-Chinas-access-to-AI-chips-as-Trump-heads-to-Asia",
+          "angle": "放在特朗普赴亚洲行程的背景下解读"
+        }
+      ],
+      "assets": [
+        {
+          "asset_class": "美股",
+          "direction": "mixed",
+          "conviction": "medium",
+          "note": "分析师估算对英伟达营收影响约一成（估算而非已发生），但同期财报超预期，净效果被业绩掩盖。"
+        },
+        {
+          "asset_class": "海外股市",
+          "direction": "down",
+          "conviction": "medium",
+          "note": "新加坡、马来西亚等地数据中心运营商新增90天合规宽限期与许可成本。"
+        }
+      ],
+      "cross_source": {
+        "agreement": "single",
+        "summary": "目前主要来自媒体转述，尚未能打开联邦公报或商务部官方文本核实宽限期、集群门槛等具体数字。"
+      }
+    },
+    {
+      "rank": 4,
+      "tier": "must-read",
+      "published": "2026-11-16",
+      "headline": "霍尔木兹海峡两艘油轮周一遭袭升级，美军第三艘航母入场，伊朗与UKMTO说法对立",
+      "sectors": [
+        "地缘",
+        "能源",
+        "航运"
+      ],
+      "tickers": [],
+      "body": "英国海事贸易行动处(UKMTO)报告11月16日(周一)霍尔木兹海峡发生两起油轮袭击事件，其中一艘失去动力并发生机舱火灾；伊朗革命卫队(IRGC)则称是两艘油轮触雷起火，并称一艘VLCC沉没，该沉没说法未经独立证实。船员伤亡情况各方报道不一。11月17日另有报道提及美军第三艘航母已抵达中东。本环境无法打开UKMTO原始通告或多数新闻原文核实细节，以下仅依据搜索摘要。",
+      "why": "这是美伊自2026年2月开战以来霍尔木兹风险持续外溢的最新一环，归因各方说法不一意味着局势仍有升级或降温两种可能，不确定性本身就是能源与风险资产的定价变量。",
+      "impact": "能源与航运板块 · 全球风险偏好",
+      "sources": [
+        {
+          "name": "Seatrade Maritime",
+          "url": "https://seatrade-maritime.com/security/tanker-confirmed-struck-in-the-gulf-iran-claims-vlcc-sinking",
+          "angle": "引述公司安全官员和UKMTO说法，并记录IRGC的触雷与VLCC沉没声称"
+        },
+        {
+          "name": "gCaptain",
+          "url": "https://gcaptain.com/dynacom-reports-two-tankers-attacked-near-strait-of-hormuz/",
+          "angle": "以船东Dynacom报告两艘油轮遇袭为主线"
+        },
+        {
+          "name": "Tehran Times",
+          "url": "https://www.tehrantimes.com/news/532227/Third-oil-tanker-explodes-in-Hormuz-as-IRGC-warns-of-US-devised",
+          "angle": "伊朗官方立场：定性为违规航线触雷，警告南部航线"
+        },
+        {
+          "name": "CNBC",
+          "url": "https://cnbc.com/2026/11/17/iran-war-trump-hormuz-oil-.html",
+          "angle": "把油轮遇袭与美军增兵、伊朗威胁并列报道"
+        }
+      ],
+      "assets": [
+        {
+          "asset_class": "大宗商品",
+          "direction": "mixed",
+          "conviction": "medium",
+          "note": "霍尔木兹风险本应推升油价，但周一油价实际因IEA预计的四季度供应过剩(约170万桶/日)而走低，风险溢价与供需基本面方向相反。"
+        },
+        {
+          "asset_class": "美股",
+          "direction": "down",
+          "conviction": "low",
+          "note": "地缘风险升温通常压制整体风险偏好，但在英伟达财报与Anthropic IPO主导市场注意力的背景下，传导力度有限。"
+        }
+      ],
+      "cross_source": {
+        "agreement": "split",
+        "summary": "UKMTO倾向于把事件定性为袭击，伊朗革命卫队坚持是触雷事故甚至称一艘VLCC沉没（未经独立证实），船员伤亡情况也有'失踪'与'全部安全'两种相互矛盾的说法，均无权威定论。"
+      },
+      "history": {
+        "summary": "美伊自2026年2月开战以来，霍尔木兹海峡的油轮袭击持续发酵，本周事件是这条风险链条的最新一环，而非孤立突发。"
+      }
+    },
+    {
+      "rank": 5,
+      "tier": "worth-knowing",
+      "published": "2026-11-18",
+      "headline": "财报后机构更新NVDA目标价，部分下调并提及CEO过渡不确定性",
+      "sectors": [
+        "半导体",
+        "分析师评级"
+      ],
+      "tickers": [
+        "NVDA"
+      ],
+      "body": "NVIDIA财报后11月18日，多家机构更新目标价，据Finbold汇总：Piper Sandler由300美元下调至230美元，Jefferies由300美元下调至250美元，两家均提及CEO过渡的不确定性；UBS由240美元下调至220美元；Cantor Fitzgerald维持250美元；Stifel维持买入205美元；Goldman维持买入220美元；HSBC维持持有、目标价170美元。以上数字仅来自Finbold单一汇总页面及未能打开的Investing.com页面，前后口径待进一步核实。",
+      "why": "部分大行在财报超预期的同时下调目标价并点名CEO过渡风险，说明市场对管理层信任度的担忧并未被业绩完全消化。",
+      "impact": "NVDA · 半导体板块情绪",
+      "sources": [
+        {
+          "name": "Finbold",
+          "url": "https://finbold.com/wall-street-analysts-update-nvidia-stock-target-after-earnings/",
+          "angle": "汇总多家目标价调整，含CEO过渡影响的说法"
+        },
+        {
+          "name": "Investing.com（HSBC持有$170）",
+          "url": "https://www.investing.com/news/analyst-ratings/hsbc-reiterates-hold-on-nvidia-stock-keeps-170-price-target-93CH-5035004",
+          "angle": "HSBC维持持有、目标价170美元"
+        }
+      ]
+    },
+    {
+      "rank": 6,
+      "tier": "worth-knowing",
+      "published": "2026-11-18",
+      "headline": "英伟达财报带动半导体同行盘前普涨：AMD约+1.9%，博通约+2.2%",
+      "sectors": [
+        "半导体"
+      ],
+      "tickers": [
+        "AMD",
+        "AVGO",
+        "NVDA"
+      ],
+      "body": "11月18日盘前，英伟达财报和Q4指引带动AI半导体板块走强。据路透相关报道（经Yahoo Finance转载），AMD盘前约涨1.9%，博通约涨2.2%，美光约涨2.7%，Marvell约涨3.2%。这是盘前同行联动数据，不代表最终收盘走势，且仅见单一来源未交叉验证。",
+      "why": "同行普涨说明市场把英伟达的指引读作行业信号，而不只是单一公司的利好。",
+      "impact": "半导体板块",
+      "sources": [
+        {
+          "name": "Yahoo Finance盘前直播（路透相关）",
+          "url": "https://finance.yahoo.com/markets/live/stock-market-today-wednesday-november-18-dow-sp-500-nasdaq-nvidia-anthropic-ipo-090613569.html",
+          "angle": "同行盘前涨幅，附Anthropic IPO定价背景"
+        }
+      ]
+    },
+    {
+      "rank": 7,
+      "tier": "worth-knowing",
+      "published": "2026-11-16",
+      "headline": "周一油价下跌：市场交易供应过剩预期，而非霍尔木兹风险溢价",
+      "sectors": [
+        "能源"
+      ],
+      "tickers": [],
+      "body": "11月16日(周一)原油走低，据报道Brent跌约1.7%至94美元左右，WTI约87美元左右，不同信源给出的具体收盘区间不完全一致。IEA预计今年四季度全球原油供应过剩约170万桶/日，中东出口能力的逐步恢复进一步压制价格。霍尔木兹海峡的油轮袭击仍在持续，但市场交易的主线是供应过剩，而非地缘风险溢价。上周五(11/13)结算价为Brent 95.84美元、WTI 88.56美元（较可靠的期货结算数据）。",
+      "why": "油价对霍尔木兹袭击'脱敏'、转而跟随供需基本面定价，说明短期内市场认为供应过剩的力量压过地缘风险，这个判断一旦反转会是油价方向的重要拐点。",
+      "impact": "能源板块 · 通胀路径",
+      "sources": [
+        {
+          "name": "Oilprice.com",
+          "url": "https://oilprice.com/Latest-Energy-News/World-News/Oil-Prices-Slide-as-Global-Glut-Fears-Eclipse-Hormuz-Attacks.html",
+          "angle": "市场定价由供应过剩担忧压过霍尔木兹袭击"
+        },
+        {
+          "name": "IBTimes",
+          "url": "https://www.ibtimes.com/oil-prices-fall-hormuz-shipping-stability-iea-3809797",
+          "angle": "引述IEA四季度供应过剩170万桶/日的判断"
+        },
+        {
+          "name": "Newsquawk",
+          "url": "https://www.newsquawk.com/headlines/crude-wrap-wti-z6-settles-usd-018-lower-at-usd-8856bbl-brent-f7-settles-usd-002-higher-at-usd-9584bbl",
+          "angle": "11/13收盘结算数据来源"
+        }
+      ]
+    },
+    {
+      "rank": 8,
+      "tier": "worth-knowing",
+      "published": "2026-11-16",
+      "headline": "美股连续第三日下跌：周一纳指-2.5%，标普-1.9%，英伟达财报前承压",
+      "sectors": [
+        "美股",
+        "科技"
+      ],
+      "tickers": [
+        "NVDA"
+      ],
+      "body": "11月16日(周一)美股继续走弱，纳斯达克综合指数收于24,509.76点，跌2.5%，为11月5日以来最差的一天，也是连续第三个下跌日；标普500收于7,416.59点，跌1.9%；道指收于51,608.17点，跌1.4%。英伟达带头拖累科技股，芯片出口限制新规与黄仁勋离任的影响叠加，市场在英伟达财报前明显承压。另有单一来源(路透相关转载)称11月17日(周二)纳指收跌0.74%，标普收跌1.03%，但未交叉验证，仅作参考。",
+      "why": "这是英伟达今日财报发布前的市场情绪背景，也是本周AI股估值担忧持续发酵的延续。",
+      "impact": "美股大盘 · AI板块情绪",
+      "sources": [
+        {
+          "name": "La Nacion (AP转载)",
+          "url": "https://www.lanacion.com.ar/usa/how-major-us-stock-indexes-fared-monday-11162026-nid16112026/",
+          "angle": "收盘数字的'每日指数'式报道"
+        },
+        {
+          "name": "TheStreet Pro",
+          "url": "https://pro.thestreet.com/stock-market-today/ai-stocks-drag-the-sp-500-back-toward-the-november-5th-lows",
+          "angle": "把下跌与11月5日低点联系起来，强调AI股拖累"
+        }
+      ]
+    },
+    {
+      "rank": 9,
+      "tier": "worth-knowing",
+      "published": "2026-11-18",
+      "headline": "FINRA空头持仓更新：苹果空头环比+10%最突出，英伟达、微软降超7%",
+      "sectors": [
+        "仓位",
+        "自选股"
+      ],
+      "tickers": [
+        "NVDA",
+        "TSLA",
+        "AAPL",
+        "MSFT",
+        "AVGO",
+        "AMD",
+        "PLTR",
+        "COIN"
+      ],
+      "body": "FINRA官方数据显示，截至10月30日结算，自选股空头持仓变化分化明显：苹果空头195,791,472股较上期增加10.03%，回补天数3.36天；英伟达空头279,579,505股较上期减少7.31%，回补天数2.8天；微软空头60,941,334股减少7.21%，回补天数2.73天；特斯拉减少4.89%，回补天数1.57天；Coinbase减少3.93%，回补天数2.85天；博通减少3.11%；AMD增加1.28%；Palantir基本持平(-0.33%)。苹果是唯一明显加仓的空头标的，且3.36天的回补天数在这组里最长。",
+      "why": "空头仓位的变化是仓位结构信息，不是基本面判断——苹果空头逆势加仓、英伟达与微软空头却在财报前大幅减仓，方向相反，值得在后续财报与股价异动时对照着看。",
+      "impact": "自选股 · 仓位结构",
+      "sources": [
+        {
+          "name": "FINRA官方空头持仓数据",
+          "url": "https://www.finra.org/finra-data/browse-catalog/equity-short-interest/data",
+          "angle": "结算日期2026-10-30，由GitHub Actions定期抓取"
+        }
+      ]
+    },
+    {
+      "rank": 10,
+      "tier": "worth-knowing",
+      "published": "2026-11-18",
+      "headline": "本周余下财报与数据看点：帕拓安全、塔吉特今日盘后，沃尔玛周四，初请失业金周四公布",
+      "sectors": [
+        "美股",
+        "零售",
+        "宏观"
+      ],
+      "tickers": [
+        "PANW",
+        "TGT",
+        "WMT"
+      ],
+      "body": "Palo Alto Networks公司公告确认将于今日(11/18)美股盘后发布2027财年第一季度业绩；塔吉特多数信源指向今日发布财报，但确认程度不及Palo Alto Networks；沃尔玛多数信源指向周四(11/19)盘前，部分信源表示尚未完全确认。美国首次申请失业救济人数(当周)将于周四(11/19)美东08:30发布，上一期(截至11/7当周)为20万人，高于预期的19.5万人。",
+      "why": "零售财报集中在本周公布，叠加失业金数据，是观察假日消费季前消费者与就业市场状况的连续样本。",
+      "impact": "零售与网络安全板块 · 就业市场信号",
+      "sources": [
+        {
+          "name": "Finviz(转载公司公告)",
+          "url": "https://finviz.com/news/414245/palo-alto-networks-to-announce-fiscal-first-quarter-2027-financial-results-on-wednesday-november-18-2026",
+          "angle": "公司一手公告确认11/18发布"
+        },
+        {
+          "name": "financecalendar.com",
+          "url": "https://www.financecalendar.com/event/us-initial-jobless-claims-november-19-2026/",
+          "angle": "初请失业金发布时间与上一期数据"
+        }
+      ]
+    },
+    {
+      "rank": 11,
+      "tier": "worth-knowing",
+      "published": "2026-11-15",
+      "headline": "乌克兰无人机袭击俄罗斯梁赞炼油厂，炼厂暂停加工（已发酵三天，仍是俄炼油产能持续受冲击的最新一环）",
+      "sectors": [
+        "地缘",
+        "能源",
+        "俄乌"
+      ],
+      "tickers": [],
+      "body": "据路透社引述的报道，乌克兰无人机11月15日袭击俄罗斯梁赞炼油厂，炼厂随后暂停石油加工。这是乌方持续打击俄罗斯炼油设施的一部分，此前11月多座炼厂和出口码头已遭袭（均已超过本期3天的时效上限，仅作背景不展开）。成品油出口管制和俄国内油品短缺同步加剧。",
+      "why": "俄罗斯炼油产能持续受冲击会推高其国内成品油短缺，并可能通过出口管制间接影响全球柴油等成品油供给，是油价叙事里独立于霍尔木兹的另一条供给侧线索。",
+      "impact": "能源板块 · 俄罗斯成品油供给",
+      "sources": [
+        {
+          "name": "Ukrinform（转引路透社）",
+          "url": "https://www.ukrinform.net/rubric-ato/4060389-ryazan-oil-refinery-suspends-operations-after-drone-attack-reuters.html",
+          "angle": "以路透社报道为来源，关注炼厂停产对俄国内成品油供应的影响"
+        }
+      ]
+    },
+    {
+      "rank": 12,
+      "tier": "noise",
+      "published": "2026-11-16",
+      "headline": "比特币价格：各信源数字严重不一致，6.4万到9万美元以上均有报道，不采用单一数字",
+      "sectors": [
+        "加密资产"
+      ],
+      "tickers": [
+        "COIN"
+      ],
+      "body": "本周比特币价格在不同信源间差异极大：Fortune报11月16日约64,013美元；另有11月13日跌破7万美元(约69,135美元)的报道；还有信源称11月18日报约93,709美元，与前述数字明显矛盾且该页面存在其他日期错配的迹象。差异之大已经超出正常的时点误差范围，这里不采用任何单一数字，只记录'本周比特币价格波动剧烈、各信源口径严重不一致'这一事实。",
+      "sources": [
+        {
+          "name": "Fortune",
+          "url": "https://fortune.com/article/price-of-bitcoin-11-16-2026/",
+          "angle": "11/16报约64,013美元"
+        },
+        {
+          "name": "The Motley Fool",
+          "url": "https://www.fool.com/investing/2026/11/13/why-bitcoin-is-falling-today/",
+          "angle": "11/13跌破7万美元"
+        }
+      ]
+    },
+    {
+      "rank": 13,
+      "tier": "noise",
+      "published": "2026-11-18",
+      "headline": "背景：五大云厂商2026年AI资本支出合计规模约8000亿美元量级，各统计口径差异较大",
+      "sectors": [
+        "AI",
+        "云计算",
+        "资本支出"
+      ],
+      "tickers": [],
+      "body": "多方统计显示亚马逊、Alphabet、微软、Meta、SpaceX五家2026年资本开支合计在约7300亿至8280亿美元之间，具体数字取决于是否计入SpaceX、融资租赁与非AI支出。亚马逊自身指引约2200亿美元，Alphabet约1950-2050亿美元，微软约1700亿美元（反映会计口径变化），Meta约1350-1450亿美元。这是本周AI股估值担忧与英伟达/Anthropic两大事件的宏观背景，不是今日的单一事件。",
+      "sources": [
+        {
+          "name": "Fortune（五大云厂商统计）",
+          "url": "https://finance.yahoo.com/sectors/technology/articles/hyperscalers-hit-700-billion-2026-111243744.html",
+          "angle": "汇总五家2026年资本开支总额"
+        }
+      ]
+    },
+    {
+      "rank": 14,
+      "tier": "noise",
+      "published": "2026-11-18",
+      "headline": "Lowe's今日盘前公布第三财季财报，期权市场隐含±7.6%波动",
+      "sectors": [
+        "零售",
+        "家装"
+      ],
+      "tickers": [
+        "LOW"
+      ],
+      "body": "Lowe's公司公告确认于11月18日美股盘前发布2026年第三财季业绩，当日美东9点召开电话会。分析师一致预期每股收益约2.86-2.90美元（不同信源数字略有差异）。期权市场隐含财报当日±7.6%的股价波动。",
+      "sources": [
+        {
+          "name": "Construction Owners（转载公司公告）",
+          "url": "https://www.constructionowners.com/ca/news/lowes-to-hold-third-quarter-2026-earnings-conference-call-on-november-18",
+          "angle": "公司公告确认发布日期与电话会时间"
+        },
+        {
+          "name": "Unusual Whales",
+          "url": "https://unusualwhales.com/stock/LOW/earnings",
+          "angle": "期权市场隐含波动数字"
+        }
+      ]
+    },
+    {
+      "rank": 15,
+      "tier": "noise",
+      "published": "2026-11-16",
+      "headline": "美元维持强势，黄金跌至逾一年低点，反映市场对12月再加息的押注",
+      "sectors": [
+        "宏观",
+        "外汇",
+        "黄金"
+      ],
+      "tickers": [],
+      "body": "据报道，11月16日(周一)黄金价格跌至逾一年低点，美元指数维持强势，背景是市场持续押注联储(现任主席Kevin Warsh)12月再加息。此前11月12-13日黄金已连续下跌至约3,866美元附近，美元指数逼近103，日元一度突破160引发日本官员的干预警告。各信源对11/16-11/18的具体收盘点位报道不一致，这里只记录'美元强、黄金弱'的方向，不采用单一数字。",
+      "sources": [
+        {
+          "name": "Korea Times",
+          "url": "https://www.koreatimes.co.kr/world/20261117/gold-drops-to-more-than-one-year-low-as-us-dollar-marches-higher",
+          "angle": "黄金跌至逾一年低点，美元走强"
+        },
+        {
+          "name": "World Gold Council",
+          "url": "https://www.gold.org/goldhub/gold-focus/2026/11/weekly-markets-monitor-waller-dollar",
+          "angle": "美元指数突破关键技术阻力位"
+        }
+      ]
+    }
+  ],
+  "calendar": [
+    {
+      "when": "Wed 11/18",
+      "time": "美股盘后 · 电话会13:30 PT",
+      "event": "Palo Alto Networks公布2027财年第一季度业绩",
+      "weight": "mid",
+      "date": "2026-11-18",
+      "sources": [
+        {
+          "name": "Finviz(转载公司公告)",
+          "url": "https://finviz.com/news/414245/palo-alto-networks-to-announce-fiscal-first-quarter-2027-financial-results-on-wednesday-november-18-2026"
+        }
+      ]
+    },
+    {
+      "when": "Wed 11/18",
+      "time": "",
+      "event": "塔吉特(TGT)预计公布财报，确认程度不及Palo Alto Networks",
+      "weight": "low",
+      "date": "2026-11-18",
+      "sources": [
+        {
+          "name": "Stock3",
+          "url": "https://stock3.com/news/nvidia-trifft-auf-die-grosse-handels-und-einzelhandelswoche-17395757"
+        }
+      ]
+    },
+    {
+      "when": "Wed 11/18",
+      "time": "09:00 ET",
+      "event": "Lowe's公布第三财季财报，期权隐含±7.6%波动",
+      "weight": "low",
+      "date": "2026-11-18",
+      "sources": [
+        {
+          "name": "Construction Owners（转载公司公告）",
+          "url": "https://www.constructionowners.com/ca/news/lowes-to-hold-third-quarter-2026-earnings-conference-call-on-november-18"
+        }
+      ]
+    },
+    {
+      "when": "Thu 11/19",
+      "time": "",
+      "event": "Anthropic(ANT)预计开始在纳斯达克交易",
+      "weight": "high",
+      "date": "2026-11-19",
+      "sources": [
+        {
+          "name": "CNBC",
+          "url": "https://www.cnbc.com/2026/11/16/anthropic-ipo-date-price-range.html"
+        }
+      ]
+    },
+    {
+      "when": "Thu 11/19",
+      "time": "",
+      "event": "沃尔玛(WMT)预计盘前公布财报，部分信源尚未完全确认",
+      "weight": "mid",
+      "date": "2026-11-19",
+      "sources": [
+        {
+          "name": "newsquawk周度财报前瞻",
+          "url": "https://www.newsquawk.com/headlines/weekly-us-earnings-estimates-16-20th-november-2026-ai-leader-nvda-the-highlight-with-retailers-also-in-focus"
+        }
+      ]
+    },
+    {
+      "when": "Thu 11/19",
+      "time": "08:30 ET",
+      "event": "美国首次申请失业救济人数(当周)发布，上一期20万人",
+      "weight": "low",
+      "date": "2026-11-19",
+      "sources": [
+        {
+          "name": "financecalendar.com",
+          "url": "https://www.financecalendar.com/event/us-initial-jobless-claims-november-19-2026/"
+        }
+      ]
+    },
+    {
+      "when": "Thu 11/19",
+      "time": "",
+      "event": "特朗普与习近平预计在深圳APEC峰会期间会晤",
+      "weight": "mid",
+      "date": "2026-11-19",
+      "sources": [
+        {
+          "name": "SCMP",
+          "url": "https://www.scmp.com/news/china/diplomacy/article/3373969/xi-and-trump-set-apec-talks-major-deliverables-expected-wait-g20"
+        }
+      ]
+    },
+    {
+      "when": "Fri 11/20",
+      "time": "",
+      "event": "闪迪(SanDisk) 8比1股票分割生效，开盘起按分割调整后交易",
+      "weight": "low",
+      "date": "2026-11-20",
+      "sources": [
+        {
+          "name": "SEC 8-K（Sandisk）",
+          "url": "https://www.sec.gov/Archives/edgar/data/0002023554/000162828026068243/sndk-20261029.htm"
+        }
+      ]
+    },
+    {
+      "when": "本月晚些",
+      "time": "",
+      "event": "OPEC+核心会议讨论2027年产量配额框架",
+      "weight": "mid",
+      "date": "2026-11-29",
+      "sources": [
+        {
+          "name": "WorldOil",
+          "url": "https://worldoil.com/news/2026/11/1/opec-subgroup-keeps-oil-production-quotas-unchanged-for-december/"
+        }
+      ]
+    },
+    {
+      "when": "12月",
+      "time": "14:00 ET",
+      "event": "12月FOMC利率决议",
+      "weight": "high",
+      "date": "2026-12-09",
+      "sources": [
+        {
+          "name": "Federal Reserve（联邦储备官网会议日程）",
+          "url": "https://www.federalreserve.gov/newsevents/2026-december.htm"
+        }
+      ]
+    }
+  ],
+  "momentum": {
+    "asof": "2026-11-17",
+    "scanned": 2553,
+    "note": "",
+    "candidates": [
+      {
+        "ticker": "VIK",
+        "date": "2026-11-17",
+        "stage": "ignition",
+        "close": 94.28,
+        "change_pct": 4.43,
+        "rvol": 3.08,
+        "breakout_age": 0,
+        "ext_ma20": 0.0751,
+        "run_from_base": 0.2224,
+        "note": "11/17放量3.1倍收涨4.43%，当天突破基底，较基底已上行22%。"
+      },
+      {
+        "ticker": "ENR",
+        "date": "2026-11-17",
+        "stage": "ignition",
+        "close": 27.4,
+        "change_pct": 12.57,
+        "rvol": 3.5,
+        "breakout_age": 0,
+        "ext_ma20": 0.1454,
+        "run_from_base": 0.3916,
+        "note": "11/17放量3.5倍收涨12.57%，当天突破基底，较基底已上行39%，涨幅在初动组中最大。"
+      },
+      {
+        "ticker": "MNSO",
+        "date": "2026-11-17",
+        "stage": "ignition",
+        "close": 12.18,
+        "change_pct": 8.36,
+        "rvol": 2.9,
+        "breakout_age": 0,
+        "ext_ma20": 0.1517,
+        "run_from_base": 0.4246,
+        "note": "11/17放量2.9倍收涨8.36%，当天突破基底，较基底已上行42%。"
+      },
+      {
+        "ticker": "HTHT",
+        "date": "2026-11-17",
+        "stage": "ignition",
+        "close": 53.65,
+        "change_pct": -2.24,
+        "rvol": 2.54,
+        "breakout_age": 1,
+        "ext_ma20": 0.0946,
+        "run_from_base": 0.2993,
+        "note": "11/17放量2.5倍收跌2.24%，突破后第1日，较基底已上行30%——方向与多数初动票相反，是下跌放量。"
+      },
+      {
+        "ticker": "CGON",
+        "date": "2026-11-17",
+        "stage": "ignition",
+        "close": 78.94,
+        "change_pct": -6.89,
+        "rvol": 3.47,
+        "breakout_age": 1,
+        "ext_ma20": 0.1559,
+        "run_from_base": 0.333,
+        "note": "11/17放量3.5倍收跌6.89%，突破后第1日，较基底已上行33%，同样是下跌放量。"
+      },
+      {
+        "ticker": "ACM",
+        "date": "2026-11-17",
+        "stage": "ignition",
+        "close": 80.53,
+        "change_pct": 11.08,
+        "rvol": 3.43,
+        "breakout_age": 0,
+        "ext_ma20": 0.2105,
+        "run_from_base": 0.4281,
+        "note": "11/17放量3.4倍收涨11.08%，当天突破基底，较基底已上行43%。"
+      },
+      {
+        "ticker": "BILL",
+        "date": "2026-11-17",
+        "stage": "ignition",
+        "close": 64.88,
+        "change_pct": 12.58,
+        "rvol": 7.18,
+        "breakout_age": 1,
+        "ext_ma20": 0.2451,
+        "run_from_base": 0.5824,
+        "note": "11/17放量7.2倍收涨12.58%，是初动组里相对成交量最高的一只，突破后第1日，较基底已上行58%。"
+      },
+      {
+        "ticker": "LFTO",
+        "date": "2026-11-17",
+        "stage": "ignition",
+        "close": 22.68,
+        "change_pct": -7.28,
+        "rvol": 3.08,
+        "breakout_age": 2,
+        "ext_ma20": 0.2754,
+        "run_from_base": 0.6246,
+        "note": "11/17放量3.1倍收跌7.28%，突破后第2日，较基底已上行62%——涨幅透支程度较高，同时是下跌。"
+      },
+      {
+        "ticker": "BIP",
+        "date": "2026-11-17",
+        "stage": "continuation",
+        "close": 40.21,
+        "change_pct": 1.64,
+        "rvol": 2.28,
+        "breakout_age": 0,
+        "ext_ma20": 0.0528,
+        "run_from_base": 0.1723,
+        "note": "11/17放量2.3倍收涨1.64%，延续档，当天突破，较基底上行17%，乖离20日均线约5%。"
+      },
+      {
+        "ticker": "NYT",
+        "date": "2026-11-17",
+        "stage": "continuation",
+        "close": 73.82,
+        "change_pct": 0.44,
+        "rvol": 0.89,
+        "breakout_age": 0,
+        "ext_ma20": 0.0518,
+        "run_from_base": 0.2522,
+        "note": "11/17量能平淡(0.9倍)收涨0.44%，延续档，当天突破，较基底上行25%。"
+      },
+      {
+        "ticker": "UNFI",
+        "date": "2026-11-17",
+        "stage": "continuation",
+        "close": 51.99,
+        "change_pct": 7.44,
+        "rvol": 1.67,
+        "breakout_age": 0,
+        "ext_ma20": 0.0975,
+        "run_from_base": 0.2233,
+        "note": "11/17放量1.7倍收涨7.44%，延续档，当天突破，较基底上行22%。"
+      },
+      {
+        "ticker": "ADP",
+        "date": "2026-11-17",
+        "stage": "continuation",
+        "close": 308.29,
+        "change_pct": -1.64,
+        "rvol": 0.96,
+        "breakout_age": 1,
+        "ext_ma20": 0.0228,
+        "run_from_base": 0.2044,
+        "note": "11/17量能平淡(1.0倍)收跌1.64%，延续档，突破后第1日，较基底上行20%。"
+      }
+    ]
+  }
+}
