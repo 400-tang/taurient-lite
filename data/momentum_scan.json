@@ -1,16 +1,16 @@
 {
-  "scanned_at": "2026-11-21T17:01:39Z",
+  "scanned_at": "2026-11-22T16:54:42Z",
   "asof": "2026-11-20",
   "note": "由 GitHub Actions 扫描并提交，供云端定时任务读取。stage 只描述这只票走到这波的第几天，score 衡量的是「有多早」而不是「有多好」——回测显示本模块无法预测后续涨跌，它的用途是把观察窗口前移，不是给出买卖信号。",
-  "universe_size": 2530,
-  "evaluated": 2520,
-  "failed": 7,
-  "stale": 3,
+  "universe_size": 2526,
+  "evaluated": 2521,
+  "failed": 4,
+  "stale": 1,
   "counts": {
     "ignition": 5,
-    "continuation": 155,
-    "base": 2023,
-    "extended": 281
+    "continuation": 159,
+    "base": 2052,
+    "extended": 282
   },
   "candidates": [
     {
@@ -606,6 +606,22 @@
       "score": 54.0
     },
     {
+      "ticker": "CRTO",
+      "date": "2026-11-20",
+      "close": 17.67,
+      "change_pct": -1.56,
+      "rvol": 2.07,
+      "dollar_volume": 15279347,
+      "ext_ma20": 0.0758,
+      "closing_range": 0.197,
+      "breakout_age": 4,
+      "run_from_base": 0.2667,
+      "base_tightness": 0.3247,
+      "gap_pct": 0.0,
+      "stage": "continuation",
+      "score": 54.0
+    },
+    {
       "ticker": "CWST",
       "date": "2026-11-20",
       "close": 99.29,
@@ -634,22 +650,6 @@
       "run_from_base": 0.1556,
       "base_tightness": 0.1723,
       "gap_pct": 1.12,
-      "stage": "continuation",
-      "score": 54.0
-    },
-    {
-      "ticker": "EG",
-      "date": "2026-11-20",
-      "close": 421.98,
-      "change_pct": 0.0,
-      "rvol": 1.58,
-      "dollar_volume": 198191682,
-      "ext_ma20": 0.0174,
-      "closing_range": 0.038,
-      "breakout_age": 4,
-      "run_from_base": 0.1681,
-      "base_tightness": 0.1936,
-      "gap_pct": 1.03,
       "stage": "continuation",
       "score": 54.0
     }
