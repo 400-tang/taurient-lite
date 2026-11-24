@@ -1,839 +1,845 @@
 {
-  "asof": "2026-11-23",
-  "session": "close",
-  "fetched_at": "2026-11-24T05:23:30+00:00",
+  "asof": "15:26 ET",
+  "session": "intraday",
+  "fetched_at": "2026-11-24T20:26:01+00:00",
   "source": "Nasdaq screener",
   "note": "块的大小按市值，颜色按当日涨跌幅，行业按当日强弱从左到右排。行业涨跌是市值加权的：简单平均会让一堆微型股盖过苹果，得出「科技板块大跌」而指数其实在涨的结论。",
   "sectors": [
     {
       "name": "科技",
-      "change_pct": -6.02,
-      "market_cap": 38681717533849.0,
+      "change_pct": 8.76,
+      "market_cap": 41735043712757.0,
       "tiles": [
         {
           "ticker": "AAPL",
           "name": "Apple Inc.",
-          "change_pct": -1.9,
-          "market_cap": 4978144265920.0
-        },
-        {
-          "ticker": "MSFT",
-          "name": "Microsoft Corporation",
-          "change_pct": -2.77,
-          "market_cap": 3598139784335.0
-        },
-        {
-          "ticker": "GOOGL",
-          "name": "Alphabet Inc. Class A",
-          "change_pct": -2.7,
-          "market_cap": 3261475260000.0
-        },
-        {
-          "ticker": "GOOG",
-          "name": "Alphabet Inc. Class C Capital Stock",
-          "change_pct": -2.59,
-          "market_cap": 3245616000000.0
+          "change_pct": 1.9,
+          "market_cap": 5072894092560.0
         },
         {
           "ticker": "NVDA",
           "name": "NVIDIA Corporation",
-          "change_pct": -12.06,
-          "market_cap": 3093823040000.0
+          "change_pct": 31.48,
+          "market_cap": 3977705000000.0
         },
         {
-          "ticker": "SPCX",
-          "name": "Space Exploration Technologies Corp. Class A",
-          "change_pct": -7.69,
-          "market_cap": 1735524131373.0
+          "ticker": "MSFT",
+          "name": "Microsoft Corporation",
+          "change_pct": 1.65,
+          "market_cap": 3657400816860.0
+        },
+        {
+          "ticker": "GOOGL",
+          "name": "Alphabet Inc. Class A",
+          "change_pct": 6.34,
+          "market_cap": 3468137400000.0
+        },
+        {
+          "ticker": "GOOG",
+          "name": "Alphabet Inc. Class C Capital Stock",
+          "change_pct": 5.88,
+          "market_cap": 3436541820000.0
         },
         {
           "ticker": "TSM",
           "name": "Taiwan Semiconductor Manufacturing Company Ltd.",
-          "change_pct": -9.3,
-          "market_cap": 1656258476043.0
+          "change_pct": 14.01,
+          "market_cap": 1884594354442.0
         },
         {
-          "ticker": "AVGO",
-          "name": "Broadcom Inc.",
-          "change_pct": -12.19,
-          "market_cap": 1453140667205.0
+          "ticker": "SPCX",
+          "name": "Space Exploration Technologies Corp. Class A",
+          "change_pct": 4.35,
+          "market_cap": 1811034845595.0
         },
         {
           "ticker": "META",
           "name": "Meta Platforms Inc. Class A",
-          "change_pct": -5.93,
-          "market_cap": 1433642344333.0
+          "change_pct": 6.55,
+          "market_cap": 1527609772793.0
+        },
+        {
+          "ticker": "AVGO",
+          "name": "Broadcom Inc.",
+          "change_pct": 3.0,
+          "market_cap": 1496771644171.0
         },
         {
           "ticker": "ANT",
           "name": "Anthropic PBC Class A",
-          "change_pct": -8.5,
-          "market_cap": 1163536060244.0
+          "change_pct": -1.43,
+          "market_cap": 1146915986051.0
         },
         {
           "ticker": "SKHY",
           "name": "SK hynix Inc. American Depositary Shares",
-          "change_pct": -13.11,
-          "market_cap": 754885998350.0
-        },
-        {
-          "ticker": "AMD",
-          "name": "Advanced Micro Devices Inc.",
-          "change_pct": -13.25,
-          "market_cap": 702393278525.0
+          "change_pct": 20.0,
+          "market_cap": 905834043400.0
         },
         {
           "ticker": "MU",
           "name": "Micron Technology Inc.",
-          "change_pct": -13.89,
-          "market_cap": 672642413766.0
+          "change_pct": 19.04,
+          "market_cap": 800708207132.0
         },
         {
-          "ticker": "GOOGN",
-          "name": "Alphabet Inc. Depositary Shares representing a 1/20th Interest in a Share of Series B Mandatory Convertible Preferred Stock",
-          "change_pct": -2.12,
-          "market_cap": 488440620000.0
+          "ticker": "AMD",
+          "name": "Advanced Micro Devices Inc.",
+          "change_pct": 6.85,
+          "market_cap": 750506034733.0
+        },
+        {
+          "ticker": "ASML",
+          "name": "ASML Holding N.V. New York Registry Shares",
+          "change_pct": 9.28,
+          "market_cap": 533333256474.0
         }
       ]
     },
     {
       "name": "可选消费",
-      "change_pct": -1.5,
-      "market_cap": 13572945618003.0,
+      "change_pct": 2.39,
+      "market_cap": 13888881349890.0,
       "tiles": [
         {
           "ticker": "AMZN",
           "name": "Amazon.com Inc.",
-          "change_pct": -4.1,
-          "market_cap": 2668898796687.0
+          "change_pct": 3.47,
+          "market_cap": 2761567391969.0
         },
         {
           "ticker": "WMT",
           "name": "Walmart Inc.",
-          "change_pct": 1.51,
-          "market_cap": 1015122831536.0
+          "change_pct": 1.27,
+          "market_cap": 1028054837909.0
         },
         {
           "ticker": "V",
           "name": "Visa Inc.",
-          "change_pct": 0.01,
-          "market_cap": 725306134389.0
+          "change_pct": 2.0,
+          "market_cap": 739081307449.0
         },
         {
           "ticker": "MA",
           "name": "Mastercard Incorporated",
-          "change_pct": -0.04,
-          "market_cap": 545600176676.0
+          "change_pct": 1.6,
+          "market_cap": 553719538058.0
         },
         {
           "ticker": "COST",
           "name": "Costco Wholesale Corporation",
-          "change_pct": 0.76,
-          "market_cap": 488395012000.0
+          "change_pct": -0.39,
+          "market_cap": 486516143561.0
         },
         {
           "ticker": "PG",
           "name": "Procter & Gamble Company (The)",
-          "change_pct": 0.97,
-          "market_cap": 392806298160.0
+          "change_pct": 0.31,
+          "market_cap": 393768178164.0
         },
         {
           "ticker": "HD",
           "name": "Home Depot Inc. (The)",
-          "change_pct": 0.72,
-          "market_cap": 338371696958.0
+          "change_pct": 2.16,
+          "market_cap": 345606125748.0
         },
         {
           "ticker": "NFLX",
           "name": "Netflix Inc.",
-          "change_pct": -2.96,
-          "market_cap": 232951868477.0
-        },
-        {
-          "ticker": "DIS",
-          "name": "Walt Disney Company (The)",
-          "change_pct": -1.89,
-          "market_cap": 201513340231.0
+          "change_pct": 2.42,
+          "market_cap": 238577534964.0
         },
         {
           "ticker": "BABA",
           "name": "Alibaba Group Holding Limited American Depositary Shares each representing eight Ordinary share",
-          "change_pct": -2.67,
-          "market_cap": 196439391200.0
+          "change_pct": 6.17,
+          "market_cap": 208527596429.0
+        },
+        {
+          "ticker": "DIS",
+          "name": "Walt Disney Company (The)",
+          "change_pct": 2.0,
+          "market_cap": 205544290247.0
         },
         {
           "ticker": "MCD",
           "name": "McDonald's Corporation",
-          "change_pct": 0.36,
-          "market_cap": 192905086230.0
+          "change_pct": 1.21,
+          "market_cap": 195184770953.0
         },
         {
           "ticker": "TJX",
           "name": "TJX Companies Inc. (The)",
-          "change_pct": 0.18,
-          "market_cap": 153622377359.0
+          "change_pct": -0.25,
+          "market_cap": 153193387475.0
         },
         {
           "ticker": "ACN",
           "name": "Accenture plc Class A Ordinary Shares (Ireland)",
-          "change_pct": 1.18,
-          "market_cap": 147894737544.0
+          "change_pct": 0.52,
+          "market_cap": 148670456008.0
         },
         {
           "ticker": "UL",
           "name": "Unilever PLC American Depositary Shares (each representing One Ordinary Share)",
-          "change_pct": 0.77,
-          "market_cap": 137553800914.0
+          "change_pct": -0.09,
+          "market_cap": 137359911453.0
         }
       ]
     },
     {
       "name": "金融",
-      "change_pct": -2.33,
-      "market_cap": 10923919341334.0,
+      "change_pct": 2.48,
+      "market_cap": 11194143978147.0,
       "tiles": [
         {
           "ticker": "JPM",
           "name": "JP Morgan Chase & Co.",
-          "change_pct": -3.0,
-          "market_cap": 824832313495.0
+          "change_pct": 2.02,
+          "market_cap": 841323648546.0
         },
         {
           "ticker": "BAC",
           "name": "Bank of America Corporation",
-          "change_pct": -3.1,
-          "market_cap": 324758336867.0
+          "change_pct": 2.43,
+          "market_cap": 332486570954.0
         },
         {
           "ticker": "HSBC",
           "name": "HSBC Holdings plc.",
-          "change_pct": -3.98,
-          "market_cap": 274770068711.0
+          "change_pct": 3.75,
+          "market_cap": 285052917090.0
         },
         {
           "ticker": "MS",
           "name": "Morgan Stanley",
-          "change_pct": -5.3,
-          "market_cap": 259336150000.0
+          "change_pct": 4.21,
+          "market_cap": 270197250000.0
         },
         {
           "ticker": "RY",
           "name": "Royal Bank Of Canada",
-          "change_pct": -2.24,
-          "market_cap": 254029023819.0
+          "change_pct": 2.57,
+          "market_cap": 260508155278.0
         },
         {
           "ticker": "WFC",
           "name": "Wells Fargo & Company",
-          "change_pct": -2.43,
-          "market_cap": 236095527432.0
+          "change_pct": 1.81,
+          "market_cap": 240268099373.0
         },
         {
           "ticker": "GS",
           "name": "Goldman Sachs Group Inc. (The)",
-          "change_pct": -6.66,
-          "market_cap": 228180598611.0
+          "change_pct": 4.17,
+          "market_cap": 237580681671.0
         },
         {
           "ticker": "MUFG",
           "name": "Mitsubishi UFJ Financial Group Inc.",
-          "change_pct": -4.88,
-          "market_cap": 210800519816.0
+          "change_pct": 3.59,
+          "market_cap": 218244518910.0
         },
         {
           "ticker": "AXP",
           "name": "American Express Company",
-          "change_pct": -3.02,
-          "market_cap": 202312249351.0
-        },
-        {
-          "ticker": "TD",
-          "name": "Toronto Dominion Bank (The)",
-          "change_pct": -1.93,
-          "market_cap": 184347796351.0
+          "change_pct": 1.75,
+          "market_cap": 205839352965.0
         },
         {
           "ticker": "C",
           "name": "Citigroup Inc.",
-          "change_pct": -3.97,
-          "market_cap": 183230640000.0
+          "change_pct": 3.42,
+          "market_cap": 189354880000.0
+        },
+        {
+          "ticker": "TD",
+          "name": "Toronto Dominion Bank (The)",
+          "change_pct": 2.52,
+          "market_cap": 188985887613.0
         },
         {
           "ticker": "BLK",
           "name": "BlackRock Inc.",
-          "change_pct": -2.99,
-          "market_cap": 170156079131.0
+          "change_pct": 3.89,
+          "market_cap": 176742238037.0
         },
         {
           "ticker": "SAN",
           "name": "Banco Santander S.A. Sponsored ADR (Spain)",
-          "change_pct": -2.15,
-          "market_cap": 161175878424.0
+          "change_pct": 3.42,
+          "market_cap": 166314399918.0
         },
         {
           "ticker": "SCHW",
           "name": "Charles Schwab Corporation (The)",
-          "change_pct": -2.04,
-          "market_cap": 155754935299.0
+          "change_pct": 2.46,
+          "market_cap": 159448591788.0
         }
       ]
     },
     {
       "name": "医疗保健",
-      "change_pct": -0.34,
-      "market_cap": 9375486521200.0,
+      "change_pct": 1.7,
+      "market_cap": 9522628901210.0,
       "tiles": [
         {
           "ticker": "LLY",
           "name": "Eli Lilly and Company",
-          "change_pct": -0.18,
-          "market_cap": 1268801638210.0
+          "change_pct": 1.52,
+          "market_cap": 1286562904396.0
         },
         {
           "ticker": "JNJ",
           "name": "Johnson & Johnson",
-          "change_pct": 1.32,
-          "market_cap": 651598706250.0
+          "change_pct": 0.01,
+          "market_cap": 651177426953.0
         },
         {
           "ticker": "ABBV",
           "name": "AbbVie Inc.",
-          "change_pct": 1.4,
-          "market_cap": 508225040301.0
+          "change_pct": 0.83,
+          "market_cap": 510116389749.0
         },
         {
           "ticker": "MRK",
           "name": "Merck & Company Inc. Common Stock (new)",
-          "change_pct": 0.73,
-          "market_cap": 329800568141.0
+          "change_pct": 1.3,
+          "market_cap": 333942180896.0
         },
         {
           "ticker": "UNH",
           "name": "UnitedHealth Group Incorporated Common Stock (DE)",
-          "change_pct": 2.9,
-          "market_cap": 304719369549.0
+          "change_pct": -1.17,
+          "market_cap": 300947114357.0
         },
         {
           "ticker": "NVS",
           "name": "Novartis AG",
-          "change_pct": -0.52,
-          "market_cap": 287062338589.0
+          "change_pct": 0.99,
+          "market_cap": 289962729141.0
         },
         {
           "ticker": "PM",
           "name": "Philip Morris International Inc",
-          "change_pct": -1.23,
-          "market_cap": 287010847524.0
+          "change_pct": -0.85,
+          "market_cap": 284485825405.0
         },
         {
           "ticker": "AZN",
           "name": "AstraZeneca PLC",
-          "change_pct": -0.64,
-          "market_cap": 270335160157.0
+          "change_pct": 1.54,
+          "market_cap": 274585078906.0
         },
         {
           "ticker": "AMGN",
           "name": "Amgen Inc.",
-          "change_pct": -0.15,
-          "market_cap": 235642681504.0
+          "change_pct": 3.08,
+          "market_cap": 242890895470.0
         },
         {
           "ticker": "GILD",
           "name": "Gilead Sciences Inc.",
-          "change_pct": -0.06,
-          "market_cap": 206429555528.0
+          "change_pct": 2.5,
+          "market_cap": 211589364162.0
         },
         {
           "ticker": "ABT",
           "name": "Abbott Laboratories",
-          "change_pct": -0.54,
-          "market_cap": 178926886799.0
+          "change_pct": 0.36,
+          "market_cap": 179030803295.0
         },
         {
           "ticker": "NVO",
           "name": "Novo Nordisk A/S",
-          "change_pct": -2.73,
-          "market_cap": 167420052961.0
+          "change_pct": 3.44,
+          "market_cap": 173220641942.0
         },
         {
           "ticker": "PFE",
           "name": "Pfizer Inc.",
-          "change_pct": -0.4,
+          "change_pct": 0.11,
           "market_cap": 156346987896.0
         },
         {
           "ticker": "ISRG",
           "name": "Intuitive Surgical Inc.",
-          "change_pct": -2.01,
-          "market_cap": 138328175668.0
+          "change_pct": 4.3,
+          "market_cap": 144283514743.0
         }
       ]
     },
     {
       "name": "工业",
-      "change_pct": -3.95,
-      "market_cap": 8276589482515.0,
+      "change_pct": 5.33,
+      "market_cap": 8705277499777.0,
       "tiles": [
         {
           "ticker": "TSLA",
           "name": "Tesla Inc.",
-          "change_pct": -7.64,
-          "market_cap": 1366942752886.0
+          "change_pct": 11.46,
+          "market_cap": 1523630077865.0
         },
         {
           "ticker": "TM",
           "name": "Toyota Motor Corporation",
-          "change_pct": -1.62,
-          "market_cap": 270512741071.0
+          "change_pct": 2.25,
+          "market_cap": 276527900676.0
         },
         {
           "ticker": "RTX",
           "name": "RTX Corporation",
-          "change_pct": -1.25,
-          "market_cap": 256812030690.0
+          "change_pct": 2.44,
+          "market_cap": 262884513156.0
         },
         {
           "ticker": "TMO",
           "name": "Thermo Fisher Scientific Inc",
-          "change_pct": -2.67,
-          "market_cap": 248375312114.0
+          "change_pct": 2.77,
+          "market_cap": 254948263612.0
         },
         {
           "ticker": "CAT",
           "name": "Caterpillar Inc.",
-          "change_pct": -4.94,
-          "market_cap": 233757407846.0
+          "change_pct": 7.22,
+          "market_cap": 250443579401.0
         },
         {
           "ticker": "UNP",
           "name": "Union Pacific Corporation",
-          "change_pct": -1.09,
-          "market_cap": 170817282079.0
+          "change_pct": 0.57,
+          "market_cap": 171702715199.0
         },
         {
           "ticker": "DE",
           "name": "Deere & Company",
-          "change_pct": -2.5,
-          "market_cap": 164266586007.0
+          "change_pct": 3.93,
+          "market_cap": 170725462751.0
         },
         {
           "ticker": "DHR",
           "name": "Danaher Corporation",
-          "change_pct": -2.93,
-          "market_cap": 155409957034.0
+          "change_pct": 2.42,
+          "market_cap": 158786904946.0
         },
         {
           "ticker": "LMT",
           "name": "Lockheed Martin Corporation",
-          "change_pct": -1.13,
-          "market_cap": 130612333502.0
+          "change_pct": 1.12,
+          "market_cap": 132095383291.0
         },
         {
           "ticker": "BA",
           "name": "Boeing Company (The)",
-          "change_pct": -2.87,
-          "market_cap": 123542945646.0
+          "change_pct": 4.19,
+          "market_cap": 128709719255.0
         },
         {
           "ticker": "PH",
           "name": "Parker-Hannifin Corporation",
-          "change_pct": -3.75,
-          "market_cap": 109970275887.0
+          "change_pct": 5.32,
+          "market_cap": 115784599105.0
         },
         {
           "ticker": "GD",
           "name": "General Dynamics Corporation",
-          "change_pct": -1.61,
-          "market_cap": 92348952551.0
+          "change_pct": 1.88,
+          "market_cap": 94012179480.0
         },
         {
           "ticker": "RACE",
           "name": "Ferrari N.V.",
-          "change_pct": -3.17,
-          "market_cap": 91841945158.0
+          "change_pct": 1.71,
+          "market_cap": 93384809359.0
         },
         {
-          "ticker": "CSX",
-          "name": "CSX Corporation",
-          "change_pct": -1.76,
-          "market_cap": 90510852111.0
+          "ticker": "GLW",
+          "name": "Corning Incorporated",
+          "change_pct": 14.73,
+          "market_cap": 93272511758.0
         }
       ]
     },
     {
       "name": "能源",
-      "change_pct": -0.82,
-      "market_cap": 3902597415939.0,
+      "change_pct": -0.63,
+      "market_cap": 3880679880274.0,
       "tiles": [
         {
           "ticker": "XOM",
           "name": "ExxonMobil Holdings Corporation",
-          "change_pct": 0.64,
-          "market_cap": 652471629918.0
+          "change_pct": -1.89,
+          "market_cap": 640274754810.0
         },
         {
           "ticker": "CVX",
           "name": "Chevron Corporation",
-          "change_pct": 0.93,
-          "market_cap": 409613533579.0
+          "change_pct": -1.02,
+          "market_cap": 405348568521.0
         },
         {
           "ticker": "SHEL",
           "name": "Shell PLC American Depositary Shares (each representing two (2) Ordinary Shares)",
-          "change_pct": -0.46,
-          "market_cap": 258835265909.0
+          "change_pct": -0.73,
+          "market_cap": 262442500000.0
         },
         {
           "ticker": "TTE",
           "name": "TotalEnergies SE",
-          "change_pct": -1.19,
-          "market_cap": 185938262937.0
+          "change_pct": -1.13,
+          "market_cap": 183800038369.0
         },
         {
           "ticker": "BHP",
           "name": "BHP Group Limited American Depositary Shares (Each representing two Ordinary Shares)",
-          "change_pct": -2.03,
-          "market_cap": 170726845328.0
+          "change_pct": 5.11,
+          "market_cap": 179497059985.0
         },
         {
           "ticker": "COP",
           "name": "ConocoPhillips",
-          "change_pct": 0.86,
-          "market_cap": 160974918011.0
+          "change_pct": -2.85,
+          "market_cap": 156351987938.0
         },
         {
           "ticker": "BP",
           "name": "BP p.l.c.",
-          "change_pct": -1.04,
-          "market_cap": 111942703947.0
+          "change_pct": -0.76,
+          "market_cap": 111065697262.0
         },
         {
           "ticker": "PBR",
           "name": "Petroleo Brasileiro S.A. Petrobras ADS",
-          "change_pct": -1.69,
-          "market_cap": 103206527592.0
+          "change_pct": -1.34,
+          "market_cap": 101788766988.0
         },
         {
           "ticker": "ENB",
           "name": "Enbridge Inc",
-          "change_pct": -0.48,
-          "market_cap": 101860185622.0
+          "change_pct": -0.7,
+          "market_cap": 101124652553.0
         },
         {
           "ticker": "MPC",
           "name": "Marathon Petroleum Corporation",
-          "change_pct": -0.14,
-          "market_cap": 100041955318.0
+          "change_pct": -2.57,
+          "market_cap": 97406262847.0
         },
         {
           "ticker": "EQNR",
           "name": "Equinor ASA",
-          "change_pct": -0.96,
-          "market_cap": 98285654189.0
+          "change_pct": -1.7,
+          "market_cap": 96610472599.0
         },
         {
           "ticker": "PSX",
           "name": "Phillips 66",
-          "change_pct": -1.37,
-          "market_cap": 93373571654.0
+          "change_pct": -0.87,
+          "market_cap": 92540767161.0
         },
         {
           "ticker": "VLO",
           "name": "Valero Energy Corporation",
-          "change_pct": -1.25,
-          "market_cap": 93211533012.0
+          "change_pct": -1.42,
+          "market_cap": 91875676736.0
         },
         {
           "ticker": "CNQ",
           "name": "Canadian Natural Resources Limited",
-          "change_pct": -0.78,
-          "market_cap": 90718989400.0
+          "change_pct": -1.37,
+          "market_cap": 89532585480.0
         }
       ]
     },
     {
       "name": "公用事业",
-      "change_pct": -1.06,
-      "market_cap": 2974555851189.0,
+      "change_pct": 1.41,
+      "market_cap": 3013807315977.0,
       "tiles": [
         {
           "ticker": "NEE",
           "name": "NextEra Energy Inc.",
-          "change_pct": -0.35,
-          "market_cap": 175114568561.0
+          "change_pct": 0.65,
+          "market_cap": 176152735056.0
         },
         {
           "ticker": "WMB",
           "name": "Williams Companies Inc. (The)",
-          "change_pct": -2.71,
-          "market_cap": 163407709757.0
+          "change_pct": 1.79,
+          "market_cap": 166252233147.0
         },
         {
           "ticker": "SO",
           "name": "Southern Company (The)",
-          "change_pct": -0.14,
-          "market_cap": 108462557462.0
+          "change_pct": -0.02,
+          "market_cap": 108410165715.0
         },
         {
           "ticker": "DUK",
           "name": "Duke Energy Corporation (Holding Company)",
-          "change_pct": 0.75,
-          "market_cap": 101229528200.0
+          "change_pct": -0.22,
+          "market_cap": 100972224462.0
         },
         {
           "ticker": "WM",
           "name": "Waste Management Inc.",
-          "change_pct": 0.44,
-          "market_cap": 95321042064.0
-        },
-        {
-          "ticker": "NGG",
-          "name": "National Grid Transco PLC National Grid PLC (NEW) American Depositary Shares",
-          "change_pct": 0.13,
-          "market_cap": 83808311503.0
+          "change_pct": 0.42,
+          "market_cap": 95682889837.0
         },
         {
           "ticker": "CEG",
           "name": "Constellation Energy Corporation",
-          "change_pct": -5.8,
-          "market_cap": 83475374935.0
+          "change_pct": 6.03,
+          "market_cap": 88506892627.0
+        },
+        {
+          "ticker": "NGG",
+          "name": "National Grid Transco PLC National Grid PLC (NEW) American Depositary Shares",
+          "change_pct": 1.01,
+          "market_cap": 84658784220.0
         },
         {
           "ticker": "EPD",
           "name": "Enterprise Products Partners L.P.",
-          "change_pct": -0.83,
-          "market_cap": 77335850208.0
+          "change_pct": -0.5,
+          "market_cap": 76882963188.0
         },
         {
           "ticker": "RSG",
           "name": "Republic Services Inc.",
-          "change_pct": 0.04,
-          "market_cap": 75124138430.0
+          "change_pct": 0.58,
+          "market_cap": 75553680341.0
         },
         {
           "ticker": "AEP",
           "name": "American Electric Power Company Inc.",
-          "change_pct": 0.14,
-          "market_cap": 68142024936.0
+          "change_pct": 1.64,
+          "market_cap": 69258303913.0
         },
         {
           "ticker": "KMI",
           "name": "Kinder Morgan Inc.",
-          "change_pct": -2.23,
-          "market_cap": 67711404385.0
+          "change_pct": 0.72,
+          "market_cap": 68123531703.0
         },
         {
           "ticker": "TRP",
           "name": "TC Energy Corporation",
-          "change_pct": -1.0,
-          "market_cap": 62180000000.0
+          "change_pct": -0.58,
+          "market_cap": 61770000000.0
         },
         {
           "ticker": "LNG",
           "name": "Cheniere Energy Inc.",
-          "change_pct": -0.17,
-          "market_cap": 60215650160.0
+          "change_pct": 0.21,
+          "market_cap": 60337151489.0
         },
         {
           "ticker": "TRGP",
           "name": "Targa Resources Inc.",
-          "change_pct": -2.47,
-          "market_cap": 59723254502.0
+          "change_pct": -0.33,
+          "market_cap": 59510846031.0
         }
       ]
     },
     {
       "name": "必需消费",
-      "change_pct": 0.23,
-      "market_cap": 2152749665010.0,
+      "change_pct": -0.24,
+      "market_cap": 2146953578105.0,
       "tiles": [
         {
           "ticker": "KO",
           "name": "Coca-Cola Company (The)",
-          "change_pct": 0.94,
-          "market_cap": 417241507472.0
+          "change_pct": -1.01,
+          "market_cap": 413025643183.0
         },
         {
           "ticker": "KOF",
           "name": "Coca Cola Femsa S.A.B. de C.V.  American Depositary Shares each representing 10 Units (each Unit consists of 3 Series B Shares and 5 Series L Shares)",
-          "change_pct": -1.29,
-          "market_cap": 195343787096.0
+          "change_pct": 0.42,
+          "market_cap": 196352186582.0
         },
         {
           "ticker": "PEP",
           "name": "PepsiCo Inc.",
-          "change_pct": 1.11,
-          "market_cap": 193728228726.0
+          "change_pct": -0.23,
+          "market_cap": 193273338194.0
         },
         {
           "ticker": "SONY",
           "name": "Sony Group Corporation American Depositary Shares",
-          "change_pct": 0.29,
-          "market_cap": 160844313673.0
+          "change_pct": 1.94,
+          "market_cap": 164028182052.0
         },
         {
           "ticker": "BUD",
           "name": "Anheuser-Busch Inbev SA Sponsored ADR (Belgium)",
-          "change_pct": -1.45,
-          "market_cap": 156291544530.0
+          "change_pct": -0.24,
+          "market_cap": 155877396588.0
         },
         {
           "ticker": "CVS",
           "name": "CVS Health Corporation",
-          "change_pct": 1.05,
-          "market_cap": 103483872325.0
-        },
-        {
-          "ticker": "MNST",
-          "name": "Monster Beverage Corporation",
-          "change_pct": -0.57,
-          "market_cap": 85523695872.0
+          "change_pct": -1.4,
+          "market_cap": 101986887525.0
         },
         {
           "ticker": "MDLZ",
           "name": "Mondelez International Inc. Class A",
-          "change_pct": 0.9,
-          "market_cap": 83899767760.0
+          "change_pct": -0.04,
+          "market_cap": 83861792609.0
+        },
+        {
+          "ticker": "MNST",
+          "name": "Monster Beverage Corporation",
+          "change_pct": -2.88,
+          "market_cap": 83057230850.0
         },
         {
           "ticker": "DEO",
           "name": "Diageo plc",
-          "change_pct": -1.25,
-          "market_cap": 54053493006.0
+          "change_pct": 0.49,
+          "market_cap": 54301202232.0
         },
         {
           "ticker": "CCEP",
           "name": "Coca-Cola Europacific Partners plc",
-          "change_pct": 0.77,
-          "market_cap": 52457670133.0
+          "change_pct": 0.05,
+          "market_cap": 52475829430.0
         },
         {
           "ticker": "KDP",
           "name": "Keurig Dr Pepper Inc.",
-          "change_pct": 1.25,
-          "market_cap": 49738107192.0
+          "change_pct": 1.69,
+          "market_cap": 50580400052.0
         },
         {
           "ticker": "VYLR",
           "name": "Vylor Inc.",
-          "change_pct": 0.57,
-          "market_cap": 45483374525.0
+          "change_pct": -0.15,
+          "market_cap": 45369933010.0
         },
         {
           "ticker": "FMX",
           "name": "Fomento Economico Mexicano S.A.B. de C.V.",
-          "change_pct": -1.22,
-          "market_cap": 42956526300.0
+          "change_pct": -0.09,
+          "market_cap": 42908830895.0
         },
         {
           "ticker": "ABEV",
           "name": "Ambev S.A. American Depositary Shares (Each representing 1 Common Share)",
-          "change_pct": -1.69,
-          "market_cap": 41216685347.0
+          "change_pct": 1.34,
+          "market_cap": 41689534510.0
         }
       ]
     },
     {
       "name": "房地产",
-      "change_pct": -1.0,
-      "market_cap": 2008886244129.0,
+      "change_pct": 1.23,
+      "market_cap": 2032719542824.0,
       "tiles": [
         {
           "ticker": "WELL",
           "name": "Welltower Inc.",
-          "change_pct": -1.1,
-          "market_cap": 176440508150.0
+          "change_pct": 0.27,
+          "market_cap": 176792640884.0
         },
         {
           "ticker": "PLD",
           "name": "Prologis Inc.",
-          "change_pct": -0.66,
-          "market_cap": 116485368150.0
+          "change_pct": 2.18,
+          "market_cap": 118975712210.0
         },
         {
           "ticker": "EQIX",
           "name": "Equinix Inc. Common Stock REIT",
-          "change_pct": -4.89,
-          "market_cap": 95842469254.0
-        },
-        {
-          "ticker": "AMT",
-          "name": "American Tower Corporation (REIT)",
-          "change_pct": 1.68,
-          "market_cap": 85420609195.0
+          "change_pct": 3.22,
+          "market_cap": 98928925009.0
         },
         {
           "ticker": "BN",
           "name": "Brookfield Corporation Class A Limited Voting Shares",
-          "change_pct": -3.02,
-          "market_cap": 84062407442.0
+          "change_pct": 3.58,
+          "market_cap": 87034029683.0
+        },
+        {
+          "ticker": "AMT",
+          "name": "American Tower Corporation (REIT)",
+          "change_pct": -2.63,
+          "market_cap": 83182950043.0
         },
         {
           "ticker": "BAM",
           "name": "Brookfield Asset Management Inc Class A Limited Voting Shares",
-          "change_pct": -2.55,
-          "market_cap": 78184180130.0
+          "change_pct": 2.19,
+          "market_cap": 79909888582.0
         },
         {
           "ticker": "SPG",
           "name": "Simon Property Group Inc.",
-          "change_pct": -0.35,
-          "market_cap": 72371989455.0
+          "change_pct": 1.24,
+          "market_cap": 73239434322.0
         },
         {
           "ticker": "DLR",
           "name": "Digital Realty Trust Inc.",
-          "change_pct": -6.63,
-          "market_cap": 61470378259.0
+          "change_pct": 3.05,
+          "market_cap": 63335524522.0
         },
         {
           "ticker": "PSA",
           "name": "Public Storage",
-          "change_pct": -0.29,
-          "market_cap": 60856779774.0
+          "change_pct": 1.57,
+          "market_cap": 61760167850.0
         },
         {
           "ticker": "O",
           "name": "Realty Income Corporation",
-          "change_pct": 0.64,
-          "market_cap": 55186358695.0
+          "change_pct": 1.0,
+          "market_cap": 55737936983.0
         },
         {
           "ticker": "VMRK",
           "name": "Vivmark Residential Common Shares of Beneficial Interest",
-          "change_pct": 0.8,
-          "market_cap": 48944024088.0
+          "change_pct": 0.75,
+          "market_cap": 49207455593.0
         },
         {
           "ticker": "VTR",
           "name": "Ventas Inc.",
-          "change_pct": -0.48,
-          "market_cap": 45785235600.0
+          "change_pct": 0.53,
+          "market_cap": 46012628200.0
         },
         {
           "ticker": "CCI",
           "name": "Crown Castle Inc.",
-          "change_pct": 0.62,
-          "market_cap": 35072414409.0
+          "change_pct": -1.4,
+          "market_cap": 34570346606.0
         },
         {
           "ticker": "EXR",
           "name": "Extra Space Storage Inc",
-          "change_pct": -0.56,
-          "market_cap": 32369314991.0
+          "change_pct": 1.48,
+          "market_cap": 32810757433.0
         }
       ]
     },
     {
       "name": "电信",
-      "change_pct": -2.3,
-      "market_cap": 1957239122748.0,
+      "change_pct": 2.63,
+      "market_cap": 2010819725508.0,
       "tiles": [
         {
           "ticker": "CSCO",
           "name": "Cisco Systems Inc. Common Stock (DE)",
-          "change_pct": -4.29,
-          "market_cap": 357343503398.0
+          "change_pct": 6.8,
+          "market_cap": 381628984211.0
+        },
+        {
+          "ticker": "ANET",
+          "name": "Arista Networks Inc.",
+          "change_pct": 6.29,
+          "market_cap": 225087760004.0
         },
         {
           "ticker": "CCZ",
@@ -842,167 +848,161 @@
           "market_cap": 220695043720.0
         },
         {
-          "ticker": "ANET",
-          "name": "Arista Networks Inc.",
-          "change_pct": -11.57,
-          "market_cap": 211809401463.0
-        },
-        {
           "ticker": "VZ",
           "name": "Verizon Communications Inc.",
-          "change_pct": 1.71,
-          "market_cap": 192806714591.0
+          "change_pct": -0.02,
+          "market_cap": 192599484674.0
         },
         {
           "ticker": "TMUS",
           "name": "T-Mobile US Inc.",
-          "change_pct": 1.89,
-          "market_cap": 175415537758.0
+          "change_pct": 0.46,
+          "market_cap": 176220584912.0
         },
         {
           "ticker": "T",
           "name": "AT&T Inc.",
-          "change_pct": 2.22,
-          "market_cap": 150459134126.0
+          "change_pct": 0.04,
+          "market_cap": 150358087025.0
         },
         {
           "ticker": "TBB",
           "name": "AT&T Inc. 5.350% Global Notes due 2066",
-          "change_pct": 0.74,
-          "market_cap": 126776334560.0
+          "change_pct": 4.02,
+          "market_cap": 133140177638.0
         },
         {
           "ticker": "CMCSA",
           "name": "Comcast Corporation Class A",
-          "change_pct": 0.16,
-          "market_cap": 88420057742.0
+          "change_pct": -0.72,
+          "market_cap": 87780876601.0
         },
         {
           "ticker": "AMX",
           "name": "America Movil S.A.B. de C.V. American Depositary Shares (each representing the right to receive twenty (20) Series B Shares",
-          "change_pct": -0.04,
-          "market_cap": 74732092500.0
+          "change_pct": -0.2,
+          "market_cap": 74521410000.0
         },
         {
           "ticker": "LITE",
           "name": "Lumentum Holdings Inc.",
-          "change_pct": -13.94,
-          "market_cap": 41770978000.0
+          "change_pct": 18.2,
+          "market_cap": 49375266000.0
         },
         {
           "ticker": "CHT",
           "name": "Chunghwa Telecom Co. Ltd.",
-          "change_pct": -0.88,
-          "market_cap": 38100698681.0
+          "change_pct": 1.24,
+          "market_cap": 38546751857.0
         },
         {
           "ticker": "VOD",
           "name": "Vodafone Group Plc American Depositary Shares",
-          "change_pct": -1.14,
-          "market_cap": 32446431532.0
+          "change_pct": -4.57,
+          "market_cap": 31001460000.0
         },
         {
           "ticker": "BCE",
           "name": "BCE Inc.",
-          "change_pct": 2.44,
-          "market_cap": 20375689101.0
+          "change_pct": -0.27,
+          "market_cap": 20329062811.0
         },
         {
           "ticker": "RCI",
           "name": "Rogers Communication Inc.",
-          "change_pct": 3.46,
-          "market_cap": 19153687231.0
+          "change_pct": 0.03,
+          "market_cap": 19156388358.0
         }
       ]
     },
     {
       "name": "基础材料",
-      "change_pct": -4.09,
-      "market_cap": 1282298177199.0,
+      "change_pct": 5.2,
+      "market_cap": 1348095606208.0,
       "tiles": [
         {
           "ticker": "LIN",
           "name": "Linde plc",
-          "change_pct": -1.45,
-          "market_cap": 230841096595.0
+          "change_pct": 2.82,
+          "market_cap": 237346313743.0
         },
         {
           "ticker": "SCCO",
           "name": "Southern Copper Corporation",
-          "change_pct": -5.26,
-          "market_cap": 113163106226.0
+          "change_pct": 6.95,
+          "market_cap": 121028163748.0
         },
         {
           "ticker": "NEM",
           "name": "Newmont Corporation",
-          "change_pct": -5.37,
-          "market_cap": 98390810756.0
+          "change_pct": 6.4,
+          "market_cap": 104688321457.0
         },
         {
           "ticker": "RIO",
           "name": "Rio Tinto Plc",
-          "change_pct": -2.64,
-          "market_cap": 91351686214.0
+          "change_pct": 3.29,
+          "market_cap": 94359898623.0
         },
         {
           "ticker": "AEM",
           "name": "Agnico Eagle Mines Limited",
-          "change_pct": -4.42,
-          "market_cap": 76463905251.0
-        },
-        {
-          "ticker": "APD",
-          "name": "Air Products and Chemicals Inc.",
-          "change_pct": -2.21,
-          "market_cap": 66162211814.0
+          "change_pct": 5.54,
+          "market_cap": 80730717551.0
         },
         {
           "ticker": "FCX",
           "name": "Freeport-McMoRan Inc.",
-          "change_pct": -6.37,
-          "market_cap": 65992708204.0
+          "change_pct": 8.09,
+          "market_cap": 71330670250.0
+        },
+        {
+          "ticker": "APD",
+          "name": "Air Products and Chemicals Inc.",
+          "change_pct": 2.4,
+          "market_cap": 67747788886.0
         },
         {
           "ticker": "B",
           "name": "Barrick Mining Corporation",
-          "change_pct": -5.5,
-          "market_cap": 51358931879.0
+          "change_pct": 7.55,
+          "market_cap": 55243220845.0
         },
         {
           "ticker": "WPM",
           "name": "Wheaton Precious Metals Corp Common Shares (Canada)",
-          "change_pct": -5.28,
-          "market_cap": 49960787030.0
+          "change_pct": 7.07,
+          "market_cap": 53451229288.0
         },
         {
           "ticker": "FNV",
           "name": "Franco-Nevada Corporation",
-          "change_pct": -3.3,
-          "market_cap": 43066449300.0
+          "change_pct": 6.0,
+          "market_cap": 45643028304.0
         },
         {
           "ticker": "VALE",
           "name": "VALE S.A.  American Depositary Shares Each Representing one common share",
-          "change_pct": -3.36,
-          "market_cap": 40560386354.0
+          "change_pct": 3.32,
+          "market_cap": 41862588231.0
         },
         {
           "ticker": "AU",
           "name": "AngloGold Ashanti PLC",
-          "change_pct": -5.85,
-          "market_cap": 36660684521.0
+          "change_pct": 7.01,
+          "market_cap": 39202175033.0
         },
         {
           "ticker": "GFI",
           "name": "Gold Fields Limited American Depositary Shares",
-          "change_pct": -3.42,
-          "market_cap": 28273815963.0
+          "change_pct": 6.67,
+          "market_cap": 30139941518.0
         },
         {
           "ticker": "CCJ",
           "name": "Cameco Corporation",
-          "change_pct": -5.5,
-          "market_cap": 25278334043.0
+          "change_pct": 6.14,
+          "market_cap": 26811410126.0
         }
       ]
     }
