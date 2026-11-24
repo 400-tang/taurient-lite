@@ -1,0 +1,1631 @@
+{
+  "date": "2026-11-24",
+  "weekday": "Tuesday",
+  "edition": "Daily edition",
+  "generated_at": "2026-11-24 11:10 PT",
+  "scanned": 200,
+  "kept": 15,
+  "thesis": "周一（11/23）收盘数据显示抛售远不止芯片股：科技板块加权跌6.02%（英伟达-12.06%、博通-12.19%、AMD-13.25%），金融（高盛-6.66%）、工业、基础材料同步下跌，11个板块里只有必需消费收红。细看板块内部，跌幅精确集中在「AI资本开支/算力供应链」敞口上——数据中心REIT、AI网络光模块股、数据中心供电股跌幅都远超各自所在的传统行业，而苹果、微软、传统电信、传统REIT相对抗跌，黄金矿业股也未能充当避险资产，指向一次由AI估值重新定价引发、并外溢成流动性驱动的无差别去杠杆。编辑说明（本期经过三轮反复核查）：扫描中反复出现「英伟达董事会周一重新任命黄仁勋为CEO、股价暴涨31%、带动大盘创2025年4月以来最佳单日」的说法，一度被采信又被推翻——先后派出的查漏报与事实核查子agent各自独立检索后得出了相互矛盾的结论：一轮检索找到多家媒体（含CNN、NBC、ABC等）同向报道复职与暴涨；另一轮独立检索却只找到「董事会主席11/17明确表示不会让黄仁勋复职」的说法，且找不到任何11/23复职公告的原文或可靠的收盘点位数字，连布伦特油价、美债收益率等周边数字也和本简报草稿对不上。本环境的WebFetch对几乎所有外部域名（nvidianews.nvidia.com、sec.gov、federalreserve.gov、cnn.com等）均返回域名无法解析，三轮核查都没有真正打开过一篇原始文章——所有「证据」本质上都是搜索引擎给出的二手摘要，而这些摘要在不同查询下给出了互相矛盾的「事实」。两个独立信号指向同一个方向：（1）本简报流水线每日收盘后抓取的内部数据（data/sectors.json）显示英伟达周一实际下跌12.06%而非上涨31%；（2）更谨慎的事实核查检索明确找到「董事会不会复职」的表述，找不到任何复职的原文证据。综合考虑，本期判定「复职＋暴涨」的说法不可采信，继续使用内部收盘数据作为周一行情的依据，但保留黄仁勋11月12日辞职、CFO Colette Kress任临时CEO这一部分——这是三轮检索里唯一没有出现过矛盾、且日期可对齐的事实。",
+  "tape": {
+    "asof": "收盘 · 周一 11/23（指数点位本身未能验证，见下）",
+    "note": "本应在这里列标普500/纳指/道指的收盘点位，但三轮检索得到的具体数字彼此矛盾、且全部依附在被判定为不可信的「英伟达复职」叙事上，故不采用，仅保留能独立核实、且未被任何一轮检索明确反驳的油价。10年期/2年期美债收益率同样找不到可靠且相互印证的11/23数据，未列入。",
+    "rows": [
+      {
+        "name": "Brent crude",
+        "value": "$89.10",
+        "change": "11/24 0700 GMT，接近约三个月低点（单一信源，见条目3）",
+        "dir": "down"
+      },
+      {
+        "name": "WTI crude",
+        "value": "$79.97",
+        "change": "11/24 0700 GMT（单一信源，见条目3）",
+        "dir": "down"
+      }
+    ]
+  },
+  "items": [
+    {
+      "rank": 1,
+      "tier": "must-read",
+      "published": "2026-11-23",
+      "headline": "AI与半导体股周一全线重挫：英伟达-12.06%，科技板块加权跌6.02%，跌势蔓延至金融与工业",
+      "sectors": [
+        "半导体",
+        "AI",
+        "市场结构"
+      ],
+      "tickers": [
+        "NVDA",
+        "AVGO",
+        "AMD"
+      ],
+      "body": "本简报流水线每日收盘后由GitHub Actions从Nasdaq screener抓取的板块热力数据显示，周一（11/23）收盘，科技板块市值加权跌6.02%，其中英伟达跌12.06%、博通跌12.19%、AMD跌13.25%、美光跌13.89%、台积电跌9.3%、Meta跌5.93%、新上市的Anthropic（代码ANT）跌8.5%。跌势不止于科技：金融板块跌2.33%（高盛-6.66%、大摩-5.3%），工业跌3.95%（特斯拉-7.64%、卡特彼勒-4.94%），基础材料跌4.09%，房地产中的数据中心相关REIT Equinix跌4.89%、Digital Realty跌6.63%。11个板块里只有必需消费（+0.23%）收红。上一交易日（周五11/20）收盘数据显示跌势已经开始：科技板块跌1.83%，英伟达跌3.3%。背景是英伟达CEO黄仁勋11月12日辞职后的持续治理动荡：CFO Colette Kress任临时CEO，董事会主席11月17日在财报电话会上公开表示不会让黄仁勋复职，公司同时启动外部高管猎头搜寻新任CEO。",
+      "why": "这不是单一板块的技术性回调——金融股大跌（尤其是对AI融资与杠杆敞口较大的高盛、大摩）、数据中心相关REIT同步下挫，说明市场正在把「AI资本开支能否撑住」的疑虑，从芯片股本身传导到整条融资链条，而英伟达自身的CEO真空进一步放大了这种不确定性。编辑说明：检索中反复出现「英伟达周一复职暴涨31%」的说法，经过两轮独立核查（查漏报、事实核查）仍无法找到可靠的原始出处，其中事实核查一轮明确找到了与「复职」相反的证据（董事会11/17表态不会复职，且找不到任何11/23反转的原文），本条判断该说法不可采信，继续以内部收盘数据与「未复职、持续治理真空」的背景作为事实依据。",
+      "impact": "全市场风险偏好 · 半导体与AI基建供应链 · 金融板块对AI敞口的担忧",
+      "sources": [
+        {
+          "name": "Nasdaq Screener（本简报流水线每日收盘后抓取）",
+          "url": "https://www.nasdaq.com/market-activity/stocks/screener",
+          "angle": "本条所有百分比均来自这一数据源，由GitHub Actions每日收盘后抓取并提交，渲染时原样读取，未经人工估算"
+        },
+        {
+          "name": "SCMP",
+          "url": "https://www.scmp.com/tech/article/3374812/nvidia-board-says-it-has-no-plans-reinstate-jensen-huang-ceo",
+          "angle": "报道董事会表态不会让黄仁勋复职，是三轮检索里唯一有明确出处支持的治理状态"
+        }
+      ],
+      "assets": [
+        {
+          "asset_class": "美股",
+          "direction": "down",
+          "conviction": "high",
+          "note": "科技板块加权跌6.02%，金融、工业、基础材料同步下跌，仅必需消费收红，跌势已从Fri 11/20延续并加深。"
+        }
+      ],
+      "cross_source": {
+        "agreement": "split",
+        "summary": "内部收盘数据（Nasdaq screener，经GitHub Actions抓取）与部分检索结果方向相反——后者描述周一为「英伟达复职引发的暴涨」。本环境的WebFetch无法访问任何原始页面核实任何一方，三轮独立检索本身也彼此矛盾；但另有独立信源（SCMP等）明确记录董事会「不会复职」的表态、且找不到任何复职的原始出处，与内部数据的方向一致，故本条采信内部数据与「未复职」的治理状态。"
+      },
+      "history": {
+        "summary": "科技板块跌幅在两个交易日内从-1.83%（周五11/20收盘）扩大到-6.02%（周一11/23收盘），英伟达同期从-3.3%扩大到-12.06%，跌势持续加深，背景是CEO真空期的持续治理不确定性。",
+        "timeline": [
+          {
+            "when": "11/12",
+            "event": "黄仁勋辞任CEO，CFO Colette Kress任临时CEO"
+          },
+          {
+            "when": "11/17",
+            "event": "董事会主席在财报电话会上公开表态：不会让黄仁勋复职"
+          },
+          {
+            "when": "Fri 11/20 收盘",
+            "event": "科技板块跌1.83%，英伟达跌3.3%"
+          },
+          {
+            "when": "Mon 11/23 收盘",
+            "event": "科技板块跌6.02%，英伟达跌12.06%，跌势蔓延至金融、工业、基础材料"
+          }
+        ]
+      }
+    },
+    {
+      "rank": 2,
+      "tier": "must-read",
+      "published": "2026-11-23",
+      "headline": "半导体之外，金融股也同步重挫：高盛-6.66%，大摩-5.3%",
+      "sectors": [
+        "金融",
+        "市场结构"
+      ],
+      "tickers": [],
+      "body": "周一（11/23）收盘，金融板块市值加权跌2.33%，跌幅集中在投行与资管：高盛跌6.66%、摩根士丹利跌5.3%、三菱UFJ跌4.88%，传统零售银行跌幅相对较小（摩根大通-3%、富国银行-2.43%）。同一天房地产里的数据中心类REIT也明显跑输大盘（见条目6）。",
+      "why": "投行与资管类金融股的跌幅明显大于零售银行，而这两类机构恰恰是AI数据中心融资链条（私募信贷、杠杆贷款、SPV结构）里更活跃的参与者。板块轮动的这个细节本身就是一条信息：市场在给「谁对AI资本开支敞口更大」定价，而不是无差别抛售整个金融板块。",
+      "impact": "金融板块 · AI资本开支融资链条",
+      "sources": [
+        {
+          "name": "Nasdaq Screener（本简报流水线每日收盘后抓取）",
+          "url": "https://www.nasdaq.com/market-activity/stocks/screener",
+          "angle": "本条所有百分比均来自这一数据源"
+        }
+      ],
+      "assets": [
+        {
+          "asset_class": "美股",
+          "direction": "down",
+          "conviction": "medium",
+          "note": "投行与资管类跌幅明显大于零售银行，指向市场对AI融资链条敞口的差异化定价。"
+        }
+      ]
+    },
+    {
+      "rank": 3,
+      "tier": "must-read",
+      "published": "2026-11-24",
+      "headline": "国际油价跌至约三个月低点，供应增量压过霍尔木兹风险溢价",
+      "sectors": [
+        "能源",
+        "地缘",
+        "宏观"
+      ],
+      "tickers": [],
+      "body": "据路透社报道（经Arab News、Lapaas Voice转载），布伦特原油周二（11/24）早盘跌至约89.10美元/桶，WTI约79.97美元/桶，连续第二个交易日下跌，接近约三个月低点。报道称主因是原油供应增加、市场可能转向过剩——德银基于10月库存数据估算当前过剩约170万桶/日；霍尔木兹海峡的航运风险仍未消除，DBS表示若美伊谈判停滞，油价可能再度走高。另据同一报道转述，伊朗革命卫队声称周一（11/23）有三艘「违规」油轮在海峡触雷起火，这一说法仅来自伊方单方面声明，未经独立证实。",
+      "why": "供应端的宽松叙事如果持续压过地缘风险溢价，意味着能源价格对通胀路径的边际贡献正在转弱——这正好与周三即将公布的10月PCE形成对照：如果油价维持低位，核心通胀之外的能源分项大概率是本月的拖累项而非推手。",
+      "impact": "能源板块 · 通胀路径 · 美元计价资产",
+      "sources": [
+        {
+          "name": "Arab News（转载Reuters）",
+          "url": "https://www.arabnews.com/energy/oil-prices-near-three-month-lows-as-rising-supply-offsets-hormuz-threat-3013802",
+          "angle": "标题强调供应面压过霍尔木兹威胁"
+        },
+        {
+          "name": "Lapaas Voice（转载Reuters）",
+          "url": "https://lapaasvoice.com/oil-prices-near-3-month-lows-as-rising-supply-offsets-strait-of-hormuz-threat",
+          "angle": "补充德银过剩估算与DBS、ANZ分析师表态"
+        }
+      ],
+      "assets": [
+        {
+          "asset_class": "大宗商品",
+          "direction": "down",
+          "conviction": "medium",
+          "note": "布伦特、WTI均连跌两日至约三个月低点，供应增量是主要驱动，霍尔木兹风险溢价尚未完全消退。"
+        }
+      ],
+      "cross_source": {
+        "agreement": "single",
+        "summary": "两条转载稿均源自同一篇路透社报道，没有独立的第二信源核实具体点位；事实核查一轮找到的9月中旬油价（布伦特约100美元）明显更高，但日期不同，不构成直接矛盾，只说明这条数字缺少独立的第二信源确认。"
+      }
+    },
+    {
+      "rank": 4,
+      "tier": "worth-knowing",
+      "published": "2026-11-23",
+      "headline": "本周唯一的数据解锁点：周三10月PCE与三季度GDP二次修正值，感恩节缩短周",
+      "sectors": [
+        "宏观",
+        "数据",
+        "市场机制"
+      ],
+      "tickers": [],
+      "body": "本周美东时间周三（11/25）8:30将同时公布10月PCE物价指数与三季度GDP二次修正值，这是感恩节缩短周唯一的重要数据发布。市场共识预期10月PCE同比+3.8%（前值+3.6%），核心PCE同比+3.2%（前值+3.1%）；三季度GDP二次修正预期3.5%-3.6%，高于3.4%的初值。联储9月16日已经时隔三年首次重启加息、将基准利率升至3.75%-4.00%（12-0票一致通过，多方信源确认），12月9日FOMC决议是下一个关键节点。周四（11/26）感恩节休市，周五（11/27）美股提前至13:00 ET收盘。",
+      "why": "联储已经进入加息周期而不是市场之前预期的降息周期，这意味着PCE只要略超预期，12月9日加息的概率就会显著上升。这是刚经历AI/半导体股剧烈波动之后，第一个能独立验证经济基本面方向的数据点。",
+      "impact": "全市场 · 利率预期 · 12月FOMC",
+      "sources": [
+        {
+          "name": "FXEmpire",
+          "url": "https://www.fxempire.com/forecasts/article/the-week-ahead-pce-in-focus-after-ai-sell-off-in-holiday-shortened-week-1646337",
+          "angle": "将PCE定为本周焦点，置于AI抛售后的缩短周背景下"
+        },
+        {
+          "name": "Fox Business",
+          "url": "https://www.foxbusiness.com/economy/federal-reserve-interest-rate-decision-september-16-2026",
+          "angle": "确认联储9/16加息至3.75%-4.00%，这条是三轮检索中唯一全程一致、未被任何一轮推翻的数字"
+        }
+      ],
+      "assets": [
+        {
+          "asset_class": "美债",
+          "direction": "mixed",
+          "conviction": "medium",
+          "note": "若核心PCE延续粘性通胀，叠加联储已重启的加息周期，12月加息概率上升；若数据降温，加息预期可能缓和。"
+        }
+      ]
+    },
+    {
+      "rank": 5,
+      "tier": "worth-knowing",
+      "published": "2026-11-23",
+      "headline": "工业与原材料同步下跌，黄金铜矿股也未能充当避险资产",
+      "sectors": [
+        "工业",
+        "原材料",
+        "大宗商品"
+      ],
+      "tickers": [
+        "TSLA"
+      ],
+      "body": "周一（11/23）工业板块跌3.95%（特斯拉-7.64%、卡特彼勒-4.94%），基础材料板块跌4.09%——按市值计是跌幅最大的板块之一，其中黄金与贵金属矿业股跌幅反而居前：纽蒙特矿业跌5.37%、富瑞斯曼跌6.37%、巴里克黄金跌5.5%、Southern Copper跌5.26%。",
+      "why": "黄金矿业股通常被当作risk-off时的避险选择，但这天它们跌幅比标普大盘还深，说明这轮抛售更像是全面去杠杆、追缴保证金引发的无差别抛售，而不是资金从风险资产「有序撤向」传统避险资产。",
+      "impact": "工业与原材料板块 · 流动性驱动的无差别抛售信号",
+      "sources": [
+        {
+          "name": "Nasdaq Screener（本简报流水线每日收盘后抓取）",
+          "url": "https://www.nasdaq.com/market-activity/stocks/screener",
+          "angle": "本条所有百分比均来自这一数据源"
+        }
+      ],
+      "assets": [
+        {
+          "asset_class": "美股",
+          "direction": "down",
+          "conviction": "medium",
+          "note": "工业与原材料板块普跌，黄金矿业股未能独立于大盘，指向流动性驱动的无差别抛售而非板块轮动。"
+        }
+      ]
+    },
+    {
+      "rank": 6,
+      "tier": "worth-knowing",
+      "published": "2026-11-23",
+      "headline": "数据中心类REIT跌幅远超房地产板块均值：Equinix跌4.89%，Digital Realty跌6.63%",
+      "sectors": [
+        "房地产",
+        "AI基建"
+      ],
+      "tickers": [],
+      "body": "房地产板块周一整体仅跌1.0%，但数据中心类REIT跌幅明显更深——Equinix跌4.89%、Digital Realty跌6.63%；与此同时传统REIT相对抗跌，Realty Income涨0.64%、American Tower涨1.68%、Crown Castle涨0.62%。",
+      "why": "数据中心REIT的现金流直接绑定AI云厂商的租约与资本开支计划，这天的分化再次说明市场在精确区分「谁的现金流绑定AI资本开支」，而不是整体看空房地产。",
+      "impact": "REIT板块 · AI数据中心资本开支预期",
+      "sources": [
+        {
+          "name": "Nasdaq Screener（本简报流水线每日收盘后抓取）",
+          "url": "https://www.nasdaq.com/market-activity/stocks/screener",
+          "angle": "本条所有百分比均来自这一数据源"
+        }
+      ]
+    },
+    {
+      "rank": 7,
+      "tier": "worth-knowing",
+      "published": "2026-11-23",
+      "headline": "AI基建相关的网络与光模块股跌幅远超传统电信：Arista跌11.57%，Lumentum跌13.94%",
+      "sectors": [
+        "AI基建",
+        "半导体",
+        "电信"
+      ],
+      "tickers": [],
+      "body": "周一（11/23）电信板块整体跌2.3%，但内部严重分化：与AI数据中心网络直接相关的Arista Networks跌11.57%、光模块厂商Lumentum跌13.94%，跌幅接近半导体板块的重灾区；而传统电信运营商反而上涨——Verizon+1.71%、T-Mobile+1.89%、AT&T+2.22%。",
+      "why": "这印证了条目1的判断：这轮抛售精确打在「AI基础设施直接受益股」上，而不是无差别打击整个科技或通信行业。传统、现金流稳定的电信运营商这天反而是资金的避风港之一。",
+      "impact": "AI基建供应链 · 网络设备与光模块板块",
+      "sources": [
+        {
+          "name": "Nasdaq Screener（本简报流水线每日收盘后抓取）",
+          "url": "https://www.nasdaq.com/market-activity/stocks/screener",
+          "angle": "本条所有百分比均来自这一数据源"
+        }
+      ]
+    },
+    {
+      "rank": 8,
+      "tier": "worth-knowing",
+      "published": "2026-11-23",
+      "headline": "苹果、微软、谷歌跌幅远小于英伟达、博通、AMD——抛售集中在AI基建股而非整个大型科技",
+      "sectors": [
+        "科技",
+        "市场结构"
+      ],
+      "tickers": [
+        "AAPL",
+        "NVDA",
+        "MSFT",
+        "AVGO",
+        "AMD"
+      ],
+      "body": "同在科技板块里，苹果周一仅跌1.9%、微软跌2.77%、谷歌A/C股跌2.6%-2.7%，跌幅远小于英伟达-12.06%、博通-12.19%、AMD-13.25%。七巨头里现金流更依赖消费端（苹果）或业务结构更分散（微软、谷歌）的公司明显跑赢纯AI基础设施敞口更高的半导体股。",
+      "why": "如果这是一次无差别的「科技股恐慌」，苹果和英伟达的跌幅应该接近；实际差距超过6倍，说明市场在这一天做的是针对AI资本开支/算力供应链的精确定价，而不是对整个科技行业重新估值。",
+      "impact": "科技板块内部分化 · 七巨头",
+      "sources": [
+        {
+          "name": "Nasdaq Screener（本简报流水线每日收盘后抓取）",
+          "url": "https://www.nasdaq.com/market-activity/stocks/screener",
+          "angle": "本条所有百分比均来自这一数据源"
+        }
+      ]
+    },
+    {
+      "rank": 9,
+      "tier": "worth-knowing",
+      "published": "2026-11-23",
+      "headline": "公用事业板块整体温和下跌，但数据中心供电股Constellation Energy跌5.8%明显突出",
+      "sectors": [
+        "公用事业",
+        "AI基建"
+      ],
+      "tickers": [],
+      "body": "公用事业板块周一仅跌1.06%，多数传统电力与水务股涨跌幅在正负1%以内（南方电力-0.14%、杜克能源+0.75%），但为数据中心供电、常被视为「AI电力需求」代理股的Constellation Energy单日跌5.8%，跌幅在板块内明显突出。",
+      "why": "这是条目7同一个逻辑在公用事业板块里的又一次重复出现：市场在系统性地抛售「与AI资本开支直接绑定」的标的，无论它们原本被归到哪个传统行业分类里。",
+      "impact": "公用事业板块 · AI电力需求叙事",
+      "sources": [
+        {
+          "name": "Nasdaq Screener（本简报流水线每日收盘后抓取）",
+          "url": "https://www.nasdaq.com/market-activity/stocks/screener",
+          "angle": "本条所有百分比均来自这一数据源"
+        }
+      ]
+    },
+    {
+      "rank": 10,
+      "tier": "worth-knowing",
+      "published": "2026-11-24",
+      "headline": "下周日（11/29）OPEC+全体部长级会议将敲定2027年产量框架，评估已被推迟",
+      "sectors": [
+        "能源",
+        "大宗商品"
+      ],
+      "tickers": [],
+      "body": "OPEC+七个核心成员国已将下次会议定在11月29日，届时21国全体部长级会议也将召开，核心议题是敲定2027年的产量框架；原定于11月中旬完成的成员国产能评估（这项评估直接影响2027年配额的分配基础）目前仍被推迟，状态不明。上一次（11/1）会议维持了12月产量目标不变，沙特10.5百万桶/日、俄罗斯9.9、伊拉克4.4等配额均未变动。多家分析认为，中东地区的实际冲突已经让今年的目标增产大多停留在纸面上，尚未真正兑现。",
+      "why": "2027年配额框架如果定得比预期宽松，会在供给侧进一步压低油价预期，与条目3「供应过剩压过地缘风险溢价」的叙事方向一致；如果产能评估继续拖延，则说明OPEC+内部对实际产能的分配仍有分歧。",
+      "impact": "原油供给框架 · 2027年价格路径",
+      "sources": [
+        {
+          "name": "OPEC 新闻公告",
+          "url": "https://www.opec.org/pr-detail/2033620-1-november-2026.html",
+          "angle": "OPEC官方公告，确认11/1维持12月配额不变及各国具体数字"
+        }
+      ]
+    },
+    {
+      "rank": 11,
+      "tier": "worth-knowing",
+      "published": "2026-11-24",
+      "headline": "Dell今日盘后公布财报，是企业IT与AI服务器资本开支的下一个信号",
+      "sectors": [
+        "AI基建",
+        "企业IT"
+      ],
+      "tickers": [],
+      "body": "Dell Technologies定于今天（11/24）美股盘后公布2027财年三季度财报，Best Buy同周公布财报，具体日期各信源略有冲突。Dell的服务器业务是企业AI基础设施资本开支的重要风向标之一。",
+      "why": "在英伟达治理动荡、板块轮动剧烈之后，Dell这份财报能提供一个相对独立于「英伟达一家公司股价」的视角，判断企业端的AI服务器需求是否依然强劲，或者只是芯片供应链自身的情绪波动。",
+      "impact": "AI基建资本开支 · 企业IT支出",
+      "sources": [
+        {
+          "name": "ifyouspent.com 财报前瞻",
+          "url": "https://news.ifyouspent.com/en/news/thanksgiving-week-earnings-dell-workday-zoom-hp-deere-november-2026"
+        }
+      ]
+    },
+    {
+      "rank": 12,
+      "tier": "noise",
+      "published": "2026-11-23",
+      "headline": "医疗保健是周一跌幅最小的板块（-0.34%），联合健康逆势涨2.9%",
+      "sectors": [
+        "医疗保健"
+      ],
+      "tickers": [],
+      "body": "周一11个板块里，医疗保健跌幅最小，只有0.34%，多只成分股逆势上涨：联合健康+2.9%、艾伯维+1.4%、强生+1.32%。这天的抛售基本没有波及这个板块。",
+      "sources": [
+        {
+          "name": "Nasdaq Screener（本简报流水线每日收盘后抓取）",
+          "url": "https://www.nasdaq.com/market-activity/stocks/screener"
+        }
+      ]
+    },
+    {
+      "rank": 13,
+      "tier": "noise",
+      "published": "2026-11-23",
+      "headline": "必需消费是周一唯一收红的板块（+0.23%），可选消费内部则两极分化",
+      "sectors": [
+        "必需消费",
+        "可选消费"
+      ],
+      "tickers": [],
+      "body": "11个板块里，只有必需消费板块周一收红，涨0.23%，可口可乐+0.94%、百事+1.11%均上涨。可选消费板块跌1.5%，内部分化明显：亚马逊跌4.1%领跌，但沃尔玛+1.51%、好市多+0.76%、家得宝+0.72%均逆势收红，呈现「越偏向日常刚需的零售商越抗跌」的经典防御性轮动。",
+      "sources": [
+        {
+          "name": "Nasdaq Screener（本简报流水线每日收盘后抓取）",
+          "url": "https://www.nasdaq.com/market-activity/stocks/screener"
+        }
+      ]
+    },
+    {
+      "rank": 14,
+      "tier": "noise",
+      "published": "2026-11-23",
+      "headline": "能源板块相对抗跌（-0.82%），埃克森美孚、雪佛龙逆势上涨",
+      "sectors": [
+        "能源"
+      ],
+      "tickers": [],
+      "body": "能源板块周一跌幅只有0.82%，是跌幅第二小的板块，埃克森美孚涨0.64%、雪佛龙涨0.93%、康菲石油涨0.86%，与条目3「原油现货价接近三个月低点」的叙事看似矛盾，股价与大宗商品现货价格的短期背离并不少见，这里只记录事实，不做解释。",
+      "sources": [
+        {
+          "name": "Nasdaq Screener（本简报流水线每日收盘后抓取）",
+          "url": "https://www.nasdaq.com/market-activity/stocks/screener"
+        }
+      ]
+    },
+    {
+      "rank": 15,
+      "tier": "noise",
+      "published": "2026-11-24",
+      "headline": "历史数据：感恩节交易周过去表现偏强，但近年规律已减弱（纯统计，非预测）",
+      "sectors": [
+        "季节性"
+      ],
+      "tickers": [],
+      "body": "据分析师统计，自1928年以来的感恩节交易周，标普500上涨概率约60%，平均涨幅0.28%（中位数0.46%）；但过去十年的复盘显示部分年份明显背离这一规律，且节后首个周一历史上下跌概率约三分之二。本周NYSE周四（11/26）休市，周五（11/27）13:00 ET提前收盘。这是纯统计性的历史回顾，不构成对本周行情的预测。",
+      "sources": [
+        {
+          "name": "Yahoo Finance",
+          "url": "https://finance.yahoo.com/news/why-thanksgiving-week-is-typically-bullish-for-stocks-110047943.html"
+        },
+        {
+          "name": "Nasdaq",
+          "url": "https://www.nasdaq.com/articles/how-does-stock-market-historically-perform-during-thanksgiving-week"
+        }
+      ]
+    }
+  ],
+  "calendar": [
+    {
+      "when": "Tue 11/24",
+      "time": "盘后",
+      "event": "Dell 2027财年三季度财报（Best Buy同周报告，具体日期各信源略有冲突）",
+      "weight": "mid",
+      "date": "2026-11-24",
+      "sources": [
+        {
+          "name": "ifyouspent.com 财报前瞻",
+          "url": "https://news.ifyouspent.com/en/news/thanksgiving-week-earnings-dell-workday-zoom-hp-deere-november-2026"
+        }
+      ]
+    },
+    {
+      "when": "Wed 11/25",
+      "time": "08:30 ET",
+      "event": "10月PCE物价指数 + 三季度GDP二次修正值，核心PCE共识同比+3.2%",
+      "weight": "high",
+      "date": "2026-11-25",
+      "sources": [
+        {
+          "name": "FXEmpire",
+          "url": "https://www.fxempire.com/forecasts/article/the-week-ahead-pce-in-focus-after-ai-sell-off-in-holiday-shortened-week-1646337"
+        }
+      ]
+    },
+    {
+      "when": "Thu 11/26",
+      "time": "全天",
+      "event": "感恩节，美股与债市休市",
+      "weight": "high",
+      "date": "2026-11-26",
+      "sources": [
+        {
+          "name": "NYSE Holidays & Trading Hours",
+          "url": "https://www.nyse.com/markets/hours-calendars"
+        }
+      ]
+    },
+    {
+      "when": "Fri 11/27",
+      "time": "13:00 ET",
+      "event": "黑色星期五，美股提前收盘",
+      "weight": "mid",
+      "date": "2026-11-27",
+      "sources": [
+        {
+          "name": "NYSE Holidays & Trading Hours",
+          "url": "https://www.nyse.com/markets/hours-calendars"
+        }
+      ]
+    },
+    {
+      "when": "Sun 11/29",
+      "time": "—",
+      "event": "OPEC+全体部长级会议，讨论2027年产量配额框架",
+      "weight": "high",
+      "date": "2026-11-29",
+      "sources": [
+        {
+          "name": "OPEC 新闻公告",
+          "url": "https://www.opec.org/pr-detail/2033620-1-november-2026.html"
+        }
+      ]
+    },
+    {
+      "when": "Wed 12/9",
+      "time": "14:00 ET",
+      "event": "FOMC 12月利率决议 + 经济预测摘要，14:30 ET 鲍威尔新闻发布会（联储9月已重启加息至3.75%-4.00%，当时预测年内可能再加一次）",
+      "weight": "high",
+      "date": "2026-12-09",
+      "sources": [
+        {
+          "name": "Federal Reserve",
+          "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        },
+        {
+          "name": "Fox Business（9月16日加息报道）",
+          "url": "https://www.foxbusiness.com/economy/federal-reserve-interest-rate-decision-september-16-2026"
+        }
+      ]
+    },
+    {
+      "when": "Wed 12/9",
+      "time": "17:00 ET",
+      "event": "博通2026财年四季度财报",
+      "weight": "mid",
+      "date": "2026-12-09",
+      "sources": [
+        {
+          "name": "Broadcom Investor Relations",
+          "url": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announce-fourth-quarter-and-fiscal-year-2026"
+        }
+      ]
+    }
+  ],
+  "momentum": {
+    "asof": "2026-11-23",
+    "scanned": 2551,
+    "note": "",
+    "candidates": [
+      {
+        "ticker": "ALH",
+        "date": "2026-11-23",
+        "stage": "ignition",
+        "close": 25.75,
+        "change_pct": 6.1,
+        "rvol": 2.73,
+        "breakout_age": 0,
+        "ext_ma20": 0.1056,
+        "run_from_base": 0.2623,
+        "note": "Alliance Laundry Holdings（NYSE: ALH），周一放量突破，涨6.1%，量比2.73倍，当天首次脱离基底，脱离20日均线约10.6%。常规扫描中未见相关新闻。"
+      },
+      {
+        "ticker": "BIP",
+        "date": "2026-11-23",
+        "stage": "ignition",
+        "close": 45.24,
+        "change_pct": 5.68,
+        "rvol": 7.49,
+        "breakout_age": 1,
+        "ext_ma20": 0.1493,
+        "run_from_base": 0.319,
+        "note": "Brookfield Infrastructure Partners（NYSE: BIP），周一涨5.68%，量比高达7.49倍，为突破后第2天，脱离20日均线近15%。常规扫描中未见相关新闻。"
+      },
+      {
+        "ticker": "KYMR",
+        "date": "2026-11-23",
+        "stage": "ignition",
+        "close": 150.37,
+        "change_pct": 30.4,
+        "rvol": 8.9,
+        "breakout_age": 0,
+        "ext_ma20": 0.1754,
+        "run_from_base": 0.4779,
+        "note": "Kymera Therapeutics（NASDAQ: KYMR），周一暴涨30.4%，量比8.9倍，当天首次突破，自基底以来累计涨幅已达47.8%。常规扫描中未见当天相关新闻，公司此前公开信息显示其KT-621的2b期阿托皮性皮炎数据预期在2026年底公布，但没有报道把周一的涨幅与此直接挂钩，不作因果判断。"
+      },
+      {
+        "ticker": "ASR",
+        "date": "2026-11-23",
+        "stage": "continuation",
+        "close": 278.27,
+        "change_pct": 2.08,
+        "rvol": 1.45,
+        "breakout_age": 0,
+        "ext_ma20": 0.055,
+        "run_from_base": 0.2302,
+        "note": "Grupo Aeroportuario del Sureste（NYSE: ASR，墨西哥机场运营商ADR），周一涨2.08%，量比1.45倍，自基底以来累计涨幅23%。常规扫描中未见相关新闻。"
+      },
+      {
+        "ticker": "BANF",
+        "date": "2026-11-23",
+        "stage": "continuation",
+        "close": 120.96,
+        "change_pct": 1.94,
+        "rvol": 1.07,
+        "breakout_age": 0,
+        "ext_ma20": 0.0438,
+        "run_from_base": 0.1642,
+        "note": "BancFirst Corporation（NASDAQ: BANF，俄克拉荷马州地区银行），周一涨1.94%，量比1.07倍，温和放量延续。常规扫描中未见相关新闻。"
+      },
+      {
+        "ticker": "CR",
+        "date": "2026-11-23",
+        "stage": "continuation",
+        "close": 215.87,
+        "change_pct": 6.8,
+        "rvol": 1.73,
+        "breakout_age": 0,
+        "ext_ma20": 0.0486,
+        "run_from_base": 0.1923,
+        "note": "Crane Co.（NYSE: CR，工业设备制造商），周一涨6.8%，量比1.73倍，收盘价接近当日最高区间。常规扫描中未见相关新闻。"
+      },
+      {
+        "ticker": "HR",
+        "date": "2026-11-23",
+        "stage": "continuation",
+        "close": 19.76,
+        "change_pct": 2.07,
+        "rvol": 0.96,
+        "breakout_age": 0,
+        "ext_ma20": 0.0375,
+        "run_from_base": 0.1741,
+        "note": "Healthcare Realty Trust（NYSE: HR，医疗地产REIT），周一涨2.07%，量能与近期平均相当（量比0.96倍）。常规扫描中未见相关新闻。"
+      }
+    ]
+  },
+  "market": {
+    "asof": "2026-11-23",
+    "session": "close",
+    "fetched_at": "2026-11-24T05:23:30+00:00",
+    "source": "Nasdaq screener",
+    "note": "块的大小按市值，颜色按当日涨跌幅，行业按当日强弱从左到右排。行业涨跌是市值加权的：简单平均会让一堆微型股盖过苹果，得出「科技板块大跌」而指数其实在涨的结论。",
+    "sectors": [
+      {
+        "name": "科技",
+        "change_pct": -6.02,
+        "market_cap": 38681717533849.0,
+        "tiles": [
+          {
+            "ticker": "AAPL",
+            "name": "Apple Inc.",
+            "change_pct": -1.9,
+            "market_cap": 4978144265920.0
+          },
+          {
+            "ticker": "MSFT",
+            "name": "Microsoft Corporation",
+            "change_pct": -2.77,
+            "market_cap": 3598139784335.0
+          },
+          {
+            "ticker": "GOOGL",
+            "name": "Alphabet Inc. Class A",
+            "change_pct": -2.7,
+            "market_cap": 3261475260000.0
+          },
+          {
+            "ticker": "GOOG",
+            "name": "Alphabet Inc. Class C Capital Stock",
+            "change_pct": -2.59,
+            "market_cap": 3245616000000.0
+          },
+          {
+            "ticker": "NVDA",
+            "name": "NVIDIA Corporation",
+            "change_pct": -12.06,
+            "market_cap": 3093823040000.0
+          },
+          {
+            "ticker": "SPCX",
+            "name": "Space Exploration Technologies Corp. Class A",
+            "change_pct": -7.69,
+            "market_cap": 1735524131373.0
+          },
+          {
+            "ticker": "TSM",
+            "name": "Taiwan Semiconductor Manufacturing Company Ltd.",
+            "change_pct": -9.3,
+            "market_cap": 1656258476043.0
+          },
+          {
+            "ticker": "AVGO",
+            "name": "Broadcom Inc.",
+            "change_pct": -12.19,
+            "market_cap": 1453140667205.0
+          },
+          {
+            "ticker": "META",
+            "name": "Meta Platforms Inc. Class A",
+            "change_pct": -5.93,
+            "market_cap": 1433642344333.0
+          },
+          {
+            "ticker": "ANT",
+            "name": "Anthropic PBC Class A",
+            "change_pct": -8.5,
+            "market_cap": 1163536060244.0
+          },
+          {
+            "ticker": "SKHY",
+            "name": "SK hynix Inc. American Depositary Shares",
+            "change_pct": -13.11,
+            "market_cap": 754885998350.0
+          },
+          {
+            "ticker": "AMD",
+            "name": "Advanced Micro Devices Inc.",
+            "change_pct": -13.25,
+            "market_cap": 702393278525.0
+          },
+          {
+            "ticker": "MU",
+            "name": "Micron Technology Inc.",
+            "change_pct": -13.89,
+            "market_cap": 672642413766.0
+          },
+          {
+            "ticker": "GOOGN",
+            "name": "Alphabet Inc. Depositary Shares representing a 1/20th Interest in a Share of Series B Mandatory Convertible Preferred Stock",
+            "change_pct": -2.12,
+            "market_cap": 488440620000.0
+          }
+        ]
+      },
+      {
+        "name": "可选消费",
+        "change_pct": -1.5,
+        "market_cap": 13572945618003.0,
+        "tiles": [
+          {
+            "ticker": "AMZN",
+            "name": "Amazon.com Inc.",
+            "change_pct": -4.1,
+            "market_cap": 2668898796687.0
+          },
+          {
+            "ticker": "WMT",
+            "name": "Walmart Inc.",
+            "change_pct": 1.51,
+            "market_cap": 1015122831536.0
+          },
+          {
+            "ticker": "V",
+            "name": "Visa Inc.",
+            "change_pct": 0.01,
+            "market_cap": 725306134389.0
+          },
+          {
+            "ticker": "MA",
+            "name": "Mastercard Incorporated",
+            "change_pct": -0.04,
+            "market_cap": 545600176676.0
+          },
+          {
+            "ticker": "COST",
+            "name": "Costco Wholesale Corporation",
+            "change_pct": 0.76,
+            "market_cap": 488395012000.0
+          },
+          {
+            "ticker": "PG",
+            "name": "Procter & Gamble Company (The)",
+            "change_pct": 0.97,
+            "market_cap": 392806298160.0
+          },
+          {
+            "ticker": "HD",
+            "name": "Home Depot Inc. (The)",
+            "change_pct": 0.72,
+            "market_cap": 338371696958.0
+          },
+          {
+            "ticker": "NFLX",
+            "name": "Netflix Inc.",
+            "change_pct": -2.96,
+            "market_cap": 232951868477.0
+          },
+          {
+            "ticker": "DIS",
+            "name": "Walt Disney Company (The)",
+            "change_pct": -1.89,
+            "market_cap": 201513340231.0
+          },
+          {
+            "ticker": "BABA",
+            "name": "Alibaba Group Holding Limited American Depositary Shares each representing eight Ordinary share",
+            "change_pct": -2.67,
+            "market_cap": 196439391200.0
+          },
+          {
+            "ticker": "MCD",
+            "name": "McDonald's Corporation",
+            "change_pct": 0.36,
+            "market_cap": 192905086230.0
+          },
+          {
+            "ticker": "TJX",
+            "name": "TJX Companies Inc. (The)",
+            "change_pct": 0.18,
+            "market_cap": 153622377359.0
+          },
+          {
+            "ticker": "ACN",
+            "name": "Accenture plc Class A Ordinary Shares (Ireland)",
+            "change_pct": 1.18,
+            "market_cap": 147894737544.0
+          },
+          {
+            "ticker": "UL",
+            "name": "Unilever PLC American Depositary Shares (each representing One Ordinary Share)",
+            "change_pct": 0.77,
+            "market_cap": 137553800914.0
+          }
+        ]
+      },
+      {
+        "name": "金融",
+        "change_pct": -2.33,
+        "market_cap": 10923919341334.0,
+        "tiles": [
+          {
+            "ticker": "JPM",
+            "name": "JP Morgan Chase & Co.",
+            "change_pct": -3.0,
+            "market_cap": 824832313495.0
+          },
+          {
+            "ticker": "BAC",
+            "name": "Bank of America Corporation",
+            "change_pct": -3.1,
+            "market_cap": 324758336867.0
+          },
+          {
+            "ticker": "HSBC",
+            "name": "HSBC Holdings plc.",
+            "change_pct": -3.98,
+            "market_cap": 274770068711.0
+          },
+          {
+            "ticker": "MS",
+            "name": "Morgan Stanley",
+            "change_pct": -5.3,
+            "market_cap": 259336150000.0
+          },
+          {
+            "ticker": "RY",
+            "name": "Royal Bank Of Canada",
+            "change_pct": -2.24,
+            "market_cap": 254029023819.0
+          },
+          {
+            "ticker": "WFC",
+            "name": "Wells Fargo & Company",
+            "change_pct": -2.43,
+            "market_cap": 236095527432.0
+          },
+          {
+            "ticker": "GS",
+            "name": "Goldman Sachs Group Inc. (The)",
+            "change_pct": -6.66,
+            "market_cap": 228180598611.0
+          },
+          {
+            "ticker": "MUFG",
+            "name": "Mitsubishi UFJ Financial Group Inc.",
+            "change_pct": -4.88,
+            "market_cap": 210800519816.0
+          },
+          {
+            "ticker": "AXP",
+            "name": "American Express Company",
+            "change_pct": -3.02,
+            "market_cap": 202312249351.0
+          },
+          {
+            "ticker": "TD",
+            "name": "Toronto Dominion Bank (The)",
+            "change_pct": -1.93,
+            "market_cap": 184347796351.0
+          },
+          {
+            "ticker": "C",
+            "name": "Citigroup Inc.",
+            "change_pct": -3.97,
+            "market_cap": 183230640000.0
+          },
+          {
+            "ticker": "BLK",
+            "name": "BlackRock Inc.",
+            "change_pct": -2.99,
+            "market_cap": 170156079131.0
+          },
+          {
+            "ticker": "SAN",
+            "name": "Banco Santander S.A. Sponsored ADR (Spain)",
+            "change_pct": -2.15,
+            "market_cap": 161175878424.0
+          },
+          {
+            "ticker": "SCHW",
+            "name": "Charles Schwab Corporation (The)",
+            "change_pct": -2.04,
+            "market_cap": 155754935299.0
+          }
+        ]
+      },
+      {
+        "name": "医疗保健",
+        "change_pct": -0.34,
+        "market_cap": 9375486521200.0,
+        "tiles": [
+          {
+            "ticker": "LLY",
+            "name": "Eli Lilly and Company",
+            "change_pct": -0.18,
+            "market_cap": 1268801638210.0
+          },
+          {
+            "ticker": "JNJ",
+            "name": "Johnson & Johnson",
+            "change_pct": 1.32,
+            "market_cap": 651598706250.0
+          },
+          {
+            "ticker": "ABBV",
+            "name": "AbbVie Inc.",
+            "change_pct": 1.4,
+            "market_cap": 508225040301.0
+          },
+          {
+            "ticker": "MRK",
+            "name": "Merck & Company Inc. Common Stock (new)",
+            "change_pct": 0.73,
+            "market_cap": 329800568141.0
+          },
+          {
+            "ticker": "UNH",
+            "name": "UnitedHealth Group Incorporated Common Stock (DE)",
+            "change_pct": 2.9,
+            "market_cap": 304719369549.0
+          },
+          {
+            "ticker": "NVS",
+            "name": "Novartis AG",
+            "change_pct": -0.52,
+            "market_cap": 287062338589.0
+          },
+          {
+            "ticker": "PM",
+            "name": "Philip Morris International Inc",
+            "change_pct": -1.23,
+            "market_cap": 287010847524.0
+          },
+          {
+            "ticker": "AZN",
+            "name": "AstraZeneca PLC",
+            "change_pct": -0.64,
+            "market_cap": 270335160157.0
+          },
+          {
+            "ticker": "AMGN",
+            "name": "Amgen Inc.",
+            "change_pct": -0.15,
+            "market_cap": 235642681504.0
+          },
+          {
+            "ticker": "GILD",
+            "name": "Gilead Sciences Inc.",
+            "change_pct": -0.06,
+            "market_cap": 206429555528.0
+          },
+          {
+            "ticker": "ABT",
+            "name": "Abbott Laboratories",
+            "change_pct": -0.54,
+            "market_cap": 178926886799.0
+          },
+          {
+            "ticker": "NVO",
+            "name": "Novo Nordisk A/S",
+            "change_pct": -2.73,
+            "market_cap": 167420052961.0
+          },
+          {
+            "ticker": "PFE",
+            "name": "Pfizer Inc.",
+            "change_pct": -0.4,
+            "market_cap": 156346987896.0
+          },
+          {
+            "ticker": "ISRG",
+            "name": "Intuitive Surgical Inc.",
+            "change_pct": -2.01,
+            "market_cap": 138328175668.0
+          }
+        ]
+      },
+      {
+        "name": "工业",
+        "change_pct": -3.95,
+        "market_cap": 8276589482515.0,
+        "tiles": [
+          {
+            "ticker": "TSLA",
+            "name": "Tesla Inc.",
+            "change_pct": -7.64,
+            "market_cap": 1366942752886.0
+          },
+          {
+            "ticker": "TM",
+            "name": "Toyota Motor Corporation",
+            "change_pct": -1.62,
+            "market_cap": 270512741071.0
+          },
+          {
+            "ticker": "RTX",
+            "name": "RTX Corporation",
+            "change_pct": -1.25,
+            "market_cap": 256812030690.0
+          },
+          {
+            "ticker": "TMO",
+            "name": "Thermo Fisher Scientific Inc",
+            "change_pct": -2.67,
+            "market_cap": 248375312114.0
+          },
+          {
+            "ticker": "CAT",
+            "name": "Caterpillar Inc.",
+            "change_pct": -4.94,
+            "market_cap": 233757407846.0
+          },
+          {
+            "ticker": "UNP",
+            "name": "Union Pacific Corporation",
+            "change_pct": -1.09,
+            "market_cap": 170817282079.0
+          },
+          {
+            "ticker": "DE",
+            "name": "Deere & Company",
+            "change_pct": -2.5,
+            "market_cap": 164266586007.0
+          },
+          {
+            "ticker": "DHR",
+            "name": "Danaher Corporation",
+            "change_pct": -2.93,
+            "market_cap": 155409957034.0
+          },
+          {
+            "ticker": "LMT",
+            "name": "Lockheed Martin Corporation",
+            "change_pct": -1.13,
+            "market_cap": 130612333502.0
+          },
+          {
+            "ticker": "BA",
+            "name": "Boeing Company (The)",
+            "change_pct": -2.87,
+            "market_cap": 123542945646.0
+          },
+          {
+            "ticker": "PH",
+            "name": "Parker-Hannifin Corporation",
+            "change_pct": -3.75,
+            "market_cap": 109970275887.0
+          },
+          {
+            "ticker": "GD",
+            "name": "General Dynamics Corporation",
+            "change_pct": -1.61,
+            "market_cap": 92348952551.0
+          },
+          {
+            "ticker": "RACE",
+            "name": "Ferrari N.V.",
+            "change_pct": -3.17,
+            "market_cap": 91841945158.0
+          },
+          {
+            "ticker": "CSX",
+            "name": "CSX Corporation",
+            "change_pct": -1.76,
+            "market_cap": 90510852111.0
+          }
+        ]
+      },
+      {
+        "name": "能源",
+        "change_pct": -0.82,
+        "market_cap": 3902597415939.0,
+        "tiles": [
+          {
+            "ticker": "XOM",
+            "name": "ExxonMobil Holdings Corporation",
+            "change_pct": 0.64,
+            "market_cap": 652471629918.0
+          },
+          {
+            "ticker": "CVX",
+            "name": "Chevron Corporation",
+            "change_pct": 0.93,
+            "market_cap": 409613533579.0
+          },
+          {
+            "ticker": "SHEL",
+            "name": "Shell PLC American Depositary Shares (each representing two (2) Ordinary Shares)",
+            "change_pct": -0.46,
+            "market_cap": 258835265909.0
+          },
+          {
+            "ticker": "TTE",
+            "name": "TotalEnergies SE",
+            "change_pct": -1.19,
+            "market_cap": 185938262937.0
+          },
+          {
+            "ticker": "BHP",
+            "name": "BHP Group Limited American Depositary Shares (Each representing two Ordinary Shares)",
+            "change_pct": -2.03,
+            "market_cap": 170726845328.0
+          },
+          {
+            "ticker": "COP",
+            "name": "ConocoPhillips",
+            "change_pct": 0.86,
+            "market_cap": 160974918011.0
+          },
+          {
+            "ticker": "BP",
+            "name": "BP p.l.c.",
+            "change_pct": -1.04,
+            "market_cap": 111942703947.0
+          },
+          {
+            "ticker": "PBR",
+            "name": "Petroleo Brasileiro S.A. Petrobras ADS",
+            "change_pct": -1.69,
+            "market_cap": 103206527592.0
+          },
+          {
+            "ticker": "ENB",
+            "name": "Enbridge Inc",
+            "change_pct": -0.48,
+            "market_cap": 101860185622.0
+          },
+          {
+            "ticker": "MPC",
+            "name": "Marathon Petroleum Corporation",
+            "change_pct": -0.14,
+            "market_cap": 100041955318.0
+          },
+          {
+            "ticker": "EQNR",
+            "name": "Equinor ASA",
+            "change_pct": -0.96,
+            "market_cap": 98285654189.0
+          },
+          {
+            "ticker": "PSX",
+            "name": "Phillips 66",
+            "change_pct": -1.37,
+            "market_cap": 93373571654.0
+          },
+          {
+            "ticker": "VLO",
+            "name": "Valero Energy Corporation",
+            "change_pct": -1.25,
+            "market_cap": 93211533012.0
+          },
+          {
+            "ticker": "CNQ",
+            "name": "Canadian Natural Resources Limited",
+            "change_pct": -0.78,
+            "market_cap": 90718989400.0
+          }
+        ]
+      },
+      {
+        "name": "公用事业",
+        "change_pct": -1.06,
+        "market_cap": 2974555851189.0,
+        "tiles": [
+          {
+            "ticker": "NEE",
+            "name": "NextEra Energy Inc.",
+            "change_pct": -0.35,
+            "market_cap": 175114568561.0
+          },
+          {
+            "ticker": "WMB",
+            "name": "Williams Companies Inc. (The)",
+            "change_pct": -2.71,
+            "market_cap": 163407709757.0
+          },
+          {
+            "ticker": "SO",
+            "name": "Southern Company (The)",
+            "change_pct": -0.14,
+            "market_cap": 108462557462.0
+          },
+          {
+            "ticker": "DUK",
+            "name": "Duke Energy Corporation (Holding Company)",
+            "change_pct": 0.75,
+            "market_cap": 101229528200.0
+          },
+          {
+            "ticker": "WM",
+            "name": "Waste Management Inc.",
+            "change_pct": 0.44,
+            "market_cap": 95321042064.0
+          },
+          {
+            "ticker": "NGG",
+            "name": "National Grid Transco PLC National Grid PLC (NEW) American Depositary Shares",
+            "change_pct": 0.13,
+            "market_cap": 83808311503.0
+          },
+          {
+            "ticker": "CEG",
+            "name": "Constellation Energy Corporation",
+            "change_pct": -5.8,
+            "market_cap": 83475374935.0
+          },
+          {
+            "ticker": "EPD",
+            "name": "Enterprise Products Partners L.P.",
+            "change_pct": -0.83,
+            "market_cap": 77335850208.0
+          },
+          {
+            "ticker": "RSG",
+            "name": "Republic Services Inc.",
+            "change_pct": 0.04,
+            "market_cap": 75124138430.0
+          },
+          {
+            "ticker": "AEP",
+            "name": "American Electric Power Company Inc.",
+            "change_pct": 0.14,
+            "market_cap": 68142024936.0
+          },
+          {
+            "ticker": "KMI",
+            "name": "Kinder Morgan Inc.",
+            "change_pct": -2.23,
+            "market_cap": 67711404385.0
+          },
+          {
+            "ticker": "TRP",
+            "name": "TC Energy Corporation",
+            "change_pct": -1.0,
+            "market_cap": 62180000000.0
+          },
+          {
+            "ticker": "LNG",
+            "name": "Cheniere Energy Inc.",
+            "change_pct": -0.17,
+            "market_cap": 60215650160.0
+          },
+          {
+            "ticker": "TRGP",
+            "name": "Targa Resources Inc.",
+            "change_pct": -2.47,
+            "market_cap": 59723254502.0
+          }
+        ]
+      },
+      {
+        "name": "必需消费",
+        "change_pct": 0.23,
+        "market_cap": 2152749665010.0,
+        "tiles": [
+          {
+            "ticker": "KO",
+            "name": "Coca-Cola Company (The)",
+            "change_pct": 0.94,
+            "market_cap": 417241507472.0
+          },
+          {
+            "ticker": "KOF",
+            "name": "Coca Cola Femsa S.A.B. de C.V.  American Depositary Shares each representing 10 Units (each Unit consists of 3 Series B Shares and 5 Series L Shares)",
+            "change_pct": -1.29,
+            "market_cap": 195343787096.0
+          },
+          {
+            "ticker": "PEP",
+            "name": "PepsiCo Inc.",
+            "change_pct": 1.11,
+            "market_cap": 193728228726.0
+          },
+          {
+            "ticker": "SONY",
+            "name": "Sony Group Corporation American Depositary Shares",
+            "change_pct": 0.29,
+            "market_cap": 160844313673.0
+          },
+          {
+            "ticker": "BUD",
+            "name": "Anheuser-Busch Inbev SA Sponsored ADR (Belgium)",
+            "change_pct": -1.45,
+            "market_cap": 156291544530.0
+          },
+          {
+            "ticker": "CVS",
+            "name": "CVS Health Corporation",
+            "change_pct": 1.05,
+            "market_cap": 103483872325.0
+          },
+          {
+            "ticker": "MNST",
+            "name": "Monster Beverage Corporation",
+            "change_pct": -0.57,
+            "market_cap": 85523695872.0
+          },
+          {
+            "ticker": "MDLZ",
+            "name": "Mondelez International Inc. Class A",
+            "change_pct": 0.9,
+            "market_cap": 83899767760.0
+          },
+          {
+            "ticker": "DEO",
+            "name": "Diageo plc",
+            "change_pct": -1.25,
+            "market_cap": 54053493006.0
+          },
+          {
+            "ticker": "CCEP",
+            "name": "Coca-Cola Europacific Partners plc",
+            "change_pct": 0.77,
+            "market_cap": 52457670133.0
+          },
+          {
+            "ticker": "KDP",
+            "name": "Keurig Dr Pepper Inc.",
+            "change_pct": 1.25,
+            "market_cap": 49738107192.0
+          },
+          {
+            "ticker": "VYLR",
+            "name": "Vylor Inc.",
+            "change_pct": 0.57,
+            "market_cap": 45483374525.0
+          },
+          {
+            "ticker": "FMX",
+            "name": "Fomento Economico Mexicano S.A.B. de C.V.",
+            "change_pct": -1.22,
+            "market_cap": 42956526300.0
+          },
+          {
+            "ticker": "ABEV",
+            "name": "Ambev S.A. American Depositary Shares (Each representing 1 Common Share)",
+            "change_pct": -1.69,
+            "market_cap": 41216685347.0
+          }
+        ]
+      },
+      {
+        "name": "房地产",
+        "change_pct": -1.0,
+        "market_cap": 2008886244129.0,
+        "tiles": [
+          {
+            "ticker": "WELL",
+            "name": "Welltower Inc.",
+            "change_pct": -1.1,
+            "market_cap": 176440508150.0
+          },
+          {
+            "ticker": "PLD",
+            "name": "Prologis Inc.",
+            "change_pct": -0.66,
+            "market_cap": 116485368150.0
+          },
+          {
+            "ticker": "EQIX",
+            "name": "Equinix Inc. Common Stock REIT",
+            "change_pct": -4.89,
+            "market_cap": 95842469254.0
+          },
+          {
+            "ticker": "AMT",
+            "name": "American Tower Corporation (REIT)",
+            "change_pct": 1.68,
+            "market_cap": 85420609195.0
+          },
+          {
+            "ticker": "BN",
+            "name": "Brookfield Corporation Class A Limited Voting Shares",
+            "change_pct": -3.02,
+            "market_cap": 84062407442.0
+          },
+          {
+            "ticker": "BAM",
+            "name": "Brookfield Asset Management Inc Class A Limited Voting Shares",
+            "change_pct": -2.55,
+            "market_cap": 78184180130.0
+          },
+          {
+            "ticker": "SPG",
+            "name": "Simon Property Group Inc.",
+            "change_pct": -0.35,
+            "market_cap": 72371989455.0
+          },
+          {
+            "ticker": "DLR",
+            "name": "Digital Realty Trust Inc.",
+            "change_pct": -6.63,
+            "market_cap": 61470378259.0
+          },
+          {
+            "ticker": "PSA",
+            "name": "Public Storage",
+            "change_pct": -0.29,
+            "market_cap": 60856779774.0
+          },
+          {
+            "ticker": "O",
+            "name": "Realty Income Corporation",
+            "change_pct": 0.64,
+            "market_cap": 55186358695.0
+          },
+          {
+            "ticker": "VMRK",
+            "name": "Vivmark Residential Common Shares of Beneficial Interest",
+            "change_pct": 0.8,
+            "market_cap": 48944024088.0
+          },
+          {
+            "ticker": "VTR",
+            "name": "Ventas Inc.",
+            "change_pct": -0.48,
+            "market_cap": 45785235600.0
+          },
+          {
+            "ticker": "CCI",
+            "name": "Crown Castle Inc.",
+            "change_pct": 0.62,
+            "market_cap": 35072414409.0
+          },
+          {
+            "ticker": "EXR",
+            "name": "Extra Space Storage Inc",
+            "change_pct": -0.56,
+            "market_cap": 32369314991.0
+          }
+        ]
+      },
+      {
+        "name": "电信",
+        "change_pct": -2.3,
+        "market_cap": 1957239122748.0,
+        "tiles": [
+          {
+            "ticker": "CSCO",
+            "name": "Cisco Systems Inc. Common Stock (DE)",
+            "change_pct": -4.29,
+            "market_cap": 357343503398.0
+          },
+          {
+            "ticker": "CCZ",
+            "name": "Comcast Holdings ZONES",
+            "change_pct": -1.99,
+            "market_cap": 220695043720.0
+          },
+          {
+            "ticker": "ANET",
+            "name": "Arista Networks Inc.",
+            "change_pct": -11.57,
+            "market_cap": 211809401463.0
+          },
+          {
+            "ticker": "VZ",
+            "name": "Verizon Communications Inc.",
+            "change_pct": 1.71,
+            "market_cap": 192806714591.0
+          },
+          {
+            "ticker": "TMUS",
+            "name": "T-Mobile US Inc.",
+            "change_pct": 1.89,
+            "market_cap": 175415537758.0
+          },
+          {
+            "ticker": "T",
+            "name": "AT&T Inc.",
+            "change_pct": 2.22,
+            "market_cap": 150459134126.0
+          },
+          {
+            "ticker": "TBB",
+            "name": "AT&T Inc. 5.350% Global Notes due 2066",
+            "change_pct": 0.74,
+            "market_cap": 126776334560.0
+          },
+          {
+            "ticker": "CMCSA",
+            "name": "Comcast Corporation Class A",
+            "change_pct": 0.16,
+            "market_cap": 88420057742.0
+          },
+          {
+            "ticker": "AMX",
+            "name": "America Movil S.A.B. de C.V. American Depositary Shares (each representing the right to receive twenty (20) Series B Shares",
+            "change_pct": -0.04,
+            "market_cap": 74732092500.0
+          },
+          {
+            "ticker": "LITE",
+            "name": "Lumentum Holdings Inc.",
+            "change_pct": -13.94,
+            "market_cap": 41770978000.0
+          },
+          {
+            "ticker": "CHT",
+            "name": "Chunghwa Telecom Co. Ltd.",
+            "change_pct": -0.88,
+            "market_cap": 38100698681.0
+          },
+          {
+            "ticker": "VOD",
+            "name": "Vodafone Group Plc American Depositary Shares",
+            "change_pct": -1.14,
+            "market_cap": 32446431532.0
+          },
+          {
+            "ticker": "BCE",
+            "name": "BCE Inc.",
+            "change_pct": 2.44,
+            "market_cap": 20375689101.0
+          },
+          {
+            "ticker": "RCI",
+            "name": "Rogers Communication Inc.",
+            "change_pct": 3.46,
+            "market_cap": 19153687231.0
+          }
+        ]
+      },
+      {
+        "name": "基础材料",
+        "change_pct": -4.09,
+        "market_cap": 1282298177199.0,
+        "tiles": [
+          {
+            "ticker": "LIN",
+            "name": "Linde plc",
+            "change_pct": -1.45,
+            "market_cap": 230841096595.0
+          },
+          {
+            "ticker": "SCCO",
+            "name": "Southern Copper Corporation",
+            "change_pct": -5.26,
+            "market_cap": 113163106226.0
+          },
+          {
+            "ticker": "NEM",
+            "name": "Newmont Corporation",
+            "change_pct": -5.37,
+            "market_cap": 98390810756.0
+          },
+          {
+            "ticker": "RIO",
+            "name": "Rio Tinto Plc",
+            "change_pct": -2.64,
+            "market_cap": 91351686214.0
+          },
+          {
+            "ticker": "AEM",
+            "name": "Agnico Eagle Mines Limited",
+            "change_pct": -4.42,
+            "market_cap": 76463905251.0
+          },
+          {
+            "ticker": "APD",
+            "name": "Air Products and Chemicals Inc.",
+            "change_pct": -2.21,
+            "market_cap": 66162211814.0
+          },
+          {
+            "ticker": "FCX",
+            "name": "Freeport-McMoRan Inc.",
+            "change_pct": -6.37,
+            "market_cap": 65992708204.0
+          },
+          {
+            "ticker": "B",
+            "name": "Barrick Mining Corporation",
+            "change_pct": -5.5,
+            "market_cap": 51358931879.0
+          },
+          {
+            "ticker": "WPM",
+            "name": "Wheaton Precious Metals Corp Common Shares (Canada)",
+            "change_pct": -5.28,
+            "market_cap": 49960787030.0
+          },
+          {
+            "ticker": "FNV",
+            "name": "Franco-Nevada Corporation",
+            "change_pct": -3.3,
+            "market_cap": 43066449300.0
+          },
+          {
+            "ticker": "VALE",
+            "name": "VALE S.A.  American Depositary Shares Each Representing one common share",
+            "change_pct": -3.36,
+            "market_cap": 40560386354.0
+          },
+          {
+            "ticker": "AU",
+            "name": "AngloGold Ashanti PLC",
+            "change_pct": -5.85,
+            "market_cap": 36660684521.0
+          },
+          {
+            "ticker": "GFI",
+            "name": "Gold Fields Limited American Depositary Shares",
+            "change_pct": -3.42,
+            "market_cap": 28273815963.0
+          },
+          {
+            "ticker": "CCJ",
+            "name": "Cameco Corporation",
+            "change_pct": -5.5,
+            "market_cap": 25278334043.0
+          }
+        ]
+      }
+    ]
+  }
+}

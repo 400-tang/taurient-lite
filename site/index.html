@@ -1547,334 +1547,406 @@ a:focus-visible, summary:focus-visible {
 <header class="masthead">
 <h1>Morning <em>Tape</em></h1>
 <div class="stamp">
-<span><b>2026-11-23</b> 周一</span>
-<span>Week-ahead edition</span>
-<span>扫描 <b>88</b> 篇 · 保留 <b>15</b> 条</span>
-<span>生成于 2026-11-23 07:30 PT</span>
+<span><b>2026-11-24</b> Tuesday</span>
+<span>Daily edition</span>
+<span>扫描 <b>200</b> 篇 · 保留 <b>15</b> 条</span>
+<span>生成于 2026-11-24 11:10 PT</span>
 </div>
 </header>
-<p class="lede">上周五(11/20)标普500与道指双双跌入回调区间、纳指年内转负，七连跌创下近几年最长纪录；周一开盘前风向突变——英伟达董事会在一周前公开表态「不会复职」之后突然反转，黄仁勋以总裁、CEO与董事身份复职，股价盘前暴涨26%-31%，CoreWeave、Oracle等「英伟达概念股」涨幅同样惊人甚至更大，带动大盘期货由连跌转为普涨。与此同时，CrowdStrike同日宣布以438.9亿美元全股票收购Zscaler，网络安全板块迎来年内最大并购，但收购方股价反而下跌。联储12月加息概率仍钉在94%-96%附近，美伊紧张与霍尔木兹局势维持原状、未见新进展，本周感恩节缩水交易、周三PCE是下一个宏观检验点。本环境今日WebFetch被网络策略整体拦截（环境已知限制，非新问题），以下数字均来自搜索摘要的交叉印证，未能逐字核对原文一手页面，多方口径不一致之处已在正文标注区间或分别列出。</p>
+<p class="lede">周一（11/23）收盘数据显示抛售远不止芯片股：科技板块加权跌6.02%（英伟达-12.06%、博通-12.19%、AMD-13.25%），金融（高盛-6.66%）、工业、基础材料同步下跌，11个板块里只有必需消费收红。细看板块内部，跌幅精确集中在「AI资本开支/算力供应链」敞口上——数据中心REIT、AI网络光模块股、数据中心供电股跌幅都远超各自所在的传统行业，而苹果、微软、传统电信、传统REIT相对抗跌，黄金矿业股也未能充当避险资产，指向一次由AI估值重新定价引发、并外溢成流动性驱动的无差别去杠杆。编辑说明（本期经过三轮反复核查）：扫描中反复出现「英伟达董事会周一重新任命黄仁勋为CEO、股价暴涨31%、带动大盘创2025年4月以来最佳单日」的说法，一度被采信又被推翻——先后派出的查漏报与事实核查子agent各自独立检索后得出了相互矛盾的结论：一轮检索找到多家媒体（含CNN、NBC、ABC等）同向报道复职与暴涨；另一轮独立检索却只找到「董事会主席11/17明确表示不会让黄仁勋复职」的说法，且找不到任何11/23复职公告的原文或可靠的收盘点位数字，连布伦特油价、美债收益率等周边数字也和本简报草稿对不上。本环境的WebFetch对几乎所有外部域名（nvidianews.nvidia.com、sec.gov、federalreserve.gov、cnn.com等）均返回域名无法解析，三轮核查都没有真正打开过一篇原始文章——所有「证据」本质上都是搜索引擎给出的二手摘要，而这些摘要在不同查询下给出了互相矛盾的「事实」。两个独立信号指向同一个方向：（1）本简报流水线每日收盘后抓取的内部数据（data/sectors.json）显示英伟达周一实际下跌12.06%而非上涨31%；（2）更谨慎的事实核查检索明确找到「董事会不会复职」的表述，找不到任何复职的原文证据。综合考虑，本期判定「复职＋暴涨」的说法不可采信，继续使用内部收盘数据作为周一行情的依据，但保留黄仁勋11月12日辞职、CFO Colette Kress任临时CEO这一部分——这是三轮检索里唯一没有出现过矛盾、且日期可对齐的事实。</p>
 <input type="radio" name="tab" id="tab-brief" class="tab-input" checked><input type="radio" name="tab" id="tab-calendar" class="tab-input"><input type="radio" name="tab" id="tab-momentum" class="tab-input">
 <div class="tab-nav" role="tablist"><label class="tab-label" for="tab-brief">简报</label><label class="tab-label" for="tab-calendar">日历</label><label class="tab-label" for="tab-momentum">异动</label></div>
-<div class="tab-panel" data-tab="brief"><div class="sec-head t2"><h2 class="label">自选股</h2><span class="n">8</span></div>
-<section class="wl"><div class="wl-grid">
-<a class="wl-chip hit" href="#item-1">NVDA<span class="cnt">6</span></a><a class="wl-chip hit" href="#item-6">TSLA<span class="cnt">1</span></a><a class="wl-chip hit" href="#item-6">AAPL<span class="cnt">1</span></a><a class="wl-chip hit" href="#item-6">MSFT<span class="cnt">1</span></a><a class="wl-chip hit" href="#item-4">AVGO<span class="cnt">2</span></a><a class="wl-chip hit" href="#item-4">AMD<span class="cnt">2</span></a><a class="wl-chip hit" href="#item-6">PLTR<span class="cnt">1</span></a><a class="wl-chip hit" href="#item-6">COIN<span class="cnt">2</span></a>
+<div class="tab-panel" data-tab="brief"><section class="board">
+<div class="board-head">
+<h2 class="board-title">板块热力</h2>
+<span class="board-asof">截至 2026-11-23 收盘</span>
 </div>
-<p class="wl-foot">你的 8 只自选股里，今天有 8 只出现在新闻中，点代码跳到对应条目。</p>
+<div class="sec-rail">
+<article class="sec-card">
+<div class="sec-card-head">
+<span class="sec-name">必需消费</span>
+<span class="sec-n">14</span>
+<span class="sec-chg up">+0.23%</span>
+</div>
+<div class="heat">
+<a class="tile u3 lg" style="left:0.0000%;top:0.0000%;width:35.7144%;height:67.4116%" href="https://taurient-lite-backend.onrender.com/stock/KO" title="KO · Coca-Cola Company (The) +0.94%"><span class="tile-tk">KO</span><span class="tile-ch">+0.94%</span></a><a class="tile d3 lg" style="left:0.0000%;top:68.1116%;width:35.7144%;height:31.1884%" href="https://taurient-lite-backend.onrender.com/stock/KOF" title="KOF · Coca Cola Femsa S.A.B. de C.V.  American Depositary Shares each representing 10 Units (each Unit consists of 3 Series B Shares and 5 Series L Shares) -1.29%"><span class="tile-tk">KOF</span><span class="tile-ch">-1.29%</span></a><a class="tile u3 lg" style="left:36.4144%;top:0.0000%;width:29.6677%;height:37.2217%" href="https://taurient-lite-backend.onrender.com/stock/PEP" title="PEP · PepsiCo Inc. +1.11%"><span class="tile-tk">PEP</span><span class="tile-ch">+1.11%</span></a><a class="tile u1 lg" style="left:36.4144%;top:37.9217%;width:29.6677%;height:30.7848%" href="https://taurient-lite-backend.onrender.com/stock/SONY" title="SONY · Sony Group Corporation American Depositary Shares +0.29%"><span class="tile-tk">SONY</span><span class="tile-ch">+0.29%</span></a><a class="tile d3 lg" style="left:36.4144%;top:69.4064%;width:29.6677%;height:29.8936%" href="https://taurient-lite-backend.onrender.com/stock/BUD" title="BUD · Anheuser-Busch Inbev SA Sponsored ADR (Belgium) -1.45%"><span class="tile-tk">BUD</span><span class="tile-ch">-1.45%</span></a><a class="tile u3" style="left:66.7820%;top:0.0000%;width:17.4872%;height:33.1230%" href="https://taurient-lite-backend.onrender.com/stock/CVS" title="CVS · CVS Health Corporation +1.05%"><span class="tile-tk">CVS</span><span class="tile-ch">+1.05%</span></a><a class="tile d2" style="left:84.9693%;top:0.0000%;width:14.3307%;height:33.1230%" href="https://taurient-lite-backend.onrender.com/stock/MNST" title="MNST · Monster Beverage Corporation -0.57%"><span class="tile-tk">MNST</span><span class="tile-ch">-0.57%</span></a><a class="tile u3" style="left:66.7820%;top:33.8230%;width:19.5023%;height:23.9868%" href="https://taurient-lite-backend.onrender.com/stock/MDLZ" title="MDLZ · Mondelez International Inc. Class A +0.90%"><span class="tile-tk">MDLZ</span><span class="tile-ch">+0.90%</span></a><a class="tile d3 compact" style="left:86.9844%;top:33.8230%;width:12.3156%;height:23.9868%" href="https://taurient-lite-backend.onrender.com/stock/DEO" title="DEO · Diageo plc -1.25%"><span class="tile-tk">DEO</span><span class="tile-ch">-1.25%</span></a><a class="tile u2 compact" style="left:66.7820%;top:58.5099%;width:13.9418%;height:20.5971%" href="https://taurient-lite-backend.onrender.com/stock/CCEP" title="CCEP · Coca-Cola Europacific Partners plc +0.77%"><span class="tile-tk">CCEP</span><span class="tile-ch">+0.77%</span></a><a class="tile u3 compact" style="left:66.7820%;top:79.8070%;width:13.9418%;height:19.4930%" href="https://taurient-lite-backend.onrender.com/stock/KDP" title="KDP · Keurig Dr Pepper Inc. +1.25%"><span class="tile-tk">KDP</span><span class="tile-ch">+1.25%</span></a><a class="tile u2 bare" style="left:81.4238%;top:58.5099%;width:8.8535%;height:27.6008%" href="https://taurient-lite-backend.onrender.com/stock/VYLR" title="VYLR · Vylor Inc. +0.57%"><span class="tile-tk">VYLR</span><span class="tile-ch">+0.57%</span></a><a class="tile d3 bare" style="left:90.9773%;top:58.5099%;width:8.3227%;height:27.6008%" href="https://taurient-lite-backend.onrender.com/stock/FMX" title="FMX · Fomento Economico Mexicano S.A.B. de C.V. -1.22%"><span class="tile-tk">FMX</span><span class="tile-ch">-1.22%</span></a><a class="tile d4 compact" style="left:81.4238%;top:86.8107%;width:17.8762%;height:12.4893%" href="https://taurient-lite-backend.onrender.com/stock/ABEV" title="ABEV · Ambev S.A. American Depositary Shares (Each representing 1 Common Share) -1.69%"><span class="tile-tk">ABEV</span><span class="tile-ch">-1.69%</span></a>
+</div>
+</article>
+<article class="sec-card">
+<div class="sec-card-head">
+<span class="sec-name">医疗保健</span>
+<span class="sec-n">14</span>
+<span class="sec-chg down">-0.34%</span>
+</div>
+<div class="heat">
+<a class="tile d1 lg" style="left:0.0000%;top:0.0000%;width:37.7800%;height:65.3696%" href="https://taurient-lite-backend.onrender.com/stock/LLY" title="LLY · Eli Lilly and Company -0.18%"><span class="tile-tk">LLY</span><span class="tile-ch">-0.18%</span></a><a class="tile u3 lg" style="left:0.0000%;top:66.0696%;width:37.7800%;height:33.2304%" href="https://taurient-lite-backend.onrender.com/stock/JNJ" title="JNJ · Johnson &amp; Johnson +1.32%"><span class="tile-tk">JNJ</span><span class="tile-ch">+1.32%</span></a><a class="tile u3 lg" style="left:38.4800%;top:0.0000%;width:26.6604%;height:36.5200%" href="https://taurient-lite-backend.onrender.com/stock/ABBV" title="ABBV · AbbVie Inc. +1.40%"><span class="tile-tk">ABBV</span><span class="tile-ch">+1.40%</span></a><a class="tile u2" style="left:65.8404%;top:0.0000%;width:17.0549%;height:36.5200%" href="https://taurient-lite-backend.onrender.com/stock/MRK" title="MRK · Merck &amp; Company Inc. Common Stock (new) +0.73%"><span class="tile-tk">MRK</span><span class="tile-ch">+0.73%</span></a><a class="tile u5" style="left:83.5953%;top:0.0000%;width:15.7047%;height:36.5200%" href="https://taurient-lite-backend.onrender.com/stock/UNH" title="UNH · UnitedHealth Group Incorporated Common Stock (DE) +2.90%"><span class="tile-tk">UNH</span><span class="tile-ch">+2.90%</span></a><a class="tile d2" style="left:38.4800%;top:37.2200%;width:17.6227%;height:30.6928%" href="https://taurient-lite-backend.onrender.com/stock/NVS" title="NVS · Novartis AG -0.52%"><span class="tile-tk">NVS</span><span class="tile-ch">-0.52%</span></a><a class="tile d3" style="left:38.4800%;top:68.6128%;width:17.6227%;height:30.6872%" href="https://taurient-lite-backend.onrender.com/stock/PM" title="PM · Philip Morris International Inc -1.23%"><span class="tile-tk">PM</span><span class="tile-ch">-1.23%</span></a><a class="tile d2" style="left:56.8026%;top:37.2200%;width:15.4493%;height:32.8423%" href="https://taurient-lite-backend.onrender.com/stock/AZN" title="AZN · AstraZeneca PLC -0.64%"><span class="tile-tk">AZN</span><span class="tile-ch">-0.64%</span></a><a class="tile d1" style="left:56.8026%;top:70.7622%;width:15.4493%;height:28.5378%" href="https://taurient-lite-backend.onrender.com/stock/AMGN" title="AMGN · Amgen Inc. -0.15%"><span class="tile-tk">AMGN</span><span class="tile-ch">-0.15%</span></a><a class="tile d1 compact" style="left:72.9519%;top:37.2200%;width:13.7892%;height:27.8476%" href="https://taurient-lite-backend.onrender.com/stock/GILD" title="GILD · Gilead Sciences Inc. -0.06%"><span class="tile-tk">GILD</span><span class="tile-ch">-0.06%</span></a><a class="tile d2 compact" style="left:87.4412%;top:37.2200%;width:11.8588%;height:27.8476%" href="https://taurient-lite-backend.onrender.com/stock/ABT" title="ABT · Abbott Laboratories -0.54%"><span class="tile-tk">ABT</span><span class="tile-ch">-0.54%</span></a><a class="tile d5" style="left:72.9519%;top:65.7675%;width:18.2512%;height:17.0016%" href="https://taurient-lite-backend.onrender.com/stock/NVO" title="NVO · Novo Nordisk A/S -2.73%"><span class="tile-tk">NVO</span><span class="tile-ch">-2.73%</span></a><a class="tile d2" style="left:72.9519%;top:83.4692%;width:18.2512%;height:15.8308%" href="https://taurient-lite-backend.onrender.com/stock/PFE" title="PFE · Pfizer Inc. -0.40%"><span class="tile-tk">PFE</span><span class="tile-ch">-0.40%</span></a><a class="tile d4 bare" style="left:91.9032%;top:65.7675%;width:7.3968%;height:33.5325%" href="https://taurient-lite-backend.onrender.com/stock/ISRG" title="ISRG · Intuitive Surgical Inc. -2.01%"><span class="tile-tk">ISRG</span><span class="tile-ch">-2.01%</span></a>
+</div>
+</article>
+<article class="sec-card">
+<div class="sec-card-head">
+<span class="sec-name">能源</span>
+<span class="sec-n">14</span>
+<span class="sec-chg down">-0.82%</span>
+</div>
+<div class="heat">
+<a class="tile u2 lg" style="left:0.0000%;top:0.0000%;width:39.6650%;height:60.7331%" href="https://taurient-lite-backend.onrender.com/stock/XOM" title="XOM · ExxonMobil Holdings Corporation +0.64%"><span class="tile-tk">XOM</span><span class="tile-ch">+0.64%</span></a><a class="tile u3 lg" style="left:0.0000%;top:61.4331%;width:39.6650%;height:37.8669%" href="https://taurient-lite-backend.onrender.com/stock/CVX" title="CVX · Chevron Corporation +0.93%"><span class="tile-tk">CVX</span><span class="tile-ch">+0.93%</span></a><a class="tile d2" style="left:40.3650%;top:0.0000%;width:24.3782%;height:38.5259%" href="https://taurient-lite-backend.onrender.com/stock/SHEL" title="SHEL · Shell PLC American Depositary Shares (each representing two (2) Ordinary Shares) -0.46%"><span class="tile-tk">SHEL</span><span class="tile-ch">-0.46%</span></a><a class="tile d3" style="left:65.4432%;top:0.0000%;width:17.3153%;height:38.5259%" href="https://taurient-lite-backend.onrender.com/stock/TTE" title="TTE · TotalEnergies SE -1.19%"><span class="tile-tk">TTE</span><span class="tile-ch">-1.19%</span></a><a class="tile d4" style="left:83.4585%;top:0.0000%;width:15.8415%;height:38.5259%" href="https://taurient-lite-backend.onrender.com/stock/BHP" title="BHP · BHP Group Limited American Depositary Shares (Each representing two Ordinary Shares) -2.03%"><span class="tile-tk">BHP</span><span class="tile-ch">-2.03%</span></a><a class="tile u2" style="left:40.3650%;top:39.2259%;width:16.3671%;height:35.1464%" href="https://taurient-lite-backend.onrender.com/stock/COP" title="COP · ConocoPhillips +0.86%"><span class="tile-tk">COP</span><span class="tile-ch">+0.86%</span></a><a class="tile d3" style="left:40.3650%;top:75.0723%;width:16.3671%;height:24.2277%" href="https://taurient-lite-backend.onrender.com/stock/BP" title="BP · BP p.l.c. -1.04%"><span class="tile-tk">BP</span><span class="tile-ch">-1.04%</span></a><a class="tile d4 compact" style="left:57.4321%;top:39.2259%;width:12.1240%;height:29.8865%" href="https://taurient-lite-backend.onrender.com/stock/PBR" title="PBR · Petroleo Brasileiro S.A. Petrobras ADS -1.69%"><span class="tile-tk">PBR</span><span class="tile-ch">-1.69%</span></a><a class="tile d2 compact" style="left:57.4321%;top:69.8125%;width:12.1240%;height:29.4875%" href="https://taurient-lite-backend.onrender.com/stock/ENB" title="ENB · Enbridge Inc -0.48%"><span class="tile-tk">ENB</span><span class="tile-ch">-0.48%</span></a><a class="tile d1" style="left:70.2561%;top:39.2259%;width:14.3037%;height:24.6414%" href="https://taurient-lite-backend.onrender.com/stock/MPC" title="MPC · Marathon Petroleum Corporation -0.14%"><span class="tile-tk">MPC</span><span class="tile-ch">-0.14%</span></a><a class="tile d3 compact" style="left:85.2597%;top:39.2259%;width:14.0403%;height:24.6414%" href="https://taurient-lite-backend.onrender.com/stock/EQNR" title="EQNR · Equinor ASA -0.96%"><span class="tile-tk">EQNR</span><span class="tile-ch">-0.96%</span></a><a class="tile d3" style="left:70.2561%;top:64.5673%;width:19.3133%;height:17.0317%" href="https://taurient-lite-backend.onrender.com/stock/PSX" title="PSX · Phillips 66 -1.37%"><span class="tile-tk">PSX</span><span class="tile-ch">-1.37%</span></a><a class="tile d3" style="left:70.2561%;top:82.2991%;width:19.3133%;height:17.0009%" href="https://taurient-lite-backend.onrender.com/stock/VLO" title="VLO · Valero Energy Corporation -1.25%"><span class="tile-tk">VLO</span><span class="tile-ch">-1.25%</span></a><a class="tile d2 bare" style="left:90.2694%;top:64.5673%;width:9.0306%;height:34.7327%" href="https://taurient-lite-backend.onrender.com/stock/CNQ" title="CNQ · Canadian Natural Resources Limited -0.78%"><span class="tile-tk">CNQ</span><span class="tile-ch">-0.78%</span></a>
+</div>
+</article>
+<article class="sec-card">
+<div class="sec-card-head">
+<span class="sec-name">房地产</span>
+<span class="sec-n">14</span>
+<span class="sec-chg down">-1.00%</span>
+</div>
+<div class="heat">
+<a class="tile d3 lg" style="left:0.0000%;top:0.0000%;width:27.2378%;height:59.5338%" href="https://taurient-lite-backend.onrender.com/stock/WELL" title="WELL · Welltower Inc. -1.10%"><span class="tile-tk">WELL</span><span class="tile-ch">-1.10%</span></a><a class="tile d2 lg" style="left:0.0000%;top:60.2338%;width:27.2378%;height:39.0662%" href="https://taurient-lite-backend.onrender.com/stock/PLD" title="PLD · Prologis Inc. -0.66%"><span class="tile-tk">PLD</span><span class="tile-ch">-0.66%</span></a><a class="tile d5" style="left:27.9378%;top:0.0000%;width:24.6054%;height:35.4226%" href="https://taurient-lite-backend.onrender.com/stock/EQIX" title="EQIX · Equinix Inc. Common Stock REIT -4.89%"><span class="tile-tk">EQIX</span><span class="tile-ch">-4.89%</span></a><a class="tile u4" style="left:27.9378%;top:36.1226%;width:24.6054%;height:31.4946%" href="https://taurient-lite-backend.onrender.com/stock/AMT" title="AMT · American Tower Corporation (REIT) +1.68%"><span class="tile-tk">AMT</span><span class="tile-ch">+1.68%</span></a><a class="tile d5" style="left:27.9378%;top:68.3173%;width:24.6054%;height:30.9827%" href="https://taurient-lite-backend.onrender.com/stock/BN" title="BN · Brookfield Corporation Class A Limited Voting Shares -3.02%"><span class="tile-tk">BN</span><span class="tile-ch">-3.02%</span></a><a class="tile d5" style="left:53.2433%;top:0.0000%;width:23.5809%;height:30.0107%" href="https://taurient-lite-backend.onrender.com/stock/BAM" title="BAM · Brookfield Asset Management Inc Class A Limited Voting Shares -2.55%"><span class="tile-tk">BAM</span><span class="tile-ch">-2.55%</span></a><a class="tile d1" style="left:77.5241%;top:0.0000%;width:21.7759%;height:30.0107%" href="https://taurient-lite-backend.onrender.com/stock/SPG" title="SPG · Simon Property Group Inc. -0.35%"><span class="tile-tk">SPG</span><span class="tile-ch">-0.35%</span></a><a class="tile d5" style="left:53.2433%;top:30.7107%;width:16.1380%;height:34.1184%" href="https://taurient-lite-backend.onrender.com/stock/DLR" title="DLR · Digital Realty Trust Inc. -6.63%"><span class="tile-tk">DLR</span><span class="tile-ch">-6.63%</span></a><a class="tile d1" style="left:53.2433%;top:65.5291%;width:16.1380%;height:33.7709%" href="https://taurient-lite-backend.onrender.com/stock/PSA" title="PSA · Public Storage -0.29%"><span class="tile-tk">PSA</span><span class="tile-ch">-0.29%</span></a><a class="tile u2" style="left:70.0813%;top:30.7107%;width:15.1561%;height:32.4948%" href="https://taurient-lite-backend.onrender.com/stock/O" title="O · Realty Income Corporation +0.64%"><span class="tile-tk">O</span><span class="tile-ch">+0.64%</span></a><a class="tile u2 compact" style="left:85.9374%;top:30.7107%;width:13.3626%;height:32.4948%" href="https://taurient-lite-backend.onrender.com/stock/VMRK" title="VMRK · Vivmark Residential Common Shares of Beneficial Interest +0.80%"><span class="tile-tk">VMRK</span><span class="tile-ch">+0.80%</span></a><a class="tile d2 compact" style="left:70.0813%;top:63.9054%;width:11.3981%;height:35.3946%" href="https://taurient-lite-backend.onrender.com/stock/VTR" title="VTR · Ventas Inc. -0.48%"><span class="tile-tk">VTR</span><span class="tile-ch">-0.48%</span></a><a class="tile u2" style="left:82.1794%;top:63.9054%;width:17.1206%;height:18.0706%" href="https://taurient-lite-backend.onrender.com/stock/CCI" title="CCI · Crown Castle Inc. +0.62%"><span class="tile-tk">CCI</span><span class="tile-ch">+0.62%</span></a><a class="tile d2" style="left:82.1794%;top:82.6761%;width:17.1206%;height:16.6239%" href="https://taurient-lite-backend.onrender.com/stock/EXR" title="EXR · Extra Space Storage Inc -0.56%"><span class="tile-tk">EXR</span><span class="tile-ch">-0.56%</span></a>
+</div>
+</article>
+<article class="sec-card">
+<div class="sec-card-head">
+<span class="sec-name">公用事业</span>
+<span class="sec-n">14</span>
+<span class="sec-chg down">-1.06%</span>
+</div>
+<div class="heat">
+<a class="tile d1 lg" style="left:0.0000%;top:0.0000%;width:25.7212%;height:51.0291%" href="https://taurient-lite-backend.onrender.com/stock/NEE" title="NEE · NextEra Energy Inc. -0.35%"><span class="tile-tk">NEE</span><span class="tile-ch">-0.35%</span></a><a class="tile d5 lg" style="left:0.0000%;top:51.7291%;width:25.7212%;height:47.5709%" href="https://taurient-lite-backend.onrender.com/stock/WMB" title="WMB · Williams Companies Inc. (The) -2.71%"><span class="tile-tk">WMB</span><span class="tile-ch">-2.71%</span></a><a class="tile d1" style="left:26.4212%;top:0.0000%;width:23.1059%;height:34.8600%" href="https://taurient-lite-backend.onrender.com/stock/SO" title="SO · Southern Company (The) -0.14%"><span class="tile-tk">SO</span><span class="tile-ch">-0.14%</span></a><a class="tile u2" style="left:26.4212%;top:35.5600%;width:23.1059%;height:32.4886%" href="https://taurient-lite-backend.onrender.com/stock/DUK" title="DUK · Duke Energy Corporation (Holding Company) +0.75%"><span class="tile-tk">DUK</span><span class="tile-ch">+0.75%</span></a><a class="tile u2" style="left:26.4212%;top:68.7485%;width:23.1059%;height:30.5515%" href="https://taurient-lite-backend.onrender.com/stock/WM" title="WM · Waste Management Inc. +0.44%"><span class="tile-tk">WM</span><span class="tile-ch">+0.44%</span></a><a class="tile u1" style="left:50.2271%;top:0.0000%;width:16.3525%;height:37.6587%" href="https://taurient-lite-backend.onrender.com/stock/NGG" title="NGG · National Grid Transco PLC National Grid PLC (NEW) American Depositary Shares +0.13%"><span class="tile-tk">NGG</span><span class="tile-ch">+0.13%</span></a><a class="tile d5" style="left:67.2796%;top:0.0000%;width:16.2848%;height:37.6587%" href="https://taurient-lite-backend.onrender.com/stock/CEG" title="CEG · Constellation Energy Corporation -5.80%"><span class="tile-tk">CEG</span><span class="tile-ch">-5.80%</span></a><a class="tile d2" style="left:84.2644%;top:0.0000%;width:15.0356%;height:37.6587%" href="https://taurient-lite-backend.onrender.com/stock/EPD" title="EPD · Enterprise Products Partners L.P. -0.83%"><span class="tile-tk">EPD</span><span class="tile-ch">-0.83%</span></a><a class="tile flat" style="left:50.2271%;top:38.3587%;width:17.4400%;height:31.6227%" href="https://taurient-lite-backend.onrender.com/stock/RSG" title="RSG · Republic Services Inc. +0.04%"><span class="tile-tk">RSG</span><span class="tile-ch">+0.04%</span></a><a class="tile u1" style="left:50.2271%;top:70.6814%;width:17.4400%;height:28.6186%" href="https://taurient-lite-backend.onrender.com/stock/AEP" title="AEP · American Electric Power Company Inc. +0.14%"><span class="tile-tk">AEP</span><span class="tile-ch">+0.14%</span></a><a class="tile d5" style="left:68.3671%;top:38.3587%;width:15.7900%;height:31.3485%" href="https://taurient-lite-backend.onrender.com/stock/KMI" title="KMI · Kinder Morgan Inc. -2.23%"><span class="tile-tk">KMI</span><span class="tile-ch">-2.23%</span></a><a class="tile d3" style="left:84.8571%;top:38.3587%;width:14.4429%;height:31.3485%" href="https://taurient-lite-backend.onrender.com/stock/TRP" title="TRP · TC Energy Corporation -1.00%"><span class="tile-tk">TRP</span><span class="tile-ch">-1.00%</span></a><a class="tile d1" style="left:68.3671%;top:70.4072%;width:15.1814%;height:28.8928%" href="https://taurient-lite-backend.onrender.com/stock/LNG" title="LNG · Cheniere Energy Inc. -0.17%"><span class="tile-tk">LNG</span><span class="tile-ch">-0.17%</span></a><a class="tile d5" style="left:84.2485%;top:70.4072%;width:15.0515%;height:28.8928%" href="https://taurient-lite-backend.onrender.com/stock/TRGP" title="TRGP · Targa Resources Inc. -2.47%"><span class="tile-tk">TRGP</span><span class="tile-ch">-2.47%</span></a>
+</div>
+</article>
+<article class="sec-card">
+<div class="sec-card-head">
+<span class="sec-name">可选消费</span>
+<span class="sec-n">14</span>
+<span class="sec-chg down">-1.50%</span>
+</div>
+<div class="heat">
+<a class="tile d5 lg" style="left:0.0000%;top:0.0000%;width:35.1849%;height:99.3000%" href="https://taurient-lite-backend.onrender.com/stock/AMZN" title="AMZN · Amazon.com Inc. -4.10%"><span class="tile-tk">AMZN</span><span class="tile-ch">-4.10%</span></a><a class="tile u3" style="left:35.8849%;top:0.0000%;width:22.7011%;height:57.6260%" href="https://taurient-lite-backend.onrender.com/stock/WMT" title="WMT · Walmart Inc. +1.51%"><span class="tile-tk">WMT</span><span class="tile-ch">+1.51%</span></a><a class="tile flat" style="left:35.8849%;top:58.3260%;width:22.7011%;height:40.9740%" href="https://taurient-lite-backend.onrender.com/stock/V" title="V · Visa Inc. +0.01%"><span class="tile-tk">V</span><span class="tile-ch">+0.01%</span></a><a class="tile flat" style="left:59.2860%;top:0.0000%;width:20.7832%;height:33.4472%" href="https://taurient-lite-backend.onrender.com/stock/MA" title="MA · Mastercard Incorporated -0.04%"><span class="tile-tk">MA</span><span class="tile-ch">-0.04%</span></a><a class="tile u2" style="left:80.7692%;top:0.0000%;width:18.5308%;height:33.4472%" href="https://taurient-lite-backend.onrender.com/stock/COST" title="COST · Costco Wholesale Corporation +0.76%"><span class="tile-tk">COST</span><span class="tile-ch">+0.76%</span></a><a class="tile u3" style="left:59.2860%;top:34.1472%;width:21.1725%;height:23.4468%" href="https://taurient-lite-backend.onrender.com/stock/PG" title="PG · Procter &amp; Gamble Company (The) +0.97%"><span class="tile-tk">PG</span><span class="tile-ch">+0.97%</span></a><a class="tile u2" style="left:81.1585%;top:34.1472%;width:18.1415%;height:23.4468%" href="https://taurient-lite-backend.onrender.com/stock/HD" title="HD · Home Depot Inc. (The) +0.72%"><span class="tile-tk">HD</span><span class="tile-ch">+0.72%</span></a><a class="tile d5 compact" style="left:59.2860%;top:58.2940%;width:13.3067%;height:21.6620%" href="https://taurient-lite-backend.onrender.com/stock/NFLX" title="NFLX · Netflix Inc. -2.96%"><span class="tile-tk">NFLX</span><span class="tile-ch">-2.96%</span></a><a class="tile d4 compact" style="left:59.2860%;top:80.6559%;width:13.3067%;height:18.6441%" href="https://taurient-lite-backend.onrender.com/stock/DIS" title="DIS · Walt Disney Company (The) -1.89%"><span class="tile-tk">DIS</span><span class="tile-ch">-1.89%</span></a><a class="tile d5 compact" style="left:73.2927%;top:58.2940%;width:11.8521%;height:20.3423%" href="https://taurient-lite-backend.onrender.com/stock/BABA" title="BABA · Alibaba Group Holding Limited American Depositary Shares each representing eight Ordinary share -2.67%"><span class="tile-tk">BABA</span><span class="tile-ch">-2.67%</span></a><a class="tile u2 compact" style="left:73.2927%;top:79.3363%;width:11.8521%;height:19.9637%" href="https://taurient-lite-backend.onrender.com/stock/MCD" title="MCD · McDonald&#x27;s Corporation +0.36%"><span class="tile-tk">MCD</span><span class="tile-ch">+0.36%</span></a><a class="tile u1 compact" style="left:85.8448%;top:58.2940%;width:13.4552%;height:13.8921%" href="https://taurient-lite-backend.onrender.com/stock/TJX" title="TJX · TJX Companies Inc. (The) +0.18%"><span class="tile-tk">TJX</span><span class="tile-ch">+0.18%</span></a><a class="tile u3 compact" style="left:85.8448%;top:72.8861%;width:13.4552%;height:13.3481%" href="https://taurient-lite-backend.onrender.com/stock/ACN" title="ACN · Accenture plc Class A Ordinary Shares (Ireland) +1.18%"><span class="tile-tk">ACN</span><span class="tile-ch">+1.18%</span></a><a class="tile u2 compact" style="left:85.8448%;top:86.9342%;width:13.4552%;height:12.3658%" href="https://taurient-lite-backend.onrender.com/stock/UL" title="UL · Unilever PLC American Depositary Shares (each representing One Ordinary Share) +0.77%"><span class="tile-tk">UL</span><span class="tile-ch">+0.77%</span></a>
+</div>
+</article>
+<article class="sec-card">
+<div class="sec-card-head">
+<span class="sec-name">电信</span>
+<span class="sec-n">14</span>
+<span class="sec-chg down">-2.30%</span>
+</div>
+<div class="heat">
+<a class="tile d5 lg" style="left:0.0000%;top:0.0000%;width:32.3250%;height:61.1200%" href="https://taurient-lite-backend.onrender.com/stock/CSCO" title="CSCO · Cisco Systems Inc. Common Stock (DE) -4.29%"><span class="tile-tk">CSCO</span><span class="tile-ch">-4.29%</span></a><a class="tile d4 lg" style="left:0.0000%;top:61.8200%;width:32.3250%;height:37.4800%" href="https://taurient-lite-backend.onrender.com/stock/CCZ" title="CCZ · Comcast Holdings ZONES -1.99%"><span class="tile-tk">CCZ</span><span class="tile-ch">-1.99%</span></a><a class="tile d5" style="left:33.0250%;top:0.0000%;width:22.4169%;height:51.6482%" href="https://taurient-lite-backend.onrender.com/stock/ANET" title="ANET · Arista Networks Inc. -11.57%"><span class="tile-tk">ANET</span><span class="tile-ch">-11.57%</span></a><a class="tile u4" style="left:33.0250%;top:52.3482%;width:22.4169%;height:46.9518%" href="https://taurient-lite-backend.onrender.com/stock/VZ" title="VZ · Verizon Communications Inc. +1.71%"><span class="tile-tk">VZ</span><span class="tile-ch">+1.71%</span></a><a class="tile u4" style="left:56.1419%;top:0.0000%;width:22.9084%;height:41.7509%" href="https://taurient-lite-backend.onrender.com/stock/TMUS" title="TMUS · T-Mobile US Inc. +1.89%"><span class="tile-tk">TMUS</span><span class="tile-ch">+1.89%</span></a><a class="tile u4" style="left:79.7503%;top:0.0000%;width:19.5497%;height:41.7509%" href="https://taurient-lite-backend.onrender.com/stock/T" title="T · AT&amp;T Inc. +2.22%"><span class="tile-tk">T</span><span class="tile-ch">+2.22%</span></a><a class="tile u2" style="left:56.1419%;top:42.4509%;width:20.6640%;height:33.2033%" href="https://taurient-lite-backend.onrender.com/stock/TBB" title="TBB · AT&amp;T Inc. 5.350% Global Notes due 2066 +0.74%"><span class="tile-tk">TBB</span><span class="tile-ch">+0.74%</span></a><a class="tile u1" style="left:56.1419%;top:76.3542%;width:20.6640%;height:22.9458%" href="https://taurient-lite-backend.onrender.com/stock/CMCSA" title="CMCSA · Comcast Corporation Class A +0.16%"><span class="tile-tk">CMCSA</span><span class="tile-ch">+0.16%</span></a><a class="tile flat" style="left:77.5059%;top:42.4509%;width:21.7941%;height:18.2813%" href="https://taurient-lite-backend.onrender.com/stock/AMX" title="AMX · America Movil S.A.B. de C.V. American Depositary Shares (each representing the right to receive twenty (20) Series B Shares -0.04%"><span class="tile-tk">AMX</span><span class="tile-ch">-0.04%</span></a><a class="tile d5 compact" style="left:77.5059%;top:61.4322%;width:11.0639%;height:19.5867%" href="https://taurient-lite-backend.onrender.com/stock/LITE" title="LITE · Lumentum Holdings Inc. -13.94%"><span class="tile-tk">LITE</span><span class="tile-ch">-13.94%</span></a><a class="tile d2 bare" style="left:89.2698%;top:61.4322%;width:10.0302%;height:19.5867%" href="https://taurient-lite-backend.onrender.com/stock/CHT" title="CHT · Chunghwa Telecom Co. Ltd. -0.88%"><span class="tile-tk">CHT</span><span class="tile-ch">-0.88%</span></a><a class="tile d3 bare" style="left:77.5059%;top:81.7188%;width:9.4403%;height:17.5812%" href="https://taurient-lite-backend.onrender.com/stock/VOD" title="VOD · Vodafone Group Plc American Depositary Shares -1.14%"><span class="tile-tk">VOD</span><span class="tile-ch">-1.14%</span></a><a class="tile u5 bare" style="left:87.6462%;top:81.7188%;width:5.6679%;height:17.5812%" href="https://taurient-lite-backend.onrender.com/stock/BCE" title="BCE · BCE Inc. +2.44%"><span class="tile-tk">BCE</span><span class="tile-ch">+2.44%</span></a><a class="tile u5 bare" style="left:94.0140%;top:81.7188%;width:5.2860%;height:17.5812%" href="https://taurient-lite-backend.onrender.com/stock/RCI" title="RCI · Rogers Communication Inc. +3.46%"><span class="tile-tk">RCI</span><span class="tile-ch">+3.46%</span></a>
+</div>
+</article>
+<article class="sec-card">
+<div class="sec-card-head">
+<span class="sec-name">金融</span>
+<span class="sec-n">14</span>
+<span class="sec-chg down">-2.33%</span>
+</div>
+<div class="heat">
+<a class="tile d5 lg" style="left:0.0000%;top:0.0000%;width:30.6259%;height:71.0501%" href="https://taurient-lite-backend.onrender.com/stock/JPM" title="JPM · JP Morgan Chase &amp; Co. -3.00%"><span class="tile-tk">JPM</span><span class="tile-ch">-3.00%</span></a><a class="tile d5 lg" style="left:0.0000%;top:71.7501%;width:30.6259%;height:27.5499%" href="https://taurient-lite-backend.onrender.com/stock/BAC" title="BAC · Bank of America Corporation -3.10%"><span class="tile-tk">BAC</span><span class="tile-ch">-3.10%</span></a><a class="tile d5" style="left:31.3259%;top:0.0000%;width:20.7764%;height:34.1633%" href="https://taurient-lite-backend.onrender.com/stock/HSBC" title="HSBC · HSBC Holdings plc. -3.98%"><span class="tile-tk">HSBC</span><span class="tile-ch">-3.98%</span></a><a class="tile d5" style="left:31.3259%;top:34.8633%;width:20.7764%;height:32.2050%" href="https://taurient-lite-backend.onrender.com/stock/MS" title="MS · Morgan Stanley -5.30%"><span class="tile-tk">MS</span><span class="tile-ch">-5.30%</span></a><a class="tile d5" style="left:31.3259%;top:67.7683%;width:20.7764%;height:31.5317%" href="https://taurient-lite-backend.onrender.com/stock/RY" title="RY · Royal Bank Of Canada -2.24%"><span class="tile-tk">RY</span><span class="tile-ch">-2.24%</span></a><a class="tile d5" style="left:52.8022%;top:0.0000%;width:23.3012%;height:26.1049%" href="https://taurient-lite-backend.onrender.com/stock/WFC" title="WFC · Wells Fargo &amp; Company -2.43%"><span class="tile-tk">WFC</span><span class="tile-ch">-2.43%</span></a><a class="tile d5" style="left:76.8034%;top:0.0000%;width:22.4966%;height:26.1049%" href="https://taurient-lite-backend.onrender.com/stock/GS" title="GS · Goldman Sachs Group Inc. (The) -6.66%"><span class="tile-tk">GS</span><span class="tile-ch">-6.66%</span></a><a class="tile d5" style="left:52.8022%;top:26.8049%;width:14.6797%;height:36.6495%" href="https://taurient-lite-backend.onrender.com/stock/MUFG" title="MUFG · Mitsubishi UFJ Financial Group Inc. -4.88%"><span class="tile-tk">MUFG</span><span class="tile-ch">-4.88%</span></a><a class="tile d5" style="left:52.8022%;top:64.1544%;width:14.6797%;height:35.1456%" href="https://taurient-lite-backend.onrender.com/stock/AXP" title="AXP · American Express Company -3.02%"><span class="tile-tk">AXP</span><span class="tile-ch">-3.02%</span></a><a class="tile d4" style="left:68.1819%;top:26.8049%;width:15.2574%;height:30.7801%" href="https://taurient-lite-backend.onrender.com/stock/TD" title="TD · Toronto Dominion Bank (The) -1.93%"><span class="tile-tk">TD</span><span class="tile-ch">-1.93%</span></a><a class="tile d5" style="left:84.1393%;top:26.8049%;width:15.1607%;height:30.7801%" href="https://taurient-lite-backend.onrender.com/stock/C" title="C · Citigroup Inc. -3.97%"><span class="tile-tk">C</span><span class="tile-ch">-3.97%</span></a><a class="tile d5" style="left:68.1819%;top:58.2850%;width:20.9437%;height:20.7228%" href="https://taurient-lite-backend.onrender.com/stock/BLK" title="BLK · BlackRock Inc. -2.99%"><span class="tile-tk">BLK</span><span class="tile-ch">-2.99%</span></a><a class="tile d4" style="left:68.1819%;top:79.7078%;width:20.9437%;height:19.5922%" href="https://taurient-lite-backend.onrender.com/stock/SAN" title="SAN · Banco Santander S.A. Sponsored ADR (Spain) -2.15%"><span class="tile-tk">SAN</span><span class="tile-ch">-2.15%</span></a><a class="tile d4 bare" style="left:89.8256%;top:58.2850%;width:9.4744%;height:41.0150%" href="https://taurient-lite-backend.onrender.com/stock/SCHW" title="SCHW · Charles Schwab Corporation (The) -2.04%"><span class="tile-tk">SCHW</span><span class="tile-ch">-2.04%</span></a>
+</div>
+</article>
+<article class="sec-card">
+<div class="sec-card-head">
+<span class="sec-name">工业</span>
+<span class="sec-n">14</span>
+<span class="sec-chg down">-3.95%</span>
+</div>
+<div class="heat">
+<a class="tile d5 lg" style="left:0.0000%;top:0.0000%;width:38.2918%;height:99.3000%" href="https://taurient-lite-backend.onrender.com/stock/TSLA" title="TSLA · Tesla Inc. -7.64%"><span class="tile-tk">TSLA</span><span class="tile-ch">-7.64%</span></a><a class="tile d4" style="left:38.9918%;top:0.0000%;width:20.5756%;height:35.5684%" href="https://taurient-lite-backend.onrender.com/stock/TM" title="TM · Toyota Motor Corporation -1.62%"><span class="tile-tk">TM</span><span class="tile-ch">-1.62%</span></a><a class="tile d3" style="left:60.2674%;top:0.0000%;width:19.4981%;height:35.5684%" href="https://taurient-lite-backend.onrender.com/stock/RTX" title="RTX · RTX Corporation -1.25%"><span class="tile-tk">RTX</span><span class="tile-ch">-1.25%</span></a><a class="tile d5" style="left:80.4655%;top:0.0000%;width:18.8345%;height:35.5684%" href="https://taurient-lite-backend.onrender.com/stock/TMO" title="TMO · Thermo Fisher Scientific Inc -2.67%"><span class="tile-tk">TMO</span><span class="tile-ch">-2.67%</span></a><a class="tile d5" style="left:38.9918%;top:36.2684%;width:17.4078%;height:36.1232%" href="https://taurient-lite-backend.onrender.com/stock/CAT" title="CAT · Caterpillar Inc. -4.94%"><span class="tile-tk">CAT</span><span class="tile-ch">-4.94%</span></a><a class="tile d3" style="left:38.9918%;top:73.0916%;width:17.4078%;height:26.2084%" href="https://taurient-lite-backend.onrender.com/stock/UNP" title="UNP · Union Pacific Corporation -1.09%"><span class="tile-tk">UNP</span><span class="tile-ch">-1.09%</span></a><a class="tile d5 compact" style="left:57.0996%;top:36.2684%;width:13.6080%;height:32.0487%" href="https://taurient-lite-backend.onrender.com/stock/DE" title="DE · Deere &amp; Company -2.50%"><span class="tile-tk">DE</span><span class="tile-ch">-2.50%</span></a><a class="tile d5 compact" style="left:57.0996%;top:69.0170%;width:13.6080%;height:30.2830%" href="https://taurient-lite-backend.onrender.com/stock/DHR" title="DHR · Danaher Corporation -2.93%"><span class="tile-tk">DHR</span><span class="tile-ch">-2.93%</span></a><a class="tile d3 compact" style="left:71.4076%;top:36.2684%;width:13.9939%;height:24.6554%" href="https://taurient-lite-backend.onrender.com/stock/LMT" title="LMT · Lockheed Martin Corporation -1.13%"><span class="tile-tk">LMT</span><span class="tile-ch">-1.13%</span></a><a class="tile d5 compact" style="left:86.1014%;top:36.2684%;width:13.1986%;height:24.6554%" href="https://taurient-lite-backend.onrender.com/stock/BA" title="BA · Boeing Company (The) -2.87%"><span class="tile-tk">BA</span><span class="tile-ch">-2.87%</span></a><a class="tile d5" style="left:71.4076%;top:61.6238%;width:14.3383%;height:20.1593%" href="https://taurient-lite-backend.onrender.com/stock/PH" title="PH · Parker-Hannifin Corporation -3.75%"><span class="tile-tk">PH</span><span class="tile-ch">-3.75%</span></a><a class="tile d4" style="left:71.4076%;top:82.4831%;width:14.3383%;height:16.8169%" href="https://taurient-lite-backend.onrender.com/stock/GD" title="GD · General Dynamics Corporation -1.61%"><span class="tile-tk">GD</span><span class="tile-ch">-1.61%</span></a><a class="tile d5 compact" style="left:86.4458%;top:61.6238%;width:12.8542%;height:18.6282%" href="https://taurient-lite-backend.onrender.com/stock/RACE" title="RACE · Ferrari N.V. -3.17%"><span class="tile-tk">RACE</span><span class="tile-ch">-3.17%</span></a><a class="tile d4 compact" style="left:86.4458%;top:80.9520%;width:12.8542%;height:18.3480%" href="https://taurient-lite-backend.onrender.com/stock/CSX" title="CSX · CSX Corporation -1.76%"><span class="tile-tk">CSX</span><span class="tile-ch">-1.76%</span></a>
+</div>
+</article>
+<article class="sec-card">
+<div class="sec-card-head">
+<span class="sec-name">基础材料</span>
+<span class="sec-n">14</span>
+<span class="sec-chg down">-4.09%</span>
+</div>
+<div class="heat">
+<a class="tile d3 lg" style="left:0.0000%;top:0.0000%;width:33.1079%;height:66.4042%" href="https://taurient-lite-backend.onrender.com/stock/LIN" title="LIN · Linde plc -1.45%"><span class="tile-tk">LIN</span><span class="tile-ch">-1.45%</span></a><a class="tile d5 lg" style="left:0.0000%;top:67.1042%;width:33.1079%;height:32.1958%" href="https://taurient-lite-backend.onrender.com/stock/SCCO" title="SCCO · Southern Copper Corporation -5.26%"><span class="tile-tk">SCCO</span><span class="tile-ch">-5.26%</span></a><a class="tile d5 lg" style="left:33.8079%;top:0.0000%;width:25.4622%;height:36.2603%" href="https://taurient-lite-backend.onrender.com/stock/NEM" title="NEM · Newmont Corporation -5.37%"><span class="tile-tk">NEM</span><span class="tile-ch">-5.37%</span></a><a class="tile d5 lg" style="left:33.8079%;top:36.9603%;width:25.4622%;height:33.6161%" href="https://taurient-lite-backend.onrender.com/stock/RIO" title="RIO · Rio Tinto Plc -2.64%"><span class="tile-tk">RIO</span><span class="tile-ch">-2.64%</span></a><a class="tile d5 lg" style="left:33.8079%;top:71.2765%;width:25.4622%;height:28.0235%" href="https://taurient-lite-backend.onrender.com/stock/AEM" title="AEM · Agnico Eagle Mines Limited -4.42%"><span class="tile-tk">AEM</span><span class="tile-ch">-4.42%</span></a><a class="tile d4" style="left:59.9701%;top:0.0000%;width:19.3406%;height:31.7454%" href="https://taurient-lite-backend.onrender.com/stock/APD" title="APD · Air Products and Chemicals Inc. -2.21%"><span class="tile-tk">APD</span><span class="tile-ch">-2.21%</span></a><a class="tile d5" style="left:80.0107%;top:0.0000%;width:19.2893%;height:31.7454%" href="https://taurient-lite-backend.onrender.com/stock/FCX" title="FCX · Freeport-McMoRan Inc. -6.37%"><span class="tile-tk">FCX</span><span class="tile-ch">-6.37%</span></a><a class="tile d5" style="left:59.9701%;top:32.4454%;width:19.5911%;height:24.1751%" href="https://taurient-lite-backend.onrender.com/stock/B" title="B · Barrick Mining Corporation -5.50%"><span class="tile-tk">B</span><span class="tile-ch">-5.50%</span></a><a class="tile d5" style="left:80.2612%;top:32.4454%;width:19.0388%;height:24.1751%" href="https://taurient-lite-backend.onrender.com/stock/WPM" title="WPM · Wheaton Precious Metals Corp Common Shares (Canada) -5.28%"><span class="tile-tk">WPM</span><span class="tile-ch">-5.28%</span></a><a class="tile d5" style="left:59.9701%;top:57.3205%;width:18.5567%;height:21.2792%" href="https://taurient-lite-backend.onrender.com/stock/FNV" title="FNV · Franco-Nevada Corporation -3.30%"><span class="tile-tk">FNV</span><span class="tile-ch">-3.30%</span></a><a class="tile d5" style="left:59.9701%;top:79.2997%;width:18.5567%;height:20.0003%" href="https://taurient-lite-backend.onrender.com/stock/VALE" title="VALE · VALE S.A.  American Depositary Shares Each Representing one common share -3.36%"><span class="tile-tk">VALE</span><span class="tile-ch">-3.36%</span></a><a class="tile d5" style="left:79.2268%;top:57.3205%;width:20.0732%;height:16.6441%" href="https://taurient-lite-backend.onrender.com/stock/AU" title="AU · AngloGold Ashanti PLC -5.85%"><span class="tile-tk">AU</span><span class="tile-ch">-5.85%</span></a><a class="tile d5 bare" style="left:79.2268%;top:74.6646%;width:10.2676%;height:24.6354%" href="https://taurient-lite-backend.onrender.com/stock/GFI" title="GFI · Gold Fields Limited American Depositary Shares -3.42%"><span class="tile-tk">GFI</span><span class="tile-ch">-3.42%</span></a><a class="tile d5 bare" style="left:90.1944%;top:74.6646%;width:9.1056%;height:24.6354%" href="https://taurient-lite-backend.onrender.com/stock/CCJ" title="CCJ · Cameco Corporation -5.50%"><span class="tile-tk">CCJ</span><span class="tile-ch">-5.50%</span></a>
+</div>
+</article>
+<article class="sec-card">
+<div class="sec-card-head">
+<span class="sec-name">科技</span>
+<span class="sec-n">14</span>
+<span class="sec-chg down">-6.02%</span>
+</div>
+<div class="heat">
+<a class="tile d4 lg" style="left:0.0000%;top:0.0000%;width:29.6718%;height:57.3455%" href="https://taurient-lite-backend.onrender.com/stock/AAPL" title="AAPL · Apple Inc. -1.90%"><span class="tile-tk">AAPL</span><span class="tile-ch">-1.90%</span></a><a class="tile d5 lg" style="left:0.0000%;top:58.0455%;width:29.6718%;height:41.2545%" href="https://taurient-lite-backend.onrender.com/stock/MSFT" title="MSFT · Microsoft Corporation -2.77%"><span class="tile-tk">MSFT</span><span class="tile-ch">-2.77%</span></a><a class="tile d5" style="left:30.3718%;top:0.0000%;width:22.3440%;height:49.4219%" href="https://taurient-lite-backend.onrender.com/stock/GOOGL" title="GOOGL · Alphabet Inc. Class A -2.70%"><span class="tile-tk">GOOGL</span><span class="tile-ch">-2.70%</span></a><a class="tile d5" style="left:30.3718%;top:50.1219%;width:22.3440%;height:49.1781%" href="https://taurient-lite-backend.onrender.com/stock/GOOG" title="GOOG · Alphabet Inc. Class C Capital Stock -2.59%"><span class="tile-tk">GOOG</span><span class="tile-ch">-2.59%</span></a><a class="tile d5 lg" style="left:53.4158%;top:0.0000%;width:29.1432%;height:36.0131%" href="https://taurient-lite-backend.onrender.com/stock/NVDA" title="NVDA · NVIDIA Corporation -12.06%"><span class="tile-tk">NVDA</span><span class="tile-ch">-12.06%</span></a><a class="tile d5" style="left:83.2590%;top:0.0000%;width:16.0410%;height:36.0131%" href="https://taurient-lite-backend.onrender.com/stock/SPCX" title="SPCX · Space Exploration Technologies Corp. Class A -7.69%"><span class="tile-tk">SPCX</span><span class="tile-ch">-7.69%</span></a><a class="tile d5" style="left:53.4158%;top:36.7131%;width:16.6994%;height:33.0105%" href="https://taurient-lite-backend.onrender.com/stock/TSM" title="TSM · Taiwan Semiconductor Manufacturing Company Ltd. -9.30%"><span class="tile-tk">TSM</span><span class="tile-ch">-9.30%</span></a><a class="tile d5" style="left:53.4158%;top:70.4236%;width:16.6994%;height:28.8764%" href="https://taurient-lite-backend.onrender.com/stock/AVGO" title="AVGO · Broadcom Inc. -12.19%"><span class="tile-tk">AVGO</span><span class="tile-ch">-12.19%</span></a><a class="tile d5" style="left:70.8152%;top:36.7131%;width:15.4100%;height:30.8149%" href="https://taurient-lite-backend.onrender.com/stock/META" title="META · Meta Platforms Inc. Class A -5.93%"><span class="tile-tk">META</span><span class="tile-ch">-5.93%</span></a><a class="tile d5 compact" style="left:86.9252%;top:36.7131%;width:12.3748%;height:30.8149%" href="https://taurient-lite-backend.onrender.com/stock/ANT" title="ANT · Anthropic PBC Class A -8.50%"><span class="tile-tk">ANT</span><span class="tile-ch">-8.50%</span></a><a class="tile d5" style="left:70.8152%;top:68.2280%;width:15.5431%;height:15.7582%" href="https://taurient-lite-backend.onrender.com/stock/SKHY" title="SKHY · SK hynix Inc. American Depositary Shares -13.11%"><span class="tile-tk">SKHY</span><span class="tile-ch">-13.11%</span></a><a class="tile d5 compact" style="left:70.8152%;top:84.6862%;width:15.5431%;height:14.6138%" href="https://taurient-lite-backend.onrender.com/stock/AMD" title="AMD · Advanced Micro Devices Inc. -13.25%"><span class="tile-tk">AMD</span><span class="tile-ch">-13.25%</span></a><a class="tile d5 compact" style="left:87.0583%;top:68.2280%;width:12.2417%;height:17.7062%" href="https://taurient-lite-backend.onrender.com/stock/MU" title="MU · Micron Technology Inc. -13.89%"><span class="tile-tk">MU</span><span class="tile-ch">-13.89%</span></a><a class="tile d4 compact" style="left:87.0583%;top:86.6343%;width:12.2417%;height:12.6657%" href="https://taurient-lite-backend.onrender.com/stock/GOOGN" title="GOOGN · Alphabet Inc. Depositary Shares representing a 1/20th Interest in a Share of Series B Mandatory Convertible Preferred Stock -2.12%"><span class="tile-tk">GOOGN</span><span class="tile-ch">-2.12%</span></a>
+</div>
+</article>
+</div>
+<div class="heat-legend"><span class="lg-label">-3%</span><i class="swatch sw-d5"></i><i class="swatch sw-d3"></i><i class="swatch sw-d1"></i><span class="lg-label">0</span><i class="swatch sw-flat"></i><i class="swatch sw-u1"></i><i class="swatch sw-u3"></i><span class="lg-label">+3%</span><i class="swatch sw-u5"></i><span class="lg-label">色阶在 ±3% 处封顶</span></div>
+<p class="board-note">块的大小按市值，颜色按当日涨跌幅，行业按当日强弱从左到右排。行业涨跌是市值加权的：简单平均会让一堆微型股盖过苹果，得出「科技板块大跌」而指数其实在涨的结论。点色块看这只票的 K 线。</p>
 </section>
-<div class="sec-head t2"><h2 class="label">价量异动</h2><span class="n">5</span><span class="asof">截至 2026-11-20 收盘</span></div>
-<div class="mo-strip">
-<div class="mo-strip-grid"><a class="mo-chip" href="#tab-momentum">BIP<span class="mo-chip-n">4.1x</span></a><a class="mo-chip" href="#tab-momentum">BIPC<span class="mo-chip-n">6.7x</span></a><a class="mo-chip" href="#tab-momentum">HDB<span class="mo-chip-n">2.8x</span></a><a class="mo-chip" href="#tab-momentum">PDD<span class="mo-chip-n">2.7x</span></a><a class="mo-chip" href="#tab-momentum">TU<span class="mo-chip-n">2.8x</span></a></div>
-<p class="mo-strip-foot">5 只刚进入初动档。数字是相对成交量，完整指标见「异动」标签页。</p>
+<div class="sec-head t2"><h2 class="label">自选股</h2><span class="n">8</span></div>
+<section class="wl"><div class="wl-grid">
+<a class="wl-chip hit" href="#item-1">NVDA<span class="cnt">2</span></a><a class="wl-chip hit" href="#item-5">TSLA<span class="cnt">1</span></a><a class="wl-chip hit" href="#item-8">AAPL<span class="cnt">1</span></a><a class="wl-chip hit" href="#item-8">MSFT<span class="cnt">1</span></a><a class="wl-chip hit" href="#item-1">AVGO<span class="cnt">2</span></a><a class="wl-chip hit" href="#item-1">AMD<span class="cnt">2</span></a><span class="wl-chip">PLTR</span><span class="wl-chip">COIN</span>
 </div>
-<div class="sec-head t2"><h2 class="label">指数与利率</h2><span class="asof">指数收盘 · 上周五(11/20)，经CNBC/UPI/NPR等多家报道综合 ｜ 期货变动 · 周一(11/23)盘前，经CNBC等综合报道。均未经原始交易所数据核实（WebFetch被网络策略拦截）；板块热力标签页因内部数据(data/sectors.json)疑似沿用了前一交易日的涨跌数字，本期已按规则整体省略，不在页面上展示。</span></div>
+<p class="wl-foot">你的 8 只自选股里，今天有 6 只出现在新闻中，点代码跳到对应条目。</p>
+</section>
+<div class="sec-head t2"><h2 class="label">价量异动</h2><span class="n">3</span><span class="asof">截至 2026-11-23 收盘</span></div>
+<div class="mo-strip">
+<div class="mo-strip-grid"><a class="mo-chip" href="#tab-momentum">ALH<span class="mo-chip-n">2.7x</span></a><a class="mo-chip" href="#tab-momentum">BIP<span class="mo-chip-n">7.5x</span></a><a class="mo-chip" href="#tab-momentum">KYMR<span class="mo-chip-n">8.9x</span></a></div>
+<p class="mo-strip-foot">3 只刚进入初动档。数字是相对成交量，完整指标见「异动」标签页。</p>
+</div>
+<div class="sec-head t2"><h2 class="label">指数与利率</h2><span class="asof">收盘 · 周一 11/23（指数点位本身未能验证，见下）</span></div>
 <section><div class="tape-grid">
 <div class="tape-cell">
-<div class="k">S&amp;P 500</div>
-<div class="v">6,910.39</div>
-<div class="d down">-3.70%（-265.44点），连续第七个交易日下跌，正式跌入回调区间（较10/6历史高点7,818.93回落约11.6%）</div>
+<div class="k">Brent crude</div>
+<div class="v">$89.10</div>
+<div class="d down">11/24 0700 GMT，接近约三个月低点（单一信源，见条目3）</div>
 </div>
 <div class="tape-cell">
-<div class="k">Dow Jones</div>
-<div class="v">48,147.33</div>
-<div class="d down">-1.93%（-949.73点），同步进入回调区间</div>
-</div>
-<div class="tape-cell">
-<div class="k">Nasdaq Composite</div>
-<div class="v">22,617.73</div>
-<div class="d down">-5.28%，年内转负</div>
-</div>
-<div class="tape-cell">
-<div class="k">Nasdaq-100 期货(盘前)</div>
-<div class="v">多源口径不一</div>
-<div class="d up">CNBC综合报道约+2.6%，另有报道称早盘一度+3.62%至+6.9%不等，差异应来自取数时点不同，具体点位未核实</div>
-</div>
-<div class="tape-cell">
-<div class="k">S&amp;P 500 期货(盘前)</div>
-<div class="v">约+1.9%</div>
-<div class="d up">CNBC报道口径，随英伟达复职消息走高</div>
+<div class="k">WTI crude</div>
+<div class="v">$79.97</div>
+<div class="d down">11/24 0700 GMT（单一信源，见条目3）</div>
 </div>
 </div></section>
 <div class="sec-head t1"><h2 class="label">必读</h2><span class="n">3</span></div>
-<article class="item t1" id="item-1" data-tickers="NVDA">
+<article class="item t1" id="item-1" data-tickers="NVDA AVGO AMD">
 <div class="rank">01</div>
 <div>
-<h3>英伟达董事会罕见反转：一周前公开说「不会复职」，周一突然宣布黄仁勋复任总裁、CEO兼董事，股价盘前暴涨26%-31%</h3>
-<div class="meta"><span class="age fresh">今天</span><span class="tag tk">NVDA</span><span class="tag">半导体</span><span class="tag">AI</span><span class="tag">公司治理</span></div>
-<p>英伟达董事会周一宣布，黄仁勋即刻复任总裁、首席执行官及董事会成员。黄仁勋11月12日辞职，此前他承认有婚外情，且媒体报道称涉事女性被美方怀疑与中国情报机构有联系，引发国家安全担忧；董事会11月16-17日曾公开表态不考虑让他复职，期间逾17.5万人联署请愿要求他回归。董事会此次称，经与黄仁勋多次会谈并征询「美国政府高层」意见后，认定他的回归不构成国家安全风险；公司将继续完成对相关国家安全问题的独立调查，黄仁勋预计仍需在国会作证。消息公布后，英伟达股价盘前暴涨，各家报道给出的涨幅口径不一：CNN/KDRV报29%，Yahoo Finance报26%，The News报27%，CoinPaper报28%，StockAnalysis报31%（截至9:04 ET）；一处报道给出的盘前价约161.25美元，对应上周五收盘的125.53美元（当日大跌14%）。</p>
-<div class="why"><span class="lbl">为什么重要</span><p>一周之内从「公开拒绝复职」到「立即复职」，说明促成反转的是董事会声明里提到的「美国政府高层」介入，而不是公司内部治理程序本身——这把一家市值最大的半导体公司的人事决定，和白宫的国家安全判断绑在了一起。股价的反应幅度（近三成）也说明，市场此前对「黄仁勋离开」这件事本身的定价，远超对他个人婚外情丑闻的定价。</p></div>
-<div class="impact">NVDA · AI硬件与半导体板块 · 大盘情绪</div>
+<h3>AI与半导体股周一全线重挫：英伟达-12.06%，科技板块加权跌6.02%，跌势蔓延至金融与工业</h3>
+<div class="meta"><span class="age fresh">昨天</span><span class="tag tk">NVDA</span><span class="tag tk">AVGO</span><span class="tag tk">AMD</span><span class="tag">半导体</span><span class="tag">AI</span><span class="tag">市场结构</span></div>
+<p>本简报流水线每日收盘后由GitHub Actions从Nasdaq screener抓取的板块热力数据显示，周一（11/23）收盘，科技板块市值加权跌6.02%，其中英伟达跌12.06%、博通跌12.19%、AMD跌13.25%、美光跌13.89%、台积电跌9.3%、Meta跌5.93%、新上市的Anthropic（代码ANT）跌8.5%。跌势不止于科技：金融板块跌2.33%（高盛-6.66%、大摩-5.3%），工业跌3.95%（特斯拉-7.64%、卡特彼勒-4.94%），基础材料跌4.09%，房地产中的数据中心相关REIT Equinix跌4.89%、Digital Realty跌6.63%。11个板块里只有必需消费（+0.23%）收红。上一交易日（周五11/20）收盘数据显示跌势已经开始：科技板块跌1.83%，英伟达跌3.3%。背景是英伟达CEO黄仁勋11月12日辞职后的持续治理动荡：CFO Colette Kress任临时CEO，董事会主席11月17日在财报电话会上公开表示不会让黄仁勋复职，公司同时启动外部高管猎头搜寻新任CEO。</p>
+<div class="why"><span class="lbl">为什么重要</span><p>这不是单一板块的技术性回调——金融股大跌（尤其是对AI融资与杠杆敞口较大的高盛、大摩）、数据中心相关REIT同步下挫，说明市场正在把「AI资本开支能否撑住」的疑虑，从芯片股本身传导到整条融资链条，而英伟达自身的CEO真空进一步放大了这种不确定性。编辑说明：检索中反复出现「英伟达周一复职暴涨31%」的说法，经过两轮独立核查（查漏报、事实核查）仍无法找到可靠的原始出处，其中事实核查一轮明确找到了与「复职」相反的证据（董事会11/17表态不会复职，且找不到任何11/23反转的原文），本条判断该说法不可采信，继续以内部收盘数据与「未复职、持续治理真空」的背景作为事实依据。</p></div>
+<div class="impact">全市场风险偏好 · 半导体与AI基建供应链 · 金融板块对AI敞口的担忧</div>
 <div class="depth">
 <div class="depth-head">资产波及矩阵</div>
-<div class="assets"><div class="asset"><div class="asset-top"><span class="asset-name">美股</span><span class="asset-dir up">&#8593; 利好</span></div><div class="conv up"><i class="on"></i><i class="on"></i><i class="on"></i></div><p class="asset-note">英伟达盘前暴涨26%-31%并带动纳指100期货走高，直接扭转上周五大盘七连跌、双指数回调的局面。</p></div><div class="asset"><div class="asset-top"><span class="asset-name">海外股市</span><span class="asset-dir mixed">&#8644; 分化</span></div><div class="conv mixed"><i class="on"></i><i class=""></i><i class=""></i></div><p class="asset-note">消息发生在亚洲收盘之后，韩国Kospi周一仍跟随上周五的抛售惯性下跌约3.7%，尚未反映这一反转，预计亚洲市场要等到周二才能充分定价。</p></div></div>
-<div class="cards two"><div class="card"><div class="card-head"><span class="t">多方信源交叉对比</span><span class="agree split">存在分歧</span></div><p>各家对「国家安全风险已排除」这一定性判断一致，但盘前涨幅的具体数字从26%到31%不等(CNN29%、Yahoo26%、StockAnalysis31%)，另有SCMP报道给出34%，高于其余口径，差异应来自各自取数的时间点不同；对「美国政府高层介入」这一关键细节，CNN与NPR的报道角度一致，但具体是哪个层级、以何种方式介入，两家均未给出更多细节。</p><ul class="tl" style="margin-top:0.55rem"><li><span class="w">CNN</span>报道股价盘前涨幅29%，强调董事会声明里「美国政府高层」介入的措辞</li><li><span class="w">NPR</span>聚焦特朗普政府与此次反转的关联</li><li><span class="w">StockAnalysis.com</span>报道9:04 ET时点盘前涨幅31%，并给出161.25美元的盘前价</li><li><span class="w">Yahoo Finance</span>标题强调「董事会数日前刚排除此可能」的反转性质，报涨幅26%</li></ul></div><div class="card"><div class="card-head"><span class="t">历史背景与演进</span></div><p>从辞职到复职只用了11天，期间经历了董事会公开拒绝、逾17.5万人联署请愿施压的完整过山车，是这轮AI股抛售里最戏剧性的单一公司事件。</p><ul class="tl" style="margin-top:0.55rem"><li><span class="w">11/12</span>黄仁勋辞去总裁、CEO及董事职务，CFO Colette Kress任临时CEO</li><li><span class="w">11/16-17</span>董事会公开表态不考虑让他复职；逾17.5万人联署请愿反对</li><li><span class="w">11/20</span>英伟达股价当日大跌14%至125.53美元，收盘价创近期低点，恰逢大盘七连跌、标普道指同日跌入回调区间</li><li><span class="w">11/23</span>董事会宣布黄仁勋复职，称已获美国政府高层输入意见，股价盘前暴涨26%-31%</li></ul></div></div>
+<div class="assets"><div class="asset"><div class="asset-top"><span class="asset-name">美股</span><span class="asset-dir down">&#8595; 利空</span></div><div class="conv down"><i class="on"></i><i class="on"></i><i class="on"></i></div><p class="asset-note">科技板块加权跌6.02%，金融、工业、基础材料同步下跌，仅必需消费收红，跌势已从Fri 11/20延续并加深。</p></div></div>
+<div class="cards two"><div class="card"><div class="card-head"><span class="t">多方信源交叉对比</span><span class="agree split">存在分歧</span></div><p>内部收盘数据（Nasdaq screener，经GitHub Actions抓取）与部分检索结果方向相反——后者描述周一为「英伟达复职引发的暴涨」。本环境的WebFetch无法访问任何原始页面核实任何一方，三轮独立检索本身也彼此矛盾；但另有独立信源（SCMP等）明确记录董事会「不会复职」的表态、且找不到任何复职的原始出处，与内部数据的方向一致，故本条采信内部数据与「未复职」的治理状态。</p><ul class="tl" style="margin-top:0.55rem"><li><span class="w">Nasdaq Screener（本简报流水线每日收盘后抓取）</span>本条所有百分比均来自这一数据源，由GitHub Actions每日收盘后抓取并提交，渲染时原样读取，未经人工估算</li><li><span class="w">SCMP</span>报道董事会表态不会让黄仁勋复职，是三轮检索里唯一有明确出处支持的治理状态</li></ul></div><div class="card"><div class="card-head"><span class="t">历史背景与演进</span></div><p>科技板块跌幅在两个交易日内从-1.83%（周五11/20收盘）扩大到-6.02%（周一11/23收盘），英伟达同期从-3.3%扩大到-12.06%，跌势持续加深，背景是CEO真空期的持续治理不确定性。</p><ul class="tl" style="margin-top:0.55rem"><li><span class="w">11/12</span>黄仁勋辞任CEO，CFO Colette Kress任临时CEO</li><li><span class="w">11/17</span>董事会主席在财报电话会上公开表态：不会让黄仁勋复职</li><li><span class="w">Fri 11/20 收盘</span>科技板块跌1.83%，英伟达跌3.3%</li><li><span class="w">Mon 11/23 收盘</span>科技板块跌6.02%，英伟达跌12.06%，跌势蔓延至金融、工业、基础材料</li></ul></div></div>
 </div>
-<details class="srcs"><summary>4 个来源</summary>
-<ul><li><a href="https://www.cnn.com/2026/11/23/tech/nvidia-reinstates-jensen-huang-ceo" target="_blank" rel="noopener">CNN</a>　报道股价盘前涨幅29%，强调董事会声明里「美国政府高层」介入的措辞</li><li><a href="https://www.npr.org/2026/11/23/nx-s1-6050910/nvidias-jensen-huang-trump" target="_blank" rel="noopener">NPR</a>　聚焦特朗普政府与此次反转的关联</li><li><a href="https://stockanalysis.com/news/nvidia-reinstates-jensen-huang-as-ceo/" target="_blank" rel="noopener">StockAnalysis.com</a>　报道9:04 ET时点盘前涨幅31%，并给出161.25美元的盘前价</li><li><a href="https://finance.yahoo.com/markets/stocks/articles/nvidia-reinstates-jensen-huang-ceo-140721418.html" target="_blank" rel="noopener">Yahoo Finance</a>　标题强调「董事会数日前刚排除此可能」的反转性质，报涨幅26%</li></ul>
+<details class="srcs"><summary>2 个来源</summary>
+<ul><li><a href="https://www.nasdaq.com/market-activity/stocks/screener" target="_blank" rel="noopener">Nasdaq Screener（本简报流水线每日收盘后抓取）</a>　本条所有百分比均来自这一数据源，由GitHub Actions每日收盘后抓取并提交，渲染时原样读取，未经人工估算</li><li><a href="https://www.scmp.com/tech/article/3374812/nvidia-board-says-it-has-no-plans-reinstate-jensen-huang-ceo" target="_blank" rel="noopener">SCMP</a>　报道董事会表态不会让黄仁勋复职，是三轮检索里唯一有明确出处支持的治理状态</li></ul>
 </details>
 </div></article>
-<article class="item t1" id="item-2" data-tickers="CRWD ZS">
+<article class="item t1" id="item-2">
 <div class="rank">02</div>
 <div>
-<h3>CrowdStrike以438.9亿美元全股票收购Zscaler，网络安全板块年内最大并购；收购方股价反而下跌</h3>
-<div class="meta"><span class="age fresh">今天</span><span class="tag tk">CRWD</span><span class="tag tk">ZS</span><span class="tag">网络安全</span><span class="tag">并购</span><span class="tag">软件</span></div>
-<p>CrowdStrike与Zscaler周一宣布已签署最终协议，CrowdStrike将以全股票方式收购Zscaler，交易对Zscaler的估值约为438.9亿美元：Zscaler股东每股可换得1.135股CrowdStrike普通股，按CrowdStrike上周五(11/20)收盘价计算，对应每股约260.41美元，较Zscaler上周五收盘价溢价约34%。两家公司董事会均已一致批准交易；Zscaler创始人兼CEO Jay Chaudhry及其关联方合计持股约34%，已签署投票支持协议。交易预计在CrowdStrike2028财年下半年完成，尚需Zscaler股东批准及监管部门许可。该交易与CrowdStrike公布的2027财年第三季度业绩同日披露，均已通过SEC 8-K文件备案。消息公布后，CrowdStrike股价不涨反跌：CNBC报道跌约5%，另有报道称跌幅超过8%；Zscaler股价则大涨，Benzinga与CNBC均报盘前涨约19%-20%，方向一致。（股价反应的具体数字本次未能用第二轮核查独立复现，仅记录原始搜索来源的口径。）</p>
-<div class="why"><span class="lbl">为什么重要</span><p>这是网络安全行业今年最大的一笔并购，把端点防护(CrowdStrike)与零信任网络安全(Zscaler)两条此前互为竞品、估值倍数差异巨大的产品线合并到一起（Zscaler此前的远期市销率约为CrowdStrike的五分之一）。收购方股价下跌是经典的「全股票收购稀释担忧」反应，说明市场对整合执行风险的定价，暂时压过了对「补齐网络安全全栈」这一战略逻辑的认可。</p></div>
-<div class="impact">CRWD · ZS · 网络安全板块估值体系</div>
+<h3>半导体之外，金融股也同步重挫：高盛-6.66%，大摩-5.3%</h3>
+<div class="meta"><span class="age fresh">昨天</span><span class="tag">金融</span><span class="tag">市场结构</span></div>
+<p>周一（11/23）收盘，金融板块市值加权跌2.33%，跌幅集中在投行与资管：高盛跌6.66%、摩根士丹利跌5.3%、三菱UFJ跌4.88%，传统零售银行跌幅相对较小（摩根大通-3%、富国银行-2.43%）。同一天房地产里的数据中心类REIT也明显跑输大盘（见条目6）。</p>
+<div class="why"><span class="lbl">为什么重要</span><p>投行与资管类金融股的跌幅明显大于零售银行，而这两类机构恰恰是AI数据中心融资链条（私募信贷、杠杆贷款、SPV结构）里更活跃的参与者。板块轮动的这个细节本身就是一条信息：市场在给「谁对AI资本开支敞口更大」定价，而不是无差别抛售整个金融板块。</p></div>
+<div class="impact">金融板块 · AI资本开支融资链条</div>
 <div class="depth">
 <div class="depth-head">资产波及矩阵</div>
-<div class="assets"><div class="asset"><div class="asset-top"><span class="asset-name">美股</span><span class="asset-dir mixed">&#8644; 分化</span></div><div class="conv mixed"><i class="on"></i><i class="on"></i><i class=""></i></div><p class="asset-note">网络安全板块迎来估值重构信号，但收购方CrowdStrike股价当日下跌，板块内部分化而非普涨。</p></div></div>
-<div class="cards"><div class="card"><div class="card-head"><span class="t">多方信源交叉对比</span><span class="agree split">存在分歧</span></div><p>各家对交易条款（1.135股换股比例、438.9亿美元估值、34%溢价）的报道口径一致；但对CrowdStrike股价当日跌幅，CNBC报约5%，IBTimes等报超过8%，差异未能核实具体原因。</p><ul class="tl" style="margin-top:0.55rem"><li><span class="w">CNBC</span>标题点出「AI让网络攻击倍增」的行业背景，报CRWD股价跌约5%</li><li><span class="w">SecurityWeek</span>聚焦交易结构与438.9亿美元估值的来源</li><li><span class="w">IBTimes</span>标题强调「两家股价走向相反」，报跌幅超8%</li><li><span class="w">SEC EDGAR（CrowdStrike 8-K 原始备案）</span>一手交易公告文本来源</li></ul></div></div>
+<div class="assets"><div class="asset"><div class="asset-top"><span class="asset-name">美股</span><span class="asset-dir down">&#8595; 利空</span></div><div class="conv down"><i class="on"></i><i class="on"></i><i class=""></i></div><p class="asset-note">投行与资管类跌幅明显大于零售银行，指向市场对AI融资链条敞口的差异化定价。</p></div></div>
 </div>
-<details class="srcs"><summary>4 个来源</summary>
-<ul><li><a href="https://www.cnbc.com/2026/11/23/crowdstrike-to-buy-zscaler.html" target="_blank" rel="noopener">CNBC</a>　标题点出「AI让网络攻击倍增」的行业背景，报CRWD股价跌约5%</li><li><a href="https://www.securityweek.com/crowdstrike-to-acquire-zscaler-in-43-9-billion-deal/" target="_blank" rel="noopener">SecurityWeek</a>　聚焦交易结构与438.9亿美元估值的来源</li><li><a href="https://www.ibtimes.com/crowdstrike-acquire-zscaler-43-9-billion-deal-3810075" target="_blank" rel="noopener">IBTimes</a>　标题强调「两家股价走向相反」，报跌幅超8%</li><li><a href="https://www.sec.gov/Archives/edgar/data/0001535527/000153552726000035/crwd-20261123xex991.htm" target="_blank" rel="noopener">SEC EDGAR（CrowdStrike 8-K 原始备案）</a>　一手交易公告文本来源</li></ul>
+<details class="srcs"><summary>1 个来源</summary>
+<ul><li><a href="https://www.nasdaq.com/market-activity/stocks/screener" target="_blank" rel="noopener">Nasdaq Screener（本简报流水线每日收盘后抓取）</a>　本条所有百分比均来自这一数据源</li></ul>
 </details>
 </div></article>
-<article class="item t1" id="item-3" data-tickers="NVDA">
+<article class="item t1" id="item-3">
 <div class="rank">03</div>
 <div>
-<h3>CoreWeave暴涨20%-29%、Oracle涨约12%：英伟达「循环融资」概念股集体爆发式反弹</h3>
-<div class="meta"><span class="age fresh">今天</span><span class="tag tk">NVDA</span><span class="tag">AI基础设施</span><span class="tag">云计算</span><span class="tag">半导体</span></div>
-<p>黄仁勋复职消息公布后，与英伟达关系密切的AI云计算股集体暴涨。CNBC当日直播报道称CoreWeave盘中涨20%、Oracle涨12%；同一家媒体另一篇报道给出的数字更高，称英伟达涨约30%、CoreWeave涨约28%，Nebius与Iren同步上涨28%-30%；Benzinga当日午间数据显示英伟达涨28.8%至161.62美元、CoreWeave涨22.4%、Oracle涨12.0%。各家数字口径不一，应与取数时点不同有关，但方向与量级一致。英伟达是CoreWeave第二大股东，持股约10%；此前市场一直担心英伟达与CoreWeave、Oracle等客户/被投企业之间的芯片与算力采购形成「循环融资」，一旦英伟达治理动荡，这条链条上的企业估值会首先受冲击。</p>
-<div class="why"><span class="lbl">为什么重要</span><p>CoreWeave、Oracle等「英伟达生态股」的涨幅与英伟达自身相当甚至更高，说明市场此前已经在为「英伟达治理风险外溢到整条AI基础设施产业链」这个叙事定价了相当高的风险溢价——黄仁勋复职消化掉的不只是一家公司的不确定性，而是一整条「循环融资」链条的尾部风险。</p></div>
-<div class="impact">CRWV · ORCL · AI基础设施/云计算板块</div>
+<h3>国际油价跌至约三个月低点，供应增量压过霍尔木兹风险溢价</h3>
+<div class="meta"><span class="age fresh">今天</span><span class="tag">能源</span><span class="tag">地缘</span><span class="tag">宏观</span></div>
+<p>据路透社报道（经Arab News、Lapaas Voice转载），布伦特原油周二（11/24）早盘跌至约89.10美元/桶，WTI约79.97美元/桶，连续第二个交易日下跌，接近约三个月低点。报道称主因是原油供应增加、市场可能转向过剩——德银基于10月库存数据估算当前过剩约170万桶/日；霍尔木兹海峡的航运风险仍未消除，DBS表示若美伊谈判停滞，油价可能再度走高。另据同一报道转述，伊朗革命卫队声称周一（11/23）有三艘「违规」油轮在海峡触雷起火，这一说法仅来自伊方单方面声明，未经独立证实。</p>
+<div class="why"><span class="lbl">为什么重要</span><p>供应端的宽松叙事如果持续压过地缘风险溢价，意味着能源价格对通胀路径的边际贡献正在转弱——这正好与周三即将公布的10月PCE形成对照：如果油价维持低位，核心通胀之外的能源分项大概率是本月的拖累项而非推手。</p></div>
+<div class="impact">能源板块 · 通胀路径 · 美元计价资产</div>
 <div class="depth">
 <div class="depth-head">资产波及矩阵</div>
-<div class="assets"><div class="asset"><div class="asset-top"><span class="asset-name">美股</span><span class="asset-dir up">&#8593; 利好</span></div><div class="conv up"><i class="on"></i><i class="on"></i><i class="on"></i></div><p class="asset-note">CoreWeave、Oracle等AI基础设施概念股涨幅与英伟达相当甚至更高，印证黄仁勋复职消化的是整条产业链的风险溢价。</p></div></div>
-<div class="cards two"><div class="card"><div class="card-head"><span class="t">多方信源交叉对比</span><span class="agree split">存在分歧</span></div><p>CNBC自身两篇报道对CoreWeave涨幅给出20%与28%两个不同数字，Benzinga午间给出22.4%；对Oracle的报道则较为一致(12%)。差异应来自取数时点不同，交易日内持续走高。</p><ul class="tl" style="margin-top:0.55rem"><li><span class="w">CNBC（直播报道）</span>报CoreWeave涨20%、Oracle涨12%</li><li><span class="w">CNBC（独立报道）</span>报英伟达约30%、CoreWeave约28%，并提及Nebius、Iren同步大涨28%-30%</li><li><span class="w">Benzinga</span>午间数据：英伟达+28.8%至161.62美元、CoreWeave+22.4%、Oracle+12.0%</li></ul></div><div class="card"><div class="card-head"><span class="t">历史背景与演进</span></div><p>英伟达对CoreWeave约10%的持股，是本轮「AI循环融资」担忧的核心关联，黄仁勋治理风波一度让这条链条的估值承压，如今成为复职消息下反弹幅度最大的一环。</p></div></div>
+<div class="assets"><div class="asset"><div class="asset-top"><span class="asset-name">大宗商品</span><span class="asset-dir down">&#8595; 利空</span></div><div class="conv down"><i class="on"></i><i class="on"></i><i class=""></i></div><p class="asset-note">布伦特、WTI均连跌两日至约三个月低点，供应增量是主要驱动，霍尔木兹风险溢价尚未完全消退。</p></div></div>
+<div class="cards"><div class="card"><div class="card-head"><span class="t">多方信源交叉对比</span><span class="agree single">单一来源</span></div><p>两条转载稿均源自同一篇路透社报道，没有独立的第二信源核实具体点位；事实核查一轮找到的9月中旬油价（布伦特约100美元）明显更高，但日期不同，不构成直接矛盾，只说明这条数字缺少独立的第二信源确认。</p><ul class="tl" style="margin-top:0.55rem"><li><span class="w">Arab News（转载Reuters）</span>标题强调供应面压过霍尔木兹威胁</li><li><span class="w">Lapaas Voice（转载Reuters）</span>补充德银过剩估算与DBS、ANZ分析师表态</li></ul></div></div>
 </div>
-<details class="srcs"><summary>3 个来源</summary>
-<ul><li><a href="https://www.cnbc.com/2026/11/23/stocks-moving-the-most-today-live-updates.html" target="_blank" rel="noopener">CNBC（直播报道）</a>　报CoreWeave涨20%、Oracle涨12%</li><li><a href="https://cnbc.com/2026/11/23/anthropic-nvidia-shares.html" target="_blank" rel="noopener">CNBC（独立报道）</a>　报英伟达约30%、CoreWeave约28%，并提及Nebius、Iren同步大涨28%-30%</li><li><a href="https://www.benzinga.com/trading-ideas/movers/26/11/63533706/nvidia-micron-arm-holdings-kymera-therapeutics-and-other-big-stocks-moving-higher-on-monday" target="_blank" rel="noopener">Benzinga</a>　午间数据：英伟达+28.8%至161.62美元、CoreWeave+22.4%、Oracle+12.0%</li></ul>
+<details class="srcs"><summary>2 个来源</summary>
+<ul><li><a href="https://www.arabnews.com/energy/oil-prices-near-three-month-lows-as-rising-supply-offsets-hormuz-threat-3013802" target="_blank" rel="noopener">Arab News（转载Reuters）</a>　标题强调供应面压过霍尔木兹威胁</li><li><a href="https://lapaasvoice.com/oil-prices-near-3-month-lows-as-rising-supply-offsets-strait-of-hormuz-threat" target="_blank" rel="noopener">Lapaas Voice（转载Reuters）</a>　补充德银过剩估算与DBS、ANZ分析师表态</li></ul>
 </details>
 </div></article>
-<div class="sec-head t2"><h2 class="label">值得知道</h2><span class="n">7</span></div>
-<article class="item t2" id="item-4" data-tickers="ANT NVDA AMD AVGO">
+<div class="sec-head t2"><h2 class="label">值得知道</h2><span class="n">8</span></div>
+<article class="item t2" id="item-4">
 <div class="rank">04</div>
 <div>
-<h3>补记：Anthropic上市首日(11/19)暴涨17%、市值约1.27万亿美元，次日(11/20)续跌8.5%-9.1%；英伟达同日大跌14%至125.53美元</h3>
-<div class="meta"><span class="age stale">3 天前</span><span class="tag tk">ANT</span><span class="tag tk">NVDA</span><span class="tag tk">AMD</span><span class="tag tk">AVGO</span><span class="tag">AI</span><span class="tag">新股</span><span class="tag">半导体</span></div>
-<p>Anthropic(ANT)于11月19日(周四)在纳斯达克首日交易，股价暴涨约17%，公司市值约达1.27万亿美元；次日11月20日(周五)跟随大盘AI股抛售续跌，CNBC报跌8.5%，NPR报跌9.1%，口径不一但方向一致。同日英伟达收于125.53美元，大跌14%——这与此前已发布的简报(2026-11-19收盘145.98美元，当日-3.30%)衔接一致，是连续加速下跌的延续；AMD、博通当日跌幅均超13%，日本日经225与韩国Kospi隔夜同步下跌超5%。本条今日(11/23)尚未查到Anthropic最新股价，待有数据再更新。（说明：本期简报的板块热力标签页因 data/sectors.json 疑似沿用了11/19而非11/20的涨跌数字——NVDA -3.3%、ANT +17.07% 都与11/19的真实收盘变动几乎重合——已按规则整体省略，不展示存疑数字。）</p>
-<div class="why"><span class="lbl">为什么重要</span><p>这一天的抛售密集度，是理解周一反转为何幅度如此之大的背景。</p></div>
-<div class="impact">ANT · AI硬件板块 · 海外股市联动</div>
+<h3>本周唯一的数据解锁点：周三10月PCE与三季度GDP二次修正值，感恩节缩短周</h3>
+<div class="meta"><span class="age fresh">昨天</span><span class="tag">宏观</span><span class="tag">数据</span><span class="tag">市场机制</span></div>
+<p>本周美东时间周三（11/25）8:30将同时公布10月PCE物价指数与三季度GDP二次修正值，这是感恩节缩短周唯一的重要数据发布。市场共识预期10月PCE同比+3.8%（前值+3.6%），核心PCE同比+3.2%（前值+3.1%）；三季度GDP二次修正预期3.5%-3.6%，高于3.4%的初值。联储9月16日已经时隔三年首次重启加息、将基准利率升至3.75%-4.00%（12-0票一致通过，多方信源确认），12月9日FOMC决议是下一个关键节点。周四（11/26）感恩节休市，周五（11/27）美股提前至13:00 ET收盘。</p>
+<div class="why"><span class="lbl">为什么重要</span><p>联储已经进入加息周期而不是市场之前预期的降息周期，这意味着PCE只要略超预期，12月9日加息的概率就会显著上升。这是刚经历AI/半导体股剧烈波动之后，第一个能独立验证经济基本面方向的数据点。</p></div>
+<div class="impact">全市场 · 利率预期 · 12月FOMC</div>
 <div class="depth">
-<div class="cards"><div class="card"><div class="card-head"><span class="t">多方信源交叉对比</span><span class="agree split">存在分歧</span></div><p>Anthropic当日跌幅CNBC报8.5%、NPR报9.1%，方向一致但数字有出入，未能核实原因。</p><ul class="tl" style="margin-top:0.55rem"><li><span class="w">CNBC</span>报Anthropic跌8.5%</li><li><span class="w">NPR</span>报Anthropic跌9.1%，并点出纳指年内转负</li><li><span class="w">UPI</span>给出英伟达、AMD、博通的具体跌幅</li></ul></div></div>
+<div class="depth-head">资产波及矩阵</div>
+<div class="assets"><div class="asset"><div class="asset-top"><span class="asset-name">美债</span><span class="asset-dir mixed">&#8644; 分化</span></div><div class="conv mixed"><i class="on"></i><i class="on"></i><i class=""></i></div><p class="asset-note">若核心PCE延续粘性通胀，叠加联储已重启的加息周期，12月加息概率上升；若数据降温，加息预期可能缓和。</p></div></div>
 </div>
-<details class="srcs"><summary>3 个来源</summary>
-<ul><li><a href="https://www.cnbc.com/2026/11/19/stock-market-today-live-updates.html" target="_blank" rel="noopener">CNBC</a>　报Anthropic跌8.5%</li><li><a href="https://www.npr.org/2026/11/20/g-s1-154797/nasdaq-sp500-stock-market-ai-sink-negative" target="_blank" rel="noopener">NPR</a>　报Anthropic跌9.1%，并点出纳指年内转负</li><li><a href="https://www.upi.com/Top_News/US/2026/11/20/stocks-dow-jones-nasdaq-correction-territory/1061795214998/" target="_blank" rel="noopener">UPI</a>　给出英伟达、AMD、博通的具体跌幅</li></ul>
+<details class="srcs"><summary>2 个来源</summary>
+<ul><li><a href="https://www.fxempire.com/forecasts/article/the-week-ahead-pce-in-focus-after-ai-sell-off-in-holiday-shortened-week-1646337" target="_blank" rel="noopener">FXEmpire</a>　将PCE定为本周焦点，置于AI抛售后的缩短周背景下</li><li><a href="https://www.foxbusiness.com/economy/federal-reserve-interest-rate-decision-september-16-2026" target="_blank" rel="noopener">Fox Business</a>　确认联储9/16加息至3.75%-4.00%，这条是三轮检索中唯一全程一致、未被任何一轮推翻的数字</li></ul>
 </details>
 </div></article>
-<article class="item t2" id="item-5">
+<article class="item t2" id="item-5" data-tickers="TSLA">
 <div class="rank">05</div>
 <div>
-<h3>联储10月会议纪要维持鹰派基调，12月加息概率本周仍处高位，不同信源给出85%-96%不等</h3>
-<div class="meta"><span class="age stale">5 天前</span><span class="tag">宏观</span><span class="tag">利率</span></div>
-<p>联储10月27-28日会议纪要11月18日公布(美联储官网确认发布日)，摘要显示几乎所有与会官员都认为有必要继续加息。12月9日决议的加息概率，不同时点、不同信源给出的数字差异较大：11月17日Trading Economics报道约90%以上，另有无日期来源给出约94%，10月29日一篇报道给出约85%；本次未能核实到11/23当天的最新读数，如实标注区间而非挑一个数字。这一鹰派基调自纪要公布以来没有变化，是上周股市七连跌的主要宏观驱动之一，本条作为背景更新收录，没有新进展。</p>
-<div class="why"><span class="lbl">为什么重要</span><p>联储基调没有变化，意味着周一的反弹主要是英伟达治理这一单一公司事件驱动，而不是宏观面出现转机；一旦个股驱动的情绪消退，鹰派联储仍是压在估值上方的结构性因素。</p></div>
-<div class="impact">利率预期 · 美元/美债 · 跨资产定价</div>
+<h3>工业与原材料同步下跌，黄金铜矿股也未能充当避险资产</h3>
+<div class="meta"><span class="age fresh">昨天</span><span class="tag tk">TSLA</span><span class="tag">工业</span><span class="tag">原材料</span><span class="tag">大宗商品</span></div>
+<p>周一（11/23）工业板块跌3.95%（特斯拉-7.64%、卡特彼勒-4.94%），基础材料板块跌4.09%——按市值计是跌幅最大的板块之一，其中黄金与贵金属矿业股跌幅反而居前：纽蒙特矿业跌5.37%、富瑞斯曼跌6.37%、巴里克黄金跌5.5%、Southern Copper跌5.26%。</p>
+<div class="why"><span class="lbl">为什么重要</span><p>黄金矿业股通常被当作risk-off时的避险选择，但这天它们跌幅比标普大盘还深，说明这轮抛售更像是全面去杠杆、追缴保证金引发的无差别抛售，而不是资金从风险资产「有序撤向」传统避险资产。</p></div>
+<div class="impact">工业与原材料板块 · 流动性驱动的无差别抛售信号</div>
 <div class="depth">
-<div class="cards"><div class="card"><div class="card-head"><span class="t">多方信源交叉对比</span><span class="agree split">存在分歧</span></div><p>12月加息概率的具体数字在不同时点报道中从约85%到96%不等，差异主要来自取数时间点不同(概率本身会随新数据持续波动)，未能核实到11/23当天的统一读数。</p><ul class="tl" style="margin-top:0.55rem"><li><span class="w">CNBC</span>周一报道里仍引用CME FedWatch约96%的12月加息概率</li></ul></div></div>
+<div class="depth-head">资产波及矩阵</div>
+<div class="assets"><div class="asset"><div class="asset-top"><span class="asset-name">美股</span><span class="asset-dir down">&#8595; 利空</span></div><div class="conv down"><i class="on"></i><i class="on"></i><i class=""></i></div><p class="asset-note">工业与原材料板块普跌，黄金矿业股未能独立于大盘，指向流动性驱动的无差别抛售而非板块轮动。</p></div></div>
 </div>
 <details class="srcs"><summary>1 个来源</summary>
-<ul><li><a href="https://www.cnbc.com/2026/11/23/stocks-moving-the-most-today-live-updates.html" target="_blank" rel="noopener">CNBC</a>　周一报道里仍引用CME FedWatch约96%的12月加息概率</li></ul>
+<ul><li><a href="https://www.nasdaq.com/market-activity/stocks/screener" target="_blank" rel="noopener">Nasdaq Screener（本简报流水线每日收盘后抓取）</a>　本条所有百分比均来自这一数据源</li></ul>
 </details>
 </div></article>
-<article class="item t2" id="item-6" data-tickers="AAPL NVDA TSLA MSFT AVGO AMD PLTR COIN">
+<article class="item t2" id="item-6">
 <div class="rank">06</div>
 <div>
-<h3>FINRA空头持仓：苹果空头环比大增10.03%，英伟达、特斯拉、微软、博通空头同步回落</h3>
-<div class="meta"><span class="age stale">3 天前</span><span class="tag tk">AAPL</span><span class="tag tk">NVDA</span><span class="tag tk">TSLA</span><span class="tag tk">MSFT</span><span class="tag tk">AVGO</span><span class="tag tk">AMD</span><span class="tag tk">PLTR</span><span class="tag tk">COIN</span><span class="tag">仓位</span><span class="tag">自选股</span></div>
-<p>FINRA官方数据显示，截至10月30日结算，自选股名单中苹果空头持仓1.448亿股，较上期增加10.03%，回补天数3.36天，是名单里唯一空头显著加仓的标的；英伟达空头持仓2.796亿股（较上期-7.31%，回补天数2.8天）、特斯拉6596万股（-4.89%，1.57天）、微软6094万股（-7.21%，2.73天）、博通5194万股（-3.11%，2.36天）均同比减仓；AMD(3860万股，+1.28%)、Palantir(5591万股，-0.33%)基本持平；Coinbase(2283万股，-3.93%)小幅减仓。</p>
-<div class="why"><span class="lbl">为什么重要</span><p>苹果是名单里唯一逆势加空的标的，在大盘整体去空头的背景下方向相反，值得留意其财报或产品周期是否有独立于大盘的空头叙事；其余标的空头回补，说明此前的大盘抛售里有相当比例是空头趁势加仓后的获利回补，而非纯粹的新增做空。</p></div>
-<div class="impact">仓位结构 · 个股波动率</div>
+<h3>数据中心类REIT跌幅远超房地产板块均值：Equinix跌4.89%，Digital Realty跌6.63%</h3>
+<div class="meta"><span class="age fresh">昨天</span><span class="tag">房地产</span><span class="tag">AI基建</span></div>
+<p>房地产板块周一整体仅跌1.0%，但数据中心类REIT跌幅明显更深——Equinix跌4.89%、Digital Realty跌6.63%；与此同时传统REIT相对抗跌，Realty Income涨0.64%、American Tower涨1.68%、Crown Castle涨0.62%。</p>
+<div class="why"><span class="lbl">为什么重要</span><p>数据中心REIT的现金流直接绑定AI云厂商的租约与资本开支计划，这天的分化再次说明市场在精确区分「谁的现金流绑定AI资本开支」，而不是整体看空房地产。</p></div>
+<div class="impact">REIT板块 · AI数据中心资本开支预期</div>
 <details class="srcs"><summary>1 个来源</summary>
-<ul><li><a href="https://www.finra.org/finra-data/browse-catalog/equity-short-interest/data" target="_blank" rel="noopener">FINRA 官方空头持仓数据</a></li></ul>
+<ul><li><a href="https://www.nasdaq.com/market-activity/stocks/screener" target="_blank" rel="noopener">Nasdaq Screener（本简报流水线每日收盘后抓取）</a>　本条所有百分比均来自这一数据源</li></ul>
 </details>
 </div></article>
 <article class="item t2" id="item-7">
 <div class="rank">07</div>
 <div>
-<h3>霍尔木兹局势维持原状：特朗普称对伊朗决策「不急」，西方官员称美国大规模空袭概率上升，本周无新进展</h3>
-<div class="meta"><span class="age stale">3 天前</span><span class="tag">地缘</span><span class="tag">能源</span></div>
-<p>特朗普上周五(11/20)表示在伊朗问题上「没有仓促做任何决定」；此前伊朗革命卫队的格什姆岛导弹发射场遭美方打击，巴林、科威特报告拦截无人机，霍尔木兹海峡通行量仍低于危机前水平(据报美方协助通行的日均约26.5艘，近96小时内106次通行)。本条此前几期简报已持续跟踪，周末(11/21-22)及周一(11/23)未查到新的升级或缓和进展，作为背景维持收录。</p>
-<div class="why"><span class="lbl">为什么重要</span><p>这条线索没有恶化也没有缓和，意味着地缘风险溢价目前处于「悬而未决」状态，一旦有新消息（无论哪个方向），都可能打破当前油价的平静。</p></div>
-<div class="impact">能源价格 · 地缘风险溢价</div>
+<h3>AI基建相关的网络与光模块股跌幅远超传统电信：Arista跌11.57%，Lumentum跌13.94%</h3>
+<div class="meta"><span class="age fresh">昨天</span><span class="tag">AI基建</span><span class="tag">半导体</span><span class="tag">电信</span></div>
+<p>周一（11/23）电信板块整体跌2.3%，但内部严重分化：与AI数据中心网络直接相关的Arista Networks跌11.57%、光模块厂商Lumentum跌13.94%，跌幅接近半导体板块的重灾区；而传统电信运营商反而上涨——Verizon+1.71%、T-Mobile+1.89%、AT&amp;T+2.22%。</p>
+<div class="why"><span class="lbl">为什么重要</span><p>这印证了条目1的判断：这轮抛售精确打在「AI基础设施直接受益股」上，而不是无差别打击整个科技或通信行业。传统、现金流稳定的电信运营商这天反而是资金的避风港之一。</p></div>
+<div class="impact">AI基建供应链 · 网络设备与光模块板块</div>
 <details class="srcs"><summary>1 个来源</summary>
-<ul><li><a href="https://www.tradingview.com/news/benzinga:1c06a4673094b:0-stock-market-today-dow-jones-s-p-500-futures-fall-as-trump-weighs-iran-decision-intu-rost-keys-in-focus/" target="_blank" rel="noopener">Benzinga（经TradingView转载）</a>　特朗普「不急于决定」的表态</li></ul>
+<ul><li><a href="https://www.nasdaq.com/market-activity/stocks/screener" target="_blank" rel="noopener">Nasdaq Screener（本简报流水线每日收盘后抓取）</a>　本条所有百分比均来自这一数据源</li></ul>
 </details>
 </div></article>
-<article class="item t2" id="item-8">
+<article class="item t2" id="item-8" data-tickers="AAPL NVDA MSFT AVGO AMD">
 <div class="rank">08</div>
 <div>
-<h3>上周是2020年3月以来道指与纳指表现最差的一周，标普500周跌3.5%为2025年4月以来最差</h3>
-<div class="meta"><span class="age fresh">今天</span><span class="tag">宏观</span><span class="tag">利率</span></div>
-<p>CNBC周一盘前综述提到，刚结束的一周是道琼斯指数与纳斯达克指数自2020年3月以来表现最差的一周，标普500当周下跌3.5%，是2025年4月以来最差单周表现。这一统计与此前已确认的「标普500七连跌、周五跌入回调区间」是同一轮抛售的不同统计口径，本条作为背景数据收录。核查环节发现这个「周跌3.5%」的说法，与另一处搜到的11/13(上周五)标普收盘7,561.67点推算出的跌幅(约8%-9%)对不上，本次未能找到权威的周线收盘数据来源仲裁，具体百分点保持审慎，未作为本期行情表的依据。</p>
-<div class="why"><span class="lbl">为什么重要</span><p>把这一周放进过去几年的坐标系里看，上周的抛售烈度接近疫情初期的单周跌幅，这也是为什么周一的反转消息能带来如此大的反弹空间。</p></div>
-<div class="impact">全市场 · 波动率</div>
+<h3>苹果、微软、谷歌跌幅远小于英伟达、博通、AMD——抛售集中在AI基建股而非整个大型科技</h3>
+<div class="meta"><span class="age fresh">昨天</span><span class="tag tk">AAPL</span><span class="tag tk">NVDA</span><span class="tag tk">MSFT</span><span class="tag tk">AVGO</span><span class="tag tk">AMD</span><span class="tag">科技</span><span class="tag">市场结构</span></div>
+<p>同在科技板块里，苹果周一仅跌1.9%、微软跌2.77%、谷歌A/C股跌2.6%-2.7%，跌幅远小于英伟达-12.06%、博通-12.19%、AMD-13.25%。七巨头里现金流更依赖消费端（苹果）或业务结构更分散（微软、谷歌）的公司明显跑赢纯AI基础设施敞口更高的半导体股。</p>
+<div class="why"><span class="lbl">为什么重要</span><p>如果这是一次无差别的「科技股恐慌」，苹果和英伟达的跌幅应该接近；实际差距超过6倍，说明市场在这一天做的是针对AI资本开支/算力供应链的精确定价，而不是对整个科技行业重新估值。</p></div>
+<div class="impact">科技板块内部分化 · 七巨头</div>
 <details class="srcs"><summary>1 个来源</summary>
-<ul><li><a href="https://www.cnbc.com/2026/11/23/stocks-moving-the-most-today-live-updates.html" target="_blank" rel="noopener">CNBC（经综合报道转述）</a>　给出「2020年3月以来最差一周」及标普500周跌3.5%的统计口径</li></ul>
+<ul><li><a href="https://www.nasdaq.com/market-activity/stocks/screener" target="_blank" rel="noopener">Nasdaq Screener（本简报流水线每日收盘后抓取）</a>　本条所有百分比均来自这一数据源</li></ul>
 </details>
 </div></article>
-<article class="item t2" id="item-9" data-tickers="ZS CRWD">
+<article class="item t2" id="item-9">
 <div class="rank">09</div>
 <div>
-<h3>Zscaler同日公布自身财报；分析此前指出其估值仅为CrowdStrike的约五分之一，是这笔全股票收购的特殊之处</h3>
-<div class="meta"><span class="age fresh">今天</span><span class="tag tk">ZS</span><span class="tag tk">CRWD</span><span class="tag">网络安全</span><span class="tag">财报</span><span class="tag">并购</span></div>
-<p>除收购协议外，Zscaler当天另行公布了自身2027财年第一季度业绩（与CrowdStrike的联合财报电话会同日举行）。此前市场分析指出，Zscaler的远期市销率约为CrowdStrike的五分之一（约5倍 vs 约27倍），这种估值倍数的巨大差异使得这笔全股票收购在业内被认为是「不寻常的配对」。具体财报数字本次未查到。</p>
-<div class="why"><span class="lbl">为什么重要</span><p>收购方估值倍数远高于被收购方，全股票支付意味着CrowdStrike是在用自己相对「贵」的股票去换Zscaler相对「便宜」的股票——这解释了为什么市场对收购方股价的第一反应是下跌而不是上涨。</p></div>
-<div class="impact">ZS · CRWD · 网络安全板块估值体系</div>
-<details class="srcs"><summary>2 个来源</summary>
-<ul><li><a href="https://simplywall.st/stocks/us/software/nasdaq-zs/zscaler/news/how-investors-are-reacting-to-zscaler-zs-expanding-crowdstri/amp" target="_blank" rel="noopener">SimplyWall.st</a>　提及Zscaler与CrowdStrike两者远期市销率的倍数差异</li><li><a href="https://www.sec.gov/Archives/edgar/data/0001713683/000110465926130801/tm2630454d2_ex99-1.htm" target="_blank" rel="noopener">Zscaler（SEC 8-K，一手备案）</a>　Zscaler一方的交易公告备案</li></ul>
+<h3>公用事业板块整体温和下跌，但数据中心供电股Constellation Energy跌5.8%明显突出</h3>
+<div class="meta"><span class="age fresh">昨天</span><span class="tag">公用事业</span><span class="tag">AI基建</span></div>
+<p>公用事业板块周一仅跌1.06%，多数传统电力与水务股涨跌幅在正负1%以内（南方电力-0.14%、杜克能源+0.75%），但为数据中心供电、常被视为「AI电力需求」代理股的Constellation Energy单日跌5.8%，跌幅在板块内明显突出。</p>
+<div class="why"><span class="lbl">为什么重要</span><p>这是条目7同一个逻辑在公用事业板块里的又一次重复出现：市场在系统性地抛售「与AI资本开支直接绑定」的标的，无论它们原本被归到哪个传统行业分类里。</p></div>
+<div class="impact">公用事业板块 · AI电力需求叙事</div>
+<details class="srcs"><summary>1 个来源</summary>
+<ul><li><a href="https://www.nasdaq.com/market-activity/stocks/screener" target="_blank" rel="noopener">Nasdaq Screener（本简报流水线每日收盘后抓取）</a>　本条所有百分比均来自这一数据源</li></ul>
 </details>
 </div></article>
 <article class="item t2" id="item-10">
 <div class="rank">10</div>
 <div>
-<h3>感恩节缩水周：本周仅三个完整交易日，周三PCE物价指数是12月加息概率的下一个检验点</h3>
-<div class="meta"><span class="age fresh">今天</span><span class="tag">宏观</span><span class="tag">市场机制</span></div>
-<p>本周因感恩节假期被压缩为实质三个完整交易日(周一至周三)，周四全天休市，周五缩短交易时段。10月PCE物价指数周三(11/25)公布，是目前94%-96%的12月加息定价之后，市场重新校准该概率的下一个硬数据节点。</p>
-<div class="why"><span class="lbl">为什么重要</span><p>黄仁勋复职带来的是单一公司事件驱动的反弹，而PCE数据才是检验「鹰派联储」叙事是否继续成立的宏观证据；两者方向如果出现背离，本周后两个交易日的波动可能明显放大。</p></div>
-<div class="impact">全市场 · 利率预期路径</div>
+<h3>下周日（11/29）OPEC+全体部长级会议将敲定2027年产量框架，评估已被推迟</h3>
+<div class="meta"><span class="age fresh">今天</span><span class="tag">能源</span><span class="tag">大宗商品</span></div>
+<p>OPEC+七个核心成员国已将下次会议定在11月29日，届时21国全体部长级会议也将召开，核心议题是敲定2027年的产量框架；原定于11月中旬完成的成员国产能评估（这项评估直接影响2027年配额的分配基础）目前仍被推迟，状态不明。上一次（11/1）会议维持了12月产量目标不变，沙特10.5百万桶/日、俄罗斯9.9、伊拉克4.4等配额均未变动。多家分析认为，中东地区的实际冲突已经让今年的目标增产大多停留在纸面上，尚未真正兑现。</p>
+<div class="why"><span class="lbl">为什么重要</span><p>2027年配额框架如果定得比预期宽松，会在供给侧进一步压低油价预期，与条目3「供应过剩压过地缘风险溢价」的叙事方向一致；如果产能评估继续拖延，则说明OPEC+内部对实际产能的分配仍有分歧。</p></div>
+<div class="impact">原油供给框架 · 2027年价格路径</div>
 <details class="srcs"><summary>1 个来源</summary>
-<ul><li><a href="https://www.bea.gov/news/schedule" target="_blank" rel="noopener">综合报道（PCE发布安排未能在BEA官网逐一核实）</a></li></ul>
+<ul><li><a href="https://www.opec.org/pr-detail/2033620-1-november-2026.html" target="_blank" rel="noopener">OPEC 新闻公告</a>　OPEC官方公告，确认11/1维持12月配额不变及各国具体数字</li></ul>
 </details>
 </div></article>
-<div class="sec-head t3"><h2 class="label">背景噪音</h2><span class="n">5</span></div>
-<article class="item t3" id="item-11" data-tickers="NVDA">
+<article class="item t2" id="item-11">
 <div class="rank">11</div>
 <div>
-<h3>黄仁勋预计仍需就国家安全调查向国会作证，此前参议院银行委员会曾邀其12月3日到场</h3>
-<div class="meta"><span class="age fresh">今天</span><span class="tag tk">NVDA</span><span class="tag">半导体</span><span class="tag">监管</span></div>
-<p>多份报道提到，即便黄仁勋已复职，英伟达董事会仍将完成对此前「外国情报接触」指控的独立调查，黄仁勋预计仍需向国会作证；此前参议院银行委员会主席Tim Scott曾邀请他12月3日到场说明中国获取美国敏感技术的情况，该邀请的具体出席日期此前已有报道称仍在协商中，并非完全确定；复职后是否变化、是否最终以12月3日为准，均尚不清楚。</p>
+<h3>Dell今日盘后公布财报，是企业IT与AI服务器资本开支的下一个信号</h3>
+<div class="meta"><span class="age fresh">今天</span><span class="tag">AI基建</span><span class="tag">企业IT</span></div>
+<p>Dell Technologies定于今天（11/24）美股盘后公布2027财年三季度财报，Best Buy同周公布财报，具体日期各信源略有冲突。Dell的服务器业务是企业AI基础设施资本开支的重要风向标之一。</p>
+<div class="why"><span class="lbl">为什么重要</span><p>在英伟达治理动荡、板块轮动剧烈之后，Dell这份财报能提供一个相对独立于「英伟达一家公司股价」的视角，判断企业端的AI服务器需求是否依然强劲，或者只是芯片供应链自身的情绪波动。</p></div>
+<div class="impact">AI基建资本开支 · 企业IT支出</div>
 <details class="srcs"><summary>1 个来源</summary>
-<ul><li><a href="https://www.cnn.com/2026/11/23/tech/nvidia-reinstates-jensen-huang-ceo" target="_blank" rel="noopener">CNN</a></li></ul>
+<ul><li><a href="https://news.ifyouspent.com/en/news/thanksgiving-week-earnings-dell-workday-zoom-hp-deere-november-2026" target="_blank" rel="noopener">ifyouspent.com 财报前瞻</a></li></ul>
 </details>
 </div></article>
-<article class="item t3" id="item-12" data-tickers="NVDA">
+<div class="sec-head t3"><h2 class="label">背景噪音</h2><span class="n">4</span></div>
+<article class="item t3" id="item-12">
 <div class="rank">12</div>
 <div>
-<h3>英伟达分析师此前基于「黄仁勋已辞职」给出平均目标价约229美元，复职后大概率将被重新评估</h3>
-<div class="meta"><span class="age fresh">今天</span><span class="tag tk">NVDA</span><span class="tag">半导体</span><span class="tag">分析师评级</span></div>
-<p>黄仁勋辞职期间，分析师普遍下调英伟达目标价，平均目标价报约229美元；这一数字形成于「临时CEO当家」的假设下，复职消息公布后大概率会被分析师重新评估，本次未查到复职后的最新目标价调整。</p>
+<h3>医疗保健是周一跌幅最小的板块（-0.34%），联合健康逆势涨2.9%</h3>
+<div class="meta"><span class="age fresh">昨天</span><span class="tag">医疗保健</span></div>
+<p>周一11个板块里，医疗保健跌幅最小，只有0.34%，多只成分股逆势上涨：联合健康+2.9%、艾伯维+1.4%、强生+1.32%。这天的抛售基本没有波及这个板块。</p>
 <details class="srcs"><summary>1 个来源</summary>
-<ul><li><a href="https://www.tipranks.com/stocks/nvda/forecast" target="_blank" rel="noopener">综合分析师评级汇总（二手来源，未核实具体机构名单）</a></li></ul>
+<ul><li><a href="https://www.nasdaq.com/market-activity/stocks/screener" target="_blank" rel="noopener">Nasdaq Screener（本简报流水线每日收盘后抓取）</a></li></ul>
 </details>
 </div></article>
-<article class="item t3" id="item-13" data-tickers="COIN">
+<article class="item t3" id="item-13">
 <div class="rank">13</div>
 <div>
-<h3>比特币持续疲软，11/19报价约6.37万美元，较一年前回落约2.78万美元</h3>
-<div class="meta"><span class="age stale">4 天前</span><span class="tag tk">COIN</span><span class="tag">加密资产</span></div>
-<p>比特币11月19日(周四)美东时间6点报63,747.99美元，较一年前同期的约91,538美元回落约2.78万美元。本条为背景补充，今日(11/23)最新价格未查到。</p>
+<h3>必需消费是周一唯一收红的板块（+0.23%），可选消费内部则两极分化</h3>
+<div class="meta"><span class="age fresh">昨天</span><span class="tag">必需消费</span><span class="tag">可选消费</span></div>
+<p>11个板块里，只有必需消费板块周一收红，涨0.23%，可口可乐+0.94%、百事+1.11%均上涨。可选消费板块跌1.5%，内部分化明显：亚马逊跌4.1%领跌，但沃尔玛+1.51%、好市多+0.76%、家得宝+0.72%均逆势收红，呈现「越偏向日常刚需的零售商越抗跌」的经典防御性轮动。</p>
 <details class="srcs"><summary>1 个来源</summary>
-<ul><li><a href="https://fortune.com/article/price-of-bitcoin-11-19-2026/" target="_blank" rel="noopener">Fortune</a></li></ul>
+<ul><li><a href="https://www.nasdaq.com/market-activity/stocks/screener" target="_blank" rel="noopener">Nasdaq Screener（本简报流水线每日收盘后抓取）</a></li></ul>
 </details>
 </div></article>
 <article class="item t3" id="item-14">
 <div class="rank">14</div>
 <div>
-<h3>韩国Kospi周一仍跌约3.7%，亚洲市场尚未跟上华尔街周一盘前的反转节奏</h3>
-<div class="meta"><span class="age fresh">今天</span><span class="tag">海外股市</span></div>
-<p>综合报道提到韩国Kospi周一下跌约3.7%，延续上周五华尔街AI股抛售带来的跌势；由于英伟达复职消息在美股盘前才公布，亚洲市场收盘时尚未消化这一反转，预计效应要等到亚洲周二交易时段才会体现。</p>
+<h3>能源板块相对抗跌（-0.82%），埃克森美孚、雪佛龙逆势上涨</h3>
+<div class="meta"><span class="age fresh">昨天</span><span class="tag">能源</span></div>
+<p>能源板块周一跌幅只有0.82%，是跌幅第二小的板块，埃克森美孚涨0.64%、雪佛龙涨0.93%、康菲石油涨0.86%，与条目3「原油现货价接近三个月低点」的叙事看似矛盾，股价与大宗商品现货价格的短期背离并不少见，这里只记录事实，不做解释。</p>
 <details class="srcs"><summary>1 个来源</summary>
-<ul><li><a href="https://www.cnbc.com/2026/11/23/stocks-moving-the-most-today-live-updates.html" target="_blank" rel="noopener">CNBC</a></li></ul>
+<ul><li><a href="https://www.nasdaq.com/market-activity/stocks/screener" target="_blank" rel="noopener">Nasdaq Screener（本简报流水线每日收盘后抓取）</a></li></ul>
 </details>
 </div></article>
 <article class="item t3" id="item-15">
 <div class="rank">15</div>
 <div>
-<h3>感恩节假期周：周四(11/26)美股休市，周五(11/27)缩短交易时段</h3>
-<div class="meta"><span class="age fresh">今天</span><span class="tag">市场机制</span></div>
-<p>本周为感恩节假期周，美股及债市11月26日(周四)全天休市，11月27日(周五)为缩短交易时段。本周财报与数据发布因此集中在周一至周三。</p>
-<details class="srcs"><summary>1 个来源</summary>
-<ul><li><a href="https://www.nasdaq.com/market-activity/stock-market-holiday-schedule" target="_blank" rel="noopener">Nasdaq 交易日历</a></li></ul>
+<h3>历史数据：感恩节交易周过去表现偏强，但近年规律已减弱（纯统计，非预测）</h3>
+<div class="meta"><span class="age fresh">今天</span><span class="tag">季节性</span></div>
+<p>据分析师统计，自1928年以来的感恩节交易周，标普500上涨概率约60%，平均涨幅0.28%（中位数0.46%）；但过去十年的复盘显示部分年份明显背离这一规律，且节后首个周一历史上下跌概率约三分之二。本周NYSE周四（11/26）休市，周五（11/27）13:00 ET提前收盘。这是纯统计性的历史回顾，不构成对本周行情的预测。</p>
+<details class="srcs"><summary>2 个来源</summary>
+<ul><li><a href="https://finance.yahoo.com/news/why-thanksgiving-week-is-typically-bullish-for-stocks-110047943.html" target="_blank" rel="noopener">Yahoo Finance</a></li><li><a href="https://www.nasdaq.com/articles/how-does-stock-market-historically-perform-during-thanksgiving-week" target="_blank" rel="noopener">Nasdaq</a></li></ul>
 </details>
 </div></article></div>
 <div class="tab-panel" data-tab="calendar"><div class="sec-head t2"><h2 class="label">接下来的日历</h2><span class="asof">4 周窗口</span></div>
-<div class="cal-grid"><div class="cal-wd">一</div><div class="cal-wd">二</div><div class="cal-wd">三</div><div class="cal-wd">四</div><div class="cal-wd">五</div><div class="cal-wd">六</div><div class="cal-wd">日</div><div class="cal-day today"><div class="cal-daynum">23</div><div class="cal-chip w-low"><span class="cal-chip-time">盘后</span><span>Zoom Communications 公布财报</span><a class="cal-src" href="https://www.nasdaq.com/market-activity/earnings" target="_blank" rel="noopener" aria-label="来源：综合财报日历（未逐一核实公司官方公告）">&#8599;</a></div></div><div class="cal-day"><div class="cal-daynum">24</div><div class="cal-chip w-low"><span class="cal-chip-time">盘前</span><span>Analog Devices (ADI) 公布财报</span><a class="cal-src" href="https://www.nasdaq.com/market-activity/earnings" target="_blank" rel="noopener" aria-label="来源：综合财报日历（未逐一核实公司官方公告）">&#8599;</a></div><div class="cal-chip w-mid"><span class="cal-chip-time">盘后</span><span>Dell、HP、Workday 公布财报</span><a class="cal-src" href="https://www.nasdaq.com/market-activity/earnings" target="_blank" rel="noopener" aria-label="来源：综合财报日历（未逐一核实公司官方公告）">&#8599;</a></div></div><div class="cal-day"><div class="cal-daynum">25</div><div class="cal-chip w-high"><span class="cal-chip-time">08:30 ET</span><span>10月PCE物价指数发布，是本周加息预期的关键变量</span><a class="cal-src" href="https://www.bea.gov/news/schedule" target="_blank" rel="noopener" aria-label="来源：综合报道（未能在BEA官网逐一核实发布日期）">&#8599;</a></div></div><div class="cal-day"><div class="cal-daynum">26</div><div class="cal-chip w-high"><span class="cal-chip-time">全天</span><span>感恩节，美股与债市休市</span><a class="cal-src" href="https://www.nasdaq.com/market-activity/stock-market-holiday-schedule" target="_blank" rel="noopener" aria-label="来源：Nasdaq 交易日历">&#8599;</a></div></div><div class="cal-day"><div class="cal-daynum">27</div><div class="cal-chip w-low"><span class="cal-chip-time">缩短时段</span><span>黑色星期五，美股缩短交易时段至13:00 ET收盘</span><a class="cal-src" href="https://www.nasdaq.com/market-activity/stock-market-holiday-schedule" target="_blank" rel="noopener" aria-label="来源：Nasdaq 交易日历">&#8599;</a></div></div><div class="cal-day weekend empty"><div class="cal-daynum">28</div></div><div class="cal-day weekend"><div class="cal-daynum">29</div><div class="cal-chip w-mid"><span class="cal-chip-time">—</span><span>OPEC+部长级会议，讨论2027年产量配额框架</span><a class="cal-src" href="https://worldoil.com/news/2026/11/1/opec-subgroup-keeps-oil-production-quotas-unchanged-for-december/" target="_blank" rel="noopener" aria-label="来源：WorldOil">&#8599;</a></div></div><div class="cal-day empty"><div class="cal-daynum">30</div></div><div class="cal-day empty"><div class="cal-daynum">12/1</div></div><div class="cal-day empty"><div class="cal-daynum">2</div></div><div class="cal-day empty"><div class="cal-daynum">3</div></div><div class="cal-day empty"><div class="cal-daynum">4</div></div><div class="cal-day weekend empty"><div class="cal-daynum">5</div></div><div class="cal-day weekend empty"><div class="cal-daynum">6</div></div><div class="cal-day empty"><div class="cal-daynum">7</div></div><div class="cal-day empty"><div class="cal-daynum">8</div></div><div class="cal-day"><div class="cal-daynum">9</div><div class="cal-chip w-high"><span class="cal-chip-time">14:00 ET</span><span>12月FOMC利率决议，当前定价94%-96%加息</span><a class="cal-src" href="https://www.federalreserve.gov/newsevents/2026-december.htm" target="_blank" rel="noopener" aria-label="来源：Federal Reserve（联邦储备官网12月会议日程，本次未能用WebFetch重新核实）">&#8599;</a></div><div class="cal-chip w-mid"><span class="cal-chip-time">盘后</span><span>Broadcom(AVGO) 公布第四财季及2026财年业绩</span><a class="cal-src" href="https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announce-fourth-quarter-and-fiscal-year-2026" target="_blank" rel="noopener" aria-label="来源：Broadcom 投资者关系">&#8599;</a></div></div><div class="cal-day empty"><div class="cal-daynum">10</div></div><div class="cal-day empty"><div class="cal-daynum">11</div></div><div class="cal-day weekend empty"><div class="cal-daynum">12</div></div><div class="cal-day weekend empty"><div class="cal-daynum">13</div></div><div class="cal-day empty"><div class="cal-daynum">14</div></div><div class="cal-day empty"><div class="cal-daynum">15</div></div><div class="cal-day empty"><div class="cal-daynum">16</div></div><div class="cal-day empty"><div class="cal-daynum">17</div></div><div class="cal-day empty"><div class="cal-daynum">18</div></div><div class="cal-day weekend empty"><div class="cal-daynum">19</div></div><div class="cal-day weekend empty"><div class="cal-daynum">20</div></div></div>
-<div class="cal-later-head">日期待定 · 更远的事件</div>
-<div class="cal-scroll"><table><tbody>
-<tr>
-<td class="when">约12/3</td>
-<td class="time"></td>
-<td>黄仁勋预计就国家安全问题向参议院银行委员会作证（此前邀约日期，复职后是否变化未知）</td>
-<td class="cal-later-src"><a href="https://www.cnn.com/2026/11/23/tech/nvidia-reinstates-jensen-huang-ceo" target="_blank" rel="noopener">CNN</a></td>
-<td class="w"><span class="w-mid">留意</span></td>
-</tr>
-</tbody></table></div></div>
-<div class="tab-panel" data-tab="momentum"><div class="sec-head t2"><h2 class="label">价量异动</h2><span class="asof">截至 2026-11-20 收盘 · 扫描 2526 只</span></div>
+<div class="cal-grid"><div class="cal-wd">一</div><div class="cal-wd">二</div><div class="cal-wd">三</div><div class="cal-wd">四</div><div class="cal-wd">五</div><div class="cal-wd">六</div><div class="cal-wd">日</div><div class="cal-day empty"><div class="cal-daynum">23</div></div><div class="cal-day today"><div class="cal-daynum">24</div><div class="cal-chip w-mid"><span class="cal-chip-time">盘后</span><span>Dell 2027财年三季度财报（Best Buy同周报告，具体日期各信源略有冲突）</span><a class="cal-src" href="https://news.ifyouspent.com/en/news/thanksgiving-week-earnings-dell-workday-zoom-hp-deere-november-2026" target="_blank" rel="noopener" aria-label="来源：ifyouspent.com 财报前瞻">&#8599;</a></div></div><div class="cal-day"><div class="cal-daynum">25</div><div class="cal-chip w-high"><span class="cal-chip-time">08:30 ET</span><span>10月PCE物价指数 + 三季度GDP二次修正值，核心PCE共识同比+3.2%</span><a class="cal-src" href="https://www.fxempire.com/forecasts/article/the-week-ahead-pce-in-focus-after-ai-sell-off-in-holiday-shortened-week-1646337" target="_blank" rel="noopener" aria-label="来源：FXEmpire">&#8599;</a></div></div><div class="cal-day"><div class="cal-daynum">26</div><div class="cal-chip w-high"><span class="cal-chip-time">全天</span><span>感恩节，美股与债市休市</span><a class="cal-src" href="https://www.nyse.com/markets/hours-calendars" target="_blank" rel="noopener" aria-label="来源：NYSE Holidays &amp; Trading Hours">&#8599;</a></div></div><div class="cal-day"><div class="cal-daynum">27</div><div class="cal-chip w-mid"><span class="cal-chip-time">13:00 ET</span><span>黑色星期五，美股提前收盘</span><a class="cal-src" href="https://www.nyse.com/markets/hours-calendars" target="_blank" rel="noopener" aria-label="来源：NYSE Holidays &amp; Trading Hours">&#8599;</a></div></div><div class="cal-day weekend empty"><div class="cal-daynum">28</div></div><div class="cal-day weekend"><div class="cal-daynum">29</div><div class="cal-chip w-high"><span class="cal-chip-time">—</span><span>OPEC+全体部长级会议，讨论2027年产量配额框架</span><a class="cal-src" href="https://www.opec.org/pr-detail/2033620-1-november-2026.html" target="_blank" rel="noopener" aria-label="来源：OPEC 新闻公告">&#8599;</a></div></div><div class="cal-day empty"><div class="cal-daynum">30</div></div><div class="cal-day empty"><div class="cal-daynum">12/1</div></div><div class="cal-day empty"><div class="cal-daynum">2</div></div><div class="cal-day empty"><div class="cal-daynum">3</div></div><div class="cal-day empty"><div class="cal-daynum">4</div></div><div class="cal-day weekend empty"><div class="cal-daynum">5</div></div><div class="cal-day weekend empty"><div class="cal-daynum">6</div></div><div class="cal-day empty"><div class="cal-daynum">7</div></div><div class="cal-day empty"><div class="cal-daynum">8</div></div><div class="cal-day"><div class="cal-daynum">9</div><div class="cal-chip w-high"><span class="cal-chip-time">14:00 ET</span><span>FOMC 12月利率决议 + 经济预测摘要，14:30 ET 鲍威尔新闻发布会（联储9月已重启加息至3.75%-4.00%，当时预测年内可能再加一次）</span><a class="cal-src" href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" target="_blank" rel="noopener" aria-label="来源：Federal Reserve、Fox Business（9月16日加息报道）">&#8599;</a></div><div class="cal-chip w-mid"><span class="cal-chip-time">17:00 ET</span><span>博通2026财年四季度财报</span><a class="cal-src" href="https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announce-fourth-quarter-and-fiscal-year-2026" target="_blank" rel="noopener" aria-label="来源：Broadcom Investor Relations">&#8599;</a></div></div><div class="cal-day empty"><div class="cal-daynum">10</div></div><div class="cal-day empty"><div class="cal-daynum">11</div></div><div class="cal-day weekend empty"><div class="cal-daynum">12</div></div><div class="cal-day weekend empty"><div class="cal-daynum">13</div></div><div class="cal-day empty"><div class="cal-daynum">14</div></div><div class="cal-day empty"><div class="cal-daynum">15</div></div><div class="cal-day empty"><div class="cal-daynum">16</div></div><div class="cal-day empty"><div class="cal-daynum">17</div></div><div class="cal-day empty"><div class="cal-daynum">18</div></div><div class="cal-day weekend empty"><div class="cal-daynum">19</div></div><div class="cal-day weekend empty"><div class="cal-daynum">20</div></div></div></div>
+<div class="tab-panel" data-tab="momentum"><div class="sec-head t2"><h2 class="label">价量异动</h2><span class="asof">截至 2026-11-23 收盘 · 扫描 2551 只</span></div>
 <div class="mo-disclaimer">价量筛选，不是买卖信号。全量回测（2515 只、两年、5090 次初动信号）：20 日胜率 51.4%、期望 +1.1%，仅略好过抛硬币，且收益几乎全部来自极少数走出趋势的标的，中位数只有 +0.3%。样本未剔除幸存者偏差、区间偏多头、未计交易成本。同一批数据还显示「越早越好」并不成立——按早期度排序，最早的一批前向收益反而更差。所以这里的顺序只代表「有多新」，不代表「有多值得买」，每一条都需要你自己再查一遍基本面与消息面。</div>
 <div class="mo-groups">
 <div class="mo-group g-ignition">
 <div class="mo-group-head">
 <span class="mo-group-name">初动</span>
-<span class="mo-group-n">5</span>
+<span class="mo-group-n">3</span>
 <span class="mo-group-blurb">突破前高的头几天，量能同步放大</span>
 </div>
 <div class="mo-card s-ignition">
 <div class="mo-head">
-<span class="mo-tk">BIP</span>
-<span class="mo-px">42.81</span>
-<span class="mo-chg up"><span class="mo-chg-day">11-20 </span>+4.24%</span>
+<span class="mo-tk">ALH</span>
+<span class="mo-px">25.75</span>
+<span class="mo-chg up"><span class="mo-chg-day">11-23 </span>+6.10%</span>
 </div>
 <div class="mo-metrics">
 <div class="mo-metric"><span class="mo-metric-k">突破</span><span class="mo-metric-v">当天</span></div>
-<div class="mo-metric"><span class="mo-metric-k">相对量</span><span class="mo-metric-v">4.1x</span></div>
-<div class="mo-metric"><span class="mo-metric-k">乖离</span><span class="mo-metric-v">+10%</span></div>
-<div class="mo-metric"><span class="mo-metric-k">自基底</span><span class="mo-metric-v">+25%</span></div>
-</div>
-<p class="mo-note">11/20放量4.1倍收涨4.24%，当天突破基底，较基底已上行25%，乖离20日均线约10%。</p>
-</div><div class="mo-card s-ignition">
-<div class="mo-head">
-<span class="mo-tk">BIPC</span>
-<span class="mo-px">42.82</span>
-<span class="mo-chg up"><span class="mo-chg-day">11-20 </span>+4.24%</span>
-</div>
-<div class="mo-metrics">
-<div class="mo-metric"><span class="mo-metric-k">突破</span><span class="mo-metric-v">当天</span></div>
-<div class="mo-metric"><span class="mo-metric-k">相对量</span><span class="mo-metric-v">6.7x</span></div>
-<div class="mo-metric"><span class="mo-metric-k">乖离</span><span class="mo-metric-v">+10%</span></div>
-<div class="mo-metric"><span class="mo-metric-k">自基底</span><span class="mo-metric-v">+24%</span></div>
-</div>
-<p class="mo-note">11/20放量6.71倍收涨4.24%，与BIP同步突破，较基底已上行24%，乖离20日均线约10%；两者为关联标的，走势几乎一致。</p>
-</div><div class="mo-card s-ignition">
-<div class="mo-head">
-<span class="mo-tk">HDB</span>
-<span class="mo-px">27.42</span>
-<span class="mo-chg up"><span class="mo-chg-day">11-20 </span>+4.50%</span>
-</div>
-<div class="mo-metrics">
-<div class="mo-metric"><span class="mo-metric-k">突破</span><span class="mo-metric-v">当天</span></div>
-<div class="mo-metric"><span class="mo-metric-k">相对量</span><span class="mo-metric-v">2.8x</span></div>
-<div class="mo-metric"><span class="mo-metric-k">乖离</span><span class="mo-metric-v">+12%</span></div>
-<div class="mo-metric"><span class="mo-metric-k">自基底</span><span class="mo-metric-v">+28%</span></div>
-</div>
-<p class="mo-note">11/20放量2.8倍收涨4.5%，当天突破基底，较基底已上行28%，乖离20日均线约12%，为初动组里涨幅最高的一只。</p>
-</div><div class="mo-card s-ignition">
-<div class="mo-head">
-<span class="mo-tk">PDD</span>
-<span class="mo-px">83.68</span>
-<span class="mo-chg down"><span class="mo-chg-day">11-20 </span>-2.70%</span>
-</div>
-<div class="mo-metrics">
-<div class="mo-metric"><span class="mo-metric-k">突破</span><span class="mo-metric-v">1 日</span></div>
 <div class="mo-metric"><span class="mo-metric-k">相对量</span><span class="mo-metric-v">2.7x</span></div>
-<div class="mo-metric"><span class="mo-metric-k">乖离</span><span class="mo-metric-v">+5%</span></div>
-<div class="mo-metric"><span class="mo-metric-k">自基底</span><span class="mo-metric-v">+12%</span></div>
+<div class="mo-metric"><span class="mo-metric-k">乖离</span><span class="mo-metric-v">+11%</span></div>
+<div class="mo-metric"><span class="mo-metric-k">自基底</span><span class="mo-metric-v">+26%</span></div>
 </div>
-<p class="mo-note">11/20放量2.72倍收跌2.7%，突破后第1日，方向与其余初动票相反——是下跌放量，较基底仍上行12%。</p>
+<p class="mo-note">Alliance Laundry Holdings（NYSE: ALH），周一放量突破，涨6.1%，量比2.73倍，当天首次脱离基底，脱离20日均线约10.6%。常规扫描中未见相关新闻。</p>
 </div><div class="mo-card s-ignition">
 <div class="mo-head">
-<span class="mo-tk">TU</span>
-<span class="mo-px">11.07</span>
-<span class="mo-chg up"><span class="mo-chg-day">11-20 </span>+2.69%</span>
+<span class="mo-tk">BIP</span>
+<span class="mo-px">45.24</span>
+<span class="mo-chg up"><span class="mo-chg-day">11-23 </span>+5.68%</span>
 </div>
 <div class="mo-metrics">
 <div class="mo-metric"><span class="mo-metric-k">突破</span><span class="mo-metric-v">1 日</span></div>
-<div class="mo-metric"><span class="mo-metric-k">相对量</span><span class="mo-metric-v">2.8x</span></div>
-<div class="mo-metric"><span class="mo-metric-k">乖离</span><span class="mo-metric-v">+21%</span></div>
-<div class="mo-metric"><span class="mo-metric-k">自基底</span><span class="mo-metric-v">+45%</span></div>
+<div class="mo-metric"><span class="mo-metric-k">相对量</span><span class="mo-metric-v">7.5x</span></div>
+<div class="mo-metric"><span class="mo-metric-k">乖离</span><span class="mo-metric-v">+15%</span></div>
+<div class="mo-metric"><span class="mo-metric-k">自基底</span><span class="mo-metric-v">+32%</span></div>
 </div>
-<p class="mo-note">11/20放量2.75倍收涨2.69%，突破后第1日，较基底已上行45%，乖离20日均线约21%，透支程度为初动组最高。</p>
+<p class="mo-note">Brookfield Infrastructure Partners（NYSE: BIP），周一涨5.68%，量比高达7.49倍，为突破后第2天，脱离20日均线近15%。常规扫描中未见相关新闻。</p>
+</div><div class="mo-card s-ignition">
+<div class="mo-head">
+<span class="mo-tk">KYMR</span>
+<span class="mo-px">150.37</span>
+<span class="mo-chg up"><span class="mo-chg-day">11-23 </span>+30.40%</span>
+</div>
+<div class="mo-metrics">
+<div class="mo-metric"><span class="mo-metric-k">突破</span><span class="mo-metric-v">当天</span></div>
+<div class="mo-metric"><span class="mo-metric-k">相对量</span><span class="mo-metric-v">8.9x</span></div>
+<div class="mo-metric"><span class="mo-metric-k">乖离</span><span class="mo-metric-v">+18%</span></div>
+<div class="mo-metric"><span class="mo-metric-k">自基底</span><span class="mo-metric-v">+48%</span></div>
+</div>
+<p class="mo-note">Kymera Therapeutics（NASDAQ: KYMR），周一暴涨30.4%，量比8.9倍，当天首次突破，自基底以来累计涨幅已达47.8%。常规扫描中未见当天相关新闻，公司此前公开信息显示其KT-621的2b期阿托皮性皮炎数据预期在2026年底公布，但没有报道把周一的涨幅与此直接挂钩，不作因果判断。</p>
 </div>
 </div>
 <div class="mo-group g-continuation">
@@ -1885,56 +1957,56 @@ a:focus-visible, summary:focus-visible {
 </div>
 <div class="mo-card s-continuation">
 <div class="mo-head">
-<span class="mo-tk">HRL</span>
-<span class="mo-px">23.54</span>
-<span class="mo-chg up"><span class="mo-chg-day">11-20 </span>+2.08%</span>
+<span class="mo-tk">ASR</span>
+<span class="mo-px">278.27</span>
+<span class="mo-chg up"><span class="mo-chg-day">11-23 </span>+2.08%</span>
+</div>
+<div class="mo-metrics">
+<div class="mo-metric"><span class="mo-metric-k">突破</span><span class="mo-metric-v">当天</span></div>
+<div class="mo-metric"><span class="mo-metric-k">相对量</span><span class="mo-metric-v">1.4x</span></div>
+<div class="mo-metric"><span class="mo-metric-k">乖离</span><span class="mo-metric-v">+6%</span></div>
+<div class="mo-metric"><span class="mo-metric-k">自基底</span><span class="mo-metric-v">+23%</span></div>
+</div>
+<p class="mo-note">Grupo Aeroportuario del Sureste（NYSE: ASR，墨西哥机场运营商ADR），周一涨2.08%，量比1.45倍，自基底以来累计涨幅23%。常规扫描中未见相关新闻。</p>
+</div><div class="mo-card s-continuation">
+<div class="mo-head">
+<span class="mo-tk">BANF</span>
+<span class="mo-px">120.96</span>
+<span class="mo-chg up"><span class="mo-chg-day">11-23 </span>+1.94%</span>
 </div>
 <div class="mo-metrics">
 <div class="mo-metric"><span class="mo-metric-k">突破</span><span class="mo-metric-v">当天</span></div>
 <div class="mo-metric"><span class="mo-metric-k">相对量</span><span class="mo-metric-v">1.1x</span></div>
-<div class="mo-metric"><span class="mo-metric-k">乖离</span><span class="mo-metric-v">+7%</span></div>
-<div class="mo-metric"><span class="mo-metric-k">自基底</span><span class="mo-metric-v">+24%</span></div>
+<div class="mo-metric"><span class="mo-metric-k">乖离</span><span class="mo-metric-v">+4%</span></div>
+<div class="mo-metric"><span class="mo-metric-k">自基底</span><span class="mo-metric-v">+16%</span></div>
 </div>
-<p class="mo-note">11/20量能平淡(1.12倍)收涨2.08%，延续档，当天突破，较基底上行24%。</p>
+<p class="mo-note">BancFirst Corporation（NASDAQ: BANF，俄克拉荷马州地区银行），周一涨1.94%，量比1.07倍，温和放量延续。常规扫描中未见相关新闻。</p>
 </div><div class="mo-card s-continuation">
 <div class="mo-head">
-<span class="mo-tk">IBN</span>
-<span class="mo-px">35.47</span>
-<span class="mo-chg up"><span class="mo-chg-day">11-20 </span>+1.63%</span>
+<span class="mo-tk">CR</span>
+<span class="mo-px">215.87</span>
+<span class="mo-chg up"><span class="mo-chg-day">11-23 </span>+6.80%</span>
 </div>
 <div class="mo-metrics">
 <div class="mo-metric"><span class="mo-metric-k">突破</span><span class="mo-metric-v">当天</span></div>
-<div class="mo-metric"><span class="mo-metric-k">相对量</span><span class="mo-metric-v">1.6x</span></div>
-<div class="mo-metric"><span class="mo-metric-k">乖离</span><span class="mo-metric-v">+9%</span></div>
-<div class="mo-metric"><span class="mo-metric-k">自基底</span><span class="mo-metric-v">+31%</span></div>
+<div class="mo-metric"><span class="mo-metric-k">相对量</span><span class="mo-metric-v">1.7x</span></div>
+<div class="mo-metric"><span class="mo-metric-k">乖离</span><span class="mo-metric-v">+5%</span></div>
+<div class="mo-metric"><span class="mo-metric-k">自基底</span><span class="mo-metric-v">+19%</span></div>
 </div>
-<p class="mo-note">11/20放量1.64倍收涨1.63%，延续档，当天突破，较基底上行31%。</p>
+<p class="mo-note">Crane Co.（NYSE: CR，工业设备制造商），周一涨6.8%，量比1.73倍，收盘价接近当日最高区间。常规扫描中未见相关新闻。</p>
 </div><div class="mo-card s-continuation">
 <div class="mo-head">
-<span class="mo-tk">PLMR</span>
-<span class="mo-px">163.59</span>
-<span class="mo-chg up"><span class="mo-chg-day">11-20 </span>+4.41%</span>
+<span class="mo-tk">HR</span>
+<span class="mo-px">19.76</span>
+<span class="mo-chg up"><span class="mo-chg-day">11-23 </span>+2.07%</span>
 </div>
 <div class="mo-metrics">
 <div class="mo-metric"><span class="mo-metric-k">突破</span><span class="mo-metric-v">当天</span></div>
-<div class="mo-metric"><span class="mo-metric-k">相对量</span><span class="mo-metric-v">2.0x</span></div>
-<div class="mo-metric"><span class="mo-metric-k">乖离</span><span class="mo-metric-v">+8%</span></div>
-<div class="mo-metric"><span class="mo-metric-k">自基底</span><span class="mo-metric-v">+37%</span></div>
+<div class="mo-metric"><span class="mo-metric-k">相对量</span><span class="mo-metric-v">1.0x</span></div>
+<div class="mo-metric"><span class="mo-metric-k">乖离</span><span class="mo-metric-v">+4%</span></div>
+<div class="mo-metric"><span class="mo-metric-k">自基底</span><span class="mo-metric-v">+17%</span></div>
 </div>
-<p class="mo-note">11/20放量2.02倍收涨4.41%，延续档，当天突破，较基底已上行37%。</p>
-</div><div class="mo-card s-continuation">
-<div class="mo-head">
-<span class="mo-tk">CRAI</span>
-<span class="mo-px">220.95</span>
-<span class="mo-chg up"><span class="mo-chg-day">11-20 </span>+1.73%</span>
-</div>
-<div class="mo-metrics">
-<div class="mo-metric"><span class="mo-metric-k">突破</span><span class="mo-metric-v">当天</span></div>
-<div class="mo-metric"><span class="mo-metric-k">相对量</span><span class="mo-metric-v">1.2x</span></div>
-<div class="mo-metric"><span class="mo-metric-k">乖离</span><span class="mo-metric-v">+9%</span></div>
-<div class="mo-metric"><span class="mo-metric-k">自基底</span><span class="mo-metric-v">+41%</span></div>
-</div>
-<p class="mo-note">11/20量能平淡(1.25倍)收涨1.73%，延续档，当天突破，较基底已上行41%，为延续组里离基底最远的一只。</p>
+<p class="mo-note">Healthcare Realty Trust（NYSE: HR，医疗地产REIT），周一涨2.07%，量能与近期平均相当（量比0.96倍）。常规扫描中未见相关新闻。</p>
 </div>
 </div>
 </div></div>
