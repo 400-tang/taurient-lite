@@ -1,0 +1,748 @@
+{
+  "date": "2026-11-25",
+  "weekday": "Wednesday",
+  "edition": "Daily edition",
+  "generated_at": "2026-11-25 06:40 PT",
+  "scanned": 71,
+  "kept": 16,
+  "thesis": "本周的主线仍是英伟达治理风波的连续剧：周一(11/23)董事会在总统公开施压下反转此前\"不复职\"的立场，重新任命黄仁勋为CEO，带动纳指创19个月最佳单日(+6.51%)，英伟达单日+31%；周二(11/24)涨势部分回吐，标普、纳指双双收跌，道指逆势重新站上5万点（历史上首次是2月6日，非本次）——三大指数方向分化，说明这轮反弹正从\"普涨\"收窄为\"个股驱动\"，而公司自己的披露说独立调查还没结束，治理与政治风险并未随股价反弹消失。同一天，戴尔交出AI服务器收入与积压订单双创纪录的财报，提示AI资本开支本身的需求叙事和英伟达的治理风波是两条独立的线，不该被混为一谈。周三(今天)盘前，期货在PCE数据公布前已经走弱——纳指100期货跌约2.8%-3%，英伟达盘前再跌约5%至147美元附近，说明芯片股抛售截稿前仍未企稳；8:30 ET公布的10月核心PCE同比3.3%略高于3.2%的预期，是12月8-9日FOMC决议前最后一次关键数据，数据热但增长也热(三季度GDP上修至4.3%)，没有给出明确的降息或加息信号。编辑说明：昨天(11/24简报)因无法核实而判定\"黄仁勋复职\"传闻不可信，今天结合公司SEC 8-K原文与多家主流媒体一致的URL日期戳，该事件应确认为真，特此更正；但围绕具体涨跌数字各信源口径仍有差异，已在相关条目中注明。",
+  "tape": {
+    "asof": "上一收盘 · 周二 11/24",
+    "rows": [
+      {
+        "name": "S&P 500",
+        "value": "7,201.09",
+        "change": "-0.50%",
+        "dir": "down"
+      },
+      {
+        "name": "Nasdaq Composite",
+        "value": "23,733.54",
+        "change": "-1.48%",
+        "dir": "down"
+      },
+      {
+        "name": "Dow Jones",
+        "value": "50,018.70",
+        "change": "+0.9%，重新站上5万点（2月6日曾首次触及）",
+        "dir": "up"
+      }
+    ]
+  },
+  "items": [
+    {
+      "rank": 1,
+      "tier": "must-read",
+      "published": "2026-11-23",
+      "headline": "英伟达董事会撤销决定，重新任命黄仁勋为CEO：周一纳指创19个月最佳单日，周二部分回吐",
+      "sectors": [
+        "半导体",
+        "AI",
+        "公司治理"
+      ],
+      "tickers": [
+        "NVDA",
+        "AMD",
+        "AVGO"
+      ],
+      "body": "英伟达董事会11月23日宣布，即时重新任命黄仁勋为总裁、首席执行官及董事会成员，CFO Colette Kress回归专职CFO。公司随公告发布的SEC 8-K表示，已听取美国政府高层意见，认定复职不构成国家安全风险，但由独立董事组成、聘请独立法律顾问的调查委员会仍将继续推进对黄仁勋个人行为的调查直至结论，黄仁勋本人承诺全力配合。此前，黄仁勋因董事会就其个人行为启动的独立调查于11月12日辞任，11月17日董事会曾明确表示不考虑其复职并聘猎头寻找永久继任者；在总统公开表态支持复职并向董事会施压、马斯克等科技界人士声援及逾17万人联署请愿后，董事会立场在六天内反转。消息刺激周一(11/23)大盘单日暴涨：纳指涨6.51%、标普涨4.73%，均为2025年4月以来最佳单日，英伟达单日涨约31%（为2003年以来最大单日百分比涨幅）；周二(11/24)涨势部分回吐：标普跌0.50%至7,201.09，纳指跌1.48%至23,733.54，英伟达等芯片与AI基建股回落，道指逆势涨约0.9%，首次收于50,000点上方。",
+      "why": "这是对一个多月反复摇摆的公司治理决定的最终翻转，而且是在总统公开施压之后做出的——这把\"关键人物风险\"和\"政治干预公司治理\"两个此前被视为尾部风险的变量，一次性变成了影响近4万亿美元市值公司定价的现实因子。调查并未随复职结束，意味着这个风险没有被消除，只是被重新定价。",
+      "impact": "NVDA及整个AI硬件/半导体产业链 · 大盘波动率",
+      "sources": [
+        {
+          "name": "NVIDIA/SEC 8-K",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000090/nov23pressrelease.htm",
+          "angle": "公司原文：已听取政府高层意见，认定无国家安全风险；调查委员会将继续推进"
+        },
+        {
+          "name": "CNBC",
+          "url": "https://www.cnbc.com/2026/11/23/nvidia-jensen-huang-ceo.html",
+          "angle": "首发复职消息，引用约31%涨幅"
+        },
+        {
+          "name": "CNBC 跟进报道",
+          "url": "https://www.cnbc.com/2026/11/24/nvidia-jensen-huang-ceo-return.html",
+          "angle": "复职后调查仍未结束，治理与政治风险未解除"
+        },
+        {
+          "name": "Axios",
+          "url": "https://www.axios.com/2026/11/23/nvidia-board-jensen-huang-as-ceo"
+        },
+        {
+          "name": "Al Jazeera",
+          "url": "https://www.aljazeera.com/economy/2026/11/24/nvidia-stock-cools-after-huangs-return-driven-surge",
+          "angle": "侧重周二的涨势回吐"
+        }
+      ],
+      "assets": [
+        {
+          "asset_class": "美股",
+          "direction": "mixed",
+          "conviction": "high",
+          "note": "周一科技股普涨带动指数创19个月最佳单日，周二部分回吐，两日累计仍是大涨。"
+        },
+        {
+          "asset_class": "海外股市",
+          "direction": "up",
+          "conviction": "medium",
+          "note": "亚洲芯片供应链同步走高，台积电周一单日涨14.01%。"
+        }
+      ],
+      "cross_source": {
+        "agreement": "split",
+        "summary": "核心事实（董事会复职决定、调查未结束）各家一致，但具体数字分歧明显——涨幅引述31%或31.48%不一，市值增量各报约9,000亿至9,520亿美元级别但精确数字不一，且不少聚合站把周一发生的事错标成周二日期。实际的单日收盘涨跌以公司8-K与纳指/标普收盘点位为准。"
+      },
+      "history": {
+        "summary": "从11月8日启动调查到23日复职，15天内董事会立场经历了完整的否定之否定。",
+        "timeline": [
+          {
+            "when": "11/8",
+            "event": "董事会宣布就黄仁勋个人行为相关的报道启动独立调查"
+          },
+          {
+            "when": "11/12",
+            "event": "黄仁勋辞任总裁/CEO/董事，CFO Colette Kress兼任临时CEO"
+          },
+          {
+            "when": "11/17",
+            "event": "董事会明确表示不考虑其复职，聘猎头寻找永久继任者，同日公布Q3财报"
+          },
+          {
+            "when": "11/23",
+            "event": "董事会反转立场，即时复职黄仁勋为CEO，Kress回归专职CFO"
+          },
+          {
+            "when": "11/24",
+            "event": "涨势部分回吐，独立调查委员会确认将继续推进"
+          }
+        ]
+      }
+    },
+    {
+      "rank": 2,
+      "tier": "must-read",
+      "published": "2026-11-25",
+      "headline": "10月核心PCE同比3.3%高于预期，三季度GDP上修至4.3%——联储12月决议前最后一次关键通胀读数",
+      "sectors": [
+        "宏观",
+        "利率",
+        "通胀"
+      ],
+      "body": "美国商务部周三公布10月PCE物价指数，整体同比+3.8%，与市场预期一致，环比+0.3%；核心PCE同比+3.3%，高于3.2%的市场预期，前值（9月）为3.1%，环比+0.3%（另有信源给出+0.29%）。同日公布的三季度GDP二次修正值从初值3.4%上修至4.3%年化。这是美联储12月8-9日议息会议前最后一次完整的通胀数据。",
+      "why": "核心读数连续两个月环比维持0.3%、同比从3.1%升到3.3%，说明通胀粘性没有缓解；而4.3%的GDP修正值说明经济并未因此减速——数据热但增长也热，这个组合让联储缺少\"增长疲软\"这个暂停紧缩的理由，对12月是否再次加息的押注形成双向拉扯。",
+      "impact": "全市场 · 12月FOMC决议定价",
+      "sources": [
+        {
+          "name": "Benzinga",
+          "url": "https://www.benzinga.com/markets/economic-data/26/11/63619838/pce-inflation-october-gdp-second-estimate"
+        },
+        {
+          "name": "Morningstar",
+          "url": "https://www.morningstar.com/economy/october-pce-report-pce-inflation-index-up-38-line-with-expectations"
+        },
+        {
+          "name": "FXStreet",
+          "url": "https://www.fxstreet.com/news/us-core-pce-inflation-set-to-heat-up-in-october-prompting-federal-reserve-rate-hikes-in-2027-202611250930",
+          "angle": "强调核心数据对2027年加息路径的含义"
+        },
+        {
+          "name": "Unusual Whales",
+          "url": "https://unusualwhales.com/news/october-pce-prices-match-forecast-core-tops-2026-11-25"
+        }
+      ],
+      "assets": [
+        {
+          "asset_class": "美债",
+          "direction": "mixed",
+          "conviction": "low",
+          "note": "核心环比连续第二个月达0.3%，理论上支撑短端收益率，但数据发布于开盘前，尚无确认的盘中收益率变动可引用。"
+        }
+      ],
+      "cross_source": {
+        "agreement": "aligned",
+        "summary": "Benzinga、Morningstar、FXStreet、Unusual Whales等对headline 3.8%、核心3.3%的数字基本一致，仅环比核心的小数点后第二位（0.29%对0.3%）存在细微差异。"
+      },
+      "history": {
+        "summary": "核心PCE同比从9月的3.1%升至10月的3.3%，连续两个月环比维持0.3%的较高速度，通胀粘性未见缓解。"
+      }
+    },
+    {
+      "rank": 3,
+      "tier": "must-read",
+      "published": "2026-11-24",
+      "headline": "戴尔Q3营收549亿同比+103%，EPS远超预期，AI服务器收入创纪录220亿，上调全年指引至2020亿",
+      "sectors": [
+        "科技",
+        "AI基建",
+        "企业IT"
+      ],
+      "tickers": [
+        "DELL"
+      ],
+      "body": "戴尔科技周二公布2027财年三季度业绩：营收549亿美元，同比增103%，远超市场预期的约493亿美元；Non-GAAP每股收益9.45美元，大幅超出市场预期的6.59美元。基础设施解决方案集团（ISG）是增长主力，单季AI服务器收入达220亿美元（创纪录），当季新增AI订单602亿美元，AI积压订单达1,323亿美元（创纪录）。公司将全年营收指引从1,920亿美元上调至2,020亿美元，并授权250亿美元股票回购，本季度已向股东返还49亿美元。消费端业务收入下滑15%，存货由上年同期104亿美元升至294亿美元。",
+      "why": "这是AI资本开支链条里离终端客户签约最近的一环给出的实时信号——订单和积压双创纪录，说明企业级AI基础设施需求还在加速而非见顶。这跟同一周英伟达的治理风波叠加在一起，给\"AI支出到底有没有放缓\"的争论提供了一个相反方向的数据点。",
+      "impact": "DELL · 服务器/AI基建供应链",
+      "sources": [
+        {
+          "name": "CNBC",
+          "url": "https://www.cnbc.com/2026/11/24/dell-earnings-report-q3-2027.html"
+        },
+        {
+          "name": "Dell Technologies 投资者关系（业绩发言稿）",
+          "url": "https://investors.delltechnologies.com/_assets/_89e9d1cb2fc1be4c6ed302d35e1514c6/delltechnologies/db/3595/34778/prepared_remarks/Q3_FY27_Prepared_Remarks.pdf",
+          "angle": "公司原文，含积压订单与指引细节"
+        },
+        {
+          "name": "247wallst",
+          "url": "https://247wallst.com/cards/dell-technologies-q3-2027-earnings-dell-01m87pfs2c9c73wyprgqr5d02e",
+          "angle": "点出消费端下滑与库存上升的隐忧"
+        },
+        {
+          "name": "Futu News",
+          "url": "https://news.futunn.com/en/post/1005502639/dell-technologies-reported-q3-fy2027-revenue-of-54-9-billion"
+        }
+      ],
+      "assets": [
+        {
+          "asset_class": "美股",
+          "direction": "up",
+          "conviction": "medium",
+          "note": "AI服务器订单与积压双创纪录，对服务器/存储/电源供应链构成正面传导，但消费端疲软与库存攀升是隐忧。"
+        }
+      ],
+      "cross_source": {
+        "agreement": "split",
+        "summary": "CNBC与公司公告对营收、EPS数字一致，但247wallst着重指出消费端下滑与库存攀升的隐忧，而大多数报道只强调积压订单创纪录的正面叙事。"
+      }
+    },
+    {
+      "rank": 4,
+      "tier": "must-read",
+      "published": "2026-11-25",
+      "headline": "截稿前更新：周三盘前期货大跌，芯片股抛售未见企稳，英伟达盘前再跌约5%",
+      "sectors": [
+        "半导体",
+        "AI",
+        "大盘"
+      ],
+      "tickers": [
+        "NVDA"
+      ],
+      "body": "截至美东时间上午7点左右（北京时间晚间），纳斯达克100指数期货跌约2.8%-3%，标普500期货跌约1.4%-2%，道指期货跌约0.75%-1.2%，跌幅较开盘前更早时段进一步扩大。英伟达盘前报约147.35美元，较周二收盘价155.38美元再跌约5.2%。多家盘前报道将其归因于AI/芯片股抛售尚未止住，叠加对联储政策路径的担忧；本文写作时10月PCE数据尚未公布。",
+      "why": "这说明周二的回吐不是一次性的消化，而是在延续、甚至加速——如果开盘后跌幅保持，本周\"周一暴涨、周二回吐\"的叙事可能要改写成\"周一暴涨、此后连续两个交易日回吐\"。盘前数据会在开盘后随时变化，这里只记录截稿前的状态，不构成对开盘走势的预测。",
+      "impact": "NVDA及AI/半导体链条 · 开盘前瞬时状态，可能与开盘后走势不同",
+      "sources": [
+        {
+          "name": "CNBC 盘前直播",
+          "url": "https://www.cnbc.com/2026/11/24/stock-market-today-live-updates-.html"
+        },
+        {
+          "name": "Journal Arta",
+          "url": "https://journalarta.com/en/2026/11/25/stock-market-today-nasdaq-sp-500-and-dow-futures-slide-as-ai-chip-selloff-deepens/"
+        },
+        {
+          "name": "Swingfolio 盘前简报",
+          "url": "https://swingfolio.com/daily/us/2026-11-25/morning"
+        }
+      ],
+      "assets": [
+        {
+          "asset_class": "美股",
+          "direction": "down",
+          "conviction": "medium",
+          "note": "盘前期货普跌，英伟达领跌，是周二回吐的延续而非逆转。"
+        }
+      ],
+      "cross_source": {
+        "agreement": "split",
+        "summary": "不同信源在不同时间点截取的盘前跌幅数字不一致（纳指100期货-2.35%到-3.03%不等），这本身就是盘前数据随时间波动的正常现象，不是信源矛盾。"
+      }
+    },
+    {
+      "rank": 5,
+      "tier": "worth-knowing",
+      "published": "2026-11-25",
+      "headline": "FINRA数据：英伟达空头持仓上一结算期增9.21%、AMD增26.96%，逼空燃料在周一前已堆积",
+      "sectors": [
+        "仓位",
+        "半导体"
+      ],
+      "tickers": [
+        "NVDA",
+        "AMD",
+        "AVGO"
+      ],
+      "body": "FINRA官方数据显示，截至11月13日结算，英伟达空头持仓305,326,286股，较上期279,579,505股增加9.21%，回补天数1.0天；AMD空头持仓49,011,074股，较上期38,603,935股大增26.96%，回补天数1.03天；博通空头持仓也增加11.31%，回补天数1.84天。",
+      "why": "回补天数都在1-2天区间，不是典型的'挤空'结构，但空头仓位在两周内大幅堆积，说明周一反弹里有相当一部分是恐慌性回补，而不只是对消息本身的基本面定价。",
+      "impact": "NVDA/AMD/AVGO · 短期波动放大器",
+      "sources": [
+        {
+          "name": "FINRA官方空头持仓数据",
+          "url": "https://www.finra.org/finra-data/browse-catalog/equity-short-interest/data"
+        }
+      ]
+    },
+    {
+      "rank": 6,
+      "tier": "worth-knowing",
+      "published": "2026-11-24",
+      "headline": "复职不等于调查结束：独立调查委员会称仍将继续推进，国会与加州监管关注不退",
+      "sectors": [
+        "公司治理",
+        "半导体"
+      ],
+      "tickers": [
+        "NVDA"
+      ],
+      "body": "英伟达随复职公告披露，由独立董事组成、聘请独立法律顾问的调查委员会将继续推进对黄仁勋个人行为的调查直至结论，黄仁勋已承诺全力配合。CNBC周二的跟进报道指出，尽管股价大涨，分析师仍将此定义为罕见的\"关键人物风险\"案例，国会与加州层面的监管关注并未因复职消退。",
+      "why": "如果调查后续得出对公司不利的结论，这次复职可能需要被重新评估——股价现在price in的是\"风险已解除\"，公司自己的披露说的是\"风险评估还没做完\"。",
+      "impact": "NVDA · 治理与政治风险溢价",
+      "sources": [
+        {
+          "name": "CNBC跟进报道",
+          "url": "https://www.cnbc.com/2026/11/24/nvidia-jensen-huang-ceo-return.html"
+        },
+        {
+          "name": "South China Morning Post",
+          "url": "https://www.scmp.com/tech/big-tech/article/3373825/nvidia-faces-defining-test-jensen-huang-probe-adds-chip-stock-turbulence",
+          "angle": "将此定义为公司治理的关键测试"
+        }
+      ]
+    },
+    {
+      "rank": 7,
+      "tier": "worth-knowing",
+      "published": "2026-11-23",
+      "headline": "总统公开施压、科技圈联名请愿：董事会不到一周内从'不考虑复职'翻转为复职",
+      "sectors": [
+        "公司治理",
+        "政策"
+      ],
+      "tickers": [
+        "NVDA"
+      ],
+      "body": "据NBC等报道，总统公开表态支持黄仁勋复职并向董事会施压，叠加马斯克、Tim Sweeney等科技界人士公开声援及逾17万人联署请愿，英伟达董事会在11月17日明确表态\"不考虑复职\"后，于11月23日反转决定。公司称董事会听取美国政府高层意见后，认定复职不构成国家安全风险。",
+      "why": "这是一家市值近4万亿美元公司的CEO人选第一次出现总统公开施压并最终奏效的先例，对未来类似公司治理事件的\"政治风险定价\"是一个新的参照点。",
+      "impact": "公司治理 · 政策与监管风险溢价",
+      "sources": [
+        {
+          "name": "NBC News",
+          "url": "https://www.nbcnews.com/tech/tech-news/nvidia-reinstates-jensen-huang-rcna610864"
+        },
+        {
+          "name": "The Hill（此前报道董事会拒绝立场）",
+          "url": "https://thehill.com/policy/technology/6223454-nvidia-board-rejects-huang-return/amp/",
+          "angle": "记录了11月17日前后董事会的拒绝立场，与后续反转形成对比"
+        }
+      ]
+    },
+    {
+      "rank": 8,
+      "tier": "worth-knowing",
+      "published": "2026-11-24",
+      "headline": "道指周二重新站上50,000点，但这是一次结构性强、广度弱的反弹",
+      "sectors": [
+        "市场结构"
+      ],
+      "body": "道琼斯工业平均指数周二上涨约0.9%，收于50,018.70点，重新站上50,000点整数关口（道指历史上首次收于5万点上方是2026年2月6日，收于约50,115.67点；此后随市场回调跌破该关口），而同一天标普500下跌0.50%、纳指下跌1.48%——三大指数方向不一致，说明这次反弹主要由少数权重股的结构性表现驱动，而非市场普遍上涨。",
+      "why": "整数关口本身没有基本面含义，但三大指数罕见的方向分化，提示这波由英伟达复职带动的反弹正在从'普涨'收窄为'个股驱动'。",
+      "impact": "指数层面的市场结构信号",
+      "sources": [
+        {
+          "name": "Closing Look (Substack)",
+          "url": "https://cappnotes.substack.com/p/closing-look-tuesday-november-24"
+        },
+        {
+          "name": "Alain Guillot市场回顾",
+          "url": "https://www.alainguillot.com/stock-market-recap-november-24-2026/"
+        },
+        {
+          "name": "Fox Business（2月6日首次站上5万点）",
+          "url": "https://foxbusiness.com/markets/dow-hits-50000-first-time",
+          "angle": "记录道指历史上首次收于5万点上方是2026年2月6日，而非11月24日"
+        }
+      ]
+    },
+    {
+      "rank": 9,
+      "tier": "worth-knowing",
+      "published": "2026-11-25",
+      "headline": "感恩节购物季前瞻：Bain预计假日季销售首破1万亿美元，黑五网一预计贡献850亿",
+      "sectors": [
+        "消费",
+        "零售"
+      ],
+      "body": "Bain Consumer Lab预计，2026年美国假日季（11月至12月）总销售额将首次突破1万亿美元，同比增长约4.5%；黑色星期五至网络星期一的五日窗口预计贡献约850亿美元，同比增速约8.75%，快于整体假日季增速。Adobe Digital Insights预计线上消费将创纪录，电商占零售支出比例约四分之一，\"先买后付\"(BNPL)支出预计创纪录213亿美元。",
+      "why": "两家机构都强调非店内（线上）渠道增速远超店内，且Bain提到超过半数消费者计划因价格压力调整假日支出——消费整体增长但结构在向折扣与线上倾斜。",
+      "impact": "零售、消费电子、电商物流板块",
+      "sources": [
+        {
+          "name": "Bain & Company",
+          "url": "https://www.bain.com/insights/black-friday-2026-sales-forecast-infographic/"
+        },
+        {
+          "name": "Adobe Digital Insights",
+          "url": "https://business.adobe.com/resources/holiday-shopping-report.html"
+        }
+      ]
+    },
+    {
+      "rank": 10,
+      "tier": "worth-knowing",
+      "published": "2026-11-25",
+      "headline": "本周交易日历：周四感恩节休市，周五黑色星期五提前收盘",
+      "sectors": [
+        "市场机制"
+      ],
+      "body": "11月26日（周四）感恩节，美股与债市全天休市；11月27日（周五）黑色星期五，美股提前于美东下午1点收盘。",
+      "why": "交易时段缩短叠加月末效应，本周剩余两个交易日的成交量通常偏低，同等规模的资金流动可能放大价格波动。",
+      "impact": "流动性 · 波动率",
+      "sources": [
+        {
+          "name": "NYSE Holidays & Trading Hours",
+          "url": "https://www.nyse.com/markets/hours-calendars"
+        }
+      ]
+    },
+    {
+      "rank": 11,
+      "tier": "worth-knowing",
+      "published": "2026-11-25",
+      "headline": "PCE数据公布后，12月是否再次加息的押注仍存分歧",
+      "sectors": [
+        "宏观",
+        "利率"
+      ],
+      "body": "10月核心PCE同比3.3%，略高于3.2%的预期且连续第二个月环比持平0.3%，通胀粘性未缓解；但三季度GDP同步上修至4.3%，说明经济并未因紧缩明显减速。联储12月8-9日议息会议将是年内最后一次决议，9日14:00 ET公布利率决定，14:30 ET举行新闻发布会。",
+      "why": "数据热但增长也热的组合，让联储缺少单一方向的决定性证据——核心通胀支持继续偏鹰，但没有新增的'过热'证据支持比市场已预期更激进的紧缩路径。",
+      "impact": "全市场 · 12月FOMC决议定价",
+      "sources": [
+        {
+          "name": "Federal Reserve",
+          "url": "https://www.federalreserve.gov/newsevents/2026-december.htm"
+        },
+        {
+          "name": "Benzinga",
+          "url": "https://www.benzinga.com/markets/economic-data/26/11/63619838/pce-inflation-october-gdp-second-estimate"
+        }
+      ]
+    },
+    {
+      "rank": 12,
+      "tier": "worth-knowing",
+      "published": "2026-11-24",
+      "headline": "戴尔创纪录的AI积压订单，为'AI资本开支尚未见顶'提供了另一条证据线",
+      "sectors": [
+        "AI基建",
+        "资本开支"
+      ],
+      "tickers": [
+        "DELL",
+        "NVDA"
+      ],
+      "body": "戴尔本季度新增AI订单602亿美元、AI积压订单达1,323亿美元，均创纪录，发生在英伟达治理风波导致的两周下跌期间——说明企业客户的AI基础设施采购决策并未因供应商层面的新闻周期而放缓。",
+      "why": "这把本周的市场叙事拆成了两条独立的线：英伟达的波动更多是治理与政治事件驱动，而不是AI资本开支需求本身出现裂缝的信号。两条线不该被混为一谈。",
+      "impact": "AI基建供应链 · 资本开支叙事",
+      "sources": [
+        {
+          "name": "Dell Technologies 投资者关系",
+          "url": "https://investors.delltechnologies.com/_assets/_89e9d1cb2fc1be4c6ed302d35e1514c6/delltechnologies/db/3595/34778/prepared_remarks/Q3_FY27_Prepared_Remarks.pdf"
+        },
+        {
+          "name": "CNBC",
+          "url": "https://www.cnbc.com/2026/11/24/dell-earnings-report-q3-2027.html"
+        }
+      ]
+    },
+    {
+      "rank": 13,
+      "tier": "noise",
+      "published": "2026-11-24",
+      "headline": "编辑说明：英伟达两日具体涨跌数字，各信源口径不一致",
+      "sectors": [
+        "编辑说明"
+      ],
+      "body": "围绕英伟达周一周二的具体涨跌幅度（31%或31.48%、回吐5.86%或'6%'）与市值增量（约9,000亿至9,520亿美元不等），不同信源数字存在细微差异，且部分聚合站把周一发生的事错标成周二日期。本期已优先采用公司SEC 8-K与纳指/标普官方收盘点位，次要数字以保守估计处理。",
+      "sources": [
+        {
+          "name": "NVIDIA/SEC 8-K",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000090/nov23pressrelease.htm"
+        }
+      ]
+    },
+    {
+      "rank": 14,
+      "tier": "noise",
+      "published": "2026-11-23",
+      "headline": "英伟达单日+31%，为2003年以来最大单日百分比涨幅",
+      "sectors": [
+        "历史对照"
+      ],
+      "tickers": [
+        "NVDA"
+      ],
+      "body": "多家报道引用这一历史对照，但具体百分比数字在不同信源间略有出入（31%与31.48%并存）。",
+      "sources": [
+        {
+          "name": "TechFlowPost",
+          "url": "https://www.techflowpost.com/en-US/article/35628/us-stocks-nov-24-nvidia-jensen-huang-31-nasdaq-6-51-biggest-gain-since-april"
+        }
+      ]
+    },
+    {
+      "rank": 15,
+      "tier": "noise",
+      "published": "2026-11-25",
+      "headline": "感恩节缩短周历史表现：近几年季节性规律趋弱（纯统计，非预测）",
+      "sectors": [
+        "季节性"
+      ],
+      "body": "历史数据显示感恩节缩短周的市场表现整体偏强，但近几年这一规律已明显减弱。",
+      "sources": [
+        {
+          "name": "Bain & Company",
+          "url": "https://www.bain.com/insights/black-friday-2026-sales-forecast-infographic/"
+        }
+      ]
+    },
+    {
+      "rank": 16,
+      "tier": "noise",
+      "published": "2026-11-25",
+      "headline": "'先买后付'(BNPL)支出预计创纪录213亿美元",
+      "sectors": [
+        "消费",
+        "金融科技"
+      ],
+      "body": "Adobe预计今年假日季BNPL支出将创历史新高，达213亿美元，反映消费者在价格压力下的分期付款倾向上升。",
+      "sources": [
+        {
+          "name": "Adobe Digital Insights",
+          "url": "https://business.adobe.com/resources/holiday-shopping-report.html"
+        }
+      ]
+    }
+  ],
+  "calendar": [
+    {
+      "when": "Thu 11/26",
+      "time": "全天",
+      "event": "感恩节，美股与债市休市",
+      "weight": "high",
+      "date": "2026-11-26",
+      "sources": [
+        {
+          "name": "NYSE Holidays & Trading Hours",
+          "url": "https://www.nyse.com/markets/hours-calendars"
+        }
+      ]
+    },
+    {
+      "when": "Fri 11/27",
+      "time": "13:00 ET提前收盘",
+      "event": "黑色星期五，美股提前收盘",
+      "weight": "mid",
+      "date": "2026-11-27",
+      "sources": [
+        {
+          "name": "NYSE Holidays & Trading Hours",
+          "url": "https://www.nyse.com/markets/hours-calendars"
+        }
+      ]
+    },
+    {
+      "when": "Sun 11/29",
+      "time": "",
+      "event": "OPEC+全体部长级会议，讨论2027年产量配额框架",
+      "weight": "high",
+      "date": "2026-11-29",
+      "sources": [
+        {
+          "name": "OPEC 新闻公告",
+          "url": "https://www.opec.org/pr-detail/2033620-1-november-2026.html"
+        }
+      ]
+    },
+    {
+      "when": "Tue-Wed 12/8-9",
+      "time": "14:00 ET决议 / 14:30 ET发布会",
+      "event": "FOMC 12月利率决议 + 经济预测摘要，会后举行新闻发布会",
+      "weight": "high",
+      "date": "2026-12-09",
+      "sources": [
+        {
+          "name": "Federal Reserve",
+          "url": "https://www.federalreserve.gov/newsevents/2026-december.htm"
+        },
+        {
+          "name": "FedRateCalc",
+          "url": "https://fedratecalc.com/fomc-meeting-schedule/december-2026/"
+        }
+      ]
+    },
+    {
+      "when": "Wed 12/9",
+      "time": "盘后，17:00 ET电话会",
+      "event": "博通2026财年四季度财报",
+      "weight": "mid",
+      "date": "2026-12-09",
+      "sources": [
+        {
+          "name": "Broadcom Investor Relations",
+          "url": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announce-fourth-quarter-and-fiscal-year-2026"
+        }
+      ]
+    }
+  ],
+  "momentum": {
+    "asof": "2026-11-24",
+    "scanned": 2565,
+    "note": "",
+    "candidates": [
+      {
+        "ticker": "BMRN",
+        "date": "2026-11-24",
+        "stage": "ignition",
+        "close": 66.36,
+        "change_pct": 6.04,
+        "rvol": 2.8,
+        "breakout_age": 0,
+        "ext_ma20": 0.1347,
+        "run_from_base": 0.2762,
+        "note": "当天放量突破(量能2.8倍均量)，收于日内高位区间，乖离20日均线13.5%，自基底上涨28%。"
+      },
+      {
+        "ticker": "DKS",
+        "date": "2026-11-24",
+        "stage": "ignition",
+        "close": 153.17,
+        "change_pct": 14.59,
+        "rvol": 3.73,
+        "breakout_age": 0,
+        "ext_ma20": 0.0706,
+        "run_from_base": 0.2748,
+        "note": "当天放量突破(量能3.7倍均量)，跳空缺口11.28%，乖离20日均线7.1%，自基底上涨27.5%。"
+      },
+      {
+        "ticker": "SNY",
+        "date": "2026-11-24",
+        "stage": "ignition",
+        "close": 51.9,
+        "change_pct": 10.97,
+        "rvol": 3.38,
+        "breakout_age": 0,
+        "ext_ma20": 0.1067,
+        "run_from_base": 0.3284,
+        "note": "当天放量突破(量能3.4倍均量)，收在日内高点附近，自基底上涨33%。"
+      },
+      {
+        "ticker": "DLTR",
+        "date": "2026-11-24",
+        "stage": "ignition",
+        "close": 154.65,
+        "change_pct": 11.18,
+        "rvol": 3.21,
+        "breakout_age": 0,
+        "ext_ma20": 0.1146,
+        "run_from_base": 0.3917,
+        "note": "当天放量突破(量能3.2倍均量)，自基底上涨39%，乖离20日均线11.5%。"
+      },
+      {
+        "ticker": "AMTM",
+        "date": "2026-11-24",
+        "stage": "ignition",
+        "close": 24.8,
+        "change_pct": 20.1,
+        "rvol": 6.24,
+        "breakout_age": 0,
+        "ext_ma20": 0.1323,
+        "run_from_base": 0.3995,
+        "note": "当天放量突破(量能6.2倍均量)，单日涨幅20.1%为本批最大，自基底上涨40%。"
+      },
+      {
+        "ticker": "BIP",
+        "date": "2026-11-24",
+        "stage": "ignition",
+        "close": 45.52,
+        "change_pct": 0.62,
+        "rvol": 5.22,
+        "breakout_age": 2,
+        "ext_ma20": 0.1435,
+        "run_from_base": 0.3271,
+        "note": "突破后第2天，涨幅收窄至0.6%但量能仍有5.2倍均量，自基底涨幅已达33%，乖离14.4%。"
+      },
+      {
+        "ticker": "TGLS",
+        "date": "2026-11-24",
+        "stage": "ignition",
+        "close": 55.48,
+        "change_pct": 9.73,
+        "rvol": 3.15,
+        "breakout_age": 1,
+        "ext_ma20": 0.2388,
+        "run_from_base": 0.6294,
+        "note": "突破后第1天延续，乖离20日均线23.9%，自基底上涨63%，涨幅已经偏大。"
+      },
+      {
+        "ticker": "KYMR",
+        "date": "2026-11-24",
+        "stage": "ignition",
+        "close": 173.92,
+        "change_pct": 15.66,
+        "rvol": 6.84,
+        "breakout_age": 1,
+        "ext_ma20": 0.3302,
+        "run_from_base": 0.7094,
+        "note": "突破后第1天延续，量能6.8倍均量，自基底上涨71%，是本批里涨幅最大的一只，乖离也最高(33%)。"
+      },
+      {
+        "ticker": "A",
+        "date": "2026-11-24",
+        "stage": "continuation",
+        "close": 183.52,
+        "change_pct": 4.25,
+        "rvol": 1.74,
+        "breakout_age": 0,
+        "ext_ma20": 0.0432,
+        "run_from_base": 0.2993,
+        "note": "延续档，量能1.7倍均量，涨幅相对温和(4.25%)，自基底上涨30%。"
+      },
+      {
+        "ticker": "ADC",
+        "date": "2026-11-24",
+        "stage": "continuation",
+        "close": 72.49,
+        "change_pct": 1.85,
+        "rvol": 0.67,
+        "breakout_age": 0,
+        "ext_ma20": 0.0429,
+        "run_from_base": 0.1267,
+        "note": "延续档，量能0.67倍均量(低于日均量)，涨幅温和(1.85%)，自基底涨幅13%，是本批里量能最弱的一只。"
+      },
+      {
+        "ticker": "AHR",
+        "date": "2026-11-24",
+        "stage": "continuation",
+        "close": 59.75,
+        "change_pct": 2.03,
+        "rvol": 0.77,
+        "breakout_age": 0,
+        "ext_ma20": 0.0491,
+        "run_from_base": 0.2132,
+        "note": "延续档，量能0.77倍均量(低于日均量)，涨幅温和(2.03%)，自基底涨幅21%。"
+      },
+      {
+        "ticker": "ALKS",
+        "date": "2026-11-24",
+        "stage": "continuation",
+        "close": 49.92,
+        "change_pct": 7.94,
+        "rvol": 2.24,
+        "breakout_age": 0,
+        "ext_ma20": 0.0811,
+        "run_from_base": 0.2807,
+        "note": "延续档，量能2.2倍均量，涨幅7.94%，自基底上涨28%。"
+      }
+    ]
+  }
+}
