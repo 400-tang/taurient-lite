@@ -1,0 +1,440 @@
+{
+  "date": "2026-11-27",
+  "weekday": "Friday",
+  "edition": "Daily edition",
+  "generated_at": "2026-11-27 06:20 PT",
+  "scanned": 92,
+  "kept": 4,
+  "thesis": "黄仁勋复职带来的历史级反弹正在退烧——感恩节前最后一个交易日，道指盘中再度闪崩逾千点又翻红收涨，标普、纳指双双收跌；个人行为调查仍未结束，国会12月1日的闭门问询让这条交易的不确定性延续到12月。感恩节次日的半日市整体清淡，油价靠中东供应风险企稳，黑色星期五的实际成交数据还要等几天才能看到。",
+  "tape": {
+    "asof": "上一收盘 · 周三 11/25",
+    "rows": [
+      {
+        "name": "Dow Jones",
+        "value": "50,182.95",
+        "change": "+164.25（+0.33%），盘中一度跌约1,100点后收复",
+        "dir": "up"
+      },
+      {
+        "name": "S&P 500",
+        "value": "7,182.78",
+        "change": "-0.25%（仅来自检索摘要，未独立核实原文）",
+        "dir": "down"
+      },
+      {
+        "name": "Nasdaq Composite",
+        "value": "23,585.80",
+        "change": "-0.62%（仅来自检索摘要，未独立核实原文）",
+        "dir": "down"
+      },
+      {
+        "name": "Brent crude",
+        "value": "$96.5–97.4",
+        "change": "不同信源报价不一致，以区间呈现；中东供应风险支撑",
+        "dir": "up"
+      }
+    ]
+  },
+  "items": [
+    {
+      "rank": 1,
+      "tier": "must-read",
+      "published": "2026-11-25",
+      "headline": "感恩节前最后一个交易日：英伟达风波继续搅动大盘，道指盘中一度重挫逾千点后翻红",
+      "sectors": [
+        "宏观",
+        "科技",
+        "半导体"
+      ],
+      "tickers": [
+        "NVDA"
+      ],
+      "body": "11月25日（周三，感恩节前最后一个常规交易日）美国商务部公布10月核心PCE物价指数同比+3.3%，高于3.2%的市场预期（9月为3.1%），整体同比+3.8%；同日公布的三季度GDP二次修正值上修至4.3%年化——这是联储12月8-9日议息会议前最后一次完整的通胀与增长数据。数据公布当天，三大股指早盘延续周二的芯片股抛压，道指盘中一度下跌约1,100点，随后强势反弹，收盘上涨164.25点（+0.33%）至50,182.95点；标普500与纳斯达克综合指数收跌（标普报约7,182.78点、纳指报约23,585.80点）。以上道指、标普、纳指的具体收盘数字均仅来自检索摘要（道指数字有两家媒体给出一致说法，标普、纳指数字目前只见于单一检索摘要），核查员已尝试独立复核但未能在本环境中打开原文站点确认，主编提示读者这几个点位暂未做到逐字核对原文。这是英伟达CEO黄仁勋被董事会于11月17日明确表态不考虑复职、又在11月23日反转重新任命为CEO、带动纳指单日+6.51%、标普+4.73%（均为2025年4月以来最佳单日）、英伟达单日+31%（2003年以来最大单日百分比涨幅）之后的第三个交易日；周二（11/24）涨势已部分回吐，标普跌0.50%、纳指跌1.48%，但道指逆势首次收于5万点上方。本周四（11/26）感恩节休市，周五（11/27，即本简报发出当天）为提前至美东13:00收盘的缩短交易日。",
+      "why": "即便黄仁勋复职消息曾带来史诗级单日反弹，市场并未就此企稳——围绕他个人行为的独立调查仍在推进，国会已排定12月1日的闭门问询，意味着这条交易的不确定性会延续到12月，任何相关headline都可能再次引发指数级波动，这也是为什么感恩节前最后一个交易日仍能走出盘中千点振幅。",
+      "impact": "全市场，尤其半导体与AI基建权重股",
+      "sources": [
+        {
+          "name": "Yahoo Finance 实时报道",
+          "url": "https://finance.yahoo.com/markets/live/stock-market-today-wednesday-november-25-dow-sp-500-nasdaq-pce-inflation-data-091428237.html",
+          "angle": "标题点明收盘前AI股抛售与PCE数据日，道指收复盘中跌幅"
+        },
+        {
+          "name": "BBN Times",
+          "url": "https://www.bbntimes.com/financial/dow-jones-closed-for-thanksgiving-at-50-182-95-after-erasing-a-1-100-point-plunge-in-stunning-reversal",
+          "angle": "强调道指盘中曾跌约1,100点，收盘前逆转"
+        },
+        {
+          "name": "CNBC（11/23）",
+          "url": "https://www.cnbc.com/2026/11/23/nvidia-jensen-huang-ceo.html",
+          "angle": "报道董事会反转决定、重新任命黄仁勋为CEO"
+        },
+        {
+          "name": "Axios（11/23）",
+          "url": "https://www.axios.com/2026/11/23/nvidia-board-jensen-huang-as-ceo",
+          "angle": "披露董事会听取政府高层意见后认定复职不构成国家安全风险"
+        },
+        {
+          "name": "Axios（11/17）",
+          "url": "https://axios.com/2026/11/17/nvidia-jensen-huang-congress-testify-dates",
+          "angle": "披露国会三个委员会定于12月1日对黄仁勋进行闭门问询"
+        },
+        {
+          "name": "Benzinga",
+          "url": "https://www.benzinga.com/markets/economic-data/26/11/63619838/pce-inflation-october-gdp-second-estimate",
+          "angle": "10月核心PCE与三季度GDP二次修正值数字"
+        },
+        {
+          "name": "Morningstar",
+          "url": "https://www.morningstar.com/economy/october-pce-report-pce-inflation-index-up-38-line-with-expectations",
+          "angle": "整体PCE同比+3.8%，符合预期"
+        }
+      ],
+      "assets": [
+        {
+          "asset_class": "美股",
+          "direction": "mixed",
+          "conviction": "high",
+          "note": "道指收红但标普、纳指收跌，AI/半导体权重股的任何波动都足以让大盘盘中出现超过1%的瞬时振幅，方向分化明显。"
+        }
+      ],
+      "cross_source": {
+        "agreement": "aligned",
+        "summary": "Yahoo Finance与BBN Times对道指具体点位（50,182.95）与盘中逆转的叙事一致；标普、纳指的精确收盘数字目前只见于检索摘要合成结果，尚未独立复核原文。"
+      },
+      "history": {
+        "summary": "黄仁勋的去留在过去两周内经历了辞任、被拒绝复职、再反转复职三次转折，围绕他个人行为的独立调查尚未结束，股价因此在巨幅波动中反复寻找方向，25日的盘中千点闪崩与收盘翻红是这条主线的最新一笔。",
+        "timeline": [
+          {
+            "when": "11/12",
+            "event": "黄仁勋因董事会就其个人行为发起的独立调查辞任CEO，CFO Colette Kress任临时CEO"
+          },
+          {
+            "when": "11/16",
+            "event": "据二手报道，司法部与商务部将一项针对新加坡Megaspeed的2024年出口管制调查升级为刑事调查（未找到官方原文，仅转述）"
+          },
+          {
+            "when": "11/17",
+            "event": "董事会主席Harvey Jones表示不考虑让黄仁勋复职，聘猎头寻找永久继任者，同时成立安全与出口管制监督委员会；国会三委员会同日提出12月1日闭门问询"
+          },
+          {
+            "when": "11/23",
+            "event": "董事会反转决定，重新任命黄仁勋为CEO；纳指单日+6.51%、标普+4.73%，英伟达单日+31%"
+          },
+          {
+            "when": "11/24",
+            "event": "涨势部分回吐，标普跌0.50%、纳指跌1.48%，但道指逆势涨约0.9%，首次收于50,000点上方"
+          }
+        ]
+      }
+    },
+    {
+      "rank": 2,
+      "tier": "worth-knowing",
+      "published": "2026-11-27",
+      "headline": "原油靠中东供应风险企稳，OPEC+周日将议2027年产量框架",
+      "sectors": [
+        "大宗商品",
+        "能源"
+      ],
+      "tickers": [],
+      "body": "周五（11/27）布伦特原油报96.5–97.4美元/桶区间（不同信源给出的具体数字不一致，以区间呈现），WTI报约85美元/桶，中东地区供应风险继续为油价提供支撑。OPEC+核心产油七国计划11月29日（周日）召开会议，2027年产量配额框架是主要议题。",
+      "why": "油价企稳对通胀路径有传导，尤其是在联储12月8-9日议息会议前，能源价格的边际变化会被市场纳入通胀预期的重新定价。",
+      "impact": "大宗商品、能源板块；间接影响通胀预期",
+      "sources": [
+        {
+          "name": "CNBC",
+          "url": "https://www.cnbc.com/amp/2026/11/27/brent-oil-wti-hormuz-middle-east.html",
+          "angle": "布伦特接近本月高点，与霍尔木兹及中东供应风险挂钩，报价96.48美元"
+        },
+        {
+          "name": "FXStreet",
+          "url": "https://fxstreet.com/news/wti-oil-flits-with-the-8500-as-tensions-in-the-middle-east-threaten-supply-202611271134",
+          "angle": "聚焦WTI在85美元关口波动，并提到11/29 OPEC+会议"
+        },
+        {
+          "name": "EnergyNow",
+          "url": "https://energynow.com/2026/11/oil-prices-climb-as-middle-east-supply-threats-put-brent-near-97-and-wti-above-85-ahead-of-opec-meeting/",
+          "angle": "报价布伦特约97美元，与OPEC+会前供应威胁叙事挂钩"
+        },
+        {
+          "name": "OPEC官网新闻稿",
+          "url": "https://www.opec.org/pr-detail/2033620-1-november-2026.html",
+          "angle": "一手来源：11/1新闻稿披露12月产量维持不变"
+        }
+      ],
+      "assets": [
+        {
+          "asset_class": "大宗商品",
+          "direction": "up",
+          "conviction": "medium",
+          "note": "地缘风险溢价支撑油价，是12月FOMC决议前的通胀路径观察变量之一。"
+        }
+      ]
+    },
+    {
+      "rank": 3,
+      "tier": "noise",
+      "published": "2026-11-27",
+      "headline": "黑色星期五：Adobe预测线上消费将创纪录129亿美元，但分析师指出涨幅主要来自提价",
+      "sectors": [
+        "消费",
+        "零售"
+      ],
+      "tickers": [],
+      "body": "今天（11/27）是美国传统购物旺季黑色星期五。Adobe今年9月底发布的预测认为，今年黑色星期五线上销售额将达129亿美元，同比增长9.2%；但GlobalData与Salesforce的数据同时显示，涨幅主要来自客单价提升，实际购买笔数增长有限。截稿时还查不到今天的实际成交统计，以上仍是预测数字，不是当天战报。",
+      "sources": [
+        {
+          "name": "Adobe Newsroom",
+          "url": "https://news.adobe.com/news/2026/09/adobe-us-holiday-shopping-season-to-hit-record",
+          "angle": "官方预测：黑色星期五129亿美元，同比+9.2%"
+        },
+        {
+          "name": "Axis Intelligence（转述GlobalData/Salesforce）",
+          "url": "https://axis-intelligence.com/black-friday-statistics/",
+          "angle": "强调涨幅主要来自提价而非销量"
+        }
+      ]
+    },
+    {
+      "rank": 4,
+      "tier": "noise",
+      "published": "2026-11-27",
+      "headline": "感恩节夜盘期货走高，标普500期货站上7,300点（期货指标，非现货成交）",
+      "sectors": [
+        "宏观"
+      ],
+      "tickers": [],
+      "body": "媒体报道感恩节夜间（11/26晚）标普500期货上涨并突破7,300点整数位，但这只是期货盘面的指示，不代表11/27现货开盘表现，具体驱动因素未经原文核实。",
+      "sources": [
+        {
+          "name": "24/7 Wall St.",
+          "url": "https://247wallst.com/investing/2026/11/27/stock-futures-rip-on-thanksgiving-night-as-sp-500-futures-top-7300/",
+          "angle": "期货夜盘走高"
+        }
+      ]
+    }
+  ],
+  "calendar": [
+    {
+      "when": "周日 11/29",
+      "time": "",
+      "event": "OPEC+核心产油七国会议，2027年产量配额框架是主要议题",
+      "weight": "mid",
+      "date": "2026-11-29",
+      "sources": [
+        {
+          "name": "OPEC官网新闻稿（11/1）",
+          "url": "https://www.opec.org/pr-detail/2033620-1-november-2026.html"
+        },
+        {
+          "name": "FXStreet",
+          "url": "https://fxstreet.com/news/wti-oil-flits-with-the-8500-as-tensions-in-the-middle-east-threaten-supply-202611271134"
+        }
+      ]
+    },
+    {
+      "when": "周二 12/1",
+      "time": "",
+      "event": "黄仁勋将接受众议院外交事务委员会、中共问题特别委员会、情报委员会三个委员会的闭门问询（非公开听证）；英伟达总法律顾问Tim Teter次日（12/2）出席。日期依据11月17日的委员会声明，此后尚无更新报道",
+      "weight": "mid",
+      "date": "2026-12-01",
+      "sources": [
+        {
+          "name": "Axios",
+          "url": "https://axios.com/2026/11/17/nvidia-jensen-huang-congress-testify-dates"
+        }
+      ]
+    },
+    {
+      "when": "周四 12/3",
+      "time": "",
+      "event": "据二手媒体汇总，参议院银行委员会主席Tim Scott要求黄仁勋出席公开听证，若不到场可能发传票；委员会官方原文未能核实，日期请留意后续确认",
+      "weight": "low",
+      "date": "2026-12-03",
+      "sources": [
+        {
+          "name": "Inc.com（转述）",
+          "url": "https://inc.com/melissa-angell/jensen-huang-testify-congress-nvidia-probe-china/91435429"
+        }
+      ]
+    },
+    {
+      "when": "周四 12/10",
+      "time": "",
+      "event": "据二手媒体汇总，商务部长Howard Lutnick被要求就英伟达相关出口管制问题作证，据报已同意出席；官方原文未能核实",
+      "weight": "low",
+      "date": "2026-12-10",
+      "sources": [
+        {
+          "name": "Inc.com（转述）",
+          "url": "https://inc.com/melissa-angell/jensen-huang-testify-congress-nvidia-probe-china/91435429"
+        }
+      ]
+    },
+    {
+      "when": "12/8–12/9",
+      "time": "",
+      "event": "联储12月议息会议，9日公布利率决议并举行新闻发布会，附带经济预测摘要（SEP）。10月CPI走高、10月会议纪要偏鹰后，多家预测市场与官员表态指向12月加息25个基点的概率明显偏高（不同信源给出的具体概率数字不一致，暂不引用单一数字），但距会议还有近两周，仍有变数",
+      "weight": "high",
+      "date": "2026-12-09",
+      "sources": [
+        {
+          "name": "联储官方会议日历",
+          "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      ]
+    },
+    {
+      "when": "周三 12/9",
+      "time": "17:00 ET 电话会",
+      "event": "博通（AVGO）公布第四季度及2026财年业绩",
+      "weight": "mid",
+      "date": "2026-12-09",
+      "sources": [
+        {
+          "name": "Broadcom Investor Relations",
+          "url": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announce-fourth-quarter-and-fiscal-year-2026"
+        }
+      ]
+    }
+  ],
+  "momentum": {
+    "asof": "2026-11-25",
+    "scanned": 2579,
+    "note": "",
+    "candidates": [
+      {
+        "ticker": "AWI",
+        "date": "2026-11-25",
+        "stage": "ignition",
+        "close": 184.83,
+        "change_pct": 4.98,
+        "rvol": 2.84,
+        "breakout_age": 0,
+        "ext_ma20": 0.0672,
+        "run_from_base": 0.2207,
+        "note": "单日+4.98%，量能放大到2.84倍，当日首次突破整理区间。"
+      },
+      {
+        "ticker": "GRDN",
+        "date": "2026-11-25",
+        "stage": "ignition",
+        "close": 52.11,
+        "change_pct": 2.94,
+        "rvol": 2.79,
+        "breakout_age": 0,
+        "ext_ma20": 0.1272,
+        "run_from_base": 0.4515,
+        "note": "单日+2.94%，量能2.79倍，当日首次突破，乖离20日均线约13%。"
+      },
+      {
+        "ticker": "AMTM",
+        "date": "2026-11-25",
+        "stage": "ignition",
+        "close": 24.86,
+        "change_pct": 0.24,
+        "rvol": 3.37,
+        "breakout_age": 1,
+        "ext_ma20": 0.1268,
+        "run_from_base": 0.4029,
+        "note": "涨幅仅+0.24%但成交量放大到3.37倍，是突破后第2日（age=1），涨势较首日明显放缓。"
+      },
+      {
+        "ticker": "COGT",
+        "date": "2026-11-25",
+        "stage": "ignition",
+        "close": 36.08,
+        "change_pct": 9.3,
+        "rvol": 3.12,
+        "breakout_age": 0,
+        "ext_ma20": 0.1957,
+        "run_from_base": 0.3687,
+        "note": "单日大涨+9.30%，量能3.12倍，当日首次突破，乖离20日均线达20%，涨幅为本轮初动档最高。"
+      },
+      {
+        "ticker": "BIP",
+        "date": "2026-11-25",
+        "stage": "ignition",
+        "close": 44.62,
+        "change_pct": -1.98,
+        "rvol": 4.46,
+        "breakout_age": 3,
+        "ext_ma20": 0.11,
+        "run_from_base": 0.3009,
+        "note": "放量下跌-1.98%，量能4.46倍为本轮初动档最高，是突破后第4日（age=3）出现的放量回调，方向与其余普涨的初动股相反。"
+      },
+      {
+        "ticker": "TGLS",
+        "date": "2026-11-25",
+        "stage": "ignition",
+        "close": 57.29,
+        "change_pct": 3.26,
+        "rvol": 2.61,
+        "breakout_age": 2,
+        "ext_ma20": 0.2517,
+        "run_from_base": 0.6825,
+        "note": "单日+3.26%，量能2.61倍，为突破后第3日（age=2），乖离20日均线已达25%，自基底涨幅68%为本轮最大。"
+      },
+      {
+        "ticker": "KYMR",
+        "date": "2026-11-25",
+        "stage": "ignition",
+        "close": 173.77,
+        "change_pct": -0.09,
+        "rvol": 4.73,
+        "breakout_age": 2,
+        "ext_ma20": 0.3035,
+        "run_from_base": 0.7079,
+        "note": "几乎收平（-0.09%）但量能高达4.73倍，为本轮初动档最高，乖离20日均线30%，交易极活跃但方向犹豫。"
+      },
+      {
+        "ticker": "ADP",
+        "date": "2026-11-25",
+        "stage": "continuation",
+        "close": 316.72,
+        "change_pct": 1.91,
+        "rvol": 0.98,
+        "breakout_age": 0,
+        "ext_ma20": 0.0418,
+        "run_from_base": 0.2374,
+        "note": "延续阶段温和上涨+1.91%，量能0.98倍，没有放量特征。"
+      },
+      {
+        "ticker": "AKR",
+        "date": "2026-11-25",
+        "stage": "continuation",
+        "close": 20.95,
+        "change_pct": 1.11,
+        "rvol": 0.99,
+        "breakout_age": 0,
+        "ext_ma20": 0.0473,
+        "run_from_base": 0.1665,
+        "note": "延续阶段温和上涨+1.11%，量能0.99倍，接近均值水平。"
+      },
+      {
+        "ticker": "ALC",
+        "date": "2026-11-25",
+        "stage": "continuation",
+        "close": 77.97,
+        "change_pct": 1.75,
+        "rvol": 1.11,
+        "breakout_age": 0,
+        "ext_ma20": 0.0489,
+        "run_from_base": 0.2556,
+        "note": "延续阶段上涨+1.75%，量能1.11倍，略高于均量。"
+      },
+      {
+        "ticker": "ASR",
+        "date": "2026-11-25",
+        "stage": "continuation",
+        "close": 281.34,
+        "change_pct": 0.97,
+        "rvol": 1.79,
+        "breakout_age": 0,
+        "ext_ma20": 0.054,
+        "run_from_base": 0.2438,
+        "note": "延续阶段上涨+0.97%，量能1.79倍，略放量。"
+      }
+    ]
+  }
+}
