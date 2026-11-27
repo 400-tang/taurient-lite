@@ -1,14 +1,14 @@
 {
-  "asof": "2026-11-26",
-  "session": "close",
-  "fetched_at": "2026-11-27T03:41:37+00:00",
+  "asof": "14:16 ET",
+  "session": "intraday",
+  "fetched_at": "2026-11-27T19:16:14+00:00",
   "source": "Nasdaq screener",
   "note": "块的大小按市值，颜色按当日涨跌幅，行业按当日强弱从左到右排。行业涨跌是市值加权的：简单平均会让一堆微型股盖过苹果，得出「科技板块大跌」而指数其实在涨的结论。",
   "sectors": [
     {
       "name": "科技",
       "change_pct": -0.73,
-      "market_cap": 40260549225821.0,
+      "market_cap": 40270681748210.0,
       "tiles": [
         {
           "ticker": "AAPL",
@@ -68,7 +68,7 @@
           "ticker": "ANT",
           "name": "Anthropic PBC Class A",
           "change_pct": 1.08,
-          "market_cap": 1083445623974.0
+          "market_cap": 1094454184030.0
         },
         {
           "ticker": "SKHY",
@@ -99,7 +99,7 @@
     {
       "name": "可选消费",
       "change_pct": 0.33,
-      "market_cap": 14034839736485.0,
+      "market_cap": 14034321447651.0,
       "tiles": [
         {
           "ticker": "AMZN",
@@ -190,7 +190,7 @@
     {
       "name": "金融",
       "change_pct": 0.47,
-      "market_cap": 11279781699722.0,
+      "market_cap": 11279914005305.0,
       "tiles": [
         {
           "ticker": "JPM",
@@ -281,7 +281,7 @@
     {
       "name": "医疗保健",
       "change_pct": -0.01,
-      "market_cap": 9817920944814.0,
+      "market_cap": 9818025113723.0,
       "tiles": [
         {
           "ticker": "LLY",
@@ -372,7 +372,7 @@
     {
       "name": "工业",
       "change_pct": 0.71,
-      "market_cap": 8730094714831.0,
+      "market_cap": 8744713157413.0,
       "tiles": [
         {
           "ticker": "TSLA",
@@ -554,7 +554,7 @@
     {
       "name": "公用事业",
       "change_pct": 0.66,
-      "market_cap": 3041857145744.0,
+      "market_cap": 3041862707702.0,
       "tiles": [
         {
           "ticker": "NEE",
@@ -645,7 +645,7 @@
     {
       "name": "必需消费",
       "change_pct": 0.95,
-      "market_cap": 2188967424934.0,
+      "market_cap": 2188964509897.0,
       "tiles": [
         {
           "ticker": "KO",
@@ -736,7 +736,7 @@
     {
       "name": "房地产",
       "change_pct": 0.81,
-      "market_cap": 2068943051237.0,
+      "market_cap": 2068948966064.0,
       "tiles": [
         {
           "ticker": "WELL",
@@ -918,7 +918,7 @@
     {
       "name": "基础材料",
       "change_pct": 2.61,
-      "market_cap": 1361509362184.0,
+      "market_cap": 1361320079837.0,
       "tiles": [
         {
           "ticker": "LIN",
